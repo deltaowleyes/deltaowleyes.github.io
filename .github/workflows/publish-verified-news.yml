@@ -22,10 +22,10 @@ jobs:
         run: python tools/build_news.py
       - name: Commit generated page if changed
         run: |
-          if ! git diff --quiet -- news/index.html || [ -n "$(git ls-files --others --exclude-standard news/index.html)" ]; then
+          if ! git diff --quiet -- news/index.html news/scripts/index.html || [ -n "$(git ls-files --others --exclude-standard news/index.html news/scripts/index.html)" ]; then
             git config user.name "delta-owl-eyes-bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add news/index.html
+            git add news/index.html news/scripts/index.html
             git commit -m "Publish verified news index"
             git push
           fi
