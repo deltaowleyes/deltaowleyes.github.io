@@ -4,6 +4,7 @@ import json, pathlib, html, datetime, urllib.parse
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 SOURCE=ROOT/"news"/"updates"
 DEST=ROOT/"news"/"index.html"
+QUEUE=ROOT/"news"/"scripts"/"index.html"
 def esc(x): return html.escape(str(x),quote=True)
 def main():
     items=[]
@@ -21,6 +22,10 @@ def main():
             raise ValueError(f"{path}: incomplete verification record")
         datetime.date.fromisoformat(v["verified_at"])
         if d.get("status","approved")!="approved": continue
+        if d.get("publication_status","unrecorded") not in ("unrecorded","published"):
+            raise ValueError(f"{path}: invalid publication_status")
+        if d.get("publication_status","unrecorded")=="published" and not d.get("video_url"):
+            raise ValueError(f"{path}: published record must have video_url")
         items.append(d)
     items.sort(key=lambda x:(x["date"],x["id"]),reverse=True)
     cards=[]
@@ -32,9 +37,21 @@ def main():
             if parsed.scheme!="https" or not parsed.hostname: raise ValueError(f"{d['id']}: invalid video URL")
             video_link=f'<p><a href="{esc(video)}">Watch published video</a></p>'
         cards.append(f'<article><p class="meta">{esc(d["date"])} · Call to Action #{d["call_number"]}</p><h2>{esc(d["headline"])}</h2><p>{esc(d["summary"])}</p><p><a href="{esc(d["source_url"])}">Source: {esc(d["source_title"])}</a></p>{video_link}</article>')
+    queue_cards=[]
+    for d in items:
+        if d.get("publication_status","unrecorded")=="published" or not d.get("script"):
+            continue
+        script=d["script"]
+        if not isinstance(script,str) or len(script.strip())<100:
+            raise ValueError(f"{d['id']}: recording script too short")
+        queue_cards.append(f'<article><p class="meta">{esc(d["date"])} · Call to Action #{d["call_number"]}</p><h2>{esc(d["headline"])}</h2><p style="white-space:pre-wrap">{esc(script)}</p></article>')
+    queue_content='\n'.join(queue_cards) if queue_cards else '<p>No recording scripts currently awaiting publication.</p>'
     content='\n'.join(cards) if cards else '<p>No verified news updates published yet.</p>'
     page=f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>News Updates | Delta Owl Eyes</title><style>body{{margin:0;background:#f5f0e6;color:#092729;font:17px/1.65 system-ui,sans-serif}}header,footer{{background:#071f22;color:white;padding:22px 5%}}header a,footer a{{color:white}}main{{max-width:920px;margin:auto;padding:40px 20px}}article{{background:white;border:1px solid #d4ded8;border-radius:12px;padding:24px;margin:24px 0}}.meta{{color:#476865;font-weight:700}}a{{color:#075c60}}</style></head><body><header><a href="/">Delta Owl Eyes</a> · <a href="/calls-to-action/">94 Calls to Action</a></header><main><h1>Verified News Updates</h1><p>New developments are published as separate, dated stories. Previously recorded reports remain part of the historical record.</p>{content}</main><footer>Hard Truths. Education. Accountability.</footer></body></html>"""
     DEST.parent.mkdir(parents=True,exist_ok=True)
     DEST.write_text(page,encoding="utf-8")
-    print(f"Built {len(items)} verified update(s)")
+    queue_page=page.replace("<title>News Updates | Delta Owl Eyes</title>","<title>Recording Scripts | Delta Owl Eyes</title>").replace("<h1>Verified News Updates</h1>","<h1>Recording Scripts</h1>").replace("<p>New developments are published as separate, dated stories. Previously recorded reports remain part of the historical record.</p>","<p>Scripts awaiting recording. Once a video is published, its script leaves this queue; the published report remains in the news archive.</p>").replace(content,queue_content)
+    QUEUE.parent.mkdir(parents=True,exist_ok=True)
+    QUEUE.write_text(queue_page,encoding="utf-8")
+    print(f"Built {len(items)} verified update(s) and {len(queue_cards)} recording script(s)")
 if __name__=="__main__": main()
