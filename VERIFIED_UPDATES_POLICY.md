@@ -3,6 +3,15 @@
 ## Scope
 This policy governs proposed factual updates to the 94 Calls to Action articles and recording scripts.
 
+## Recording and news lifecycle
+- Scripts awaiting recording may appear in the editorial script queue.
+- Once Chris and Leah mark a video as published and provide its video URL, remove that script from the public-facing script queue and replace its presentation with the published video link or embed. Do not delete the underlying script: retain a dated editorial archive and Git history.
+- A published video and its historical script are immutable records of what was reported at that time; do not silently rewrite them in response to later developments.
+- New verified developments after publication must generate a **new, standalone news script**, dated and linked to the affected Call to Action and earlier coverage. Never recycle or overwrite a previously recorded script.
+- Keep evergreen Call to Action information current separately, with a dated update log. Distinguish later corrections to previous reporting from genuinely new developments.
+- Only transition a script to published status after explicit publication confirmation or verifiable published video URL. A script draft alone is not proof of publication.
+
+
 ## Automatic publication eligibility
 A revision may be published without manual editorial approval only when all conditions hold:
 - The change is a narrow factual correction or dated status update, not a new allegation, opinion, quotation, or substantive reinterpretation.
