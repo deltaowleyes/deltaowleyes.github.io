@@ -10,3 +10,15 @@ html body .doe-header .doe-links a{display:inline-block!important;margin:0!impor
 html body .doe-header .doe-links a:hover,html body .doe-header .doe-links a:focus-visible{text-decoration:underline!important}
 html body .doe-tagline-bar{display:block!important;width:100%!important;min-height:0!important;height:auto!important;margin:0!important;padding:12px 16px!important;background:#d9b578!important;background-image:none!important;color:#173632!important;border:0!important;border-bottom:1px solid #b99054!important;border-radius:0!important;box-shadow:none!important;text-align:center!important;font:800 clamp(12px,1.5vw,16px)/1.4 system-ui,sans-serif!important;letter-spacing:.095em!important}
 @media(max-width:850px){html body .doe-header .doe-nav{justify-content:center!important;gap:10px!important}html body .doe-header .doe-links{justify-content:center!important}html body .doe-header .doe-links a{font-size:13px!important}}
+
+/* Compact gap between motto bar and the first page heading. */
+html body .doe-tagline-bar + main{padding-top:18px!important;margin-top:0!important}
+html body .doe-tagline-bar + main > :first-child{margin-top:0!important}
+html body .doe-tagline-bar + main > h1:first-child{margin-top:0!important}
+html body .doe-tagline-bar + main > .intro:first-child{padding-top:18px!important}
+html body .doe-tagline-bar + main > .intro:first-child .kicker:first-child{margin-top:0!important}
+html body .doe-tagline-bar + main > .intro:first-child h1{margin-top:8px!important}
+html body .doe-tagline-bar + main > .intro:first-child .eyebrow{margin-top:0!important}
+html body .doe-tagline-bar + main > p:first-child{margin-top:0!important}
+html body .doe-tagline-bar + main > p:first-child + h1{margin-top:8px!important}
+html body .doe-tagline-bar + main > .intro:first-child{margin-bottom:0!important}
