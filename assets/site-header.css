@@ -22,3 +22,8 @@ html body .doe-tagline-bar + main > .intro:first-child .eyebrow{margin-top:0!imp
 html body .doe-tagline-bar + main > p:first-child{margin-top:0!important}
 html body .doe-tagline-bar + main > p:first-child + h1{margin-top:8px!important}
 html body .doe-tagline-bar + main > .intro:first-child{margin-bottom:0!important}
+
+/* Compact informational notices and disclosures: no oversized whitespace. */
+html body main .notice,html body main .note,html body main .disclaimer,html body main .alert,html body main .callout,html body main .info-notice{margin-top:8px!important;margin-bottom:8px!important;padding-top:8px!important;padding-bottom:8px!important;line-height:1.45!important}
+html body main .notice p,html body main .note p,html body main .disclaimer p,html body main .alert p,html body main .callout p,html body main .info-notice p{margin-top:0!important;margin-bottom:0!important}
+html body main .notice p+p,html body main .note p+p,html body main .disclaimer p+p,html body main .alert p+p,html body main .callout p+p,html body main .info-notice p+p{margin-top:5px!important}
