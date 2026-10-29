@@ -1,1 +1,97 @@
-[]
+[
+  {
+    "title": "Manito Ahbee Festival",
+    "start_date": "2026-10-30",
+    "end_date": "2026-11-01",
+    "city": "Winnipeg",
+    "province": "Manitoba",
+    "category": "Powwow and cultural festival",
+    "organizer": "Manito Ahbee Festival",
+    "description": "Indigenous arts and culture festival, powwow, youth programming and marketplace. Check organizer for admission and schedules.",
+    "url": "https://www.manitoahbee.com/events/pow-wow/about",
+    "status": "verified"
+  },
+  {
+    "title": "First Nations Language Keepers Gathering",
+    "start_date": "2026-11-03",
+    "end_date": "2026-11-04",
+    "city": "Saskatoon",
+    "province": "Saskatchewan",
+    "category": "Language and education",
+    "organizer": "First Nations Language Keepers Gathering",
+    "description": "Gathering celebrating First Nations language resilience at Prairieland Park. Check organizer for participation details.",
+    "url": "https://otc.ca/events/list/?tribe-bar-date=2026-09-29",
+    "status": "verified"
+  },
+  {
+    "title": "Honouring Our Veterans Powwow",
+    "start_date": "2026-11-11",
+    "city": "Fort Frances",
+    "province": "Ontario",
+    "category": "Powwow and cultural festival",
+    "organizer": "Couchiching First Nation",
+    "description": "At Couchiching Multi-Use Building, 201 Frog Creek Road. Doors at 4 p.m., Grand Entry at 6 p.m.; all welcome according to community event notice.",
+    "url": "https://mitaanjigamiing.ca/events/",
+    "status": "verified"
+  },
+  {
+    "title": "Treaty 3 Youth Gathering",
+    "start_date": "2026-11-27",
+    "end_date": "2026-11-28",
+    "city": "Winnipeg",
+    "province": "Manitoba",
+    "category": "Youth gathering",
+    "organizer": "Grand Council Treaty #3 and Health Transformation",
+    "description": "Youth ages 15–29 at Victoria Inn Hotel & Convention Centre; attendees under 18 require a chaperone. Check organizer for registration.",
+    "url": "https://mitaanjigamiing.ca/events/",
+    "status": "verified"
+  },
+  {
+    "title": "KWAHIATONHK First Nations Book Fair",
+    "start_date": "2026-11-19",
+    "end_date": "2026-11-22",
+    "city": "Québec City",
+    "province": "Quebec",
+    "category": "Arts and literature",
+    "organizer": "KWAHIATONHK",
+    "description": "First Nations literature event. Confirm individual sessions and admission with organizers.",
+    "url": "https://cdrhpnq-fnhrdcq.ca/en/events-v2/",
+    "status": "verified"
+  },
+  {
+    "title": "Wendake Artisans and Artists Gathering",
+    "start_date": "2026-11-27",
+    "end_date": "2026-11-29",
+    "city": "Wendake",
+    "province": "Quebec",
+    "category": "Arts and crafts",
+    "organizer": "Wendake event organizers",
+    "description": "Artisans and artists gathering at Desjardins Sports Complex. Check official event details before travelling.",
+    "url": "https://cdrhpnq-fnhrdcq.ca/en/events-v2/",
+    "status": "verified"
+  },
+  {
+    "title": "Treaties Recognition Week Virtual Engagement",
+    "start_date": "2026-11-02",
+    "end_date": "2026-11-06",
+    "city": "Online",
+    "province": "Ontario",
+    "category": "Treaty education",
+    "organizer": "Robinson Huron Waawiindamaagewin",
+    "description": "Virtual treaty learning and engagement week; consult provincial event listing for registration.",
+    "url": "https://www.ontario.ca/page/treaties-recognition-week",
+    "status": "verified"
+  },
+  {
+    "title": "Treaty 13 Public Viewing",
+    "start_date": "2026-11-03",
+    "end_date": "2026-11-06",
+    "city": "Toronto",
+    "province": "Ontario",
+    "category": "Treaty education",
+    "organizer": "Office of the Lieutenant Governor of Ontario and partners",
+    "description": "Public viewing of Treaty 13 at the Lieutenant Governor’s Suite. Check official schedule and access details.",
+    "url": "https://www.ontario.ca/page/treaties-recognition-week",
+    "status": "verified"
+  }
+]
