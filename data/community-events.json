@@ -103,6 +103,17 @@
     "status": "verified"
   },
   {
+    "title": "Atii Inuit Film Festival",
+    "start_date": "2026-11-04",
+    "city": "Vancouver",
+    "province": "British Columbia",
+    "category": "Arts and literature",
+    "organizer": "Emily Carr University Aboriginal Gathering Place",
+    "description": "Third annual Inuit film festival celebrating Inuit culture, storytelling and performance. November 4, 4–7 p.m., Reliance Theatre, 520 East 1st Avenue. Free and open to everyone.",
+    "url": "https://aboriginal.ecuad.ca/events/",
+    "status": "verified"
+  },
+  {
     "title": "Dr. Lynn Gehl: Understanding Treaty Processes",
     "start_date": "2026-11-04",
     "city": "Ottawa",
@@ -155,6 +166,17 @@
     "organizer": "Regina Public Library",
     "description": "An evening with author Eden Robinson discussing the adaptation of her storytelling for screen. Regina Public Library, 2311 12th Avenue, 7–8:30 p.m.",
     "url": "https://otc.ca/events/list/?tribe-bar-date=2026-09-29",
+    "status": "verified"
+  },
+  {
+    "title": "Indigenous Tourism BC AGM and Indigenous Tourism Gathering",
+    "start_date": "2026-11-05",
+    "city": "Vancouver",
+    "province": "British Columbia",
+    "category": "Business and economic development",
+    "organizer": "Indigenous Tourism BC",
+    "description": "November 5, 8:30 a.m.–4:30 p.m., Coast Coal Harbour Vancouver Hotel, 1180 West Hastings Street. Indigenous tourism gathering and business showcase; check organizer for stakeholder registration. November 4 and 6 portions are invitation-only and are not included.",
+    "url": "https://www.indigenousbc.com/corporate/news/2026-indigenous-tourism-gathering-agenda/",
     "status": "verified"
   },
   {
@@ -222,6 +244,17 @@
     "organizer": "Lakehead University",
     "description": "11:30 a.m. at the Agora or via Zoom. Consult university for attendance details.",
     "url": "https://www.lakeheadu.ca/indigenous/events",
+    "status": "verified"
+  },
+  {
+    "title": "Kaska Voices: An Evening of Storytelling for Future Generations",
+    "start_date": "2026-11-09",
+    "city": "Whitehorse",
+    "province": "Yukon",
+    "category": "Arts and literature",
+    "organizer": "Ross River Dena Council and CPAWS Yukon",
+    "description": "November 9, 6–9 p.m. (doors 5:30 p.m.), Yukon Arts Centre. Kaska drumming, film, photography, Elders and land-stewardship conversations. Tickets $15–$30 sliding scale; children 12 and under free.",
+    "url": "https://cpawsyukon.org/events/",
     "status": "verified"
   },
   {
@@ -333,6 +366,18 @@
     "organizer": "National Restorative Justice Symposium organizers",
     "description": "Restorative justice discussions and collaboration at Saskatoon Inn and Conference Centre. Consult organizer for registration.",
     "url": "https://otc.ca/events/list/?tribe-bar-date=2026-09-29",
+    "status": "verified"
+  },
+  {
+    "title": "2026 Indigenous Disability and Wellness Gathering",
+    "start_date": "2026-11-17",
+    "end_date": "2026-11-19",
+    "city": "Sidney",
+    "province": "British Columbia",
+    "category": "Education and community",
+    "organizer": "Indigenous Disability Canada / BCANDS",
+    "description": "November 17–19 at Mary Winspear Centre, 2243 Beacon Avenue. Gathering for Indigenous and non-Indigenous leaders, service providers and community members on disability inclusion. Confirm registration and admission with organizer.",
+    "url": "https://www.neilsquire.ca/event/2026-indigenous-disability-and-wellness-gathering/",
     "status": "verified"
   },
   {
