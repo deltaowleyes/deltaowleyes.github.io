@@ -1,12 +1,36 @@
-name: Analytics consent coverage audit (manual)
+name: Ensure privacy-first analytics on all HTML pages
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ensure-analytics.yml'
+      - 'scripts/ensure-analytics.py'
+      - '**/*.html'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: doe-analytics-sitewide
+  cancel-in-progress: false
 jobs:
-  audit:
+  enforce:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check that consent assets exist and all HTML pages reference them
+        with:
+          persist-credentials: true
+      - name: Check consent assets and apply missing references
+        run: python3 scripts/ensure-analytics.py
+      - name: Verify idempotence and complete HTML coverage
         run: python3 scripts/ensure-analytics.py --check
+      - name: Commit only changed HTML pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html'
+          if ! git diff --cached --quiet; then
+            git commit -m "Ensure consent-gated analytics on all HTML pages"
+            git pull --rebase origin main
+            git push
+          fi
