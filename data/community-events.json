@@ -59,6 +59,18 @@
     "status": "verified"
   },
   {
+    "title": "Long Plain First Nation Veterans Day Pow Wow 2026",
+    "start_date": "2026-11-07",
+    "end_date": "2026-11-08",
+    "city": "Portage la Prairie",
+    "province": "Manitoba",
+    "category": "Powwow and cultural festival",
+    "organizer": "Long Plain First Nation",
+    "description": "Veterans Day powwow at Keesh Conference and Gaming Centre. Confirm visitor details with event organizers.",
+    "url": "https://calendar.powwows.com/events/categories/pow-wows-in-manitoba/",
+    "status": "verified"
+  },
+  {
     "title": "Honouring Our Veterans Powwow",
     "start_date": "2026-11-11",
     "city": "Fort Frances",
@@ -164,6 +176,41 @@
     "status": "verified"
   },
   {
+    "title": "First Nations and Inuit Mobile Services — Kahnawake",
+    "start_date": "2026-11-28",
+    "city": "Kahnawake",
+    "province": "Quebec",
+    "category": "Education and community",
+    "organizer": "First Nations Human Resources Development Commission of Quebec",
+    "description": "Scheduled mobile services visit in Kahnawake. Consult the organizer for service eligibility, exact location and appointment details.",
+    "url": "https://cdrhpnq-fnhrdcq.ca/en/events-v2/",
+    "status": "verified"
+  },
+  {
+    "title": "First Nations Energy Summit 2026",
+    "start_date": "2026-11-30",
+    "end_date": "2026-12-01",
+    "city": "Vancouver",
+    "province": "British Columbia",
+    "category": "Business and economic development",
+    "organizer": "Clean Energy Association of British Columbia",
+    "description": "First Nations leadership and clean energy conference at The Westin Bayshore, with panels, workshops and networking. Registration required; consult organizer for eligibility and travel support.",
+    "url": "https://cleanenergybc.org/event/first-nations-energy-summit-2026/",
+    "status": "verified"
+  },
+  {
+    "title": "A’PI 2026 — AKIMA Conference, MAMU Fair and Regional Forum",
+    "start_date": "2026-12-01",
+    "end_date": "2026-12-03",
+    "city": "Montreal",
+    "province": "Quebec",
+    "category": "Business and economic development",
+    "organizer": "First Nations Human Resources Development Commission of Quebec",
+    "description": "Employment, training and skills development gathering at Le Centre Sheraton Montreal Hotel. Consult organizer for registration and access details.",
+    "url": "https://cdrhpnq-fnhrdcq.ca/en/events-v2/",
+    "status": "verified"
+  },
+  {
     "title": "Indigenous Christmas Market at Musée des Abénakis",
     "start_date": "2026-12-05",
     "end_date": "2026-12-06",
@@ -173,6 +220,18 @@
     "organizer": "Musée des Abénakis",
     "description": "Indigenous Christmas market listed in the First Nations and Inuit events calendar. Confirm hours with the museum before visiting.",
     "url": "https://cdrhpnq-fnhrdcq.ca/en/events-v2/",
+    "status": "verified"
+  },
+  {
+    "title": "Prairie Unity Competition Pow Wow 2026",
+    "start_date": "2026-12-18",
+    "end_date": "2026-12-20",
+    "city": "Portage la Prairie",
+    "province": "Manitoba",
+    "category": "Powwow and cultural festival",
+    "organizer": "Prairie Unity Pow Wow organizers",
+    "description": "Competition powwow at Stride Place, with free admission listed by the event calendar. Confirm the schedule and visitor details before attending.",
+    "url": "https://calendar.powwows.com/events/categories/pow-wows-in-manitoba/",
     "status": "verified"
   }
 ]
