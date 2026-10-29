@@ -12,6 +12,18 @@
     "status": "verified"
   },
   {
+    "title": "Treaties Recognition Week Virtual Engagement",
+    "start_date": "2026-11-02",
+    "end_date": "2026-11-06",
+    "city": "Online",
+    "province": "Ontario",
+    "category": "Treaty education",
+    "organizer": "Robinson Huron Waawiindamaagewin",
+    "description": "Virtual treaty learning and engagement week; consult provincial event listing for registration.",
+    "url": "https://www.ontario.ca/page/treaties-recognition-week",
+    "status": "verified"
+  },
+  {
     "title": "First Nations Language Keepers Gathering",
     "start_date": "2026-11-03",
     "end_date": "2026-11-04",
@@ -20,6 +32,29 @@
     "category": "Language and education",
     "organizer": "First Nations Language Keepers Gathering",
     "description": "Gathering celebrating First Nations language resilience at Prairieland Park. Check organizer for participation details.",
+    "url": "https://otc.ca/event/first-nations-language-keepers-gathering/",
+    "status": "verified"
+  },
+  {
+    "title": "Treaty 13 Public Viewing",
+    "start_date": "2026-11-03",
+    "end_date": "2026-11-06",
+    "city": "Toronto",
+    "province": "Ontario",
+    "category": "Treaty education",
+    "organizer": "Office of the Lieutenant Governor of Ontario with Mississaugas of the Credit First Nation, Archives of Ontario and Library and Archives Canada",
+    "description": "Public viewing of Treaty 13 at the Lieutenant Governor’s Suite. Check official schedule and access details.",
+    "url": "https://www.ontario.ca/page/treaties-recognition-week",
+    "status": "verified"
+  },
+  {
+    "title": "Eden Robinson: From Storytelling to Screen",
+    "start_date": "2026-11-05",
+    "city": "Regina",
+    "province": "Saskatchewan",
+    "category": "Arts and literature",
+    "organizer": "Regina Public Library",
+    "description": "An evening with author Eden Robinson discussing the adaptation of her storytelling for screen. Regina Public Library, 2311 12th Avenue, 7–8:30 p.m.",
     "url": "https://otc.ca/events/list/?tribe-bar-date=2026-09-29",
     "status": "verified"
   },
@@ -35,15 +70,15 @@
     "status": "verified"
   },
   {
-    "title": "Treaty 3 Youth Gathering",
-    "start_date": "2026-11-27",
-    "end_date": "2026-11-28",
-    "city": "Winnipeg",
-    "province": "Manitoba",
-    "category": "Youth gathering",
-    "organizer": "Grand Council Treaty #3 and Health Transformation",
-    "description": "Youth ages 15–29 at Victoria Inn Hotel & Convention Centre; attendees under 18 require a chaperone. Check organizer for registration.",
-    "url": "https://mitaanjigamiing.ca/events/",
+    "title": "National Restorative Justice Symposium",
+    "start_date": "2026-11-16",
+    "end_date": "2026-11-17",
+    "city": "Saskatoon",
+    "province": "Saskatchewan",
+    "category": "Education and community",
+    "organizer": "National Restorative Justice Symposium organizers",
+    "description": "Restorative justice discussions and collaboration at Saskatoon Inn and Conference Centre. Consult organizer for registration.",
+    "url": "https://otc.ca/events/list/?tribe-bar-date=2026-09-29",
     "status": "verified"
   },
   {
@@ -59,6 +94,40 @@
     "status": "verified"
   },
   {
+    "title": "29th Annual Winter Family Gathering Traditional Pow Wow",
+    "start_date": "2026-11-21",
+    "city": "Lake Country",
+    "province": "British Columbia",
+    "category": "Powwow and cultural festival",
+    "organizer": "Lake Country Native Association",
+    "description": "Traditional powwow at Winfield Memorial Hall, 10130 Bottom Wood Lake Road. Grand Entry at 1 p.m.; arts and crafts vendors and traditional dinner. Check organizer for admission and details.",
+    "url": "https://www.lakecountry.bc.ca/our-community/events-calendar/29th-annual-winter-family-gathering-traditional-pow-wow",
+    "status": "verified"
+  },
+  {
+    "title": "Talk Treaty to Me — Author Dialogue",
+    "start_date": "2026-11-24",
+    "city": "Toronto",
+    "province": "Ontario",
+    "category": "Treaty education",
+    "organizer": "Archives of Ontario",
+    "description": "Free public dialogue and Q&A with Crystal Gail Fraser and Sara Komarnisky; RSVP required by November 14. Treaty 9 displayed.",
+    "url": "https://www.ontario.ca/page/treaties-recognition-week",
+    "status": "verified"
+  },
+  {
+    "title": "Treaty 3 Youth Gathering",
+    "start_date": "2026-11-27",
+    "end_date": "2026-11-28",
+    "city": "Winnipeg",
+    "province": "Manitoba",
+    "category": "Youth gathering",
+    "organizer": "Grand Council Treaty #3 and Health Transformation",
+    "description": "Youth ages 15–29 at Victoria Inn Hotel & Convention Centre; attendees under 18 require a chaperone. Check organizer for registration.",
+    "url": "https://mitaanjigamiing.ca/events/",
+    "status": "verified"
+  },
+  {
     "title": "Wendake Artisans and Artists Gathering",
     "start_date": "2026-11-27",
     "end_date": "2026-11-29",
@@ -68,30 +137,6 @@
     "organizer": "Wendake event organizers",
     "description": "Artisans and artists gathering at Desjardins Sports Complex. Check official event details before travelling.",
     "url": "https://cdrhpnq-fnhrdcq.ca/en/events-v2/",
-    "status": "verified"
-  },
-  {
-    "title": "Treaties Recognition Week Virtual Engagement",
-    "start_date": "2026-11-02",
-    "end_date": "2026-11-06",
-    "city": "Online",
-    "province": "Ontario",
-    "category": "Treaty education",
-    "organizer": "Robinson Huron Waawiindamaagewin",
-    "description": "Virtual treaty learning and engagement week; consult provincial event listing for registration.",
-    "url": "https://www.ontario.ca/page/treaties-recognition-week",
-    "status": "verified"
-  },
-  {
-    "title": "Treaty 13 Public Viewing",
-    "start_date": "2026-11-03",
-    "end_date": "2026-11-06",
-    "city": "Toronto",
-    "province": "Ontario",
-    "category": "Treaty education",
-    "organizer": "Office of the Lieutenant Governor of Ontario and partners",
-    "description": "Public viewing of Treaty 13 at the Lieutenant Governor’s Suite. Check official schedule and access details.",
-    "url": "https://www.ontario.ca/page/treaties-recognition-week",
     "status": "verified"
   }
 ]
