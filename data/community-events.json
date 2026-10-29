@@ -69,6 +69,17 @@
     "status": "verified"
   },
   {
+    "title": "MASRC Strong Spirits, Strong Bodies: Indigenous Boxing Program",
+    "start_date": "2026-11-03",
+    "city": "Winnipeg",
+    "province": "Manitoba",
+    "category": "Sports and wellness",
+    "organizer": "Manitoba Aboriginal Sports and Recreation Council",
+    "description": "Indigenous boxing program listed on the organizer's November events calendar. Confirm age eligibility, location and registration with MASRC.",
+    "url": "https://www.masrc.com/events",
+    "status": "verified"
+  },
+  {
     "title": "Powwow Life-Drawing",
     "start_date": "2026-11-03",
     "city": "Ottawa",
@@ -214,6 +225,17 @@
     "status": "verified"
   },
   {
+    "title": "Remembrance Day Service for Indigenous Veterans",
+    "start_date": "2026-11-09",
+    "city": "Regina",
+    "province": "Saskatchewan",
+    "category": "Community commemoration",
+    "organizer": "First Nations University of Canada",
+    "description": "Service at Veterans Memorial Tipi on Regina campus. Organizer lists 8 a.m.–4 p.m.; detailed agenda to be announced.",
+    "url": "https://www.fnuniv.ca/events/remembrance-day-service-for-indigenous-veterans/",
+    "status": "verified"
+  },
+  {
     "title": "Walpole Council Meeting",
     "start_date": "2026-11-10",
     "city": "Walpole Island",
@@ -314,6 +336,17 @@
     "status": "verified"
   },
   {
+    "title": "Talk Treaty to Me: Regional Conversations on Land and Treaties — Calgary",
+    "start_date": "2026-11-17",
+    "city": "Calgary",
+    "province": "Alberta",
+    "category": "Treaty education",
+    "organizer": "University of Alberta",
+    "description": "Treaty 7-focused public discussion, 5:30–8 p.m., Burnswest Theatre at The Confluence, 750 9 Avenue SE. Ticket $20; registration closes at capacity.",
+    "url": "https://www.ualberta.ca/en/events/alumni/talk-treaty-to-me-regional-conversations-on-land-and-treaties-calgary.html",
+    "status": "verified"
+  },
+  {
     "title": "National Gathering for Indigenous Education",
     "start_date": "2026-11-18",
     "end_date": "2026-11-20",
@@ -372,6 +405,17 @@
     "status": "verified"
   },
   {
+    "title": "Driving While Indigenous Motivational Event & Gala",
+    "start_date": "2026-11-20",
+    "city": "Winnipeg",
+    "province": "Manitoba",
+    "category": "Education and community",
+    "organizer": "Driving While Indigenous",
+    "description": "Motivational event and gala at Victoria Inn Hotel and Convention Centre. Ticketed; check organizer for admission and schedule.",
+    "url": "https://www.drivingwhileindigenous.com/",
+    "status": "verified"
+  },
+  {
     "title": "29th Annual Winter Family Gathering Traditional Pow Wow",
     "start_date": "2026-11-21",
     "city": "Lake Country",
@@ -380,6 +424,17 @@
     "organizer": "Lake Country Native Association",
     "description": "Traditional powwow at Winfield Memorial Hall, 10130 Bottom Wood Lake Road. Grand Entry at 1 p.m.; arts and crafts vendors and traditional dinner. Check organizer for admission and details.",
     "url": "https://www.lakecountry.bc.ca/our-community/events-calendar/29th-annual-winter-family-gathering-traditional-pow-wow",
+    "status": "verified"
+  },
+  {
+    "title": "MASRC Annual General Meeting",
+    "start_date": "2026-11-21",
+    "city": "Winnipeg",
+    "province": "Manitoba",
+    "category": "Community governance",
+    "organizer": "Manitoba Aboriginal Sports and Recreation Council",
+    "description": "Annual general meeting; consult organizer for venue and attendance eligibility.",
+    "url": "https://www.masrc.com/events",
     "status": "verified"
   },
   {
@@ -464,6 +519,17 @@
     "status": "verified"
   },
   {
+    "title": "Building Your Artist Bundle: Asemaa",
+    "start_date": "2026-11-28",
+    "city": "Winnipeg",
+    "province": "Manitoba",
+    "category": "Arts and crafts",
+    "organizer": "Creative Manitoba",
+    "description": "Indigenous artists' funding and grant-writing workshop, 1–3:30 p.m., 148 King Street, second floor Unit C. Registration and possible fee apply.",
+    "url": "https://creativemanitoba.ca/events/category/classes-workshops/indigenous-programs/list/",
+    "status": "verified"
+  },
+  {
     "title": "First Nations and Inuit Mobile Services — Kahnawake",
     "start_date": "2026-11-28",
     "city": "Kahnawake",
@@ -511,6 +577,18 @@
     "status": "verified"
   },
   {
+    "title": "5th Annual Pitaw Mino Muskiki Winter Market",
+    "start_date": "2026-12-04",
+    "end_date": "2026-12-06",
+    "city": "Winnipeg",
+    "province": "Manitoba",
+    "category": "Arts and crafts",
+    "organizer": "Pitâw Mīno Muskîkî",
+    "description": "Indigenous makers and artists winter market at VIA Rail Union Station, 123 Main Street. Check organizer for opening hours.",
+    "url": "https://www.pitawminomuskiki.ca/pages/events",
+    "status": "verified"
+  },
+  {
     "title": "Indigenous Christmas Market at Musée des Abénakis",
     "start_date": "2026-12-05",
     "end_date": "2026-12-06",
@@ -543,6 +621,17 @@
     "organizer": "First Nations Human Resources Development Commission of Quebec",
     "description": "Scheduled January mobile services visit; verify service eligibility and location.",
     "url": "https://cdrhpnq-fnhrdcq.ca/en/events-v2/",
+    "status": "verified"
+  },
+  {
+    "title": "Building Your Artist Bundle: Wiinggashk",
+    "start_date": "2027-01-23",
+    "city": "Winnipeg",
+    "province": "Manitoba",
+    "category": "Arts and crafts",
+    "organizer": "Creative Manitoba",
+    "description": "Second Indigenous artists' grant-writing workshop, 1–3:30 p.m. at 148 King Street. Registration required.",
+    "url": "https://creativemanitoba.ca/events/category/classes-workshops/indigenous-programs/list/",
     "status": "verified"
   },
   {
