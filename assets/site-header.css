@@ -76,3 +76,11 @@ html body main .notice p+p,html body main .note p+p,html body main .disclaimer p
     outline-offset:-2px!important;
   }
 }
+
+/* Mobile override: supersedes the earlier horizontal-scroll rules above. */
+@media (max-width:760px) {
+ html body .doe-header .doe-nav {flex-direction:column!important;align-items:stretch!important;min-width:0!important;}
+ html body .doe-header .doe-links {display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;flex-wrap:wrap!important;overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important;width:100%!important;max-width:100%!important;gap:7px!important;padding:6px 0!important;}
+ html body .doe-header .doe-links a {display:flex!important;flex:initial!important;align-items:center!important;justify-content:center!important;min-width:0!important;white-space:normal!important;overflow-wrap:anywhere!important;text-align:center!important;padding:9px 5px!important;border:1px solid #d7e5df!important;border-radius:5px!important;font-size:13px!important;}
+}
+@media (max-width:340px) {html body .doe-header .doe-links {grid-template-columns:minmax(0,1fr)!important;}}
