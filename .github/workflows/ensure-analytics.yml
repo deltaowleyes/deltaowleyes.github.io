@@ -1,29 +1,14 @@
-name: Ensure privacy-first analytics on all HTML pages
+# Paused: the original workflow referenced scripts/ensure-analytics.py,
+# which is not present in this repository. Do not automatically run on
+# every site edit until the consent-aware implementation is restored.
+name: Analytics maintenance (paused)
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 permissions:
-  contents: write
-concurrency:
-  group: doe-analytics-sitewide
-  cancel-in-progress: false
+  contents: read
 jobs:
-  enforce:
-    if: github.actor != 'github-actions[bot]'
+  explain:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: true
-      - name: Add consent controls to every HTML page
-        run: python3 scripts/ensure-analytics.py
-      - name: Commit changes when needed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- '*.html'
-          if ! git diff --cached --quiet; then
-            git commit -m "Ensure consent-gated analytics on all HTML pages"
-            git push
-          fi
+      - name: Explain paused maintenance
+        run: echo "Automatic analytics enforcement is paused because scripts/ensure-analytics.py is missing. Existing website analytics files are unchanged."
