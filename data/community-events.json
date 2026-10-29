@@ -82,6 +82,18 @@
     "status": "verified"
   },
   {
+    "title": "National Gathering for Indigenous Education",
+    "start_date": "2026-11-18",
+    "end_date": "2026-11-20",
+    "city": "Winnipeg",
+    "province": "Manitoba",
+    "category": "Language and education",
+    "organizer": "Indspire",
+    "description": "Three days of learning, connection and inspiration at RBC Convention Centre, 375 York Avenue. Registration details are on the organizer's website.",
+    "url": "https://indspire.ca/events/national-gathering/",
+    "status": "verified"
+  },
+  {
     "title": "KWAHIATONHK First Nations Book Fair",
     "start_date": "2026-11-19",
     "end_date": "2026-11-22",
@@ -116,6 +128,18 @@
     "status": "verified"
   },
   {
+    "title": "Indigenous Ag Summit 2026",
+    "start_date": "2026-11-26",
+    "end_date": "2026-11-27",
+    "city": "Regina",
+    "province": "Saskatchewan",
+    "category": "Business and economic development",
+    "organizer": "National Circle for Indigenous Agriculture and Food",
+    "description": "Indigenous agriculture gathering at Queensbury Centre, featuring breakout sessions on livestock, crops and business.",
+    "url": "https://nciaf.ca/events",
+    "status": "verified"
+  },
+  {
     "title": "Treaty 3 Youth Gathering",
     "start_date": "2026-11-27",
     "end_date": "2026-11-28",
@@ -137,6 +161,30 @@
     "organizer": "Wendake event organizers",
     "description": "Artisans and artists gathering at Desjardins Sports Complex. Check official event details before travelling.",
     "url": "https://cdrhpnq-fnhrdcq.ca/en/events-v2/",
+    "status": "verified"
+  },
+  {
+    "title": "Indigenous Christmas Market at Musée des Abénakis",
+    "start_date": "2026-12-05",
+    "end_date": "2026-12-06",
+    "city": "Odanak",
+    "province": "Quebec",
+    "category": "Arts and crafts",
+    "organizer": "Musée des Abénakis",
+    "description": "Indigenous Christmas market listed in the First Nations and Inuit events calendar. Confirm hours with the museum before visiting.",
+    "url": "https://cdrhpnq-fnhrdcq.ca/en/events-v2/",
+    "status": "verified"
+  },
+  {
+    "title": "AFN Special Chiefs Assembly 2026",
+    "start_date": "2026-12-08",
+    "end_date": "2026-12-10",
+    "city": "Ottawa",
+    "province": "Ontario",
+    "category": "Governance and community",
+    "organizer": "Assembly of First Nations",
+    "description": "Special Chiefs Assembly at Rogers Centre Ottawa. Check organizer for delegate access and participation requirements.",
+    "url": "https://www.afn.ca/",
     "status": "verified"
   }
 ]
