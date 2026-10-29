@@ -6,7 +6,7 @@ import re
 from urllib.parse import urlsplit, parse_qsl, urlencode, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-ATTR = re.compile(r'(?P<prefix>\\b(?:href|src)\\s*=\\s*)(?P<quote>["\\\'])(?P<url>[^"\\\']+)(?P=quote)', re.I)
+ATTR = re.compile(r'(?P<prefix>\b(?:href|src)\s*=\s*)(?P<quote>["\x27])(?P<url>[^"\x27]+)(?P=quote)', re.I)
 CHANGED = []
 
 def rewrite(match):
