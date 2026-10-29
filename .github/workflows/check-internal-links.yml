@@ -5,6 +5,7 @@ on:
       - '**/*.html'
       - 'assets/**'
       - 'scripts/check_internal_links.py'
+      - 'scripts/test_internal_links.py'
       - '.github/workflows/check-internal-links.yml'
   pull_request:
   workflow_dispatch:
@@ -17,5 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Test link checker
+        run: python3 scripts/test_internal_links.py
       - name: Check local files and anchors
         run: python3 scripts/check_internal_links.py
