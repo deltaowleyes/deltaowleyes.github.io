@@ -346,6 +346,17 @@
     "status": "verified"
   },
   {
+    "title": "2026 NWT Handmade Holiday Market",
+    "start_date": "2026-11-14",
+    "city": "Yellowknife",
+    "province": "Northwest Territories",
+    "category": "Arts and crafts",
+    "organizer": "Government of Northwest Territories NWT Arts Program",
+    "description": "10 a.m.–4 p.m. at Explorer Hotel and Chateau Nova Hotel. Market featuring authentic artwork by NWT artists. Vendor applications restricted to eligible NWT Arts Program participants; confirm visitor access with organizers.",
+    "url": "https://surveys.fin.gov.nt.ca/SE/?st=kUTlxyts0y2TgiO6Y0AXVhVBp9iA5qEHI6bc2t9iHbg%3D",
+    "status": "verified"
+  },
+  {
     "title": "Indigenous Art Market & Cultural Celebration",
     "start_date": "2026-11-14",
     "city": "Stratford",
@@ -354,6 +365,17 @@
     "organizer": "Stratford Perth Museum",
     "description": "10 a.m.–4 p.m. at Stratford Perth Museum, 4275 Huron Road. Check organizer for visitor details.",
     "url": "https://visitstratford.ca/acknowledging-the-roots-of-our-community/",
+    "status": "verified"
+  },
+  {
+    "title": "Arctic Indigenous Business Awards",
+    "start_date": "2026-11-15",
+    "city": "Whitehorse",
+    "province": "Yukon",
+    "category": "Business and economic development",
+    "organizer": "Yukon First Nation Chamber of Commerce",
+    "description": "6–10 p.m. at Sternwheeler Hotel & Conference Centre. Ticketed awards celebrating Indigenous businesses across Yukon, Northwest Territories and Nunavut; registration required.",
+    "url": "https://www.yfncc.ca/events/aiba",
     "status": "verified"
   },
   {
@@ -366,6 +388,18 @@
     "organizer": "National Restorative Justice Symposium organizers",
     "description": "Restorative justice discussions and collaboration at Saskatoon Inn and Conference Centre. Consult organizer for registration.",
     "url": "https://otc.ca/events/list/?tribe-bar-date=2026-09-29",
+    "status": "verified"
+  },
+  {
+    "title": "Ulnooweg's 40th Anniversary Awards Show",
+    "start_date": "2026-11-16",
+    "end_date": "2026-11-17",
+    "city": "Halifax",
+    "province": "Nova Scotia",
+    "category": "Business and economic development",
+    "organizer": "Ulnooweg",
+    "description": "Two-day celebration of Indigenous entrepreneurs, educators, Elders, youth and community leaders at Halifax Convention Centre. Consult organizer for tickets and public admission.",
+    "url": "https://www.halifaxconventioncentre.com/events/232877",
     "status": "verified"
   },
   {
@@ -677,6 +711,29 @@
     "organizer": "Creative Manitoba",
     "description": "Second Indigenous artists' grant-writing workshop, 1–3:30 p.m. at 148 King Street. Registration required.",
     "url": "https://creativemanitoba.ca/events/category/classes-workshops/indigenous-programs/list/",
+    "status": "verified"
+  },
+  {
+    "title": "Yukon First Nation Night",
+    "start_date": "2027-01-24",
+    "city": "Vancouver",
+    "province": "British Columbia",
+    "category": "Business and economic development",
+    "organizer": "Yukon First Nation Chamber of Commerce",
+    "description": "Yukon First Nation showcase at AME Roundup, Fairmont Waterfront Mackenzie Ballroom. Contact organizer for attendance and registration.",
+    "url": "https://www.yfncc.ca/events",
+    "status": "verified"
+  },
+  {
+    "title": "2027 AFN Education Forum: Our Knowledge, Our Future",
+    "start_date": "2027-02-10",
+    "end_date": "2027-02-11",
+    "city": "Halifax",
+    "province": "Nova Scotia",
+    "category": "Language and education",
+    "organizer": "Assembly of First Nations",
+    "description": "First Nations education forum at Halifax Convention Centre for leadership, educators and administrators. Registration required; check eligibility and availability.",
+    "url": "https://afn.ca/events/",
     "status": "verified"
   },
   {
