@@ -213,6 +213,18 @@
     "status": "verified"
   },
   {
+    "title": "2 Spirit Retreat",
+    "start_date": "2026-11-06",
+    "end_date": "2026-11-08",
+    "city": "Charlottetown",
+    "province": "Prince Edward Island",
+    "category": "Community and cultural gathering",
+    "organizer": "PEERS Alliance and Native Council of Prince Edward Island",
+    "description": "Cultural and arts-based retreat for Two-Spirit and Indigiqueer people living in PEI. Priority for local Two-Spirit/Indigiqueer participants; Indigenous allies may apply. Registration required. Contact organizer for retreat venue; the listed PEERS Alliance address is its office, not necessarily the retreat venue.",
+    "url": "https://www.peersalliance.ca/events/2-spirit-retreat",
+    "status": "verified"
+  },
+  {
     "title": "Hockey Goalie & Shooting Clinic",
     "start_date": "2026-11-06",
     "city": "Six Nations",
@@ -712,6 +724,17 @@
     "organizer": "Musée des Abénakis",
     "description": "Indigenous Christmas market listed in the First Nations and Inuit events calendar. Confirm hours with the museum before visiting.",
     "url": "https://cdrhpnq-fnhrdcq.ca/en/events-v2/",
+    "status": "verified"
+  },
+  {
+    "title": "Christmas Taquaq Food Hamper Gathering",
+    "start_date": "2026-12-16",
+    "city": "Iqaluit",
+    "province": "Nunavut",
+    "category": "Community and cultural gathering",
+    "organizer": "Ilitaqsiniq",
+    "description": "Community food hamper pickup at Aqsarniit Hotel on December 16 at 2 p.m.; taxi vouchers available. Open to all Nunavummiut. Contact qikiqtani.programs@ilitaqsiniq.ca for details.",
+    "url": "https://ilitaqsiniq.ca/event/christmas-taquaq/",
     "status": "verified"
   },
   {
