@@ -12,6 +12,17 @@
     "status": "verified"
   },
   {
+    "title": "Treaty Recognition Celebration Dinner",
+    "start_date": "2026-11-01",
+    "city": "Walpole Island",
+    "province": "Ontario",
+    "category": "Treaty education",
+    "organizer": "Walpole Island First Nation",
+    "description": "6–8 p.m. at Walpole Island Arena Hall. Confirm participation details with the organizer.",
+    "url": "https://www.walpoleislandfirstnation.ca/events",
+    "status": "verified"
+  },
+  {
     "title": "Treaties Recognition Week Virtual Engagement",
     "start_date": "2026-11-02",
     "end_date": "2026-11-06",
@@ -59,6 +70,28 @@
     "status": "verified"
   },
   {
+    "title": "Intergenerational Trauma, Residential School, and Reconciliation",
+    "start_date": "2026-11-05",
+    "city": "Online",
+    "province": "Ontario",
+    "category": "Education and community",
+    "organizer": "Indigenous Sport & Wellness Ontario",
+    "description": "Virtual Standing Bear: Making Tracks conversation with Elder Lila Bruyere. Consult organizer for access details.",
+    "url": "https://www.iswo.ca/event-directory",
+    "status": "verified"
+  },
+  {
+    "title": "Treaty Presentation",
+    "start_date": "2026-11-05",
+    "city": "Walpole Island",
+    "province": "Ontario",
+    "category": "Treaty education",
+    "organizer": "Walpole Island First Nation",
+    "description": "6:30–7:30 p.m. at Walpole Island Arena Hall.",
+    "url": "https://www.walpoleislandfirstnation.ca/events",
+    "status": "verified"
+  },
+  {
     "title": "Long Plain First Nation Veterans Day Pow Wow 2026",
     "start_date": "2026-11-07",
     "end_date": "2026-11-08",
@@ -79,6 +112,61 @@
     "organizer": "Couchiching First Nation",
     "description": "At Couchiching Multi-Use Building, 201 Frog Creek Road. Doors at 4 p.m., Grand Entry at 6 p.m.; all welcome according to community event notice.",
     "url": "https://mitaanjigamiing.ca/events/",
+    "status": "verified"
+  },
+  {
+    "title": "Making Tracks: Indigenous Astronomy",
+    "start_date": "2026-11-11",
+    "city": "Online",
+    "province": "Ontario",
+    "category": "Education and community",
+    "organizer": "Indigenous Sport & Wellness Ontario",
+    "description": "Virtual Indigenous Astronomy session with Samantha Doxtator. Consult organizer for registration.",
+    "url": "https://www.iswo.ca/event-directory",
+    "status": "verified"
+  },
+  {
+    "title": "Mkwenmaanaanig Giizhgad (Remembrance Day Ceremony)",
+    "start_date": "2026-11-11",
+    "city": "Walpole Island",
+    "province": "Ontario",
+    "category": "Community commemoration",
+    "organizer": "Walpole Island First Nation",
+    "description": "10–11 a.m. Walk from Bkejwanong Children's Centre to the Veterans Monument to honour veterans.",
+    "url": "https://www.walpoleislandfirstnation.ca/events",
+    "status": "verified"
+  },
+  {
+    "title": "Bkejwanong KWEWAG Engagement",
+    "start_date": "2026-11-12",
+    "city": "Walpole Island",
+    "province": "Ontario",
+    "category": "Community engagement",
+    "organizer": "Walpole Island First Nation",
+    "description": "5:30–8:30 p.m. at Walpole Arena Back Hall. Engagement for Bkejwanong women of all ages on the Water Declaration; dinner included.",
+    "url": "https://www.walpoleislandfirstnation.ca/events",
+    "status": "verified"
+  },
+  {
+    "title": "Making Tracks: Land Back & Peaceful Activism",
+    "start_date": "2026-11-12",
+    "city": "Online",
+    "province": "Ontario",
+    "category": "Education and community",
+    "organizer": "Indigenous Sport & Wellness Ontario",
+    "description": "Virtual session led by Bangishimo through the Standing Bear: Making Tracks series.",
+    "url": "https://www.iswo.ca/event-directory",
+    "status": "verified"
+  },
+  {
+    "title": "Indigenous Art Market & Cultural Celebration",
+    "start_date": "2026-11-14",
+    "city": "Stratford",
+    "province": "Ontario",
+    "category": "Arts and crafts",
+    "organizer": "Stratford Perth Museum",
+    "description": "10 a.m.–4 p.m. at Stratford Perth Museum, 4275 Huron Road. Check organizer for visitor details.",
+    "url": "https://visitstratford.ca/acknowledging-the-roots-of-our-community/",
     "status": "verified"
   },
   {
@@ -103,6 +191,18 @@
     "organizer": "Indspire",
     "description": "Three days of learning, connection and inspiration at RBC Convention Centre, 375 York Avenue. Registration details are on the organizer's website.",
     "url": "https://indspire.ca/events/national-gathering/",
+    "status": "verified"
+  },
+  {
+    "title": "Indigenous Business Showcase",
+    "start_date": "2026-11-19",
+    "end_date": "2026-11-20",
+    "city": "London",
+    "province": "Ontario",
+    "category": "Business and economic development",
+    "organizer": "Indigenous Business Showcase organizers",
+    "description": "November 19–20 at Four Points by Sheraton, 1150 Wellington Road. Event shared by Walpole Island First Nation for local entrepreneurs.",
+    "url": "https://www.walpoleislandfirstnation.ca/events",
     "status": "verified"
   },
   {
@@ -232,6 +332,18 @@
     "organizer": "Prairie Unity Pow Wow organizers",
     "description": "Competition powwow at Stride Place, with free admission listed by the event calendar. Confirm the schedule and visitor details before attending.",
     "url": "https://calendar.powwows.com/events/categories/pow-wows-in-manitoba/",
+    "status": "verified"
+  },
+  {
+    "title": "21st Annual Gathering at the Rapids Pow Wow",
+    "start_date": "2027-02-13",
+    "end_date": "2027-02-14",
+    "city": "Sault Ste. Marie",
+    "province": "Ontario",
+    "category": "Powwow and cultural festival",
+    "organizer": "Algoma University",
+    "description": "February 13–14, 2027 at GFL Memorial Gardens; organized with Anishinaabe Initiatives and community partners.",
+    "url": "https://algomau.ca/special-mission/pow-wow/",
     "status": "verified"
   }
 ]
