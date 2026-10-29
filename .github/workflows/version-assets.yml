@@ -1,0 +1,34 @@
+name: Version CSS and JavaScript assets
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - '**/*.css'
+      - '**/*.js'
+      - 'scripts/version-assets.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: doe-version-assets
+  cancel-in-progress: false
+jobs:
+  version-assets:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Update asset URLs when file contents change
+        run: python3 scripts/version-assets.py
+      - name: Commit versioned references
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html'
+          if ! git diff --cached --quiet; then
+            git commit -m "Automatically refresh CSS and JS asset versions"
+            git push
+          fi
