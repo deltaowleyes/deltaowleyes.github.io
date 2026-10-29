@@ -55,7 +55,7 @@ def check(root):
         parsed[page.resolve()] = p
     errors = []
     checked = 0
-    for page, document in parsed.items():
+    for page, document in list(parsed.items()):
         for tag, attr, raw, line in document.links:
             if raw.startswith(("#", "/", ".")) or not urlsplit(raw).scheme and not raw.startswith("//"):
                 if "{{" in raw or "{%" in raw:
