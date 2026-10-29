@@ -1,14 +1,12 @@
-# Paused: the original workflow referenced scripts/ensure-analytics.py,
-# which is not present in this repository. Do not automatically run on
-# every site edit until the consent-aware implementation is restored.
-name: Analytics maintenance (paused)
+name: Analytics consent coverage audit (manual)
 on:
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
-  explain:
+  audit:
     runs-on: ubuntu-latest
     steps:
-      - name: Explain paused maintenance
-        run: echo "Automatic analytics enforcement is paused because scripts/ensure-analytics.py is missing. Existing website analytics files are unchanged."
+      - uses: actions/checkout@v4
+      - name: Check that consent assets exist and all HTML pages reference them
+        run: python3 scripts/ensure-analytics.py --check
