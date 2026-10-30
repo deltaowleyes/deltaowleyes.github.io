@@ -5,6 +5,7 @@ on:
       - 'indigenous-businesses/**'
       - 'indigenous-churches/**'
       - 'admin/**'
+      - 'scripts/test_admin_auth.mjs'
       - 'scripts/check_directory_data.py'
       - '.github/workflows/validate-directory-data.yml'
   pull_request:
@@ -20,3 +21,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check JSON and verification rules
         run: python3 scripts/check_directory_data.py
+      - name: Test encrypted admin connection
+        run: node scripts/test_admin_auth.mjs
