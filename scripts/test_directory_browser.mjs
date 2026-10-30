@@ -1,12 +1,16 @@
 import assert from "node:assert/strict";
 import {spawn} from "node:child_process";
 import {mkdir} from "node:fs/promises";
+import {readFileSync} from "node:fs";
 import {chromium} from "playwright";
 
 // Chromium runs against a read-only local server and the public live pages.
 // All write-path tests intercept the GitHub API and use synthetic records.
 const LOCAL="http://127.0.0.1:8765";
 const LIVE="https://deltaowleyes.ca";
+const BUSINESS_COUNT=JSON.parse(readFileSync("indigenous-businesses/businesses.json","utf8")).length;
+assert.ok(BUSINESS_COUNT>=4475,"The consolidated directory has lost its migration baseline");
+const DISPLAY_COUNT=BUSINESS_COUNT.toLocaleString("en-US");
 const API="https://api.github.com/repos/deltaowleyes/deltaowleyes.github.io";
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 let browser,server,activePage,stepName="setup";
@@ -42,9 +46,9 @@ try {
  browser=await chromium.launch({headless:true});
  activePage=await browser.newPage({viewport:{width:1280,height:900}});
 
- await report("Local public business directory renders 4,475 records from one JSON source",async()=>{
+ await report("Local public business directory renders current records from one JSON source",async()=>{
   await go(activePage,"/indigenous-businesses/");
-  await waitFor(activePage,"#count","4,475 published records");
+  await waitFor(activePage,"#count",DISPLAY_COUNT+" published records");
   assert.equal(await activePage.locator("#cards > article.card").count(),48,"The first page should show 48 business cards.");
   await activePage.locator("#q").fill("Ellipsis Energy Inc");
   await waitFor(activePage,"#count","1 matching");
@@ -53,7 +57,7 @@ try {
    const response=await fetch("/indigenous-businesses/businesses.json");
    return {status:response.status,count:(await response.json()).length};
   });
-  assert.deepEqual(loaded,{status:200,count:4475});
+  assert.deepEqual(loaded,{status:200,count:BUSINESS_COUNT});
  });
  await report("Local public church directory renders preliminary listings",async()=>{
   await go(activePage,"/indigenous-churches/");
@@ -61,14 +65,14 @@ try {
   assert.equal(await activePage.locator("#results > article.card").count(),140);
  });
 
- await report("Published business directory renders 4,475 records in real Chromium",async()=>{
+ await report("Published business directory renders current records in real Chromium",async()=>{
   await go(activePage,"/indigenous-businesses/",LIVE);
-  await waitFor(activePage,"#count","4,475 published records");
+  await waitFor(activePage,"#count",DISPLAY_COUNT+" published records");
   assert.ok(await activePage.locator("#cards > article.card").count()>0);
  });
  await report("Published admin exposes New business and New church controls",async()=>{
   await go(activePage,"/admin/",LIVE);
-  await waitFor(activePage,"#load","4,475");
+  await waitFor(activePage,"#load",DISPLAY_COUNT);
   assert.equal((await activePage.locator("#createNew").innerText()).trim(),"+ New business");
   await activePage.locator("#dataset").selectOption("churches");
   await waitFor(activePage,"#load","140");
