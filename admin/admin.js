@@ -1,16 +1,14 @@
 "use strict";
 /* Browser-only worksheet. GitHub authentication is required separately for publishing. */
 const SOURCES={
- businesses:{path:"/indigenous-businesses/businesses.json",name:"Main business listings",dir:"indigenous-businesses",kind:"business"},
- ontario:{path:"/indigenous-businesses/ontario-businesses.json",name:"Ontario business listings",dir:"indigenous-businesses",kind:"business"},
- federal:{path:"/indigenous-businesses/federal-businesses.json",name:"Federal business listings",dir:"indigenous-businesses",kind:"business"},
+ businesses:{path:"/indigenous-businesses/businesses.json",name:"All business listings",dir:"indigenous-businesses",kind:"business"},
  churches:{path:"/indigenous-churches/churches.json",name:"Church listings",dir:"indigenous-churches",kind:"church"}
 };
 const $=id=>document.getElementById(id);
-const loaded=new Map(),staged=new Map(),checked=new Set();
+const loaded=new Map(),staged=new Map(),checked=new Set(),newKeys=new Set();
 let active="businesses",current=-1,shown=[],formChanged=false;
 const FIELDS={
- business:[["name","Business name","locked"],["city","City","locked"],["province","Province","locked"],["description","Business description","textarea"],["address","Public street address","text"],["postal_code","Postal code","text"],["community","Community affiliation — evidence required","text"],["phone","Public business phone","text"],["email","Public business email","email"],["business_hours","Public business hours","text"],["website","Website (https://)","url"],["category","Original industry category","text"]],
+ business:[["name","Business name","locked"],["city","City","locked"],["province","Province","locked"],["description","Business description","textarea"],["address","Public street address","text"],["postal_code","Postal code","text"],["community","Community affiliation — evidence required","text"],["phone","Public business phone","text"],["email","Public business email","email"],["business_hours","Public business hours","text"],["website","Website (https://)","url"],["category","Original industry category","text"],["source_url","Published source (https://)","url"]],
  church:[["name","Church name","locked"],["province","Province","locked"],["reserve","Community / reserve","locked"],["denomination","Denomination","text"],["address","Public address","text"],["phone","Public phone","text"],["email","Public email","email"],["website","Church website (https://)","url"],["service_times","Public worship times","textarea"],["accessibility","Public visitor / accessibility notes","textarea"],["source","Published source (https://)","url"],["reserveLocated","Located on reserve — evidence required","tri"],["indigenousLed","Indigenous-led — evidence required","tri"]]
 };
 const VERIFY=[["verification_status","Verification status","status"],["contact_status","Contact status","contact"],["verified_date","Representative confirmation date","date"],["verification_method","Confirmation method","method"]];
@@ -18,7 +16,20 @@ const key=i=>active+":"+i;
 function record(i){return staged.get(key(i))||loaded.get(active)?.[i]}
 function status(b){return b.verification_status||(b.owner_confirmed||b.representative_confirmed?"verified":"unverified")}
 function contact(b){return b.contact_status||"not_contacted"}
-function short(b){return [b.name,b.city||b.reserve,b.province].filter(Boolean).join(" · ")}
+function short(b){return [b.name||"(new draft)",b.city||b.reserve,b.province].filter(Boolean).join(" · ")}
+function fingerprint(source,b){
+ const clean=v=>String(v||"").trim().toLocaleLowerCase().replace(/\s+/g," ");
+ return [clean(b.name),clean(source==="churches"?b.reserve:b.city),clean(b.province)].join("|");
+}
+function assertUnique(source,b,records,except=-1){
+ if(records.some((r,i)=>i!==except&&r&&fingerprint(source,r)===fingerprint(source,b)))
+  throw Error("A listing with this name and location already exists. Search before creating a duplicate.");
+}
+function validateNew(source,b){
+ if(!b.name?.trim()||!b.province?.trim())throw Error("Name and province or territory are required.");
+ if(source==="churches"&&!b.reserve?.trim())throw Error("A church community / reserve is required.");
+ if(source==="businesses"&&!b.city?.trim())throw Error("A business city / service-area location is required.");
+}
 function notify(msg,error=false){$("status").textContent=msg;$("status").classList.toggle("error",error)}
 function updateQueue(){
  const n=staged.size;
@@ -29,20 +40,20 @@ function updateQueue(){
 function renderList(){
  const data=loaded.get(active)||[],query=$("search").value.trim().toLowerCase(),vf=$("filter").value,cf=$("contactFilter").value,interest=$("interestFilter").value;
  const match=[];
- data.forEach((b,i)=>{const item=record(i);if(query&&!short(item).toLowerCase().includes(query))return;if(vf&&status(item)!==vf)return;if(cf&&contact(item)!==cf)return;if(interest&&window.DOEOutreach.interestFor(active,item)!==interest)return;match.push(i)});
+ data.forEach((b,i)=>{const item=record(i);if(!item)return;if(query&&!short(item).toLowerCase().includes(query))return;if(vf&&status(item)!==vf)return;if(cf&&contact(item)!==cf)return;if(interest&&window.DOEOutreach.interestFor(active,item)!==interest)return;match.push(i)});
  shown=match.slice(0,100);$("entries").replaceChildren();
  for(const i of shown){
   const b=record(i),row=document.createElement("div");row.className="entry";
   const cb=document.createElement("input");cb.type="checkbox";cb.checked=checked.has(key(i));
   cb.setAttribute("aria-label","Select "+b.name+" for outreach updates");
   cb.addEventListener("change",()=>{if(cb.checked)checked.add(key(i));else checked.delete(key(i))});
-  const open=document.createElement("button");open.type="button";open.textContent=b.name;
+  const open=document.createElement("button");open.type="button";open.textContent=b.name||"(New unpublished listing)";
   open.setAttribute("aria-current",String(current===i));
-  const sub=document.createElement("small");sub.textContent=[b.city||b.reserve,b.province,status(b).replaceAll("_"," ")].filter(Boolean).join(" · ")+(staged.has(key(i))?" · Staged":"");
+  const sub=document.createElement("small");sub.textContent=[b.city||b.reserve,b.province,status(b).replaceAll("_"," ")].filter(Boolean).join(" · ")+(newKeys.has(key(i))?" · New, unpublished":staged.has(key(i))?" · Staged":"");
   open.append(sub);open.addEventListener("click",()=>select(i));
   row.append(cb,open);$("entries").append(row);
  }
- $("count").textContent=match.length.toLocaleString()+" matching / "+data.length.toLocaleString()+" total; showing "+shown.length;
+ $("count").textContent=match.length.toLocaleString()+" matching / "+data.filter(Boolean).length.toLocaleString()+" total (including drafts); showing "+shown.length;
  updateQueue();
 }
 function fieldVal(b,name){
@@ -64,14 +75,14 @@ function makeField(def,b,place){
   for(const [value,text] of values)control.add(new Option(text,value));
  }else {control=document.createElement("input");control.type=type==="date"?"date":type==="url"?"url":type==="email"?"email":"text"}
  control.id="field_"+name;control.name=name;control.value=String(fieldVal(b,name));
- if(type==="locked")control.disabled=true;
+ if(type==="locked"&&!newKeys.has(key(current)))control.disabled=true;
  const changed=()=>{formChanged=true;notify("Unsaved fields. Stage the record before selecting another listing.")};
  control.addEventListener("input",changed);control.addEventListener("change",changed);
  cell.append(control);place.append(cell);
 }
-function select(i){
- if((formChanged||window.DOEOutreach.dirty())&&!confirm("Discard unsaved public fields or private notes? Other staged records will be kept."))return;
- current=i;formChanged=false;const b=record(i);$("edit").hidden=false;$("pickHint").textContent="Editing "+short(b);
+function select(i,skipGuard=false){
+ if(!skipGuard&&(formChanged||window.DOEOutreach.dirty())&&!confirm("Discard unsaved public fields or private notes? Other staged records will be kept."))return;
+ current=i;formChanged=false;const b=record(i);$("edit").hidden=false;$("pickHint").textContent=(newKeys.has(key(i))?"Creating ":"Editing ")+short(b);
  $("fields").replaceChildren();$("verification").replaceChildren();
  for(const def of FIELDS[SOURCES[active].kind])makeField(def,b,$("fields"));
  for(const def of VERIFY)makeField(def,b,$("verification"));
@@ -85,13 +96,17 @@ function select(i){
 function editedRecord(){
  const original=loaded.get(active)[current],b={...original},kind=SOURCES[active].kind;
  for(const [name,,type] of FIELDS[kind].concat(VERIFY)){
-  if(type==="locked")continue;
+  if(type==="locked"&&!newKeys.has(key(current)))continue;
   const value=$("field_"+name).value.trim();
   const normalized=type==="tri"?(value===""?null:value==="true"):value;
   // Do not publish blank/default fields merely because the user saved private outreach notes.
   const implicit=(name==="verification_status"&&value==="unverified")||(name==="contact_status"&&value==="not_contacted");
   if(!(name in original)&&(normalized===""||normalized===null||implicit))continue;
   b[name]=normalized;
+ }
+ if(newKeys.has(key(current))){
+  validateNew(active,b);
+  assertUnique(active,b,loaded.get(active),current);
  }
  if(b.verification_status==="verified"){
   if(!b.verified_date||!b.verification_method)throw Error("Verified requires a representative confirmation date and method.");
@@ -112,16 +127,35 @@ $("edit").addEventListener("submit",async event=>{
  try{
   const updated=editedRecord(),id=key(current);
   const privateSaved=await window.DOEOutreach.save();
-  if(JSON.stringify(updated)===JSON.stringify(loaded.get(active)[current]))staged.delete(id);
-  else staged.set(id,updated);
+  if(newKeys.has(id)||JSON.stringify(updated)!==JSON.stringify(loaded.get(active)[current]))staged.set(id,updated);
+  else staged.delete(id);
   formChanged=false;renderList();
   if(!staged.has(id)){notify(privateSaved?"Private notes saved on this browser; no public listing changes to publish.":"There are no changes to publish.");return}
   await publishChanges([active]);
  }catch(err){notify(err.message,true)}
 });
 $("revert").addEventListener("click",()=>{
- if(current<0||!confirm("Revert this record to the originally loaded published version?"))return;
- staged.delete(key(current));formChanged=false;select(current);notify("This record's staged edits have been discarded.");
+ if(current<0||!confirm(newKeys.has(key(current))?"Discard this unpublished new listing?":"Revert this record to the originally loaded published version?"))return;
+ const id=key(current);
+ staged.delete(id);checked.delete(id);formChanged=false;
+ if(newKeys.delete(id)){
+  loaded.get(active)[current]=null;
+  current=-1;$("edit").hidden=true;$("pickHint").textContent="Choose a listing or create a new one.";
+  renderList();notify("Unpublished listing discarded.");return;
+ }
+ select(current,true);notify("This record's staged edits have been discarded.");
+});
+$("createNew").addEventListener("click",()=>{
+ if(busy||!loaded.has(active)){notify("Wait for the directory to finish loading.",true);return}
+ if((formChanged||window.DOEOutreach.dirty())&&!confirm("Discard unsaved form fields or private notes before creating a listing?"))return;
+ const draft=active==="churches"?
+  {name:"",province:"",reserve:"",verification_status:"unverified",contact_status:"not_contacted",representative_confirmed:false,reserveLocated:null,indigenousLed:null}:
+  {name:"",city:"",province:"",verification_status:"unverified",contact_status:"not_contacted",owner_confirmed:false};
+ const i=loaded.get(active).push(draft)-1;
+ newKeys.add(key(i));staged.set(key(i),{...draft});formChanged=false;
+ $("search").value="";$("filter").value="";$("contactFilter").value="";$("interestFilter").value="";
+ select(i,true);
+ $("field_name").focus();notify("New unpublished listing. Enter its name and location, then click Update & publish.");
 });
 for(const id of ["search","filter","contactFilter","interestFilter"])
  $(id).addEventListener(id==="search"?"input":"change",renderList);
@@ -135,7 +169,7 @@ function bulk(contactStatus){
  for(const id of selected){
   const i=Number(id.slice(active.length+1)),orig=loaded.get(active)?.[i];if(!orig)continue;
   const changed={...record(i),contact_status:contactStatus};
-  if(JSON.stringify(changed)===JSON.stringify(orig))staged.delete(id);else staged.set(id,changed);
+  if(newKeys.has(id)||JSON.stringify(changed)!==JSON.stringify(orig))staged.set(id,changed);else staged.delete(id);
  }
  checked.clear();if(current>=0)select(current);else renderList();
  notify("Outreach updates ready. Click Update all staged changes to publish.");
@@ -152,8 +186,7 @@ $("download").addEventListener("click",()=>{
  const original=loaded.get(active);if(!original)return;
  const changes=[...staged.entries()].filter(([id])=>id.startsWith(active+":"));
  if(!changes.length){notify("No changes to download from this source.",true);return}
- const output=original.slice();
- for(const [id,b] of changes)output[Number(id.slice(active.length+1))]=b;
+ const output=original.map((r,i)=>staged.get(active+":"+i)||r).filter(Boolean);
  const filename=SOURCES[active].path.split("/").pop();
  download(filename,JSON.stringify(output,null,2)+"\n");
  notify("Downloaded "+filename+" with "+changes.length+" staged records. An authorized GitHub commit is still required.");
@@ -166,8 +199,13 @@ $("manifest").addEventListener("click",()=>{
 });
 $("clear").addEventListener("click",()=>{
  if(!confirm("Discard every staged edit across all directories?"))return;
- staged.clear();checked.clear();formChanged=false;
- if(current>=0)select(current);else renderList();notify("All staged changes discarded.");
+ for(const id of newKeys){
+  const [source,index]=id.split(":");
+  if(loaded.has(source))loaded.get(source)[Number(index)]=null;
+ }
+ newKeys.clear();staged.clear();checked.clear();formChanged=false;current=-1;
+ $("edit").hidden=true;$("pickHint").textContent="Choose a listing or create a new one.";
+ renderList();notify("All staged changes discarded.");
 });
 async function loadSource(source){
  if((formChanged||window.DOEOutreach.dirty())&&!confirm("Discard unsaved public edits or private notes before switching datasets? Other staged changes will remain.")){$("dataset").value=active;return}
@@ -187,7 +225,8 @@ async function loadSource(source){
   }
  }
  if(active!==source)return;
- $("load").textContent=loaded.get(active).length.toLocaleString()+" "+info.name.toLowerCase()+" loaded.";
+ $("load").textContent=loaded.get(active).filter(Boolean).length.toLocaleString()+" "+info.name.toLowerCase()+" loaded.";
+ $("createNew").textContent=active==="churches"?"+ New church":"+ New business";
  renderList();
 }
 $("dataset").addEventListener("change",event=>loadSource(event.target.value));
@@ -216,6 +255,7 @@ function writeControls(){
  $("forget").disabled=busy;
  $("disconnect").disabled=busy||!githubToken;
  $("saveRecord").disabled=busy;
+ $("createNew").disabled=busy||!loaded.has(active);
  $("publish").disabled=busy||staged.size===0;
 }
 async function githubRequest(path,options={},candidate){
@@ -333,6 +373,12 @@ function mergeDrafts(source,remote){
  const updates=[...staged.entries()].filter(([id])=>id.startsWith(source+":"));
  const records=remote.records;
  for(const [key,draft] of updates){
+  if(newKeys.has(key)){
+   validateNew(source,draft);
+   assertUnique(source,draft,records);
+   records.push({...draft});
+   continue;
+  }
   const index=Number(key.slice(source.length+1)),base=original[index];
   if(!base)throw Error("Original record missing; refresh before updating.");
   let at=index;
@@ -367,10 +413,12 @@ async function publishChanges(onlySources=null){
   for(const source of sources){
    notify("Publishing "+SOURCES[source].name+" to GitHub…");
    const remote=await readLatest(source), merged=mergeDrafts(source,remote);
+   const selectedKey=source===active&&current>=0?key(current):null;
+   const selectedNew=selectedKey&&newKeys.has(selectedKey)?record(current):null;
    const indent=remote.text.includes("\n")?2:0;
    const serialized=JSON.stringify(merged.records,null,indent)+(remote.text.endsWith("\n")?"\n":"");
    if(serialized===remote.text){
-    for(const [key] of merged.updates)staged.delete(key);
+    for(const [entryKey] of merged.updates){staged.delete(entryKey);newKeys.delete(entryKey)}
     loaded.set(source,merged.records);continue;
    }
    const path=SOURCES[source].path;
@@ -379,8 +427,10 @@ async function publishChanges(onlySources=null){
     content:base64Encode(serialized),sha:remote.sha,branch:"main"
    })});
    if(!result.commit?.sha)throw Error("GitHub did not confirm a commit for "+path);
-   for(const [key] of merged.updates)staged.delete(key);
-   loaded.set(source,merged.records);saved+=merged.updates.length;
+   for(const [entryKey] of merged.updates){staged.delete(entryKey);newKeys.delete(entryKey)}
+   loaded.set(source,merged.records);
+   if(selectedNew)current=merged.records.findIndex(r=>fingerprint(source,r)===fingerprint(source,selectedNew));
+   saved+=merged.updates.length;
    $("publishLink").replaceChildren();
    const link=document.createElement("a");
    link.href=result.commit.html_url||"https://github.com/deltaowleyes/deltaowleyes.github.io/commit/"+result.commit.sha;
@@ -397,7 +447,7 @@ async function publishChanges(onlySources=null){
 }
 $("publish").addEventListener("click",()=>publishChanges());
 window.addEventListener("beforeunload",event=>{
- if(staged.size||formChanged){event.preventDefault();event.returnValue="";}
+ if(staged.size||formChanged||window.DOEOutreach.dirty()){event.preventDefault();event.returnValue="";}
 });
 
 window.addEventListener("doe-outreach-saved",renderList);

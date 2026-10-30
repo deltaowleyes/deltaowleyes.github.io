@@ -26,3 +26,5 @@ jobs:
         run: node scripts/test_admin_auth.mjs
       - name: Test encrypted outreach notes and call workflow
         run: node scripts/test_admin_outreach.mjs
+      - name: Test unified directory creation and publishing safeguards
+        run: node scripts/test_admin_creation.mjs

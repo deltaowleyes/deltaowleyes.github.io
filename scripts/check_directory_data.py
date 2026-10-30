@@ -8,8 +8,6 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 FILES = (
  ("indigenous-businesses/businesses.json", "business"),
- ("indigenous-businesses/ontario-businesses.json", "business"),
- ("indigenous-businesses/federal-businesses.json", "business"),
  ("indigenous-churches/churches.json", "church"),
 )
 errors = []
@@ -18,6 +16,13 @@ for path, kind in FILES:
   records=json.loads((ROOT/path).read_text(encoding="utf-8"))
   if not isinstance(records,list) or not records:
    raise ValueError("Expected nonempty JSON array")
+  if kind=="business":
+   if len(records)<4475: errors.append("Unified business directory lost the 4,475-record migration baseline")
+   ids=[("id:"+str(r["source_id"])) if r.get("source_id") else
+        ("location:"+str(r.get("name","")).strip().casefold()+"|"+str(r.get("city","")).strip().casefold()+"|"+str(r.get("province","")).strip().casefold())
+        for r in records if isinstance(r,dict)]
+   duplicates=[k for k,v in Counter(ids).items() if v>1]
+   if duplicates: errors.append(f"{path}: duplicate business identifiers: {duplicates[:3]}")
   if kind=="church":
    if len(records)<140: errors.append("Church migration dropped baseline records")
    ids=[(r.get("name"),r.get("province"),r.get("reserve")) for r in records if isinstance(r,dict)]
@@ -40,6 +45,12 @@ for path, kind in FILES:
   print(f"OK {path}: {len(records)} records")
  except (OSError,ValueError,TypeError,AttributeError) as exc:
   errors.append(f"{path}: {exc}")
+for obsolete in ("indigenous-businesses/ontario-businesses.json","indigenous-businesses/federal-businesses.json"):
+ if (ROOT/obsolete).exists(): errors.append("Obsolete business data source still exists: "+obsolete)
+for page_path in ("indigenous-businesses/index.html","indigenous-businesses/profile.html"):
+ page_text=(ROOT/page_path).read_text(encoding="utf-8")
+ if "ontario-businesses.json" in page_text or "federal-businesses.json" in page_text:
+  errors.append(page_path+" still loads legacy business datasets")
 page=(ROOT/"indigenous-churches/index.html").read_text(encoding="utf-8")
 if "fetch('./churches.json'" not in page or "const churches=[" in page:
  errors.append("Church page has no migrated JSON loader")
