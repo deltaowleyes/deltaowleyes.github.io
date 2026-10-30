@@ -87,7 +87,11 @@ function editedRecord(){
  for(const [name,,type] of FIELDS[kind].concat(VERIFY)){
   if(type==="locked")continue;
   const value=$("field_"+name).value.trim();
-  b[name]=type==="tri"?(value===""?null:value==="true"):value;
+  const normalized=type==="tri"?(value===""?null:value==="true"):value;
+  // Do not publish blank/default fields merely because the user saved private outreach notes.
+  const implicit=(name==="verification_status"&&value==="unverified")||(name==="contact_status"&&value==="not_contacted");
+  if(!(name in original)&&(normalized===""||normalized===null||implicit))continue;
+  b[name]=normalized;
  }
  if(b.verification_status==="verified"){
   if(!b.verified_date||!b.verification_method)throw Error("Verified requires a representative confirmation date and method.");
@@ -96,8 +100,11 @@ function editedRecord(){
  for(const url of (kind==="church"?["source","website"]:["website"])){
   if(b[url]&&!/^https:\/\//i.test(b[url]))throw Error("Public URL must begin with https://");
  }
- if(kind==="church")b.representative_confirmed=b.verification_status==="verified";
- else b.owner_confirmed=b.verification_status==="verified";
+ if(kind==="church"){
+  if(b.verification_status==="verified"||"representative_confirmed" in original)b.representative_confirmed=b.verification_status==="verified";
+ }else if(b.verification_status==="verified"||"owner_confirmed" in original){
+  b.owner_confirmed=b.verification_status==="verified";
+ }
  return b;
 }
 $("edit").addEventListener("submit",async event=>{
