@@ -188,13 +188,29 @@ let githubToken="",busy=false,pendingAfterConnect=false;
 function authMessage(message,error=false){
  const box=$("authStatus");box.textContent=message;box.style.color=error?"#9a2c1d":"#224d41";
 }
+function vaultRecord(){
+ try{return window.DOEAuthVault?.load()||null}
+ catch(err){authMessage(err.message,true);return null}
+}
+function renderAuth(){
+ const connected=Boolean(githubToken),saved=Boolean(vaultRecord());
+ $("initialAuth").hidden=connected||saved;
+ $("savedAuth").hidden=connected||!saved;
+ $("disconnect").hidden=!connected;
+ $("rememberPasswordWrap").hidden=!$("remember").checked;
+ writeControls();
+}
 function writeControls(){
- $("connect").disabled=busy;$("disconnect").disabled=busy||!githubToken;
- $("saveRecord").disabled=busy;$("publish").disabled=busy||staged.size===0;
+ $("connect").disabled=busy;
+ $("unlock").disabled=busy;
+ $("forget").disabled=busy;
+ $("disconnect").disabled=busy||!githubToken;
+ $("saveRecord").disabled=busy;
+ $("publish").disabled=busy||staged.size===0;
 }
 async function githubRequest(path,options={},candidate){
  const token=candidate||githubToken;
- if(!token)throw Error("Connect GitHub before publishing.");
+ if(!token)throw Error("Unlock or connect to GitHub before publishing.");
  const result=await fetch(API+path,{...options,cache:"no-store",headers:{
   "Accept":"application/vnd.github+json",
   "X-GitHub-Api-Version":"2022-11-28",
@@ -205,27 +221,72 @@ async function githubRequest(path,options={},candidate){
  const obj=await result.json().catch(()=>({}));
  if(!result.ok){
   const reason=(obj.message||result.statusText||"GitHub request failed").slice(0,350);
-  if(result.status===401||result.status===403)throw Error("GitHub denied this request ("+result.status+"): "+reason+". Check token expiry, selected repository and Contents permission.");
-  if(result.status===409||result.status===422)throw Error("GitHub detected a conflicting update ("+result.status+"). No conflicting changes were overwritten; reload this data source before retrying.");
+  if(result.status===401||result.status===403)throw Error("GitHub rejected this connection ("+result.status+"): "+reason+". Reconnect if the token expired or was revoked.");
+  if(result.status===409||result.status===422)throw Error("GitHub detected a conflicting update ("+result.status+"). No conflicting changes were overwritten; reload this source first.");
   throw Error("GitHub error "+result.status+": "+reason);
  }
  return obj;
 }
+async function verifyConnection(token){
+ const repository=await githubRequest("",{},token);
+ if(!repository.permissions?.push)throw Error("This GitHub account has no write permission for this repository.");
+}
+async function connected(token){
+ githubToken=token;
+ $("ghToken").value="";$("rememberPassphrase").value="";$("unlockPassphrase").value="";
+ renderAuth();
+ authMessage("Publishing connected. Click Update & publish to save changes directly.");
+ if(pendingAfterConnect){
+  pendingAfterConnect=false;
+  await publishChanges();
+ }
+}
+$("remember").addEventListener("change",renderAuth);
 $("connect").addEventListener("click",async()=>{
- const token=$("ghToken").value.trim();
- if(!token){authMessage("Paste a token made for this repository.",true);$("ghToken").focus();return}
  if(busy)return;
- busy=true;writeControls();authMessage("Checking GitHub access…");
+ const token=$("ghToken").value.trim(),remember=$("remember").checked;
+ if(!token){authMessage("Enter a repository-limited GitHub token.",true);$("ghToken").focus();return}
+ const phrase=$("rememberPassphrase").value;
+ if(remember&&phrase.length<16){authMessage("Choose a connection passphrase of at least 16 characters.",true);$("rememberPassphrase").focus();return}
+ busy=true;writeControls();authMessage("Checking repository access…");
  try{
-  const repo=await githubRequest("",{},token);
-  if(!repo.permissions?.push)throw Error("This GitHub account does not have write access to the repository.");
-  githubToken=token;$("ghToken").value="";
-  authMessage("Connected with repository write access. You can now click Update & publish.");
-  if(pendingAfterConnect){pendingAfterConnect=false;busy=false;writeControls();await publishChanges();return}
- }catch(err){githubToken="";authMessage(err.message,true)}
+  await verifyConnection(token);
+  if(remember){
+   const vault=await window.DOEAuthVault.seal(token,phrase);
+   window.DOEAuthVault.save(vault);
+  }
+  busy=false;
+  await connected(token);
+ }catch(err){authMessage(err.message,true)}
  finally{busy=false;writeControls()}
 });
-$("disconnect").addEventListener("click",()=>{githubToken="";$("ghToken").value="";authMessage("Disconnected. Token cleared from memory.");writeControls()});
+$("unlock").addEventListener("click",async()=>{
+ if(busy)return;
+ const passphrase=$("unlockPassphrase").value;
+ $("unlockPassphrase").value="";
+ if(!passphrase){authMessage("Enter the saved connection passphrase.",true);$("unlockPassphrase").focus();return}
+ busy=true;writeControls();authMessage("Unlocking saved connection…");
+ try{
+  const record=window.DOEAuthVault.load();
+  if(!record)throw Error("No saved connection found. Connect to GitHub again.");
+  const token=await window.DOEAuthVault.open(record,passphrase);
+  await verifyConnection(token);
+  busy=false;
+  await connected(token);
+ }catch(err){authMessage(err.message,true)}
+ finally{busy=false;writeControls()}
+});
+$("disconnect").addEventListener("click",()=>{
+ githubToken="";pendingAfterConnect=false;
+ renderAuth();authMessage("Locked. Saved encrypted connection was retained on this device.");
+});
+$("forget").addEventListener("click",()=>{
+ if(!confirm("Forget the saved encrypted GitHub connection from this device?"))return;
+ window.DOEAuthVault.forget();githubToken="";pendingAfterConnect=false;
+ $("ghToken").value="";$("rememberPassphrase").value="";$("unlockPassphrase").value="";
+ $("remember").checked=false;
+ renderAuth();authMessage("Saved connection erased from this browser. Connect with a new token.");
+});
 function base64Decode(value){
  const raw=atob(value.replace(/\s/g,"")),buf=new Uint8Array(raw.length);
  for(let i=0;i<raw.length;i++)buf[i]=raw.charCodeAt(i);
@@ -287,7 +348,7 @@ async function publishChanges(onlySources=null){
  if(!sources.length){notify("No changes to publish.");return true}
  if(!githubToken){
   pendingAfterConnect=true;notify("Your edits are ready. Connect GitHub above to finish publishing.",true);
-  authMessage("Connect an authorized GitHub account to publish the prepared changes.");$("ghToken").focus();return false;
+  authMessage("Unlock the saved connection or connect GitHub to publish.");(vaultRecord()?$("unlockPassphrase"):$("ghToken")).focus();return false;
  }
  if(formChanged){notify("Click Update & publish to include the unsaved fields first.",true);return false}
  busy=true;writeControls();let saved=0;
@@ -328,4 +389,5 @@ window.addEventListener("beforeunload",event=>{
  if(staged.size||formChanged){event.preventDefault();event.returnValue="";}
 });
 
+renderAuth();
 loadSource(active);
