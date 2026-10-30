@@ -55,6 +55,7 @@ function renderList(){
  }
  $("count").textContent=match.length.toLocaleString()+" matching / "+data.filter(Boolean).length.toLocaleString()+" total (including drafts); showing "+shown.length;
  updateQueue();
+ writeControls();
 }
 function fieldVal(b,name){
  if(name==="verification_status")return status(b);

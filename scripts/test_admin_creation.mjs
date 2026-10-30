@@ -70,6 +70,7 @@ const click=id=>elements.get(id).fire("click");
 const set=(id,value)=>{const el=elements.get(id);assert.ok(el,"Missing "+id);el.value=value;return el.fire("input")};
 const submit=()=>elements.get("edit").fire("submit",{preventDefault(){}});
 assert.equal(elements.get("entries").children.length,1);
+assert.equal(elements.get("createNew").disabled,false,"Create listing button must enable when the source finishes loading.");
 await click("createNew");
 assert.equal(elements.get("field_name").disabled,false,"New name must be editable");
 assert.equal(elements.get("field_city").disabled,false,"New city must be editable");
