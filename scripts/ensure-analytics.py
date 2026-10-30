@@ -32,7 +32,7 @@ def main():
         sys.exit("Consent assets missing; refusing to modify HTML")
     changed = []
     for path in sorted(ROOT.rglob("*.html")):
-        if ".git" in path.parts:
+        if ".git" in path.parts or "admin" in path.relative_to(ROOT).parts:
             continue
         old = path.read_text(encoding="utf-8")
         new = transform(old)
