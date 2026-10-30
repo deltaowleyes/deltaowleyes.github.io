@@ -22,4 +22,4 @@ const map={"11":10,"21":10,"22":10,"23":3,"31":9,"32":9,"33":9,"41":12,"44":12,"
 if(code&&map[code]!==undefined)return window.DOE_CATEGORIES[map[code]];
 return "Other & Specialized Services";
 };
-window.DOE_ENRICH=function(b){return {...b,original_category:b.original_category||b.category||"",directory_category:window.DOE_CLASSIFY(b),verification_status:b.owner_confirmed===true?"verified":"unverified"};};
+window.DOE_ENRICH=function(b){return {...b,original_category:b.original_category||b.category||"",directory_category:window.DOE_CLASSIFY(b),verification_status:b.owner_confirmed===true?"verified":b.verification_status==="partially_verified"?"partially_verified":"unverified"};};

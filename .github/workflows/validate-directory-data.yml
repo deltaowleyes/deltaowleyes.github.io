@@ -1,0 +1,22 @@
+name: Validate directory data
+on:
+  push:
+    paths:
+      - 'indigenous-businesses/**'
+      - 'indigenous-churches/**'
+      - 'admin/**'
+      - 'scripts/check_directory_data.py'
+      - '.github/workflows/validate-directory-data.yml'
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '43 11 * * 1'
+permissions:
+  contents: read
+jobs:
+  validate-directories:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check JSON and verification rules
+        run: python3 scripts/check_directory_data.py
