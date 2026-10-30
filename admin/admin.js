@@ -238,7 +238,7 @@ function base64Encode(text){
 }
 async function readLatest(source){
  const path=SOURCES[source].path;
- const info=await githubRequest("/contents"+path+"?ref=main");
+ const info=await githubRequest("/contents"+path+"?ref=main",{headers:{"Accept":"application/vnd.github.object+json"}});
  let encoded=info.content;
  if(info.encoding!=="base64"||!encoded){
   const blob=await githubRequest("/git/blobs/"+encodeURIComponent(info.sha));
