@@ -126,6 +126,7 @@ $("edit").addEventListener("submit",async event=>{
  event.preventDefault();if(current<0||busy)return;
  try{
   const updated=editedRecord(),id=key(current);
+  if(newKeys.has(id))window.DOEOutreach.rekey(active,updated);
   const privateSaved=await window.DOEOutreach.save();
   if(newKeys.has(id)||JSON.stringify(updated)!==JSON.stringify(loaded.get(active)[current]))staged.set(id,updated);
   else staged.delete(id);

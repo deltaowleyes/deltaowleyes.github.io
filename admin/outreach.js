@@ -30,9 +30,13 @@
  const blank=()=>({website_interest:"not_asked",last_contact_date:"",followup_date:"",call_notes:""});
  const fields=["websiteInterest","lastContactDate","followupDate","callNotes"];
  const key=(src,b)=>src+"|"+(b.source_id?"id:"+b.source_id:[b.name||"",b.city||b.reserve||"",b.province||""].join("|").toLowerCase());
+ const legacyKeys=(src,b)=>src==="businesses"?["ontario","federal"].map(old=>key(old,b)):[];
+ const existing=(src,b)=>data[key(src,b)]||legacyKeys(src,b).map(k=>data[k]).find(Boolean)||null;
  const current=()=>({website_interest:$("websiteInterest").value,last_contact_date:$("lastContactDate").value,followup_date:$("followupDate").value,call_notes:$("callNotes").value.trim()});
- const dirty=()=>!!(password&&recordKey&&JSON.stringify(current())!==JSON.stringify({...blank(),...(data[recordKey]||{})}));
- const interestFor=(src,b)=>password?(data[key(src,b)]?.website_interest||"not_asked"):"not_asked";
+ const dirty=()=>!!(password&&recordKey&&JSON.stringify(current())!==JSON.stringify({...blank(),...(record&&existing(source,record)||{})}));
+ const interestFor=(src,b)=>password?(existing(src,b)?.website_interest||"not_asked"):"not_asked";
+ // Re-key an unpublished draft once its name and location have been entered, without clearing the form.
+ function rekey(src,b){source=src;record=b;recordKey=key(src,b)}
  function message(s,bad=false){$("outreachStatus").textContent=s;$("outreachStatus").style.color=bad?"#a23726":"#526963"}
  function enable(){
   for(const f of fields)$(f).disabled=!password;
@@ -53,7 +57,7 @@
  }
  function show(src,b){
   source=src;record=b;recordKey=key(src,b);
-  const x={...blank(),...(data[recordKey]||{})};
+  const x={...blank(),...(existing(src,b)||{})};
   $("websiteInterest").value=x.website_interest;$("lastContactDate").value=x.last_contact_date;
   $("followupDate").value=x.followup_date;$("callNotes").value=x.call_notes;
   $("outreachHeading").textContent=(src==="churches"?"Church":"Business")+" verification call and follow-up";
@@ -87,5 +91,5 @@
   for(const f of fields)$(f).addEventListener("input",()=>message("Private follow-up has unsaved changes."));
  }
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
- window.DOEOutreach=Object.freeze({open,lock,forget,save,dirty,interestFor,show});
+ window.DOEOutreach=Object.freeze({open,lock,forget,save,dirty,interestFor,show,rekey});
 })();

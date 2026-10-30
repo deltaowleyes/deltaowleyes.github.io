@@ -58,7 +58,7 @@ async function fetchMock(url,options={}){
 }
 const window={
  DOEAuthVault:{load:()=>null,seal:async()=>({}),save:()=>{},open:async()=>"",forget:()=>{}},
- DOEOutreach:{dirty:()=>false,show:()=>{},save:async()=>false,open:async()=>{},lock:()=>{},forget:()=>{},interestFor:()=>"not_asked"},
+ DOEOutreach:{dirty:()=>false,show:()=>{},rekey:()=>{},save:async()=>false,open:async()=>{},lock:()=>{},forget:()=>{},interestFor:()=>"not_asked"},
  addEventListener(){}
 };
 const sandbox={document,window,fetch:fetchMock,Option:class{constructor(text,value){this.text=text;this.value=value}},
