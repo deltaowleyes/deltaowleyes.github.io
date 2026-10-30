@@ -10,8 +10,8 @@ const $=id=>document.getElementById(id);
 const loaded=new Map(),staged=new Map(),checked=new Set();
 let active="businesses",current=-1,shown=[],formChanged=false;
 const FIELDS={
- business:[["name","Business name","locked"],["city","City","locked"],["province","Province","locked"],["description","Business description","textarea"],["address","Public street address","text"],["postal_code","Postal code","text"],["community","Community affiliation — evidence required","text"],["phone","Public business phone","text"],["website","Website (https://)","url"],["category","Original industry category","text"]],
- church:[["name","Church name","locked"],["province","Province","locked"],["reserve","Community / reserve","locked"],["denomination","Denomination","text"],["address","Public address","text"],["phone","Public phone","text"],["source","Published source (https://)","url"],["reserveLocated","Located on reserve — evidence required","tri"],["indigenousLed","Indigenous-led — evidence required","tri"]]
+ business:[["name","Business name","locked"],["city","City","locked"],["province","Province","locked"],["description","Business description","textarea"],["address","Public street address","text"],["postal_code","Postal code","text"],["community","Community affiliation — evidence required","text"],["phone","Public business phone","text"],["email","Public business email","email"],["business_hours","Public business hours","text"],["website","Website (https://)","url"],["category","Original industry category","text"]],
+ church:[["name","Church name","locked"],["province","Province","locked"],["reserve","Community / reserve","locked"],["denomination","Denomination","text"],["address","Public address","text"],["phone","Public phone","text"],["email","Public email","email"],["website","Church website (https://)","url"],["service_times","Public worship times","textarea"],["accessibility","Public visitor / accessibility notes","textarea"],["source","Published source (https://)","url"],["reserveLocated","Located on reserve — evidence required","tri"],["indigenousLed","Indigenous-led — evidence required","tri"]]
 };
 const VERIFY=[["verification_status","Verification status","status"],["contact_status","Contact status","contact"],["verified_date","Representative confirmation date","date"],["verification_method","Confirmation method","method"]];
 const key=i=>active+":"+i;
@@ -27,9 +27,9 @@ function updateQueue(){
  $("manifest").disabled=n===0;$("clear").disabled=n===0;$("publish").disabled=n===0||busy;
 }
 function renderList(){
- const data=loaded.get(active)||[],query=$("search").value.trim().toLowerCase(),vf=$("filter").value,cf=$("contactFilter").value;
+ const data=loaded.get(active)||[],query=$("search").value.trim().toLowerCase(),vf=$("filter").value,cf=$("contactFilter").value,interest=$("interestFilter").value;
  const match=[];
- data.forEach((b,i)=>{const item=record(i);if(query&&!short(item).toLowerCase().includes(query))return;if(vf&&status(item)!==vf)return;if(cf&&contact(item)!==cf)return;match.push(i)});
+ data.forEach((b,i)=>{const item=record(i);if(query&&!short(item).toLowerCase().includes(query))return;if(vf&&status(item)!==vf)return;if(cf&&contact(item)!==cf)return;if(interest&&window.DOEOutreach.interestFor(active,item)!==interest)return;match.push(i)});
  shown=match.slice(0,100);$("entries").replaceChildren();
  for(const i of shown){
   const b=record(i),row=document.createElement("div");row.className="entry";
@@ -62,7 +62,7 @@ function makeField(def,b,place){
    type==="contact"?[["not_contacted","Not contacted"],["attempted","Attempted"],["follow_up","Follow-up needed"],["contacted","Contacted"]]:
    [["","Not specified"],["phone","Phone"],["email","Email"],["business_submission","Business submission"],["church_submission","Church submission"],["in_person","In person"]];
   for(const [value,text] of values)control.add(new Option(text,value));
- }else {control=document.createElement("input");control.type=type==="date"?"date":type==="url"?"url":"text"}
+ }else {control=document.createElement("input");control.type=type==="date"?"date":type==="url"?"url":type==="email"?"email":"text"}
  control.id="field_"+name;control.name=name;control.value=String(fieldVal(b,name));
  if(type==="locked")control.disabled=true;
  const changed=()=>{formChanged=true;notify("Unsaved fields. Stage the record before selecting another listing.")};
@@ -70,11 +70,12 @@ function makeField(def,b,place){
  cell.append(control);place.append(cell);
 }
 function select(i){
- if(formChanged&&!confirm("Discard un-staged field changes? Other staged records will be kept."))return;
+ if((formChanged||window.DOEOutreach.dirty())&&!confirm("Discard unsaved public fields or private notes? Other staged records will be kept."))return;
  current=i;formChanged=false;const b=record(i);$("edit").hidden=false;$("pickHint").textContent="Editing "+short(b);
  $("fields").replaceChildren();$("verification").replaceChildren();
  for(const def of FIELDS[SOURCES[active].kind])makeField(def,b,$("fields"));
  for(const def of VERIFY)makeField(def,b,$("verification"));
+ window.DOEOutreach.show(active,b);
  const src=SOURCES[active].kind==="church"?b.source:b.source_url;
  $("sourceLink").hidden=!/^https:\/\//i.test(src||"");
  if(!$("sourceLink").hidden)$("sourceLink").href=src;
@@ -92,8 +93,9 @@ function editedRecord(){
   if(!b.verified_date||!b.verification_method)throw Error("Verified requires a representative confirmation date and method.");
   if(b.verified_date>new Date().toISOString().slice(0,10))throw Error("Confirmation date cannot be in the future.");
  }
- const url=kind==="church"?"source":"website";
- if(b[url]&&!/^https:\/\//i.test(b[url]))throw Error("Public URL must begin with https://");
+ for(const url of (kind==="church"?["source","website"]:["website"])){
+  if(b[url]&&!/^https:\/\//i.test(b[url]))throw Error("Public URL must begin with https://");
+ }
  if(kind==="church")b.representative_confirmed=b.verification_status==="verified";
  else b.owner_confirmed=b.verification_status==="verified";
  return b;
@@ -102,10 +104,11 @@ $("edit").addEventListener("submit",async event=>{
  event.preventDefault();if(current<0||busy)return;
  try{
   const updated=editedRecord(),id=key(current);
+  const privateSaved=await window.DOEOutreach.save();
   if(JSON.stringify(updated)===JSON.stringify(loaded.get(active)[current]))staged.delete(id);
   else staged.set(id,updated);
   formChanged=false;renderList();
-  if(!staged.has(id)){notify("There are no changes to publish.");return}
+  if(!staged.has(id)){notify(privateSaved?"Private notes saved on this browser; no public listing changes to publish.":"There are no changes to publish.");return}
   await publishChanges([active]);
  }catch(err){notify(err.message,true)}
 });
@@ -113,14 +116,14 @@ $("revert").addEventListener("click",()=>{
  if(current<0||!confirm("Revert this record to the originally loaded published version?"))return;
  staged.delete(key(current));formChanged=false;select(current);notify("This record's staged edits have been discarded.");
 });
-for(const id of ["search","filter","contactFilter"])
+for(const id of ["search","filter","contactFilter","interestFilter"])
  $(id).addEventListener(id==="search"?"input":"change",renderList);
 $("checkAll").addEventListener("click",()=>{shown.forEach(i=>checked.add(key(i)));renderList()});
 $("uncheckAll").addEventListener("click",()=>{for(const id of [...checked])if(id.startsWith(active+":"))checked.delete(id);renderList()});
 function bulk(contactStatus){
  const selected=[...checked].filter(id=>id.startsWith(active+":"));
  if(!selected.length){notify("Select listing checkboxes first.",true);return}
- if(formChanged){notify("Stage or revert the unsaved form fields first.",true);return}
+ if(formChanged||window.DOEOutreach.dirty()){notify("Save or discard unsaved public edits and private notes first.",true);return}
  if(!confirm("Mark "+selected.length+" selected listings as "+contactStatus.replaceAll("_"," ")+"? Only use this for actual outreach work. This will not verify any listing."))return;
  for(const id of selected){
   const i=Number(id.slice(active.length+1)),orig=loaded.get(active)?.[i];if(!orig)continue;
@@ -160,7 +163,7 @@ $("clear").addEventListener("click",()=>{
  if(current>=0)select(current);else renderList();notify("All staged changes discarded.");
 });
 async function loadSource(source){
- if(formChanged&&!confirm("Discard unsaved form edits before switching datasets? Other staged changes will remain.")){$("dataset").value=active;return}
+ if((formChanged||window.DOEOutreach.dirty())&&!confirm("Discard unsaved public edits or private notes before switching datasets? Other staged changes will remain.")){$("dataset").value=active;return}
  active=source;current=-1;formChanged=false;checked.clear();$("edit").hidden=true;$("pickHint").textContent="Choose a listing on the left.";notify("");
  const info=SOURCES[source];
  $("publishLink").textContent="Dataset: "+info.name+". Changes publish directly through GitHub after connection.";
@@ -231,11 +234,12 @@ async function verifyConnection(token){
  const repository=await githubRequest("",{},token);
  if(!repository.permissions?.push)throw Error("This GitHub account has no write permission for this repository.");
 }
-async function connected(token){
+async function connected(token,privatePassphrase=""){
  githubToken=token;
  $("ghToken").value="";$("rememberPassphrase").value="";$("unlockPassphrase").value="";
  renderAuth();
  authMessage("Publishing connected. Click Update & publish to save changes directly.");
+ if(privatePassphrase){try{await window.DOEOutreach.open(privatePassphrase);renderList()}catch(e){authMessage("Publishing connected, but "+e.message,true)}}
  if(pendingAfterConnect){
   pendingAfterConnect=false;
   await publishChanges();
@@ -256,7 +260,7 @@ $("connect").addEventListener("click",async()=>{
    window.DOEAuthVault.save(vault);
   }
   busy=false;
-  await connected(token);
+  await connected(token,remember?phrase:"");
  }catch(err){authMessage(err.message,true)}
  finally{busy=false;writeControls()}
 });
@@ -272,17 +276,17 @@ $("unlock").addEventListener("click",async()=>{
   const token=await window.DOEAuthVault.open(record,passphrase);
   await verifyConnection(token);
   busy=false;
-  await connected(token);
+  await connected(token,passphrase);
  }catch(err){authMessage(err.message,true)}
  finally{busy=false;writeControls()}
 });
 $("disconnect").addEventListener("click",()=>{
- githubToken="";pendingAfterConnect=false;
+ githubToken="";pendingAfterConnect=false;window.DOEOutreach.lock();
  renderAuth();authMessage("Locked. Saved encrypted connection was retained on this device.");
 });
 $("forget").addEventListener("click",()=>{
- if(!confirm("Forget the saved encrypted GitHub connection from this device?"))return;
- window.DOEAuthVault.forget();githubToken="";pendingAfterConnect=false;
+ if(!confirm("Forget this device's GitHub connection AND its encrypted private outreach notes? This cannot be undone."))return;
+ window.DOEAuthVault.forget();window.DOEOutreach.forget();githubToken="";pendingAfterConnect=false;
  $("ghToken").value="";$("rememberPassphrase").value="";$("unlockPassphrase").value="";
  $("remember").checked=false;
  renderAuth();authMessage("Saved connection erased from this browser. Connect with a new token.");
@@ -389,5 +393,6 @@ window.addEventListener("beforeunload",event=>{
  if(staged.size||formChanged){event.preventDefault();event.returnValue="";}
 });
 
+window.addEventListener("doe-outreach-saved",renderList);
 renderAuth();
 loadSource(active);
