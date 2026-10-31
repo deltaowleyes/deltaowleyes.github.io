@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T18:28:46Z",
+      "commit": "14f5433be5f7c6a981b88dabb19911c9beb1287e",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "niuslasummit2026dismantlingantiindigenousracism|20261103|burnaby|britishcolumbia",
+            "name": "NIUSLA Summit 2026: Dismantling Anti-Indigenous Racism",
+            "place": "Burnaby, British Columbia",
+            "category": "Indigenous leadership and education",
+            "date": "2026-11-03",
+            "source": "https://www.niusla.ca/events/",
+            "status": "Verified event"
+          },
+          {
+            "key": "naturalclimatesolutionsvirtualforummetisnationofontario|20261107|online|ontario",
+            "name": "Natural Climate Solutions Virtual Forum — Métis Nation of Ontario",
+            "place": "Online, Ontario",
+            "category": "Métis environment and climate education",
+            "date": "2026-11-07",
+            "source": "https://southwestregion.metisnation.org/event/virtual-climate-change-forum/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T18:28:34Z",
       "commit": "942a9e79cebeba00c307fa9c2a6d23d943e79394",
       "mode": "import",
