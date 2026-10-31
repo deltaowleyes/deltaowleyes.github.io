@@ -22,7 +22,7 @@ def key(value):
     value = unicodedata.normalize("NFKD", str(value or "")).lower()
     value = "".join(c for c in value if not unicodedata.combining(c))
     value = value.replace("&", "and")
-    value = re.sub(r"\\b(incorporated|inc|limited|ltd|corporation|corp|company|co|the|services|service|lp)\\b", "", value)
+    value = re.sub(r"\b(incorporated|inc|limited|ltd|corporation|corp|company|co|the|services|service|lp)\b", "", value)
     return re.sub("[^a-z0-9]", "", value)
 
 def strong_alias(a, b):
@@ -45,7 +45,7 @@ def strong_alias(a, b):
         return 1 - rows[-1]/max(len(a), len(b)) >= 0.91
     return False
 
-known = [(key(r.get("name")), re.sub(r"\\D","",str(r.get("phone") or "")), r.get("source_id")) for r in old]
+known = [(key(r.get("name")), re.sub(r"\D","",str(r.get("phone") or "")), r.get("source_id")) for r in old]
 inserted = []
 excluded = []
 for record in batch:
@@ -59,7 +59,7 @@ for record in batch:
     if record.get("address") or record.get("postal_code"):
         sys.exit("Private location fields present for "+record["name"])
     n = key(record["name"])
-    p = re.sub(r"\\D","",str(record.get("phone") or ""))
+    p = re.sub(r"\D","",str(record.get("phone") or ""))
     match = next((k for k, kp, sid in known if strong_alias(n,k) or (p and len(p)>=10 and p==kp and n==k) or sid==record["source_id"]),None)
     if match:
         excluded.append(record["name"])
@@ -69,5 +69,5 @@ for record in batch:
     known.append((n,p,record["source_id"]))
 
 assert len({r.get("source_id") for r in old if r.get("source_id")}) == sum(bool(r.get("source_id")) for r in old), "Duplicate source ID"
-TARGET.write_text(json.dumps(old, ensure_ascii=False, separators=(",", ":"))+"\\n", encoding="utf-8")
+TARGET.write_text(json.dumps(old, ensure_ascii=False, separators=(",", ":"))+"\n", encoding="utf-8")
 print(json.dumps({"base_plus_import_total":len(old),"inserted_count":len(inserted),"inserted_names":inserted,"excluded_alias_or_id":excluded}))
