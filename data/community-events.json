@@ -225,6 +225,17 @@
     "status": "verified"
   },
   {
+    "title": "Alderville First Nation Veterans Social 2026",
+    "start_date": "2026-11-06",
+    "city": "Alderville",
+    "province": "Ontario",
+    "category": "Indigenous veterans and remembrance",
+    "organizer": "Alderville First Nation",
+    "description": "Community invitation at Alderville Community Centre: potluck dinner at 5:30 p.m., drumming and dancing at 7 p.m. Confirm participation and any access requirements with the organizer.",
+    "url": "https://alderville.ca/alderville-first-nation/news/",
+    "status": "verified"
+  },
+  {
     "title": "Hockey Goalie & Shooting Clinic",
     "start_date": "2026-11-06",
     "city": "Six Nations",
@@ -469,6 +480,18 @@
     "organizer": "University of Alberta",
     "description": "Treaty 7-focused public discussion, 5:30–8 p.m., Burnswest Theatre at The Confluence, 750 9 Avenue SE. Ticket $20; registration closes at capacity.",
     "url": "https://www.ualberta.ca/en/events/alumni/talk-treaty-to-me-regional-conversations-on-land-and-treaties-calgary.html",
+    "status": "verified"
+  },
+  {
+    "title": "2nd National First Nations Homelessness and Mental Wellness Forum",
+    "start_date": "2026-11-18",
+    "end_date": "2026-11-19",
+    "city": "Toronto",
+    "province": "Ontario",
+    "category": "Community health and policy",
+    "organizer": "Assembly of First Nations",
+    "description": "In-person AFN forum at Marriott Downtown at CF Toronto Eaton Centre, 525 Bay Street. Intended for people with lived experience, First Nations leadership and housing/health professionals. Registration required; virtual plenary webcast registration is available.",
+    "url": "https://afn.ca/events/2nd-national-first-nations-homelessness-and-mental-wellness-forum/",
     "status": "verified"
   },
   {
@@ -762,6 +785,18 @@
     "status": "verified"
   },
   {
+    "title": "Assembly of First Nations Special Chiefs Assembly 2026",
+    "start_date": "2026-12-08",
+    "end_date": "2026-12-10",
+    "city": "Ottawa",
+    "province": "Ontario",
+    "category": "First Nations governance and policy",
+    "organizer": "Assembly of First Nations",
+    "description": "In-person AFN Special Chiefs Assembly at Rogers Centre Ottawa, 55 Colonel By Drive. Registration and applicable fees are required; observer registration is available. Check the organizer for eligibility and costs.",
+    "url": "https://afn.ca/events/special-chiefs-assembly-2026/",
+    "status": "verified"
+  },
+  {
     "title": "Christmas Taquaq Food Hamper Gathering",
     "start_date": "2026-12-16",
     "city": "Iqaluit",
@@ -815,6 +850,18 @@
     "organizer": "Yukon First Nation Chamber of Commerce",
     "description": "Yukon First Nation showcase at AME Roundup, Fairmont Waterfront Mackenzie Ballroom. Contact organizer for attendance and registration.",
     "url": "https://www.yfncc.ca/events",
+    "status": "verified"
+  },
+  {
+    "title": "3rd Annual AFN National Natural Resources Forum",
+    "start_date": "2027-02-01",
+    "end_date": "2027-02-04",
+    "city": "Montreal",
+    "province": "Quebec",
+    "category": "First Nations natural resources and economic development",
+    "organizer": "Assembly of First Nations",
+    "description": "AFN forum at Le Centre Sheraton Montreal for First Nations leadership, technicians, industry, academia and government. Registration required; fees apply to most participants, with stated exceptions for First Nations youth and Elders.",
+    "url": "https://afn.ca/events/3rd-annual-national-natural-resources-forum/",
     "status": "verified"
   },
   {
