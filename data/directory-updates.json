@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T18:28:34Z",
+      "commit": "942a9e79cebeba00c307fa9c2a6d23d943e79394",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb1820261031001",
+            "name": "Marten Falls Economic Development Corporation",
+            "place": "Marten Falls First Nation, Ogoki Post, Ontario",
+            "category": "Economic development and business partnerships",
+            "date": "",
+            "source": "https://martenfalls.com/wp-content/uploads/2025/09/Announcement-%E2%80%93-Appointment-of-General-Manager-Marten-Falls-Economic-Development-Corporation.pdf",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1820261031002",
+            "name": "Bay Meats",
+            "place": "Marten Falls First Nation, Thunder Bay, Ontario",
+            "category": "Food processing and retail",
+            "date": "",
+            "source": "https://baymeats.com/our-story/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T17:24:15Z",
       "commit": "3120a5d381adf086c51cd394faca31bafc5bf62a",
       "mode": "data",
