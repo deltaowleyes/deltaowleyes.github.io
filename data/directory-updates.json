@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T21:20:42Z",
+      "commit": "82e97e5309a4da652ac518bf838857e25f29d824",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb2120261031001",
+            "name": "Marten Falls First Nation Realty",
+            "place": "Marten Falls First Nation, Ogoki Post, Ontario",
+            "category": "Real estate and property management",
+            "date": "",
+            "source": "https://martenfalls.com/wp-content/uploads/2024/12/Three-Boards-Six-Positions-December-19-2024.pdf",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T21:20:02Z",
       "commit": "1e9252502f2c9e267b06cb5c1018ac6d6ba29272",
       "mode": "data",
