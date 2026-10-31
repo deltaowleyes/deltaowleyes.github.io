@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T16:22:04Z",
+      "commit": "5890587e70f38042efd0e552c0eb9acfa3c64d72",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb1620261031001",
+            "name": "Mushkegowuk Development Corporation",
+            "place": "Mushkegowuk Region First Nations, Moose Factory, Ontario",
+            "category": "Economic development and business services",
+            "date": "",
+            "source": "https://mushkegowukdc.ca/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1620261031002",
+            "name": "Great North Builder's Supplies",
+            "place": "Mushkegowuk Region First Nations, Moosonee, Ontario",
+            "category": "Building supplies and hardware retail",
+            "date": "",
+            "source": "https://greatnorthcastle.ca/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T15:24:43Z",
       "commit": "123e1669baf94dc24f4f02fa4eb9f8d372993e02",
       "mode": "data",
