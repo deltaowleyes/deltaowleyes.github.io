@@ -1,0 +1,436 @@
+{
+  "batch": "B7",
+  "date": "2026-10-31",
+  "base_commit": "8723fce5564899d628e00d4e4ad66eb1d284b6ef",
+  "old_count": 4691,
+  "new_count": 4697,
+  "added": [
+    {
+      "name": "Fast Freddy’s",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga",
+      "source_id": "DOE-ON-B7-20261031-001",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Eagle Hill Development",
+      "city": "Tyendinaga Mohawk Territory",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga",
+      "source_id": "DOE-ON-B7-20261031-002",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Shop All Trading Post",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga",
+      "source_id": "DOE-ON-B7-20261031-003",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "49 Quick Stop",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga",
+      "source_id": "DOE-ON-B7-20261031-004",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "The Gallery Cafe",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga",
+      "source_id": "DOE-ON-B7-20261031-005",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Arnie’s Appliances and Variety",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga",
+      "source_id": "DOE-ON-B7-20261031-006",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    }
+  ],
+  "excluded": [],
+  "corrections": [
+    {
+      "name": "Whispering Willows on the Bay of Quinte",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Cash Auto",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "KLM Automotive Shop",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Rez Boyz",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Rez Girl Creations",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Artistic Inspirations by Debra",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Created Visions",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Ohkwa:ri Creations",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Teyakenhnekeriyaks Art",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Arrowhead Excavating",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Best Price Fencing",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Carben Concepts Drafting & Design",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Chant Enterprises",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Congers Plumbing",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "HMB Coatings",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "KC Builders",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Kring’s Fire Systems",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Longhaus Logistics",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Mister Electrixs",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Mohawk NDT Services",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Mother Earth",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "NextGen Estimating and Consulting",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Quinte Trade Services",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Deb’s Restaurant & Gas Bar",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Miss Wendy’s Rez Dogs",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Mohawk Soda Company",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Quick Stop Subway",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Ancient Healings Wellness Centre / Enshaterihwasheron:ni Cultural Counselling",
+      "city": "Tyendinaga Mohawk Territory",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Eagle Medicine Healing",
+      "city": "Tyendinaga Mohawk Territory",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Evolve Neurofeedback & Psychotherapy Clinic",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Forever Young",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Indigenous Approaches to Rejuvenating Mind, Body, Heart",
+      "city": "Tyendinaga Mohawk Territory",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Kahentà:ke Wellness Support Services",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Kayo’tebgseru:yo Consulting",
+      "city": "Tyendinaga Mohawk Territory",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Kenhtè:ke Ohtehra’shon:a",
+      "city": "Tyendinaga Mohawk Territory",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Reflective Healing Solutions",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Ridge Road Training & Consulting Inc.",
+      "city": "Tyendinaga Mohawk Territory",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Take Charge Ministries",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Aqua Gen",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Breakaway Gas & Convenience",
+      "city": "Tyendinaga Mohawk Territory",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Fast Freddy’s North",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "First Peoples Energy LP LTD",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Gas N Go",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Kahswentha Trading",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "L & M Enterprises",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Lily Doll’s Farm",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Nations Best ESSO",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Oyen’kwa Convenience & Wholesale",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Peacemaker Convenience",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Sago Full Service Gas and Variety",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Salmon River Enterprises",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Sam’s Lil’ Variety",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Village Variety & Gas Bar",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "DK Enterprises",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Need A Bean Coffee",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Simply Monkey’n Around",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Skalp Clothing",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "B’s Country Boutique",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Deep in Pearls",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Four Paws Pet Supply",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Martin’s Beads & Craft Supply",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Native Renaissance II",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Randy’s Leather",
+      "city": "Tyendinaga Mohawk Territory",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Rebecca Maracle Mohawk Feathersmith",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "The Work Gear",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Rez Cresting",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Curtis Cleaning Services",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Spotless Cleaning",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Bayshore Community Consulting",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Brant Consulting",
+      "city": "Tyendinaga Mohawk Territory",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Camanche Group",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Dawn T. Maracle",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Eagle Hill Capital",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Maratech",
+      "city": "Shannonville",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "Warrior Queen",
+      "city": "Deseronto",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    },
+    {
+      "name": "White Pine & Co.",
+      "city": "Tyendinaga Mohawk Territory",
+      "community": "Mohawks of the Bay of Quinte / Tyendinaga"
+    }
+  ],
+  "reason": "Replace generic Tyendinaga Mohawk Territory location for B6 records with precise source-listed locality (Deseronto, Shannonville or Tyendinaga Territory) and retain a non-geographic community affiliation. No claim of on-reserve ownership or physical location is made.",
+  "browser": "No Chromium browser test, JSON-only change."
+}
