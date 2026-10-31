@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T16:22:13Z",
+      "commit": "4bae52c086dcbbd2f64ecbf1b268f05d75d0f278",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "assumptionofmarycatholicmission|ontario|pikangikumfirstnation",
+            "name": "Assumption of Mary Catholic Mission",
+            "place": "Pikangikum First Nation, Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/parish-directory/western-region-parishes/",
+            "status": "Unverified"
+          },
+          {
+            "key": "sttheresaofthechildjesuscatholicmission|ontario|northspiritlakefirstnation",
+            "name": "St. Theresa of the Child Jesus Catholic Mission",
+            "place": "North Spirit Lake First Nation, Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/parish-directory/western-region-parishes/",
+            "status": "Unverified"
+          },
+          {
+            "key": "stbernadetteparish|ontario|sandylakefirstnation",
+            "name": "St. Bernadette Parish",
+            "place": "Sandy Lake First Nation, Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/parish-directory/western-region-parishes/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T16:22:04Z",
       "commit": "5890587e70f38042efd0e552c0eb9acfa3c64d72",
       "mode": "import",
