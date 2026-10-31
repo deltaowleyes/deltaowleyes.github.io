@@ -4,3 +4,4 @@ Allow: /
 Sitemap: https://deltaowleyes.ca/sitemap.xml
 Sitemap: https://deltaowleyes.ca/news-sitemap.xml
 Sitemap: https://deltaowleyes.ca/guides/sitemap.xml
+Sitemap: https://deltaowleyes.ca/events/highlights/sitemap.xml
