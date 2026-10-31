@@ -1762,5 +1762,33 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "St. Andrew's Church, Muncey",
+    "province": "Ontario",
+    "reserve": "Chippewas of the Thames First Nation",
+    "denomination": "Anglican",
+    "address": "81 Chippewa Road, Muncey, Ontario",
+    "phone": "",
+    "source": "https://diohuron.org/delaware/st-andrews-church-muncey",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Zion Church, Oneida",
+    "province": "Ontario",
+    "reserve": "Oneida Nation of the Thames",
+    "denomination": "Anglican",
+    "address": "329 Oneida Road, Southwold, Ontario",
+    "phone": "",
+    "source": "https://diohuron.org/delaware/zion-church-oneida",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
