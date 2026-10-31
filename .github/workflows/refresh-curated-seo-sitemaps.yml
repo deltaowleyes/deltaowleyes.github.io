@@ -1,0 +1,60 @@
+name: Refresh curated SEO sitemaps
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "guides/**/index.html"
+      - "events/highlights/**/index.html"
+      - "scripts/build_curated_sitemaps.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: curated-seo-sitemap-publisher
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    if: github.repository == 'deltaowleyes/deltaowleyes.github.io'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Generate, validate and publish only curated sitemaps
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Concurrent directory/news pushes are expected. Never force-push.
+          # Rebuild from the latest origin/main after a rejected non-fast-forward.
+          for attempt in 1 2 3 4; do
+            git fetch origin main
+            git checkout -B main origin/main
+
+            python3 scripts/build_curated_sitemaps.py
+            python3 scripts/build_curated_sitemaps.py --check
+
+            if git diff --quiet -- guides/sitemap.xml events/highlights/sitemap.xml; then
+              echo "Both curated sitemaps are already up to date."
+              exit 0
+            fi
+
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -- guides/sitemap.xml events/highlights/sitemap.xml
+            git commit -m "SEO: refresh curated guides and event highlights sitemaps"
+            if git push origin HEAD:main; then
+              echo "Curated SEO sitemaps published without touching other data."
+              exit 0
+            fi
+            echo "Concurrent commit blocked attempt ${attempt}; retrying from main."
+          done
+
+          echo "Unable to publish curated sitemap after four safe attempts." >&2
+          exit 1
