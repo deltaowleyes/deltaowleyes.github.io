@@ -2,6 +2,150 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T13:50:05Z",
+      "commit": "b885d9fbba6b47411704f1e3bf2680798e6cf862",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb1320261031001",
+            "name": "Niska Inn",
+            "place": "Fort Severn First Nation, Fort Severn, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://fortsevernfn.ca/business/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031002",
+            "name": "Warchief Native Apparel",
+            "place": "Fort Severn First Nation, Fort Severn, Ontario",
+            "category": "Apparel retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65301108/fort-severn-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031003",
+            "name": "North Spirit Foods Store",
+            "place": "North Spirit Lake First Nation, North Spirit Lake, Ontario",
+            "category": "Grocery and food retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300067/north-spirit-lake-first-nation-economic-development/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031004",
+            "name": "Sachigo Lake Motel",
+            "place": "Sachigo Lake First Nation, Sachigo Lake, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300325/sachigo-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031005",
+            "name": "Pikangikum Hotel",
+            "place": "Pikangikum First Nation, Pikangikum, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300176/pikangikum-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031006",
+            "name": "Weseeneawegamic Restaurant",
+            "place": "Pikangikum First Nation, Pikangikum, Ontario",
+            "category": "Restaurant",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300176/pikangikum-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031007",
+            "name": "Whitefeather Laundromat",
+            "place": "Pikangikum First Nation, Pikangikum, Ontario",
+            "category": "Laundry services",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300176/pikangikum-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031008",
+            "name": "Whitefeather Forest Management Corporation",
+            "place": "Pikangikum First Nation, Pikangikum, Ontario",
+            "category": "Forestry and land management",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300176/pikangikum-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031009",
+            "name": "Eshkotay Wayab Power Authority",
+            "place": "Pikangikum First Nation, Pikangikum, Ontario",
+            "category": "Utility services",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300176/pikangikum-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031010",
+            "name": "Wapekeka Community Store",
+            "place": "Wapekeka First Nation, Wapekeka, Ontario",
+            "category": "Community retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65282636/wapekeka-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031011",
+            "name": "Bear's Den Hotel",
+            "place": "Wapekeka First Nation, Wapekeka, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65282636/wapekeka-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031012",
+            "name": "Kerry's Coffee House",
+            "place": "Keewaywin First Nation, Keewaywin, Ontario",
+            "category": "Cafe",
+            "date": "",
+            "source": "https://211ontario.ca/service/65306008/keewaywin-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031013",
+            "name": "Keewaywin Motel",
+            "place": "Keewaywin First Nation, Keewaywin, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65306008/keewaywin-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031014",
+            "name": "Poplar Hill Motel",
+            "place": "Poplar Hill First Nation, Poplar Hill, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211north.ca/results/?exct=1&latitude=53.050354&longitude=-93.333305&searchLocation=Sandy+Lake+First+Nation&topicPath=143",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1320261031015",
+            "name": "Sandy Lake Motel",
+            "place": "Sandy Lake First Nation, Sandy Lake, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211north.ca/results/?exct=1&latitude=52.099407&longitude=-94.3017481&searchLocation=Poplar+Hill+First+Nation&topicPath=143",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T13:48:34Z",
       "commit": "c041417f86b02b04ce233d8bf2842e1887082a3d",
       "mode": "data",
