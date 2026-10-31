@@ -1622,5 +1622,19 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "Full Gospel Church",
+    "province": "Ontario",
+    "reserve": "Keewaywin First Nation",
+    "denomination": "Full Gospel",
+    "address": "",
+    "phone": "",
+    "source": "https://211ontario.ca/service/65306008/keewaywin-first-nation-governance/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
