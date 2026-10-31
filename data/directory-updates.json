@@ -2,6 +2,60 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T13:30:37Z",
+      "commit": "0b068e1d28fd815663bb447386e6f333bced2100",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb1220261031001",
+            "name": "Eabametoong First Nation Inn",
+            "place": "Eabametoong First Nation, Eabamet Lake, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65301793/eabametoong-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1220261031002",
+            "name": "White Clay North Coffee Shop",
+            "place": "Eabametoong First Nation, Eabamet Lake, Ontario",
+            "category": "Food service",
+            "date": "",
+            "source": "https://211ontario.ca/service/65301793/eabametoong-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1220261031003",
+            "name": "Corny's Variety Store",
+            "place": "Eabametoong First Nation, Fort Hope, Ontario",
+            "category": "Convenience retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65301793/eabametoong-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1220261031004",
+            "name": "Webequie Motel",
+            "place": "Webequie First Nation, Webequie, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65282529/webequie-first-nation-economic-development/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1220261031005",
+            "name": "Waboose Toys",
+            "place": "Eabametoong First Nation, Eabamet Lake, Ontario",
+            "category": "Retail",
+            "date": "",
+            "source": "https://teachforcanada.ca/en/wp-content/uploads/2017/09/Eabametoong-2024-.pdf",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T13:24:07Z",
       "commit": "2901312127358b55b81861c3898a09daae9ae5a4",
       "mode": "data",
