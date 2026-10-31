@@ -1636,5 +1636,19 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "St. Ignatius Catholic Church",
+    "province": "Ontario",
+    "reserve": "Attawapiskat First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://211ontario.ca/service/65282287/attawapiskat-first-nation-governance/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
