@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T17:24:05Z",
+      "commit": "d8dd979c59a307923eb7de0804e7c5e789536571",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb1720261031003",
+            "name": "Wapekeka Kapeshewekamic",
+            "place": "Wapekeka First Nation, Wapekeka, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://wasaya.com/travel-tips/northern-accommodations/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T16:22:27Z",
       "commit": "d722d5a56edcee5dcb92156cd16228892bf869fa",
       "mode": "data",
