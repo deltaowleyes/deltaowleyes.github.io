@@ -1790,5 +1790,33 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "St. Francis Regis Catholic Mission — Pic Mobert",
+    "province": "Ontario",
+    "reserve": "Netmizaaggamig Nishnaabeg (Pic Mobert First Nation)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/parish-directory/eastern-region-parishes/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "St. Jerome's Catholic Mission — Pays Plat",
+    "province": "Ontario",
+    "reserve": "Pays Plat First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/parish-directory/eastern-region-parishes/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
