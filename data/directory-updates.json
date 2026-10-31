@@ -2,6 +2,132 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T14:27:20Z",
+      "commit": "205f7c81831193c3626c00c002b75c210f5a8335",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb1520261031001",
+            "name": "Bigfoot Variety",
+            "place": "Marten Falls First Nation, Ogoki Post, Ontario",
+            "category": "General retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300615/marten-falls-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1520261031002",
+            "name": "Ogoki Inn",
+            "place": "Marten Falls First Nation, Ogoki Post, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300615/marten-falls-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1520261031003",
+            "name": "Contractors Cabin",
+            "place": "Marten Falls First Nation, Ogoki Post, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300615/marten-falls-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1520261031004",
+            "name": "Kasabonika Hotel and Restaurant",
+            "place": "Kasabonika Lake First Nation, Kasabonika Lake, Ontario",
+            "category": "Accommodation and restaurant",
+            "date": "",
+            "source": "https://211ontario.ca/service/65299654/kasabonika-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1520261031005",
+            "name": "Kasabonika Lake Community Development Corporation",
+            "place": "Kasabonika Lake First Nation, Kasabonika Lake, Ontario",
+            "category": "Economic development services",
+            "date": "",
+            "source": "https://211ontario.ca/service/65299628/kasabonika-lake-first-nation-kasabonika-lake-community-development-corporation/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1520261031006",
+            "name": "Big Trout Lake Hotel and Restaurant",
+            "place": "Kitchenuhmaykoosib Inninuwug First Nation, Big Trout Lake, Ontario",
+            "category": "Accommodation and restaurant",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300918/kitchenuhmaykoosib-inninuwug-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1520261031007",
+            "name": "Petaykawin Development Corporation",
+            "place": "Kitchenuhmaykoosib Inninuwug First Nation, Big Trout Lake, Ontario",
+            "category": "Economic development services",
+            "date": "",
+            "source": "https://211ontario.ca/service/71284694/kitchenuhmaykoosib-inninuwug-economic-development/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1520261031008",
+            "name": "Louie's Store",
+            "place": "Muskrat Dam First Nation, Muskrat Dam, Ontario",
+            "category": "General retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300757/muskrat-dam-first-nation-economic-development/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1520261031009",
+            "name": "Ochikan Atawikamik Store",
+            "place": "Muskrat Dam First Nation, Muskrat Dam, Ontario",
+            "category": "General retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300757/muskrat-dam-first-nation-economic-development/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1520261031010",
+            "name": "Attawapiskat Development Corporation",
+            "place": "Attawapiskat First Nation, Attawapiskat, Ontario",
+            "category": "Economic development services",
+            "date": "",
+            "source": "https://attawapiskat.org/community-directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1520261031011",
+            "name": "Attawapiskat Power Corporation",
+            "place": "Attawapiskat First Nation, Attawapiskat, Ontario",
+            "category": "Electric utility",
+            "date": "",
+            "source": "https://attawapiskat.org/community-directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1520261031012",
+            "name": "Thessalon Bio Centre",
+            "place": "Thessalon First Nation, Thessalon First Nation, Ontario",
+            "category": "Greenhouse and food processing",
+            "date": "",
+            "source": "https://211ontario.ca/service/65308867/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1520261031015",
+            "name": "Naicatchewenin Development Corporation",
+            "place": "Naicatchewenin First Nation, Naicatchewenin, Ontario",
+            "category": "Business consulting and economic development",
+            "date": "",
+            "source": "https://211ontario.ca/service/65301338/naicatchewenin-first-nation-naicatchewenin-development-corporation/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T14:26:40Z",
       "commit": "beb48e742c566a42305a431c618d913d62605c31",
       "mode": "data",
