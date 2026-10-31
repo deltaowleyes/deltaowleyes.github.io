@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T17:24:15Z",
+      "commit": "3120a5d381adf086c51cd394faca31bafc5bf62a",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "metisyouthjigginglessons20261112|20261112|edmonton|alberta",
+            "name": "Métis Youth Jigging Lessons — 2026-11-12",
+            "place": "Edmonton, Alberta",
+            "category": "Métis dance and cultural learning",
+            "date": "2026-11-12",
+            "source": "https://albertametis.com/event/jigging-lessons/2026-11-12/",
+            "status": "Verified event"
+          },
+          {
+            "key": "metisyouthjigginglessons20261119|20261119|edmonton|alberta",
+            "name": "Métis Youth Jigging Lessons — 2026-11-19",
+            "place": "Edmonton, Alberta",
+            "category": "Métis dance and cultural learning",
+            "date": "2026-11-19",
+            "source": "https://albertametis.com/event/jigging-lessons/2026-11-19/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T17:24:05Z",
       "commit": "d8dd979c59a307923eb7de0804e7c5e789536571",
       "mode": "import",
