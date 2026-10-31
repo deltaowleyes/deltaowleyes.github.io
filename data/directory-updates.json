@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T16:22:27Z",
+      "commit": "d722d5a56edcee5dcb92156cd16228892bf869fa",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "2026metismarketmetisartscollective|20261114|edmonton|alberta",
+            "name": "2026 Métis Market — Métis Arts Collective",
+            "place": "Edmonton, Alberta",
+            "category": "Métis arts and cultural market",
+            "date": "2026-11-14",
+            "source": "https://albertametis.com/event/metis-market-2026-11-14/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T16:22:13Z",
       "commit": "4bae52c086dcbbd2f64ecbf1b268f05d75d0f278",
       "mode": "data",
