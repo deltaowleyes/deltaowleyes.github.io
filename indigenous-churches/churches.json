@@ -1650,5 +1650,33 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "Full Gospel Youth Ministry Church",
+    "province": "Ontario",
+    "reserve": "Wapekeka First Nation",
+    "denomination": "",
+    "address": "",
+    "phone": "",
+    "source": "https://wapekeka.ca/about/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Wapekeka Assembly Church",
+    "province": "Ontario",
+    "reserve": "Wapekeka First Nation",
+    "denomination": "",
+    "address": "",
+    "phone": "",
+    "source": "https://wapekeka.ca/about/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
