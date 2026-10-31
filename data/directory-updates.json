@@ -2,6 +2,231 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T14:01:29Z",
+      "commit": "8b0e3ff294768a0fcd709ad59a05ab75a4acb482",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb1420261031001",
+            "name": "Amik Logging Inc",
+            "place": "Constance Lake First Nation, Constance Lake, Ontario",
+            "category": "Forestry",
+            "date": "",
+            "source": "https://211ontario.ca/service/65276485/constance-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031002",
+            "name": "Lecours Lumber",
+            "place": "Constance Lake First Nation, Constance Lake, Ontario",
+            "category": "Lumber and building materials",
+            "date": "",
+            "source": "https://211ontario.ca/service/65276485/constance-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031003",
+            "name": "Mahiihkanuk Construction Ltd",
+            "place": "Constance Lake First Nation, Constance Lake, Ontario",
+            "category": "Construction",
+            "date": "",
+            "source": "https://211ontario.ca/service/65276485/constance-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031004",
+            "name": "Weekoban Trucking Inc",
+            "place": "Constance Lake First Nation, Constance Lake, Ontario",
+            "category": "Trucking and transportation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65276485/constance-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031005",
+            "name": "JG Grocery Store",
+            "place": "Constance Lake First Nation, Constance Lake, Ontario",
+            "category": "Grocery retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65276485/constance-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031006",
+            "name": "Timmins Wabasse Convenience Store",
+            "place": "Nibinamik First Nation, Summer Beaver, Ontario",
+            "category": "Convenience retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65301441/nibinamik-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031007",
+            "name": "Anik's Store",
+            "place": "Nibinamik First Nation, Summer Beaver, Ontario",
+            "category": "General retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65301441/nibinamik-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031008",
+            "name": "Nibinamik Fur Trading Co",
+            "place": "Nibinamik First Nation, Summer Beaver, Ontario",
+            "category": "Artisan and trading services",
+            "date": "",
+            "source": "https://211ontario.ca/service/65301441/nibinamik-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031009",
+            "name": "Weagamow Accommodations",
+            "place": "North Caribou Lake First Nation, Weagamow Lake, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300036/north-caribou-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031010",
+            "name": "Onadamakay Store",
+            "place": "North Caribou Lake First Nation, Weagamow Lake, Ontario",
+            "category": "General retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300036/north-caribou-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031011",
+            "name": "Weagamow Lake Five Bay Garage",
+            "place": "North Caribou Lake First Nation, Weagamow Lake, Ontario",
+            "category": "Automotive services",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300036/north-caribou-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031012",
+            "name": "Weagamow Lake Restaurant",
+            "place": "North Caribou Lake First Nation, Weagamow Lake, Ontario",
+            "category": "Restaurant",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300036/north-caribou-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031013",
+            "name": "Omahamo Store",
+            "place": "Kingfisher Lake First Nation, Kingfisher Lake, Ontario",
+            "category": "General retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300558/kingfisher-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031014",
+            "name": "Omahamo Hotel and Restaurant",
+            "place": "Kingfisher Lake First Nation, Kingfisher Lake, Ontario",
+            "category": "Accommodation and restaurant",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300558/kingfisher-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031015",
+            "name": "Cat Lake Lodge",
+            "place": "Cat Lake First Nation, Cat Lake, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300977/cat-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031016",
+            "name": "Gray's Motel",
+            "place": "Cat Lake First Nation, Cat Lake, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65300977/cat-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031017",
+            "name": "J & D Trading",
+            "place": "Deer Lake First Nation, Deer Lake, Ontario",
+            "category": "Retail and trading",
+            "date": "",
+            "source": "https://211ontario.ca/service/65309351/deer-lake-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031018",
+            "name": "McKoop Lake Tourist Camp",
+            "place": "Bearskin Lake First Nation, Bearskin Lake, Ontario",
+            "category": "Tourism and accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65282322/bearskin-lake-first-nation-business-economic-development/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031019",
+            "name": "Michikan Lake Business Centre",
+            "place": "Bearskin Lake First Nation, Bearskin Lake, Ontario",
+            "category": "Restaurant and accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65282322/bearskin-lake-first-nation-business-economic-development/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031020",
+            "name": "Bearskin Lake Cable",
+            "place": "Bearskin Lake First Nation, Bearskin Lake, Ontario",
+            "category": "Telecommunications",
+            "date": "",
+            "source": "https://211ontario.ca/service/65282322/bearskin-lake-first-nation-business-economic-development/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031021",
+            "name": "Wiisinin Cafe",
+            "place": "Naotkamegwanning First Nation, Pawitik, Ontario",
+            "category": "Cafe",
+            "date": "",
+            "source": "https://211ontario.ca/service/71057715/naotkamegwanning-first-nation-economic-development/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031022",
+            "name": "Paagitoon Janitorial Services",
+            "place": "Naotkamegwanning First Nation, Pawitik, Ontario",
+            "category": "Commercial cleaning",
+            "date": "",
+            "source": "https://211ontario.ca/service/71057715/naotkamegwanning-first-nation-economic-development/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031023",
+            "name": "Oji-Bee Honey Co",
+            "place": "Naotkamegwanning First Nation, Pawitik, Ontario",
+            "category": "Food production",
+            "date": "",
+            "source": "https://211ontario.ca/service/71057715/naotkamegwanning-first-nation-economic-development/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1420261031024",
+            "name": "White's Store",
+            "place": "Naotkamegwanning First Nation, Pawitik, Ontario",
+            "category": "General retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65301386/naotkamegwanning-first-nation-governance/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T14:00:12Z",
       "commit": "69808ef04f05e10980cddfd3268e6bfb842d9a7e",
       "mode": "data",
