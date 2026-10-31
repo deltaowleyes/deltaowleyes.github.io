@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'indigenous-businesses/imports/*.json'
+      - '.github/workflows/import-directory-batches.yml'
+  workflow_dispatch:
 permissions:
   contents: write
 concurrency:
@@ -23,7 +25,7 @@ jobs:
             python3 scripts/import_directory_batch.py "$batch"
           done
       - name: Record newly added directory entries
-        run: python3 scripts/record_directory_additions.py --base HEAD --run "$GITHUB_SHA" --mode import
+        run: python3 scripts/record_directory_additions.py --base "$GITHUB_SHA" --run "$GITHUB_SHA" --mode import
       - name: Validate directory JSON and verification rules
         run: python3 scripts/check_directory_data.py
       - name: Commit only modified directory data
