@@ -473,6 +473,18 @@
     "status": "verified"
   },
   {
+    "title": "Vancouver Indigenous Fashion Week 2026 — EARTH",
+    "start_date": "2026-11-18",
+    "end_date": "2026-11-21",
+    "city": "Vancouver",
+    "province": "British Columbia",
+    "category": "Indigenous fashion and cultural festival",
+    "organizer": "Vancouver Indigenous Fashion Week / All My Relations Indigenous Society",
+    "description": "Public ticketed Indigenous-led fashion, arts and cultural showcases at Queen Elizabeth Theatre, Vancouver. November 18–21; confirm individual show times and ticket availability with the organizer. Venue corroborated by Vancouver Civic Theatres: https://vancouvercivictheatres.com/events/vancouver-indigenous-fashion-week-indigenous-futures-nov-20-2026/",
+    "url": "https://www.vifw.ca/",
+    "status": "verified"
+  },
+  {
     "title": "ANYMA ORA’ Performance",
     "start_date": "2026-11-19",
     "city": "Sainte-Thérèse",
@@ -561,6 +573,18 @@
     "organizer": "Manitoba Aboriginal Sports and Recreation Council",
     "description": "Annual general meeting; consult organizer for venue and attendance eligibility.",
     "url": "https://www.masrc.com/events",
+    "status": "verified"
+  },
+  {
+    "title": "Minoshkite Indigenous Music & Arts Festival 2026",
+    "start_date": "2026-11-22",
+    "end_date": "2026-11-23",
+    "city": "Ottawa",
+    "province": "Ontario",
+    "category": "Indigenous music and arts festival",
+    "organizer": "Canada's Music Incubator, Gord Downie & Chanie Wenjack Fund, and SUPERCONNECTED",
+    "description": "Public pay-what-you-can ticketed festival: November 22 at Club SAW, 67 Nicholas Street; November 23 at Bronson Centre, 211 Bronson Avenue, Ottawa. See organizer for tickets and schedules.",
+    "url": "https://downiewenjack.ca/eventscalendar/minoshkite-indigenous-music-arts-festival-2026/",
     "status": "verified"
   },
   {
