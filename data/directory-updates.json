@@ -2,6 +2,44 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T15:24:43Z",
+      "commit": "123e1669baf94dc24f4f02fa4eb9f8d372993e02",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "fullgospelyouthministrychurch|ontario|wapekekafirstnation",
+            "name": "Full Gospel Youth Ministry Church",
+            "place": "Wapekeka First Nation, Ontario",
+            "category": "",
+            "date": "",
+            "source": "https://wapekeka.ca/about/",
+            "status": "Unverified"
+          },
+          {
+            "key": "wapekekaassemblychurch|ontario|wapekekafirstnation",
+            "name": "Wapekeka Assembly Church",
+            "place": "Wapekeka First Nation, Ontario",
+            "category": "",
+            "date": "",
+            "source": "https://wapekeka.ca/about/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "indigenouswomensartsconferencefestivalpublicmarketplace|20261107|ottawa|ontario",
+            "name": "Indigenous Women's Arts Conference & Festival — Public Marketplace",
+            "place": "Ottawa, Ontario",
+            "category": "Indigenous arts marketplace and cultural celebration",
+            "date": "2026-11-07",
+            "source": "https://indigenousartscollective.org/indigenouswomensconference/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T14:27:20Z",
       "commit": "205f7c81831193c3626c00c002b75c210f5a8335",
       "mode": "import",
