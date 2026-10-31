@@ -3,18 +3,27 @@ on:
   push:
     branches: [main]
     paths:
-      - '.github/workflows/test-directory-browser.yml'
       - 'scripts/test_directory_browser.mjs'
       - 'admin/**'
-      - 'indigenous-businesses/**'
-      - 'indigenous-churches/**'
+      - 'indigenous-businesses/index.html'
+      - 'indigenous-businesses/profile.html'
+      - 'indigenous-businesses/**/*.js'
+      - 'indigenous-businesses/**/*.css'
+      - 'indigenous-churches/index.html'
+      - 'indigenous-churches/**/*.js'
+      - 'indigenous-churches/**/*.css'
   pull_request:
     paths:
       - '.github/workflows/test-directory-browser.yml'
       - 'scripts/test_directory_browser.mjs'
       - 'admin/**'
-      - 'indigenous-businesses/**'
-      - 'indigenous-churches/**'
+      - 'indigenous-businesses/index.html'
+      - 'indigenous-businesses/profile.html'
+      - 'indigenous-businesses/**/*.js'
+      - 'indigenous-businesses/**/*.css'
+      - 'indigenous-churches/index.html'
+      - 'indigenous-churches/**/*.js'
+      - 'indigenous-churches/**/*.css'
   workflow_dispatch:
 permissions:
   contents: read

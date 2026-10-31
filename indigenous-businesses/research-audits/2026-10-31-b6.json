@@ -1,0 +1,585 @@
+{
+  "batch": "B6",
+  "date": "2026-10-31",
+  "source_count_before": 4604,
+  "investigated": 95,
+  "added": 87,
+  "source_count_after": 4691,
+  "base_commit": "7b8f71ad0f89af6693867948831dc7b0fb8cf8ac",
+  "communities": {
+    "Tyendinaga Mohawk Territory": 76,
+    "Thessalon First Nation": 2,
+    "Whitefish River First Nation": 5,
+    "Wahta Mohawks": 1,
+    "Magnetawan First Nation": 2,
+    "Shawanaga First Nation": 1
+  },
+  "added_records": [
+    {
+      "name": "Whispering Willows on the Bay of Quinte",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-001",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Cash Auto",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-002",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "KLM Automotive Shop",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-003",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Rez Boyz",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-004",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Rez Girl Creations",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-005",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Artistic Inspirations by Debra",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-006",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Created Visions",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-007",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Ohkwa:ri Creations",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-008",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Teyakenhnekeriyaks Art",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-009",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Arrowhead Excavating",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-010",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Best Price Fencing",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-011",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Carben Concepts Drafting & Design",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-013",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Chant Enterprises",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-014",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Congers Plumbing",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-015",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "HMB Coatings",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-016",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "KC Builders",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-017",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Kring’s Fire Systems",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-019",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Longhaus Logistics",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-020",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Mister Electrixs",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-021",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Mohawk NDT Services",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-022",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Mother Earth",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-024",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "NextGen Estimating and Consulting",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-025",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Quinte Trade Services",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-026",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Deb’s Restaurant & Gas Bar",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-027",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Miss Wendy’s Rez Dogs",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-028",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Mohawk Soda Company",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-029",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Quick Stop Subway",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-030",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Ancient Healings Wellness Centre / Enshaterihwasheron:ni Cultural Counselling",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-031",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Eagle Medicine Healing",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-032",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Evolve Neurofeedback & Psychotherapy Clinic",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-033",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Forever Young",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-034",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Indigenous Approaches to Rejuvenating Mind, Body, Heart",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-035",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Kahentà:ke Wellness Support Services",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-036",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Kayo’tebgseru:yo Consulting",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-037",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Kenhtè:ke Ohtehra’shon:a",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-038",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Reflective Healing Solutions",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-039",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Ridge Road Training & Consulting Inc.",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-040",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Take Charge Ministries",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-041",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Aqua Gen",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-042",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Breakaway Gas & Convenience",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-043",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Fast Freddy’s North",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-044",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "First Peoples Energy LP LTD",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-046",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Gas N Go",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-047",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Kahswentha Trading",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-048",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "L & M Enterprises",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-049",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Lily Doll’s Farm",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-050",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Nations Best ESSO",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-051",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Oyen’kwa Convenience & Wholesale",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-052",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Peacemaker Convenience",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-053",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Sago Full Service Gas and Variety",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-054",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Salmon River Enterprises",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-055",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Sam’s Lil’ Variety",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-056",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Village Variety & Gas Bar",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-058",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "DK Enterprises",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-059",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Need A Bean Coffee",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-060",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Simply Monkey’n Around",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-061",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Skalp Clothing",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-062",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "B’s Country Boutique",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-064",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Deep in Pearls",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-065",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Four Paws Pet Supply",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-066",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Martin’s Beads & Craft Supply",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-067",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Native Renaissance II",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-068",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Randy’s Leather",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-069",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Rebecca Maracle Mohawk Feathersmith",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-070",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "The Work Gear",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-071",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Rez Cresting",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-072",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Curtis Cleaning Services",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-073",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Spotless Cleaning",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-074",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Bayshore Community Consulting",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-075",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Brant Consulting",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-076",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Camanche Group",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-077",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Dawn T. Maracle",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-078",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Eagle Hill Capital",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-080",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Maratech",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-082",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Warrior Queen",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-083",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "White Pine & Co.",
+      "community": "Tyendinaga Mohawk Territory",
+      "source_id": "DOE-ON-B6-20261031-084",
+      "source_url": "https://mbq-tmt.org/business-directory/"
+    },
+    {
+      "name": "Ever Good Variety",
+      "community": "Thessalon First Nation",
+      "source_id": "DOE-ON-B6-20261031-085",
+      "source_url": "https://www.thessalonfirstnation.ca/local-businesses.html"
+    },
+    {
+      "name": "Giguere Trucking",
+      "community": "Thessalon First Nation",
+      "source_id": "DOE-ON-B6-20261031-086",
+      "source_url": "https://www.thessalonfirstnation.ca/local-businesses.html"
+    },
+    {
+      "name": "Rainbow Lodge and Cabin Rentals",
+      "community": "Whitefish River First Nation",
+      "source_id": "DOE-ON-B6-20261031-087",
+      "source_url": "https://www.whitefishriver.ca/local-businesses"
+    },
+    {
+      "name": "McGregor’s Landing",
+      "community": "Whitefish River First Nation",
+      "source_id": "DOE-ON-B6-20261031-088",
+      "source_url": "https://www.whitefishriver.ca/local-businesses"
+    },
+    {
+      "name": "Mnidoo Mnising Employment and Training",
+      "community": "Whitefish River First Nation",
+      "source_id": "DOE-ON-B6-20261031-089",
+      "source_url": "https://www.whitefishriver.ca/local-businesses"
+    },
+    {
+      "name": "Whitefish River Lafarge Cement Terminal",
+      "community": "Whitefish River First Nation",
+      "source_id": "DOE-ON-B6-20261031-090",
+      "source_url": "https://www.whitefishriver.ca/local-businesses"
+    },
+    {
+      "name": "Waubetek Business Development Corporation",
+      "community": "Whitefish River First Nation",
+      "source_id": "DOE-ON-B6-20261031-091",
+      "source_url": "https://www.whitefishriver.ca/local-businesses"
+    },
+    {
+      "name": "Iroquois Cranberry Growers",
+      "community": "Wahta Mohawks",
+      "source_id": "DOE-ON-B6-20261031-092",
+      "source_url": "https://www.wahta.ca/"
+    },
+    {
+      "name": "Magnetawan First Nation Store & Gas Bar",
+      "community": "Magnetawan First Nation",
+      "source_id": "DOE-ON-B6-20261031-093",
+      "source_url": "https://www.magfn.com/mfn-about-us/"
+    },
+    {
+      "name": "Magnetawan First Nation Tim Hortons",
+      "community": "Magnetawan First Nation",
+      "source_id": "DOE-ON-B6-20261031-094",
+      "source_url": "https://www.magfn.com/mfn-about-us/"
+    },
+    {
+      "name": "Shawanaga Learning Centre",
+      "community": "Shawanaga First Nation",
+      "source_id": "DOE-ON-B6-20261031-095",
+      "source_url": "https://shawanagafirstnation.ca/departments-services/economic-development/"
+    }
+  ],
+  "discarded": [
+    {
+      "incoming": "Big Chief Erectors",
+      "matched": "Big Chief Erectors",
+      "reason": "Existing name, strong alias, or context-supported overlapping identity"
+    },
+    {
+      "incoming": "KH Excavation and Consulting",
+      "matched": "KH Excavation & Consulting",
+      "reason": "Existing name, strong alias, or context-supported overlapping identity"
+    },
+    {
+      "incoming": "Mohawk Steel & Trim",
+      "matched": "Mohawk Steel & Trim",
+      "reason": "Existing name, strong alias, or context-supported overlapping identity"
+    },
+    {
+      "incoming": "Fast Freddy’s",
+      "matched": "Fast Freddy’s North",
+      "reason": "Existing name, strong alias, or context-supported overlapping identity"
+    },
+    {
+      "incoming": "Three Nations Traders",
+      "matched": "Three Nations Traders",
+      "reason": "Existing name, strong alias, or context-supported overlapping identity"
+    },
+    {
+      "incoming": "Shop All Trading Post",
+      "matched": "Need A Bean Coffee",
+      "reason": "Existing name, strong alias, or context-supported overlapping identity"
+    },
+    {
+      "incoming": "Down For Life Productions",
+      "matched": "DFL-Productions",
+      "reason": "Existing name, strong alias, or context-supported overlapping identity"
+    },
+    {
+      "incoming": "Eagle Hill Development",
+      "matched": "Eagle Hill Capital",
+      "reason": "Existing name, strong alias, or context-supported overlapping identity"
+    }
+  ],
+  "policy": "Addresses withheld when residential status is unclear; ownership and reserve-location evidence separate; new records unverified.",
+  "browser_workflow": "JSON-only push changes no longer trigger Chromium; HTML/JS/admin updates still trigger tests."
+}
