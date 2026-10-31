@@ -2,6 +2,89 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T13:24:07Z",
+      "commit": "2901312127358b55b81861c3898a09daae9ae5a4",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "stpetersanglicanchurch|ontario|bearskinlakefirstnation",
+            "name": "St. Peter's Anglican Church",
+            "place": "Bearskin Lake First Nation, Ontario",
+            "category": "Anglican",
+            "date": "",
+            "source": "https://www.mishamikoweesh.ca/churches",
+            "status": "Unverified"
+          },
+          {
+            "key": "stmarksanglicanchurch|ontario|kasabonikalakefirstnation",
+            "name": "St. Mark's Anglican Church",
+            "place": "Kasabonika Lake First Nation, Ontario",
+            "category": "Anglican",
+            "date": "",
+            "source": "https://www.mishamikoweesh.ca/churches",
+            "status": "Unverified"
+          },
+          {
+            "key": "stpaulsanglicanchurch|ontario|wapekekafirstnation",
+            "name": "St. Paul's Anglican Church",
+            "place": "Wapekeka First Nation, Ontario",
+            "category": "Anglican",
+            "date": "",
+            "source": "https://www.mishamikoweesh.ca/churches",
+            "status": "Unverified"
+          },
+          {
+            "key": "stlukesanglicanchurch|manitoba|bird",
+            "name": "St. Luke's Anglican Church",
+            "place": "Bird, Manitoba",
+            "category": "Anglican",
+            "date": "",
+            "source": "https://www.mishamikoweesh.ca/churches",
+            "status": "Unverified"
+          },
+          {
+            "key": "stpaulsanglicanchurch|manitoba|tadoulelake",
+            "name": "St. Paul's Anglican Church",
+            "place": "Tadoule Lake, Manitoba",
+            "category": "Anglican",
+            "date": "",
+            "source": "https://www.mishamikoweesh.ca/churches",
+            "status": "Unverified"
+          },
+          {
+            "key": "stjohnsanglicanchurch|manitoba|yorklanding",
+            "name": "St. John's Anglican Church",
+            "place": "York Landing, Manitoba",
+            "category": "Anglican",
+            "date": "",
+            "source": "https://www.mishamikoweesh.ca/churches",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "vancouverindigenousfashionweek2026earth|20261118|vancouver|britishcolumbia",
+            "name": "Vancouver Indigenous Fashion Week 2026 — EARTH",
+            "place": "Vancouver, British Columbia",
+            "category": "Indigenous fashion and cultural festival",
+            "date": "2026-11-18",
+            "source": "https://www.vifw.ca/",
+            "status": "Verified event"
+          },
+          {
+            "key": "minoshkiteindigenousmusicartsfestival2026|20261122|ottawa|ontario",
+            "name": "Minoshkite Indigenous Music & Arts Festival 2026",
+            "place": "Ottawa, Ontario",
+            "category": "Indigenous music and arts festival",
+            "date": "2026-11-22",
+            "source": "https://downiewenjack.ca/eventscalendar/minoshkite-indigenous-music-arts-festival-2026/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T12:11:13Z",
       "commit": "65a3c68788dd8d2b9f88fc9bea4a40b573e47868",
       "mode": "import",
