@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T20:21:17Z",
+      "commit": "f9338874bd322b3dd278fda0c54e56a9941dae84",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "standrewschurchmuncey|ontario|chippewasofthethamesfirstnation",
+            "name": "St. Andrew's Church, Muncey",
+            "place": "Chippewas of the Thames First Nation, Ontario",
+            "category": "Anglican",
+            "date": "",
+            "source": "https://diohuron.org/delaware/st-andrews-church-muncey",
+            "status": "Unverified"
+          },
+          {
+            "key": "zionchurchoneida|ontario|oneidanationofthethames",
+            "name": "Zion Church, Oneida",
+            "place": "Oneida Nation of the Thames, Ontario",
+            "category": "Anglican",
+            "date": "",
+            "source": "https://diohuron.org/delaware/zion-church-oneida",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T19:26:19Z",
       "commit": "3024c60d9868755789eb807281261b6257112343",
       "mode": "data",
