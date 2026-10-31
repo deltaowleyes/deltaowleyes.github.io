@@ -1734,5 +1734,33 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "St. Anne Catholic Parish",
+    "province": "Ontario",
+    "reserve": "Fort William First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/parish-directory/thunder-bay-region-parishes/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Sacred Heart of Jesus Catholic Mission",
+    "province": "Ontario",
+    "reserve": "Kiashke Zaaging Anishinaabek (Gull Bay First Nation)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/parish-directory/eastern-region-parishes/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
