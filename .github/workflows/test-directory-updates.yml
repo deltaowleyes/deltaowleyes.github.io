@@ -1,0 +1,31 @@
+name: Validate directory Updates history
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/record_directory_additions.py'
+      - 'scripts/test_directory_updates.py'
+      - 'assets/directory-updates.js'
+      - 'data/directory-updates.json'
+      - 'indigenous-businesses/updates/**'
+      - 'indigenous-churches/updates/**'
+      - 'events/updates/**'
+      - '.github/workflows/test-directory-updates.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON history and Python syntax
+        run: |
+          python3 -m py_compile scripts/record_directory_additions.py
+          python3 -m json.tool data/directory-updates.json > /dev/null
+      - name: Test new-listing history without browser
+        run: python3 scripts/test_directory_updates.py
+      - name: Check update view JavaScript syntax
+        run: node --check assets/directory-updates.js
+      - name: Validate directory JSON
+        run: python3 scripts/check_directory_data.py
