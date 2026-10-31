@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T23:25:49Z",
+      "commit": "32d1bcc003b85fb0cc5e7975565198722774c369",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb2320261031002",
+            "name": "Kopet Convenience and Gas Store",
+            "place": "Attawapiskat First Nation, Attawapiskat, Ontario",
+            "category": "Convenience retail and fuel",
+            "date": "",
+            "source": "https://attawapiskat.org/community-directory/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T22:23:21Z",
       "commit": "6ba2254dcae660695c37a62bff32eda8c4907ff8",
       "mode": "data",
