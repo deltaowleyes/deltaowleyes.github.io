@@ -403,6 +403,28 @@
     "status": "verified"
   },
   {
+    "title": "Métis Youth Jigging Lessons — 2026-11-12",
+    "start_date": "2026-11-12",
+    "city": "Edmonton",
+    "province": "Alberta",
+    "category": "Métis dance and cultural learning",
+    "organizer": "Otipemisiwak Métis Government",
+    "description": "6–8 p.m. at the Métis Veterans Building, 12308 111 Avenue, Edmonton. Weekly jigging instruction with Joel Gladue. Open to Métis Youth Citizens ages 12–29 from any district; advance registration requested. Not a general-public drop-in.",
+    "url": "https://albertametis.com/event/jigging-lessons/2026-11-12/",
+    "status": "verified"
+  },
+  {
+    "title": "2026 Métis Market — Métis Arts Collective",
+    "start_date": "2026-11-14",
+    "city": "Edmonton",
+    "province": "Alberta",
+    "category": "Métis arts and cultural market",
+    "organizer": "Otipemisiwak Métis Government / Métis Arts Collective",
+    "description": "Public Métis arts market, 10 a.m.–5 p.m., Londonderry Mall East Court (main entrance beside the Bank of Montreal). Browse Métis makers' artwork and enjoy cultural activities, live music and dance. Confirm details with the organizer before visiting.",
+    "url": "https://albertametis.com/event/metis-market-2026-11-14/",
+    "status": "verified"
+  },
+  {
     "title": "2026 NWT Handmade Holiday Market",
     "start_date": "2026-11-14",
     "city": "Yellowknife",
@@ -422,17 +444,6 @@
     "organizer": "Stratford Perth Museum",
     "description": "10 a.m.–4 p.m. at Stratford Perth Museum, 4275 Huron Road. Check organizer for visitor details.",
     "url": "https://visitstratford.ca/acknowledging-the-roots-of-our-community/",
-    "status": "verified"
-  },
-  {
-    "title": "2026 Métis Market — Métis Arts Collective",
-    "start_date": "2026-11-14",
-    "city": "Edmonton",
-    "province": "Alberta",
-    "category": "Métis arts and cultural market",
-    "organizer": "Otipemisiwak Métis Government / Métis Arts Collective",
-    "description": "Public Métis arts market, 10 a.m.–5 p.m., Londonderry Mall East Court (main entrance beside the Bank of Montreal). Browse Métis makers' artwork and enjoy cultural activities, live music and dance. Confirm details with the organizer before visiting.",
-    "url": "https://albertametis.com/event/metis-market-2026-11-14/",
     "status": "verified"
   },
   {
@@ -574,6 +585,17 @@
     "organizer": "KWAHIATONHK",
     "description": "First Nations literature event. Confirm individual sessions and admission with organizers.",
     "url": "https://cdrhpnq-fnhrdcq.ca/en/events-v2/",
+    "status": "verified"
+  },
+  {
+    "title": "Métis Youth Jigging Lessons — 2026-11-19",
+    "start_date": "2026-11-19",
+    "city": "Edmonton",
+    "province": "Alberta",
+    "category": "Métis dance and cultural learning",
+    "organizer": "Otipemisiwak Métis Government",
+    "description": "6–8 p.m. at the Métis Veterans Building, 12308 111 Avenue, Edmonton. Weekly jigging instruction with Joel Gladue. Open to Métis Youth Citizens ages 12–29 from any district; advance registration requested. Not a general-public drop-in.",
+    "url": "https://albertametis.com/event/jigging-lessons/2026-11-19/",
     "status": "verified"
   },
   {
