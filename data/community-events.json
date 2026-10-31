@@ -80,6 +80,18 @@
     "status": "verified"
   },
   {
+    "title": "NIUSLA Summit 2026: Dismantling Anti-Indigenous Racism",
+    "start_date": "2026-11-03",
+    "end_date": "2026-11-04",
+    "city": "Burnaby",
+    "province": "British Columbia",
+    "category": "Indigenous leadership and education",
+    "organizer": "National Indigenous University Senior Leaders' Association",
+    "description": "November 3–4 at Simon Fraser University's First Peoples' Gathering House, Burnaby campus. Indigenous and post-secondary leaders, educators and other interested registrants may attend by paid in-person registration ($200) or online via Zoom ($100); no general walk-ins.",
+    "url": "https://www.niusla.ca/events/",
+    "status": "verified"
+  },
+  {
     "title": "Powwow Life-Drawing",
     "start_date": "2026-11-03",
     "city": "Ottawa",
@@ -268,6 +280,17 @@
     "organizer": "Long Plain First Nation",
     "description": "Veterans Day powwow at Keesh Conference and Gaming Centre. Confirm visitor details with event organizers.",
     "url": "https://calendar.powwows.com/events/categories/pow-wows-in-manitoba/",
+    "status": "verified"
+  },
+  {
+    "title": "Natural Climate Solutions Virtual Forum — Métis Nation of Ontario",
+    "start_date": "2026-11-07",
+    "city": "Online",
+    "province": "Ontario",
+    "category": "Métis environment and climate education",
+    "organizer": "Métis Nation of Ontario",
+    "description": "November 7, 1–4 p.m. Eastern, virtual climate forum for Métis Nation of Ontario citizens only. Advance registration required through the official organizer page.",
+    "url": "https://southwestregion.metisnation.org/event/virtual-climate-change-forum/",
     "status": "verified"
   },
   {
