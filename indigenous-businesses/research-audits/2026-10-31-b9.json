@@ -1,0 +1,276 @@
+{
+  "batch": "B9",
+  "date": "2026-10-31",
+  "base_commit": "6699014478dd31d6f15aa27b6eaef0c56f1ac2a2",
+  "data_commit": "9674904a0433ba1fbeeef89e380b02da3a23595e",
+  "old_count": 4724,
+  "new_count": 4756,
+  "additions": [
+    {
+      "name": "Aki & Stone Massage & Wellness",
+      "community": "Mississauga First Nation",
+      "source_id": "DOE-ON-B9-20261031-001",
+      "source_url": "https://www.mississaugi.com/business-directory",
+      "ownership_source_url": "https://www.mississaugi.com/business-directory",
+      "on_reserve_location_source_url": "https://www.mississaugi.com/business-directory"
+    },
+    {
+      "name": "Brian Cada",
+      "community": "Mississauga First Nation",
+      "source_id": "DOE-ON-B9-20261031-002",
+      "source_url": "https://www.mississaugi.com/business-directory",
+      "ownership_source_url": "https://www.mississaugi.com/business-directory",
+      "on_reserve_location_source_url": "https://www.mississaugi.com/business-directory"
+    },
+    {
+      "name": "North Shore Building Company",
+      "community": "Mississauga First Nation",
+      "source_id": "DOE-ON-B9-20261031-003",
+      "source_url": "https://www.mississaugi.com/business-directory",
+      "ownership_source_url": "https://www.mississaugi.com/business-directory",
+      "on_reserve_location_source_url": "https://www.mississaugi.com/business-directory"
+    },
+    {
+      "name": "Broken Canoe Trading Post and Gas Station",
+      "community": "Mississauga First Nation",
+      "source_id": "DOE-ON-B9-20261031-004",
+      "source_url": "https://www.mississaugi.com/business-directory",
+      "ownership_source_url": "https://www.mississaugi.com/business-directory",
+      "on_reserve_location_source_url": "https://www.mississaugi.com/business-directory"
+    },
+    {
+      "name": "Chiblow Lake Lodge",
+      "community": "Mississauga First Nation",
+      "source_id": "DOE-ON-B9-20261031-005",
+      "source_url": "https://www.mississaugi.com/business-directory",
+      "ownership_source_url": "https://www.mississaugi.com/business-directory",
+      "on_reserve_location_source_url": "https://www.mississaugi.com/business-directory"
+    },
+    {
+      "name": "Pier Seventeen - Restaurant & Motel",
+      "community": "Mississauga First Nation",
+      "source_id": "DOE-ON-B9-20261031-006",
+      "source_url": "https://www.mississaugi.com/business-directory",
+      "ownership_source_url": "https://www.mississaugi.com/business-directory",
+      "on_reserve_location_source_url": "https://www.mississaugi.com/business-directory"
+    },
+    {
+      "name": "Riverway Rentals",
+      "community": "Mississauga First Nation",
+      "source_id": "DOE-ON-B9-20261031-007",
+      "source_url": "https://www.mississaugi.com/business-directory",
+      "ownership_source_url": "https://www.mississaugi.com/business-directory",
+      "on_reserve_location_source_url": "https://www.mississaugi.com/business-directory"
+    },
+    {
+      "name": "Unleashed Fitness Centre",
+      "community": "Mississauga First Nation",
+      "source_id": "DOE-ON-B9-20261031-008",
+      "source_url": "https://www.mississaugi.com/business-directory",
+      "ownership_source_url": "https://www.mississaugi.com/business-directory",
+      "on_reserve_location_source_url": "https://www.mississaugi.com/business-directory"
+    },
+    {
+      "name": "Chrissy's Catering",
+      "community": "Mississauga First Nation",
+      "source_id": "DOE-ON-B9-20261031-009",
+      "source_url": "https://www.mississaugi.com/business-directory",
+      "ownership_source_url": "https://www.mississaugi.com/business-directory",
+      "on_reserve_location_source_url": "https://www.mississaugi.com/business-directory"
+    },
+    {
+      "name": "Sault Tree Experts",
+      "community": "Mississauga First Nation",
+      "source_id": "DOE-ON-B9-20261031-010",
+      "source_url": "https://www.mississaugi.com/business-directory",
+      "ownership_source_url": "https://www.mississaugi.com/business-directory",
+      "on_reserve_location_source_url": "https://www.mississaugi.com/business-directory"
+    },
+    {
+      "name": "Green Guac",
+      "community": "Saugeen First Nation",
+      "source_id": "DOE-ON-B9-20261031-011",
+      "source_url": "https://www.sfniba.ca/businessdirectory/greenguac",
+      "ownership_source_url": "https://www.sfniba.ca/businessdirectory/greenguac",
+      "on_reserve_location_source_url": "https://www.sfniba.ca/businessdirectory/greenguac"
+    },
+    {
+      "name": "Resilient Roots",
+      "community": "Saugeen First Nation",
+      "source_id": "DOE-ON-B9-20261031-012",
+      "source_url": "https://www.sfniba.ca/businessdirectory/resilient-roots",
+      "ownership_source_url": "https://www.sfniba.ca/businessdirectory/resilient-roots",
+      "on_reserve_location_source_url": "https://www.sfniba.ca/businessdirectory/resilient-roots"
+    },
+    {
+      "name": "The Westview Beach Villas",
+      "community": "Saugeen First Nation",
+      "source_id": "DOE-ON-B9-20261031-013",
+      "source_url": "https://www.sfniba.ca/businessdirectory/thewestviewbeachvillas",
+      "ownership_source_url": "https://www.sfniba.ca/businessdirectory/thewestviewbeachvillas",
+      "on_reserve_location_source_url": "https://www.sfniba.ca/businessdirectory/thewestviewbeachvillas"
+    },
+    {
+      "name": "Ninoshenh Counseling Inc.",
+      "community": "Saugeen First Nation",
+      "source_id": "DOE-ON-B9-20261031-014",
+      "source_url": "https://www.sfniba.ca/businessdirectory/ninoshenh-counseling",
+      "ownership_source_url": "https://www.sfniba.ca/businessdirectory/ninoshenh-counseling",
+      "on_reserve_location_source_url": "https://www.sfniba.ca/businessdirectory/ninoshenh-counseling"
+    },
+    {
+      "name": "Medsin Cup",
+      "community": "Saugeen First Nation",
+      "source_id": "DOE-ON-B9-20261031-015",
+      "source_url": "https://www.sfniba.ca/businessdirectory/medsincup",
+      "ownership_source_url": "https://www.sfniba.ca/businessdirectory/medsincup",
+      "on_reserve_location_source_url": "https://www.sfniba.ca/businessdirectory/medsincup"
+    },
+    {
+      "name": "Tuggy's Gas and Variety",
+      "community": "Saugeen First Nation",
+      "source_id": "DOE-ON-B9-20261031-016",
+      "source_url": "https://www.sfniba.ca/businessdirectory/tuggysgasandvariety",
+      "ownership_source_url": "https://www.sfniba.ca/businessdirectory/tuggysgasandvariety",
+      "on_reserve_location_source_url": "https://www.sfniba.ca/businessdirectory/tuggysgasandvariety"
+    },
+    {
+      "name": "8th Fire Consulting",
+      "community": "Saugeen First Nation",
+      "source_id": "DOE-ON-B9-20261031-017",
+      "source_url": "https://www.sfniba.ca/businessdirectory/8th-fire-consulting",
+      "ownership_source_url": "https://www.sfniba.ca/businessdirectory/8th-fire-consulting",
+      "on_reserve_location_source_url": "https://www.sfniba.ca/businessdirectory/8th-fire-consulting"
+    },
+    {
+      "name": "Sage & Sea Co.",
+      "community": "Saugeen First Nation",
+      "source_id": "DOE-ON-B9-20261031-018",
+      "source_url": "https://www.sfniba.ca/business-directory",
+      "ownership_source_url": "https://www.sfniba.ca/business-directory",
+      "on_reserve_location_source_url": "https://www.sfniba.ca/business-directory"
+    },
+    {
+      "name": "Emily Kewageshig",
+      "community": "Saugeen First Nation",
+      "source_id": "DOE-ON-B9-20261031-019",
+      "source_url": "https://www.sfniba.ca/businessdirectory/emily-kewageshig",
+      "ownership_source_url": "https://www.sfniba.ca/businessdirectory/emily-kewageshig",
+      "on_reserve_location_source_url": "https://www.sfniba.ca/businessdirectory/emily-kewageshig"
+    },
+    {
+      "name": "Ninosheyans",
+      "community": "Saugeen First Nation",
+      "source_id": "DOE-ON-B9-20261031-020",
+      "source_url": "https://www.sfniba.ca/businessdirectory/ninosheyans",
+      "ownership_source_url": "https://www.sfniba.ca/businessdirectory/ninosheyans",
+      "on_reserve_location_source_url": "https://www.sfniba.ca/businessdirectory/ninosheyans"
+    },
+    {
+      "name": "Rootes Gas Bar",
+      "community": "Saugeen First Nation",
+      "source_id": "DOE-ON-B9-20261031-021",
+      "source_url": "https://www.sfniba.ca/businessdirectory/rootes-gas-bar",
+      "ownership_source_url": "https://www.sfniba.ca/businessdirectory/rootes-gas-bar",
+      "on_reserve_location_source_url": "https://www.sfniba.ca/businessdirectory/rootes-gas-bar"
+    },
+    {
+      "name": "Lashes with Indie Autumn",
+      "community": "Saugeen First Nation",
+      "source_id": "DOE-ON-B9-20261031-022",
+      "source_url": "https://www.sfniba.ca/businessdirectory/lashes-with-indie-autumn",
+      "ownership_source_url": "https://www.sfniba.ca/businessdirectory/lashes-with-indie-autumn",
+      "on_reserve_location_source_url": "https://www.sfniba.ca/businessdirectory/lashes-with-indie-autumn"
+    },
+    {
+      "name": "De-ba-jeh-mu-jig Theatre Group",
+      "community": "Wiikwemkoong Unceded Territory",
+      "source_id": "DOE-ON-B9-20261031-023",
+      "source_url": "https://www.wiikwemkoong.ca/local-businesses/",
+      "ownership_source_url": "https://www.wiikwemkoong.ca/local-businesses/",
+      "on_reserve_location_source_url": "https://www.wiikwemkoong.ca/local-businesses/"
+    },
+    {
+      "name": "Boissoneau Bus Lines Inc",
+      "community": "Garden River First Nation",
+      "source_id": "DOE-ON-B9-20261031-024",
+      "source_url": "https://211ontario.ca/service/65306398/garden-river-first-nation-governance/",
+      "ownership_source_url": "https://211ontario.ca/service/65306398/garden-river-first-nation-governance/",
+      "on_reserve_location_source_url": "https://211ontario.ca/service/65306398/garden-river-first-nation-governance/"
+    },
+    {
+      "name": "Hidden Hills Horse Ranch",
+      "community": "Garden River First Nation",
+      "source_id": "DOE-ON-B9-20261031-025",
+      "source_url": "https://211ontario.ca/service/65306398/garden-river-first-nation-governance/",
+      "ownership_source_url": "https://211ontario.ca/service/65306398/garden-river-first-nation-governance/",
+      "on_reserve_location_source_url": "https://211ontario.ca/service/65306398/garden-river-first-nation-governance/"
+    },
+    {
+      "name": "Bell's Point Campground",
+      "community": "Garden River First Nation",
+      "source_id": "DOE-ON-B9-20261031-026",
+      "source_url": "https://ssmcdc.com/index.cfm?fuseaction=content&menuid=13&pageid=1013",
+      "ownership_source_url": "https://ssmcdc.com/index.cfm?fuseaction=content&menuid=13&pageid=1013",
+      "on_reserve_location_source_url": "https://ssmcdc.com/index.cfm?fuseaction=content&menuid=13&pageid=1013"
+    },
+    {
+      "name": "Firesteel Construction LP",
+      "community": "Fort William First Nation",
+      "source_id": "DOE-ON-B9-20261031-027",
+      "source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement",
+      "ownership_source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement",
+      "on_reserve_location_source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement"
+    },
+    {
+      "name": "First Nations Engineering Services Ltd.",
+      "community": "Six Nations of the Grand River",
+      "source_id": "DOE-ON-B9-20261031-028",
+      "source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement",
+      "ownership_source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement",
+      "on_reserve_location_source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement"
+    },
+    {
+      "name": "Makhos Staffing Solutions Inc.",
+      "community": "Chippewas of Nawash Unceded First Nation",
+      "source_id": "DOE-ON-B9-20261031-029",
+      "source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement",
+      "ownership_source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement",
+      "on_reserve_location_source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement"
+    },
+    {
+      "name": "Makwa-Dewar GP Inc.",
+      "community": "Chippewas of Nawash Unceded First Nation",
+      "source_id": "DOE-ON-B9-20261031-030",
+      "source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement",
+      "ownership_source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement",
+      "on_reserve_location_source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement"
+    },
+    {
+      "name": "Miikana North Rentals and Service Ltd.",
+      "community": "Red Rock Indian Band",
+      "source_id": "DOE-ON-B9-20261031-031",
+      "source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement",
+      "ownership_source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement",
+      "on_reserve_location_source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement"
+    },
+    {
+      "name": "Z'Gamok Stuart Olson LP",
+      "community": "Sagamok Anishnawbek First Nation",
+      "source_id": "DOE-ON-B9-20261031-032",
+      "source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement",
+      "ownership_source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement",
+      "on_reserve_location_source_url": "https://www.hydroone.com/about/suppliers/indigenous-procurement"
+    }
+  ],
+  "excluded": [],
+  "checks": {
+    "valid_json": true,
+    "old_records_preserved": true,
+    "source_ids_unique": true,
+    "all_unverified": true,
+    "separate_evidence": true,
+    "no_new_address": true
+  },
+  "notes": "No browser/Chromium tests run. Source directory affiliation is distinct from Indigenous ownership and from reserve-land location; all new statuses unverified. Addresses withheld."
+}
