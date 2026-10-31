@@ -1,0 +1,182 @@
+{
+  "batch": "B8",
+  "date": "2026-10-31",
+  "base_commit": "0681f84d19445e15af2250b17d8f4b4ac8088cfe",
+  "old_count": 4697,
+  "new_count": 4724,
+  "added": [
+    {
+      "name": "Cheryl’s Crafty Gifts",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-001"
+    },
+    {
+      "name": "Creators Gifts",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-002"
+    },
+    {
+      "name": "Ellen Cowie",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-003"
+    },
+    {
+      "name": "Knits By Mich",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-004"
+    },
+    {
+      "name": "Last Crumb",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-005"
+    },
+    {
+      "name": "3M Drywall",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-006"
+    },
+    {
+      "name": "Don LaFonte Excavating",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-007"
+    },
+    {
+      "name": "Jolley Painters",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-008"
+    },
+    {
+      "name": "NLS Inc.",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-009"
+    },
+    {
+      "name": "Silverlining Garden Designs",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-010"
+    },
+    {
+      "name": "Turtle Island Contracting",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-011"
+    },
+    {
+      "name": "Blossoming Beauty by Fj",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-012"
+    },
+    {
+      "name": "Elm Grove Child Care",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-013"
+    },
+    {
+      "name": "Wholesale Transmission Rebuilding",
+      "community": "Hiawatha First Nation",
+      "source_url": "https://www.hiawathafirstnation.com/business-tourism/business-directory/",
+      "source_id": "DOE-ON-B8-20261031-014"
+    },
+    {
+      "name": "Blue Hour Creations",
+      "community": "Chippewas of Georgina Island First Nation",
+      "source_url": "https://www.georginaisland.com/business-development/directory",
+      "source_id": "DOE-ON-B8-20261031-015"
+    },
+    {
+      "name": "Wikwemikong Tourism",
+      "community": "Wiikwemkoong Unceded Territory",
+      "source_url": "https://www.wiikwemkoong.ca/local-businesses/?wpbdp_sort=-field-1",
+      "source_id": "DOE-ON-B8-20261031-016"
+    },
+    {
+      "name": "Wikwemikong Active Living Studio",
+      "community": "Wiikwemkoong Unceded Territory",
+      "source_url": "https://www.wiikwemkoong.ca/local-businesses/?wpbdp_sort=-field-1",
+      "source_id": "DOE-ON-B8-20261031-017"
+    },
+    {
+      "name": "Way to Go Pizza",
+      "community": "Wiikwemkoong Unceded Territory",
+      "source_url": "https://www.wiikwemkoong.ca/local-businesses/?wpbdp_sort=-field-1",
+      "source_id": "DOE-ON-B8-20261031-018"
+    },
+    {
+      "name": "South Bay Centre",
+      "community": "Wiikwemkoong Unceded Territory",
+      "source_url": "https://www.wiikwemkoong.ca/local-businesses/?wpbdp_sort=-field-1",
+      "source_id": "DOE-ON-B8-20261031-019"
+    },
+    {
+      "name": "Planet Stitch",
+      "community": "Aamjiwnaang First Nation",
+      "source_url": "https://www.planetstitch.com/",
+      "source_id": "DOE-ON-B8-20261031-020"
+    },
+    {
+      "name": "White Plains Auto Body & Service Center",
+      "community": "Aamjiwnaang First Nation",
+      "source_url": "https://sfnsgetset.com/sfns-business/white-plains-auto-body-service-center/",
+      "source_id": "DOE-ON-B8-20261031-021"
+    },
+    {
+      "name": "Roger Williams’ Authentic Native Craft Shop",
+      "community": "Aamjiwnaang First Nation",
+      "source_url": "https://www.aamjiwnaang.ca/wp-content/uploads/2026/04/Issue-No.-8-April-242026.pdf",
+      "source_id": "DOE-ON-B8-20261031-022"
+    },
+    {
+      "name": "Tax Free Furniture Warehouse",
+      "community": "Aamjiwnaang First Nation",
+      "source_url": "https://www.aamjiwnaang.ca/wp-content/uploads/2026/04/Issue-No.-8-April-242026.pdf",
+      "source_id": "DOE-ON-B8-20261031-023"
+    },
+    {
+      "name": "Tribal Custom Insurance Services Inc.",
+      "community": "Aamjiwnaang First Nation",
+      "source_url": "https://www.tribalcustominsurance.com/",
+      "source_id": "DOE-ON-B8-20261031-024"
+    },
+    {
+      "name": "Rose Gardens Eatery",
+      "community": "Aamjiwnaang First Nation",
+      "source_url": "https://rosegardenseatery.ca/",
+      "source_id": "DOE-ON-B8-20261031-025"
+    },
+    {
+      "name": "Rhynos Renovations",
+      "community": "Aamjiwnaang First Nation",
+      "source_url": "https://www.aamjiwnaang.ca/wp-content/uploads/2026/04/Issue-No.-8-April-242026.pdf",
+      "source_id": "DOE-ON-B8-20261031-026"
+    },
+    {
+      "name": "Maajiigin Gumig",
+      "community": "Aamjiwnaang First Nation",
+      "source_url": "https://www.aamjiwnaang.ca/environment-department/environment-greenhouse/",
+      "source_id": "DOE-ON-B8-20261031-027"
+    }
+  ],
+  "excluded": [],
+  "validation": {
+    "parsed_json": true,
+    "all_new_unverified": true,
+    "separate_ownership_and_reserve_location_evidence": true,
+    "source_urls_present": true,
+    "no_addresses_or_postal_codes_in_new_records": true,
+    "source_ids_unique": true
+  },
+  "browser": "Not run: data-only change per user request.",
+  "notes": "All ownership and physical-land parcel statuses remain unverified pending outreach. First Nation directory membership alone is not treated as proof of on-reserve premises or Indigenous beneficial ownership."
+}
