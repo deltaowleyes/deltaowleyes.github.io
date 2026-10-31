@@ -2,6 +2,35 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T13:48:34Z",
+      "commit": "c041417f86b02b04ce233d8bf2842e1887082a3d",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "fullgospelchurch|ontario|keewaywinfirstnation",
+            "name": "Full Gospel Church",
+            "place": "Keewaywin First Nation, Ontario",
+            "category": "Full Gospel",
+            "date": "",
+            "source": "https://211ontario.ca/service/65306008/keewaywin-first-nation-governance/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "aldervillefirstnationarmisticeservice2026|20261108|alderville|ontario",
+            "name": "Alderville First Nation Armistice Service 2026",
+            "place": "Alderville, Ontario",
+            "category": "Indigenous veterans and remembrance",
+            "date": "2026-11-08",
+            "source": "https://alderville.ca/alderville-first-nation/news/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T13:30:37Z",
       "commit": "0b068e1d28fd815663bb447386e6f333bced2100",
       "mode": "import",
