@@ -41,6 +41,10 @@ function renderList(){
  const data=loaded.get(active)||[],query=$("search").value.trim().toLowerCase(),vf=$("filter").value,cf=$("contactFilter").value,interest=$("interestFilter").value;
  const match=[];
  data.forEach((b,i)=>{const item=record(i);if(!item)return;if(query&&!short(item).toLowerCase().includes(query))return;if(vf&&status(item)!==vf)return;if(cf&&contact(item)!==cf)return;if(interest&&window.DOEOutreach.interestFor(active,item)!==interest)return;match.push(i)});
+ const sorter=window.DOEDirectorySort,sortMode=$("sort")?.value||"newest_near";
+ if(sorter&&sortMode!=="original")match.sort((a,b)=>
+  Number(newKeys.has(key(b)))-Number(newKeys.has(key(a)))||
+  sorter.compare(active,record(a),record(b),sortMode)||a-b);
  shown=match.slice(0,100);$("entries").replaceChildren();
  for(const i of shown){
   const b=record(i),row=document.createElement("div");row.className="entry";
@@ -49,7 +53,8 @@ function renderList(){
   cb.addEventListener("change",()=>{if(cb.checked)checked.add(key(i));else checked.delete(key(i))});
   const open=document.createElement("button");open.type="button";open.textContent=b.name||"(New unpublished listing)";
   open.setAttribute("aria-current",String(current===i));
-  const sub=document.createElement("small");sub.textContent=[b.city||b.reserve,b.province,status(b).replaceAll("_"," ")].filter(Boolean).join(" · ")+(newKeys.has(key(i))?" · New, unpublished":staged.has(key(i))?" · Staged":"");
+  const date=window.DOEDirectorySort?.date(active,b);
+  const sub=document.createElement("small");sub.textContent=[b.city||b.reserve,b.province,status(b).replaceAll("_"," "),newKeys.has(key(i))?"New, unpublished":date?"Added "+date:"Date added unknown",staged.has(key(i))?"Staged":""].filter(Boolean).join(" · ");
   open.append(sub);open.addEventListener("click",()=>select(i));
   row.append(cb,open);$("entries").append(row);
  }
@@ -159,7 +164,7 @@ $("createNew").addEventListener("click",()=>{
  select(i,true);
  $("field_name").focus();notify("New unpublished listing. Enter its name and location, then click Update & publish.");
 });
-for(const id of ["search","filter","contactFilter","interestFilter"])
+for(const id of ["search","filter","contactFilter","interestFilter","sort"])
  $(id).addEventListener(id==="search"?"input":"change",renderList);
 $("checkAll").addEventListener("click",()=>{shown.forEach(i=>checked.add(key(i)));renderList()});
 $("uncheckAll").addEventListener("click",()=>{for(const id of [...checked])if(id.startsWith(active+":"))checked.delete(id);renderList()});
@@ -455,3 +460,9 @@ window.addEventListener("beforeunload",event=>{
 window.addEventListener("doe-outreach-saved",renderList);
 renderAuth();
 loadSource(active);
+if(window.DOEDirectorySort){
+ window.DOEDirectorySort.load().then(()=>{
+  $("sortHint").textContent="Newest published addition dates first; on the same date, approximate proximity to Walpole Island decides the order. Older undated records follow; unknown locations sort last.";
+  renderList();
+ }).catch(e=>{$("sortHint").textContent="Addition history unavailable ("+e.message+"); only explicit creation dates can be used. Approximate proximity still works.";});
+}
