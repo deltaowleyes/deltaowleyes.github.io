@@ -1678,5 +1678,47 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "Assumption of Mary Catholic Mission",
+    "province": "Ontario",
+    "reserve": "Pikangikum First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/parish-directory/western-region-parishes/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "St. Theresa of the Child Jesus Catholic Mission",
+    "province": "Ontario",
+    "reserve": "North Spirit Lake First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/parish-directory/western-region-parishes/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "St. Bernadette Parish",
+    "province": "Ontario",
+    "reserve": "Sandy Lake First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/parish-directory/western-region-parishes/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
