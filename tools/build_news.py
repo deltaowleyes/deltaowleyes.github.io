@@ -51,7 +51,12 @@ def main():
     shared_header="<header class=\"doe-header\"><nav class=\"doe-nav\" aria-label=\"Main navigation\"><a class=\"doe-brand\" href=\"/\"><img src=\"/assets/owl-logo.png\" alt=\"Delta Owl Eyes logo\">DELTA <span>OWL</span> EYES</a><div class=\"doe-links\"><a href=\"/#investigations\">Investigations</a><a href=\"/news/\">News Updates</a><a href=\"/calls-to-action/\">94 Calls to Action</a><a href=\"/indigenous-businesses/\">Indigenous Businesses</a><a href=\"/services/\">Services</a><a href=\"/#culture\">Culture</a><a href=\"/#about\">About</a></div></nav></header><div class=\"doe-tagline-bar\" aria-label=\"Delta Owl Eyes motto\">HARD TRUTHS. &nbsp; EDUCATION. &nbsp; ACCOUNTABILITY.</div>"
     page=f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>News Updates | Delta Owl Eyes</title><style>body{{margin:0;background:#f5f0e6;color:#092729;font:17px/1.65 system-ui,sans-serif}}header,footer{{background:#071f22;color:white;padding:22px 5%}}header a,footer a{{color:white}}main{{max-width:920px;margin:auto;padding:40px 20px}}article{{background:white;border:1px solid #d4ded8;border-radius:12px;padding:24px;margin:24px 0}}.meta{{color:#476865;font-weight:700}}a{{color:#075c60}}</style>{shared_head}</head><body>{shared_header}<main><h1>Verified News Updates</h1><p>New developments are published as separate, dated stories. Previously recorded reports remain part of the historical record.</p>{content}</main><footer>© Delta Owl Eyes</footer></body></html>"""
     DEST.parent.mkdir(parents=True,exist_ok=True)
-    DEST.write_text(page,encoding="utf-8")
+    # Never replace the manually curated newsroom with only the structured records.
+    # The separately maintained public index includes all reviewed historical stories.
+    if not DEST.exists():
+        DEST.write_text(page,encoding="utf-8")
+    else:
+        print("Preserved existing curated news/index.html; did not overwrite public stories")
     queue_page=page.replace("<title>News Updates | Delta Owl Eyes</title>","<title>Recording Scripts | Delta Owl Eyes</title>").replace("<h1>Verified News Updates</h1>","<h1>Recording Scripts</h1>").replace("<p>New developments are published as separate, dated stories. Previously recorded reports remain part of the historical record.</p>","<p>Scripts awaiting recording. Once a video is published, its script leaves this queue; the published report remains in the news archive.</p>").replace(content,queue_content)
     QUEUE.parent.mkdir(parents=True,exist_ok=True)
     QUEUE.write_text(queue_page,encoding="utf-8")
