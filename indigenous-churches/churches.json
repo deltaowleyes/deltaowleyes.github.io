@@ -1720,5 +1720,19 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "Our Lady of Lourdes Catholic Parish",
+    "province": "Ontario",
+    "reserve": "Couchiching First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://www.stmarysfortfrances.com/about-us/our-history/brief-parish-histories/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
