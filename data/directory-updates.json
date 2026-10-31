@@ -2,6 +2,53 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T22:23:21Z",
+      "commit": "6ba2254dcae660695c37a62bff32eda8c4907ff8",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "kitchitwakaterianamewgamikcatholicchurch|ontario|thunderbayindigenouscatholiccommunityoffreserve",
+            "name": "Kitchitwa Kateri Anamewgamik Catholic Church",
+            "place": "Thunder Bay Indigenous Catholic Community (off reserve), Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/services-departments/indigenous-ministries/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "commemoratinglouisrieldayhamilton|20261121|hamilton|ontario",
+            "name": "Commemorating Louis Riel Day — Hamilton",
+            "place": "Hamilton, Ontario",
+            "category": "Métis history and cultural celebration",
+            "date": "2026-11-21",
+            "source": "https://southwestregion.metisnation.org/event/louis-riel-day/",
+            "status": "Verified event"
+          },
+          {
+            "key": "thamesbluewatermetisharvestfeastlunch|20261121|strathroy|ontario",
+            "name": "Thames Bluewater Métis Harvest Feast Lunch",
+            "place": "Strathroy, Ontario",
+            "category": "Métis community gathering",
+            "date": "2026-11-21",
+            "source": "https://southwestregion.metisnation.org/event/harvest-feast-lunch/",
+            "status": "Verified event"
+          },
+          {
+            "key": "8thannualmetisnationofontarioearlylearningandchildcareconference|20270227|niagaraonthelake|ontario",
+            "name": "8th Annual Métis Nation of Ontario Early Learning and Child Care Conference",
+            "place": "Niagara-on-the-Lake, Ontario",
+            "category": "Métis early learning and education",
+            "date": "2027-02-27",
+            "source": "https://www.metisnation.org/news/8th-annual-early-learning-and-child-care-conference/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T21:20:42Z",
       "commit": "82e97e5309a4da652ac518bf838857e25f29d824",
       "mode": "import",
