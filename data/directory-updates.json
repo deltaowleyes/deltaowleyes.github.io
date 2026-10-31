@@ -2,6 +2,51 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T14:00:12Z",
+      "commit": "69808ef04f05e10980cddfd3268e6bfb842d9a7e",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "aldervillefirstnationveteranssocial2026|20261106|alderville|ontario",
+            "name": "Alderville First Nation Veterans Social 2026",
+            "place": "Alderville, Ontario",
+            "category": "Indigenous veterans and remembrance",
+            "date": "2026-11-06",
+            "source": "https://alderville.ca/alderville-first-nation/news/",
+            "status": "Verified event"
+          },
+          {
+            "key": "2ndnationalfirstnationshomelessnessandmentalwellnessforum|20261118|toronto|ontario",
+            "name": "2nd National First Nations Homelessness and Mental Wellness Forum",
+            "place": "Toronto, Ontario",
+            "category": "Community health and policy",
+            "date": "2026-11-18",
+            "source": "https://afn.ca/events/2nd-national-first-nations-homelessness-and-mental-wellness-forum/",
+            "status": "Verified event"
+          },
+          {
+            "key": "assemblyoffirstnationsspecialchiefsassembly2026|20261208|ottawa|ontario",
+            "name": "Assembly of First Nations Special Chiefs Assembly 2026",
+            "place": "Ottawa, Ontario",
+            "category": "First Nations governance and policy",
+            "date": "2026-12-08",
+            "source": "https://afn.ca/events/special-chiefs-assembly-2026/",
+            "status": "Verified event"
+          },
+          {
+            "key": "3rdannualafnnationalnaturalresourcesforum|20270201|montreal|quebec",
+            "name": "3rd Annual AFN National Natural Resources Forum",
+            "place": "Montreal, Quebec",
+            "category": "First Nations natural resources and economic development",
+            "date": "2027-02-01",
+            "source": "https://afn.ca/events/3rd-annual-national-natural-resources-forum/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T13:50:05Z",
       "commit": "b885d9fbba6b47411704f1e3bf2680798e6cf862",
       "mode": "import",
