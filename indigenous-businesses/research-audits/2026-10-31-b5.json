@@ -1,0 +1,155 @@
+{
+  "batch": "Ontario B5",
+  "date_utc": "2026-10-31",
+  "previous_head": "ccdac87aaac5fbfba4442779cacc450ddadfd3e5",
+  "prior_count": 4590,
+  "added_count": 14,
+  "after_count": 4604,
+  "added": [
+    {
+      "name": "Oneida Community Centre",
+      "community": "Oneida Nation of the Thames",
+      "source_id": "DOE-ON-B5-20261031-001",
+      "source_url": "https://oneida.on.ca/community-centre/",
+      "ownership_source_url": "https://oneida.on.ca/community-centre/",
+      "on_reserve_location_source_url": "https://oneida.on.ca/community-centre/",
+      "privacy_note": "Nation-run venue with publicly advertised institutional address; Oneida Settlement terminology respected."
+    },
+    {
+      "name": "Oneida Language and Cultural Centre",
+      "community": "Oneida Nation of the Thames",
+      "source_id": "DOE-ON-B5-20261031-002",
+      "source_url": "https://sfnsgetset.com/sfns-business/oneida-language-and-cultural-centre/",
+      "ownership_source_url": "https://sfnsgetset.com/sfns-business/oneida-language-and-cultural-centre/",
+      "on_reserve_location_source_url": "https://sfnsgetset.com/sfns-business/oneida-language-and-cultural-centre/",
+      "privacy_note": "Language education and cultural service, not represented as a privately owned business."
+    },
+    {
+      "name": "The Wolves Den Gift Shop",
+      "community": "Oneida Nation of the Thames",
+      "source_id": "DOE-ON-B5-20261031-003",
+      "source_url": "https://sfnsgetset.com/sfns-business/the-wolves-den-gift-shop/",
+      "ownership_source_url": "https://sfnsgetset.com/sfns-business/the-wolves-den-gift-shop/",
+      "on_reserve_location_source_url": "https://sfnsgetset.com/sfns-business/the-wolves-den-gift-shop/",
+      "privacy_note": "Street address withheld as possibly home-based; availability and specific Settlement location require verification."
+    },
+    {
+      "name": "Glass Art By Renee Jewell",
+      "community": "Oneida Nation of the Thames",
+      "source_id": "DOE-ON-B5-20261031-004",
+      "source_url": "https://sfnsgetset.com/sfns-business/glass-art-by-renee-jewell/",
+      "ownership_source_url": "https://sfnsgetset.com/sfns-business/glass-art-by-renee-jewell/",
+      "on_reserve_location_source_url": "https://sfnsgetset.com/sfns-business/glass-art-by-renee-jewell/",
+      "privacy_note": "No private/home address published; locality is community affiliation, not verified premises."
+    },
+    {
+      "name": "Dokis Marina & Restaurant",
+      "community": "Dokis First Nation",
+      "source_id": "DOE-ON-B5-20261031-005",
+      "source_url": "https://www.sudburyeastchamber.com/discover-dokis-first-nation",
+      "ownership_source_url": "https://www.sudburyeastchamber.com/discover-dokis-first-nation",
+      "on_reserve_location_source_url": "https://www.sudburyeastchamber.com/discover-dokis-first-nation",
+      "privacy_note": "Combined marina and restaurant as ONE listing; aliases excluded as duplicates."
+    },
+    {
+      "name": "Riverview Cottages",
+      "community": "Dokis First Nation",
+      "source_id": "DOE-ON-B5-20261031-006",
+      "source_url": "https://www.riverviewcottagesdokis.ca/contact",
+      "ownership_source_url": "https://www.riverviewcottagesdokis.ca/about-us",
+      "on_reserve_location_source_url": "https://www.riverviewcottagesdokis.ca/contact",
+      "privacy_note": "Commercial visitor property address; distinct from Dokis Marina, corroborated by Chamber."
+    },
+    {
+      "name": "Wajashk Cottages",
+      "community": "Dokis First Nation",
+      "source_id": "DOE-ON-B5-20261031-007",
+      "source_url": "https://www.wajashkcottages.com/",
+      "ownership_source_url": "https://www.wajashkcottages.com/",
+      "on_reserve_location_source_url": "https://www.wajashkcottages.com/",
+      "privacy_note": "Do not publish the unrelated private mailing address displayed on business website."
+    },
+    {
+      "name": "Fox Den Log Home Rental",
+      "community": "Dokis First Nation",
+      "source_id": "DOE-ON-B5-20261031-008",
+      "source_url": "https://www.sudburyeastchamber.com/discover-dokis-first-nation",
+      "ownership_source_url": "https://www.sudburyeastchamber.com/discover-dokis-first-nation",
+      "on_reserve_location_source_url": "https://www.sudburyeastchamber.com/discover-dokis-first-nation",
+      "privacy_note": "Rental home street address intentionally withheld to reduce potential residential exposure."
+    },
+    {
+      "name": "The Tilted Toque Wilderness Lodge",
+      "community": "Dokis First Nation",
+      "source_id": "DOE-ON-B5-20261031-009",
+      "source_url": "https://www.sudburyeastchamber.com/discover-dokis-first-nation",
+      "ownership_source_url": "https://www.sudburyeastchamber.com/discover-dokis-first-nation",
+      "on_reserve_location_source_url": "https://tiltedtoque.ca/contact-us/",
+      "privacy_note": "Boat-access location only; no residential/private address included."
+    },
+    {
+      "name": "Camp Petawachuan",
+      "community": "Dokis First Nation",
+      "source_id": "DOE-ON-B5-20261031-010",
+      "source_url": "https://www.waubetek.com/business-directory",
+      "ownership_source_url": "https://www.waubetek.com/business-directory",
+      "on_reserve_location_source_url": "https://www.waubetek.com/business-directory",
+      "privacy_note": "Only older third-party directory evidence found; physical address withheld and operating status unverified."
+    },
+    {
+      "name": "Cold Springs Camp",
+      "community": "Dokis First Nation",
+      "source_id": "DOE-ON-B5-20261031-011",
+      "source_url": "https://www.waubetek.com/business-directory",
+      "ownership_source_url": "https://www.waubetek.com/business-directory",
+      "on_reserve_location_source_url": "https://www.waubetek.com/business-directory",
+      "privacy_note": "Only older directory evidence found; current operation, owner and property location unverified."
+    },
+    {
+      "name": "Serpent River Trading Post",
+      "community": "Serpent River First Nation",
+      "source_id": "DOE-ON-B5-20261031-012",
+      "source_url": "https://serpentrivertradingpost.ca/about",
+      "ownership_source_url": "https://serpentrivertradingpost.ca/about",
+      "on_reserve_location_source_url": "https://serpentrivertradingpost.ca/",
+      "privacy_note": "The trading post and its on-site convenience services are a single business, not separate directory records."
+    },
+    {
+      "name": "Serpent River First Nation Business Centre",
+      "community": "Serpent River First Nation",
+      "source_id": "DOE-ON-B5-20261031-013",
+      "source_url": "https://www.srfnlimitedpartnership.ca/business-centre",
+      "ownership_source_url": "https://www.srfnlimitedpartnership.ca/about",
+      "on_reserve_location_source_url": "https://www.srfnlimitedpartnership.ca/business-centre",
+      "privacy_note": "Corporate rental centre only; tenant organizations were not treated as duplicates or automatically published."
+    },
+    {
+      "name": "Water & Time by Terri Fisher",
+      "community": "Chippewas of the Thames First Nation",
+      "source_id": "DOE-ON-B5-20261031-014",
+      "source_url": "https://sfnsgetset.com/sfns-business/water-time-by-terri-fisher/",
+      "ownership_source_url": "https://sfnsgetset.com/sfns-business/water-time-by-terri-fisher/",
+      "on_reserve_location_source_url": "https://sfnsgetset.com/sfns-business/water-time-by-terri-fisher/",
+      "privacy_note": "Street address withheld as potentially residential; source describes current premises in the community."
+    }
+  ],
+  "excluded_existing": [
+    {
+      "incoming": "Otsí:tsi’ Designs",
+      "reason": "Existing canonical Oneida record"
+    },
+    {
+      "incoming": "Three Sisters Consulting",
+      "reason": "Existing canonical Chatham record"
+    }
+  ],
+  "excluded_aliases": [
+    "Dokis Marina",
+    "Dokis Marina Restaurant",
+    "Serpent River First Nation Trading Post",
+    "Serpent River Gas Bar & Convenience"
+  ],
+  "auto_excluded": [],
+  "privacy": "Residential and potentially home-based street addresses withheld in new public records; Oneida Settlement terminology used.",
+  "verification": "All new records unverified, ownership and property status retained separately."
+}
