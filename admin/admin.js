@@ -165,7 +165,7 @@ $("createNew").addEventListener("click",()=>{
  $("field_name").focus();notify("New unpublished listing. Enter its name and location, then click Update & publish.");
 });
 for(const id of ["search","filter","contactFilter","interestFilter","sort"])
- $(id).addEventListener(id==="search"?"input":"change",renderList);
+ $(id)?.addEventListener(id==="search"?"input":"change",renderList);
 $("checkAll").addEventListener("click",()=>{shown.forEach(i=>checked.add(key(i)));renderList()});
 $("uncheckAll").addEventListener("click",()=>{for(const id of [...checked])if(id.startsWith(active+":"))checked.delete(id);renderList()});
 function bulk(contactStatus){
