@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://deltaowleyes.ca/sitemap.xml
+Sitemap: https://deltaowleyes.ca/news-sitemap.xml
