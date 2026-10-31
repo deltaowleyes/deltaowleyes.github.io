@@ -2,6 +2,51 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T19:25:50Z",
+      "commit": "3a1340a3ac2d6e4d2a2e4313187fd913899149af",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb1920261031001",
+            "name": "Adaawegamik Store",
+            "place": "Marten Falls First Nation, Ogoki Post, Ontario",
+            "category": "Community grocery and general retail",
+            "date": "",
+            "source": "https://martenfalls.com/wp-content/uploads/2025/05/Three-Boards-Six-Positions-May-20-2025-1.pdf",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb1920261031002",
+            "name": "Natamuh Management Inc.",
+            "place": "Cree Nation of Waskaganish, Waskaganish, Quebec",
+            "category": "Professional and business services",
+            "date": "",
+            "source": "https://thewbc.ca/businesses",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb1920261031003",
+            "name": "Siibii Development",
+            "place": "Cree Nation of Waskaganish, Waskaganish, Quebec",
+            "category": "Construction and development",
+            "date": "",
+            "source": "https://thewbc.ca/businesses",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb1920261031004",
+            "name": "Smokey Hill Grocery Inc.",
+            "place": "Cree Nation of Waskaganish, Waskaganish, Quebec",
+            "category": "Grocery and retail",
+            "date": "",
+            "source": "https://thewbc.ca/businesses",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T18:28:46Z",
       "commit": "14f5433be5f7c6a981b88dabb19911c9beb1287e",
       "mode": "data",
