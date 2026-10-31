@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T19:26:19Z",
+      "commit": "3024c60d9868755789eb807281261b6257112343",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "niwicitonanplaygroupedmontonnovember25|20261125|edmonton|alberta",
+            "name": "Niwicitonan Playgroup — Edmonton (November 25)",
+            "place": "Edmonton, Alberta",
+            "category": "Métis family and early-years cultural learning",
+            "date": "2026-11-25",
+            "source": "https://albertametis.com/event/niwicitonan-playgroup-edmonton-2026-11-25/",
+            "status": "Verified event"
+          },
+          {
+            "key": "metisyouthjigginglessons20261126|20261126|edmonton|alberta",
+            "name": "Métis Youth Jigging Lessons — 2026-11-26",
+            "place": "Edmonton, Alberta",
+            "category": "Métis dance and cultural learning",
+            "date": "2026-11-26",
+            "source": "https://albertametis.com/series/jigging-lessons/",
+            "status": "Verified event"
+          },
+          {
+            "key": "metisyouthjigginglessons20261203|20261203|edmonton|alberta",
+            "name": "Métis Youth Jigging Lessons — 2026-12-03",
+            "place": "Edmonton, Alberta",
+            "category": "Métis dance and cultural learning",
+            "date": "2026-12-03",
+            "source": "https://albertametis.com/series/jigging-lessons/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T19:25:50Z",
       "commit": "3a1340a3ac2d6e4d2a2e4313187fd913899149af",
       "mode": "import",
