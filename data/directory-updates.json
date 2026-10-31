@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T20:21:53Z",
+      "commit": "2a5d224566b1fdae0ddd105eb0c4163cfa736afe",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb2020261031001",
+            "name": "GMan Boats",
+            "place": "Cree Nation of Waskaganish, Waskaganish, Quebec",
+            "category": "Boat building and marine products",
+            "date": "",
+            "source": "https://thewbc.ca/businesses",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb2020261031002",
+            "name": "Serpent River First Nation Economic Development Corporation",
+            "place": "Serpent River First Nation, Cutler, Ontario",
+            "category": "Economic development and business services",
+            "date": "",
+            "source": "https://serpentriverfn.com/wp-content/uploads/2023/03/Economic-Development-Officer-EDO-Job-Posting-Open-Until-Filled.pdf",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb2020261031003",
+            "name": "Attawapiskat Enterprises",
+            "place": "Attawapiskat First Nation, Attawapiskat, Ontario",
+            "category": "Community enterprise and business investment",
+            "date": "",
+            "source": "https://attawapiskatdevelopmentcorporation.org/about/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T20:21:17Z",
       "commit": "f9338874bd322b3dd278fda0c54e56a9941dae84",
       "mode": "data",
