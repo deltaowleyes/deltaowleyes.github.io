@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T14:26:40Z",
+      "commit": "beb48e742c566a42305a431c618d913d62605c31",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "stignatiuscatholicchurch|ontario|attawapiskatfirstnation",
+            "name": "St. Ignatius Catholic Church",
+            "place": "Attawapiskat First Nation, Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://211ontario.ca/service/65282287/attawapiskat-first-nation-governance/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T14:01:29Z",
       "commit": "8b0e3ff294768a0fcd709ad59a05ab75a4acb482",
       "mode": "import",
