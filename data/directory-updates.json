@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T23:25:59Z",
+      "commit": "3d2d342a712b3221f9fdfe8556c6f1335ad548cd",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "otipemisiwakmetisregistrysessionprovost|20261103|provost|alberta",
+            "name": "Otipemisiwak Métis Registry Session — Provost",
+            "place": "Provost, Alberta",
+            "category": "Métis citizenship and community services",
+            "date": "2026-11-03",
+            "source": "https://albertametis.com/event/registry-session-provost-2026-11-03/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisregistrysessionlacombe|20261125|lacombe|alberta",
+            "name": "Otipemisiwak Métis Registry Session — Lacombe",
+            "place": "Lacombe, Alberta",
+            "category": "Métis citizenship and community services",
+            "date": "2026-11-25",
+            "source": "https://albertametis.com/event/registry-session-lacombe-2026-11-25/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T23:25:49Z",
       "commit": "32d1bcc003b85fb0cc5e7975565198722774c369",
       "mode": "import",
