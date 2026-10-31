@@ -3,6 +3,7 @@ import {readFileSync,existsSync} from "node:fs";
 import vm from "node:vm";
 
 const admin=readFileSync("admin/admin.js","utf8");
+const listSort=readFileSync("admin/list-sort.js","utf8");
 const html=readFileSync("admin/index.html","utf8");
 const publicList=readFileSync("indigenous-businesses/index.html","utf8");
 const publicProfile=readFileSync("indigenous-businesses/profile.html","utf8");
@@ -14,6 +15,7 @@ assert.ok(!html.includes('value="ontario"')&&!html.includes('value="federal"'));
 assert.ok(html.includes('id="createNew"'));
 assert.ok(!publicList.includes("ontario-businesses.json")&&!publicProfile.includes("federal-businesses.json"));
 new vm.Script(admin);
+new vm.Script(listSort);
 const elements=new Map();
 class El {
  constructor(tag="div"){this.tagName=tag;this.textContent="";this.value="";this.children=[];this.listeners={};
@@ -28,9 +30,10 @@ class El {
  setAttribute(k,v){this[k]=v}
  focus(){}
 }
-const ids="status queued download manifest clear publish entries count search filter contactFilter interestFilter dataset load edit pickHint fields verification sourceLink revert checkAll uncheckAll bulkAttempt bulkFollow publishLink authStatus initialAuth savedAuth disconnect rememberPasswordWrap ghToken remember rememberPassphrase unlockPassphrase connect unlock forget saveRecord createNew".split(" ");
+const ids="status queued download manifest clear publish entries count search filter contactFilter interestFilter sort sortHint dataset load edit pickHint fields verification sourceLink revert checkAll uncheckAll bulkAttempt bulkFollow publishLink authStatus initialAuth savedAuth disconnect rememberPasswordWrap ghToken remember rememberPassphrase unlockPassphrase connect unlock forget saveRecord createNew".split(" ");
 for(const id of ids){const el=new El();el.id=id}
 elements.get("dataset").value="businesses";
+elements.get("sort").value="newest_near";
 const document={getElementById:id=>elements.get(id),createElement:tag=>new El(tag),body:new El()};
 const copy=o=>JSON.parse(JSON.stringify(o));
 const original={
@@ -43,6 +46,7 @@ const response=value=>({ok:true,json:async()=>copy(value)});
 async function fetchMock(url,options={}){
  if(url==="/indigenous-businesses/businesses.json")return response(original.businesses);
  if(url==="/indigenous-churches/churches.json")return response(original.churches);
+  if(url==="/data/directory-updates.json")return response({version:1,runs:[{at:"2026-10-31T14:00:00Z",additions:{businesses:[{key:"existingbusiness|testcity|ontario"}],churches:[{key:"existingchurch|ontario|testnation"}]}}]});
  if(!url.startsWith(base))throw Error("Unexpected request "+url);
  if(url===base)return response({permissions:{push:true}});
  const source=url.includes("churches")?"churches":"businesses";
@@ -63,9 +67,19 @@ const window={
 };
 const sandbox={document,window,fetch:fetchMock,Option:class{constructor(text,value){this.text=text;this.value=value}},
  TextEncoder,TextDecoder,atob,btoa,confirm:()=>true,Blob,URL,setTimeout};
+vm.runInNewContext(listSort,sandbox,{filename:"list-sort.js"});
 vm.runInNewContext(admin,sandbox,{filename:"admin.js"});
 const settle=()=>new Promise(resolve=>setImmediate(resolve));
 await settle();
+assert.ok(html.includes('id="sort"')&&html.includes('list-sort.js'));
+assert.equal(window.DOEDirectorySort.date("businesses",original.businesses[0]),"2026-10-31");
+assert.equal(window.DOEDirectorySort.date("churches",original.churches[0]),"2026-10-31");
+assert.ok(window.DOEDirectorySort.proximity({city:"Walpole Island"}) < window.DOEDirectorySort.proximity({city:"Toronto"}));
+assert.ok(window.DOEDirectorySort.compare("businesses",{name:"Newest",city:"Toronto",date_added:"2026-10-31"},{name:"Older",city:"Walpole Island",date_added:"2026-10-30"},"newest_near")<0,"Date added takes precedence over proximity");
+assert.ok(window.DOEDirectorySort.compare("businesses",{name:"Near",city:"Walpole Island",date_added:"2026-10-31"},{name:"Far",city:"Toronto",date_added:"2026-10-31"},"newest_near")<0,"Proximity breaks same-date ties");
+assert.ok(window.DOEDirectorySort.compare("businesses",{name:"Undated",city:"Walpole Island"},{name:"Dated",city:"Toronto",date_added:"2026-10-30"},"newest_near")>0,"Undated records follow dated entries");
+assert.ok(window.DOEDirectorySort.compare("businesses",{name:"Undated",city:"Walpole Island"},{name:"Dated",city:"Toronto",date_added:"2026-10-30"},"near_newest")<0,"Proximity-first mode works");
+assert.equal(window.DOEDirectorySort.proximity({city:"Unknown"}),Infinity,"Unknown location is never assigned an invented distance");
 const click=id=>elements.get(id).fire("click");
 const set=(id,value)=>{const el=elements.get(id);assert.ok(el,"Missing "+id);el.value=value;return el.fire("input")};
 const submit=()=>elements.get("edit").fire("submit",{preventDefault(){}});
