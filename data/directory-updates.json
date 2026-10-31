@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T20:22:03Z",
+      "commit": "b2ef2e82b307af2be112984de2e792ceee76ccc6",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "cancerpeersupportretreatotipemisiwakmetisgovernment|20261113|cochrane|alberta",
+            "name": "Cancer Peer Support Retreat — Otipemisiwak Métis Government",
+            "place": "Cochrane, Alberta",
+            "category": "Métis community wellness and peer support",
+            "date": "2026-11-13",
+            "source": "https://albertametis.com/event/cancer-peer-support-retreat/",
+            "status": "Verified event"
+          },
+          {
+            "key": "niwicitonanplaygrouponlinesession3|20261118|online|alberta",
+            "name": "Niwicitonan Playgroup — Online Session 3",
+            "place": "Online, Alberta",
+            "category": "Métis family, language and early-years cultural learning",
+            "date": "2026-11-18",
+            "source": "https://albertametis.com/event/niwicitonan-playgroup-online-session-3-2026-11-18/",
+            "status": "Verified event"
+          },
+          {
+            "key": "edmontonmobiledentalclinicandmetiscommunitygathering|20261123|edmonton|alberta",
+            "name": "Edmonton Mobile Dental Clinic and Métis Community Gathering",
+            "place": "Edmonton, Alberta",
+            "category": "Métis community health and gathering",
+            "date": "2026-11-23",
+            "source": "https://albertametis.com/event/edmonton-dental-clinic/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T20:21:53Z",
       "commit": "2a5d224566b1fdae0ddd105eb0c4163cfa736afe",
       "mode": "import",
