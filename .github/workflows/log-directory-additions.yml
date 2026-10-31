@@ -1,0 +1,44 @@
+name: Record new directory and event listings
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'indigenous-businesses/businesses.json'
+      - 'indigenous-churches/churches.json'
+      - 'data/community-events.json'
+permissions:
+  contents: write
+concurrency:
+  group: doe-directory-data-write
+  cancel-in-progress: false
+jobs:
+  record:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Synchronize main branch
+        run: git pull --ff-only origin main
+      - name: Record newly published additions
+        env:
+          BEFORE: ${{ github.event.before }}
+          PUBLISHED_RUN: ${{ github.sha }}
+        run: python3 scripts/record_directory_additions.py --base "$BEFORE" --run "$PUBLISHED_RUN" --mode data
+      - name: Validate JSON-only update
+        run: |
+          python3 -m json.tool data/directory-updates.json > /dev/null
+          python3 -m json.tool data/community-events.json > /dev/null
+          python3 scripts/check_directory_data.py
+      - name: Commit update history if changed
+        run: |
+          git config user.name "delta-owl-eyes-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/directory-updates.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: record newly published directory and event listings"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "runs": [
+    {
+      "at": "2026-10-31T12:11:13Z",
+      "commit": "65a3c68788dd8d2b9f88fc9bea4a40b573e47868",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb1120261031001",
+            "name": "KI Family Foods",
+            "place": "Kitchenuhmaykoosib Inninuwug, Big Trout Lake, Ontario",
+            "category": "Grocery",
+            "date": "",
+            "source": "https://ki-btl.ca/directory",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1120261031002",
+            "name": "McKoop's Garage",
+            "place": "Kitchenuhmaykoosib Inninuwug, Big Trout Lake, Ontario",
+            "category": "Automotive services",
+            "date": "",
+            "source": "https://ki-btl.ca/directory",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1120261031003",
+            "name": "Rubina's Store",
+            "place": "Kitchenuhmaykoosib Inninuwug, Big Trout Lake, Ontario",
+            "category": "Retail",
+            "date": "",
+            "source": "https://ki-btl.ca/directory",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1120261031004",
+            "name": "Sunset Store & Lodge",
+            "place": "Kitchenuhmaykoosib Inninuwug, Big Trout Lake, Ontario",
+            "category": "Retail and accommodation",
+            "date": "",
+            "source": "https://ki-btl.ca/directory",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1120261031005",
+            "name": "Chee-kee-sis Petro Inc",
+            "place": "Wunnumin Lake First Nation, Wunnumin Lake, Ontario",
+            "category": "Fuel retail",
+            "date": "",
+            "source": "https://211north.ca/record/65282406/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1120261031006",
+            "name": "KW Enterprises",
+            "place": "Wunnumin Lake First Nation, Wunnumin Lake, Ontario",
+            "category": "Transportation",
+            "date": "",
+            "source": "https://211north.ca/record/65282406/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1120261031007",
+            "name": "Troll's Store",
+            "place": "Wunnumin Lake First Nation, Wunnumin Lake, Ontario",
+            "category": "Retail",
+            "date": "",
+            "source": "https://211north.ca/results/?latitude=52.92352&longitude=-82.423773&searchLocation=Attawapiskat+First+Nation&topicPath=143",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1120261031008",
+            "name": "Wab Store",
+            "place": "Wunnumin Lake First Nation, Wunnumin Lake, Ontario",
+            "category": "Retail",
+            "date": "",
+            "source": "https://211north.ca/results/?latitude=52.92352&longitude=-82.423773&searchLocation=Attawapiskat+First+Nation&topicPath=143",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1120261031009",
+            "name": "Leo's Confectionary",
+            "place": "Neskantaga First Nation, Neskantaga, Ontario",
+            "category": "Convenience retail",
+            "date": "",
+            "source": "https://211north.ca/results/?latitude=52.219467&longitude=-87.891227&searchLocation=Neskantaga+First+Nation&topicPath=143",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1120261031010",
+            "name": "Trappers Co-op Store",
+            "place": "Neskantaga First Nation, Neskantaga, Ontario",
+            "category": "General retail",
+            "date": "",
+            "source": "https://211north.ca/results/?latitude=52.219467&longitude=-87.891227&searchLocation=Neskantaga+First+Nation&topicPath=143",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1120261031011",
+            "name": "Kataquapit Inn",
+            "place": "Attawapiskat First Nation, Attawapiskat, Ontario",
+            "category": "Accommodation",
+            "date": "",
+            "source": "https://211ontario.ca/service/65282287/attawapiskat-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1120261031012",
+            "name": "April's Coffee Shop",
+            "place": "Attawapiskat First Nation, Attawapiskat, Ontario",
+            "category": "Food service",
+            "date": "",
+            "source": "https://211ontario.ca/service/65282287/attawapiskat-first-nation-governance/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb1120261031013",
+            "name": "M Koostachin & Sons",
+            "place": "Attawapiskat First Nation, Attawapiskat, Ontario",
+            "category": "General retail",
+            "date": "",
+            "source": "https://211ontario.ca/service/65282287/attawapiskat-first-nation-governance/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    }
+  ]
+}
