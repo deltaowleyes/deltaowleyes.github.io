@@ -564,6 +564,17 @@
     "status": "verified"
   },
   {
+    "title": "Niwicitonan Playgroup — Online Session 3",
+    "start_date": "2026-11-18",
+    "city": "Online",
+    "province": "Alberta",
+    "category": "Métis family, language and early-years cultural learning",
+    "organizer": "Otipemisiwak Métis Government — Children and Family Services",
+    "description": "November 18, 2026, 9–10:30 a.m. via Zoom (registration required). Michif storytelling and Métis-centred parenting teachings with knowledge keeper Susan Sinclair. For Alberta-resident families with children aged 0–5; either the child or caregiver must be an Otipemisiwak Métis Government Citizen. Not a general-public drop-in.",
+    "url": "https://albertametis.com/event/niwicitonan-playgroup-online-session-3-2026-11-18/",
+    "status": "verified"
+  },
+  {
     "title": "Vancouver Indigenous Fashion Week 2026 — EARTH",
     "start_date": "2026-11-18",
     "end_date": "2026-11-21",
@@ -573,17 +584,6 @@
     "organizer": "Vancouver Indigenous Fashion Week / All My Relations Indigenous Society",
     "description": "Public ticketed Indigenous-led fashion, arts and cultural showcases at Queen Elizabeth Theatre, Vancouver. November 18–21; confirm individual show times and ticket availability with the organizer. Venue corroborated by Vancouver Civic Theatres: https://vancouvercivictheatres.com/events/vancouver-indigenous-fashion-week-indigenous-futures-nov-20-2026/",
     "url": "https://www.vifw.ca/",
-    "status": "verified"
-  },
-  {
-    "title": "Niwicitonan Playgroup — Online Session 3",
-    "start_date": "2026-11-18",
-    "city": "Online",
-    "province": "Alberta",
-    "category": "Métis family, language and early-years cultural learning",
-    "organizer": "Otipemisiwak Métis Government — Children and Family Services",
-    "description": "November 18, 2026, 9–10:30 a.m. via Zoom (registration required). Michif storytelling and Métis-centred parenting teachings with knowledge keeper Susan Sinclair. For Alberta-resident families with children aged 0–5; either the child or caregiver must be an Otipemisiwak Métis Government Citizen. Not a general-public drop-in.",
-    "url": "https://albertametis.com/event/niwicitonan-playgroup-online-session-3-2026-11-18/",
     "status": "verified"
   },
   {
@@ -678,6 +678,17 @@
     "status": "verified"
   },
   {
+    "title": "Commemorating Louis Riel Day — Hamilton",
+    "start_date": "2026-11-21",
+    "city": "Hamilton",
+    "province": "Ontario",
+    "category": "Métis history and cultural celebration",
+    "organizer": "Clear Waters Métis Council, Hamilton Public Library and City of Hamilton Indigenous Relations Office",
+    "description": "Public Louis Riel Day commemoration at Hamilton Central Library with live entertainment, guest speakers and interactive displays. The organizer welcomes Métis and non-Métis community members of all ages; event time and further details to be announced.",
+    "url": "https://southwestregion.metisnation.org/event/louis-riel-day/",
+    "status": "verified"
+  },
+  {
     "title": "MASRC Annual General Meeting",
     "start_date": "2026-11-21",
     "city": "Winnipeg",
@@ -686,6 +697,17 @@
     "organizer": "Manitoba Aboriginal Sports and Recreation Council",
     "description": "Annual general meeting; consult organizer for venue and attendance eligibility.",
     "url": "https://www.masrc.com/events",
+    "status": "verified"
+  },
+  {
+    "title": "Thames Bluewater Métis Harvest Feast Lunch",
+    "start_date": "2026-11-21",
+    "city": "Strathroy",
+    "province": "Ontario",
+    "category": "Métis community gathering",
+    "organizer": "Thames Bluewater Métis Council",
+    "description": "10:30 a.m.–3 p.m. at St. John the Evangelist Anglican Church, 34 Head Street North, Strathroy. Harvest feast, community connection and optional White Elephant table. $25 per person; children 12 and under free. Register by November 10; check directly with organizer about participation eligibility and remaining space.",
+    "url": "https://southwestregion.metisnation.org/event/harvest-feast-lunch/",
     "status": "verified"
   },
   {
@@ -1010,6 +1032,18 @@
     "organizer": "Algoma University",
     "description": "February 13–14, 2027 at GFL Memorial Gardens; organized with Anishinaabe Initiatives and community partners.",
     "url": "https://algomau.ca/special-mission/pow-wow/",
+    "status": "verified"
+  },
+  {
+    "title": "8th Annual Métis Nation of Ontario Early Learning and Child Care Conference",
+    "start_date": "2027-02-27",
+    "end_date": "2027-02-28",
+    "city": "Niagara-on-the-Lake",
+    "province": "Ontario",
+    "category": "Métis early learning and education",
+    "organizer": "Métis Nation of Ontario",
+    "description": "Rooted in Story conference for educators, caregivers and community members at White Oaks Resort and Spa, 253 Taylor Road, Niagara-on-the-Lake. Optional February 26 kitchen party. Registration expected to open in November 2026; check organizer for registration availability and eligibility.",
+    "url": "https://www.metisnation.org/news/8th-annual-early-learning-and-child-care-conference/",
     "status": "verified"
   }
 ]
