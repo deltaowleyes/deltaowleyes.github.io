@@ -1818,5 +1818,19 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "Kitchitwa Kateri Anamewgamik Catholic Church",
+    "province": "Ontario",
+    "reserve": "Thunder Bay Indigenous Catholic Community (off reserve)",
+    "denomination": "Roman Catholic",
+    "address": "451 Syndicate Avenue North, Thunder Bay, Ontario",
+    "phone": "807-622-5138",
+    "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/services-departments/indigenous-ministries/",
+    "reserveLocated": false,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
