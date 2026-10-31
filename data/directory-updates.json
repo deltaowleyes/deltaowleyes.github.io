@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-10-31T21:20:02Z",
+      "commit": "1e9252502f2c9e267b06cb5c1018ac6d6ba29272",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "stfrancisregiscatholicmissionpicmobert|ontario|netmizaaggamignishnaabegpicmobertfirstnation",
+            "name": "St. Francis Regis Catholic Mission — Pic Mobert",
+            "place": "Netmizaaggamig Nishnaabeg (Pic Mobert First Nation), Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/parish-directory/eastern-region-parishes/",
+            "status": "Unverified"
+          },
+          {
+            "key": "stjeromescatholicmissionpaysplat|ontario|paysplatfirstnation",
+            "name": "St. Jerome's Catholic Mission — Pays Plat",
+            "place": "Pays Plat First Nation, Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://www.dotb.ca/roman-catholic-diocese-of-thunder-bay/parish-directory/eastern-region-parishes/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T20:22:03Z",
       "commit": "b2ef2e82b307af2be112984de2e792ceee76ccc6",
       "mode": "data",
