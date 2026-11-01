@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T11:23:53Z",
+      "commit": "a007abc48a3b957683641d9c46f63f0ddeb16eb5",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "stgertrudecatholicchurchpelicannarrows|saskatchewan|peterballantynecreenationpelicannarrows",
+            "name": "St. Gertrude Catholic Church — Pelican Narrows",
+            "place": "Peter Ballantyne Cree Nation (Pelican Narrows), Saskatchewan",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "standrewcatholicchurchdillon|saskatchewan|buffaloriverdenenationdillon",
+            "name": "St. Andrew Catholic Church — Dillon",
+            "place": "Buffalo River Dene Nation (Dillon), Saskatchewan",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "stadriancatholicchurchwollastonlake|saskatchewan|hatchetlakedenesulinefirstnationwollastonlakearea",
+            "name": "St. Adrian Catholic Church — Wollaston Lake",
+            "place": "Hatchet Lake Denesuline First Nation (Wollaston Lake area), Saskatchewan",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T10:24:12Z",
       "commit": "32d55f888015d772aad6c2ce95b171a55adc92d3",
       "mode": "import",
