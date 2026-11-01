@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T21:23:08Z",
+      "commit": "9da8c9df4eacefc69b56f53a377fa098b1be013a",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb4820261101005",
+            "name": "NFN Community Store",
+            "place": "Naicatchewenin First Nation, Naicatchewenin First Nation, Ontario",
+            "category": "Community retail store",
+            "date": "",
+            "source": "https://ndevcorp.ca/contact-us/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T21:22:03Z",
       "commit": "7bbb65d02ed71d2f586f3c9594a5c84b1b2f85e7",
       "mode": "data",
