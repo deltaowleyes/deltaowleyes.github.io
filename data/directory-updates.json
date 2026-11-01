@@ -2,6 +2,53 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T10:22:55Z",
+      "commit": "0c70bc8fb642ad6e75da56167f7dcbdda30a6132",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "stpatrickcatholicchurchnelsonhouse|manitoba|nisichawayasihkcreenationnelsonhouse",
+            "name": "St. Patrick Catholic Church — Nelson House",
+            "place": "Nisichawayasihk Cree Nation (Nelson House), Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "holycrosscatholicchurchcrosslake|manitoba|pimicikamakcreenationcrosslake",
+            "name": "Holy Cross Catholic Church — Cross Lake",
+            "place": "Pimicikamak Cree Nation (Cross Lake), Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "metischildandyouthoralhealthclinicfanshawecollege|20261109|london|ontario",
+            "name": "Métis Child and Youth Oral Health Clinic — Fanshawe College",
+            "place": "London, Ontario",
+            "category": "Métis family and youth health",
+            "date": "2026-11-09",
+            "source": "https://southwestregion.metisnation.org/event/oral-health-clinic-for-metis-children-youth-at-fanshawe-college/",
+            "status": "Verified event"
+          },
+          {
+            "key": "rpspolicingpartnershipscareerfairfirstnationsuniversity|20261118|regina|saskatchewan",
+            "name": "RPS Policing & Partnerships Career Fair — First Nations University",
+            "place": "Regina, Saskatchewan",
+            "category": "Indigenous education and careers",
+            "date": "2026-11-18",
+            "source": "https://www.fnuniv.ca/events/rps-policing-partnerships-career-fair/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T09:21:53Z",
       "commit": "73fde580f628978c1abeec68d8667e4adf504e5f",
       "mode": "import",
