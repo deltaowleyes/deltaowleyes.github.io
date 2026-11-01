@@ -2,6 +2,62 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T13:25:40Z",
+      "commit": "908e4c96661454c50a25709de6fc72665e74695a",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "stmargaretmarycatholicmissioncanoenarrows|saskatchewan|canoelakecreefirstnationcanoenarrows",
+            "name": "St. Margaret Mary Catholic Mission — Canoe Narrows",
+            "place": "Canoe Lake Cree First Nation (Canoe Narrows), Saskatchewan",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "otipemisiwakmetisconnectionsinrecovery20261103|20261103|edmonton|alberta",
+            "name": "Otipemisiwak Métis Connections in Recovery — 2026-11-03",
+            "place": "Edmonton, Alberta",
+            "category": "Métis community health and peer support",
+            "date": "2026-11-03",
+            "source": "https://albertametis.com/event/connections-in-recovery-2/2026-11-03/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisconnectionsinrecovery20261110|20261110|edmonton|alberta",
+            "name": "Otipemisiwak Métis Connections in Recovery — 2026-11-10",
+            "place": "Edmonton, Alberta",
+            "category": "Métis community health and peer support",
+            "date": "2026-11-10",
+            "source": "https://albertametis.com/event/connections-in-recovery-2/2026-11-10/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisconnectionsinrecovery20261117|20261117|edmonton|alberta",
+            "name": "Otipemisiwak Métis Connections in Recovery — 2026-11-17",
+            "place": "Edmonton, Alberta",
+            "category": "Métis community health and peer support",
+            "date": "2026-11-17",
+            "source": "https://albertametis.com/event/connections-in-recovery-2/2026-11-17/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisconnectionsinrecovery20261124|20261124|edmonton|alberta",
+            "name": "Otipemisiwak Métis Connections in Recovery — 2026-11-24",
+            "place": "Edmonton, Alberta",
+            "category": "Métis community health and peer support",
+            "date": "2026-11-24",
+            "source": "https://albertametis.com/event/connections-in-recovery-2/2026-11-24/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T12:24:38Z",
       "commit": "29a0e7ab48889c9658611bab97f9f33fc3e0553a",
       "mode": "import",
