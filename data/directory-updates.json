@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T08:25:32Z",
+      "commit": "2d61f675148deab9fcf705906493dd400887e509",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb3220261101001",
+            "name": "Thunderpipe Lodge",
+            "place": "Temagami First Nation (Bear Island Settlement), Bear Island, Ontario",
+            "category": "Lodging and nature tourism",
+            "date": "",
+            "source": "https://www.thunderpipelodge.com/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doembb3220261101002",
+            "name": "NHCN Broadband",
+            "place": "Norway House Cree Nation, Norway House, Manitoba",
+            "category": "Internet and telecommunications services",
+            "date": "",
+            "source": "https://nhcn.ca/directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doembb3220261101003",
+            "name": "Kinosao Sipi Business Development Corporation",
+            "place": "Norway House Cree Nation, Norway House, Manitoba",
+            "category": "First Nation business and economic development",
+            "date": "",
+            "source": "https://nhcn.ca/directory/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T08:24:26Z",
       "commit": "197ccfaef400c07dd3372ec7123df21a76be6057",
       "mode": "data",
