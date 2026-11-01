@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T17:26:47Z",
+      "commit": "6c6a3f47b5a01dd9e45548c029b40dbba83bb434",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb4320261101001",
+            "name": "Sackaney Art",
+            "place": "Fort Albany First Nation (artist affiliation), Scarborough, Ontario",
+            "category": "Indigenous visual arts and cultural workshops",
+            "date": "",
+            "source": "https://indigenousartscollective.org/mary-judy-sackanay-wachi-medowin/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb4320261101002",
+            "name": "Riksworks",
+            "place": "Migisi Sahgaigan (Eagle Lake) First Nation (artist affiliation), Mississauga, Ontario",
+            "category": "Indigenous beadwork and arts workshops",
+            "date": "",
+            "source": "https://indigenousartscollective.org/rikki-singleton-riksworks/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb4320261101003",
+            "name": "Kahionhatatie Beadwork",
+            "place": "Mohawks of Akwesasne (artist affiliation), Akwesasne, Ontario",
+            "category": "Haudenosaunee raised beadwork and cultural workshops",
+            "date": "",
+            "source": "https://indigenousartscollective.org/ashley-thompson-kahionhatatie-beadwork/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T16:30:21Z",
       "commit": "b8bae65e8dca07855b68ebf989cc745536514f98",
       "mode": "import",
