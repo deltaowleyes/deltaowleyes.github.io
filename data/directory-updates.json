@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T22:28:16Z",
+      "commit": "a19f58bdcc8ab25ae9541a77c26a46fe9ad47a7f",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "mamawipimohtetanwalkingtogethermetismenscircledecember14|20261214|online|alberta",
+            "name": "Mamawi Pimohtetan — Walking Together Métis Men's Circle (December 14)",
+            "place": "Online, Alberta",
+            "category": "Métis community wellbeing and cultural connection",
+            "date": "2026-12-14",
+            "source": "https://albertametis.com/event/mamawi-pimohtetan-walking-together-2026-12-14/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisconnectionsinrecovery20270105|20270105|edmonton|alberta",
+            "name": "Otipemisiwak Métis Connections in Recovery — 2027-01-05",
+            "place": "Edmonton, Alberta",
+            "category": "Métis community wellness and recovery support",
+            "date": "2027-01-05",
+            "source": "https://albertametis.com/series/connections-in-recovery-event/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T21:23:08Z",
       "commit": "9da8c9df4eacefc69b56f53a377fa098b1be013a",
       "mode": "import",
