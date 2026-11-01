@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T23:29:34Z",
+      "commit": "e3581002065c270a5894b2097fac51a2a2c998dd",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb4920261101001",
+            "name": "Niished Out Beadwork",
+            "place": "Michipicoten First Nation, Oshawa, Ontario",
+            "category": "Indigenous beadwork, jewellery and tufting",
+            "date": "",
+            "source": "https://indigenousartscollective.org/jakob-olive-niished-out-beadwork/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb4920261101002",
+            "name": "Daysky Designs",
+            "place": "Lac Seul First Nation (Frenchman's Head), Peterborough, Ontario",
+            "category": "Indigenous beadwork, resin jewellery and visual art",
+            "date": "",
+            "source": "https://indigenousartscollective.org/judith-keesic/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T23:28:41Z",
       "commit": "9ce919a8e64f9b291185bc71006ee51d6f6be280",
       "mode": "data",
