@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T13:26:41Z",
+      "commit": "4f9a248cf9b40f9022b6db442f3a700df6260065",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doembb3820261101001",
+            "name": "Medical Bus Transportation — Norway House Cree Nation",
+            "place": "Norway House Cree Nation, Norway House, Manitoba",
+            "category": "Medical appointment transportation",
+            "date": "",
+            "source": "https://nhcn.ca/kinosao-sipi-business-development-corporation/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doembb3820261101002",
+            "name": "Kinosao Sipi Ininew Waskahikan (KSIW) — 333 Maryland",
+            "place": "Norway House Cree Nation (off-reserve Winnipeg facility), Winnipeg, Manitoba",
+            "category": "Medical travel accommodation and commercial office space",
+            "date": "",
+            "source": "https://nhcn.ca/333-maryland/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T13:25:40Z",
       "commit": "908e4c96661454c50a25709de6fc72665e74695a",
       "mode": "data",
