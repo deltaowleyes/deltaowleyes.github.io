@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T08:24:26Z",
+      "commit": "197ccfaef400c07dd3372ec7123df21a76be6057",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "metisyouthjigginglessons20261105|20261105|edmonton|alberta",
+            "name": "Métis Youth Jigging Lessons — 2026-11-05",
+            "place": "Edmonton, Alberta",
+            "category": "Métis youth cultural dance workshop",
+            "date": "2026-11-05",
+            "source": "https://albertametis.com/series/jigging-lessons/",
+            "status": "Verified event"
+          },
+          {
+            "key": "mamawipimohtetanwalkingtogethermetismenscirclenovember30|20261130|online|alberta",
+            "name": "Mamawi Pimohtetan — Walking Together Métis Men's Circle (November 30)",
+            "place": "Online, Alberta",
+            "category": "Métis cultural connection and community wellbeing",
+            "date": "2026-11-30",
+            "source": "https://albertametis.com/event/mamawi-pimohtetan-walking-together-2026-11-30/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T07:29:49Z",
       "commit": "57811d1547572e43adf26c150cb92d162fe96105",
       "mode": "import",
