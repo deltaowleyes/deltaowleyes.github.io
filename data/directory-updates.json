@@ -2,6 +2,60 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T10:24:12Z",
+      "commit": "32d55f888015d772aad6c2ce95b171a55adc92d3",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb3420261101003",
+            "name": "CS Enterprises Limited Partnership",
+            "place": "Moose Cree First Nation business group, Moose Factory, Ontario",
+            "category": "Construction and forestry services",
+            "date": "",
+            "source": "https://mcgclp.ca/business-units/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doembb3420261101004",
+            "name": "Playgreen Development Corporation",
+            "place": "Norway House Cree Nation, Norway House, Manitoba",
+            "category": "Construction, equipment rental and maintenance",
+            "date": "",
+            "source": "https://nhcn.ca/playgreen-development-corporation/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doembb3420261101005",
+            "name": "York Boat Inn and Suites",
+            "place": "Norway House Cree Nation, Norway House, Manitoba",
+            "category": "Hotel and accommodation",
+            "date": "",
+            "source": "https://nhcn.ca/york-boat-inn-and-suites/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doembb3420261101006",
+            "name": "York Boat Diner",
+            "place": "Norway House Cree Nation, Norway House, Manitoba",
+            "category": "Restaurant and food services",
+            "date": "",
+            "source": "https://nhcn.ca/york-boat-diner/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doembb3420261101007",
+            "name": "Kistapinanihk Mall",
+            "place": "Norway House Cree Nation, Norway House, Manitoba",
+            "category": "Shopping centre and retail",
+            "date": "",
+            "source": "https://nhcn.ca/kinosao-sipi-business-development-corporation/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T10:22:55Z",
       "commit": "0c70bc8fb642ad6e75da56167f7dcbdda30a6132",
       "mode": "data",
