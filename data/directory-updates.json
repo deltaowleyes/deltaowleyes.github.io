@@ -2,6 +2,51 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T15:31:45Z",
+      "commit": "3d4a9f3899c36e93586199930b24ae4fc023dadb",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb4020261101001",
+            "name": "Sacred Earth Artworks",
+            "place": "Attawapiskat First Nation (artist directory identification); Moose Factory roots, Petawawa, Ontario",
+            "category": "Indigenous pottery and visual art",
+            "date": "",
+            "source": "https://indigenousartscollective.org/nuha-maisonneuve-sacred-earth-artworks/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeqcb4020261101002",
+            "name": "Kîsisam Pâtisserie",
+            "place": "Sachigo Lake First Nation (owner affiliation), Saint-André-Avellin, Quebec",
+            "category": "Indigenous-owned bakery and catering",
+            "date": "",
+            "source": "https://www.kisisam.com/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb4020261101003",
+            "name": "Otter Bee Creative",
+            "place": "Curve Lake First Nation (owners' affiliation), Brantford, Ontario",
+            "category": "Indigenous beadwork and handcrafted apparel",
+            "date": "",
+            "source": "https://indigenousartscollective.org/jessica-bobbie-gail-talbot-otter-bee-creative/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doembb4020261101004",
+            "name": "Indigenous Carvings by Peter",
+            "place": "Cumberland House Cree Nation (artist affiliation), Stonewall, Manitoba",
+            "category": "Indigenous wood and stone carving",
+            "date": "",
+            "source": "https://indigenousartscollective.org/peter-charles-symchuk-carvings-by-peter/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T15:30:30Z",
       "commit": "b362d003bd832093260576329a9fece4bbfe2229",
       "mode": "data",
