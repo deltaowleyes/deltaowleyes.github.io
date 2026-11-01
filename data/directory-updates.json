@@ -2,6 +2,71 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T00:21:45Z",
+      "commit": "a2a533631d9a641d955c843b18e80b60a7d07a6a",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "stjohnsanglicanchurchgardenriver|ontario|gardenriverfirstnation",
+            "name": "St. John's Anglican Church — Garden River",
+            "place": "Garden River First Nation, Ontario",
+            "category": "Anglican",
+            "date": "",
+            "source": "https://www.dioceseofalgoma.com/2026/07/02/archbishop-anne-to-visit-bishops-beach/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "otipemisiwakmetisregistrysessioncalgary|20261104|calgary|alberta",
+            "name": "Otipemisiwak Métis Registry Session — Calgary",
+            "place": "Calgary, Alberta",
+            "category": "Métis citizenship and community services",
+            "date": "2026-11-04",
+            "source": "https://albertametis.com/event/registry-session-calgary-2026-11-04/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisregistrysessionwainwright|20261104|wainwright|alberta",
+            "name": "Otipemisiwak Métis Registry Session — Wainwright",
+            "place": "Wainwright, Alberta",
+            "category": "Métis citizenship and community services",
+            "date": "2026-11-04",
+            "source": "https://albertametis.com/event/registry-session-wainwright-2026-11-04/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisregistrysessionedmonton|20261110|edmonton|alberta",
+            "name": "Otipemisiwak Métis Registry Session — Edmonton",
+            "place": "Edmonton, Alberta",
+            "category": "Métis citizenship and community services",
+            "date": "2026-11-10",
+            "source": "https://albertametis.com/event/registry-session-edmonton-2026-11-10/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisregistrysessionstonyplain|20261124|stonyplain|alberta",
+            "name": "Otipemisiwak Métis Registry Session — Stony Plain",
+            "place": "Stony Plain, Alberta",
+            "category": "Métis citizenship and community services",
+            "date": "2026-11-24",
+            "source": "https://albertametis.com/event/registry-session-stony-plain-2026-11-24/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisregistrysessionwetaskiwin|20261126|wetaskiwin|alberta",
+            "name": "Otipemisiwak Métis Registry Session — Wetaskiwin",
+            "place": "Wetaskiwin, Alberta",
+            "category": "Métis citizenship and community services",
+            "date": "2026-11-26",
+            "source": "https://albertametis.com/event/registry-session-wetaskiwin-2026-11-26/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-10-31T23:25:59Z",
       "commit": "3d2d342a712b3221f9fdfe8556c6f1335ad548cd",
       "mode": "data",
