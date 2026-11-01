@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T20:20:03Z",
+      "commit": "4597e91570abd9b9cf270fdbbeda903365856db0",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "otipemisiwakmetisconnectionsinrecovery20261222|20261222|edmonton|alberta",
+            "name": "Otipemisiwak Métis Connections in Recovery — 2026-12-22",
+            "place": "Edmonton, Alberta",
+            "category": "Métis community wellbeing and recovery",
+            "date": "2026-12-22",
+            "source": "https://albertametis.com/series/connections-in-recovery-event/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisconnectionsinrecovery20261229|20261229|edmonton|alberta",
+            "name": "Otipemisiwak Métis Connections in Recovery — 2026-12-29",
+            "place": "Edmonton, Alberta",
+            "category": "Métis community wellbeing and recovery",
+            "date": "2026-12-29",
+            "source": "https://albertametis.com/series/connections-in-recovery-event/",
+            "status": "Verified event"
+          },
+          {
+            "key": "2027indspireawardscelebratingindigenousexcellence|20270506|calgary|alberta",
+            "name": "2027 Indspire Awards — Celebrating Indigenous Excellence",
+            "place": "Calgary, Alberta",
+            "category": "Indigenous awards and cultural celebration",
+            "date": "2027-05-06",
+            "source": "https://indspire.ca/events/indspire-awards/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T19:26:11Z",
       "commit": "9a0c001325e5f01fbe9907088790f926a8ecaa4e",
       "mode": "data",
