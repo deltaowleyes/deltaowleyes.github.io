@@ -1902,5 +1902,19 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "Mary Mediatrix Catholic Parish — Neskantaga",
+    "province": "Ontario",
+    "reserve": "Neskantaga First Nation (Lansdowne House)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://hearstmoosonee.ca/en/parishes/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
