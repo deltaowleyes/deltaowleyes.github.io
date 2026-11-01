@@ -2,6 +2,71 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T01:26:22Z",
+      "commit": "e539b8dcc7fe273c6fad07a9535ff2ac8731ab47",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "holyangelscatholicparish|ontario|fortalbanyfirstnation",
+            "name": "Holy Angels Catholic Parish",
+            "place": "Fort Albany First Nation, Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://hearstmoosonee.ca/en/qrg/",
+            "status": "Unverified"
+          },
+          {
+            "key": "ourladyofhopecatholicmission|ontario|eabametoongfirstnationforthope",
+            "name": "Our Lady of Hope Catholic Mission",
+            "place": "Eabametoong First Nation (Fort Hope), Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://hearstmoosonee.ca/en/qrg/",
+            "status": "Unverified"
+          },
+          {
+            "key": "sacredheartofjesuscatholicmissionogoki|ontario|martenfallsfirstnationogokipost",
+            "name": "Sacred Heart of Jesus Catholic Mission — Ogoki",
+            "place": "Marten Falls First Nation (Ogoki Post), Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://hearstmoosonee.ca/en/qrg/",
+            "status": "Unverified"
+          },
+          {
+            "key": "blessedkateritekakwithacatholicparish|ontario|weenuskfirstnationpeawanuck",
+            "name": "Blessed Kateri Tekakwitha Catholic Parish",
+            "place": "Weenusk First Nation (Peawanuck), Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://hearstmoosonee.ca/en/qrg/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "metisyouthjigginglessons20261210|20261210|edmonton|alberta",
+            "name": "Métis Youth Jigging Lessons — 2026-12-10",
+            "place": "Edmonton, Alberta",
+            "category": "Métis culture and youth",
+            "date": "2026-12-10",
+            "source": "https://albertametis.com/series/jigging-lessons/",
+            "status": "Verified event"
+          },
+          {
+            "key": "metisyouthjigginglessons20261217|20261217|edmonton|alberta",
+            "name": "Métis Youth Jigging Lessons — 2026-12-17",
+            "place": "Edmonton, Alberta",
+            "category": "Métis culture and youth",
+            "date": "2026-12-17",
+            "source": "https://albertametis.com/event/jigging-lessons/2026-12-17/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T01:25:39Z",
       "commit": "ae0af8d732f3f8ac00e46b7095d6c0da0b770882",
       "mode": "import",
