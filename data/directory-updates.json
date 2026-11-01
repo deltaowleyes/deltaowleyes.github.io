@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T18:26:36Z",
+      "commit": "37c7578a833626346e29b8b9a7ef9a769bea782b",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb4420261101004",
+            "name": "Agawa Trading Post",
+            "place": "Serpent River First Nation (ownership affiliation), Pancake Bay, Ontario",
+            "category": "Indigenous art, gifts and roadside tourism retail",
+            "date": "",
+            "source": "https://www.srfnlimitedpartnership.ca/about",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb4420261101005",
+            "name": "Monague Indigenous Crafts & Gifts",
+            "place": "Skownan First Nation (owner affiliation), Chilliwack, British Columbia",
+            "category": "Indigenous crafts and gifts wholesale",
+            "date": "",
+            "source": "https://monague.com/pages/about-us",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T18:25:34Z",
       "commit": "fe110c8b44ffce7decf0e6e8045fcd3f9c2c06af",
       "mode": "data",
