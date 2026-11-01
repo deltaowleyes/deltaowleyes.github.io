@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T20:21:00Z",
+      "commit": "f480a49a7075fbdba7491a1fa507678c552d8af1",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb4720261101001",
+            "name": "Boreal Solutions",
+            "place": "Windigo Community Development Corporation — Bearskin Lake, Cat Lake, North Caribou Lake, Sachigo Lake and Slate Falls First Nations, Thunder Bay, Ontario",
+            "category": "Chemical and janitorial supplies and equipment",
+            "date": "",
+            "source": "https://www.windigocorp.ca/services",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T20:20:03Z",
       "commit": "4597e91570abd9b9cf270fdbbeda903365856db0",
       "mode": "data",
