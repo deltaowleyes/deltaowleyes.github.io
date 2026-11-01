@@ -1465,6 +1465,17 @@
     "status": "verified"
   },
   {
+    "title": "Otipemisiwak Métis Connections in Recovery — 2027-01-12",
+    "start_date": "2027-01-12",
+    "city": "Edmonton",
+    "province": "Alberta",
+    "category": "Métis community wellness and recovery support",
+    "organizer": "Otipemisiwak Métis Government",
+    "description": "Tuesday, January 12, 2027, 6:30–8 p.m. at the Métis Veteran's Building, 12308 111 Avenue, Edmonton, with an online Zoom option. Peer support for individuals, friends and families affected by addiction. The organizer states no registration is required; consult its event series for access details.",
+    "url": "https://albertametis.com/series/connections-in-recovery-event/",
+    "status": "verified"
+  },
+  {
     "title": "First Nations and Inuit Mobile Services — Montreal (January)",
     "start_date": "2027-01-21",
     "city": "Montreal",
@@ -1473,6 +1484,18 @@
     "organizer": "First Nations Human Resources Development Commission of Quebec",
     "description": "Scheduled January mobile services visit; verify service eligibility and location.",
     "url": "https://cdrhpnq-fnhrdcq.ca/en/events-v2/",
+    "status": "verified"
+  },
+  {
+    "title": "Connecting Through Culture Family Retreat — Winter 2027",
+    "start_date": "2027-01-22",
+    "end_date": "2027-01-24",
+    "city": "Smoky Lake area",
+    "province": "Alberta",
+    "category": "Métis family cultural retreat",
+    "organizer": "Otipemisiwak Métis Government — Children and Family Services",
+    "description": "January 22–24, 2027 at Métis Crossing. Winter family retreat for Alberta residents where at least one family member is an Otipemisiwak Métis Government citizen and at least one attending child is age 11 or younger. Registration details are not yet announced; spaces will be limited. This is not a general-admission event.",
+    "url": "https://albertametis.com/programs-services/children-family-services/connecting-through-culture/",
     "status": "verified"
   },
   {
@@ -1546,6 +1569,18 @@
     "status": "verified"
   },
   {
+    "title": "Gathering Our Voices 2027 — Indigenous Youth Leadership Conference",
+    "start_date": "2027-03-15",
+    "end_date": "2027-03-18",
+    "city": "Victoria",
+    "province": "British Columbia",
+    "category": "Indigenous youth leadership and cultural gathering",
+    "organizer": "BC Association of Aboriginal Friendship Centres",
+    "description": "March 15–18, 2027, Victoria Conference Centre and Fairmont Empress Hotel, with activities at Mungo Martin House. For self-identifying Indigenous youth delegates ages 14–24, with chaperone requirements for minors. Organizer states ticket applications for 2027 are closed; attendance requires an allocated ticket and registration. See official delegate and venue pages.",
+    "url": "https://gatheringourvoices.ca/",
+    "status": "verified"
+  },
+  {
     "title": "Soaring 2027 — Indigenous Youth Empowerment Gathering",
     "start_date": "2027-05-04",
     "end_date": "2027-05-05",
@@ -1566,6 +1601,18 @@
     "organizer": "Indspire",
     "description": "May 6, 2027, at BMO Centre in Calgary. Indspire's national black-tie awards celebration honouring First Nations, Inuit and Métis achievement. Ticketing and in-person attendance eligibility have not been announced on the organizer's event page; consult Indspire before planning attendance.",
     "url": "https://indspire.ca/events/indspire-awards/",
+    "status": "verified"
+  },
+  {
+    "title": "KWE! Festival 2027 — À la rencontre des peuples autochtones",
+    "start_date": "2027-06-18",
+    "end_date": "2027-06-20",
+    "city": "Québec City",
+    "province": "Quebec",
+    "category": "First Nations and Inuit cultural festival",
+    "organizer": "KWE! À la rencontre des peuples autochtones",
+    "description": "June 18–20, 2027, at Place Jean-Béliveau in Québec City. Public, free-admission festival celebrating the cultures and contemporary lives of Québec's 11 Indigenous Nations through performances, talks, demonstrations and cultural exchanges. Check the organizer for program details.",
+    "url": "https://www.kwefest.com/",
     "status": "verified"
   }
 ]
