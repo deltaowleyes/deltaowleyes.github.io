@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T11:25:52Z",
+      "commit": "e1d561cfd2e9098bdb13f250d5504582d417cccf",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb3520261101001",
+            "name": "3 Nations Logging LP",
+            "place": "Moose Cree First Nation-owned business group; operations near Cochrane, Cochrane, Ontario",
+            "category": "Forestry and timber harvesting",
+            "date": "",
+            "source": "https://mcgclp.ca/3-nations-logging/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeskb3520261101002",
+            "name": "Buffalo River Development Limited Partnership",
+            "place": "Buffalo River Dene Nation, Dillon, Saskatchewan",
+            "category": "Indigenous economic development and business investment",
+            "date": "",
+            "source": "https://brdlp.ca/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb3620261101001",
+            "name": "Super 8 Moose River Inn and Suites",
+            "place": "Moose Cree First Nation-owned business group; hotel in Moosonee, Moosonee, Ontario",
+            "category": "Hotel and accommodation",
+            "date": "",
+            "source": "https://mcgclp.ca/super-8-moose-river-inn-and-suites/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T11:23:53Z",
       "commit": "a007abc48a3b957683641d9c46f63f0ddeb16eb5",
       "mode": "data",
