@@ -1832,5 +1832,19 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "St. John's Anglican Church — Garden River",
+    "province": "Ontario",
+    "reserve": "Garden River First Nation",
+    "denomination": "Anglican",
+    "address": "",
+    "phone": "",
+    "source": "https://www.dioceseofalgoma.com/2026/07/02/archbishop-anne-to-visit-bishops-beach/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
