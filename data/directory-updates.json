@@ -2,6 +2,62 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T05:21:04Z",
+      "commit": "092b31ec5969ad273788b7631356cf069a844a14",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "preciousbloodcatholicmissiongardenhill|manitoba|gardenhillfirstnationgardenhill",
+            "name": "Precious Blood Catholic Mission — Garden Hill",
+            "place": "Garden Hill First Nation (Garden Hill), Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "stfrancisdesalescatholicmissiongodslakenarrows|manitoba|godslakefirstnationgodslakenarrows",
+            "name": "St. Francis de Sales Catholic Mission — God's Lake Narrows",
+            "place": "God's Lake First Nation (God's Lake Narrows), Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "wampumbeltswoventhroughanishinaabehistorytmu|20261103|toronto|ontario",
+            "name": "Wampum Belts Woven Through Anishinaabe History — TMU",
+            "place": "Toronto, Ontario",
+            "category": "Treaty education and Indigenous knowledge",
+            "date": "2026-11-03",
+            "source": "https://www.torontomu.ca/indigenous/events/2026/11/wampum-belts-woven-through-anishinaabe-history/",
+            "status": "Verified event"
+          },
+          {
+            "key": "memorialrounddanceindigenoustmu|20261105|toronto|ontario",
+            "name": "Memorial Round Dance — Indigenous TMU",
+            "place": "Toronto, Ontario",
+            "category": "Indigenous cultural gathering and round dance",
+            "date": "2026-11-05",
+            "source": "https://www.torontomu.ca/indigenous/events/2026/11/memorial-round-dance/",
+            "status": "Verified event"
+          },
+          {
+            "key": "firstnationsinvestmentforum2026|20261129|toronto|ontario",
+            "name": "First Nations Investment Forum 2026",
+            "place": "Toronto, Ontario",
+            "category": "Indigenous economic development and investment",
+            "date": "2026-11-29",
+            "source": "https://firstnationsinvestmentforum.ca/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T04:29:14Z",
       "commit": "e7c2644d1cbac0f307dff291c14c31de88406b86",
       "mode": "import",
