@@ -989,6 +989,18 @@
     "status": "verified"
   },
   {
+    "title": "National Gathering of Graduate Students 2026 — Indigenous Health Research",
+    "start_date": "2026-11-24",
+    "end_date": "2026-11-26",
+    "city": "Toronto",
+    "province": "Ontario",
+    "category": "Indigenous graduate research and education gathering",
+    "organizer": "Ontario Network Environments for Indigenous Health Research (ON NEIHR)",
+    "description": "November 24–26, 2026 at Westin Harbour Castle Hotel, Toronto. Gathering for Indigenous graduate students researching Indigenous health and well-being, hosted by ON NEIHR with the NEIHR National Coordinating Centre. Abstract submission deadline was June 19; attendance and registration eligibility must be confirmed with the organizer, as this is not advertised as a general-public conference.",
+    "url": "https://onneihr.ca/event/national-gathering-of-graduate-students-2026/",
+    "status": "verified"
+  },
+  {
     "title": "Otipemisiwak Métis Connections in Recovery — 2026-11-24",
     "start_date": "2026-11-24",
     "city": "Edmonton",
@@ -1019,18 +1031,6 @@
     "organizer": "Archives of Ontario",
     "description": "Free public dialogue and Q&A with Crystal Gail Fraser and Sara Komarnisky; RSVP required by November 14. Treaty 9 displayed.",
     "url": "https://www.ontario.ca/page/treaties-recognition-week",
-    "status": "verified"
-  },
-  {
-    "title": "National Gathering of Graduate Students 2026 — Indigenous Health Research",
-    "start_date": "2026-11-24",
-    "end_date": "2026-11-26",
-    "city": "Toronto",
-    "province": "Ontario",
-    "category": "Indigenous graduate research and education gathering",
-    "organizer": "Ontario Network Environments for Indigenous Health Research (ON NEIHR)",
-    "description": "November 24–26, 2026 at Westin Harbour Castle Hotel, Toronto. Gathering for Indigenous graduate students researching Indigenous health and well-being, hosted by ON NEIHR with the NEIHR National Coordinating Centre. Abstract submission deadline was June 19; attendance and registration eligibility must be confirmed with the organizer, as this is not advertised as a general-public conference.",
-    "url": "https://onneihr.ca/event/national-gathering-of-graduate-students-2026/",
     "status": "verified"
   },
   {
@@ -1410,6 +1410,28 @@
     "status": "verified"
   },
   {
+    "title": "Otipemisiwak Métis Connections in Recovery — 2026-12-22",
+    "start_date": "2026-12-22",
+    "city": "Edmonton",
+    "province": "Alberta",
+    "category": "Métis community wellbeing and recovery",
+    "organizer": "Otipemisiwak Métis Government",
+    "description": "December 22, 2026, 6:30–8 p.m., Métis Veteran's Building, 12308–111 Avenue, Edmonton, with online participation offered. Organizer's recurring Connections in Recovery peer-support session; check the organizer for holiday schedule changes and participation details.",
+    "url": "https://albertametis.com/series/connections-in-recovery-event/",
+    "status": "verified"
+  },
+  {
+    "title": "Otipemisiwak Métis Connections in Recovery — 2026-12-29",
+    "start_date": "2026-12-29",
+    "city": "Edmonton",
+    "province": "Alberta",
+    "category": "Métis community wellbeing and recovery",
+    "organizer": "Otipemisiwak Métis Government",
+    "description": "December 29, 2026, 6:30–8 p.m., Métis Veteran's Building, 12308–111 Avenue, Edmonton, with online participation offered. Organizer's recurring Connections in Recovery peer-support session; check the organizer for holiday schedule changes and participation details.",
+    "url": "https://albertametis.com/series/connections-in-recovery-event/",
+    "status": "verified"
+  },
+  {
     "title": "First Nations and Inuit Mobile Services — Montreal (January)",
     "start_date": "2027-01-21",
     "city": "Montreal",
@@ -1500,6 +1522,17 @@
     "organizer": "Indspire",
     "description": "May 4–5, 2027, at BMO Centre in Calgary. National gathering for Indigenous high-school learners featuring education and career exploration, workshops, speakers and connections. Organizer confirms registration is open; attendance is directed toward Indigenous high-school students. Consult Indspire for registration requirements and availability.",
     "url": "https://indspire.ca/events/soaring/",
+    "status": "verified"
+  },
+  {
+    "title": "2027 Indspire Awards — Celebrating Indigenous Excellence",
+    "start_date": "2027-05-06",
+    "city": "Calgary",
+    "province": "Alberta",
+    "category": "Indigenous awards and cultural celebration",
+    "organizer": "Indspire",
+    "description": "May 6, 2027, at BMO Centre in Calgary. Indspire's national black-tie awards celebration honouring First Nations, Inuit and Métis achievement. Ticketing and in-person attendance eligibility have not been announced on the organizer's event page; consult Indspire before planning attendance.",
+    "url": "https://indspire.ca/events/indspire-awards/",
     "status": "verified"
   }
 ]
