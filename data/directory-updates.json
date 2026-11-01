@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T16:30:21Z",
+      "commit": "b8bae65e8dca07855b68ebf989cc745536514f98",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb4120261101001",
+            "name": "Shipek Mikunis Creations",
+            "place": "Sachigo Lake First Nation (artist affiliation), Ottawa, Ontario",
+            "category": "Indigenous beadwork and handmade jewellery",
+            "date": "",
+            "source": "https://indigenousartscollective.org/caroline-lalonde-shipek-mikunis/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb4120261101002",
+            "name": "Claire's Visions",
+            "place": "Apitipi Anicinapek First Nation (artist affiliation), Matheson, Ontario",
+            "category": "Indigenous sewing, ribbon skirts and regalia",
+            "date": "",
+            "source": "https://indigenousartscollective.org/claire-sackanay-claires-visions/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T16:28:59Z",
       "commit": "3c831cfb54bc0b76ffcf84b97d35ce27cc3db658",
       "mode": "data",
