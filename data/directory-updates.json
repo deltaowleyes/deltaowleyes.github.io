@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T16:28:59Z",
+      "commit": "3c831cfb54bc0b76ffcf84b97d35ce27cc3db658",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "soaring2027indigenousyouthempowermentgathering|20270504|calgary|alberta",
+            "name": "Soaring 2027 — Indigenous Youth Empowerment Gathering",
+            "place": "Calgary, Alberta",
+            "category": "Indigenous youth education and career gathering",
+            "date": "2027-05-04",
+            "source": "https://indspire.ca/events/soaring/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T15:31:45Z",
       "commit": "3d4a9f3899c36e93586199930b24ae4fc023dadb",
       "mode": "import",
