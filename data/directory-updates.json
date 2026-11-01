@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T02:21:00Z",
+      "commit": "d09dbe744b74fd6ca5a25971c867cf8d1c763ace",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb2620261101001",
+            "name": "Nibinamik Lodge",
+            "place": "Nibinamik First Nation, Summer Beaver, Ontario",
+            "category": "Visitor accommodation",
+            "date": "",
+            "source": "https://summerbeaver.com/nibinamik-lodge-reservations/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T02:20:08Z",
       "commit": "27a5631929dfd986d6fa57fd5f578498862be12a",
       "mode": "data",
