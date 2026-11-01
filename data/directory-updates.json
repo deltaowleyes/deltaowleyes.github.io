@@ -2,6 +2,51 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T09:21:12Z",
+      "commit": "343b9e413873dcf25f5e6eeb9703b92c4cba4733",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "otipemisiwakmetisweeklyyogaandmeditation20261104|20261104|online|alberta",
+            "name": "Otipemisiwak Métis Weekly Yoga and Meditation — 2026-11-04",
+            "place": "Online, Alberta",
+            "category": "Métis community wellness and online classes",
+            "date": "2026-11-04",
+            "source": "https://albertametis.com/event/yoga-meditation-weekly-sessions-2-3-2/2026-11-04/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisweeklyyogaandmeditation20261111|20261111|online|alberta",
+            "name": "Otipemisiwak Métis Weekly Yoga and Meditation — 2026-11-11",
+            "place": "Online, Alberta",
+            "category": "Métis community wellness and online classes",
+            "date": "2026-11-11",
+            "source": "https://albertametis.com/event/yoga-meditation-weekly-sessions-2-3-2/2026-11-11/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisweeklyyogaandmeditation20261118|20261118|online|alberta",
+            "name": "Otipemisiwak Métis Weekly Yoga and Meditation — 2026-11-18",
+            "place": "Online, Alberta",
+            "category": "Métis community wellness and online classes",
+            "date": "2026-11-18",
+            "source": "https://albertametis.com/event/yoga-meditation-weekly-sessions-2-3-2/2026-11-18/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisweeklyyogaandmeditation20261125|20261125|online|alberta",
+            "name": "Otipemisiwak Métis Weekly Yoga and Meditation — 2026-11-25",
+            "place": "Online, Alberta",
+            "category": "Métis community wellness and online classes",
+            "date": "2026-11-25",
+            "source": "https://albertametis.com/event/yoga-meditation-weekly-sessions-2-3-2/2026-11-25/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T08:25:32Z",
       "commit": "2d61f675148deab9fcf705906493dd400887e509",
       "mode": "import",
