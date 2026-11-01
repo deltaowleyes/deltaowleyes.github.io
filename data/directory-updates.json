@@ -2,6 +2,51 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T05:22:03Z",
+      "commit": "ba45b10a3e931465bbb95fd231d7714ccec275a7",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doembb2920261101001",
+            "name": "North Side Diner",
+            "place": "Barren Lands First Nation (Brochet), Brochet, Manitoba",
+            "category": "Restaurant and food service",
+            "date": "",
+            "source": "https://www.blfn.ca/copy-of-about",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb2920261101002",
+            "name": "Best Western Crossroads — Thunder Bay",
+            "place": "HT Group — eight Northwestern Ontario First Nations (ownership partnership), Thunder Bay, Ontario",
+            "category": "Hotel and accommodation",
+            "date": "",
+            "source": "https://www.thehtgroup.ca/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb2920261101003",
+            "name": "Biidaaban Leasing LP",
+            "place": "HT Group — Northwestern Ontario First Nations partnership, Thunder Bay, Ontario",
+            "category": "Equipment and asset leasing",
+            "date": "",
+            "source": "https://www.thehtgroup.ca/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb2920261101004",
+            "name": "Agoke Development Limited Partnership",
+            "place": "Aroland, Eabametoong and Marten Falls First Nations, Aroland, Ontario",
+            "category": "Forestry and Indigenous economic development",
+            "date": "",
+            "source": "https://www.agokedevcorp.ca/about/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T05:21:04Z",
       "commit": "092b31ec5969ad273788b7631356cf069a844a14",
       "mode": "data",
