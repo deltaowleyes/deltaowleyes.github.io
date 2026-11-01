@@ -2056,5 +2056,33 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "St. Patrick Catholic Church — Nelson House",
+    "province": "Manitoba",
+    "reserve": "Nisichawayasihk Cree Nation (Nelson House)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Holy Cross Catholic Church — Cross Lake",
+    "province": "Manitoba",
+    "reserve": "Pimicikamak Cree Nation (Cross Lake)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
