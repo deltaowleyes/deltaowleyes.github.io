@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T12:24:38Z",
+      "commit": "29a0e7ab48889c9658611bab97f9f33fc3e0553a",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doembb3720261101001",
+            "name": "Kinosao Sipi Multiplex",
+            "place": "Norway House Cree Nation, Norway House, Manitoba",
+            "category": "Community recreation and event facility",
+            "date": "",
+            "source": "https://nhcn.ca/kinosao-sipi-mulitplex/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doembb3720261101002",
+            "name": "Norway House Dental Clinic",
+            "place": "Norway House Cree Nation, Norway House, Manitoba",
+            "category": "Dental care services",
+            "date": "",
+            "source": "https://nhcn.ca/dental-clinic/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doembb3720261101003",
+            "name": "Norway House Funeral Home",
+            "place": "Norway House Cree Nation, Norway House, Manitoba",
+            "category": "Funeral and memorial services",
+            "date": "",
+            "source": "https://nhcn.ca/norway-house-funeral-home/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T12:23:37Z",
       "commit": "501d1c37230e72acd2902c5bb273715a5a06e1b8",
       "mode": "data",
