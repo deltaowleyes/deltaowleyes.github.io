@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T01:25:39Z",
+      "commit": "ae0af8d732f3f8ac00e46b7095d6c0da0b770882",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeqcb2420261031001",
+            "name": "Auberge Kanio-Kashee Lodge",
+            "place": "Cree Nation of Waskaganish, Waskaganish, Quebec",
+            "category": "Accommodation and hospitality",
+            "date": "",
+            "source": "https://thewbc.ca/businesses",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb2520261101001",
+            "name": "Cav-Tal Foods Ltd.",
+            "place": "Marten Falls First Nation (ownership connection; Thunder Bay business location), Thunder Bay, Ontario",
+            "category": "Wholesale food distribution",
+            "date": "",
+            "source": "https://www.cavtal.ca/home-1",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T00:21:45Z",
       "commit": "a2a533631d9a641d955c843b18e80b60a7d07a6a",
       "mode": "data",
