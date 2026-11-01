@@ -1916,5 +1916,61 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "Our Lady of the Cape Catholic Church — Black Lake",
+    "province": "Saskatchewan",
+    "reserve": "Black Lake Denesuline First Nation (Black Lake)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Our Lady of Sorrows Catholic Church — Fond du Lac",
+    "province": "Saskatchewan",
+    "reserve": "Fond du Lac Denesuline First Nation (Fond du Lac)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Sacred Heart Catholic Church — Pukatawagan",
+    "province": "Manitoba",
+    "reserve": "Mathias Colomb Cree Nation (Pukatawagan)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "St. Theresa Catholic Church — St. Theresa Point",
+    "province": "Manitoba",
+    "reserve": "St. Theresa Point First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
