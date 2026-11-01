@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T17:27:19Z",
+      "commit": "903b621a43614e7a9f089060299bcf7c9e765e38",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "otipemisiwakmetisfamilychristmasparty2026|20261206|edmonton|alberta",
+            "name": "Otipemisiwak Métis Family Christmas Party 2026",
+            "place": "Edmonton, Alberta",
+            "category": "Métis family cultural gathering",
+            "date": "2026-12-06",
+            "source": "https://albertametis.com/programs-services/children-family-services/the-metis-family-christmas-party/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T17:26:47Z",
       "commit": "6c6a3f47b5a01dd9e45548c029b40dbba83bb434",
       "mode": "import",
