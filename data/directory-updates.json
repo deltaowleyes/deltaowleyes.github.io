@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T21:22:03Z",
+      "commit": "7bbb65d02ed71d2f586f3c9594a5c84b1b2f85e7",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "otipemisiwakmetischangecorepeersupportnovember2|20261102|online|alberta",
+            "name": "Otipemisiwak Métis ChangeCore Peer Support — November 2",
+            "place": "Online, Alberta",
+            "category": "Métis community wellness and peer support",
+            "date": "2026-11-02",
+            "source": "https://albertametis.com/event/changecore/2026-11-02/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T20:21:00Z",
       "commit": "f480a49a7075fbdba7491a1fa507678c552d8af1",
       "mode": "import",
