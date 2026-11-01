@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T07:29:49Z",
+      "commit": "57811d1547572e43adf26c150cb92d162fe96105",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb3020261101002",
+            "name": "Windigo Construction Solutions",
+            "place": "Windigo Community Development Corporation — Bearskin Lake, Cat Lake, North Caribou Lake, Sachigo Lake and Slate Falls First Nations, Thunder Bay, Ontario",
+            "category": "Construction and contracting",
+            "date": "",
+            "source": "https://www.windigocorp.ca/services",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb3020261101003",
+            "name": "Pelican Lake Sandwich Company",
+            "place": "Windigo Community Development Corporation — Bearskin Lake, Cat Lake, North Caribou Lake, Sachigo Lake and Slate Falls First Nations, Sioux Lookout, Ontario",
+            "category": "Restaurant and catering",
+            "date": "",
+            "source": "https://www.pelicanlakesandwichcompany.ca/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb3120261101001",
+            "name": "Windigo Community Development Corporation",
+            "place": "Bearskin Lake, Cat Lake, North Caribou Lake, Sachigo Lake and Slate Falls First Nations, Thunder Bay, Ontario",
+            "category": "First Nation economic development and business holdings",
+            "date": "",
+            "source": "https://www.windigocorp.ca/about-us",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T07:27:40Z",
       "commit": "e75a46737a55059e595caac417f6fb115dc8f4a7",
       "mode": "data",
