@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T09:21:53Z",
+      "commit": "73fde580f628978c1abeec68d8667e4adf504e5f",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb3320261101001",
+            "name": "Carrick Express Inc.",
+            "place": "HT Group — First Nation-owned business group, Thunder Bay, Ontario",
+            "category": "Courier and logistics services",
+            "date": "",
+            "source": "https://www.thehtgroup.ca/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb3320261101002",
+            "name": "Happy Time Real Estate Holdings",
+            "place": "HT Group — First Nation-owned business group, Thunder Bay, Ontario",
+            "category": "Commercial property management and real estate",
+            "date": "",
+            "source": "https://www.thehtgroup.ca/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T09:21:12Z",
       "commit": "343b9e413873dcf25f5e6eeb9703b92c4cba4733",
       "mode": "data",
