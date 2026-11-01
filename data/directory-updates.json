@@ -2,6 +2,62 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T02:20:08Z",
+      "commit": "27a5631929dfd986d6fa57fd5f578498862be12a",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "marymediatrixcatholicparishneskantaga|ontario|neskantagafirstnationlansdownehouse",
+            "name": "Mary Mediatrix Catholic Parish — Neskantaga",
+            "place": "Neskantaga First Nation (Lansdowne House), Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://hearstmoosonee.ca/en/parishes/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "otipemisiwakmetisregistryextendedhoursedmonton20261103|20261103|edmonton|alberta",
+            "name": "Otipemisiwak Métis Registry Extended Hours — Edmonton (2026-11-03)",
+            "place": "Edmonton, Alberta",
+            "category": "Métis citizenship and community services",
+            "date": "2026-11-03",
+            "source": "https://albertametis.com/event/registry-session-extended-hours-2026-11-03/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisregistryextendedhoursedmonton20261114|20261114|edmonton|alberta",
+            "name": "Otipemisiwak Métis Registry Extended Hours — Edmonton (2026-11-14)",
+            "place": "Edmonton, Alberta",
+            "category": "Métis citizenship and community services",
+            "date": "2026-11-14",
+            "source": "https://albertametis.com/event/registry-session-extended-hours-2026-11-14-2/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisregistryextendedhoursedmonton20261119|20261119|edmonton|alberta",
+            "name": "Otipemisiwak Métis Registry Extended Hours — Edmonton (2026-11-19)",
+            "place": "Edmonton, Alberta",
+            "category": "Métis citizenship and community services",
+            "date": "2026-11-19",
+            "source": "https://albertametis.com/event/registry-session-extended-hours-2026-11-19/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisregistryextendedhoursedmonton20261128|20261128|edmonton|alberta",
+            "name": "Otipemisiwak Métis Registry Extended Hours — Edmonton (2026-11-28)",
+            "place": "Edmonton, Alberta",
+            "category": "Métis citizenship and community services",
+            "date": "2026-11-28",
+            "source": "https://albertametis.com/event/registry-session-extended-hours-2026-11-28/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T01:26:22Z",
       "commit": "e539b8dcc7fe273c6fad07a9535ff2ac8731ab47",
       "mode": "data",
