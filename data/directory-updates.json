@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T04:27:45Z",
+      "commit": "5f37d21dd292c2347f88b0d41fb0416ef9b47932",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "mykitchentoyoursmetisnationofontariozoomcookingseries|20261103|online|ontario",
+            "name": "My Kitchen to Yours — Métis Nation of Ontario Zoom Cooking Series",
+            "place": "Online, Ontario",
+            "category": "Métis community education and cooking",
+            "date": "2026-11-03",
+            "source": "https://southwestregion.metisnation.org/event/my-kitchen-to-yours-zoom-series-by-nicole-foster-mno-diabetic-coach/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T03:29:50Z",
       "commit": "9f9edbd7689304e50d684ebe2a38fd189866f115",
       "mode": "import",
