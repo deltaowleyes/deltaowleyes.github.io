@@ -2,6 +2,51 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T23:28:41Z",
+      "commit": "9ce919a8e64f9b291185bc71006ee51d6f6be280",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "otipemisiwakmetisconnectionsinrecovery20270112|20270112|edmonton|alberta",
+            "name": "Otipemisiwak Métis Connections in Recovery — 2027-01-12",
+            "place": "Edmonton, Alberta",
+            "category": "Métis community wellness and recovery support",
+            "date": "2027-01-12",
+            "source": "https://albertametis.com/series/connections-in-recovery-event/",
+            "status": "Verified event"
+          },
+          {
+            "key": "connectingthroughculturefamilyretreatwinter2027|20270122|smokylakearea|alberta",
+            "name": "Connecting Through Culture Family Retreat — Winter 2027",
+            "place": "Smoky Lake area, Alberta",
+            "category": "Métis family cultural retreat",
+            "date": "2027-01-22",
+            "source": "https://albertametis.com/programs-services/children-family-services/connecting-through-culture/",
+            "status": "Verified event"
+          },
+          {
+            "key": "gatheringourvoices2027indigenousyouthleadershipconference|20270315|victoria|britishcolumbia",
+            "name": "Gathering Our Voices 2027 — Indigenous Youth Leadership Conference",
+            "place": "Victoria, British Columbia",
+            "category": "Indigenous youth leadership and cultural gathering",
+            "date": "2027-03-15",
+            "source": "https://gatheringourvoices.ca/",
+            "status": "Verified event"
+          },
+          {
+            "key": "kwefestival2027alarencontredespeuplesautochtones|20270618|quebeccity|quebec",
+            "name": "KWE! Festival 2027 — À la rencontre des peuples autochtones",
+            "place": "Québec City, Quebec",
+            "category": "First Nations and Inuit cultural festival",
+            "date": "2027-06-18",
+            "source": "https://www.kwefest.com/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T22:28:16Z",
       "commit": "a19f58bdcc8ab25ae9541a77c26a46fe9ad47a7f",
       "mode": "data",
