@@ -2,6 +2,62 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T12:23:37Z",
+      "commit": "501d1c37230e72acd2902c5bb273715a5a06e1b8",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "ourladyofperpetualhelpcatholicchurchnorwayhouse|manitoba|norwayhousecreenationnorwayhouse",
+            "name": "Our Lady of Perpetual Help Catholic Church — Norway House",
+            "place": "Norway House Cree Nation (Norway House), Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "sthelencatholicmissionsouthindianlake|manitoba|opiponnapiwincreenationsouthindianlake",
+            "name": "St. Helen Catholic Mission — South Indian Lake",
+            "place": "O-Pipon-Na-Piwin Cree Nation (South Indian Lake), Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "ourladyofmountcarmelcatholicmissionsouthend|saskatchewan|peterballantynecreenationsouthend",
+            "name": "Our Lady of Mount Carmel Catholic Mission — Southend",
+            "place": "Peter Ballantyne Cree Nation (Southend), Saskatchewan",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "stlouiscatholicmissionpatuanak|saskatchewan|englishriverfirstnationpatuanak",
+            "name": "St. Louis Catholic Mission — Patuanak",
+            "place": "English River First Nation (Patuanak), Saskatchewan",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "mamawipimohtetanwalkingtogethermetismenscirclenovember16|20261116|online|alberta",
+            "name": "Mamawi Pimohtetan — Walking Together Métis Men's Circle (November 16)",
+            "place": "Online, Alberta",
+            "category": "Métis community wellbeing and cultural connection",
+            "date": "2026-11-16",
+            "source": "https://albertametis.com/event/mamawi-pimohtetan-walking-together-2029-11-16/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T11:25:52Z",
       "commit": "e1d561cfd2e9098bdb13f250d5504582d417cccf",
       "mode": "import",
