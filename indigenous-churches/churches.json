@@ -2210,5 +2210,19 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "St. Francis Xavier Catholic Church — Christian Island",
+    "province": "Ontario",
+    "reserve": "Beausoleil First Nation (Christian Island)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://stfrancisxaviermid.archtoronto.org/en/",
+    "reserveLocated": true,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
