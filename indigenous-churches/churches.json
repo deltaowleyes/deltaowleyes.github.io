@@ -2126,5 +2126,61 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "Our Lady of Perpetual Help Catholic Church — Norway House",
+    "province": "Manitoba",
+    "reserve": "Norway House Cree Nation (Norway House)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "St. Helen Catholic Mission — South Indian Lake",
+    "province": "Manitoba",
+    "reserve": "O-Pipon-Na-Piwin Cree Nation (South Indian Lake)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Our Lady of Mount Carmel Catholic Mission — Southend",
+    "province": "Saskatchewan",
+    "reserve": "Peter Ballantyne Cree Nation (Southend)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "St. Louis Catholic Mission — Patuanak",
+    "province": "Saskatchewan",
+    "reserve": "English River First Nation (Patuanak)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
