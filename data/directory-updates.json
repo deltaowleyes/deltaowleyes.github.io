@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T18:25:34Z",
+      "commit": "fe110c8b44ffce7decf0e6e8045fcd3f9c2c06af",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "christmasatthenation2026tsuutinaindigenousholidaymarket|20261211|tsuutinanation|alberta",
+            "name": "Christmas at the Nation 2026 — Tsuut'ina Indigenous Holiday Market",
+            "place": "Tsuut'ina Nation, Alberta",
+            "category": "Indigenous arts and cultural holiday market",
+            "date": "2026-12-11",
+            "source": "https://christmasatthenation.ca/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T17:27:19Z",
       "commit": "903b621a43614e7a9f089060299bcf7c9e765e38",
       "mode": "data",
