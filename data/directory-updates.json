@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T03:29:50Z",
+      "commit": "9f9edbd7689304e50d684ebe2a38fd189866f115",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb2720261101001",
+            "name": "ThawiKayhiGan Group LP",
+            "place": "Six northern Ontario First Nations; main office at Fort William First Nation, Fort William First Nation, Ontario",
+            "category": "Construction and northern logistics",
+            "date": "",
+            "source": "https://www.tkggroup.ca/background",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T03:28:54Z",
       "commit": "5bab5b99d07436f006d6038ff25b869dcfd3a963",
       "mode": "data",
