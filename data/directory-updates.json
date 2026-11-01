@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T04:29:14Z",
+      "commit": "e7c2644d1cbac0f307dff291c14c31de88406b86",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeskb2820261101002",
+            "name": "Black Lake Ventures",
+            "place": "Black Lake Denesuline First Nation, Black Lake, Saskatchewan",
+            "category": "Indigenous economic development and investment",
+            "date": "",
+            "source": "https://blacklakefirstnation.ca/economic-development/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeskb2820261101003",
+            "name": "Waterfound Development Corporation",
+            "place": "Black Lake Denesuline First Nation (investment partner), Black Lake, Saskatchewan",
+            "category": "Indigenous investment and transportation partnerships",
+            "date": "",
+            "source": "https://blacklakefirstnation.ca/economic-development/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T04:28:13Z",
       "commit": "0b3a1104520c732bc1bafaea85768c62225a9cb2",
       "mode": "data",
