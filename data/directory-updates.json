@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T14:20:17Z",
+      "commit": "953fcdb6e98c9df8007db226dac97c6f5936ee0b",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "stfrancisxaviercatholicparishattawapiskat|ontario|attawapiskatfirstnation",
+            "name": "St. Francis Xavier Catholic Parish — Attawapiskat",
+            "place": "Attawapiskat First Nation, Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://hearstmoosonee.ca/en/qrg/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T13:26:41Z",
       "commit": "4f9a248cf9b40f9022b6db442f3a700df6260065",
       "mode": "import",
