@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T19:25:39Z",
+      "commit": "ca7f549de95be3743680bbee7974ae1a27ab0ccd",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb4620261101001",
+            "name": "Kesagami Lake Lodge LP",
+            "place": "Moose Cree First Nation (Moose Cree Group of Companies ownership affiliation), Cochrane, Ontario",
+            "category": "Fly-in fishing lodge and wilderness tourism",
+            "date": "",
+            "source": "https://mcgclp.ca/kesagami-lake-lodge/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb4620261101002",
+            "name": "Cochrane Air Services Limited Partnership",
+            "place": "Moose Cree First Nation (Moose Cree Group of Companies ownership affiliation), Cochrane, Ontario",
+            "category": "Air charter, fly-in outfitting and tourism",
+            "date": "",
+            "source": "https://mcgclp.ca/cochrane-air-services-limited-partnership/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb4620261101003",
+            "name": "DCS Services LP",
+            "place": "Moose Cree First Nation (Moose Cree Group of Companies ownership affiliation), Cochrane, Ontario",
+            "category": "Mining site services, maintenance and construction",
+            "date": "",
+            "source": "https://mcgclp.ca/dcs-services-lp/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T18:26:36Z",
       "commit": "37c7578a833626346e29b8b9a7ef9a769bea782b",
       "mode": "import",
