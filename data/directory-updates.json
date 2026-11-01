@@ -2,6 +2,71 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T07:27:40Z",
+      "commit": "e75a46737a55059e595caac417f6fb115dc8f4a7",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "stpetercatholicchurchbrochet|manitoba|barrenlandsfirstnationbrochet",
+            "name": "St. Peter Catholic Church — Brochet",
+            "place": "Barren Lands First Nation (Brochet), Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "blessedkateritekakwithacatholicchurchlacbrochet|manitoba|northlandsdenesulinefirstnationlacbrochet",
+            "name": "Blessed Kateri Tekakwitha Catholic Church — Lac Brochet",
+            "place": "Northlands Denesuline First Nation (Lac Brochet), Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "canadianmartyrscatholicchurchgodsriver|manitoba|mantosipicreenationgodsriver",
+            "name": "Canadian Martyrs Catholic Church — God's River",
+            "place": "Manto Sipi Cree Nation (God's River), Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          },
+          {
+            "key": "saintmargueritedyouvillecatholicchurchwasagamack|manitoba|wasagamackfirstnationwasagamack",
+            "name": "Saint Marguerite d’Youville Catholic Church — Wasagamack",
+            "place": "Wasagamack First Nation (Wasagamack), Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "mamawipimohtetanwalkingtogethermetismenscirclenovember2|20261102|online|alberta",
+            "name": "Mamawi Pimohtetan — Walking Together Métis Men's Circle (November 2)",
+            "place": "Online, Alberta",
+            "category": "Métis community wellbeing and cultural connection",
+            "date": "2026-11-02",
+            "source": "https://albertametis.com/event/mamawi-pimohtetan-walking-together-2026-11-02/",
+            "status": "Verified event"
+          },
+          {
+            "key": "mamawipimohtetanwalkingtogethermetismenscirclenovember23|20261123|online|alberta",
+            "name": "Mamawi Pimohtetan — Walking Together Métis Men's Circle (November 23)",
+            "place": "Online, Alberta",
+            "category": "Métis community wellbeing and cultural connection",
+            "date": "2026-11-23",
+            "source": "https://albertametis.com/event/mamawi-pimohtetan-walking-together-2026-11-23/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T05:22:03Z",
       "commit": "ba45b10a3e931465bbb95fd231d7714ccec275a7",
       "mode": "import",
