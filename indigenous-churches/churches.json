@@ -2000,5 +2000,61 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "St. Peter Catholic Church — Brochet",
+    "province": "Manitoba",
+    "reserve": "Barren Lands First Nation (Brochet)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Blessed Kateri Tekakwitha Catholic Church — Lac Brochet",
+    "province": "Manitoba",
+    "reserve": "Northlands Denesuline First Nation (Lac Brochet)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Canadian Martyrs Catholic Church — God's River",
+    "province": "Manitoba",
+    "reserve": "Manto Sipi Cree Nation (God's River)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Saint Marguerite d’Youville Catholic Church — Wasagamack",
+    "province": "Manitoba",
+    "reserve": "Wasagamack First Nation (Wasagamack)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
