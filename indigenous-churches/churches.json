@@ -2196,5 +2196,19 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "St. Francis Xavier Catholic Parish — Attawapiskat",
+    "province": "Ontario",
+    "reserve": "Attawapiskat First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://hearstmoosonee.ca/en/qrg/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
