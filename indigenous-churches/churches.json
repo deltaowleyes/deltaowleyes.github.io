@@ -2182,5 +2182,19 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "St. Margaret Mary Catholic Mission — Canoe Narrows",
+    "province": "Saskatchewan",
+    "reserve": "Canoe Lake Cree First Nation (Canoe Narrows)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://archdioceseofkeewatinlepas.ca/wp/parish-mission-directory/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
