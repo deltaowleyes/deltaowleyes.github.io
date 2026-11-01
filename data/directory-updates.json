@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-01T19:26:11Z",
+      "commit": "9a0c001325e5f01fbe9907088790f926a8ecaa4e",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "nationalgatheringofgraduatestudents2026indigenoushealthresearch|20261124|toronto|ontario",
+            "name": "National Gathering of Graduate Students 2026 — Indigenous Health Research",
+            "place": "Toronto, Ontario",
+            "category": "Indigenous graduate research and education gathering",
+            "date": "2026-11-24",
+            "source": "https://onneihr.ca/event/national-gathering-of-graduate-students-2026/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisconnectionsinrecovery20261208|20261208|edmonton|alberta",
+            "name": "Otipemisiwak Métis Connections in Recovery — 2026-12-08",
+            "place": "Edmonton, Alberta",
+            "category": "Métis community wellness and recovery",
+            "date": "2026-12-08",
+            "source": "https://albertametis.com/series/connections-in-recovery-event/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetisconnectionsinrecovery20261215|20261215|edmonton|alberta",
+            "name": "Otipemisiwak Métis Connections in Recovery — 2026-12-15",
+            "place": "Edmonton, Alberta",
+            "category": "Métis community wellness and recovery",
+            "date": "2026-12-15",
+            "source": "https://albertametis.com/series/connections-in-recovery-event/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T19:25:39Z",
       "commit": "ca7f549de95be3743680bbee7974ae1a27ab0ccd",
       "mode": "import",
