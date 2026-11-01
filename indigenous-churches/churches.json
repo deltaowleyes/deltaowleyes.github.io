@@ -1846,5 +1846,61 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "Holy Angels Catholic Parish",
+    "province": "Ontario",
+    "reserve": "Fort Albany First Nation",
+    "denomination": "Roman Catholic",
+    "address": "45 River Rd, Fort Albany, Ontario",
+    "phone": "705-278-3040",
+    "source": "https://hearstmoosonee.ca/en/qrg/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Our Lady of Hope Catholic Mission",
+    "province": "Ontario",
+    "reserve": "Eabametoong First Nation (Fort Hope)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "705-242-1201",
+    "source": "https://hearstmoosonee.ca/en/qrg/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Sacred Heart of Jesus Catholic Mission — Ogoki",
+    "province": "Ontario",
+    "reserve": "Marten Falls First Nation (Ogoki Post)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "807-854-0849",
+    "source": "https://hearstmoosonee.ca/en/qrg/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Blessed Kateri Tekakwitha Catholic Parish",
+    "province": "Ontario",
+    "reserve": "Weenusk First Nation (Peawanuck)",
+    "denomination": "Roman Catholic",
+    "address": "10 Church Rd, Peawanuck, Ontario",
+    "phone": "705-473-2641",
+    "source": "https://hearstmoosonee.ca/en/qrg/",
+    "reserveLocated": null,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
