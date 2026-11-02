@@ -64,7 +64,7 @@ window.DOEDirectorySort=(()=>{
  }
  function compare(source,a,b,mode="newest_near"){
   if(mode==="original")return 0;
-  const byName=String(a.name??"").localeCompare(String(b.name??""),"en",{sensitivity:"base"});
+  const byName=String(source==="events"?a.title??"":a.name??"").localeCompare(String(source==="events"?b.title??"":b.name??""),"en",{sensitivity:"base"});
   if(mode==="name")return byName;
   const aDate=date(source,a),bDate=date(source,b);
   const byDate=aDate===bDate?0:aDate>bDate?-1:1;
