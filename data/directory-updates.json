@@ -2,6 +2,51 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T18:31:07Z",
+      "commit": "87fd63747aa1bc76d2a3447c5530ad3b5d00271b",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb7420261102001",
+            "name": "Two Wet Dogs Maple Syrup",
+            "place": "Métis Nation of Ontario Region 5 business listing, Loring, Ontario",
+            "category": "Maple syrup production",
+            "date": "",
+            "source": "https://twowetdogs.com/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7420261102004",
+            "name": "Innlink Concrete Ltd.",
+            "place": "Moose Cree First Nation members, Moose Factory, Ontario",
+            "category": "Concrete, aggregates and civil construction",
+            "date": "",
+            "source": "https://www.innlink.ca/about/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7420261102005",
+            "name": "Puzzled Escape Rooms",
+            "place": "Métis Nation of Ontario Region 5 business directory, Greater Sudbury, Ontario",
+            "category": "Escape room entertainment",
+            "date": "",
+            "source": "https://www.puzzledescaperooms.ca/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7420261102006",
+            "name": "The Butter Tart Empire Bakery",
+            "place": "Alderville First Nation affiliated owner, Roseneath, Ontario",
+            "category": "Bakery and food retail",
+            "date": "",
+            "source": "https://northumberlanding.ca/businesses/the-butter-tart-empire-bakery/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T18:29:42Z",
       "commit": "1ee64a5078a52dc95ceb1b44c6cef46c9a12911f",
       "mode": "data",
