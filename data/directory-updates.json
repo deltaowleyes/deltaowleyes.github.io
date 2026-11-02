@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T03:28:30Z",
+      "commit": "440cd0689098378903f2c9ec1ebb65a3d199c8cd",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb5320261102001",
+            "name": "The Superior Inn Hotel & Conference Centre",
+            "place": "Majority First Nations partnership of Michipicoten First Nation and Naicatchewenin First Nation, Thunder Bay, Ontario",
+            "category": "Hotel, conference centre and hospitality",
+            "date": "",
+            "source": "https://superiorinnhotel.com/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb5320261102002",
+            "name": "Lake & Spruce Restaurant",
+            "place": "Located within Superior Inn Hotel & Conference Centre, Thunder Bay; restaurant ownership not separately established, Thunder Bay, Ontario",
+            "category": "Restaurant and dining",
+            "date": "",
+            "source": "https://superiorinnhotel.com/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T02:25:06Z",
       "commit": "a9f30cdfd1ece6690d1222e7c7ac81d8a26de417",
       "mode": "import",
