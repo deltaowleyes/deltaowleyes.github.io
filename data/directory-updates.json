@@ -2,6 +2,51 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T02:24:04Z",
+      "commit": "58e483bde641467f8e332372025f11b872346396",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "mamawipimohtetanwalkingtogethermetismenscirclenovember9|20261109|online|alberta",
+            "name": "Mamawi Pimohtetan — Walking Together Métis Men's Circle (November 9)",
+            "place": "Online, Alberta",
+            "category": "Métis men's wellness and cultural support",
+            "date": "2026-11-09",
+            "source": "https://albertametis.com/event/mamawi-pimohtetan-walking-together-2026-11-09/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetischangecorepeersupportnovember23|20261123|online|alberta",
+            "name": "Otipemisiwak Métis ChangeCore Peer Support — November 23",
+            "place": "Online, Alberta",
+            "category": "Métis tobacco reduction peer support",
+            "date": "2026-11-23",
+            "source": "https://albertametis.com/event/changecore/2026-11-23/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetischangecorepeersupportnovember30|20261130|online|alberta",
+            "name": "Otipemisiwak Métis ChangeCore Peer Support — November 30",
+            "place": "Online, Alberta",
+            "category": "Métis tobacco reduction peer support",
+            "date": "2026-11-30",
+            "source": "https://albertametis.com/event/changecore/2026-11-30/",
+            "status": "Verified event"
+          },
+          {
+            "key": "metisnationofontario8thannualearlylearningandchildcareconference|20270227|niagaraonthelake|ontario",
+            "name": "Métis Nation of Ontario 8th Annual Early Learning and Child Care Conference",
+            "place": "Niagara-on-the-Lake, Ontario",
+            "category": "Métis early learning, education and cultural conference",
+            "date": "2027-02-27",
+            "source": "https://www.metisnation.org/news/8th-annual-early-learning-and-child-care-conference/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T01:31:07Z",
       "commit": "6561d6dc9e02346cfcd93a54f8cc59bcdd82d17a",
       "mode": "data",
