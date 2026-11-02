@@ -9,7 +9,7 @@ const $=id=>document.getElementById(id);
 const loaded=new Map(),staged=new Map(),checked=new Set(),newKeys=new Set();
 let active="businesses",current=-1,shown=[],formChanged=false;
 const FIELDS={
- business:[["name","Business name","locked"],["city","City","locked"],["province","Province","locked"],["description","Business description","textarea"],["address","Public street address","text"],["postal_code","Postal code","text"],["community","Community affiliation — evidence required","text"],["phone","Public business phone","text"],["email","Public business email","email"],["business_hours","Public business hours","text"],["website","Website (https://)","url"],["category","Original industry category","text"],["source_url","Published source (https://)","url"]],
+ business:[["name","Business name","locked"],["city","City","locked"],["province","Province","locked"],["description","Business description","textarea"],["address","Public street address","text"],["postal_code","Postal code","text"],["community","Community affiliation — evidence required","text"],["email","Public business email","email"],["business_hours","Public business hours","text"],["website","Website (https://)","url"],["category","Original industry category","text"],["source_url","Published source (https://)","url"],["phone","Public business phone","text"]],
  church:[["name","Church name","locked"],["province","Province","locked"],["reserve","Community / reserve","locked"],["denomination","Denomination","text"],["address","Public address","text"],["phone","Public phone","text"],["email","Public email","email"],["website","Church website (https://)","url"],["service_times","Public worship times","textarea"],["accessibility","Public visitor / accessibility notes","textarea"],["source","Published source (https://)","url"],["reserveLocated","Located on reserve — evidence required","tri"],["indigenousLed","Indigenous-led — evidence required","tri"]],
  event:[["title","Event title","text"],["start_date","Start date","date"],["end_date","End date (optional)","date"],["city","City or community","text"],["province","Province or territory","text"],["category","Event category","text"],["organizer","Official organizer","text"],["description","Public event description","textarea"],["url","Official organizer URL (https://)","url"],["status","Publication status","event-status"]]
 };
@@ -53,9 +53,9 @@ function updateQueue(){
  $("manifest").disabled=n===0;$("clear").disabled=n===0;$("publish").disabled=n===0||busy;
 }
 function renderList(){
- const data=loaded.get(active)||[],query=$("search").value.trim().toLowerCase(),vf=$("filter").value,cf=$("contactFilter").value,interest=$("interestFilter").value;
+ const data=loaded.get(active)||[],query=$("search").value.trim().toLowerCase(),vf=$("filter").value,cf=$("contactFilter").value,interest=$("interestFilter").value,phoneWebsite=$("businessPhoneWebsiteFilter").value;
  const match=[];
- data.forEach((b,i)=>{const item=record(i);if(!item)return;if(query&&!short(item).toLowerCase().includes(query))return;if(vf&&status(item)!==vf)return;if(cf&&contact(item)!==cf)return;if(active!=="events"&&interest&&window.DOEOutreach.interestFor(active,item)!==interest)return;match.push(i)});
+ data.forEach((b,i)=>{const item=record(i);if(!item)return;if(query&&!short(item).toLowerCase().includes(query))return;if(vf&&status(item)!==vf)return;if(cf&&contact(item)!==cf)return;if(active!=="events"&&interest&&window.DOEOutreach.interestFor(active,item)!==interest)return;if(active==="businesses"&&phoneWebsite==="phone_no_website"&&(!String(item.phone??"").trim()||String(item.website??"").trim()))return;match.push(i)});
  const sorter=window.DOEDirectorySort,sortMode=$("sort")?.value||"newest_near";
  if(sortMode==="event_date"&&active==="events")match.sort((a,b)=>
   Number(newKeys.has(key(b)))-Number(newKeys.has(key(a)))||
@@ -190,11 +190,11 @@ $("createNew").addEventListener("click",()=>{
   {name:"",city:"",province:"",verification_status:"unverified",contact_status:"not_contacted",owner_confirmed:false};
  const i=loaded.get(active).push(draft)-1;
  newKeys.add(key(i));staged.set(key(i),{...draft});formChanged=false;
- $("search").value="";$("filter").value="";$("contactFilter").value="";$("interestFilter").value="";
+ $("search").value="";$("filter").value="";$("contactFilter").value="";$("interestFilter").value="";$("businessPhoneWebsiteFilter").value="";
  select(i,true);
  $("field_"+(active==="events"?"title":"name")).focus();notify("New unpublished "+(active==="events"?"event":"listing")+". Enter the required details, then click Update & publish.");
 });
-for(const id of ["search","filter","contactFilter","interestFilter","sort"])
+for(const id of ["search","filter","contactFilter","interestFilter","businessPhoneWebsiteFilter","sort"])
  $(id)?.addEventListener(id==="search"?"input":"change",renderList);
 $("checkAll").addEventListener("click",()=>{shown.forEach(i=>checked.add(key(i)));renderList()});
 $("uncheckAll").addEventListener("click",()=>{for(const id of [...checked])if(id.startsWith(active+":"))checked.delete(id);renderList()});
@@ -292,6 +292,7 @@ async function loadSource(source){
  $("load").textContent=loaded.get(active).filter(Boolean).length.toLocaleString()+" "+info.name.toLowerCase()+" loaded.";
  $("createNew").textContent=active==="events"?"+ New event":active==="churches"?"+ New church":"+ New business";
  $("contactFilterWrap").hidden=active==="events";$("interestFilterWrap").hidden=active==="events";
+  $("businessPhoneWebsiteFilterWrap").hidden=active!=="businesses";$("businessPhoneWebsiteFilter").value="";
  $("outreachActions").hidden=active==="events";$("filterLabel").textContent=active==="events"?"Event status":"Verification status";
  const filterOptions=active==="events"?[["","All event statuses"],["verified","Verified"],["unverified","Unverified"],["cancelled","Cancelled"]]:
   [["","All statuses"],["unverified","Unverified"],["partially_verified","Partially verified"],["verified","Verified"]];
