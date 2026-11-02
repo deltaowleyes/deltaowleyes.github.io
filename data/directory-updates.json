@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T10:23:56Z",
+      "commit": "121c9b6d25158ec4d92b8b0692f6c4bead114536",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb6120261102004",
+            "name": "Wakenagun Community Futures Development Corporation",
+            "place": "Western James Bay and Hudson Bay First Nations service area, Ontario, Moose Factory, Ontario",
+            "category": "Indigenous regional business financing and advisory services",
+            "date": "",
+            "source": "https://wakenagun.ca/home/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T10:22:37Z",
       "commit": "c1abf88f4a933642e5f8f132a57ec0e07c0f0330",
       "mode": "data",
