@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T10:22:37Z",
+      "commit": "c1abf88f4a933642e5f8f132a57ec0e07c0f0330",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "2027wendakeinternationalpowwow|20270702|wendake|quebec",
+            "name": "2027 Wendake International Pow Wow",
+            "place": "Wendake, Quebec",
+            "category": "First Nations competitive powwow and cultural gathering",
+            "date": "2027-07-02",
+            "source": "https://powwowwendake.ca/en/next-edition-pow-wow-wendake/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T09:33:27Z",
       "commit": "b0fff69c24543688e536a9ed0da54125da58bb87",
       "mode": "import",
