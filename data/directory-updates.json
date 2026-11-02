@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T12:29:47Z",
+      "commit": "d7e10f82bbf21268a4ad7a6a0ff7053fb5dd51ab",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb6520261102001",
+            "name": "Piinahzii Limited Partnership",
+            "place": "Marten Falls First Nation traditional territory, northern Ontario, Ontario",
+            "category": "Majority Indigenous-owned infrastructure and construction partnership",
+            "date": "",
+            "source": "https://www.bird.ca/news/2026/05/03/marten-falls-first-nation-and-bird-construction-form-majority-indigenous-owned-partnership-piinahzii-lp-to-collaborate-on-community-infrastructure-projects/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb6520261102002",
+            "name": "MCBC-Arcadis Limited Partnership",
+            "place": "Mississaugas of the Credit First Nation treaty lands and Greater Toronto region, Hagersville, Ontario",
+            "category": "Majority Indigenous-owned engineering and development advisory partnership",
+            "date": "",
+            "source": "https://www.arcadis.com/en/news/north-america/canada/2026/mcbc-and-arcadis-forms-limited-partnership/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb6520261102003",
+            "name": "Chapleau District Heating Company Inc.",
+            "place": "Chapleau Cree First Nation and Township of Chapleau, Ontario, Chapleau, Ontario",
+            "category": "First Nation joint-venture biomass district heating",
+            "date": "",
+            "source": "https://billrosenbergmpp.ca/indigenous-joint-venture-advances-community-scale-bioheat-project-in-chapleau/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T12:26:48Z",
       "commit": "0752c0aa54e04415aceeefb1762944a4ae0c4d7f",
       "mode": "data",
