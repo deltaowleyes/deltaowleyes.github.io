@@ -282,6 +282,18 @@
     "status": "verified"
   },
   {
+    "title": "SPARK Indigenous Energy Summit 2026",
+    "start_date": "2026-11-04",
+    "end_date": "2026-11-05",
+    "city": "Calgary",
+    "province": "Alberta",
+    "category": "Indigenous energy leadership and economic development conference",
+    "organizer": "Mokwateh and Connect Partnership Group",
+    "description": "November 4–5, 2026 at Grey Eagle Casino and Resort, Calgary. Indigenous-led national summit on energy ownership, investment and partnerships. Open to First Nations, Métis and Inuit leaders, communities and businesses, as well as energy companies, investors, policymakers and other interested participants; registration required.",
+    "url": "https://www.sparkenergysummit.ca/",
+    "status": "verified"
+  },
+  {
     "title": "Treaties Recognition Week and Inuit Day Educational Program",
     "start_date": "2026-11-04",
     "city": "Online",
@@ -1374,6 +1386,18 @@
     "status": "verified"
   },
   {
+    "title": "Our Children Our Way National Conference 2026",
+    "start_date": "2026-11-30",
+    "end_date": "2026-12-03",
+    "city": "Vancouver",
+    "province": "British Columbia",
+    "category": "Indigenous child and family wellbeing conference",
+    "organizer": "Our Children Our Way Society",
+    "description": "November 30–December 3, 2026 at Vancouver Convention Centre, Vancouver. Fifth annual national forum for Indigenous child and family wellbeing, themed 'Amplifying Children and Youth Voices.' In-person registration is sold out per organizer; a virtual-pass option was advertised to open November 2. Check the official organizer for availability and participation details.",
+    "url": "https://ourchildrenourway.ca/ocow2026/",
+    "status": "verified"
+  },
+  {
     "title": "A’PI 2026 — AKIMA Conference, MAMU Fair and Regional Forum",
     "start_date": "2026-12-01",
     "end_date": "2026-12-03",
@@ -1474,6 +1498,18 @@
     "organizer": "Assembly of First Nations",
     "description": "In-person AFN Special Chiefs Assembly at Rogers Centre Ottawa, 55 Colonel By Drive. Registration and applicable fees are required; observer registration is available. Check the organizer for eligibility and costs.",
     "url": "https://afn.ca/events/special-chiefs-assembly-2026/",
+    "status": "verified"
+  },
+  {
+    "title": "Indigenous Tourism Conference Banff 2026",
+    "start_date": "2026-12-08",
+    "end_date": "2026-12-09",
+    "city": "Banff",
+    "province": "Alberta",
+    "category": "Indigenous tourism and economic development conference",
+    "organizer": "Indigenous Economic Pathways",
+    "description": "December 8–9, 2026 at Banff Park Lodge, Banff. Conference on Western Indigenous tourism partnerships, cultural integrity and economic development. Intended for First Nation leaders, Indigenous tourism operators, economic development corporations, destination organizations, industry, government and students; registration through organizer.",
+    "url": "https://www.iepathways.ca/itcbanff",
     "status": "verified"
   },
   {
