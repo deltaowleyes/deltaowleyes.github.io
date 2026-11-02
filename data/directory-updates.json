@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T20:31:03Z",
+      "commit": "c364af043897ea6c1f393216d90cd99ceeb8a9f5",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb7620261102007",
+            "name": "Nibinamik Store",
+            "place": "Nibinamik First Nation, Summer Beaver, Ontario",
+            "category": "General store and grocery retail",
+            "date": "",
+            "source": "https://summerbeaver.com/local-business/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7620261102008",
+            "name": "Beaver Lodge",
+            "place": "Nibinamik First Nation, Summer Beaver, Ontario",
+            "category": "Guest lodging and accommodation",
+            "date": "",
+            "source": "https://summerbeaver.com/local-business/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T20:29:04Z",
       "commit": "0e530a47221c63c9e59673736e7eb1ce2f7cd25f",
       "mode": "data",
