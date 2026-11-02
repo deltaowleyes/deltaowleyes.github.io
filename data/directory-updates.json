@@ -2,6 +2,78 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T22:23:05Z",
+      "commit": "ff2946c8a5514071070c4665bd651cb70c528f71",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "firstnationseducationlanguagesandspecialeducationforum2026|20261103|thunderbay|ontario",
+            "name": "First Nations Education, Languages and Special Education Forum 2026",
+            "place": "Thunder Bay, Ontario",
+            "category": "First Nations education and language",
+            "date": "2026-11-03",
+            "source": "https://www.chiefsmeeting.com/2026educationforum",
+            "status": "Verified event"
+          },
+          {
+            "key": "ontariofinalagreementsoutherngathering2026|20261104|etobicoke|ontario",
+            "name": "Ontario Final Agreement — Southern Gathering 2026",
+            "place": "Etobicoke, Ontario",
+            "category": "First Nations child and family wellbeing governance",
+            "date": "2026-11-04",
+            "source": "https://www.chiefsmeeting.com/ofasoutherngathering",
+            "status": "Verified event"
+          },
+          {
+            "key": "chiefsofontariofallchiefsassemblydialoguesession1|20261113|online|ontario",
+            "name": "Chiefs of Ontario Fall Chiefs Assembly — Dialogue Session 1",
+            "place": "Online, Ontario",
+            "category": "First Nations governance and dialogue",
+            "date": "2026-11-13",
+            "source": "https://www.chiefsmeeting.com/fca2026",
+            "status": "Verified event"
+          },
+          {
+            "key": "26thannualcelebrationoflifeconferencebraidingculturescience|20261118|akwesasne|ontario",
+            "name": "26th Annual Celebration of Life Conference — Braiding Culture & Science",
+            "place": "Akwesasne, Ontario",
+            "category": "Indigenous community wellness and learning",
+            "date": "2026-11-18",
+            "source": "https://www.akwesasne.ca/news/posts/afwp-celebration-of-life-conference-2026/",
+            "status": "Verified event"
+          },
+          {
+            "key": "maamwizing2026allourrelationsconference|20261118|sudbury|ontario",
+            "name": "Maamwizing 2026 — All Our Relations Conference",
+            "place": "Sudbury, Ontario",
+            "category": "Indigenous research and cultural knowledge",
+            "date": "2026-11-18",
+            "source": "https://www.maamwizing.com/copy-of-2024",
+            "status": "Verified event"
+          },
+          {
+            "key": "chiefsofontariofallchiefsassemblydialoguesession2|20261120|online|ontario",
+            "name": "Chiefs of Ontario Fall Chiefs Assembly — Dialogue Session 2",
+            "place": "Online, Ontario",
+            "category": "First Nations governance and dialogue",
+            "date": "2026-11-20",
+            "source": "https://www.chiefsmeeting.com/fca2026",
+            "status": "Verified event"
+          },
+          {
+            "key": "chiefsofontariofallchiefsassembly2026|20261124|mississauga|ontario",
+            "name": "Chiefs of Ontario Fall Chiefs Assembly 2026",
+            "place": "Mississauga, Ontario",
+            "category": "First Nations leadership and governance",
+            "date": "2026-11-24",
+            "source": "https://www.chiefsmeeting.com/fca2026",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T21:25:29Z",
       "commit": "fb6c3bcdd73ee9c335d1ccc03fb78354b0e0644e",
       "mode": "data",
