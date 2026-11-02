@@ -2,6 +2,51 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T07:33:31Z",
+      "commit": "b4a09ebb1725d79a8d6d7cab511b0cb7b3a0e48f",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb5720261102001",
+            "name": "Aki Contracting",
+            "place": "Couchiching First Nation (company-reported base), Couchiching First Nation area (exact office unverified), Ontario",
+            "category": "Indigenous-owned environmental remediation and civil contracting",
+            "date": "",
+            "source": "https://akicontracting.com/about/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb5720261102002",
+            "name": "Akawe Energy Services",
+            "place": "Northwestern Ontario First Nations service area; exact First Nation ownership affiliation unconfirmed, Thunder Bay, Ontario",
+            "category": "First Nation-owned electrical and multi-trades contracting",
+            "date": "",
+            "source": "https://www.akawe-energy.ca/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb5720261102003",
+            "name": "Making Ground River Capital Corporation",
+            "place": "Ginoogaming First Nation (founder affiliation only), Thunder Bay, Ontario",
+            "category": "Indigenous-owned private equity and asset management",
+            "date": "",
+            "source": "https://www.anishnawbebusiness.com/media-release/indigenous-asset-management-firm-launches-in-toronto-as-indigenous-founder-meets-global-investors-at-carney-summit-and-joins-ofneda-panel/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb5820261102001",
+            "name": "Gencity Consulting",
+            "place": "Garden River First Nation (founder affiliation; business office location unverified), Sault Ste. Marie, Ontario",
+            "category": "Indigenous-owned communications, marketing and business consulting",
+            "date": "",
+            "source": "https://www.gencity.ca/about",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T07:30:17Z",
       "commit": "064753ea288c46e79f497b64b6a31cdc0d07f030",
       "mode": "data",
