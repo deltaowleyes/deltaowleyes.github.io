@@ -2,6 +2,51 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T17:23:54Z",
+      "commit": "73acaa483be27a16d2d885a30bdcb6cd50372807",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb7220261102001",
+            "name": "The HT Group",
+            "place": "First Nations partnership across Northwestern Ontario, Thunder Bay, Ontario",
+            "category": "First Nations-owned business group — travel, logistics, hospitality and real estate",
+            "date": "",
+            "source": "https://www.thehtgroup.ca/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7220261102003",
+            "name": "Askiy Eco Distribution Ltd.",
+            "place": "Indigenous woman-owned business serving Western Canada, Edmonton, Alberta",
+            "category": "Eco-friendly commercial packaging and cleaning supplies",
+            "date": "",
+            "source": "https://www.askiyecodistribution.ca/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7320261102001",
+            "name": "Takwaxkwe Inc.",
+            "place": "Founder affiliated with Delaware Nation and Chippewas of Nawash, Ontario",
+            "category": "Indigenous engagement and strategic consulting",
+            "date": "",
+            "source": "https://www.takwaxkwe.org/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7320261102002",
+            "name": "Karm Collective",
+            "place": "Métis-owned business, Saskatoon, Saskatchewan",
+            "category": "Beauty and holistic wellness services",
+            "date": "",
+            "source": "https://www.karmcollective.ca/about",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T17:20:29Z",
       "commit": "c1e77a30f6c641a871ee48f5b3f1d44f4b0e3d59",
       "mode": "data",
