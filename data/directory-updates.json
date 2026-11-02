@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T22:26:27Z",
+      "commit": "fc743a9be1bcb4aad8dadcb9e95c71181332e13e",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "26thannualcelebrationoflifeconferencebraidingculturescience|20261118|hogansburgakwesasneterritory|newyorkusa",
+            "name": "26th Annual Celebration of Life Conference — Braiding Culture & Science",
+            "place": "Hogansburg (Akwesasne territory), New York (USA)",
+            "category": "Indigenous community wellness and learning",
+            "date": "2026-11-18",
+            "source": "https://www.akwesasne.ca/news/posts/afwp-celebration-of-life-conference-2026/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T22:23:05Z",
       "commit": "ff2946c8a5514071070c4665bd651cb70c528f71",
       "mode": "data",
