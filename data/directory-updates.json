@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T05:25:02Z",
+      "commit": "e2e87a92a7b253a31c141de4552d49c33c594839",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb5520261102001",
+            "name": "Rocky Shore Development Corporation",
+            "place": "Ginoogaming First Nation, Ginoogaming First Nation (Longlac area), Ontario",
+            "category": "First Nation economic development and business planning",
+            "date": "",
+            "source": "https://www.anishnawbebusiness.com/member/rocky-shore-development-corporation/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb5520261102002",
+            "name": "Nedaakiimenaan Inc.",
+            "place": "Aroland, Constance Lake, Ginoogaming and Long Lake 58 First Nations, Northern Ontario (Kenogami Forest region), Ontario",
+            "category": "First Nations forestry management and economic development partnership",
+            "date": "",
+            "source": "https://211north.ca/record/65302320/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T05:23:47Z",
       "commit": "39819477fd0050c70ec5481ade2de5882ad688e3",
       "mode": "data",
