@@ -2368,5 +2368,20 @@
     "contact_status": "not_contacted",
     "representative_confirmed": false,
     "notes": "The Anglican Foundation of Canada's 2021 annual report identifies St. Barnabas Anglican Church in Summer Beaver under the Indigenous Spiritual Ministry of Mishamikoweesh. Nibinamik First Nation's community-buildings page independently confirms an Anglican church serving the community (https://summerbeaver.com/community-buildings/). Current clergy and Indigenous leadership have not been confirmed."
+  },
+  {
+    "name": "St. Alexandre Catholic Mission — Sagkeeng First Nation",
+    "province": "Manitoba",
+    "reserve": "Sagkeeng First Nation (Fort Alexander)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://cmic.info/all-things-to-all-people/",
+    "reserveLocated": true,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false,
+    "notes": "Catholic Missions In Canada's June 3, 2026 report identifies St. Alexandre Mission as an active church and community gathering place within Sagkeeng First Nation, served by Fr. Paul Nguyen. Indigenous pastoral leadership has not been verified; no street address inferred."
   }
 ]
