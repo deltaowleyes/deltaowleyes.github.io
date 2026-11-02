@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T02:25:06Z",
+      "commit": "a9f30cdfd1ece6690d1222e7c7ac81d8a26de417",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb5220261102001",
+            "name": "Opiikapawiin Services LP",
+            "place": "Partnership of 24 First Nations in Northwestern Ontario, Fort William First Nation, Ontario",
+            "category": "First Nations project management, community development, Indigenous engagement and training",
+            "date": "",
+            "source": "https://www.oslp.ca/aboutoslp",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T02:24:04Z",
       "commit": "58e483bde641467f8e332372025f11b872346396",
       "mode": "data",
