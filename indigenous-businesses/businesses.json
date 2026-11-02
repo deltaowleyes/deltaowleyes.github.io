@@ -88540,7 +88540,7 @@
     "operating_status": "unverified",
     "discovered_utc_date": "2026-10-31",
     "verification_status": "unverified",
-    "contact_status": "not_contacted",
+    "contact_status": "attempted",
     "verified_date": "",
     "verification_method": "",
     "source_id": "ON-20261031-012",
