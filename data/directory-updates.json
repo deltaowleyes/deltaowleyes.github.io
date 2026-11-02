@@ -2,6 +2,60 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T15:36:29Z",
+      "commit": "49f000a0cfa804af44c6c0345c5f3573b5f70533",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb7020261102001",
+            "name": "Gookom's Cabinet Mobile Refillery",
+            "place": "Garden River First Nation, Garden River First Nation, Ontario",
+            "category": "Sustainable household and personal care refills",
+            "date": "",
+            "source": "https://www.powwowpitch.org/jada-belleau-gookoms-cabinet-mobile-refillery-wins-sustainability-semi-final/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7020261102002",
+            "name": "Aniibiish Herbal",
+            "place": "Founder affiliated with Atikameksheng Anishnawbek, Toronto, Ontario",
+            "category": "Herbal tea and wellness retail",
+            "date": "",
+            "source": "https://www.powwowpitch.org/neecha-klee-aniibiish-herbal-wins-health-wellness-semi-final/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7020261102003",
+            "name": "Three Sisters Indigenous Crafts Market",
+            "place": "Founder affiliated with Wiikwemkoong Unceded Territory, Toronto, Ontario",
+            "category": "Indigenous arts, crafts and travelling markets",
+            "date": "",
+            "source": "https://www.powwowpitch.org/siera-hancharyk-three-sisters-indigenous-crafts-market-wins-consumer-products-retail-semi-final/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7020261102004",
+            "name": "Gizaagi'in Home Services",
+            "place": "Sagamok Anishnawbek First Nation, Sagamok Anishnawbek First Nation, Ontario",
+            "category": "Household services and home assistance",
+            "date": "",
+            "source": "https://www.powwowpitch.org/tasha-toulouse-gizaagiin-home-services-wins-professional-services-trades-semi-final/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7020261102005",
+            "name": "Blackstone Concrete",
+            "place": "Owner affiliated with Cat Lake First Nation, Dryden, Ontario",
+            "category": "Concrete resurfacing and repair",
+            "date": "",
+            "source": "https://www.powwowpitch.org/ricky-dankewich-and-levi-wild-win-professional-services-trades-semi-finals/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T15:33:17Z",
       "commit": "3a64f7d83894f513491e6ac9e6c6da97f0720807",
       "mode": "data",
