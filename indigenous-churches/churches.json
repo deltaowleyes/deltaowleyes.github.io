@@ -2353,5 +2353,20 @@
     "representative_confirmed": false,
     "contact_status": "not_contacted",
     "notes": "Listed by the Diocese of Sault Ste. Marie as Holy Spirit in Garden Village; Nipissing First Nation confirms use of the church building. Indigenous pastoral leadership has not been independently verified."
+  },
+  {
+    "name": "St. Barnabas Anglican Church — Nibinamik",
+    "province": "Ontario",
+    "reserve": "Nibinamik First Nation (Summer Beaver)",
+    "denomination": "Anglican",
+    "address": "",
+    "phone": "",
+    "source": "https://www.anglicanfoundation.org/2021report/",
+    "reserveLocated": true,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false,
+    "notes": "The Anglican Foundation of Canada's 2021 annual report identifies St. Barnabas Anglican Church in Summer Beaver under the Indigenous Spiritual Ministry of Mishamikoweesh. Nibinamik First Nation's community-buildings page independently confirms an Anglican church serving the community (https://summerbeaver.com/community-buildings/). Current clergy and Indigenous leadership have not been confirmed."
   }
 ]
