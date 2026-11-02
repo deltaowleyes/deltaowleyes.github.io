@@ -2282,5 +2282,61 @@
     "representative_confirmed": false,
     "leadership_evidence_source": "https://sacredpeoples.caedm.ca/contact/",
     "leadership_evidence": "The parish's official website identifies it as Canada's National Indigenous Parish and names Father Garry LaBoucane OMI as pastor; public reporting identifies him as a Métis priest. Direct representative confirmation remains pending."
+  },
+  {
+    "name": "Our Lady of Mercy Parish — Enoch Cree Nation",
+    "province": "Alberta",
+    "reserve": "Enoch Cree Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "780-470-3021",
+    "source": "https://ourladyofmercy.caedm.ca/",
+    "reserveLocated": true,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Our Lady of the Lake Parish — Alexis Nakota Sioux Nation",
+    "province": "Alberta",
+    "reserve": "Alexis Nakota Sioux Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://lacsteanne.caedm.ca/mass-times/",
+    "reserveLocated": true,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "St. Paul Parish — Paul First Nation",
+    "province": "Alberta",
+    "reserve": "Paul First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://caedm.ca/fr-susai-jesu-announced-as-the-new-archbishop-of-keewatin-le-pas/",
+    "reserveLocated": true,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "St. Alexander Mission — Alexander First Nation",
+    "province": "Alberta",
+    "reserve": "Alexander First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://caedm.ca/fr-susai-jesu-announced-as-the-new-archbishop-of-keewatin-le-pas/",
+    "reserveLocated": true,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
