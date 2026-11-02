@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T05:23:47Z",
+      "commit": "39819477fd0050c70ec5481ade2de5882ad688e3",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "metisnationofontariosenatorssoireenovember3|20261103|onlinezoom|ontario",
+            "name": "Métis Nation of Ontario Senators' Soirée — November 3",
+            "place": "Online (Zoom), Ontario",
+            "category": "Métis governance and cultural knowledge-sharing",
+            "date": "2026-11-03",
+            "source": "https://www.metisnation.org/governance/governing-structure/mno-senators/",
+            "status": "Verified event"
+          },
+          {
+            "key": "metisnationofontariosenatorssoireedecember1|20261201|onlinezoom|ontario",
+            "name": "Métis Nation of Ontario Senators' Soirée — December 1",
+            "place": "Online (Zoom), Ontario",
+            "category": "Métis governance and cultural knowledge-sharing",
+            "date": "2026-12-01",
+            "source": "https://www.metisnation.org/governance/governing-structure/mno-senators/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T04:23:39Z",
       "commit": "4bfa9c990b8f0bcb2fa876931ae8ff8b94b36951",
       "mode": "data",
