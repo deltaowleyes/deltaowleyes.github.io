@@ -19,6 +19,7 @@ function record(i){return staged.get(key(i))||loaded.get(active)?.[i]}
 function statusFor(source,b){return source==="events"?(b.status||"unverified"):(b.verification_status||(b.owner_confirmed||b.representative_confirmed?"verified":"unverified"))}
 function status(b){return statusFor(active,b)}
 function contact(b){return b.contact_status||"not_contacted"}
+function hasPhoneNoWebsite(b){return Boolean(String(b.phone??"").trim())&&!String(b.website??"").trim()}
 function short(b){return [b.title||b.name||"(new draft)",b.start_date,b.city||b.reserve,b.province].filter(Boolean).join(" · ")}
 function pendingDelete(i){return staged.has(key(i))&&staged.get(key(i))===null}
 function fingerprint(source,b){
@@ -55,7 +56,7 @@ function updateQueue(){
 function renderList(){
  const data=loaded.get(active)||[],query=$("search").value.trim().toLowerCase(),vf=$("filter").value,cf=$("contactFilter").value,interest=$("interestFilter").value,phoneWebsite=$("businessPhoneWebsiteFilter").value;
  const match=[];
- data.forEach((b,i)=>{const item=record(i);if(!item)return;if(query&&!short(item).toLowerCase().includes(query))return;if(vf&&status(item)!==vf)return;if(cf&&contact(item)!==cf)return;if(active!=="events"&&interest&&window.DOEOutreach.interestFor(active,item)!==interest)return;if(active==="businesses"&&phoneWebsite==="phone_no_website"&&(!String(item.phone??"").trim()||String(item.website??"").trim()))return;match.push(i)});
+ data.forEach((b,i)=>{const item=record(i);if(!item)return;if(query&&!short(item).toLowerCase().includes(query))return;if(vf&&status(item)!==vf)return;if(cf&&contact(item)!==cf)return;if(active!=="events"&&interest&&window.DOEOutreach.interestFor(active,item)!==interest)return;if(active==="businesses"&&phoneWebsite==="phone_no_website"&&!hasPhoneNoWebsite(item))return;match.push(i)});
  const sorter=window.DOEDirectorySort,sortMode=$("sort")?.value||"newest_near";
  if(sortMode==="event_date"&&active==="events")match.sort((a,b)=>
   Number(newKeys.has(key(b)))-Number(newKeys.has(key(a)))||
