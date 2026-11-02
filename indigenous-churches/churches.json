@@ -2238,5 +2238,33 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "St. Joseph's Parish — Ebb & Flow First Nation",
+    "province": "Manitoba",
+    "reserve": "Ebb and Flow First Nation (Gaa-gwekwekojiwang)",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "204-447-2484",
+    "source": "https://archwinnipeg.ca/parishes/st-josephs-parish-ebb-flow/",
+    "reserveLocated": true,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
+  },
+  {
+    "name": "Our Lady of Guadalupe Parish — Sandy Bay First Nation",
+    "province": "Manitoba",
+    "reserve": "Sandy Bay First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "204-843-2832",
+    "source": "https://archwinnipeg.ca/wp-content/uploads/2025/06/4-Parishes-Missions.pdf",
+    "reserveLocated": true,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
