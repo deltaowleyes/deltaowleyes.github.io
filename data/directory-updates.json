@@ -2,6 +2,51 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T11:26:36Z",
+      "commit": "937d9005ed7809505e23f746d2dfc908d96b046c",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb6220261102001",
+            "name": "Ingaged Creative Productions Inc.",
+            "place": "Fort William First Nation, Northwestern Ontario, Fort William First Nation, Ontario",
+            "category": "Indigenous marketing, multimedia production and event management",
+            "date": "",
+            "source": "https://ingaged.ca/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb6220261102002",
+            "name": "Maamigin Environmental & Relations Inc.",
+            "place": "Fort William First Nation, Northwestern Ontario, Fort William First Nation, Ontario",
+            "category": "Indigenous environmental consulting and monitoring",
+            "date": "",
+            "source": "https://www.maamiginenvironmental.com/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb6220261102003",
+            "name": "IND-Genuity Chartered Professional Accountants",
+            "place": "Ottawa, Ontario; serves Indigenous communities across Canada, Ottawa, Ontario",
+            "category": "Indigenous accounting and financial management",
+            "date": "",
+            "source": "https://ind-genuity.ca/about/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb6320261102001",
+            "name": "Indian & Cowboy Creative Media Inc.",
+            "place": "Hamilton, Ontario; company reports connections to Six Nations and Northern Ontario, Hamilton, Ontario",
+            "category": "Indigenous-owned film, podcast and storytelling production",
+            "date": "",
+            "source": "https://www.indianandcowboycreative.com/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T11:23:33Z",
       "commit": "92b21149cf3895b61c95ea8b857b2a5de999915c",
       "mode": "data",
