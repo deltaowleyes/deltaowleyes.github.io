@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T08:35:34Z",
+      "commit": "bcbbaad09b1df613a96c1b42dbceae95cf6e2e3f",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb5920261102001",
+            "name": "Wunnumin Lake Telecommunications Corporation",
+            "place": "Wunnumin Lake First Nation (service area; corporate ownership and premises unverified), Wunnumin Lake, Ontario",
+            "category": "Community telecommunications and internet network services",
+            "date": "",
+            "source": "https://wunnumin.com/about-us/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T08:34:31Z",
       "commit": "719c304dad2c374bd8cc70d5ec62110d77c0179a",
       "mode": "data",
