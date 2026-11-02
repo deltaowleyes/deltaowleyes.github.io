@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T13:34:12Z",
+      "commit": "8309db124e234f6c5d60c45b741dc3733a9e2d0a",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "urbanindigenousgovernancerightsrecognitionandreciprocity2026|20261106|montreal|quebec",
+            "name": "Urban Indigenous Governance: Rights, Recognition, and Reciprocity — 2026",
+            "place": "Montréal, Quebec",
+            "category": "Indigenous-led governance conference (hybrid)",
+            "date": "2026-11-06",
+            "source": "https://urbanindigenousknowledge.org/",
+            "status": "Verified event"
+          },
+          {
+            "key": "26thindigenousknowledgesymposiumcommunitywellbeing|20261112|kingston|ontario",
+            "name": "26th Indigenous Knowledge Symposium — Community Wellbeing",
+            "place": "Kingston, Ontario",
+            "category": "Indigenous knowledge symposium",
+            "date": "2026-11-12",
+            "source": "https://www.queensu.ca/indigenous/26th-indigenous-knowledge-symposium",
+            "status": "Verified event"
+          },
+          {
+            "key": "iccenationalconference2027rightsrelationsandrapidchange|20270517|ottawa|ontario",
+            "name": "ICCE National Conference 2027 — Rights, Relations, and Rapid Change",
+            "place": "Ottawa, Ontario",
+            "category": "Indigenous-led cumulative effects and stewardship conference",
+            "date": "2027-05-17",
+            "source": "https://icceconferencecaec.ca/2027/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T12:29:47Z",
       "commit": "d7e10f82bbf21268a4ad7a6a0ff7053fb5dd51ab",
       "mode": "import",
