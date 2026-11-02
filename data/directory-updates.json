@@ -2,6 +2,71 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T21:25:29Z",
+      "commit": "fb6c3bcdd73ee9c335d1ccc03fb78354b0e0644e",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "stalexandrecatholicmissionsagkeengfirstnation|manitoba|sagkeengfirstnationfortalexander",
+            "name": "St. Alexandre Catholic Mission — Sagkeeng First Nation",
+            "place": "Sagkeeng First Nation (Fort Alexander), Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://cmic.info/all-things-to-all-people/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "pacificsalmontreatyregionalworkshopsouthvancouverisland|20261116|duncan|britishcolumbia",
+            "name": "Pacific Salmon Treaty Regional Workshop — South Vancouver Island",
+            "place": "Duncan, British Columbia",
+            "category": "First Nations fisheries and treaty workshop",
+            "date": "2026-11-16",
+            "source": "https://imawg.ca/calendar/",
+            "status": "Verified event"
+          },
+          {
+            "key": "imawgregionalvancouverislandfisheriesmeetingdecember2026|20261203|parksville|britishcolumbia",
+            "name": "IMAWG Regional Vancouver Island Fisheries Meeting — December 2026",
+            "place": "Parksville, British Columbia",
+            "category": "First Nations fisheries governance",
+            "date": "2026-12-03",
+            "source": "https://imawg.ca/calendar/",
+            "status": "Verified event"
+          },
+          {
+            "key": "imawgregionalvancouverislandfisheriesmeetingjanuary2027|20270108|parksville|britishcolumbia",
+            "name": "IMAWG Regional Vancouver Island Fisheries Meeting — January 2027",
+            "place": "Parksville, British Columbia",
+            "category": "First Nations fisheries governance",
+            "date": "2027-01-08",
+            "source": "https://imawg.ca/calendar/",
+            "status": "Verified event"
+          },
+          {
+            "key": "imawgregionalvancouverislandfisheriesmeetingfebruary2027|20270224|parksville|britishcolumbia",
+            "name": "IMAWG Regional Vancouver Island Fisheries Meeting — February 2027",
+            "place": "Parksville, British Columbia",
+            "category": "First Nations fisheries governance",
+            "date": "2027-02-24",
+            "source": "https://imawg.ca/calendar/",
+            "status": "Verified event"
+          },
+          {
+            "key": "imawgregionalvancouverislandfisheriesmeetingmarch2027|20270324|parksville|britishcolumbia",
+            "name": "IMAWG Regional Vancouver Island Fisheries Meeting — March 2027",
+            "place": "Parksville, British Columbia",
+            "category": "First Nations fisheries governance",
+            "date": "2027-03-24",
+            "source": "https://imawg.ca/calendar/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T21:24:55Z",
       "commit": "dad14d999f1c71dfdcf23073434ceb42d0b267ca",
       "mode": "import",
