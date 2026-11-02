@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T03:28:42Z",
+      "commit": "0f0d8bb2aebfc79709f4a1fdcc4b8f463c255ea5",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "30thannualsoaringspiritfestivalpowwow2027|20270618|stoneycreek|ontario",
+            "name": "30th Annual Soaring Spirit Festival & Pow Wow — 2027",
+            "place": "Stoney Creek, Ontario",
+            "category": "Indigenous powwow and cultural festival",
+            "date": "2027-06-18",
+            "source": "https://soaringspiritpowwow.com/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T03:28:30Z",
       "commit": "440cd0689098378903f2c9ec1ebb65a3d199c8cd",
       "mode": "import",
