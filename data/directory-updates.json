@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T04:23:28Z",
+      "commit": "aec5595ac190a9f9788cc1fcac0e8894f5d94b03",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb5420261102001",
+            "name": "Five Nations Energy Inc.",
+            "place": "Attawapiskat, Fort Albany, Kashechewan, Taykwa Tagamou and Moose Cree First Nations (ownership/beneficiary communities), Timmins, Ontario",
+            "category": "Indigenous electricity transmission utility",
+            "date": "",
+            "source": "https://www.fivenations.ca/index.php/about",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb5420261102002",
+            "name": "One Bowl",
+            "place": "First Nations-governed northern Ontario housing social enterprise; works with First Nations communities, Chapleau, Ontario",
+            "category": "Housing solutions and modular home distribution",
+            "date": "",
+            "source": "https://www.onebowl.org/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb5420261102003",
+            "name": "Oshkiigmong Economic Development Corporation",
+            "place": "Curve Lake First Nation, Curve Lake, Ontario",
+            "category": "First Nation economic development corporation",
+            "date": "",
+            "source": "https://www.ccib.ca/main/member/oshkiigmong-edc/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T03:28:42Z",
       "commit": "0f0d8bb2aebfc79709f4a1fdcc4b8f463c255ea5",
       "mode": "data",
