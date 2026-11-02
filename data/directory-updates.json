@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T11:21:22Z",
+      "commit": "a5ce616d2aab9bc4a2310ea974a29d752c2bf2a2",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "10thannualfirstnationsmajorprojectscoalitionconference2027|20270411|toronto|ontario",
+            "name": "10th Annual First Nations Major Projects Coalition Conference — 2027",
+            "place": "Toronto, Ontario",
+            "category": "Indigenous economic development and major projects conference",
+            "date": "2027-04-11",
+            "source": "https://fnmpc.ca/conference/registration-information/",
+            "status": "Verified event"
+          },
+          {
+            "key": "firstnationsuniversityofcanadaspringcelebrationpowwow2027|20270417|regina|saskatchewan",
+            "name": "First Nations University of Canada Spring Celebration Powwow — 2027",
+            "place": "Regina, Saskatchewan",
+            "category": "First Nations powwow and cultural gathering",
+            "date": "2027-04-17",
+            "source": "https://www.fnunivpowwow.ca/",
+            "status": "Verified event"
+          },
+          {
+            "key": "matriarchsuprisingtheeggstravaganzawhakaha|20270610|ottawa|ontario",
+            "name": "Matriarchs Uprising — the eggstravaganza + WHAKAHĀ",
+            "place": "Ottawa, Ontario",
+            "category": "Indigenous dance and contemporary performing arts",
+            "date": "2027-06-10",
+            "source": "https://nac-cna.ca/en/event/40374",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T10:23:56Z",
       "commit": "121c9b6d25158ec4d92b8b0692f6c4bead114536",
       "mode": "import",
