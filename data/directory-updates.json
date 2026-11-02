@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T18:29:42Z",
+      "commit": "1ee64a5078a52dc95ceb1b44c6cef46c9a12911f",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "chiefsofontariojusticeinactionconference2027|20270202|chippewasoframafirstnationnearorillia|ontario",
+            "name": "Chiefs of Ontario Justice in Action Conference 2027",
+            "place": "Chippewas of Rama First Nation (near Orillia), Ontario",
+            "category": "First Nations governance and justice",
+            "date": "2027-02-02",
+            "source": "https://www.chiefsmeeting.com/justice-in-action",
+            "status": "Verified event"
+          },
+          {
+            "key": "nabocosoyoos202720thannualaboriginalbusinessconference|20270615|osoyoos|britishcolumbia",
+            "name": "NABOC Osoyoos 2027 — 20th Annual Aboriginal Business Conference",
+            "place": "Osoyoos, British Columbia",
+            "category": "Indigenous business and economic development",
+            "date": "2027-06-15",
+            "source": "https://events.aboriginalmarketplace.com/naboc-osoyoos-2027/",
+            "status": "Verified event"
+          },
+          {
+            "key": "indigenoushistoryheritagegathering2027|20270621|ottawa|ontario",
+            "name": "Indigenous History & Heritage Gathering 2027",
+            "place": "Ottawa, Ontario",
+            "category": "Indigenous history, heritage and reconciliation",
+            "date": "2027-06-21",
+            "source": "https://ihhg.ca/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T17:23:54Z",
       "commit": "73acaa483be27a16d2d885a30bdcb6cd50372807",
       "mode": "import",
