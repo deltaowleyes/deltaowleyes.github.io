@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T09:33:27Z",
+      "commit": "b0fff69c24543688e536a9ed0da54125da58bb87",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb6020261102003",
+            "name": "Fort Albany Power Corporation",
+            "place": "Fort Albany First Nation (official local listing; premises unverified), Fort Albany, Ontario",
+            "category": "Electricity distribution and infrastructure",
+            "date": "",
+            "source": "https://www.fortalbanypowercorp.com/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb6020261102004",
+            "name": "Kashechewan Power Corporation",
+            "place": "Kashechewan First Nation (official local listing; premises unverified), Kashechewan, Ontario",
+            "category": "Electricity distribution and infrastructure",
+            "date": "",
+            "source": "https://kashpowercorp.ca/index.php",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T09:32:08Z",
       "commit": "2e1c1dadc051631c0623b31e0b1309a0e622f9c0",
       "mode": "data",
