@@ -2,6 +2,53 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T08:34:31Z",
+      "commit": "719c304dad2c374bd8cc70d5ec62110d77c0179a",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "stjosephsparishebbflowfirstnation|manitoba|ebbandflowfirstnationgaagwekwekojiwang",
+            "name": "St. Joseph's Parish — Ebb & Flow First Nation",
+            "place": "Ebb and Flow First Nation (Gaa-gwekwekojiwang), Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archwinnipeg.ca/parishes/st-josephs-parish-ebb-flow/",
+            "status": "Unverified"
+          },
+          {
+            "key": "ourladyofguadalupeparishsandybayfirstnation|manitoba|sandybayfirstnation",
+            "name": "Our Lady of Guadalupe Parish — Sandy Bay First Nation",
+            "place": "Sandy Bay First Nation, Manitoba",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://archwinnipeg.ca/wp-content/uploads/2025/06/4-Parishes-Missions.pdf",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "11thindigenousresourceopportunitiesconference2027|20270608|nanaimo|britishcolumbia",
+            "name": "11th Indigenous Resource Opportunities Conference — 2027",
+            "place": "Nanaimo, British Columbia",
+            "category": "Indigenous economic development and natural resources conference",
+            "date": "2027-06-08",
+            "source": "https://www.bciroc.ca/",
+            "status": "Verified event"
+          },
+          {
+            "key": "redlakeanishinaapepowwow2027|20270612|redlake|ontario",
+            "name": "Red Lake Anishinaape Pow Wow — 2027",
+            "place": "Red Lake, Ontario",
+            "category": "Traditional powwow and cultural gathering",
+            "date": "2027-06-12",
+            "source": "https://www.redlakepowwow.com/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T07:33:31Z",
       "commit": "b4a09ebb1725d79a8d6d7cab511b0cb7b3a0e48f",
       "mode": "import",
