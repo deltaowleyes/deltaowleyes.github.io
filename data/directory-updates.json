@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T09:32:08Z",
+      "commit": "2e1c1dadc051631c0623b31e0b1309a0e622f9c0",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "metisnationofontariosenatorssoireemarch22027|20270302|onlinezoom|ontario",
+            "name": "Métis Nation of Ontario Senators' Soirée — March 2, 2027",
+            "place": "Online (Zoom), Ontario",
+            "category": "Métis governance, culture and community connection",
+            "date": "2027-03-02",
+            "source": "https://www.metisnation.org/governance/governing-structure/mno-senators/",
+            "status": "Verified event"
+          },
+          {
+            "key": "metisnationofontariosenatorssoireemay42027|20270504|onlinezoom|ontario",
+            "name": "Métis Nation of Ontario Senators' Soirée — May 4, 2027",
+            "place": "Online (Zoom), Ontario",
+            "category": "Métis governance, culture and community connection",
+            "date": "2027-05-04",
+            "source": "https://www.metisnation.org/governance/governing-structure/mno-senators/",
+            "status": "Verified event"
+          },
+          {
+            "key": "metisnationofontariosenatorssoireejune12027|20270601|onlinezoom|ontario",
+            "name": "Métis Nation of Ontario Senators' Soirée — June 1, 2027",
+            "place": "Online (Zoom), Ontario",
+            "category": "Métis governance, culture and community connection",
+            "date": "2027-06-01",
+            "source": "https://www.metisnation.org/governance/governing-structure/mno-senators/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T08:35:34Z",
       "commit": "bcbbaad09b1df613a96c1b42dbceae95cf6e2e3f",
       "mode": "import",
