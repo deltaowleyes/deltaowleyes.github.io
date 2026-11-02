@@ -238,6 +238,18 @@
     "status": "verified"
   },
   {
+    "title": "First Nations Education, Languages and Special Education Forum 2026",
+    "start_date": "2026-11-03",
+    "end_date": "2026-11-05",
+    "city": "Thunder Bay",
+    "province": "Ontario",
+    "category": "First Nations education and language",
+    "organizer": "Chiefs of Ontario — Education Sector",
+    "description": "8 a.m.–5 p.m. at Valhalla Hotel & Conference Centre, 1 Valhalla Inn Rd. Intended for First Nation educators, language educators, special education professionals and administrators. In-person registration is sold out; main plenary presentations will be livestreamed on the Chiefs of Ontario YouTube channel from 9 a.m. each day.",
+    "url": "https://www.chiefsmeeting.com/2026educationforum",
+    "status": "verified"
+  },
+  {
     "title": "Atii Inuit Film Festival",
     "start_date": "2026-11-04",
     "city": "Vancouver",
@@ -335,6 +347,18 @@
     "organizer": "Royal Ontario Museum",
     "description": "Learn & Explore Indigenous museum educators session 11–11:45 a.m.; museum activation 10 a.m.–3 p.m. Admission applies, with free entry for First Nations, Inuit and Métis students.",
     "url": "https://www.ontario.ca/page/treaties-recognition-week",
+    "status": "verified"
+  },
+  {
+    "title": "Ontario Final Agreement — Southern Gathering 2026",
+    "start_date": "2026-11-04",
+    "end_date": "2026-11-05",
+    "city": "Etobicoke",
+    "province": "Ontario",
+    "category": "First Nations child and family wellbeing governance",
+    "organizer": "Chiefs of Ontario",
+    "description": "9 a.m.–3:30 p.m. at Sheraton Toronto Airport Hotel & Conference Centre, 801 Dixon Rd. In-person working gathering for Southern Ontario First Nations child welfare technicians, FNCFS agency staff, band representatives and social service directors. Registration required; intended for southern First Nations and affiliated agencies.",
+    "url": "https://www.chiefsmeeting.com/ofasoutherngathering",
     "status": "verified"
   },
   {
@@ -750,6 +774,17 @@
     "status": "verified"
   },
   {
+    "title": "Chiefs of Ontario Fall Chiefs Assembly — Dialogue Session 1",
+    "start_date": "2026-11-13",
+    "city": "Online",
+    "province": "Ontario",
+    "category": "First Nations governance and dialogue",
+    "organizer": "Chiefs of Ontario",
+    "description": "10 a.m.–1:30 p.m. ET on Zoom. Topics include First Nation Housing Centre, major projects legislation, airport infrastructure, supply chains and employment. Registration required; intended for First Nations leadership, Chiefs of Ontario councils and technicians.",
+    "url": "https://www.chiefsmeeting.com/fca2026",
+    "status": "verified"
+  },
+  {
     "title": "2026 Métis Market — Métis Arts Collective",
     "start_date": "2026-11-14",
     "city": "Edmonton",
@@ -988,6 +1023,30 @@
     "status": "verified"
   },
   {
+    "title": "26th Annual Celebration of Life Conference — Braiding Culture & Science",
+    "start_date": "2026-11-18",
+    "end_date": "2026-11-19",
+    "city": "Akwesasne",
+    "province": "Ontario",
+    "category": "Indigenous community wellness and learning",
+    "organizer": "Akwesasne Family Wellness Program — Mohawk Council of Akwesasne",
+    "description": "8:30 a.m.–4 p.m. at Akwesasne Mohawk Casino Resort. Conference on trauma, neurobiology and domestic violence through Indigenous knowledge and science. Public registration link provided by organizer; contact Akwesasne Family Wellness Program for eligibility and participation details.",
+    "url": "https://www.akwesasne.ca/news/posts/afwp-celebration-of-life-conference-2026/",
+    "status": "verified"
+  },
+  {
+    "title": "Maamwizing 2026 — All Our Relations Conference",
+    "start_date": "2026-11-18",
+    "end_date": "2026-11-20",
+    "city": "Sudbury",
+    "province": "Ontario",
+    "category": "Indigenous research and cultural knowledge",
+    "organizer": "Maamwizing Indigenous Research Institute — Laurentian University",
+    "description": "At Laurentian University, Sudbury. Gdinwenmaaganaanig (All Our Relations): Honouring the Connections That Sustain Us. Indigenous research and knowledge exchange through ceremony, presentations, workshops and panels. Registration available on the organizer's website; confirm participant details there.",
+    "url": "https://www.maamwizing.com/copy-of-2024",
+    "status": "verified"
+  },
+  {
     "title": "ANYMA ORA’ Performance",
     "start_date": "2026-11-19",
     "city": "Sainte-Thérèse",
@@ -1098,6 +1157,17 @@
     "organizer": "UBC Learning Circle / First Nations Health Authority",
     "description": "Friday, November 20, 2026, 10–11:30 a.m. Pacific, free via Zoom. Indigenous naturopathic doctor Dr. Sarah Connors presents strengths-based approaches to mental wellness and culturally grounded support. Everyone welcome; registration required.",
     "url": "https://learningcircle.ubc.ca/2026/05/11/strong-mind-strong-spirit-sarah-connors/",
+    "status": "verified"
+  },
+  {
+    "title": "Chiefs of Ontario Fall Chiefs Assembly — Dialogue Session 2",
+    "start_date": "2026-11-20",
+    "city": "Online",
+    "province": "Ontario",
+    "category": "First Nations governance and dialogue",
+    "organizer": "Chiefs of Ontario",
+    "description": "10 a.m.–1:30 p.m. ET on Zoom. Topics include Regional Information Governance Centre, Jordan's Principle, Ontario Final Agreement and Chiefs of Ontario council updates. Registration required; intended for First Nations leadership, Chiefs of Ontario councils and technicians.",
+    "url": "https://www.chiefsmeeting.com/fca2026",
     "status": "verified"
   },
   {
@@ -1244,6 +1314,18 @@
     "organizer": "Archives of Ontario",
     "description": "Free public dialogue and Q&A with Crystal Gail Fraser and Sara Komarnisky; RSVP required by November 14. Treaty 9 displayed.",
     "url": "https://www.ontario.ca/page/treaties-recognition-week",
+    "status": "verified"
+  },
+  {
+    "title": "Chiefs of Ontario Fall Chiefs Assembly 2026",
+    "start_date": "2026-11-24",
+    "end_date": "2026-11-25",
+    "city": "Mississauga",
+    "province": "Ontario",
+    "category": "First Nations leadership and governance",
+    "organizer": "Chiefs of Ontario",
+    "description": "At Hilton Toronto Airport Hotel & Suites, 5875 Airport Rd, Mississauga. For First Nations leadership, technicians, government representatives and agencies. Registration and governance proxy requirements are specified by the organizer; livestream information also provided.",
+    "url": "https://www.chiefsmeeting.com/fca2026",
     "status": "verified"
   },
   {
