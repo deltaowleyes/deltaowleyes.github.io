@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T06:31:02Z",
+      "commit": "a7383661f3a58d31dc0fbf9be2cba53137296b36",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb5620261102001",
+            "name": "Minodahmun-GRIDLINK Joint Venture",
+            "place": "Animbiigoo Zaagi'igan Anishinaabek, Aroland and Ginoogaming First Nations partnership, Northern Ontario (exact office unverified), Ontario",
+            "category": "Indigenous-partnered electrical and civil construction joint venture",
+            "date": "",
+            "source": "https://gridlink.ca/indigenous-alliance/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T06:29:55Z",
       "commit": "e713b2227adf687d0c1dc2b9a31fe077fff240d6",
       "mode": "data",
