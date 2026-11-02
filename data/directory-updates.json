@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T13:35:50Z",
+      "commit": "2b700348b5ab153f3bdeb0294ca924c16347bfb4",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb6620261102002",
+            "name": "Missaby Economic Development Corporation",
+            "place": "Mishkeegogamang First Nation, northwestern Ontario, Ontario",
+            "category": "First Nation economic development corporation",
+            "date": "",
+            "source": "https://www.canada.ca/en/fednor/news/2025/02/government-of-canada-investing-over-25-million-in-support-of-indigenous-led-economic-development-in-northwestern-ontario.html",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb6620261102003",
+            "name": "Bamaji Lake Economic Development Corporation",
+            "place": "Slate Falls Nation, northern Ontario, Slate Falls First Nation, Ontario",
+            "category": "Community economic development and entrepreneurship support",
+            "date": "",
+            "source": "https://211north.ca/record/65300693/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T13:34:12Z",
       "commit": "8309db124e234f6c5d60c45b741dc3733a9e2d0a",
       "mode": "data",
