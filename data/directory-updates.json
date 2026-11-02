@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T23:23:33Z",
+      "commit": "96655b477d633cef415ad4b74c0ee8cb5eec51ed",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "akwesasnenationalchilddaycelebration2026|20261122|akwesasnehogansburg|newyorkusa",
+            "name": "Akwesasne National Child Day Celebration 2026",
+            "place": "Akwesasne (Hogansburg), New York, USA",
+            "category": "Mohawk community family and children’s celebration",
+            "date": "2026-11-22",
+            "source": "https://www.akwesasne.ca/news/posts/national-child-day-november-2026/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T22:26:27Z",
       "commit": "fc743a9be1bcb4aad8dadcb9e95c71181332e13e",
       "mode": "data",
