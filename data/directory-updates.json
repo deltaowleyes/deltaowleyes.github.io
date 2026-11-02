@@ -2,6 +2,71 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T14:59:16Z",
+      "commit": "101b6f5b396b157a1248ed838ff2b5e894610dc2",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "ourladyofmercyparishenochcreenation|alberta|enochcreenation",
+            "name": "Our Lady of Mercy Parish — Enoch Cree Nation",
+            "place": "Enoch Cree Nation, Alberta",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://ourladyofmercy.caedm.ca/",
+            "status": "Unverified"
+          },
+          {
+            "key": "ourladyofthelakeparishalexisnakotasiouxnation|alberta|alexisnakotasiouxnation",
+            "name": "Our Lady of the Lake Parish — Alexis Nakota Sioux Nation",
+            "place": "Alexis Nakota Sioux Nation, Alberta",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://lacsteanne.caedm.ca/mass-times/",
+            "status": "Unverified"
+          },
+          {
+            "key": "stpaulparishpaulfirstnation|alberta|paulfirstnation",
+            "name": "St. Paul Parish — Paul First Nation",
+            "place": "Paul First Nation, Alberta",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://caedm.ca/fr-susai-jesu-announced-as-the-new-archbishop-of-keewatin-le-pas/",
+            "status": "Unverified"
+          },
+          {
+            "key": "stalexandermissionalexanderfirstnation|alberta|alexanderfirstnation",
+            "name": "St. Alexander Mission — Alexander First Nation",
+            "place": "Alexander First Nation, Alberta",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://caedm.ca/fr-susai-jesu-announced-as-the-new-archbishop-of-keewatin-le-pas/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "binasieconomicreconciliationforum2027|20270303|winnipeg|manitoba",
+            "name": "Binasi: Economic Reconciliation Forum 2027",
+            "place": "Winnipeg, Manitoba",
+            "category": "First Nations economic development and reconciliation forum",
+            "date": "2027-03-03",
+            "source": "https://scoinc.mb.ca/small-business-week-and-return-of-binasi/",
+            "status": "Verified event"
+          },
+          {
+            "key": "afoacanada25thnationalconference2027|20270309|edmonton|alberta",
+            "name": "AFOA Canada 25th National Conference — 2027",
+            "place": "Edmonton, Alberta",
+            "category": "Indigenous finance, governance and leadership conference",
+            "date": "2027-03-09",
+            "source": "https://afoa.ca/events/conferences/25th/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T13:35:50Z",
       "commit": "2b700348b5ab153f3bdeb0294ca924c16347bfb4",
       "mode": "import",
