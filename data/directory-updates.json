@@ -2,6 +2,62 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T20:29:04Z",
+      "commit": "0e530a47221c63c9e59673736e7eb1ce2f7cd25f",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "stbarnabasanglicanchurchnibinamik|ontario|nibinamikfirstnationsummerbeaver",
+            "name": "St. Barnabas Anglican Church — Nibinamik",
+            "place": "Nibinamik First Nation (Summer Beaver), Ontario",
+            "category": "Anglican",
+            "date": "",
+            "source": "https://www.anglicanfoundation.org/2021report/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "makingindigenouslanguagelearningmoreaccessiblethroughtechnologykoditaylor|20261103|online|britishcolumbia",
+            "name": "Making Indigenous Language Learning More Accessible Through Technology — K’odi Taylor",
+            "place": "Online, British Columbia",
+            "category": "Indigenous language revitalization webinar",
+            "date": "2026-11-03",
+            "source": "https://learningcircle.ubc.ca/2026/10/01/kodi-first-ory/",
+            "status": "Verified event"
+          },
+          {
+            "key": "caringforplaceandourselvesamycharles|20261117|online|britishcolumbia",
+            "name": "Caring for Place and Ourselves — Amy Charles",
+            "place": "Online, British Columbia",
+            "category": "Indigenous environmental knowledge and wellness webinar",
+            "date": "2026-11-17",
+            "source": "https://learningcircle.ubc.ca/2026/09/23/caring-for-place-and-ourselves-amy-charles/",
+            "status": "Verified event"
+          },
+          {
+            "key": "strongmindsupportedspiritindigenousmentalwellnesswebinar|20261120|online|britishcolumbia",
+            "name": "Strong Mind, Supported Spirit — Indigenous Mental Wellness Webinar",
+            "place": "Online, British Columbia",
+            "category": "Indigenous-informed community mental wellness webinar",
+            "date": "2026-11-20",
+            "source": "https://learningcircle.ubc.ca/2026/05/11/strong-mind-strong-spirit-sarah-connors/",
+            "status": "Verified event"
+          },
+          {
+            "key": "michiflanguagerevitalizationandmetisidentityreidhala|20261208|online|britishcolumbia",
+            "name": "Michif Language Revitalization and Métis Identity — Reid Hala",
+            "place": "Online, British Columbia",
+            "category": "Métis language and cultural revitalization webinar",
+            "date": "2026-12-08",
+            "source": "https://learningcircle.ubc.ca/2026/04/13/michif-language-reid-hala/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T19:25:25Z",
       "commit": "5f7bf16341ae2b9571a073f11cd33b42440fa790",
       "mode": "data",
