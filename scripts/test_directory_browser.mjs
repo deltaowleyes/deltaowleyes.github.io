@@ -11,6 +11,8 @@ const LIVE="https://deltaowleyes.ca";
 const BUSINESS_COUNT=JSON.parse(readFileSync("indigenous-businesses/businesses.json","utf8")).length;
 assert.ok(BUSINESS_COUNT>=4475,"The consolidated directory has lost its migration baseline");
 const DISPLAY_COUNT=BUSINESS_COUNT.toLocaleString("en-US");
+const CHURCH_COUNT=JSON.parse(readFileSync("indigenous-churches/churches.json","utf8")).length;
+assert.ok(CHURCH_COUNT>=140,"Church directory has lost its historical baseline");
 const API="https://api.github.com/repos/deltaowleyes/deltaowleyes.github.io";
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 let browser,server,activePage,stepName="setup";
@@ -61,28 +63,46 @@ try {
  });
  await report("Local public church directory renders preliminary listings",async()=>{
   await go(activePage,"/indigenous-churches/");
-  await waitFor(activePage,"#count","140 total research records");
-  assert.equal(await activePage.locator("#results > article.card").count(),140);
+  await waitFor(activePage,"#count",CHURCH_COUNT+" total research records");
+  assert.equal(await activePage.locator("#results > article.card").count(),CHURCH_COUNT);
  });
 
+ const liveCounts={businesses:0,churches:0};
  await report("Published business directory renders current records in real Chromium",async()=>{
   await go(activePage,"/indigenous-businesses/",LIVE);
-  await waitFor(activePage,"#count",DISPLAY_COUNT+" published records");
+  liveCounts.businesses=await activePage.evaluate(async()=>{
+   const response=await fetch("/indigenous-businesses/businesses.json",{cache:"no-store"});
+   if(!response.ok)throw Error("Live business JSON HTTP "+response.status);
+   return (await response.json()).length;
+  });
+  assert.ok(liveCounts.businesses>=4475,"Published business directory must retain its baseline");
+  await waitFor(activePage,"#count",liveCounts.businesses.toLocaleString("en-US")+" published records");
   assert.ok(await activePage.locator("#cards > article.card").count()>0);
  });
  await report("Published admin exposes New business and New church controls",async()=>{
   await go(activePage,"/admin/",LIVE);
-  await waitFor(activePage,"#load",DISPLAY_COUNT);
+  await waitFor(activePage,"#load",liveCounts.businesses.toLocaleString("en-US"));
   assert.equal((await activePage.locator("#createNew").innerText()).trim(),"+ New business");
+  assert.ok(await activePage.locator("#businessPhoneWebsiteFilterWrap").isVisible(),"Business lead filter must appear on businesses");
   await activePage.locator("#dataset").selectOption("churches");
-  await waitFor(activePage,"#load","140");
+  liveCounts.churches=await activePage.evaluate(async()=>{
+   const response=await fetch("/indigenous-churches/churches.json",{cache:"no-store"});
+   if(!response.ok)throw Error("Live church JSON HTTP "+response.status);
+   return (await response.json()).length;
+  });
+  await waitFor(activePage,"#load",liveCounts.churches.toLocaleString("en-US"));
   assert.equal((await activePage.locator("#createNew").innerText()).trim(),"+ New church");
+  assert.ok(await activePage.locator("#businessPhoneWebsiteFilterWrap").isHidden(),"Business lead filter must be hidden on churches");
   // Do not enter details or attempt publishing on the live site.
  });
 
  // The local admin uses only two synthetic records. Every GitHub API request
  // is intercepted before any network request or real credential could be sent.
- const syntheticBusiness=[{name:"Synthetic Existing Business",city:"Test City",province:"Ontario",owner_confirmed:false}];
+ const syntheticBusiness=[
+  {name:"Synthetic Existing Business",city:"Test City",province:"Ontario",owner_confirmed:false,phone:"519-555-0101",website:""},
+  {name:"Synthetic Has Website",city:"Test City",province:"Ontario",owner_confirmed:false,phone:"519-555-0102",website:"https://example.org"},
+  {name:"Synthetic No Phone",city:"Test City",province:"Ontario",owner_confirmed:false,phone:"",website:""}
+ ];
  const syntheticChurch=[{name:"Synthetic Existing Church",reserve:"Test Nation",province:"Ontario",
   representative_confirmed:false,reserveLocated:null,indigenousLed:null,source:"https://example.org"}];
  const remote={businesses:structuredClone(syntheticBusiness),churches:structuredClone(syntheticChurch)};
@@ -119,9 +139,22 @@ try {
   }
   return route.fulfill({status:403,contentType:"application/json",body:'{"message":"Unexpected synthetic request"}'});
  });
- await report("New business form becomes editable and cannot publish without authorization",async()=>{
+ await report("Business phone/no-website filter excludes other leads and phone field is last",async()=>{
   await go(activePage,"/admin/");
-  await waitFor(activePage,"#load","1 all business listings");
+  await waitFor(activePage,"#load","3 all business listings");
+  assert.equal(await activePage.locator("#entries .entry").count(),3);
+  await activePage.locator("#businessPhoneWebsiteFilter").selectOption("phone_no_website");
+  await waitFor(activePage,"#count","1 matching");
+  assert.equal(await activePage.locator("#entries .entry").count(),1);
+  assert.match(await activePage.locator("#entries").innerText(),/Synthetic Existing Business/);
+  await activePage.locator("#entries .entry button").first().click();
+  assert.equal(await activePage.locator("#fields > div:last-child > #field_phone").count(),1,"Public business phone must be last among public business fields");
+  await activePage.locator("#businessPhoneWebsiteFilter").selectOption("");
+  await waitFor(activePage,"#count","3 matching");
+  assert.equal(await activePage.locator("#entries .entry").count(),3);
+ });
+ await report("New business form becomes editable and cannot publish without authorization",async()=>{
+  await waitFor(activePage,"#load","3 all business listings");
   assert.equal((await activePage.locator("#createNew").innerText()).trim(),"+ New business");
   await activePage.locator("#createNew").click();
   for(const id of ["field_name","field_city","field_province"]){
@@ -141,15 +174,16 @@ try {
   await waitFor(activePage,"#status","Published 1 record");
   assert.equal(writes.length,1);
   assert.equal(writes[0].kind,"businesses");
-  assert.equal(remote.businesses.length,2);
+  assert.equal(remote.businesses.length,4);
   assert.equal(remote.businesses[0].name,"Synthetic Existing Business");
-  assert.equal(remote.businesses[1].name,"Synthetic New Business");
-  assert.equal(remote.businesses[1].verification_status,"unverified");
-  assert.ok(!JSON.stringify(remote.businesses[1]).includes("call_notes"));
+  assert.equal(remote.businesses[3].name,"Synthetic New Business");
+  assert.equal(remote.businesses[3].verification_status,"unverified");
+  assert.ok(!JSON.stringify(remote.businesses[3]).includes("call_notes"));
  });
  await report("New church form and synthetic publish preserve existing church",async()=>{
   await activePage.locator("#dataset").selectOption("churches");
   await waitFor(activePage,"#load","1 church listings");
+  assert.ok(await activePage.locator("#businessPhoneWebsiteFilterWrap").isHidden());
   assert.equal((await activePage.locator("#createNew").innerText()).trim(),"+ New church");
   await activePage.locator("#createNew").click();
   for(const id of ["field_name","field_reserve","field_province"]){
@@ -169,7 +203,7 @@ try {
   assert.equal(remote.churches[1].service_times,"Sunday at 10 AM");
   assert.equal(remote.churches[1].verification_status,"unverified");
  });
- console.log("PASS real Chromium directory smoke tests. No real GitHub API writes or production data changes.");
+ console.log("PASS real Chromium directory smoke tests, including phone/no-website lead filter. No real GitHub API writes or production data changes.");
 }finally{
  if(browser)await browser.close();
  if(server&&!server.killed)server.kill("SIGTERM");
