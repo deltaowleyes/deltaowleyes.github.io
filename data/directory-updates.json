@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T06:29:55Z",
+      "commit": "e713b2227adf687d0c1dc2b9a31fe077fff240d6",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "72ndannualcurvelaketraditionalpowwow2027|20270918|curvelakefirstnation|ontario",
+            "name": "72nd Annual Curve Lake Traditional Pow Wow — 2027",
+            "place": "Curve Lake First Nation, Ontario",
+            "category": "Traditional powwow and cultural gathering",
+            "date": "2027-09-18",
+            "source": "https://curvelakepowwow.com/about/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T05:25:02Z",
       "commit": "e2e87a92a7b253a31c141de4552d49c33c594839",
       "mode": "import",
