@@ -2,6 +2,53 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T19:25:25Z",
+      "commit": "5f7bf16341ae2b9571a073f11cd33b42440fa790",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "holyspiritcatholicchurchgardenvillage|ontario|nipissingfirstnationgardenvillage",
+            "name": "Holy Spirit Catholic Church — Garden Village",
+            "place": "Nipissing First Nation (Garden Village), Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://www.dioceseofsaultstemarie.org/parishfinder",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "allindigenousseniorsfromallnationswellnessandcommunitynovember32026|20261103|northbay|ontario",
+            "name": "All Indigenous Seniors from All Nations — Wellness and Community (November 3, 2026)",
+            "place": "North Bay, Ontario",
+            "category": "Indigenous seniors wellness and community gathering",
+            "date": "2026-11-03",
+            "source": "https://nfn.ca/event/all-indigenous-seniors-from-all-nations-celebrate-wellness-health-and-community-6/?instance_id=1244",
+            "status": "Verified event"
+          },
+          {
+            "key": "nipissingfirstnationbusinesspitchcontest2026|20261105|northbay|ontario",
+            "name": "Nipissing First Nation Business Pitch Contest 2026",
+            "place": "North Bay, Ontario",
+            "category": "First Nation entrepreneurship and economic development",
+            "date": "2026-11-05",
+            "source": "https://nfn.ca/event/nfn-business-pitch-contest-2026/",
+            "status": "Verified event"
+          },
+          {
+            "key": "nipissingfirstnationbandolierbagworkshopnovember25262026|20261125|gardenvillage|ontario",
+            "name": "Nipissing First Nation Bandolier Bag Workshop — November 25–26, 2026",
+            "place": "Garden Village, Ontario",
+            "category": "Woodland sewing and cultural skills workshop",
+            "date": "2026-11-25",
+            "source": "https://nfn.ca/bandolier-bag-workshop/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T18:31:07Z",
       "commit": "87fd63747aa1bc76d2a3447c5530ad3b5d00271b",
       "mode": "import",
