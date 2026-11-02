@@ -112,8 +112,23 @@ def main():
                               "logo": {"@type": "ImageObject", "url": BASE + "/assets/owl-logo.png"}},
                 "isAccessibleForFree": True}
         meta += '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False).replace("</", "<\\/") + '</script>'
-        page = original.replace("<title>News Updates | Delta Owl Eyes</title>",
-                                "<title>" + html.escape(story["title"]) + " | Delta Owl Eyes</title>", 1)
+        # Standalone articles must have one article-specific title, canonical and
+        # structured-data type; do not inherit newsroom CollectionPage metadata.
+        page = re.sub(r"<title>[\\s\\S]*?</title>",
+                      "<title>" + html.escape(story["title"]) + " | Delta Owl Eyes</title>",
+                      original, count=1)
+        page = page.replace('<link rel="canonical" href="https://deltaowleyes.ca/news/">', "", 1)
+        for pattern in (
+            r'<meta name="description" content="[^"]*">',
+            r'<meta property="og:type" content="website">',
+            r'<meta property="og:title" content="[^"]*">',
+            r'<meta property="og:description" content="[^"]*">',
+            r'<meta property="og:url" content="[^"]*">',
+        ):
+            page = re.sub(pattern, "", page, count=1)
+        page = re.sub(r'<script type="application/ld\\+json">[\\s\\S]*?</script>',
+                      lambda m: "" if '"@type":"CollectionPage"' in m.group(0) else m.group(0),
+                      page, count=1)
         page = page.replace("</head>", meta + "</head>", 1)
         page = re.sub(r"<main>[\s\S]*?</main>",
                       lambda m: '<main><p><a href="/news/">← All News Updates</a></p>' +
