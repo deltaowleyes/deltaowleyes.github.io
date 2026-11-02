@@ -2224,5 +2224,19 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "Immaculate Heart of Mary Church — Aroland",
+    "province": "Ontario",
+    "reserve": "Aroland First Nation",
+    "denomination": "Roman Catholic",
+    "address": "",
+    "phone": "",
+    "source": "https://hearstmoosonee.ca/en/reconciliation/",
+    "reserveLocated": true,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false
   }
 ]
