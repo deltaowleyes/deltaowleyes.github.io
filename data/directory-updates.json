@@ -2,6 +2,44 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T00:23:45Z",
+      "commit": "71079ccf4b2333a5ab3042cdaf0073393de90452",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "immaculateheartofmarychurcharoland|ontario|arolandfirstnation",
+            "name": "Immaculate Heart of Mary Church — Aroland",
+            "place": "Aroland First Nation, Ontario",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://hearstmoosonee.ca/en/reconciliation/",
+            "status": "Unverified"
+          }
+        ],
+        "events": [
+          {
+            "key": "otipemisiwakmetischangecorepeersupportnovember9|20261109|online|alberta",
+            "name": "Otipemisiwak Métis ChangeCore Peer Support — November 9",
+            "place": "Online, Alberta",
+            "category": "Métis community wellness and peer support",
+            "date": "2026-11-09",
+            "source": "https://albertametis.com/event/changecore/2026-11-09/",
+            "status": "Verified event"
+          },
+          {
+            "key": "otipemisiwakmetischangecorepeersupportnovember16|20261116|online|alberta",
+            "name": "Otipemisiwak Métis ChangeCore Peer Support — November 16",
+            "place": "Online, Alberta",
+            "category": "Métis community wellness and peer support",
+            "date": "2026-11-16",
+            "source": "https://albertametis.com/event/changecore/2026-11-16/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-01T23:29:34Z",
       "commit": "e3581002065c270a5894b2097fac51a2a2c998dd",
       "mode": "import",
