@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T11:23:33Z",
+      "commit": "92b21149cf3895b61c95ea8b857b2a5de999915c",
+      "mode": "data",
+      "additions": {
+        "churches": [
+          {
+            "key": "sacredheartchurchofthefirstpeoples|alberta|edmontonnationalindigenouscatholicparishoffreserve",
+            "name": "Sacred Heart Church of the First Peoples",
+            "place": "Edmonton — National Indigenous Catholic Parish (off reserve), Alberta",
+            "category": "Roman Catholic",
+            "date": "",
+            "source": "https://sacredpeoples.caedm.ca/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T11:21:22Z",
       "commit": "a5ce616d2aab9bc4a2310ea974a29d752c2bf2a2",
       "mode": "data",
