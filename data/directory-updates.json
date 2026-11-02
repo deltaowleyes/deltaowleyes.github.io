@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T15:03:01Z",
+      "commit": "a02e740e6c9d6090cf22bec18eb5d93b074c0a48",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb6720261102002",
+            "name": "Agoke Development Corporation",
+            "place": "Aroland, Eabametoong and Marten Falls First Nations, Aroland, Ontario",
+            "category": "First Nation forestry and forest management",
+            "date": "",
+            "source": "https://www.agokedevcorp.ca/about/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T14:59:16Z",
       "commit": "101b6f5b396b157a1248ed838ff2b5e894610dc2",
       "mode": "data",
