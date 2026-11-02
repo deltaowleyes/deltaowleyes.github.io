@@ -2338,5 +2338,20 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "Holy Spirit Catholic Church — Garden Village",
+    "province": "Ontario",
+    "reserve": "Nipissing First Nation (Garden Village)",
+    "denomination": "Roman Catholic",
+    "address": "285 Ted Commanda Drive, Garden Village, Ontario P2B 3K2",
+    "phone": "705-753-0797",
+    "source": "https://www.dioceseofsaultstemarie.org/parishfinder",
+    "reserveLocated": true,
+    "indigenousLed": null,
+    "verification_status": "unverified",
+    "representative_confirmed": false,
+    "contact_status": "not_contacted",
+    "notes": "Listed by the Diocese of Sault Ste. Marie as Holy Spirit in Garden Village; Nipissing First Nation confirms use of the church building. Indigenous pastoral leadership has not been independently verified."
   }
 ]
