@@ -30,14 +30,16 @@ class El {
  setAttribute(k,v){this[k]=v}
  focus(){}
 }
-const ids="status queued download manifest clear publish entries count search filter contactFilter interestFilter sort sortHint dataset load edit pickHint fields verification sourceLink revert checkAll uncheckAll bulkAttempt bulkFollow publishLink authStatus initialAuth savedAuth disconnect rememberPasswordWrap ghToken remember rememberPassphrase unlockPassphrase connect unlock forget saveRecord createNew".split(" ");
+const ids="status queued download manifest clear publish entries count search filter contactFilter interestFilter businessPhoneWebsiteFilter businessPhoneWebsiteFilterWrap contactFilterWrap interestFilterWrap sort sortHint dataset load edit pickHint fields verification verificationPanel outreachPanel outreachActions filterLabel sourceLink revert checkAll uncheckAll bulkAttempt bulkFollow deleteRecord deleteSelected publishLink authStatus initialAuth savedAuth disconnect rememberPasswordWrap ghToken remember rememberPassphrase unlockPassphrase connect unlock forget saveRecord createNew".split(" ");
 for(const id of ids){const el=new El();el.id=id}
 elements.get("dataset").value="businesses";
 elements.get("sort").value="newest_near";
 const document={getElementById:id=>elements.get(id),createElement:tag=>new El(tag),body:new El()};
 const copy=o=>JSON.parse(JSON.stringify(o));
 const original={
- businesses:[{name:"Existing Business",city:"Test City",province:"Ontario",owner_confirmed:false,phone:"111-111-1111"}],
+ businesses:[{name:"Existing Business",city:"Test City",province:"Ontario",owner_confirmed:false,phone:"111-111-1111"},
+  {name:"Has Website",city:"Another City",province:"Ontario",phone:"222-222-2222",website:"https://example.org"},
+  {name:"No Phone",city:"Another City",province:"Ontario",website:""}],
  churches:[{name:"Existing Church",reserve:"Test Nation",province:"Ontario",reserveLocated:null,indigenousLed:null,source:"https://example.org"}]
 };
 const simulated=copy(original),calls={puts:0,reads:0,fallback:0};
@@ -83,7 +85,15 @@ assert.equal(window.DOEDirectorySort.proximity({city:"Unknown"}),Infinity,"Unkno
 const click=id=>elements.get(id).fire("click");
 const set=(id,value)=>{const el=elements.get(id);assert.ok(el,"Missing "+id);el.value=value;return el.fire("input")};
 const submit=()=>elements.get("edit").fire("submit",{preventDefault(){}});
-assert.equal(elements.get("entries").children.length,1);
+assert.equal(elements.get("entries").children.length,3);
+assert.ok(html.includes('id="businessPhoneWebsiteFilter"'));
+elements.get("businessPhoneWebsiteFilter").value="phone_no_website";
+await elements.get("businessPhoneWebsiteFilter").fire("change");
+assert.equal(elements.get("entries").children.length,1,"Phone with no website must exclude listings with a website or without a phone");
+assert.match(elements.get("entries").children[0].children[1].textContent,/Existing Business/);
+elements.get("businessPhoneWebsiteFilter").value="";
+await elements.get("businessPhoneWebsiteFilter").fire("change");
+assert.equal(elements.get("entries").children.length,3,"Clearing the filter restores all businesses");
 assert.equal(elements.get("createNew").disabled,false,"Create listing button must enable when the source finishes loading.");
 await click("createNew");
 assert.equal(elements.get("field_name").disabled,false,"New name must be editable");
@@ -97,11 +107,11 @@ assert.match(elements.get("status").textContent,/Connect GitHub/);
 elements.get("ghToken").value="synthetic-token";
 await click("connect");
 assert.equal(calls.puts,1,"Connect should complete pending one-click publish");
-assert.equal(simulated.businesses.length,2);
+assert.equal(simulated.businesses.length,4);
 assert.equal(simulated.businesses[0].name,original.businesses[0].name);
-assert.equal(simulated.businesses[1].name,"New Test Business");
-assert.equal(simulated.businesses[1].verification_status,"unverified");
-assert.ok(!JSON.stringify(simulated.businesses[1]).includes("call_notes"));
+assert.equal(simulated.businesses[3].name,"New Test Business");
+assert.equal(simulated.businesses[3].verification_status,"unverified");
+assert.ok(!JSON.stringify(simulated.businesses[3]).includes("call_notes"));
 assert.equal(calls.fallback,1,"Large-file GitHub blob fallback is required");
 await click("createNew");
 await set("field_name","New Test Business");
@@ -116,6 +126,7 @@ elements.get("dataset").value="churches";
 await elements.get("dataset").fire("change",{target:{value:"churches"}});
 await settle();
 assert.equal(elements.get("entries").children.length,1);
+assert.equal(elements.get("businessPhoneWebsiteFilterWrap").hidden,true,"Business-only filter must hide on church records");
 await click("createNew");
 assert.equal(elements.get("field_reserve").disabled,false,"Church community must be editable");
 await set("field_name","New Test Church");
@@ -128,4 +139,4 @@ assert.equal(simulated.churches.length,2);
 assert.equal(simulated.churches[1].service_times,"Sunday at 10");
 assert.equal(simulated.churches[1].verification_status,"unverified");
 assert.equal(simulated.churches[0].name,original.churches[0].name);
-console.log("PASS unified 4,475+ business source, new business/church drafts, required fields, duplicate rejection, no-token block, GitHub blob fallback, authorized synthetic publish, unchanged records.");
+console.log("PASS unified 4,475+ business source, business phone/no-website filter, new business/church drafts, required fields, duplicate rejection, no-token block, GitHub blob fallback, authorized synthetic publish, unchanged records.");
