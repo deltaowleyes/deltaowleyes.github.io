@@ -2266,5 +2266,21 @@
     "verification_status": "unverified",
     "contact_status": "not_contacted",
     "representative_confirmed": false
+  },
+  {
+    "name": "Sacred Heart Church of the First Peoples",
+    "province": "Alberta",
+    "reserve": "Edmonton — National Indigenous Catholic Parish (off reserve)",
+    "denomination": "Roman Catholic",
+    "address": "10821 96 Street NW, Edmonton, Alberta",
+    "phone": "780-422-3052",
+    "source": "https://sacredpeoples.caedm.ca/",
+    "reserveLocated": false,
+    "indigenousLed": true,
+    "verification_status": "unverified",
+    "contact_status": "not_contacted",
+    "representative_confirmed": false,
+    "leadership_evidence_source": "https://sacredpeoples.caedm.ca/contact/",
+    "leadership_evidence": "The parish's official website identifies it as Canada's National Indigenous Parish and names Father Garry LaBoucane OMI as pastor; public reporting identifies him as a Métis priest. Direct representative confirmation remains pending."
   }
 ]
