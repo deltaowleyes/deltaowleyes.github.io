@@ -114,7 +114,7 @@ def main():
         meta += '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False).replace("</", "<\\/") + '</script>'
         # Standalone articles must have one article-specific title, canonical and
         # structured-data type; do not inherit newsroom CollectionPage metadata.
-        page = re.sub(r"<title>[\\s\\S]*?</title>",
+        page = re.sub(r"<title>[\s\S]*?</title>",
                       "<title>" + html.escape(story["title"]) + " | Delta Owl Eyes</title>",
                       original, count=1)
         page = page.replace('<link rel="canonical" href="https://deltaowleyes.ca/news/">', "", 1)
@@ -126,7 +126,7 @@ def main():
             r'<meta property="og:url" content="[^"]*">',
         ):
             page = re.sub(pattern, "", page, count=1)
-        page = re.sub(r'<script type="application/ld\\+json">[\\s\\S]*?</script>',
+        page = re.sub(r'<script type="application/ld\+json">[\s\S]*?</script>',
                       lambda m: "" if '"@type":"CollectionPage"' in m.group(0) else m.group(0),
                       page, count=1)
         page = page.replace("</head>", meta + "</head>", 1)
