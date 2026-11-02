@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T00:24:56Z",
+      "commit": "494d8e1a1515e09a79f81e6919d30a70ad412d84",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb5020261102001",
+            "name": "Kokumoon",
+            "place": "Aroland First Nation (founder affiliation), Ottawa, Ontario",
+            "category": "Indigenous artisan jewellery, candles and creative workshops",
+            "date": "",
+            "source": "https://adaawe.wildapricot.org/stories/13558421",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb5020261102002",
+            "name": "Lakeside Designs Co.",
+            "place": "Timiskaming First Nation (artist affiliation), Cochrane, Ontario",
+            "category": "Indigenous beadwork and jewellery",
+            "date": "",
+            "source": "https://indigenousartscollective.org/megan-merkley-lakeside-designs-co/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T00:23:45Z",
       "commit": "71079ccf4b2333a5ab3042cdaf0073393de90452",
       "mode": "data",
