@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T01:31:07Z",
+      "commit": "6561d6dc9e02346cfcd93a54f8cc59bcdd82d17a",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "bkejwanongvolleyballdropinnightnovember9|20261109|walpoleisland|ontario",
+            "name": "Bkejwanong Volleyball Drop-In Night — November 9",
+            "place": "Walpole Island, Ontario",
+            "category": "Community recreation and wellness",
+            "date": "2026-11-09",
+            "source": "https://www.walpoleislandfirstnation.ca/events/08zqnv8t7zr82ybo8pbdp7d8dpscmo-7c6e9",
+            "status": "Verified event"
+          },
+          {
+            "key": "bkejwanongcornholeanddartsnightnovember10|20261110|walpoleisland|ontario",
+            "name": "Bkejwanong Cornhole and Darts Night — November 10",
+            "place": "Walpole Island, Ontario",
+            "category": "Community recreation and wellness",
+            "date": "2026-11-10",
+            "source": "https://www.walpoleislandfirstnation.ca/events/cornholedart-nights-cf6ha",
+            "status": "Verified event"
+          },
+          {
+            "key": "dbendaagzimimentalhealthconferencebkejwanong|20261119|walpoleisland|ontario",
+            "name": "Dbendaagzimi Mental Health Conference — Bkejwanong",
+            "place": "Walpole Island, Ontario",
+            "category": "Indigenous community mental health and wellness",
+            "date": "2026-11-19",
+            "source": "https://www.walpoleislandfirstnation.ca/events",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T00:24:56Z",
       "commit": "494d8e1a1515e09a79f81e6919d30a70ad412d84",
       "mode": "import",
