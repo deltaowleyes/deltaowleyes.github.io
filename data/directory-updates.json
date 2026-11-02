@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T04:23:39Z",
+      "commit": "4bfa9c990b8f0bcb2fa876931ae8ff8b94b36951",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "mnoelccfall2026virtualcampfamilygamenight|20261103|onlinezoom|ontario",
+            "name": "MNO ELCC Fall 2026 Virtual Camp — Family Game Night",
+            "place": "Online (Zoom), Ontario",
+            "category": "Métis family early-learning cultural workshop",
+            "date": "2026-11-03",
+            "source": "https://www.metisnation.org/news/elcc-fall-2026-virtual-camp-family-game-night-play-your-cards-right/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T04:23:28Z",
       "commit": "aec5595ac190a9f9788cc1fcac0e8894f5d94b03",
       "mode": "import",
