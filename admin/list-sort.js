@@ -1,7 +1,7 @@
 "use strict";
 /* View-only ordering for both directory worksheets. Does not modify records. */
 window.DOEDirectorySort=(()=>{
- const dated={businesses:new Map(),churches:new Map()};
+ const dated={businesses:new Map(),churches:new Map(),events:new Map()};
  const points=[
  [/walpole island|bkejwanong/,42.61,-82.49],[/wallaceburg/,42.59,-82.39],
  [/sombra|port lambton/,42.66,-82.49],[/chatham|thamesville/,42.40,-82.19],
@@ -33,6 +33,7 @@ window.DOEDirectorySort=(()=>{
  function normalized(value){return String(value??"").normalize("NFKD").toLowerCase().replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]/g,"")}
  function logKey(source,record){
   if(source==="businesses"&&record.source_id)return "id:"+normalized(record.source_id);
+  if(source==="events")return [record.title,record.start_date,record.city,record.province].map(normalized).join("|");
   return source==="churches"?
    [record.name,record.province,record.reserve].map(normalized).join("|"):
    [record.name,record.city,record.province].map(normalized).join("|");
@@ -78,7 +79,7 @@ window.DOEDirectorySort=(()=>{
   for(const run of [...result.runs].reverse()){
    const day=String(run.at??"").slice(0,10);
    if(!/^\d{4}-\d{2}-\d{2}$/.test(day))continue;
-   for(const source of ["businesses","churches"])
+   for(const source of ["businesses","churches","events"])
     for(const entry of run.additions?.[source]??[])
      if(typeof entry.key==="string")dated[source].set(entry.key,day);
   }
