@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T21:24:55Z",
+      "commit": "dad14d999f1c71dfdcf23073434ceb42d0b267ca",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb7720261102001",
+            "name": "Long Lake #58 General Store and Gas Bar",
+            "place": "Long Lake #58 First Nation, Long Lake 58 / Longlac, Ontario",
+            "category": "General store and fuel retail",
+            "date": "",
+            "source": "https://www.longlake58fn.ca/upload/documents/llfn-initial-project-description-issued-.pdf",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7720261102003",
+            "name": "Cliffdweller Inn",
+            "place": "North Spirit Lake First Nation, North Spirit Lake, Ontario",
+            "category": "Guest accommodation and lodging",
+            "date": "",
+            "source": "https://211north.ca/record/65300077/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T20:31:03Z",
       "commit": "c364af043897ea6c1f393216d90cd99ceeb8a9f5",
       "mode": "import",
