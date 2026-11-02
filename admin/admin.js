@@ -70,7 +70,7 @@ function renderList(){
   const label=b.title||b.name||"(New unpublished listing)";
   const cb=document.createElement("input");cb.type="checkbox";cb.checked=!deleting&&checked.has(key(i));cb.disabled=deleting;
   cb.setAttribute("aria-label","Select "+label);
-  cb.addEventListener("change",()=>{if(cb.checked)checked.add(key(i));else checked.delete(key(i))});
+  cb.addEventListener("change",()=>{if(cb.checked)checked.add(key(i));else checked.delete(key(i));writeControls()});
   const open=document.createElement("button");open.type="button";open.textContent=label;open.disabled=deleting;
   open.setAttribute("aria-current",String(current===i));
   const date=window.DOEDirectorySort?.date(active,b);
