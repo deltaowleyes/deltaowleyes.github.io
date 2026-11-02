@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T17:20:29Z",
+      "commit": "c1e77a30f6c641a871ee48f5b3f1d44f4b0e3d59",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "thinkindigenousinternationaleducationconference2027|20270303|regina|saskatchewan",
+            "name": "Think Indigenous International Education Conference — 2027",
+            "place": "Regina, Saskatchewan",
+            "category": "Indigenous education conference",
+            "date": "2027-03-03",
+            "source": "https://www.thinkindigenous.ca/faq.html",
+            "status": "Verified event"
+          },
+          {
+            "key": "2027indigenouscuratorialcollectivegatheringwritingourplaceinhistory|20270824|whitehorse|yukon",
+            "name": "2027 Indigenous Curatorial Collective Gathering — Writing Our Place in History",
+            "place": "Whitehorse, Yukon",
+            "category": "Indigenous arts and curatorial gathering",
+            "date": "2027-08-24",
+            "source": "https://icca.art/gatherings/2027-icca-gathering-writing-our-place-in-history/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T16:27:30Z",
       "commit": "95864a3b7c937aaa9a5cf2526109d437afb7e83a",
       "mode": "import",
