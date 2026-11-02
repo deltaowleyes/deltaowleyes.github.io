@@ -2,6 +2,60 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T16:27:30Z",
+      "commit": "95864a3b7c937aaa9a5cf2526109d437afb7e83a",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeb7120261102001",
+            "name": "Wabusk Data Solutions",
+            "place": "Founder affiliated with Fort Albany First Nation, Moosonee, Ontario",
+            "category": "Indigenous data governance and cybersecurity consulting",
+            "date": "",
+            "source": "https://www.nan.ca/news/nan-congratulates-34th-annual-nadf-award-recipients/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7120261102002",
+            "name": "Wesley's Take Out",
+            "place": "Owner affiliated with Fort Albany First Nation, Ontario",
+            "category": "Takeout food service",
+            "date": "",
+            "source": "https://www.nan.ca/news/nan-congratulates-34th-annual-nadf-award-recipients/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7120261102003",
+            "name": "Necessities",
+            "place": "Moosonee / James Bay, Moosonee, Ontario",
+            "category": "Small business / retail (exact product range unconfirmed)",
+            "date": "",
+            "source": "https://www.nan.ca/news/nan-congratulates-34th-annual-nadf-award-recipients/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7120261102004",
+            "name": "Fin & Feather",
+            "place": "Founder affiliated with Timiskaming First Nation, East Gwillimbury, Ontario",
+            "category": "Mobile food vendor and event catering",
+            "date": "",
+            "source": "https://www.powwowpitch.org/stephanie-king-fin-feather-wins-startup-semi-final/",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeb7120261102005",
+            "name": "Elevated Aesthetics",
+            "place": "Six Nations of the Grand River area, Ohsweken, Ontario",
+            "category": "Esthetics and personal care services",
+            "date": "",
+            "source": "https://www.powwowpitch.org/tasha-toulouse-gizaagiin-home-services-wins-professional-services-trades-semi-final/",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T15:36:29Z",
       "commit": "49f000a0cfa804af44c6c0345c5f3573b5f70533",
       "mode": "import",
