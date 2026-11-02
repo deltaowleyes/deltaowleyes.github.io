@@ -2,6 +2,42 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-02T12:26:48Z",
+      "commit": "0752c0aa54e04415aceeefb1762944a4ae0c4d7f",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "indigenoustechconference2027|20270126|richmond|britishcolumbia",
+            "name": "Indigenous Tech Conference 2027",
+            "place": "Richmond, British Columbia",
+            "category": "Indigenous technology and entrepreneurship conference",
+            "date": "2027-01-26",
+            "source": "https://luma.com/IITC",
+            "status": "Verified event"
+          },
+          {
+            "key": "24thannualfirstnationshousingconference2027|20270223|thunderbay|ontario",
+            "name": "24th Annual First Nations Housing Conference 2027",
+            "place": "Thunder Bay, Ontario",
+            "category": "First Nations housing and infrastructure conference",
+            "date": "2027-02-23",
+            "source": "https://firstnationshousingconference.ca/",
+            "status": "Verified event"
+          },
+          {
+            "key": "9thannualaisescanadanationalgathering2027|20270225|winnipeg|manitoba",
+            "name": "9th Annual AISES Canada National Gathering 2027",
+            "place": "Winnipeg, Manitoba",
+            "category": "Indigenous STEM education and professional gathering",
+            "date": "2027-02-25",
+            "source": "https://events.aises.org/website/96782/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T11:26:36Z",
       "commit": "937d9005ed7809505e23f746d2dfc908d96b046c",
       "mode": "import",
