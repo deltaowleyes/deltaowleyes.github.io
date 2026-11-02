@@ -1654,6 +1654,18 @@
     "status": "verified"
   },
   {
+    "title": "Indigenous Tech Conference 2027",
+    "start_date": "2027-01-26",
+    "end_date": "2027-01-28",
+    "city": "Richmond",
+    "province": "British Columbia",
+    "category": "Indigenous technology and entrepreneurship conference",
+    "organizer": "Indigenous Tech Circle",
+    "description": "January 26–28, 2027, at Sheraton Vancouver Airport Hotel, 7551 Westminster Highway, Richmond, BC. Indigenous-led conference for Indigenous technologists, founders, First Nations, Inuit and Métis leaders, investors and allies. Registration is available through the official organizer; consult the organizer for access and ticket conditions.",
+    "url": "https://luma.com/IITC",
+    "status": "verified"
+  },
+  {
     "title": "3rd Annual AFN National Natural Resources Forum",
     "start_date": "2027-02-01",
     "end_date": "2027-02-04",
@@ -1698,6 +1710,30 @@
     "organizer": "Algoma University",
     "description": "February 13–14, 2027 at GFL Memorial Gardens; organized with Anishinaabe Initiatives and community partners.",
     "url": "https://algomau.ca/special-mission/pow-wow/",
+    "status": "verified"
+  },
+  {
+    "title": "24th Annual First Nations Housing Conference 2027",
+    "start_date": "2027-02-23",
+    "end_date": "2027-02-25",
+    "city": "Thunder Bay",
+    "province": "Ontario",
+    "category": "First Nations housing and infrastructure conference",
+    "organizer": "First Nations Housing Conference",
+    "description": "February 23–25, 2027, at the Valhalla Hotel in Thunder Bay, Ontario. First Nations-led professional conference on housing transformation, innovation, health and climate. Intended for First Nations housing managers, technical staff, administrators and leadership, with delegate and exhibitor registration available; consult organizer for current fees.",
+    "url": "https://firstnationshousingconference.ca/",
+    "status": "verified"
+  },
+  {
+    "title": "9th Annual AISES Canada National Gathering 2027",
+    "start_date": "2027-02-25",
+    "end_date": "2027-02-27",
+    "city": "Winnipeg",
+    "province": "Manitoba",
+    "category": "Indigenous STEM education and professional gathering",
+    "organizer": "AISES Canada",
+    "description": "February 25–27, 2027, at RBC Convention Centre Winnipeg, Manitoba. Indigenous STEM students, educators and professionals from Canada and the United States gather for sessions, career development and community connections. Registration required; organizer offers student and professional registrations and a code of conduct. Check organizer for current pricing.",
+    "url": "https://events.aises.org/website/96782/",
     "status": "verified"
   },
   {
@@ -1760,6 +1796,17 @@
     "status": "verified"
   },
   {
+    "title": "Métis Nation of Ontario Senators' Soirée — May 4, 2027",
+    "start_date": "2027-05-04",
+    "city": "Online (Zoom)",
+    "province": "Ontario",
+    "category": "Métis governance, culture and community connection",
+    "organizer": "Métis Nation of Ontario",
+    "description": "Monthly virtual Senators' Soirée on May 4, 2027, 6:30–7:30 p.m. Eastern time (as published). Sharing, spirituality and skill-building for MNO Senators only. Contact the organizer for the Zoom link or technical support; this is not a public drop-in event.",
+    "url": "https://www.metisnation.org/governance/governing-structure/mno-senators/",
+    "status": "verified"
+  },
+  {
     "title": "Soaring 2027 — Indigenous Youth Empowerment Gathering",
     "start_date": "2027-05-04",
     "end_date": "2027-05-05",
@@ -1769,17 +1816,6 @@
     "organizer": "Indspire",
     "description": "May 4–5, 2027, at BMO Centre in Calgary. National gathering for Indigenous high-school learners featuring education and career exploration, workshops, speakers and connections. Organizer confirms registration is open; attendance is directed toward Indigenous high-school students. Consult Indspire for registration requirements and availability.",
     "url": "https://indspire.ca/events/soaring/",
-    "status": "verified"
-  },
-  {
-    "title": "Métis Nation of Ontario Senators' Soirée — May 4, 2027",
-    "start_date": "2027-05-04",
-    "city": "Online (Zoom)",
-    "province": "Ontario",
-    "category": "Métis governance, culture and community connection",
-    "organizer": "Métis Nation of Ontario",
-    "description": "Monthly virtual Senators' Soirée on May 4, 2027, 6:30–7:30 p.m. Eastern time (as published). Sharing, spirituality and skill-building for MNO Senators only. Contact the organizer for the Zoom link or technical support; this is not a public drop-in event.",
-    "url": "https://www.metisnation.org/governance/governing-structure/mno-senators/",
     "status": "verified"
   },
   {
