@@ -457,22 +457,47 @@ async function readLatest(source){
  if(!Array.isArray(records))throw Error("Unexpected JSON from GitHub for "+path);
  return {records,text,sha:info.sha};
 }
+/* Deletion ledger is authoritative. Deletions remove a public row but retain its
+   recoverable snapshot and normalized identity in the same Git commit. */
+const DELETION_LEDGER="/data/deletion-ledger.json";
+function deletionKey(source,b){
+ const norm=v=>String(v??"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]/g,"");
+ if(source==="events")return [norm(b.title),String(b.start_date||""),norm(b.city),norm(b.province)].join("|");
+ if(source==="churches")return [norm(b.name),norm(b.reserve),norm(b.province)].join("|");
+ return [norm(b.name),norm(b.city),norm(b.province)].join("|");
+}
+function isSuppressed(source,b,ledger){
+ return ledger.some(d=>d.source===source&&(d.source_id&&b.source_id&&d.source_id===b.source_id||d.key===deletionKey(source,b)));
+}
+async function readDeletionLedger(){
+ const info=await githubRequest("/contents"+DELETION_LEDGER+"?ref=main",{headers:{"Accept":"application/vnd.github.object+json"}});
+ let encoded=info.content;
+ if(info.encoding!=="base64"||!encoded){
+  const blob=await githubRequest("/git/blobs/"+encodeURIComponent(info.sha));
+  encoded=blob.content;
+  if(blob.encoding!=="base64"||!encoded)throw Error("Deletion ledger unreadable; publication blocked.");
+ }
+ const records=JSON.parse(base64Decode(encoded));
+ if(!Array.isArray(records))throw Error("Deletion ledger is invalid; publication blocked.");
+ return {records,sha:info.sha};
+}
 function same(a,b){return JSON.stringify(a)===JSON.stringify(b)}
 function identity(source,b){
  return source==="events"?[b.title,b.start_date,b.city,b.province].join("\u001f"):
  SOURCES[source].kind==="church"?[b.name,b.province,b.reserve].join("\u001f"):
  [b.source_id||"",b.name,b.city,b.province].join("\u001f");
 }
-function mergeDrafts(source,remote){
+function mergeDrafts(source,remote,ledger){
  const original=loaded.get(source);
  if(!original)throw Error("Source not loaded: "+source);
  const updates=[...staged.entries()].filter(([id])=>id.startsWith(source+":"));
- const records=remote.records,removals=[];
+ const records=remote.records,removals=[],deleted=[];
  for(const [key,draft] of updates){
   if(newKeys.has(key)){
    if(draft===null)continue;
    validateNew(source,draft);
    assertUnique(source,draft,records);
+   if(isSuppressed(source,draft,ledger))throw Error("Previously deleted listing is suppressed. Restore through the deletion ledger: "+(draft.title||draft.name));
    records.push({...draft});
    continue;
   }
@@ -487,7 +512,7 @@ function mergeDrafts(source,remote){
   const currentRecord=records[at];
   if(draft===null){
    if(!same(base,currentRecord))throw Error("Record changed on GitHub since loading: "+(base.title||base.name)+". Reload before deleting.");
-   removals.push(at);continue;
+   removals.push(at);deleted.push({source,source_id:currentRecord.source_id||null,key:deletionKey(source,currentRecord),deleted_at:new Date().toISOString(),record:structuredClone(currentRecord)});continue;
   }
   const merged={...currentRecord};
   for(const [field,value] of Object.entries(draft)){
@@ -500,7 +525,7 @@ function mergeDrafts(source,remote){
   records[at]=merged;
  }
  for(const at of [...new Set(removals)].sort((a,b)=>b-a))records.splice(at,1);
- return {records,updates};
+ return {records,updates,deleted};
 }
 async function publishChanges(onlySources=null){
  if(busy)return false;
@@ -515,7 +540,9 @@ async function publishChanges(onlySources=null){
  try{
   for(const source of sources){
    notify("Publishing "+SOURCES[source].name+" to GitHub…");
-   const remote=await readLatest(source), merged=mergeDrafts(source,remote);
+   const [remote,ledger]=await Promise.all([readLatest(source),readDeletionLedger()]);
+   const merged=mergeDrafts(source,remote,ledger.records);
+   for(const d of merged.deleted){if(!isSuppressed(source,d.record,ledger.records))ledger.records.push(d);}
    const selectedKey=source===active&&current>=0?key(current):null;
    const selectedNew=selectedKey&&newKeys.has(selectedKey)?record(current):null;
    const hasDeletions=merged.updates.some(([,draft])=>draft===null);
@@ -525,35 +552,36 @@ async function publishChanges(onlySources=null){
     for(const [entryKey] of merged.updates){staged.delete(entryKey);newKeys.delete(entryKey)}
     loaded.set(source,merged.records);continue;
    }
-   const path=SOURCES[source].path;
-   let result;
+   // Atomic commit: public data and its deletion tombstones move together.
+   const ref=await githubRequest("/git/ref/heads/main");
+   const parent=ref.object.sha;
+   const checkLedger=await githubRequest("/contents"+DELETION_LEDGER+"?ref=main");
+   if(checkLedger.sha!==ledger.sha)throw Error("Deletion ledger changed concurrently. Reload and retry.");
+   const entries=[];
    if(source==="businesses"){
-    // One atomic Git commit for both partitions; phone edits can move records between files.
+    const checks=await Promise.all(remote.parts.map(p=>githubRequest("/contents"+p.path+"?ref=main")));
+    if(checks.some((p,i)=>p.sha!==remote.parts[i].sha))throw Error("Business data changed during editing. Reload.");
     const byPhone=merged.records.filter(b=>String(b.phone??"").trim());
     const withoutPhone=merged.records.filter(b=>!String(b.phone??"").trim());
-    const contents=[JSON.stringify(byPhone)+"\n",JSON.stringify(withoutPhone)+"\n"];
-    const ref=await githubRequest("/git/ref/heads/main");
-    const parent=ref.object.sha;
-    const remoteCheck=await Promise.all(remote.parts.map(p=>githubRequest("/contents"+p.path+"?ref=main")));
-    if(remoteCheck.some((p,i)=>p.sha!==remote.parts[i].sha))throw Error("Business data changed during editing. Reload before publishing.");
-    const baseCommit=await githubRequest("/git/commits/"+parent);
-    const blobs=await Promise.all(contents.map(content=>githubRequest("/git/blobs",{method:"POST",body:JSON.stringify({content,encoding:"utf-8"})})));
-    const updatedTree=await githubRequest("/git/trees",{method:"POST",body:JSON.stringify({
-     base_tree:baseCommit.tree.sha,
-     tree:remote.parts.map((p,i)=>({path:p.path.slice(1),mode:"100644",type:"blob",sha:blobs[i].sha}))
-    })});
-    const commit=await githubRequest("/git/commits",{method:"POST",body:JSON.stringify({
-     message:"Admin: publish "+merged.updates.length+" business changes across phone partitions",
-     tree:updatedTree.sha,parents:[parent]
-    })});
-    await githubRequest("/git/refs/heads/main",{method:"PATCH",body:JSON.stringify({sha:commit.sha,force:false})});
-    result={commit:{sha:commit.sha,html_url:"https://github.com/deltaowleyes/deltaowleyes.github.io/commit/"+commit.sha}};
+    entries.push({path:remote.parts[0].path.slice(1),content:JSON.stringify(byPhone)+"\\n"});
+    entries.push({path:remote.parts[1].path.slice(1),content:JSON.stringify(withoutPhone)+"\\n"});
    }else{
-    result=await githubRequest("/contents"+path,{method:"PUT",body:JSON.stringify({
-     message:"Admin: publish "+merged.updates.length+" change(s) in "+SOURCES[source].name,
-     content:base64Encode(serialized),sha:remote.sha,branch:"main"
-    })});
+    const check=await githubRequest("/contents"+SOURCES[source].path+"?ref=main");
+    if(check.sha!==remote.sha)throw Error("Directory changed during editing. Reload.");
+    entries.push({path:SOURCES[source].path.slice(1),content:serialized});
    }
+   if(merged.deleted.length)entries.push({path:DELETION_LEDGER.slice(1),content:JSON.stringify(ledger.records,null,2)+"\\n"});
+   const baseCommit=await githubRequest("/git/commits/"+parent);
+   const blobs=await Promise.all(entries.map(e=>githubRequest("/git/blobs",{method:"POST",body:JSON.stringify({content:e.content,encoding:"utf-8"})})));
+   const updatedTree=await githubRequest("/git/trees",{method:"POST",body:JSON.stringify({
+    base_tree:baseCommit.tree.sha,tree:entries.map((e,i)=>({path:e.path,mode:"100644",type:"blob",sha:blobs[i].sha}))
+   })});
+   const commit=await githubRequest("/git/commits",{method:"POST",body:JSON.stringify({
+    message:"Admin: publish "+merged.updates.length+" "+source+" change(s) with deletion safety",
+    tree:updatedTree.sha,parents:[parent]
+   })});
+   await githubRequest("/git/refs/heads/main",{method:"PATCH",body:JSON.stringify({sha:commit.sha,force:false})});
+   const result={commit:{sha:commit.sha,html_url:"https://github.com/deltaowleyes/deltaowleyes.github.io/commit/"+commit.sha}};
    if(!result.commit?.sha)throw Error("GitHub did not confirm a commit for "+path);
    for(const [entryKey] of merged.updates){staged.delete(entryKey);newKeys.delete(entryKey)}
    loaded.set(source,merged.records);

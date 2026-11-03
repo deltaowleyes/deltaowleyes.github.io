@@ -17,6 +17,21 @@ if not batch_path.is_relative_to(ROOT / "indigenous-businesses/imports"):
 with_phone = json.loads(PHONE.read_text(encoding="utf-8"))
 without_phone = json.loads(NO_PHONE.read_text(encoding="utf-8"))
 old = with_phone + without_phone
+ledger_path = ROOT / "data/deletion-ledger.json"
+if not ledger_path.exists():
+    sys.exit("Deletion suppression ledger missing; import blocked")
+ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+if not isinstance(ledger, list):
+    sys.exit("Deletion suppression ledger invalid")
+
+def deletion_key(record):
+    def norm(v):
+        v = unicodedata.normalize("NFKD", str(v or "")).lower().replace("&", "and")
+        return re.sub("[^a-z0-9]", "", "".join(c for c in v if not unicodedata.combining(c)))
+    return "|".join((norm(record.get("name")), norm(record.get("city")), norm(record.get("province"))))
+
+suppressed_ids = {str(item["source_id"]) for item in ledger if isinstance(item, dict) and item.get("source") == "businesses" and item.get("source_id")}
+suppressed_keys = {item["key"] for item in ledger if isinstance(item, dict) and item.get("source") == "businesses" and isinstance(item.get("key"), str)}
 batch = json.loads(batch_path.read_text(encoding="utf-8"))
 if not isinstance(old, list) or not isinstance(batch, list):
     sys.exit("Both business files must contain arrays")
@@ -61,6 +76,9 @@ for record in batch:
         sys.exit("Unverified status violated for "+record["name"])
     if record.get("address") or record.get("postal_code"):
         sys.exit("Private location fields present for "+record["name"])
+    if str(record["source_id"]) in suppressed_ids or deletion_key(record) in suppressed_keys:
+        excluded.append(record["name"] + " (deleted/suppressed)")
+        continue
     n = key(record["name"])
     p = re.sub(r"\D","",str(record.get("phone") or ""))
     match = next((k for k, kp, sid in known if strong_alias(n,k) or (p and len(p)>=10 and p==kp and n==k) or sid==record["source_id"]),None)
