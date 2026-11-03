@@ -42,7 +42,7 @@ const original={
   {name:"No Phone",city:"Another City",province:"Ontario",website:""}],
  churches:[{name:"Existing Church",reserve:"Test Nation",province:"Ontario",reserveLocated:null,indigenousLed:null,source:"https://example.org"}]
 };
-const simulated=copy(original),calls={puts:0,reads:0,fallback:0};
+const simulated={...copy(original),ledger:[]},calls={puts:0,reads:0,fallback:0};
 let stagedBlobs=[],treeChanges=[];
 const base="https://api.github.com/repos/deltaowleyes/deltaowleyes.github.io";
 const response=value=>({ok:true,json:async()=>copy(value)});
@@ -62,7 +62,7 @@ async function fetchMock(url,options={}){
  }
  if(method==="GET"&&url.includes("/git/blobs/")){
   calls.fallback++;
-  const data=url.includes("sha-ledger")?[]:isChurch?simulated.churches:url.includes("sha-without")?simulated.businesses.filter(b=>!b.phone):simulated.businesses.filter(b=>b.phone);
+  const data=url.includes("sha-ledger")?simulated.ledger:isChurch?simulated.churches:url.includes("sha-without")?simulated.businesses.filter(b=>!b.phone):simulated.businesses.filter(b=>b.phone);
   return response({encoding:"base64",content:Buffer.from(JSON.stringify(data)).toString("base64")});
  }
  if(method==="GET"&&url.endsWith("/git/ref/heads/main"))return response({object:{sha:"synthetic-parent"}});
@@ -77,6 +77,7 @@ async function fetchMock(url,options={}){
    if(entry.path.endsWith("businesses-with-phone.json"))simulated.businesses=simulated.businesses.filter(b=>!b.phone).concat(data);
    if(entry.path.endsWith("businesses-without-phone.json"))simulated.businesses=simulated.businesses.filter(b=>b.phone).concat(data);
    if(entry.path.endsWith("churches.json"))simulated.churches=data;
+   if(entry.path.endsWith(".github/deletion-ledger.json"))simulated.ledger=data;
   }
   calls.puts++;return response({object:{sha:"synthetic-new-commit"}});
  }
@@ -88,7 +89,7 @@ const window={
  addEventListener(){}
 };
 const sandbox={document,window,fetch:fetchMock,Option:class{constructor(text,value){this.text=text;this.value=value}},
- TextEncoder,TextDecoder,atob,btoa,confirm:()=>true,Blob,URL,setTimeout};
+ TextEncoder,TextDecoder,atob,btoa,confirm:()=>true,Blob,URL,setTimeout,structuredClone};
 vm.runInNewContext(listSort,sandbox,{filename:"list-sort.js"});
 vm.runInNewContext(admin,sandbox,{filename:"admin.js"});
 const settle=()=>new Promise(resolve=>setImmediate(resolve));
@@ -159,4 +160,17 @@ assert.equal(simulated.churches.length,2);
 assert.equal(simulated.churches[1].service_times,"Sunday at 10");
 assert.equal(simulated.churches[1].verification_status,"unverified");
 assert.equal(simulated.churches[0].name,original.churches[0].name);
+// Deleting a published church must atomically update its public dataset and recovery ledger.
+await elements.get("entries").children[0].children[1].fire("click");
+await click("deleteRecord");
+assert.match(elements.get("status").textContent,/Deletion staged/);
+await click("publish");
+assert.equal(calls.puts,3,"Deletion must publish as one atomic Git commit");
+assert.equal(simulated.churches.length,1,"Deleted record must disappear from public church JSON");
+assert.equal(simulated.churches[0].name,"New Test Church");
+assert.equal(simulated.ledger.length,1,"Deletion recovery ledger must retain one snapshot");
+assert.equal(simulated.ledger[0].source,"churches");
+assert.equal(simulated.ledger[0].record.name,"Existing Church");
+assert.equal(simulated.ledger[0].key,"existingchurch|testnation|ontario");
+assert.ok(simulated.ledger[0].deleted_at,"Deletion UTC timestamp required");
 console.log("PASS unified 4,475+ business source, business phone/no-website filter, new business/church drafts, required fields, duplicate rejection, no-token block, GitHub blob fallback, authorized synthetic publish, unchanged records.");
