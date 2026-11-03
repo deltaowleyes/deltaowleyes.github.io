@@ -17,18 +17,33 @@ jobs:
   version-assets:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           persist-credentials: true
-      - name: Update asset URLs when file contents change
-        run: python3 scripts/version-assets.py
-      - name: Commit versioned references
+      - name: Safe CSS and JavaScript asset version publishing
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- '*.html'
-          if ! git diff --cached --quiet; then
+          for attempt in 1 2 3 4 5 6; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python3 scripts/version-assets.py
+            git add -- '*.html'
+            if git diff --cached --quiet; then
+              echo "Asset versions are current."
+              exit 0
+            fi
             git commit -m "Automatically refresh CSS and JS asset versions"
-            git push
-          fi
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push race on attempt $attempt; rebuilding."
+            sleep "$attempt"
+          done
+          echo "Six safe retries exhausted. No force push attempted." >&2
+          exit 1

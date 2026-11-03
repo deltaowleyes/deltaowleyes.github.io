@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-03",
+  "context": "TRC education context: Call #62",
+  "headline": "Replace with verified factual news headline",
+  "professional_sections": [
+    {
+      "label": "News",
+      "text": "Write the verified announcement, event date and attribution in clear factual language."
+    },
+    {
+      "label": "Education",
+      "text": "Explain the relevant TRC connection without overstating implementation."
+    },
+    {
+      "label": "Accountability",
+      "text": "Identify specific answers needed; do not imply unverified findings."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Official source and publication date",
+      "url": "https://example.org/replace-with-official-source"
+    }
+  ],
+  "rez_headline": "Replace with accurate conversational headline",
+  "rez_sections": [
+    {
+      "label": "News",
+      "text": "Boozhoo. Restate the same verified news, with the important facts and attribution."
+    },
+    {
+      "label": "Education",
+      "text": "Aambe, share the wider context without adding new or unsupported claims."
+    },
+    {
+      "label": "Accountability",
+      "text": "Ask the same grounded follow-up questions in a natural voice."
+    }
+  ],
+  "editorial_review": {
+    "status": "draft",
+    "reviewed_by": "Replace with actual reviewer",
+    "reviewed_at": "2026-11-03",
+    "sources_checked": false,
+    "claim_parity_checked": false
+  }
+}

@@ -13,6 +13,7 @@ import re
 import unicodedata
 import urllib.parse
 import xml.etree.ElementTree as ET
+from check_news_language import validate_repository
 from zoneinfo import ZoneInfo
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -45,6 +46,8 @@ def xml_string(root):
     return ET.tostring(root, encoding="utf-8", xml_declaration=True).decode("utf-8") + "\n"
 
 def main():
+    # Do not generate public pages or feeds from a partial/unreviewed news edition.
+    validate_repository()
     original = NEWS.read_text(encoding="utf-8")
     if not re.search(r"<main>[\s\S]*?</main>", original):
         raise ValueError("Newsroom <main> element not found")

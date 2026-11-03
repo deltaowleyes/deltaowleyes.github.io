@@ -16,21 +16,34 @@ jobs:
   enforce:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           persist-credentials: true
-      - name: Check consent assets and apply missing references
-        run: python3 scripts/ensure-analytics.py
-      - name: Verify idempotence and complete HTML coverage
-        run: python3 scripts/ensure-analytics.py --check
-      - name: Commit only changed HTML pages
+      - name: Safe consent-asset publishing
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- '*.html'
-          if ! git diff --cached --quiet; then
+          for attempt in 1 2 3 4 5 6; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python3 scripts/ensure-analytics.py
+            python3 scripts/ensure-analytics.py --check
+            git add -- '*.html'
+            if git diff --cached --quiet; then
+              echo "Analytics consent coverage is current."
+              exit 0
+            fi
             git commit -m "Ensure consent-gated analytics on all HTML pages"
-            git pull --rebase origin main
-            git push
-          fi
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push race on attempt $attempt; rebuilding."
+            sleep "$attempt"
+          done
+          echo "Six safe retries exhausted. No force push attempted." >&2
+          exit 1

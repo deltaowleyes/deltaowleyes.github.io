@@ -1,36 +1,68 @@
 name: Publish verified news and aggregator feeds
 on:
   push:
+    branches: [main]
     paths:
       - 'news/index.html'
+      - 'news/approved/**'
+      - 'news/rez-slang-9.json'
+      - 'news/rez-slang-9-baseline.json'
       - 'news/updates/**'
       - 'tools/build_news.py'
+      - 'tools/publish_approved_news.py'
       - 'tools/publish_news_feeds.py'
-      - 'news/publication-dates.json'
+      - 'tools/check_news_language.py'
+      - 'tools/test_news_language.py'
       - '.github/workflows/publish-verified-news.yml'
   workflow_dispatch:
   schedule:
     - cron: '15 11 * * *'
 permissions:
   contents: write
+concurrency:
+  group: doe-verified-news-publisher
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Validate historical records and preserve the curated newsroom
-        run: python tools/build_news.py
-      - name: Generate article pages, RSS and standards-compliant sitemaps
-        run: python tools/publish_news_feeds.py
-      - name: Commit generated feeds, individual articles, and publishing dates
+      - name: Validate and safely publish paired news from the latest branch head
+        shell: bash
         run: |
-          git add -- news/index.html news/scripts/index.html news/articles news/publication-dates.json feed.xml sitemap.xml news-sitemap.xml
-          if ! git diff --cached --quiet; then
-            git config user.name "delta-owl-eyes-bot"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "Refresh canonical news pages and syndication feeds"
-            git push
-          fi
+          set -euo pipefail
+          git config user.name "delta-owl-eyes-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5 6; do
+            git fetch origin main
+            git checkout -B main origin/main
+            python3 tools/build_news.py
+            python3 tools/publish_approved_news.py
+            python3 tools/publish_news_feeds.py
+            python3 tools/check_news_language.py --check-pages
+            python3 -m unittest discover -s tools -p 'test_news_language.py'
+            python3 tools/publish_approved_news.py --check
+            git add -- news/index.html news/scripts/index.html news/articles \
+              news/rez-slang-9.json news/publication-dates.json \
+              feed.xml sitemap.xml news-sitemap.xml
+            if git diff --cached --quiet; then
+              echo "All approved paired editions and feeds are current."
+              exit 0
+            fi
+            git commit -m "Refresh approved paired news editions and feeds"
+            if git push origin HEAD:main; then
+              echo "Approved paired editions published."
+              exit 0
+            fi
+            echo "Push race on attempt $attempt; regenerating from latest main."
+            sleep "$attempt"
+          done
+          echo "Six safe retries exhausted. No force push attempted." >&2
+          exit 1
