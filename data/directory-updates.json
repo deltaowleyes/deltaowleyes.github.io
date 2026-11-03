@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-03T01:22:12Z",
+      "commit": "12e3f629a6cee77f49d580efb309fa58929a8149",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "nipissingfirstnationannualgeneralmeeting2026|20261121|gardenvillage|ontario",
+            "name": "Nipissing First Nation Annual General Meeting — 2026",
+            "place": "Garden Village, Ontario",
+            "category": "First Nation annual general meeting",
+            "date": "2026-11-21",
+            "source": "https://nfn.ca/event/annualgeneralmeeting/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-03T00:28:33Z",
       "commit": "0f1ca191d26624d3d4fbcca4793b5fad49c7f291",
       "mode": "data",
