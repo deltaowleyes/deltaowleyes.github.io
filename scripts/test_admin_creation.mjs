@@ -43,7 +43,7 @@ const original={
  churches:[{name:"Existing Church",reserve:"Test Nation",province:"Ontario",reserveLocated:null,indigenousLed:null,source:"https://example.org"}]
 };
 const simulated=copy(original),calls={puts:0,reads:0,fallback:0};
-let stagedBlobs=[];
+let stagedBlobs=[],treeChanges=[];
 const base="https://api.github.com/repos/deltaowleyes/deltaowleyes.github.io";
 const response=value=>({ok:true,json:async()=>copy(value)});
 async function fetchMock(url,options={}){
@@ -54,29 +54,31 @@ async function fetchMock(url,options={}){
  if(!url.startsWith(base))throw Error("Unexpected request "+url);
  if(url===base)return response({permissions:{push:true}});
  const method=options.method||"GET",isChurch=url.includes("churches"),source=isChurch?"churches":"businesses";
- if(method==="PUT"){
-  const payload=JSON.parse(options.body);
-  assert.equal(payload.sha,"sha-churches");
-  simulated.churches=JSON.parse(Buffer.from(payload.content,"base64").toString("utf8"));calls.puts++;
-  return response({commit:{sha:"synthetic-church",html_url:"https://example.test/mock-commit"}});
- }
  if(url.includes("/contents/")){
   calls.reads++;
+  if(url.includes("deletion-ledger.json"))return response({sha:"sha-ledger",encoding:"none",content:null});
   const noPhone=url.includes("businesses-without-phone");
   return response({sha:isChurch?"sha-churches":noPhone?"sha-without":"sha-with",encoding:"none",content:null});
  }
  if(method==="GET"&&url.includes("/git/blobs/")){
   calls.fallback++;
-  const data=isChurch?simulated.churches:url.includes("sha-without")?simulated.businesses.filter(b=>!b.phone):simulated.businesses.filter(b=>b.phone);
+  const data=url.includes("sha-ledger")?[]:isChurch?simulated.churches:url.includes("sha-without")?simulated.businesses.filter(b=>!b.phone):simulated.businesses.filter(b=>b.phone);
   return response({encoding:"base64",content:Buffer.from(JSON.stringify(data)).toString("base64")});
  }
  if(method==="GET"&&url.endsWith("/git/ref/heads/main"))return response({object:{sha:"synthetic-parent"}});
  if(method==="GET"&&url.endsWith("/git/commits/synthetic-parent"))return response({tree:{sha:"synthetic-tree"}});
  if(method==="POST"&&url.endsWith("/git/blobs")){const data=JSON.parse(options.body).content;stagedBlobs.push(JSON.parse(data));return response({sha:"synthetic-blob-"+stagedBlobs.length})}
- if(method==="POST"&&url.endsWith("/git/trees"))return response({sha:"synthetic-new-tree"});
+ if(method==="POST"&&url.endsWith("/git/trees")){treeChanges=JSON.parse(options.body).tree;return response({sha:"synthetic-new-tree"})}
  if(method==="POST"&&url.endsWith("/git/commits"))return response({sha:"synthetic-new-commit"});
  if(method==="PATCH"&&url.endsWith("/git/refs/heads/main")){
-  simulated.businesses=stagedBlobs.at(-2).concat(stagedBlobs.at(-1));calls.puts++;return response({object:{sha:"synthetic-new-commit"}});
+  for(const entry of treeChanges){
+   const index=Number(entry.sha.replace("synthetic-blob-",""))-1;
+   const data=stagedBlobs[index];
+   if(entry.path.endsWith("businesses-with-phone.json"))simulated.businesses=simulated.businesses.filter(b=>!b.phone).concat(data);
+   if(entry.path.endsWith("businesses-without-phone.json"))simulated.businesses=simulated.businesses.filter(b=>b.phone).concat(data);
+   if(entry.path.endsWith("churches.json"))simulated.churches=data;
+  }
+  calls.puts++;return response({object:{sha:"synthetic-new-commit"}});
  }
  throw Error("Unexpected API path "+method+" "+url);
 }
