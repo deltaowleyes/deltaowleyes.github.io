@@ -11,6 +11,12 @@ class PairedNewsTests(unittest.TestCase):
     def test_all_real_articles_have_both_versions_and_switch(self):
         self.assertGreaterEqual(validate_repository(require_pages=True),14)
 
+
+    def test_recording_queue_keeps_privacy_consent(self):
+        queue=(pathlib.Path(__file__).resolve().parents[1]/"news/scripts/index.html").read_text(encoding="utf-8")
+        self.assertIn("privacy-consent.css",queue)
+        self.assertIn("privacy-consent.js",queue)
+
     def test_missing_version_fails(self):
         page='<article><p class="meta">2026-11-03</p><h2>Example published news headline</h2><p><a href="https://example.org">Source</a></p></article>'
         errors=validate(page,{"version":"9.0","articles":{}},set())

@@ -58,6 +58,20 @@ def main():
     else:
         print("Preserved existing curated news/index.html; did not overwrite public stories")
     queue_page=page.replace("<title>News Updates | Delta Owl Eyes</title>","<title>Recording Scripts | Delta Owl Eyes</title>").replace("<h1>Verified News Updates</h1>","<h1>Recording Scripts</h1>").replace("<p>New developments are published as separate, dated stories. Previously recorded reports remain part of the historical record.</p>","<p>Scripts awaiting recording. Once a video is published, its script leaves this queue; the published report remains in the news archive.</p>").replace(content,queue_content)
+    # Rebuild the script queue without ever dropping the site's consent-gated
+    # analytics. This generated HTML page is otherwise rebuilt on every run.
+    import hashlib
+    consent_tags = []
+    for filename, tag in (("privacy-consent.css", "link"), ("privacy-consent.js", "script")):
+        path = ROOT / "assets" / filename
+        if not path.is_file():
+            raise ValueError("Missing required privacy consent asset: " + filename)
+        version = hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+        if tag == "link":
+            consent_tags.append('<link rel="stylesheet" href="/assets/' + filename + '?v=' + version + '">')
+        else:
+            consent_tags.append('<script defer src="/assets/' + filename + '?v=' + version + '"></script>')
+    queue_page = queue_page.replace("<head>", "<head>" + "".join(consent_tags), 1)
     QUEUE.parent.mkdir(parents=True,exist_ok=True)
     QUEUE.write_text(queue_page,encoding="utf-8")
     print(f"Built {len(items)} verified update(s) and {len(queue_cards)} recording script(s)")
