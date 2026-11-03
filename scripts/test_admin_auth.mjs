@@ -45,6 +45,7 @@ assert.ok(html.includes('Content-Security-Policy'));
 assert.ok(!html.includes("privacy-consent.js"),"Credentialed admin must not include analytics scripts.");
 assert.ok(admin.includes('await window.DOEAuthVault.open(record,passphrase)'));
 assert.ok(admin.includes('await publishChanges([active])'),"Direct Update & publish must remain.");
-assert.ok(admin.includes('method:"PUT"'),"GitHub writes must remain.");
+assert.ok(admin.includes('method:"POST"')&&admin.includes('/git/trees')&&admin.includes('/git/refs/heads/main'),"Atomic GitHub writes must remain.");
+assert.ok(admin.includes('DELETION_LEDGER')&&admin.includes('isSuppressed('),"Deletion suppression must protect publishing.");
 new vm.Script(admin,{filename:"admin.js"});
 console.log("PASS encrypted credential vault: encrypt, save, unlock, wrong passphrase, tampering, forget, admin integration.");
