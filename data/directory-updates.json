@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-03T20:50:29Z",
+      "commit": "97028de74e31e854b68fbf75594854ad589f111b",
+      "mode": "import",
+      "additions": {
+        "businesses": [
+          {
+            "key": "id:doeonb8020261103001",
+            "name": "Island Trends",
+            "place": "Walpole Island First Nation (Bkejwanong), Walpole Island, Ontario",
+            "category": "Clothing and accessories retail",
+            "date": "",
+            "source": "https://www.allbiz.ca/island-trends-519-627-6730",
+            "status": "Unverified"
+          },
+          {
+            "key": "id:doeonb8020261103002",
+            "name": "Daawegamgoons",
+            "place": "Walpole Island First Nation (Bkejwanong), Walpole Island, Ontario",
+            "category": "Food and grocery retail",
+            "date": "",
+            "source": "https://findyourcanada.com/ontario/wallaceburg/food-grocery",
+            "status": "Unverified"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-03T20:26:08Z",
       "commit": "99baa21a321362a87f8a1a245c35a367f1ec99ca",
       "mode": "data",
