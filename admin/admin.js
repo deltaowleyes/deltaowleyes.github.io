@@ -563,14 +563,14 @@ async function publishChanges(onlySources=null){
     if(checks.some((p,i)=>p.sha!==remote.parts[i].sha))throw Error("Business data changed during editing. Reload.");
     const byPhone=merged.records.filter(b=>String(b.phone??"").trim());
     const withoutPhone=merged.records.filter(b=>!String(b.phone??"").trim());
-    entries.push({path:remote.parts[0].path.slice(1),content:JSON.stringify(byPhone)+"\\n"});
-    entries.push({path:remote.parts[1].path.slice(1),content:JSON.stringify(withoutPhone)+"\\n"});
+    entries.push({path:remote.parts[0].path.slice(1),content:JSON.stringify(byPhone)+"\n"});
+    entries.push({path:remote.parts[1].path.slice(1),content:JSON.stringify(withoutPhone)+"\n"});
    }else{
     const check=await githubRequest("/contents"+SOURCES[source].path+"?ref=main");
     if(check.sha!==remote.sha)throw Error("Directory changed during editing. Reload.");
     entries.push({path:SOURCES[source].path.slice(1),content:serialized});
    }
-   if(merged.deleted.length)entries.push({path:DELETION_LEDGER.slice(1),content:JSON.stringify(ledger.records,null,2)+"\\n"});
+   if(merged.deleted.length)entries.push({path:DELETION_LEDGER.slice(1),content:JSON.stringify(ledger.records,null,2)+"\n"});
    const baseCommit=await githubRequest("/git/commits/"+parent);
    const blobs=await Promise.all(entries.map(e=>githubRequest("/git/blobs",{method:"POST",body:JSON.stringify({content:e.content,encoding:"utf-8"})})));
    const updatedTree=await githubRequest("/git/trees",{method:"POST",body:JSON.stringify({
@@ -582,7 +582,7 @@ async function publishChanges(onlySources=null){
    })});
    await githubRequest("/git/refs/heads/main",{method:"PATCH",body:JSON.stringify({sha:commit.sha,force:false})});
    const result={commit:{sha:commit.sha,html_url:"https://github.com/deltaowleyes/deltaowleyes.github.io/commit/"+commit.sha}};
-   if(!result.commit?.sha)throw Error("GitHub did not confirm a commit for "+path);
+   if(!result.commit?.sha)throw Error("GitHub did not confirm an atomic commit for "+source);
    for(const [entryKey] of merged.updates){staged.delete(entryKey);newKeys.delete(entryKey)}
    loaded.set(source,merged.records);
    if(hasDeletions&&source===active){current=-1;$("edit").hidden=true;$("pickHint").textContent="Published changes. Choose a record to continue."}
