@@ -17,7 +17,7 @@ if not batch_path.is_relative_to(ROOT / "indigenous-businesses/imports"):
 with_phone = json.loads(PHONE.read_text(encoding="utf-8"))
 without_phone = json.loads(NO_PHONE.read_text(encoding="utf-8"))
 old = with_phone + without_phone
-ledger_path = ROOT / "data/deletion-ledger.json"
+ledger_path = ROOT / ".github/deletion-ledger.json"
 if not ledger_path.exists():
     sys.exit("Deletion suppression ledger missing; import blocked")
 ledger = json.loads(ledger_path.read_text(encoding="utf-8"))

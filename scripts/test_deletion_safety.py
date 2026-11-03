@@ -23,7 +23,7 @@ def record(name, source_id, city="Walpole Island"):
 
 with tempfile.TemporaryDirectory() as tmp:
     project = Path(tmp)
-    for folder in ("scripts", "indigenous-businesses/imports", "data"):
+    for folder in ("scripts", "indigenous-businesses/imports", ".github"):
         (project / folder).mkdir(parents=True, exist_ok=True)
     (project / "scripts/import_directory_batch.py").write_text(script, encoding="utf-8")
     phone = project / "indigenous-businesses/businesses-with-phone.json"
@@ -36,7 +36,7 @@ with tempfile.TemporaryDirectory() as tmp:
         record("Deleted Example", "new-id"),
         record("Allowed Example", "allowed-id", "Chatham"),
     ]), encoding="utf-8")
-    ledger = project / "data/deletion-ledger.json"
+    ledger = project / ".github/deletion-ledger.json"
     path = "indigenous-businesses/imports/test.json"
     def run():
         return subprocess.run([sys.executable, str(project / "scripts/import_directory_batch.py"), path],

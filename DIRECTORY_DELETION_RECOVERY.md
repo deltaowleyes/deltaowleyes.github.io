@@ -1,6 +1,6 @@
 # Directory deletion safety (businesses, churches and events)
 
-The authoritative suppression and recovery file is `data/deletion-ledger.json`.
+The authoritative suppression and recovery file is `.github/deletion-ledger.json`.
 A deletion publishes an atomic Git commit removing the public JSON row and
 appending a ledger entry containing the source category, source ID (where any),
 normalized key, UTC deletion time and complete former public record snapshot.

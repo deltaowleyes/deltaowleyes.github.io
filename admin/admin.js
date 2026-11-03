@@ -459,7 +459,7 @@ async function readLatest(source){
 }
 /* Deletion ledger is authoritative. Deletions remove a public row but retain its
    recoverable snapshot and normalized identity in the same Git commit. */
-const DELETION_LEDGER="/data/deletion-ledger.json";
+const DELETION_LEDGER="/.github/deletion-ledger.json";
 function deletionKey(source,b){
  const norm=v=>String(v??"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]/g,"");
  if(source==="events")return [norm(b.title),String(b.start_date||""),norm(b.city),norm(b.province)].join("|");

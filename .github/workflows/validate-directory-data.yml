@@ -11,7 +11,7 @@ on:
       - 'scripts/import_directory_batch.py'
       - 'scripts/test_admin_creation.mjs'
       - 'scripts/test_deletion_safety.py'
-      - 'data/deletion-ledger.json'
+      - '.github/deletion-ledger.json'
       - '.github/workflows/validate-directory-data.yml'
   pull_request:
   workflow_dispatch:
