@@ -12,13 +12,15 @@ app = module_from_spec(spec)
 spec.loader.exec_module(app)
 with TemporaryDirectory() as tmp:
     root = Path(tmp)
-    for relative in app.FILES.values():
-        (root/relative).parent.mkdir(parents=True,exist_ok=True)
+    for paths in app.FILES.values():
+        for relative in (paths if isinstance(paths,tuple) else (paths,)):
+            (root/relative).parent.mkdir(parents=True,exist_ok=True)
     (root/"data").mkdir(exist_ok=True)
-    (root/"indigenous-businesses/businesses.json").write_text(json.dumps([{
+    (root/"indigenous-businesses/businesses-with-phone.json").write_text(json.dumps([{
         "name":"Example Shop","source_id":"TEST-1","city":"Example","province":"Ontario",
         "community":"Example First Nation","source_url":"https://example.org/shop"
     }]),encoding="utf8")
+    (root/"indigenous-businesses/businesses-without-phone.json").write_text("[]",encoding="utf8")
     (root/"indigenous-churches/churches.json").write_text(json.dumps([{
         "name":"Example Church","province":"Ontario","reserve":"Example First Nation",
         "source":"https://example.org/church"
