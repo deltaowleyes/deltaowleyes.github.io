@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-03T02:24:56Z",
+      "commit": "c829eb3b476d6a33bf2d0a206dc2d737b9bf3ddb",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "nipissingfirstnationzhimaagnishiigiizhgakremembranceday2026|20261111|gardenvillage|ontario",
+            "name": "Nipissing First Nation Zhimaagnishii Giizhgak Remembrance Day — 2026",
+            "place": "Garden Village, Ontario",
+            "category": "Indigenous Veterans remembrance ceremony",
+            "date": "2026-11-11",
+            "source": "https://nfn.ca/event/zhimaagnishii-giizhgak-remembrance-day-2/?instance_id=1219",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-03T01:22:12Z",
       "commit": "12e3f629a6cee77f49d580efb309fa58929a8149",
       "mode": "data",
