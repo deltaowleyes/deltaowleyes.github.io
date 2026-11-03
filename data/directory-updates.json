@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-03T00:28:33Z",
+      "commit": "0f1ca191d26624d3d4fbcca4793b5fad49c7f291",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "nipissingfirstnationchiefcouncilmeetingnovember2026|20261103|gardenvillage|ontario",
+            "name": "Nipissing First Nation Chief & Council Meeting — November 2026",
+            "place": "Garden Village, Ontario",
+            "category": "First Nation governance and community meeting",
+            "date": "2026-11-03",
+            "source": "https://nfn.ca/event/e-giigdowaad-chief-council-meeting-6/",
+            "status": "Verified event"
+          },
+          {
+            "key": "nipissingfirstnationvillagemarketplacecraftshow2026|20261107|gardenvillage|ontario",
+            "name": "Nipissing First Nation Village Marketplace Craft Show — 2026",
+            "place": "Garden Village, Ontario",
+            "category": "Indigenous community arts and crafts marketplace",
+            "date": "2026-11-07",
+            "source": "https://nfn.ca/village-marketplace-craft-show-seeking-vendors/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-02T23:23:33Z",
       "commit": "96655b477d633cef415ad4b74c0ee8cb5eec51ed",
       "mode": "data",
