@@ -2,6 +2,33 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-03T20:26:08Z",
+      "commit": "99baa21a321362a87f8a1a245c35a367f1ec99ca",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "womenshanddrumworkshopwiikwemkoong|20261107|wiikwemkoong|ontario",
+            "name": "Women's Hand Drum Workshop — Wiikwemkoong",
+            "place": "Wiikwemkoong, Ontario",
+            "category": "Cultural workshop",
+            "date": "2026-11-07",
+            "source": "https://www.wiikwemkoong.ca/event/womens-hand-drum-workshop/",
+            "status": "Verified event"
+          },
+          {
+            "key": "youtharcherywiikwemkoong|20261107|wiikwemkoong|ontario",
+            "name": "Youth Archery — Wiikwemkoong",
+            "place": "Wiikwemkoong, Ontario",
+            "category": "Youth cultural programming",
+            "date": "2026-11-07",
+            "source": "https://www.wiikwemkoong.ca/event/youth-archery/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-03T08:24:04Z",
       "commit": "5b867e2fd2a358da88cb8454d2d283353ca550e0",
       "mode": "data",
