@@ -108,8 +108,8 @@ try {
  ];
  const syntheticChurch=[{name:"Synthetic Existing Church",reserve:"Test Nation",province:"Ontario",
   representative_confirmed:false,reserveLocated:null,indigenousLed:null,source:"https://example.org"}];
- const remote={businesses:structuredClone(syntheticBusiness),churches:structuredClone(syntheticChurch)};
- const writes=[];let pendingBlobs=[];
+ const remote={businesses:structuredClone(syntheticBusiness),churches:structuredClone(syntheticChurch),ledger:[]};
+ const writes=[];let pendingBlobs=[],pendingTree=[];
  activePage=await browser.newPage({viewport:{width:1024,height:900}});
  await activePage.route("**/indigenous-businesses/businesses-with-phone.json",route=>route.fulfill({status:200,contentType:"application/json",body:JSON.stringify(syntheticBusiness.filter(b=>b.phone))}));
  await activePage.route("**/indigenous-businesses/businesses-without-phone.json",route=>route.fulfill({status:200,contentType:"application/json",body:JSON.stringify(syntheticBusiness.filter(b=>!b.phone))}));
@@ -128,9 +128,21 @@ try {
   if(method==="GET"&&url.endsWith("/git/ref/heads/main"))return ok({object:{sha:"synthetic-parent"}});
   if(method==="GET"&&url.endsWith("/git/commits/synthetic-parent"))return ok({tree:{sha:"synthetic-base-tree"}});
   if(method==="POST"&&url.endsWith("/git/blobs")){pendingBlobs.push(JSON.parse(JSON.parse(request.postData()).content));return ok({sha:"synthetic-blob-"+pendingBlobs.length})}
-  if(method==="POST"&&url.endsWith("/git/trees"))return ok({sha:"synthetic-tree"});
+  if(method==="POST"&&url.endsWith("/git/trees")){pendingTree=JSON.parse(request.postData()).tree;return ok({sha:"synthetic-tree"})}
   if(method==="POST"&&url.endsWith("/git/commits"))return ok({sha:"synthetic-commit"});
-  if(method==="PATCH"&&url.endsWith("/git/refs/heads/main")){remote.businesses=pendingBlobs.at(-2).concat(pendingBlobs.at(-1));writes.push({kind:"businesses",records:remote.businesses});return ok({object:{sha:"synthetic-commit"}})}
+  if(method==="PATCH"&&url.endsWith("/git/refs/heads/main")){
+   let kind="";
+   for(const entry of pendingTree){
+    const index=Number(entry.sha.replace("synthetic-blob-",""))-1;
+    const records=pendingBlobs[index];
+    if(entry.path.endsWith("businesses-with-phone.json")){remote.businesses=remote.businesses.filter(b=>!b.phone).concat(records);kind="businesses"}
+    if(entry.path.endsWith("businesses-without-phone.json")){remote.businesses=remote.businesses.filter(b=>b.phone).concat(records);kind="businesses"}
+    if(entry.path.endsWith("churches.json")){remote.churches=records;kind="churches"}
+    if(entry.path.endsWith(".github/deletion-ledger.json"))remote.ledger=records;
+   }
+   writes.push({kind,records:structuredClone(remote[kind])});
+   return ok({object:{sha:"synthetic-commit"}});
+  }
   if(method==="PUT"&&url.includes("/contents/")){
    const payload=JSON.parse(request.postData()||"{}");assert.equal(payload.sha,"synthetic-churches");
    const records=JSON.parse(Buffer.from(payload.content,"base64").toString("utf8"));
