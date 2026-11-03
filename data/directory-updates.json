@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-03T08:24:04Z",
+      "commit": "5b867e2fd2a358da88cb8454d2d283353ca550e0",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "chiefsofontariofederalfoodsecuritystrategyvirtualinformationsession|20261106|onlinemicrosoftteams|ontario",
+            "name": "Chiefs of Ontario Federal Food Security Strategy — Virtual Information Session",
+            "place": "Online (Microsoft Teams), Ontario",
+            "category": "First Nations governance and food security",
+            "date": "2026-11-06",
+            "source": "https://www.chiefsmeeting.com/food-security-session",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-03T02:24:56Z",
       "commit": "c829eb3b476d6a33bf2d0a206dc2d737b9bf3ddb",
       "mode": "data",
