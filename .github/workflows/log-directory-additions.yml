@@ -3,7 +3,8 @@ on:
   push:
     branches: [main]
     paths:
-      - 'indigenous-businesses/businesses.json'
+      - 'indigenous-businesses/businesses-with-phone.json'
+      - 'indigenous-businesses/businesses-without-phone.json'
       - 'indigenous-churches/churches.json'
       - 'data/community-events.json'
 permissions:

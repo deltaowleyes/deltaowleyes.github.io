@@ -8,7 +8,7 @@ import {chromium} from "playwright";
 // All write-path tests intercept the GitHub API and use synthetic records.
 const LOCAL="http://127.0.0.1:8765";
 const LIVE="https://deltaowleyes.ca";
-const BUSINESS_COUNT=JSON.parse(readFileSync("indigenous-businesses/businesses.json","utf8")).length;
+const BUSINESS_COUNT=JSON.parse(readFileSync("indigenous-businesses/businesses-with-phone.json","utf8")).length+JSON.parse(readFileSync("indigenous-businesses/businesses-without-phone.json","utf8")).length;
 assert.ok(BUSINESS_COUNT>=4475,"The consolidated directory has lost its migration baseline");
 const DISPLAY_COUNT=BUSINESS_COUNT.toLocaleString("en-US");
 const CHURCH_COUNT=JSON.parse(readFileSync("indigenous-churches/churches.json","utf8")).length;
@@ -56,8 +56,7 @@ try {
   await waitFor(activePage,"#count","1 matching");
   assert.match(await activePage.locator("#cards").innerText(),/Ellipsis Energy Inc/);
   const loaded=await activePage.evaluate(async()=>{
-   const response=await fetch("/indigenous-businesses/businesses.json");
-   return {status:response.status,count:(await response.json()).length};
+   const paths=["/indigenous-businesses/businesses-with-phone.json","/indigenous-businesses/businesses-without-phone.json"];const r=await Promise.all(paths.map(p=>fetch(p)));return {status:r.every(x=>x.ok)?200:500,count:(await Promise.all(r.map(x=>x.json()))).flat().length};
   });
   assert.deepEqual(loaded,{status:200,count:BUSINESS_COUNT});
  });
@@ -71,9 +70,7 @@ try {
  await report("Published business directory renders current records in real Chromium",async()=>{
   await go(activePage,"/indigenous-businesses/",LIVE);
   liveCounts.businesses=await activePage.evaluate(async()=>{
-   const response=await fetch("/indigenous-businesses/businesses.json",{cache:"no-store"});
-   if(!response.ok)throw Error("Live business JSON HTTP "+response.status);
-   return (await response.json()).length;
+   const paths=["/indigenous-businesses/businesses-with-phone.json","/indigenous-businesses/businesses-without-phone.json"];const r=await Promise.all(paths.map(p=>fetch(p,{cache:"no-store"})));if(r.some(x=>!x.ok))throw Error("Live business datasets not ready");return (await Promise.all(r.map(x=>x.json()))).flat().length;
   });
   assert.ok(liveCounts.businesses>=4475,"Published business directory must retain its baseline");
   await waitFor(activePage,"#count",liveCounts.businesses.toLocaleString("en-US")+" published records");
@@ -106,38 +103,35 @@ try {
  const syntheticChurch=[{name:"Synthetic Existing Church",reserve:"Test Nation",province:"Ontario",
   representative_confirmed:false,reserveLocated:null,indigenousLed:null,source:"https://example.org"}];
  const remote={businesses:structuredClone(syntheticBusiness),churches:structuredClone(syntheticChurch)};
- const writes=[];
+ const writes=[];let pendingBlobs=[];
  activePage=await browser.newPage({viewport:{width:1024,height:900}});
- await activePage.route("**/indigenous-businesses/businesses.json",route=>route.fulfill({
-  status:200,contentType:"application/json",body:JSON.stringify(syntheticBusiness)}));
+ await activePage.route("**/indigenous-businesses/businesses-with-phone.json",route=>route.fulfill({status:200,contentType:"application/json",body:JSON.stringify(syntheticBusiness.filter(b=>b.phone))}));
+ await activePage.route("**/indigenous-businesses/businesses-without-phone.json",route=>route.fulfill({status:200,contentType:"application/json",body:JSON.stringify(syntheticBusiness.filter(b=>!b.phone))}));
  await activePage.route("**/indigenous-churches/churches.json",route=>route.fulfill({
   status:200,contentType:"application/json",body:JSON.stringify(syntheticChurch)}));
  await activePage.route("https://api.github.com/**",async route=>{
-  const request=route.request(),url=request.url();
-  if(!url.startsWith(API)){
-   return route.fulfill({status:403,contentType:"application/json",body:'{"message":"Synthetic API only"}'});
+  const request=route.request(),url=request.url(),method=request.method();
+  const ok=x=>route.fulfill({status:200,contentType:"application/json",body:JSON.stringify(x)});
+  if(!url.startsWith(API))return route.fulfill({status:403,body:"{}"});
+  if(method==="GET"&&url===API)return ok({permissions:{push:true}});
+  if(method==="GET"&&url.includes("/contents/")){
+   const church=url.includes("churches"),without=url.includes("businesses-without-phone");
+   const records=church?remote.churches:remote.businesses.filter(b=>without?!b.phone:!!b.phone);
+   return ok({sha:church?"synthetic-churches":without?"synthetic-without":"synthetic-with",encoding:"base64",content:Buffer.from(JSON.stringify(records),"utf8").toString("base64")});
   }
-  if(request.method()==="GET"&&url===API){
-   return route.fulfill({status:200,contentType:"application/json",body:JSON.stringify({permissions:{push:true}})});
-  }
-  const kind=url.includes("indigenous-churches")?"churches":"businesses";
-  if(request.method()==="GET"&&url.includes("/contents/")){
-   return route.fulfill({status:200,contentType:"application/json",body:JSON.stringify({
-    sha:"synthetic-"+kind,encoding:"base64",content:Buffer.from(JSON.stringify(remote[kind]),"utf8").toString("base64")
-   })});
-  }
-  if(request.method()==="PUT"&&url.includes("/contents/")){
-   const payload=JSON.parse(request.postData()||"{}");
-   assert.equal(payload.sha,"synthetic-"+kind);
-   assert.equal(request.headers().authorization,"Bearer SYNTHETIC_DOES_NOT_AUTHENTICATE");
+  if(method==="GET"&&url.endsWith("/git/ref/heads/main"))return ok({object:{sha:"synthetic-parent"}});
+  if(method==="GET"&&url.endsWith("/git/commits/synthetic-parent"))return ok({tree:{sha:"synthetic-base-tree"}});
+  if(method==="POST"&&url.endsWith("/git/blobs")){pendingBlobs.push(JSON.parse(JSON.parse(request.postData()).content));return ok({sha:"synthetic-blob-"+pendingBlobs.length})}
+  if(method==="POST"&&url.endsWith("/git/trees"))return ok({sha:"synthetic-tree"});
+  if(method==="POST"&&url.endsWith("/git/commits"))return ok({sha:"synthetic-commit"});
+  if(method==="PATCH"&&url.endsWith("/git/refs/heads/main")){remote.businesses=pendingBlobs.at(-2).concat(pendingBlobs.at(-1));writes.push({kind:"businesses",records:remote.businesses});return ok({object:{sha:"synthetic-commit"}})}
+  if(method==="PUT"&&url.includes("/contents/")){
+   const payload=JSON.parse(request.postData()||"{}");assert.equal(payload.sha,"synthetic-churches");
    const records=JSON.parse(Buffer.from(payload.content,"base64").toString("utf8"));
-   writes.push({kind,records});
-   remote[kind]=records;
-   return route.fulfill({status:200,contentType:"application/json",body:JSON.stringify({
-    commit:{sha:"synthetic-test-commit",html_url:"https://example.org/synthetic-commit"}
-   })});
+   writes.push({kind:"churches",records});remote.churches=records;
+   return ok({commit:{sha:"synthetic-test-commit",html_url:"https://example.org/synthetic-commit"}});
   }
-  return route.fulfill({status:403,contentType:"application/json",body:'{"message":"Unexpected synthetic request"}'});
+  return route.fulfill({status:403,body:'{"message":"Unexpected synthetic request"}'});
  });
  await report("Business phone/no-website filter excludes other leads and phone field is last",async()=>{
   await go(activePage,"/admin/");

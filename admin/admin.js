@@ -1,7 +1,7 @@
 "use strict";
 /* Browser-only worksheet. GitHub authentication is required separately for publishing. */
 const SOURCES={
- businesses:{path:"/indigenous-businesses/businesses.json",name:"All business listings",dir:"indigenous-businesses",kind:"business"},
+ businesses:{path:"/indigenous-businesses/businesses-with-phone.json",secondaryPath:"/indigenous-businesses/businesses-without-phone.json",name:"All business listings",dir:"indigenous-businesses",kind:"business"},
  churches:{path:"/indigenous-churches/churches.json",name:"Church listings",dir:"indigenous-churches",kind:"church"},
  events:{path:"/data/community-events.json",name:"Community events",dir:"events",kind:"event"}
 };
@@ -197,6 +197,7 @@ $("createNew").addEventListener("click",()=>{
 });
 for(const id of ["search","filter","contactFilter","interestFilter","businessPhoneWebsiteFilter","sort"])
  $(id)?.addEventListener(id==="search"?"input":"change",renderList);
+$("businessPhoneWebsiteFilter").addEventListener("change",()=>{if(active==="businesses"&&$("businessPhoneWebsiteFilter").value==="phone_no_website"){$("sort").value="near_newest";renderList();}});
 $("checkAll").addEventListener("click",()=>{shown.forEach(i=>checked.add(key(i)));renderList()});
 $("uncheckAll").addEventListener("click",()=>{for(const id of [...checked])if(id.startsWith(active+":"))checked.delete(id);renderList()});
 function bulk(contactStatus){
@@ -249,7 +250,7 @@ $("download").addEventListener("click",()=>{
  const changes=[...staged.entries()].filter(([id])=>id.startsWith(active+":"));
  if(!changes.length){notify("No changes to download from this source.",true);return}
  const output=original.map((r,i)=>staged.has(active+":"+i)?staged.get(active+":"+i):r).filter(Boolean);
- const filename=SOURCES[active].path.split("/").pop();
+ const filename=active==="businesses"?"businesses-combined-export.json":SOURCES[active].path.split("/").pop();
  download(filename,JSON.stringify(output,null,2)+"\n");
  notify("Downloaded "+filename+" with "+changes.length+" staged records. An authorized GitHub commit is still required.");
 });
@@ -280,8 +281,9 @@ async function loadSource(source){
  if(!loaded.has(source)){
   $("load").textContent="Loading "+info.name+"…";$("entries").replaceChildren();$("count").textContent="";
   try{
-   const response=await fetch(info.path,{cache:"no-store"});if(!response.ok)throw Error("HTTP "+response.status);
-   const data=await response.json();
+   const paths=info.secondaryPath?[info.path,info.secondaryPath]:[info.path];
+    const parts=await Promise.all(paths.map(async path=>{const response=await fetch(path,{cache:"no-store"});if(!response.ok)throw Error("HTTP "+response.status+" "+path);return response.json()}));
+    const data=parts.flat();
    if(!Array.isArray(data)||data.some(r=>!r||typeof r!=="object"||!(source==="events"?r.title:r.name)))throw Error("Unexpected records format");
    loaded.set(source,data);
   }catch(err){
@@ -426,6 +428,22 @@ function base64Encode(text){
  return btoa(raw);
 }
 async function readLatest(source){
+ if(source==="businesses"){
+  const paths=[SOURCES[source].path,SOURCES[source].secondaryPath];
+  const parts=await Promise.all(paths.map(async path=>{
+   const info=await githubRequest("/contents"+path+"?ref=main",{headers:{"Accept":"application/vnd.github.object+json"}});
+   let encoded=info.content;
+   if(info.encoding!=="base64"||!encoded){
+    const blob=await githubRequest("/git/blobs/"+encodeURIComponent(info.sha));
+    encoded=blob.content;
+    if(blob.encoding!=="base64"||!encoded)throw Error("Could not read "+path);
+   }
+   const text=base64Decode(encoded),records=JSON.parse(text);
+   if(!Array.isArray(records))throw Error("Invalid business partition "+path);
+   return {path,sha:info.sha,text,records};
+  }));
+  return {records:parts.flatMap(p=>p.records),parts,text:""};
+ }
  const path=SOURCES[source].path;
  const info=await githubRequest("/contents"+path+"?ref=main",{headers:{"Accept":"application/vnd.github.object+json"}});
  let encoded=info.content;
@@ -508,10 +526,34 @@ async function publishChanges(onlySources=null){
     loaded.set(source,merged.records);continue;
    }
    const path=SOURCES[source].path;
-   const result=await githubRequest("/contents"+path,{method:"PUT",body:JSON.stringify({
-    message:"Admin: publish "+merged.updates.length+" change(s) in "+SOURCES[source].name,
-    content:base64Encode(serialized),sha:remote.sha,branch:"main"
-   })});
+   let result;
+   if(source==="businesses"){
+    // One atomic Git commit for both partitions; phone edits can move records between files.
+    const byPhone=merged.records.filter(b=>String(b.phone??"").trim());
+    const withoutPhone=merged.records.filter(b=>!String(b.phone??"").trim());
+    const contents=[JSON.stringify(byPhone)+"\n",JSON.stringify(withoutPhone)+"\n"];
+    const ref=await githubRequest("/git/ref/heads/main");
+    const parent=ref.object.sha;
+    const remoteCheck=await Promise.all(remote.parts.map(p=>githubRequest("/contents"+p.path+"?ref=main")));
+    if(remoteCheck.some((p,i)=>p.sha!==remote.parts[i].sha))throw Error("Business data changed during editing. Reload before publishing.");
+    const baseCommit=await githubRequest("/git/commits/"+parent);
+    const blobs=await Promise.all(contents.map(content=>githubRequest("/git/blobs",{method:"POST",body:JSON.stringify({content,encoding:"utf-8"})})));
+    const updatedTree=await githubRequest("/git/trees",{method:"POST",body:JSON.stringify({
+     base_tree:baseCommit.tree.sha,
+     tree:remote.parts.map((p,i)=>({path:p.path.slice(1),mode:"100644",type:"blob",sha:blobs[i].sha}))
+    })});
+    const commit=await githubRequest("/git/commits",{method:"POST",body:JSON.stringify({
+     message:"Admin: publish "+merged.updates.length+" business changes across phone partitions",
+     tree:updatedTree.sha,parents:[parent]
+    })});
+    await githubRequest("/git/refs/heads/main",{method:"PATCH",body:JSON.stringify({sha:commit.sha,force:false})});
+    result={commit:{sha:commit.sha,html_url:"https://github.com/deltaowleyes/deltaowleyes.github.io/commit/"+commit.sha}};
+   }else{
+    result=await githubRequest("/contents"+path,{method:"PUT",body:JSON.stringify({
+     message:"Admin: publish "+merged.updates.length+" change(s) in "+SOURCES[source].name,
+     content:base64Encode(serialized),sha:remote.sha,branch:"main"
+    })});
+   }
    if(!result.commit?.sha)throw Error("GitHub did not confirm a commit for "+path);
    for(const [entryKey] of merged.updates){staged.delete(entryKey);newKeys.delete(entryKey)}
    loaded.set(source,merged.records);

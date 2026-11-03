@@ -7,7 +7,7 @@ const listSort=readFileSync("admin/list-sort.js","utf8");
 const html=readFileSync("admin/index.html","utf8");
 const publicList=readFileSync("indigenous-businesses/index.html","utf8");
 const publicProfile=readFileSync("indigenous-businesses/profile.html","utf8");
-const businesses=JSON.parse(readFileSync("indigenous-businesses/businesses.json","utf8"));
+const businesses=[...JSON.parse(readFileSync("indigenous-businesses/businesses-with-phone.json","utf8")),...JSON.parse(readFileSync("indigenous-businesses/businesses-without-phone.json","utf8"))];
 assert.ok(businesses.length>=4475,"Unified directory must retain the migration baseline");
 assert.ok(!existsSync("indigenous-businesses/ontario-businesses.json"));
 assert.ok(!existsSync("indigenous-businesses/federal-businesses.json"));
@@ -43,24 +43,42 @@ const original={
  churches:[{name:"Existing Church",reserve:"Test Nation",province:"Ontario",reserveLocated:null,indigenousLed:null,source:"https://example.org"}]
 };
 const simulated=copy(original),calls={puts:0,reads:0,fallback:0};
+let stagedBlobs=[];
 const base="https://api.github.com/repos/deltaowleyes/deltaowleyes.github.io";
 const response=value=>({ok:true,json:async()=>copy(value)});
 async function fetchMock(url,options={}){
- if(url==="/indigenous-businesses/businesses.json")return response(original.businesses);
+ if(url==="/indigenous-businesses/businesses-with-phone.json")return response(original.businesses.filter(b=>b.phone));
+ if(url==="/indigenous-businesses/businesses-without-phone.json")return response(original.businesses.filter(b=>!b.phone));
  if(url==="/indigenous-churches/churches.json")return response(original.churches);
-  if(url==="/data/directory-updates.json")return response({version:1,runs:[{at:"2026-10-31T14:00:00Z",additions:{businesses:[{key:"existingbusiness|testcity|ontario"}],churches:[{key:"existingchurch|ontario|testnation"}]}}]});
+ if(url==="/data/directory-updates.json")return response({version:1,runs:[{at:"2026-10-31T14:00:00Z",additions:{businesses:[{key:"existingbusiness|testcity|ontario"}],churches:[{key:"existingchurch|ontario|testnation"}]}}]});
  if(!url.startsWith(base))throw Error("Unexpected request "+url);
  if(url===base)return response({permissions:{push:true}});
- const source=url.includes("churches")?"churches":"businesses";
- if(options.method==="PUT"){
-  assert.equal(JSON.parse(options.body).sha,"sha-"+source);
-  const incoming=JSON.parse(Buffer.from(JSON.parse(options.body).content,"base64").toString("utf8"));
-  simulated[source]=incoming;calls.puts++;
-  return response({commit:{sha:"synthetic-commit",html_url:"https://example.test/mock-commit"}});
+ const method=options.method||"GET",isChurch=url.includes("churches"),source=isChurch?"churches":"businesses";
+ if(method==="PUT"){
+  const payload=JSON.parse(options.body);
+  assert.equal(payload.sha,"sha-churches");
+  simulated.churches=JSON.parse(Buffer.from(payload.content,"base64").toString("utf8"));calls.puts++;
+  return response({commit:{sha:"synthetic-church",html_url:"https://example.test/mock-commit"}});
  }
- if(url.includes("/git/blobs/")){calls.fallback++;return response({encoding:"base64",content:Buffer.from(JSON.stringify(simulated[source])).toString("base64")})}
- if(url.includes("/contents/")){calls.reads++;return response({sha:"sha-"+source,encoding:"none",content:null})}
- throw Error("Unexpected API path");
+ if(url.includes("/contents/")){
+  calls.reads++;
+  const noPhone=url.includes("businesses-without-phone");
+  return response({sha:isChurch?"sha-churches":noPhone?"sha-without":"sha-with",encoding:"none",content:null});
+ }
+ if(method==="GET"&&url.includes("/git/blobs/")){
+  calls.fallback++;
+  const data=isChurch?simulated.churches:url.includes("sha-without")?simulated.businesses.filter(b=>!b.phone):simulated.businesses.filter(b=>b.phone);
+  return response({encoding:"base64",content:Buffer.from(JSON.stringify(data)).toString("base64")});
+ }
+ if(method==="GET"&&url.endsWith("/git/ref/heads/main"))return response({object:{sha:"synthetic-parent"}});
+ if(method==="GET"&&url.endsWith("/git/commits/synthetic-parent"))return response({tree:{sha:"synthetic-tree"}});
+ if(method==="POST"&&url.endsWith("/git/blobs")){const data=JSON.parse(options.body).content;stagedBlobs.push(JSON.parse(data));return response({sha:"synthetic-blob-"+stagedBlobs.length})}
+ if(method==="POST"&&url.endsWith("/git/trees"))return response({sha:"synthetic-new-tree"});
+ if(method==="POST"&&url.endsWith("/git/commits"))return response({sha:"synthetic-new-commit"});
+ if(method==="PATCH"&&url.endsWith("/git/refs/heads/main")){
+  simulated.businesses=stagedBlobs.at(-2).concat(stagedBlobs.at(-1));calls.puts++;return response({object:{sha:"synthetic-new-commit"}});
+ }
+ throw Error("Unexpected API path "+method+" "+url);
 }
 const window={
  DOEAuthVault:{load:()=>null,seal:async()=>({}),save:()=>{},open:async()=>"",forget:()=>{}},
@@ -112,7 +130,7 @@ assert.equal(simulated.businesses[0].name,original.businesses[0].name);
 assert.equal(simulated.businesses[3].name,"New Test Business");
 assert.equal(simulated.businesses[3].verification_status,"unverified");
 assert.ok(!JSON.stringify(simulated.businesses[3]).includes("call_notes"));
-assert.equal(calls.fallback,1,"Large-file GitHub blob fallback is required");
+assert.ok(calls.fallback>=2,"Both GitHub partitions must be fetched");
 await click("createNew");
 await set("field_name","New Test Business");
 await set("field_city","Test City");

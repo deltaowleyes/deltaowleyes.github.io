@@ -32,7 +32,7 @@ jobs:
         run: |
           git config user.name "delta-owl-eyes-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add indigenous-businesses/businesses.json data/directory-updates.json
+          git add indigenous-businesses/businesses-with-phone.json indigenous-businesses/businesses-without-phone.json data/directory-updates.json
           if ! git diff --cached --quiet; then
             git commit -m "data: import sourced Indigenous business directory batches"
             git pull --rebase origin main

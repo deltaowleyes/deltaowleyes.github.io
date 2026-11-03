@@ -7,7 +7,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = (
- ("indigenous-businesses/businesses.json", "business"),
+ ("indigenous-businesses/businesses-with-phone.json", "business"),
+ ("indigenous-businesses/businesses-without-phone.json", "business"),
  ("indigenous-churches/churches.json", "church"),
 )
 errors = []
@@ -17,7 +18,8 @@ for path, kind in FILES:
   if not isinstance(records,list) or not records:
    raise ValueError("Expected nonempty JSON array")
   if kind=="business":
-   if len(records)<4475: errors.append("Unified business directory lost the 4,475-record migration baseline")
+   if path.endswith("businesses-with-phone.json") and any(not str(r.get("phone") or "").strip() for r in records): errors.append("Phone dataset includes records without phone")
+   if path.endswith("businesses-without-phone.json") and any(str(r.get("phone") or "").strip() for r in records): errors.append("No-phone dataset includes records with phone")
    ids=[("id:"+str(r["source_id"])) if r.get("source_id") else
         ("location:"+str(r.get("name","")).strip().casefold()+"|"+str(r.get("city","")).strip().casefold()+"|"+str(r.get("province","")).strip().casefold())
         for r in records if isinstance(r,dict)]
@@ -45,7 +47,7 @@ for path, kind in FILES:
   print(f"OK {path}: {len(records)} records")
  except (OSError,ValueError,TypeError,AttributeError) as exc:
   errors.append(f"{path}: {exc}")
-for obsolete in ("indigenous-businesses/ontario-businesses.json","indigenous-businesses/federal-businesses.json"):
+for obsolete in ("indigenous-businesses/businesses.json","indigenous-businesses/ontario-businesses.json","indigenous-businesses/federal-businesses.json"):
  if (ROOT/obsolete).exists(): errors.append("Obsolete business data source still exists: "+obsolete)
 for page_path in ("indigenous-businesses/index.html","indigenous-businesses/profile.html"):
  page_text=(ROOT/page_path).read_text(encoding="utf-8")
@@ -56,6 +58,14 @@ if "fetch('./churches.json'" not in page or "const churches=[" in page:
  errors.append("Church page has no migrated JSON loader")
 for path in ("admin/index.html","admin/admin.js","indigenous-businesses/admin/index.html","indigenous-churches/admin/index.html"):
  if not (ROOT/path).is_file():errors.append("Missing admin file "+path)
+
+all_businesses=[]
+for part in ("indigenous-businesses/businesses-with-phone.json","indigenous-businesses/businesses-without-phone.json"):
+ try: all_businesses.extend(json.loads((ROOT/part).read_text(encoding="utf-8")))
+ except (OSError,ValueError,TypeError) as exc: errors.append(f"{part}: {exc}")
+if len(all_businesses)<4999: errors.append("Business split dropped the 4,999-record baseline")
+identities=[("id:"+str(r["source_id"])) if r.get("source_id") else ("location:"+str(r.get("name","")).strip().casefold()+"|"+str(r.get("city","")).strip().casefold()+"|"+str(r.get("province","")).strip().casefold()) for r in all_businesses if isinstance(r,dict)]
+if any(n>1 for n in Counter(identities).values()): errors.append("Duplicate source identifiers across business datasets")
 for err in errors:print("ERROR:",err,file=sys.stderr)
 print("Directory audit:","PASS" if not errors else f"FAIL ({len(errors)} errors)")
 sys.exit(bool(errors))

@@ -11,7 +11,7 @@ import unicodedata
 ROOT = Path(__file__).resolve().parents[1]
 LOG = ROOT / "data/directory-updates.json"
 FILES = {
-    "businesses": "indigenous-businesses/businesses.json",
+    "businesses": ("indigenous-businesses/businesses-with-phone.json", "indigenous-businesses/businesses-without-phone.json"),
     "churches": "indigenous-churches/churches.json",
     "events": "data/community-events.json",
 }
@@ -76,10 +76,16 @@ def main():
         raise ValueError("Invalid directory update log")
     seen = {(g,row["key"]) for run in history["runs"] for g,rows in run.get("additions",{}).items() for row in rows}
     added = {}
-    for group,path in FILES.items():
-        current = json.loads((ROOT/path).read_text(encoding="utf8"))
-        if not isinstance(current,list): raise ValueError("Not an array: "+path)
-        prior = {key(group,row) for row in old_rows(args.base,path)}
+    for group,paths in FILES.items():
+        paths=paths if isinstance(paths,tuple) else (paths,)
+        current=[]
+        for path in paths:
+            rows=json.loads((ROOT/path).read_text(encoding="utf8"))
+            if not isinstance(rows,list):raise ValueError("Not an array: "+path)
+            current.extend(rows)
+        prior_rows=old_rows(args.base,"indigenous-businesses/businesses.json") if group=="businesses" else []
+        if not prior_rows:prior_rows=[r for path in paths for r in old_rows(args.base,path)]
+        prior={key(group,row) for row in prior_rows}
         new = []
         for row in current:
             if not isinstance(row,dict): raise ValueError("Bad directory record: "+path)

@@ -7,13 +7,16 @@ import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TARGET = ROOT / "indigenous-businesses/businesses.json"
+PHONE = ROOT / "indigenous-businesses/businesses-with-phone.json"
+NO_PHONE = ROOT / "indigenous-businesses/businesses-without-phone.json"
 if len(sys.argv) != 2:
     sys.exit("Usage: import_directory_batch.py <batch.json>")
 batch_path = ROOT / sys.argv[1]
 if not batch_path.is_relative_to(ROOT / "indigenous-businesses/imports"):
     sys.exit("Refusing import outside business imports directory")
-old = json.loads(TARGET.read_text(encoding="utf-8"))
+with_phone = json.loads(PHONE.read_text(encoding="utf-8"))
+without_phone = json.loads(NO_PHONE.read_text(encoding="utf-8"))
+old = with_phone + without_phone
 batch = json.loads(batch_path.read_text(encoding="utf-8"))
 if not isinstance(old, list) or not isinstance(batch, list):
     sys.exit("Both business files must contain arrays")
@@ -65,9 +68,11 @@ for record in batch:
         excluded.append(record["name"])
         continue
     old.append(record)
+    (with_phone if str(record.get("phone") or "").strip() else without_phone).append(record)
     inserted.append(record["name"])
     known.append((n,p,record["source_id"]))
 
 assert len({r.get("source_id") for r in old if r.get("source_id")}) == sum(bool(r.get("source_id")) for r in old), "Duplicate source ID"
-TARGET.write_text(json.dumps(old, ensure_ascii=False, separators=(",", ":"))+"\n", encoding="utf-8")
+PHONE.write_text(json.dumps(with_phone, ensure_ascii=False, separators=(",", ":"))+"\n", encoding="utf-8")
+NO_PHONE.write_text(json.dumps(without_phone, ensure_ascii=False, separators=(",", ":"))+"\n", encoding="utf-8")
 print(json.dumps({"base_plus_import_total":len(old),"inserted_count":len(inserted),"inserted_names":inserted,"excluded_alias_or_id":excluded}))
