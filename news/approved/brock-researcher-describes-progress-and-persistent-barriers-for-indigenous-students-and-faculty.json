@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-03",
+  "context": "Indigenous post-secondary education; TRC education context (not an implementation milestone)",
+  "headline": "Brock researcher describes progress and persistent barriers for Indigenous students and faculty",
+  "professional_sections": [
+    {
+      "label": "News",
+      "text": "In a November 3, 2026 expert advisory, Brock University reported on research by Professor Sheila Cote-Meek, its Interim Vice-Provost, Indigenous Engagement. Drawing on the second edition of her book Colonized Classrooms, Cote-Meek described the growth of Indigenous leadership roles, faculty appointments, strategic plans, student supports and dedicated campus spaces since the Truth and Reconciliation Commission published its Calls to Action."
+    },
+    {
+      "label": "Education",
+      "text": "Cote-Meek also described continuing experiences of racism, stereotyping and isolation among Indigenous students and faculty. She noted that Indigenous faculty may be expected to provide extensive student support and lead institutional change, sometimes at the expense of research and scholarship. These are observations and concerns attributed to the researcher, not findings that every post-secondary institution has the same conditions."
+    },
+    {
+      "label": "Accountability",
+      "text": "The research raises questions about how institutions measure inclusion beyond representation, respond to discrimination, distribute responsibility for reconciliation and support Indigenous faculty. These are editorial follow-up questions, not allegations against a particular institution. The report provides context for education and reconciliation discussions but does not establish that any specific TRC Call to Action has been completed or violated."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Brock University expert advisory, November 3, 2026",
+      "url": "https://brocku.ca/media-room/2026/11/03/truth-and-reconciliation-research-looks-at-progress-shortfalls-in-post-secondary-education/"
+    },
+    {
+      "title": "Brock News report, November 3, 2026",
+      "url": "https://brocku.ca/brock-news/2026/11/truth-and-reconciliation-research-looks-at-progress-shortfalls-in-post-secondary-education/"
+    },
+    {
+      "title": "Brock University Indigenous Strategic Plan launch, October 1, 2026",
+      "url": "https://brocku.ca/brock-news/2026/10/strengthening-relationships-and-learning-at-heart-of-indigenous-strategic-plan/"
+    }
+  ],
+  "rez_headline": "Brock researcher says Indigenous campus representation is growing — but is it real inclusion?",
+  "rez_sections": [
+    {
+      "label": "News",
+      "text": "Boozhoo. In a November 3, 2026 expert advisory, Brock University shared research from Professor Sheila Cote-Meek, its Interim Vice-Provost, Indigenous Engagement. Her second edition of Colonized Classrooms looks at what has changed since the TRC Calls to Action. More Indigenous leadership positions, faculty appointments, strategic plans, student supports and dedicated spaces? That is meaningful progress."
+    },
+    {
+      "label": "Education",
+      "text": "But is it the whole story? Gawiin. Cote-Meek says Indigenous students and faculty still encounter racism, stereotypes and isolation. She also describes how Indigenous faculty can be asked to support students and drive institutional change while trying to protect time for research. Deadass, those concerns deserve attention. They are the researcher’s observations, not proof that every college or university has the same problems."
+    },
+    {
+      "label": "Accountability",
+      "text": "So here is the accountability question: how do institutions measure belonging, not just representation? How do they respond to discrimination, share responsibility for reconciliation and support Indigenous faculty? Stoodis — ask for evidence of what is working. These are follow-up questions, not accusations against any particular institution. And this report does not prove any TRC Call to Action has been completed or violated."
+    }
+  ],
+  "editorial_review": {
+    "status": "approved",
+    "reviewed_by": "Chris (user-approved both editions); source and claim-parity checks AI-assisted by ChatGPT",
+    "reviewed_at": "2026-11-04",
+    "sources_checked": true,
+    "claim_parity_checked": true
+  }
+}
