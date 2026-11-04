@@ -72,5 +72,31 @@
       "description": "Clothing and accessories retailer listed in Thunderbird Plaza, Walpole Island. Public phone is listed; current operating status, ownership, and absence of an independent website remain unverified.",
       "review_notes": "Phone and public commercial location from AllBiz. Website search found Facebook listing but no independent business site. Do not infer Indigenous ownership or current operation."
     }
+  },
+  {
+    "source": "businesses",
+    "source_id": "9D34C4CCDA425D40BF232C72091510EE",
+    "key": "threefirestipinightlights|wallaceburg|ontario",
+    "deleted_at": "2026-11-04T20:51:26.647Z",
+    "record": {
+      "name": "Three Fires Ti-Pi Night Lights",
+      "city": "Wallaceburg",
+      "province": "Ontario",
+      "category": "-",
+      "community": "",
+      "phone": "5488350429",
+      "website": "https://threefirestipinightlights.com/",
+      "source_url": "http://www.sac-isc.gc.ca/REA-IBD/eng/profile?id=9D34C4CCDA425D40BF232C72091510EE",
+      "source_updated": "2025-12-29",
+      "owner_confirmed": false,
+      "address": "1706 River Rd  Wallaceburg  Ontario  N8A 4K9",
+      "postal_code": "N8A 4K9",
+      "description": "We make Ti-Pi night lights with native designs  and or patternsWe also have blank cotton Ti-Pis that you can customize",
+      "region": "",
+      "ownership_type": "Federal Indigenous Business Directory listing (not independently verified)",
+      "year_formed": "",
+      "facebook": "",
+      "source_id": "9D34C4CCDA425D40BF232C72091510EE"
+    }
   }
 ]
