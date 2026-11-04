@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Videos & Behind the Scenes | Delta Owl Eyes</title>
+<meta name="description" content="Watch Delta Owl Eyes videos, news, educational reporting and behind-the-scenes moments.">
+<link rel="canonical" href="https://deltaowleyes.ca/videos/">
+<link rel="icon" href="/assets/owl-logo.png">
+<link rel="stylesheet" href="/assets/site-header.css">
+<link rel="stylesheet" href="/assets/privacy-consent.css"><script defer src="/assets/privacy-consent.js"></script>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fbfaf6;color:#203d3c;font:16px/1.55 system-ui,sans-serif}
+.doe-header{background:#f1f6f3}.doe-brand{display:inline-flex;align-items:center;gap:9px;font-weight:800;color:#193a3a;text-decoration:none}.doe-brand img{width:46px;height:46px}.doe-brand span{color:#986b27}
+.doe-links{display:flex;gap:14px;flex-wrap:wrap}.doe-links a{color:#193a3a;text-decoration:none;font-weight:600}
+main{max-width:1100px;margin:auto;padding:35px 18px 75px}h1{font:700 clamp(2rem,5vw,3.3rem) Georgia,serif;margin:10px 0}h2{font:700 1.45rem Georgia,serif;margin:8px 0}p{max-width:750px}
+.kicker{color:#9a692b;text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:22px;margin-top:28px}
+.card{background:white;border:1px solid #dce7e2;border-radius:12px;padding:20px;box-shadow:0 5px 20px #173d3410}
+.card video{display:block;width:100%;max-height:570px;aspect-ratio:9/16;object-fit:contain;background:#102b2c;border-radius:8px}
+.meta{font-size:.82rem;color:#526e67;font-weight:700}footer{background:#f1f6f3;padding:22px;text-align:center}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+</style></head><body>
+<header class="doe-header"><a class="doe-brand" href="/"><img src="/assets/owl-logo.png" alt="">DELTA <span>OWL</span> EYES</a><nav class="doe-nav" aria-label="Main navigation"><div class="doe-links"><a href="/">Home</a><a href="/news/">News Updates</a><a href="/calls-to-action/">94 Calls to Action</a><a href="/videos/" aria-current="page">Videos</a><a href="/events/">Community Events</a><a href="/services/">Services</a></div></nav></header>
+<div class="doe-tagline-bar">HARD TRUTHS. &nbsp; EDUCATION. &nbsp; ACCOUNTABILITY.</div>
+<main><div class="kicker">The Owl's Lens / Delta Owl Eyes</div><h1>Video Library</h1><p>Watch our videos, including behind-the-scenes moments, educational stories and reporting.</p>
+<div id="videos" class="grid" aria-live="polite"><p>Loading videos…</p></div></main>
+<footer>© Delta Owl Eyes</footer>
+<script>
+(async function(){
+const root=document.getElementById('videos');
+try{
+ const response=await fetch('/data/videos.json',{cache:'no-cache'});
+ if(!response.ok)throw Error('Catalogue unavailable');
+ const items=await response.json();
+ root.replaceChildren();
+ if(!items.length){root.textContent='Videos coming soon.';return;}
+ for(const item of items){
+  const card=document.createElement('article');card.className='card';
+  const player=document.createElement('video');player.controls=true;player.playsInline=true;player.preload='metadata';
+  player.setAttribute('aria-label',item.title||'Delta Owl Eyes video');
+  player.style.aspectRatio=item.orientation==='vertical'?'9/16':'16/9';
+  const source=document.createElement('source');source.src=item.src;source.type='video/mp4';player.append(source);
+  const meta=document.createElement('p');meta.className='meta';meta.textContent=item.category||'Video';
+  const title=document.createElement('h2');title.textContent=item.title||'Video';
+  const desc=document.createElement('p');desc.textContent=item.description||'';
+  const link=document.createElement('a');link.href=item.src;link.textContent='Open video directly';link.rel='noopener noreferrer';
+  card.append(player,meta,title,desc,link);root.append(card);
+ }
+}catch(e){root.textContent='Videos are temporarily unavailable. Please try again later.';}
+})();
+</script></body></html>
