@@ -188,3 +188,62 @@ html body header.doe-header-v3 .doe-left-symbol img{
   grid-template-columns:minmax(0,1fr) minmax(0,195px) minmax(0,1fr)!important
  }
 }
+
+
+/* B4-037 approved artwork revision: 75x55 emblem, 250x55 wordmark,
+   and subtle geometric background. This block intentionally overrides older sizes. */
+:root{--doe-header-height:68px}
+html body header.doe-header-v3{
+ height:68px!important;min-height:68px!important;
+ grid-template-columns:minmax(0,1fr) 250px minmax(0,1fr)!important;
+ background-color:#fbf9f3!important;
+ background-image:url('/assets/doe-header-background-1200x150.webp?v=b4037f')!important;
+ background-repeat:no-repeat!important;
+ background-position:center center!important;
+ background-size:cover!important
+}
+html body header.doe-header-v3 .doe-center-brand{
+ width:250px!important;max-width:100%!important;height:55px!important;min-height:55px!important
+}
+html body header.doe-header-v3 .doe-center-brand img{
+ width:250px!important;max-width:100%!important;height:55px!important;max-height:55px!important;object-fit:contain!important
+}
+html body header.doe-header-v3 .doe-left-symbol{
+ display:flex!important;flex:0 0 75px!important;width:75px!important;
+ height:55px!important;min-height:55px!important;
+ padding:0!important;margin:0 8px 0 0!important;align-items:center!important;
+ background:transparent!important;border:0!important
+}
+html body header.doe-header-v3 .doe-left-symbol img{
+ display:block!important;width:75px!important;height:55px!important;max-height:55px!important;
+ object-fit:contain!important;margin:0!important;padding:0!important
+}
+@media(max-width:860px){
+ :root{--doe-header-height:64px}
+ html body header.doe-header-v3{
+  height:64px!important;min-height:64px!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,250px) minmax(0,1fr)!important
+ }
+ html body header.doe-header-v3 .doe-left-symbol{
+  flex:0 1 75px!important;width:min(75px,100%)!important;
+  height:55px!important;min-height:0!important;margin:0!important
+ }
+ html body header.doe-header-v3 .doe-left-symbol img{
+  width:100%!important;height:auto!important;max-height:55px!important;object-fit:contain!important
+ }
+ html body header.doe-header-v3 .doe-center-brand{
+  width:min(250px,calc(100vw - 155px))!important;
+  height:55px!important;min-height:55px!important
+ }
+ html body header.doe-header-v3 .doe-center-brand img{
+  width:100%!important;height:auto!important;max-height:55px!important;object-fit:contain!important
+ }
+}
+@media(max-width:360px){
+ html body header.doe-header-v3{
+  grid-template-columns:minmax(0,1fr) minmax(0,195px) minmax(0,1fr)!important
+ }
+ html body header.doe-header-v3 .doe-center-brand{
+  width:min(195px,calc(100vw - 140px))!important
+ }
+}
