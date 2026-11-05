@@ -36,10 +36,28 @@ function features(){return '<div class="feature"><div><b>4</b><span>everyday ess
 function strip(){return '<div class="strip">HANDMADE WITH PURPOSE <span>✳</span> REUSABLE BY DESIGN <span>✳</span> MADE FOR EVERYDAY LIFE <span>✳</span></div>'}
 const refs=concepts.map((c,i)=>'<a href="?template='+(i+1)+'#home">'+String(i+1).padStart(2,'0')+' '+c.name+'</a>').join('');
 function gallery(){document.title='Momma Made | Ten genuinely different website layouts';app.innerHTML='<div class="directory"><div class="dir-top">MOMMA MADE <span>DESIGN STUDIOS · TEN WAYS TO TELL A STORY</span></div><header class="dir-hero"><small>WEBSITE CONCEPT COLLECTION / 2026</small><h1>Not ten colours.<br><i>Ten different shops.</i></h1><p>Each live preview below is rendered directly from its own storefront layout, with distinct homepage composition, collections and product storytelling. Open any concept to explore its four demo products, story and care guide.</p><div class="dir-notice">Original vector illustrations are used as product-image placeholders. These are concept visuals, not photographs of finished Momma Made goods. Checkout is disabled in every design.</div></header><div class="dir-grid">'+concepts.map((c,i)=>'<article class="dir-card"><div class="dir-frame"><iframe title="'+c.name+' live storefront preview" src="?template='+(i+1)+'&preview=1#home" loading="lazy" tabindex="-1"></iframe></div><div class="dir-info"><span>DESIGN '+String(i+1).padStart(2,'0')+' / INSPIRED BY <a href="'+c.url+'" target="_blank" rel="noopener">'+c.ref+' ↗</a></span><h2>'+c.name+'</h2><p>'+c.note+'</p><a class="dir-action" href="?template='+(i+1)+'#home">Open full storefront ↗</a></div></article>').join('')+'</div><div class="dir-foot"><b>Momma Made</b><p>Ten original concepts • No live checkout • All products simulated</p></div></div>'}
-function nav(c){let s=c.style;const common='<a href="'+route('shop')+'">Shop</a><a href="'+route('about')+'">The maker</a><a href="'+route('care')+'">Care guide</a>';if(s==='supply'||s==='market')return '<header class="site-nav"><div class="nav-row">'+titleLink(c)+'<nav><a href="'+route('shop')+'">ALL PRODUCTS</a><a href="'+pRoute(1)+'">WRAPS</a><a href="'+pRoute(2)+'">TOWELS</a><a href="'+pRoute(3)+'">SCRUBBIES</a><a href="'+pRoute(4)+'">BAGS</a></nav><a class="back" href="./">All designs ↗</a></div><div class="sub-nav"><a href="'+route('home')+'">Home</a> · '+common+'</div></header>';
-if(s==='maker')return '<header class="site-nav maker-nav"><span>FROM OUR HANDS TO YOUR HOME</span><div class="nav-row"><nav><a href="'+route('home')+'">Home</a><a href="'+route('about')+'">Maker story</a></nav>'+titleLink(c)+'<nav><a href="'+route('shop')+'">Shop</a><a href="'+route('care')+'">Care</a><a href="./">All designs</a></nav></div></header>';
-if(s==='pattern'||s==='happy')return '<header class="site-nav"><div class="nav-row">'+titleLink(c)+'<nav>'+common+'</nav><a class="back" href="./">THE 10 DESIGNS ↗</a></div></header>';
-return '<header class="site-nav"><div class="nav-row">'+titleLink(c)+'<nav><a href="'+route('home')+'">Home</a>'+common+'</nav><a class="back" href="./">All designs ↗</a></div></header>'}
+function nav(c){
+ const base=[['home','Home'],['shop','Shop'],['about','Our story'],['care','Use & care']];
+ const navLinks=base.map(([url,label])=>`<a href="${route(url)}">${label}</a>`).join('');
+ const cats=products.map((p,i)=>`<a href="${pRoute(i+1)}">${p.name}</a>`).join('');
+ const utility=`<div class="nav-utils"><span class="demo-bag" aria-label="Checkout unavailable">Bag 0 · Demo</span><a href="./" aria-label="View all Momma Made designs">Designs ↗</a></div>`;
+ const search=['supply','slow','market'].includes(c.style)?`<form class="nav-search" data-search-form role="search"><label class="sr-only" for="mm-search">Search products</label><input id="mm-search" type="search" placeholder="Search Momma Made..." aria-label="Search product concepts"><button type="submit">Search</button></form>`:'';
+ let links='';
+ if(['supply','slow','market'].includes(c.style)){
+   links=`<nav aria-label="Store categories"><a href="${route('shop')}">Shop all</a>${cats}</nav>`;
+ }else if(c.style==='heritage'){
+   links=`<nav aria-label="Main navigation"><a href="${route('shop')}">SHOP</a><a href="${route('about')}">ABOUT</a><a href="${route('care')}">USE & CARE</a></nav>`;
+ }else if(c.style==='maker'){
+   links=`<nav aria-label="Main navigation"><a href="${route('shop')}">Catalogue</a><a href="${route('about')}">Maker story</a><a href="${route('care')}">Care</a></nav>`;
+ }else{
+   links=`<nav aria-label="Main navigation">${navLinks}</nav>`;
+ }
+ const bar=['happy','quiet','pattern','slow','market'].includes(c.style)?
+   `<div class="nav-secondary" aria-label="Additional navigation"><a href="${route('home')}">Home</a>${cats}<a href="${route('care')}">Care guide</a></div>`:'';
+ const header=`<header class="site-nav"><div class="nav-row"><button type="button" class="mobile-toggle" aria-controls="momma-mobile-menu" aria-expanded="false">☰ <span>Menu</span></button>${titleLink(c)}${search}${links}${utility}</div>${bar}</header>`;
+ const mobile=`<div id="momma-mobile-menu" class="mobile-drawer" hidden><div class="drawer-label">EXPLORE MOMMA MADE</div>${navLinks}<div class="drawer-label">SHOP BY PRODUCT</div>${cats}<a href="./" class="drawer-small">← See all 10 designs</a></div>`;
+ return header+mobile;
+}
 function foot(c){return '<footer class="site-foot"><div><strong>Momma <i>Made</i></strong><span>Handmade essentials, imagined with care.</span></div><div><a href="'+route('shop')+'">Collection</a><a href="'+route('about')+'">Story</a><a href="'+route('care')+'">Care</a><a href="./">Explore all ten designs ↗</a></div><p>Concept showroom only. Original illustrations are not actual inventory photographs. No prices, orders, reviews or claims are verified.</p></footer>'}
 function home(c){
  const tiles=(order=[0,1,2,3])=>`<div class="fit-tiles">${order.map(i=>`<a href="${pRoute(i+1)}" class="fit-tile">${art(i)}<span>${products[i].name} <b>↗</b></span></a>`).join('')}</div>`;
@@ -94,6 +112,53 @@ utility:['How Momma Made works.','Product construction and maker processes remai
 market:['Meet our little handmade brand.','This marketplace mockup will eventually include verified maker information and a real product catalogue.']
 };let t=sections[c.style];return '<section class="content story-page"><div><small>MOMMA MADE / THE MAKER</small><h1>'+t[0]+'</h1><p>'+t[1]+'</p><a class="action" href="'+route('shop')+'">Browse the collection →</a></div>'+art(2)+'</section><div class="story-note">A real story deserves real details. No invented biography, testimonials or claims.</div>'}
 function care(c){return '<section class="content care-page"><small>PRODUCT CARE / AN EVERYDAY GUIDE</small><h1>Care for the things you use.</h1><p>These are provisional suggestions only. Final care instructions depend on the actual materials and construction.</p><div class="care-grid">'+products.map((p,i)=>'<article>'+art(i)+'<div><b>0'+(i+1)+'</b><h2>'+p.name+'</h2><p>'+p.care+'</p>'+productLink(i+1,'See product')+'</div></article>').join('')+'</div><div class="care-note"><b>IMPORTANT</b><p>Verify product materials, allergies, food-contact suitability and manufacturer instructions before publishing these details for actual sales.</p></div></section>'}
-function render(){if(id<0||id>9){gallery();return}const c=concepts[id],r=decodeURIComponent(location.hash.slice(1).split('#')[0])||'home';document.body.className='store theme-'+c.style;document.documentElement.style.setProperty('--accent',c.color);document.documentElement.style.setProperty('--paper',c.paper);document.documentElement.style.setProperty('--ink',c.ink);document.title='Momma Made · '+c.name+' · '+r;let content=r==='home'?home(c):r==='shop'?collection(c):r==='about'?story(c):r==='care'?care(c):r.startsWith('product-')&&/^product-[1-4]$/.test(r)?detail(c,Number(r.split('-')[1])):home(c);app.innerHTML=badge()+nav(c)+'<main id="content">'+content+'</main>'+foot(c);document.querySelectorAll('[data-find]').forEach(btn=>btn.addEventListener('click',()=>{let k=Number(btn.dataset.find);document.querySelectorAll('[data-find]').forEach(x=>x.setAttribute('aria-pressed',String(x===btn)));let e=document.querySelector('#lab-result');e.innerHTML=art(k)+'<div><small>YOUR CONCEPT MATCH</small><h3>'+products[k].name+'</h3><p>'+products[k].short+'</p>'+productLink(k+1,'Explore this product')+'</div>'}));document.querySelector('[data-scroll-finder]')?.addEventListener('click',()=>document.getElementById('finder')?.scrollIntoView({behavior:'smooth'}));window.scrollTo(0,0)}
+let searchTerm='';
+function render(){
+ if(id<0||id>9){gallery();return}
+ const c=concepts[id],r=decodeURIComponent(location.hash.slice(1).split('#')[0])||'home';
+ document.body.className='store theme-'+c.style;
+ document.documentElement.style.setProperty('--accent',c.color);document.documentElement.style.setProperty('--paper',c.paper);document.documentElement.style.setProperty('--ink',c.ink);
+ document.title='Momma Made · '+c.name+' · '+r;
+ const content=r==='home'?home(c):r==='shop'?collection(c):r==='about'?story(c):r==='care'?care(c):r.startsWith('product-')&&/^product-[1-4]$/.test(r)?detail(c,Number(r.split('-')[1])):home(c);
+ app.innerHTML=badge()+nav(c)+'<main id="content">'+content+'</main>'+foot(c);
+ const toggle=document.querySelector('.mobile-toggle'),drawer=document.querySelector('#momma-mobile-menu');
+ toggle?.addEventListener('click',()=>{const open=drawer.hidden;drawer.hidden=!open;toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'× Close':'☰ Menu';});
+ document.querySelectorAll('#momma-mobile-menu a').forEach(a=>a.addEventListener('click',()=>{drawer.hidden=true;toggle?.setAttribute('aria-expanded','false');}));
+ document.querySelectorAll('[data-find]').forEach(btn=>btn.addEventListener('click',()=>{
+  let k=Number(btn.dataset.find);
+  document.querySelectorAll('[data-find]').forEach(x=>x.setAttribute('aria-pressed',String(x===btn)));
+  const e=document.querySelector('#lab-result');
+  e.innerHTML=art(k)+'<div><small>YOUR CONCEPT MATCH</small><h3>'+products[k].name+'</h3><p>'+products[k].short+'</p>'+productLink(k+1,'Explore this product')+'</div>';
+ }));
+ document.querySelector('[data-scroll-finder]')?.addEventListener('click',()=>document.getElementById('finder')?.scrollIntoView({behavior:'smooth'}));
+ document.querySelector('[data-search-form]')?.addEventListener('submit',e=>{
+  e.preventDefault();searchTerm=e.currentTarget.querySelector('input')?.value.trim().toLowerCase()||'';
+  if(r!=='shop')location.hash='shop';else render();
+ });
+ if(r==='shop'&&searchTerm){
+  const items=[...document.querySelectorAll('.item')];
+  for(const item of items)item.hidden=!item.textContent.toLowerCase().includes(searchTerm);
+  const count=items.filter(x=>!x.hidden).length;
+  let status=document.createElement('p');status.className='search-status';status.setAttribute('role','status');
+  status.textContent=count?count+' matching demo product'+(count===1?'':'s')+' for “'+searchTerm+'”':'No demo products match “'+searchTerm+'”.';
+  document.querySelector('.items')?.before(status);
+ }
+ const slider=document.querySelector('[data-slider]');
+ if(slider){
+  const type=slider.getAttribute('data-slider');
+  const variants=type==='hearterra'?
+   [{p:1,txt:'Thoughtful reusables for a life well lived.'},{p:3,txt:'Pack a little more joy into every day.'}]:
+   [{p:0,txt:'Useful goods for a more thoughtful kitchen.'},{p:1,txt:'Good everyday choices begin at home.'},{p:3,txt:'Discover what fits your routine.'}];
+  let position=0;const update=()=>{
+   const current=variants[position],photo=slider.querySelector('img.art');
+   if(photo){photo.src=svgImage(current.p,id);photo.alt='Original Momma Made illustration of '+products[current.p].name;}
+   slider.querySelector('h1').textContent=current.txt;
+   slider.querySelector('[data-slide-count]').textContent=(position+1)+' / '+variants.length;
+  };
+  slider.querySelector('[data-slide-prev]')?.addEventListener('click',()=>{position=(position-1+variants.length)%variants.length;update()});
+  slider.querySelector('[data-slide-next]')?.addEventListener('click',()=>{position=(position+1)%variants.length;update()});
+ }
+ window.scrollTo(0,0);
+}
 window.addEventListener('hashchange',render);render();
 })();
