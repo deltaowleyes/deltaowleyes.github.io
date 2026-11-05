@@ -16,11 +16,11 @@ try{
     const header=page.locator('header.doe-header-v3');
     if(await header.count()!==1)throw Error('Missing header');
     const data=await page.evaluate(()=>{
-      const h=document.querySelector('header.doe-header-v3'),i=h.querySelector('.doe-center-brand img');
+      const h=document.querySelector('header.doe-header-v3'),i=h.querySelector('.doe-center-brand img'),symbol=h.querySelector('.doe-left-symbol img');
       const b=i.getBoundingClientRect();
-      return {position:getComputedStyle(h).position,centerError:Math.abs((b.left+b.right)/2-innerWidth/2),height:b.height,loaded:i.complete&&i.naturalWidth===240,overflow:h.scrollWidth>innerWidth+2};
+      return {position:getComputedStyle(h).position,centerError:Math.abs((b.left+b.right)/2-innerWidth/2),height:b.height,loaded:i.complete&&i.naturalWidth===260,symbolLoaded:symbol&&symbol.complete&&symbol.naturalWidth===100,symbolHeight:symbol?.getBoundingClientRect().height,symbolIsLeft:symbol?.getBoundingClientRect().right<=b.left+2,overflow:h.scrollWidth>innerWidth+2};
     });
-    if(data.position!=='sticky'||data.centerError>2||data.height>35.1||!data.loaded||data.overflow)throw Error('Layout: '+JSON.stringify(data));
+    if(data.position!=='sticky'||data.centerError>2||data.height>35.1||!data.loaded||!data.symbolLoaded||!data.symbolIsLeft||data.symbolHeight>35.1||data.overflow)throw Error('Layout: '+JSON.stringify(data));
     await page.evaluate(()=>{document.body.style.minHeight='180vh';window.scrollTo(0,1000)});
     await page.waitForTimeout(80);
     const top=await header.evaluate(h=>h.getBoundingClientRect().top);
