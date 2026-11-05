@@ -23,3 +23,9 @@ This repository-backed status file persists across ChatGPT conversations and ret
 7. GitHub Actions can verify narrow technical conditions, but does **not** know whether editorial, council, outreach, or other external commitments were completed. These need explicit verified updates.
 
 A background audit can periodically detect stale statuses and suggest corrections. **GitHub does not automatically learn about work completed in a chat**: completed BAKE sessions must write to the canonical file, or a separately authorized reconciliation automation must do so. No claim of instantaneous synchronization is made.
+
+## Automatic GitHub reconciliation
+
+[Scheduled roadmap synchronization](../.github/workflows/sync-bake-pro-3-roadmap.yml) runs daily (11:17 UTC) or can be manually triggered with `workflow_dispatch`. Its [script](../scripts/sync_bake_pro_3_roadmap.py) automatically closes **S02 only** when a new genuine successful directory-additions workflow run supplies evidence after the S01 repair. It never inserts synthetic directory rows. All other tasks require task-specific verified evidence and an explicit registry update; the scheduled workflow does **not** infer completion of work performed solely in ChatGPT.
+
+**Operational requirement:** Every future BAKE execution should read and update the same JSON on completion. A task that only exists in a chat is not yet synchronized. This registry must be reconciled with the original remaining 49 roadmap tasks; until then it is not a complete 52-task master list.
