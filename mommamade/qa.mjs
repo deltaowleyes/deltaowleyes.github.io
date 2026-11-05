@@ -23,7 +23,7 @@ try{
    check(await images(page),'Broken inline product art on home '+(i+1));
    await page.screenshot({path:'mommamade/qa-artifacts/design-'+(i+1)+'-desktop.png',fullPage:false});
    await visit(page,u+'#shop');
-   for(let j=0;j<4;j++){check(await page.getByText(products[j],{exact:true}).count()>0,'Missing product in collection '+(i+1)+'/'+(j+1))}
+   for(let j=0;j<4;j++){check(await page.locator('a[href$="product-'+(j+1)+'"]').count()>0,'Missing product route in collection '+(i+1)+'/'+(j+1))}
    await visit(page,u+'#about');check(await page.locator('.story-page').count()===1,'Missing story '+(i+1));
    await visit(page,u+'#care');check(await page.locator('.care-grid article').count()===4,'Missing care guide '+(i+1));
    for(let j=1;j<=4;j++){
