@@ -6,6 +6,7 @@ on:
       - 'mommamade/v3/**'
       - 'tests/mommamade-v3.qa.cjs'
       - 'tests/website-factory-cost-guard.cjs'
+      - 'tests/mommamade-v3-reference-capture.cjs'
       - 'data/web-design-projects.json'
       - 'data/website-factory-cost-ledger.json'
       - '.github/workflows/mommamade-v3-candidate-qa.yml'
@@ -34,6 +35,9 @@ jobs:
           curl --fail --silent --show-error http://127.0.0.1:8765/mommamade/v3/ >/dev/null
       - name: Test ten candidates, 90 routes, 50 breakpoints and imagery
         run: node tests/mommamade-v3.qa.cjs
+      - name: Capture inspiration comparisons and explicitly log unavailable sources
+        if: always()
+        run: node tests/mommamade-v3-reference-capture.cjs
       - name: Archive desktop/mobile screenshot evidence
         if: always()
         uses: actions/upload-artifact@v4
