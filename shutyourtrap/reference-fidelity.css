@@ -1,0 +1,29 @@
+/* Original reference-alignment improvements. No inspiration-site assets, branding or code copied. */
+.theme-journal .category-nav{background:#314239;color:#f2e8d5;border-top:1px solid #a0ac9d66}
+.journal-service-index{background:#f2efe5;color:#26352d;padding:70px 5%}
+.journal-service-index .section-head{max-width:1250px;margin:auto auto 25px}
+.journal-service-index h2{font:400 clamp(32px,4vw,53px)/1.12 Georgia,serif;max-width:900px}
+.journal-supply-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1300px;margin:auto}
+.journal-supply-cards .service-card{background:white;color:#26352d;border:1px solid #9aa697;overflow:hidden;min-width:0;text-decoration:none}
+.journal-supply-cards .service-card>img{width:100%;height:235px;object-fit:cover}
+.journal-supply-cards .service-card>span{display:flex;flex-direction:column;gap:12px;padding:25px}
+.journal-supply-cards .service-card b{font:400 clamp(24px,2.5vw,31px) Georgia,serif}
+.journal-supply-cards .service-card em{font-size:12px;font-weight:bold;font-style:normal}
+.theme-journal .journal-hero{height:590px}
+.theme-journal .journal-hero>div{max-width:1050px}
+.theme-journal .journal-editorial{background:#e8e4d8}
+.outfitter-process{padding:75px 6%;background:#f8f6f1;color:#263328}
+.outfitter-process>.section-head,.outfitter-steps{max-width:1280px;margin:0 auto}
+.outfitter-process h2{font:400 clamp(33px,4vw,51px)/1.1 Georgia,serif}
+.outfitter-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding-top:30px}
+.outfitter-steps article{border-top:2px solid #b8ad91;padding:23px 10px}
+.outfitter-steps b{font:400 46px Georgia,serif}
+.outfitter-steps h3{font:400 27px Georgia,serif;margin:15px 0}
+.outfitter-steps p{font:15px/1.6 Arial,sans-serif}
+@media(max-width:800px){
+ .journal-supply-cards{grid-template-columns:1fr}
+ .journal-supply-cards .service-card>img{height:220px}
+ .outfitter-steps{grid-template-columns:1fr}
+ .outfitter-process,.journal-service-index{padding:45px 6%}
+ .theme-journal .journal-hero{height:auto;min-height:490px}
+}
