@@ -27,7 +27,7 @@ try{
  if(photoModeEnabled){
    assert(photoStatus.image_count===17&&photoStatus.images.length===17,'Activated photo manifest is incomplete');
    for(const name of photoStatus.images){
-     assert(/^[a-z0-9_]+\\.webp$/.test(name),'Unsafe image filename '+name);
+     assert(/^[a-z0-9_]+\.webp$/.test(name),'Unsafe image filename '+name);
      const response=await page.request.get(base+'assets/photos/'+name);
      assert(response.ok(),'Imported image not found '+name);
      const mime=response.headers()['content-type']||'';
