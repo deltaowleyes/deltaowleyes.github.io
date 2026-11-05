@@ -4449,8 +4449,8 @@
       "priority": "P0",
       "priority_basis": "Explicit user-directed highest priority on 2026-11-05",
       "effort": "Large / phased",
-      "status": "pending",
-      "status_basis": "New user-requested redesign; no implementation or completion verified",
+      "status": "in_progress",
+      "status_basis": "Phase-one homepage and shared navigation implementation committed to isolated feature branch and draft PR; browser QA and live deployment not verified.",
       "dependencies": [],
       "dependencies_basis": "No hard prerequisite to begin UX audit and redesign; coordinate regression, accessibility, SEO and performance checks before release",
       "related_task_ids": [
@@ -4483,8 +4483,16 @@
           "type": "source_inspection",
           "date": "2026-11-05",
           "detail": "Repository homepage index.html contains multiple inline style layers and homepage app CSS; roadmap has related scoped testing/performance/admin tasks, but no equivalent whole-public-site redesign."
+        },
+        {
+          "type": "draft_pull_request",
+          "date": "2026-11-05",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/1",
+          "branch": "b4-037-app-redesign-phase-1",
+          "detail": "Shared navigation on eight public landing pages and responsive homepage dashboard styling. Source-level structural checks passed on eight pages; not merged or deployed; browser accessibility/responsiveness testing outstanding."
         }
-      ]
+      ],
+      "notes": "Phase 1 is review-only in draft PR #1. Do not mark complete or merge before mobile/desktop browser regression, menu usability, accessibility and deployment verification."
     }
   ],
   "archived_source_references": [
@@ -4563,6 +4571,13 @@
         "B2-024",
         "B2-007"
       ]
+    },
+    {
+      "date": "2026-11-05",
+      "type": "task_progress",
+      "task_id": "B4-037",
+      "summary": "Design/navigation phase-one changes committed on feature branch in draft PR #1; task moved to in_progress. Production unchanged.",
+      "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/1"
     }
   ]
 }
