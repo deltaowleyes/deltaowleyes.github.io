@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "enabled": false,
+  "image_count": 0,
+  "images": [],
+  "description": "Photo mode activates only after verified ZIP import; existing SVGs remain live until then."
+}
