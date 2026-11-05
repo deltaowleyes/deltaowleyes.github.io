@@ -6,7 +6,8 @@ on:
       - 'scripts/normalize_public_header.py'
       - 'assets/header-v3.css'
       - 'assets/header-v3.js'
-      - 'assets/delta-owl-eyes-header-240x35.png'
+      - 'assets/doe-header-symbol-100x35.png'
+      - 'assets/doe-header-wordmark-260x35.png'
       - '.github/workflows/normalize-public-header.yml'
   workflow_dispatch:
 permissions:
@@ -31,13 +32,14 @@ jobs:
           python3 scripts/normalize_public_header.py --check
       - name: Ensure logo dimensions and image type
         run: |
-          file assets/delta-owl-eyes-header-240x35.png
+          file assets/doe-header-symbol-100x35.png assets/doe-header-wordmark-260x35.png
           python3 - <<'PY'
           import pathlib,struct
-          p=pathlib.Path("assets/delta-owl-eyes-header-240x35.png").read_bytes()
-          assert p[:8]==b"\x89PNG\r\n\x1a\n"
-          assert struct.unpack(">II",p[16:24])==(240,35)
-          print("PNG dimensions: 240 x 35 PASS")
+          for name,width in (("doe-header-symbol-100x35.png",100),("doe-header-wordmark-260x35.png",260)):
+            p=pathlib.Path("assets",name).read_bytes()
+            assert p[:8]==b"\x89PNG\r\n\x1a\n"
+            assert struct.unpack(">II",p[16:24])==(width,35)
+            print(name, "dimensions PASS")
           PY
       - name: Commit normalized public HTML only
         run: |
