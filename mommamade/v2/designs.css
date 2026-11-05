@@ -30,8 +30,8 @@ button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:
 .cta:hover{background:var(--accent);color:var(--ink);text-decoration:none}.cta.light{background:var(--paper);color:var(--ink)}.cta.outline,.cta.subtle{background:transparent;color:var(--ink)}
 .cta.subtle{font-size:11px;border:0;padding:7px 0;min-height:0;border-bottom:1px solid currentColor}
 .photo{position:relative;background-color:#d6cfb8;background-image:linear-gradient(135deg,#e6dabd,#c9dbc4);overflow:hidden;min-height:175px;isolation:isolate}
-.photo:before{content:"";position:absolute;inset:0;background-image:url('./collection.svg');background-size:200% 200%;background-repeat:no-repeat}
-.photo-0:before{background-position:left top}.photo-1:before{background-position:right top}.photo-2:before{background-position:left bottom}.photo-3:before{background-position:right bottom}
+.photo:before{content:"";position:absolute;inset:0;background-image:url('./images/product-01.webp');background-size:cover;background-position:center;background-repeat:no-repeat;transition:filter .2s ease}
+.photo-0:before{background-image:url('./images/product-01.webp')}.photo-1:before{background-image:url('./images/product-02.webp')}.photo-2:before{background-image:url('./images/product-03.webp')}.photo-3:before{background-image:url('./images/product-04.webp')}
 .photo span{position:absolute;bottom:12px;left:12px;z-index:2;background:#fcf7e9e0;color:#253b31;padding:6px 8px;font:800 9px Arial,sans-serif;letter-spacing:.11em}
 .hero-image .photo span,.story-photo .photo span{display:none}
 .section{padding:80px 5%;max-width:1480px;margin:0 auto}.section-head{display:flex;gap:30px;align-items:end;justify-content:space-between;margin-bottom:33px}
@@ -160,3 +160,30 @@ button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:
  .crumb{flex-direction:column}.utility-band{font-size:11px}.filters>div{width:100%}
 }
 @media(prefers-reduced-motion:no-preference){.cta,.preview-card{transition:transform .18s ease,background-color .18s ease}.preview-card:hover{transform:translateY(-2px)}}
+
+/* Original AI photography: ten art-directed hero scenes, ten supporting scenes. */
+.theme-0 .hero-image .photo:before{background-image:url('./images/hero-01.webp');background-position:center;background-size:cover}
+.theme-0 .story-photo .photo:before,.theme-0 .editorial .photo:before{background-image:url('./images/story-01.webp');background-position:center;background-size:cover}
+.theme-1 .hero-image .photo:before{background-image:url('./images/hero-02.webp');background-position:center;background-size:cover}
+.theme-1 .story-photo .photo:before,.theme-1 .editorial .photo:before{background-image:url('./images/story-02.webp');background-position:center;background-size:cover}
+.theme-2 .hero-image .photo:before{background-image:url('./images/hero-03.webp');background-position:center;background-size:cover}
+.theme-2 .story-photo .photo:before,.theme-2 .editorial .photo:before{background-image:url('./images/story-03.webp');background-position:center;background-size:cover}
+.theme-3 .hero-image .photo:before{background-image:url('./images/hero-04.webp');background-position:center;background-size:cover}
+.theme-3 .story-photo .photo:before,.theme-3 .editorial .photo:before{background-image:url('./images/story-04.webp');background-position:center;background-size:cover}
+.theme-4 .hero-image .photo:before{background-image:url('./images/hero-05.webp');background-position:center;background-size:cover}
+.theme-4 .story-photo .photo:before,.theme-4 .editorial .photo:before{background-image:url('./images/story-05.webp');background-position:center;background-size:cover}
+.theme-5 .hero-image .photo:before{background-image:url('./images/hero-06.webp');background-position:center;background-size:cover}
+.theme-5 .story-photo .photo:before,.theme-5 .editorial .photo:before{background-image:url('./images/story-06.webp');background-position:center;background-size:cover}
+.theme-6 .hero-image .photo:before{background-image:url('./images/hero-07.webp');background-position:center;background-size:cover}
+.theme-6 .story-photo .photo:before,.theme-6 .editorial .photo:before{background-image:url('./images/story-07.webp');background-position:center;background-size:cover}
+.theme-7 .hero-image .photo:before{background-image:url('./images/hero-08.webp');background-position:center;background-size:cover}
+.theme-7 .story-photo .photo:before,.theme-7 .editorial .photo:before{background-image:url('./images/story-08.webp');background-position:center;background-size:cover}
+.theme-8 .hero-image .photo:before{background-image:url('./images/hero-09.webp');background-position:center;background-size:cover}
+.theme-8 .story-photo .photo:before,.theme-8 .editorial .photo:before{background-image:url('./images/story-09.webp');background-position:center;background-size:cover}
+.theme-9 .hero-image .photo:before{background-image:url('./images/hero-10.webp');background-position:center;background-size:cover}
+.theme-9 .story-photo .photo:before,.theme-9 .editorial .photo:before{background-image:url('./images/story-10.webp');background-position:center;background-size:cover}
+/* Swatches are demo art-direction moods, not purchasable variants. */
+.detail-photo.mood-neutral .photo:before{filter:grayscale(.48) saturate(.65)}
+.detail-photo.mood-warm .photo:before{filter:sepia(.20) saturate(1.12)}
+.detail-photo.mood-botanical .photo:before{filter:none}
+@media(max-width:380px){.site-header{gap:7px}.logo{font-size:23px}.menu-button{padding:8px 6px;font-size:11px}}

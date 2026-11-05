@@ -21,8 +21,21 @@ fs.mkdirSync(photos,{recursive:true});
   const x=await page.evaluate(()=>({w:document.documentElement.scrollWidth,viewport:document.documentElement.clientWidth}));
   assert.ok(x.w<=x.viewport+2,label+" horizontal overflow "+JSON.stringify(x));
  };
- const asset=await page.request.get(base+"collection.svg");
- assert.equal(asset.status(),200,"product imagery missing");
+ const artwork=[];
+ for(let n=1;n<=10;n++){
+  artwork.push("images/hero-"+String(n).padStart(2,"0")+".webp");
+  artwork.push("images/story-"+String(n).padStart(2,"0")+".webp");
+ }
+ for(let n=1;n<=4;n++)artwork.push("images/product-"+String(n).padStart(2,"0")+".webp");
+ for(const name of artwork){
+  const resp=await page.request.get(base+name);
+  assert.equal(resp.status(),200,"Missing image "+name);
+  const body=await resp.body();
+  assert.equal(body.toString("ascii",0,4),"RIFF","WebP header missing "+name);
+  assert.equal(body.toString("ascii",8,12),"WEBP","WebP format signature missing "+name);
+  assert.ok(body.length>10000,"Suspiciously small photograph "+name);
+ }
+ console.log("PASS all 24 original AI WebP image assets");
  const css=await page.request.get(base+"designs.css");
  assert.equal(css.status(),200,"design CSS missing");
  const js=await page.request.get(base+"designs.js");
@@ -37,7 +50,7 @@ fs.mkdirSync(photos,{recursive:true});
   assert.equal(await page.locator(".hero h1").count(),1,"design "+n+" homepage");
   assert.equal(await page.locator(".product-card").count(),n===7?4:4,"design "+n+" products");
   const img=await page.locator(".hero .photo").first().evaluate(el=>getComputedStyle(el,"::before").backgroundImage);
-  assert.ok(img.includes("collection.svg"),"design "+n+" missing illustration");
+  assert.ok(img.includes("hero-"+String(n).padStart(2,"0")+".webp"),"design "+n+" missing unique photograph");
   await noOverflow("design "+n+" desktop");
   await page.screenshot({path:photos+"/design-"+String(n).padStart(2,"0")+"-desktop.png",fullPage:true});
   await go(n,"shop");
@@ -54,8 +67,11 @@ fs.mkdirSync(photos,{recursive:true});
   }
   await page.locator("[data-visual='Neutral linen']").click();
   assert.equal(await page.locator("#visual-note").innerText(),"Selected visual mood: Neutral linen","selector response");
+  assert.equal(await page.locator(".detail-photo.mood-neutral").count(),1,"demo visual selector must change image treatment");
   await go(n,"about");
   assert.equal(await page.locator(".story").count(),1,"maker story");
+  const storyImage=await page.locator(".story-photo .photo").evaluate(el=>getComputedStyle(el,"::before").backgroundImage);
+  assert.ok(storyImage.includes("story-"+String(n).padStart(2,"0")+".webp"),"design "+n+" unique story photograph");
   await go(n,"care");
   assert.equal(await page.locator(".care-grid article").count(),4,"care guide");
   await go(n,"contact");
@@ -78,9 +94,14 @@ fs.mkdirSync(photos,{recursive:true});
   await noOverflow("design "+n+" mobile product");
   await go(n,"contact");
   await noOverflow("design "+n+" mobile contact");
+  for(const width of [320,768,1920]){
+   await page.setViewportSize({width,height:900});
+   await go(n,"home");
+   await noOverflow("design "+n+" home "+width+"px");
+  }
   console.log("PASS design "+String(n).padStart(2,"0")+" desktop/mobile, routes, filters, forms, assets");
  }
  assert.deepEqual(errors,[],"browser JavaScript errors");
  await browser.close();
- console.log("MOMMA MADE V2 QA PASS | "+visited+" routes | 10 storefronts | 20 storefront screenshots plus gallery");
+ console.log("MOMMA MADE V2 PREMIUM QA PASS | "+visited+" routes | 24 WebP photographs | 10 storefronts | responsive at 320,390,768,1440,1920 | 20 storefront screenshots plus gallery");
 })().catch(e=>{console.error("MOMMA MADE V2 QA FAILED",e);process.exitCode=1});
