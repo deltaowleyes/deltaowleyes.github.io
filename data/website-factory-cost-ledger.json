@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "currency": "CAD",
+  "policy_path": "docs/WEBSITE-FACTORY-COST-POLICY.md",
+  "development": {
+    "incremental_cash_cap_cad_exclusive": 1,
+    "known_billable_actions_initiated_this_bake": 0,
+    "known_new_purchases_or_subscriptions_this_bake": 0,
+    "actual_cash_spend_verified_cad": null,
+    "actual_cash_spend_verification_status": "unknown; no billing statements accessed",
+    "unverified_spending_not_assumed_zero": true,
+    "cost_evidence": "Used existing ChatGPT access, offline editing, existing owned project images, GitHub repository writes. No pay-per-use AI API, purchased theme, media license, new CMS, or billable hosting operation was initiated in this BAKE. Account-level charges cannot be inferred."
+  },
+  "production": {
+    "incremental_generation_and_qa_budget_per_100_options_cad": 5,
+    "target_cash_cost_per_option_cad": 0.05,
+    "measured_100_option_production_cost_cad": null,
+    "status": "target only; fully autonomous AI generation and actual production billing not validated",
+    "excluded_from_generation_and_qa_budget": [
+      "client production hosting",
+      "client domain",
+      "client ecommerce subscriptions",
+      "payment processing",
+      "business taxes",
+      "existing subscriptions within entitlements",
+      "human labour"
+    ]
+  },
+  "runs": [
+    {
+      "date": "2026-11-05",
+      "project": "Momma Made",
+      "candidate_revision": "v3",
+      "new_design_candidates": 10,
+      "source_media": "24 previously generated V2 WebP assets reused; no media purchased",
+      "known_payable_tools_invoked": false,
+      "invoice_or_billing_verified": false,
+      "actual_spend_cad": null,
+      "notes": "Candidate, not approved; no subscriptions initiated. Standard runners on public GitHub repositories are expected to be free, subject to plan and policy limits."
+    }
+  ]
+}
