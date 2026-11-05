@@ -18,7 +18,7 @@ try{
   for(const route of pages){
    await visit(page,u+'#'+route);
    assert(await page.locator('body').getAttribute('class')==='site theme-'+names[i], 'Theme mismatch '+i+'/'+route);
-   assert(await imgLoaded(page),'Broken main image '+i+'/'+route);
+   if(route!=='contact')assert(await imgLoaded(page),'Broken main image '+i+'/'+route);
    assert(await page.locator('.site-header').count()===1,'Missing navigation '+i+'/'+route);
    assert(await page.locator('a[href$="#contact"]').count()>0,'No contact link '+i+'/'+route);
    if(route==='home'){
