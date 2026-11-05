@@ -21,6 +21,7 @@ try{
    const hero=['.heritage-hero','.happy-poster','.quiet-intro','.supply-header','.lab-hero','.maker-open','.pattern-hero','.slow-mast','.utility-hero','.market-mast'][i];
    check(await page.locator(hero).count()===1,'Unique homepage anatomy missing '+hero);visitedSelectors.add(hero);
    check(await images(page),'Broken inline product art on home '+(i+1));
+   if(i===4){await page.locator('[data-scroll-finder]').click();await page.locator('[data-find="1"]').click();check(await page.locator('#lab-result h3').innerText()==='Reusable Paper Towels','Wrap Lab product finder did not update');await page.evaluate(()=>window.scrollTo(0,0));}
    await page.screenshot({path:'mommamade/qa-artifacts/design-'+(i+1)+'-desktop.png',fullPage:false});
    await visit(page,u+'#shop');
    for(let j=0;j<4;j++){check(await page.locator('a[href$="product-'+(j+1)+'"]').count()>0,'Missing product route in collection '+(i+1)+'/'+(j+1))}
