@@ -30,7 +30,7 @@ button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:
 .cta:hover{background:var(--accent);color:var(--ink);text-decoration:none}.cta.light{background:var(--paper);color:var(--ink)}.cta.outline,.cta.subtle{background:transparent;color:var(--ink)}
 .cta.subtle{font-size:11px;border:0;padding:7px 0;min-height:0;border-bottom:1px solid currentColor}
 .photo{position:relative;background-color:#d6cfb8;background-image:linear-gradient(135deg,#e6dabd,#c9dbc4);overflow:hidden;min-height:175px;isolation:isolate}
-.photo:before{content:"";position:absolute;inset:0;background-image:url('./collection.webp');background-size:200% 200%;background-repeat:no-repeat}
+.photo:before{content:"";position:absolute;inset:0;background-image:url('./collection.svg');background-size:200% 200%;background-repeat:no-repeat}
 .photo-0:before{background-position:left top}.photo-1:before{background-position:right top}.photo-2:before{background-position:left bottom}.photo-3:before{background-position:right bottom}
 .photo span{position:absolute;bottom:12px;left:12px;z-index:2;background:#fcf7e9e0;color:#253b31;padding:6px 8px;font:800 9px Arial,sans-serif;letter-spacing:.11em}
 .hero-image .photo span,.story-photo .photo span{display:none}
