@@ -150,6 +150,33 @@ function render(){
   status.textContent=count?count+' matching demo product'+(count===1?'':'s')+' for “'+searchTerm+'”':'No demo products match “'+searchTerm+'”.';
   document.querySelector('.items')?.before(status);
  }
+ const filters=[...document.querySelectorAll('[data-filter]')];
+ if(filters.length){
+  let category='all',sort='featured';
+  const list=document.querySelector('.fit-collection-cards'),items=[...list.querySelectorAll('.item')];
+  const original=new Map(items.map((el,i)=>[el.dataset.index,i]));
+  const kinds=['food','cleaning','cleaning','lunch'];
+  const refresh=()=>{
+    filters.forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.filter===category)));
+    let count=0;
+    items.forEach(item=>{
+      const index=Number(item.dataset.index);
+      const show=(category==='all'||kinds[index]===category)&&(!searchTerm||item.textContent.toLowerCase().includes(searchTerm));
+      item.hidden=!show;if(show)count++;
+    });
+    const sorted=[...items].sort((a,b)=>{
+      if(sort==='featured')return original.get(a.dataset.index)-original.get(b.dataset.index);
+      const x=products[Number(a.dataset.index)].name,y=products[Number(b.dataset.index)].name;
+      return sort==='alphabetic'?x.localeCompare(y):y.localeCompare(x);
+    });
+    sorted.forEach(el=>list.appendChild(el));
+    const message=document.querySelector('[data-filter-message]');
+    if(message)message.textContent=count+' matching concept product'+(count===1?'':'s');
+  };
+  filters.forEach(btn=>btn.addEventListener('click',()=>{category=btn.dataset.filter;refresh()}));
+  document.querySelector('[data-sort-products]')?.addEventListener('change',e=>{sort=e.target.value;refresh()});
+  refresh();
+ }
  const slider=document.querySelector('[data-slider]');
  if(slider){
   const type=slider.getAttribute('data-slider');
