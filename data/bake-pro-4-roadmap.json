@@ -4450,7 +4450,7 @@
       "priority_basis": "Explicit user-directed highest priority on 2026-11-05",
       "effort": "Large / phased",
       "status": "in_progress",
-      "status_basis": "Phase-one homepage and shared navigation implementation committed to isolated feature branch and draft PR; browser QA and live deployment not verified.",
+      "status_basis": "User authorized live-first workflow; phase-one navigation and homepage design merged to main; Pages deployment not independently verified.",
       "dependencies": [],
       "dependencies_basis": "No hard prerequisite to begin UX audit and redesign; coordinate regression, accessibility, SEO and performance checks before release",
       "related_task_ids": [
@@ -4490,9 +4490,15 @@
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/1",
           "branch": "b4-037-app-redesign-phase-1",
           "detail": "Shared navigation on eight public landing pages and responsive homepage dashboard styling. Source-level structural checks passed on eight pages; not merged or deployed; browser accessibility/responsiveness testing outstanding."
+        },
+        {
+          "type": "github_merge",
+          "date": "2026-11-05",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/4eccb42b6ecd81f0135592d39fba2682267de8f4",
+          "detail": "PR #1 merged into main; public deployment not confirmed"
         }
       ],
-      "notes": "Phase 1 is review-only in draft PR #1. Do not mark complete or merge before mobile/desktop browser regression, menu usability, accessibility and deployment verification."
+      "notes": "User approved incremental direct-to-production visual changes without preview requirement. Still P0 in_progress; broad page coverage, browser responsiveness, navigation usability, accessibility and live verification remain."
     }
   ],
   "archived_source_references": [
@@ -4578,6 +4584,13 @@
       "task_id": "B4-037",
       "summary": "Design/navigation phase-one changes committed on feature branch in draft PR #1; task moved to in_progress. Production unchanged.",
       "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/1"
+    },
+    {
+      "date": "2026-11-05",
+      "type": "live_first_workflow_change",
+      "task_id": "B4-037",
+      "commit": "4eccb42b6ecd81f0135592d39fba2682267de8f4",
+      "summary": "User approved direct live visual updates. First redesign merged to main; deployment not independently verified."
     }
   ]
 }
