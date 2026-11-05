@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "record_count": 4996,
+  "profile_shards": 256,
+  "source_sha256": [
+    "70d12051935cbc0f118de3d0e71d986f52a1835e8e20cf204124e99cb6edf82e",
+    "4b0ceded8f8b767b85944fc31558737f76e2970d22acb2218f1d13aa45386805"
+  ],
+  "fields": [
+    "name",
+    "city",
+    "province",
+    "community",
+    "category",
+    "original_category",
+    "directory_category",
+    "description",
+    "phone",
+    "website",
+    "source_url",
+    "source_id",
+    "verification_status",
+    "owner_confirmed",
+    "address"
+  ]
+}
