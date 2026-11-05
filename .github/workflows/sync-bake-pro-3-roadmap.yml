@@ -1,0 +1,32 @@
+name: Synchronize BAKE PRO 3.0 roadmap
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 11 * * *'
+permissions:
+  actions: read
+  contents: write
+concurrency:
+  group: bake-pro-3-roadmap-sync
+  cancel-in-progress: false
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Verify and reconcile evidence-backed roadmap statuses
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/sync_bake_pro_3_roadmap.py
+      - name: Commit only canonical roadmap if status changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/bake-pro-3-roadmap.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: synchronize verified BAKE PRO 3.0 statuses"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
