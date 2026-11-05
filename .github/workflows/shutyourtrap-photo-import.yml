@@ -21,6 +21,8 @@ jobs:
         with:
           ref: main
           persist-credentials: true
+      - name: Validate photo importer Python syntax
+        run: python3 -m py_compile shutyourtrap/scripts/import-photo-pack.py
       - name: Check inbox
         id: inbox
         shell: bash
