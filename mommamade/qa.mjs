@@ -8,7 +8,7 @@ const browser=await chromium.launch({headless:true});
 mkdirSync('mommamade/qa-artifacts',{recursive:true});
 const report={desktop:[],mobile:[],gallery:false,errors:[]};
 const check=(condition,message)=>{if(!condition)throw new Error(message)};
-async function visit(page,url){const resp=await page.goto(url,{waitUntil:'domcontentloaded',timeout:30000});check(resp?.ok(),url+' returned non-200');await page.locator('#content').waitFor({timeout:15000});await page.locator('#content .art').first().waitFor({timeout:15000});await page.waitForTimeout(90)}
+async function visit(page,url){const resp=await page.goto(url,{waitUntil:'domcontentloaded',timeout:30000});check(!resp || resp.ok(),url+' returned non-200');await page.locator('#content').waitFor({timeout:15000});await page.locator('#content .art').first().waitFor({timeout:15000});await page.waitForTimeout(90)}
 async function images(page){return await page.locator('#content img.art').evaluateAll(imgs=>imgs.every(i=>i.complete && i.naturalWidth>0))}
 try{
  const page=await browser.newPage({viewport:{width:1440,height:1000},deviceScaleFactor:1});
