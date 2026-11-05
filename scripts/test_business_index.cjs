@@ -10,7 +10,11 @@ const manifest=JSON.parse(fs.readFileSync(path.join(optimized,'manifest.json'),'
 assert.equal(index.schema,1);
 assert.equal(index.records.length,source.length);
 assert.equal(manifest.record_count,source.length);
+const originalBytes=['businesses-with-phone.json','businesses-without-phone.json'].reduce((n,f)=>n+fs.statSync(path.join(base,f)).size,0);
+const firstScreenBytes=['manifest.json','featured.json','facets.json'].reduce((n,f)=>n+fs.statSync(path.join(optimized,f)).size,0);
+assert(firstScreenBytes<originalBytes/4,'first screen too large');
 assert.equal(index.fields.length,new Set(index.fields).size);
+const originalByKey=new Map(source.map(b=>[b.source_id?'id:'+b.source_id:b.name+'|'+b.city,b]));
 const indexKeys=new Set();
 const fieldIndex=Object.fromEntries(index.fields.map((f,i)=>[f,i]));
 for(const row of index.records){
@@ -27,6 +31,7 @@ for(const f of fs.readdirSync(shardFolder)){
   const expected=crypto.createHash('sha256').update(entry.key,'utf8').digest('hex').slice(0,2)+'.json';
   assert.equal(expected,f,'wrong hash shard for '+entry.key);
   assert(indexKeys.has(entry.key),'missing indexed record: '+entry.key);
+  assert.deepEqual(entry.record,originalByKey.get(entry.key),'profile record mismatch: '+entry.key);
   const b=entry.record;
   assert.equal(entry.key,b.source_id?'id:'+b.source_id:b.name+'|'+b.city);
   seen++;
@@ -39,4 +44,4 @@ for(const p of ['index.html','profile.html']){
  const inline=[...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)].map(x=>x[1]).filter(Boolean);
  for(const js of inline) if(!/^\s*\{?\s*"@context"\s*:/.test(js))new vm.Script(js,{filename:p});
 }
-console.log(JSON.stringify({test:'B4-038 optimized directory',records:seen,indexed:index.records.length,shards:manifest.profile_shards,status:'PASS'}));
+console.log(JSON.stringify({test:'B4-038 optimized directory',records:seen,indexed:index.records.length,shards:manifest.profile_shards,first_screen_bytes:firstScreenBytes,original_bytes:originalBytes,status:'PASS'}));
