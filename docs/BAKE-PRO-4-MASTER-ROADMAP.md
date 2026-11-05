@@ -7,7 +7,7 @@ This is a **best-guess, expandable operational roadmap**, not a reconstruction o
 ## Coverage and limitations
 
 - **132 total records:** 93 faithfully retained BAKE PRO 2.0 action titles/descriptions (`B2-001`–`B2-093`), 3 BAKE PRO 3.0 status tasks (`S01`–`S03`), and 36 additional proposed scoped projects (`B4-001`–`B4-036`).
-- **S01 complete** with evidence; **S02/S03 pending** at initial migration. A fresh successful directory logging run supports reviewing S02 for closure, and the [daily status reconciliation workflow](../.github/workflows/sync-bake-pro-4-roadmap.yml) can close it with evidence.
+- **S01 and S02 complete** with evidence; **S03 pending**. S02 was closed after a genuine successful directory-logging run ([workflow 42027337417](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42027337417)); [daily status reconciliation](../.github/workflows/sync-bake-pro-4-roadmap.yml) checks for other narrowly verifiable changes.
 - Every imported/proposed `pending` label means **not verified complete**. Many tasks may be partially implemented or already live. Audits should confirm this and update statuses rather than redoing work.
 - The original 52-task PRO 3.0 list still has 49 unrecovered identities; retaining that as historical context **does not block** BAKE PRO 4.0 execution.
 - Proposed categories, dependencies, priorities, efforts, acceptance criteria and standalone prompts are **planning estimates**, not original-source statements or promises of completion.
@@ -31,7 +31,7 @@ P0 = critical integrity, governance or high-impact dependency. P1 = important ne
 | ID | Task | Status | Priority | Origin |
 |---|---|---|---|---|
 | S01 | Repair Directory Validation | complete | P0 | PRO 3.0 verified |
-| S02 | Repair Directory Update Logging | pending | P0 | PRO 3.0 verified |
+| S02 | Repair Directory Update Logging | complete | P0 | PRO 3.0 verified |
 | S03 | Repair Chromium Browser Tests | pending | P0 | PRO 3.0 verified |
 | B2-001 | Repair admin deletions | pending | P1 | PRO 2.0 |
 | B2-002 | Supabase migration | pending | P1 | PRO 2.0 |
