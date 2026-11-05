@@ -148,7 +148,15 @@
         "S01"
       ],
       "origin_registry": "BAKE PRO 3.0 unified registry",
-      "origin_status_snapshot": "pending"
+      "origin_status_snapshot": "pending",
+      "audit_snapshot": {
+        "date": "2026-11-05",
+        "level": "partial_evidence",
+        "summary": "Prior run 41909909026 passed local business/church rendering and published business Chromium rendering, then failed a phone-field-last assertion in admin (test_directory_browser.mjs:163). No later passing run verified.",
+        "urls": [
+          "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/41909909026"
+        ]
+      }
     },
     {
       "id": "B2-001",
@@ -185,7 +193,15 @@
         "S04"
       ],
       "origin_registry": "BAKE PRO 3.0 unified registry",
-      "origin_status_snapshot": "pending"
+      "origin_status_snapshot": "pending",
+      "audit_snapshot": {
+        "date": "2026-11-05",
+        "level": "partial_evidence",
+        "summary": "Deletion ledger, documented recovery, importer suppression and test_deletion_safety.py exist. Full nonproduction restore and admin/public synchronization acceptance not yet independently witnessed.",
+        "urls": [
+          "https://github.com/deltaowleyes/deltaowleyes.github.io/blob/main/DIRECTORY_DELETION_RECOVERY.md"
+        ]
+      }
     },
     {
       "id": "B2-002",
@@ -284,7 +300,15 @@
       "evidence": [],
       "related_task_ids": [],
       "origin_registry": "BAKE PRO 3.0 unified registry",
-      "origin_status_snapshot": "pending"
+      "origin_status_snapshot": "pending",
+      "audit_snapshot": {
+        "date": "2026-11-05",
+        "level": "partial_evidence",
+        "summary": "Latest Pages deployment observed successful, but legacy failed Chromium smoke test and ongoing branch protection/alerts not yet audited.",
+        "urls": [
+          "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42028974697"
+        ]
+      }
     },
     {
       "id": "B2-005",
@@ -488,7 +512,15 @@
       "evidence": [],
       "related_task_ids": [],
       "origin_registry": "BAKE PRO 3.0 unified registry",
-      "origin_status_snapshot": "pending"
+      "origin_status_snapshot": "pending",
+      "audit_snapshot": {
+        "date": "2026-11-05",
+        "level": "partial_evidence",
+        "summary": "data/videos.json registers blooper-001 with R2 URL and videos/index.html exists; playback and public CDN reachability were not independently verified.",
+        "urls": [
+          "https://github.com/deltaowleyes/deltaowleyes.github.io/blob/main/data/videos.json"
+        ]
+      }
     },
     {
       "id": "B2-011",
@@ -995,7 +1027,15 @@
       "evidence": [],
       "related_task_ids": [],
       "origin_registry": "BAKE PRO 3.0 unified registry",
-      "origin_status_snapshot": "pending"
+      "origin_status_snapshot": "pending",
+      "audit_snapshot": {
+        "date": "2026-11-05",
+        "level": "partial_evidence",
+        "summary": "assets/news-language.js implements a persistent news reading-style selection and the site has rez source JSON; full factual parity and article-level review not verified.",
+        "urls": [
+          "https://github.com/deltaowleyes/deltaowleyes.github.io/blob/main/assets/news-language.js"
+        ]
+      }
     },
     {
       "id": "B2-026",
@@ -1548,7 +1588,15 @@
         "S02"
       ],
       "origin_registry": "BAKE PRO 3.0 unified registry",
-      "origin_status_snapshot": "pending"
+      "origin_status_snapshot": "pending",
+      "audit_snapshot": {
+        "date": "2026-11-05",
+        "level": "partial_evidence",
+        "summary": "data/directory-updates.json and public events/updates page exist, and logging CI now passes; privacy/no-admin-leak acceptance still needs an end-to-end check.",
+        "urls": [
+          "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42027337417"
+        ]
+      }
     },
     {
       "id": "B2-042",
@@ -3359,10 +3407,10 @@
       "status_basis": "new proposed project; current implementation must be audited before changes or completion claims",
       "priority_basis": "assistant proposal subject to future roadmap audit",
       "dependencies": [
-        "B2-037",
+        "B4-036",
         "B2-007"
       ],
-      "dependencies_basis": "proposed project sequencing",
+      "dependencies_basis": "Corrected audit: church expansion B2-037 unrelated; privacy/legal screenshot review B4-036 and admin integration B2-007 are relevant.",
       "acceptance_criteria": [
         "Verify whether this capability already exists before creating or modifying it.",
         "Capture safe WebP previews for 20 eligible public business websites with Playwright, metadata, privacy safeguards, lazy load and admin refresh controls.",
@@ -3376,7 +3424,15 @@
         "type": "inferred project from known requirements",
         "source_context": "Prior Delta Owl Eyes project discussions, observed repository scope and user-approved best-guess planning"
       },
-      "evidence": []
+      "evidence": [],
+      "audit_snapshot": {
+        "date": "2026-11-05",
+        "level": "not_verified",
+        "summary": "No screenshot-capture workflow identified in the latest repository tree. Pilot remains pending; run website screenshot privacy/legal review before capture.",
+        "urls": [
+          "https://github.com/deltaowleyes/deltaowleyes.github.io/blob/main/docs/BAKE-PRO-4-MASTER-ROADMAP.md"
+        ]
+      }
     },
     {
       "id": "B4-004",
@@ -3614,7 +3670,15 @@
         "type": "inferred project from known requirements",
         "source_context": "Prior Delta Owl Eyes project discussions, observed repository scope and user-approved best-guess planning"
       },
-      "evidence": []
+      "evidence": [],
+      "audit_snapshot": {
+        "date": "2026-11-05",
+        "level": "suspected_issue",
+        "summary": "The most recent observed Chromium test failed phone-last field selector. Check admin actual field order vs test assumption before changing either.",
+        "urls": [
+          "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/41909909026"
+        ]
+      }
     },
     {
       "id": "B4-012",
@@ -4209,7 +4273,15 @@
         "type": "inferred project from known requirements",
         "source_context": "Prior Delta Owl Eyes project discussions, observed repository scope and user-approved best-guess planning"
       },
-      "evidence": []
+      "evidence": [],
+      "audit_snapshot": {
+        "date": "2026-11-05",
+        "level": "partial_evidence",
+        "summary": "Canonical JSON stores statuses/evidence and retirement rules, but no demonstrated approvals, restoration UI, or append-only audit validation beyond Git history.",
+        "urls": [
+          "https://github.com/deltaowleyes/deltaowleyes.github.io/blob/main/data/bake-pro-4-roadmap.json"
+        ]
+      }
     },
     {
       "id": "B4-032",
@@ -4236,7 +4308,15 @@
         "type": "inferred project from known requirements",
         "source_context": "Prior Delta Owl Eyes project discussions, observed repository scope and user-approved best-guess planning"
       },
-      "evidence": []
+      "evidence": [],
+      "audit_snapshot": {
+        "date": "2026-11-05",
+        "level": "not_verified",
+        "summary": "Master roadmap exists as markdown and JSON, but an interactive all-tasks dashboard with independently bound prompt buttons is not confirmed in website source.",
+        "urls": [
+          "https://github.com/deltaowleyes/deltaowleyes.github.io/blob/main/docs/BAKE-PRO-4-MASTER-ROADMAP.md"
+        ]
+      }
     },
     {
       "id": "B4-033",
@@ -4263,7 +4343,15 @@
         "type": "inferred project from known requirements",
         "source_context": "Prior Delta Owl Eyes project discussions, observed repository scope and user-approved best-guess planning"
       },
-      "evidence": []
+      "evidence": [],
+      "audit_snapshot": {
+        "date": "2026-11-05",
+        "level": "partial_evidence",
+        "summary": "Daily GitHub status reconciliation YAML and script exist. Recurring runs and broader than S02 automated reconciliation have not been observed.",
+        "urls": [
+          "https://github.com/deltaowleyes/deltaowleyes.github.io/blob/main/.github/workflows/sync-bake-pro-4-roadmap.yml"
+        ]
+      }
     },
     {
       "id": "B4-034",
@@ -4336,10 +4424,8 @@
       "status": "pending",
       "status_basis": "new proposed project; current implementation must be audited before changes or completion claims",
       "priority_basis": "assistant proposal subject to future roadmap audit",
-      "dependencies": [
-        "B2-037"
-      ],
-      "dependencies_basis": "proposed project sequencing",
+      "dependencies": [],
+      "dependencies_basis": "Corrected audit: no required upstream task; unrelated church expansion reference removed. This legal/safety review precedes screenshot capture.",
       "acceptance_criteria": [
         "Verify whether this capability already exists before creating or modifying it.",
         "Assess website screenshot permission, robots and image license policies; avoid private pages, security bypass and unapproved brand implications.",
@@ -4364,6 +4450,60 @@
     {
       "name": "BAKE PRO 3.0 canonical prior",
       "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/blob/main/data/bake-pro-3-roadmap.json"
+    }
+  ],
+  "audit_history": [
+    {
+      "date": "2026-11-05",
+      "type": "read_only_source_audit_and_registry_cleanup",
+      "source_head_at_start": "69d9b56f116999496468657a9ae27c3248b1a894",
+      "summary": "Verified 2 complete, 130 pending; 132 stable IDs, no cycles. Found and corrected two unrelated church-directory dependencies in screenshot tasks. Added focused evidence snapshots to 11 tasks, identified a failed phone field ordering assertion in Chromium tests and existing partial website features. No new, retired or merged tasks without stronger evidence.",
+      "dependency_corrections": [
+        {
+          "task": "B4-003",
+          "removed": "B2-037",
+          "added": "B4-036"
+        },
+        {
+          "task": "B4-036",
+          "removed": "B2-037",
+          "added": null
+        }
+      ],
+      "duplicate_review_clusters": [
+        [
+          "B2-001",
+          "B4-004"
+        ],
+        [
+          "B2-010",
+          "B4-002",
+          "B4-024"
+        ],
+        [
+          "B2-025",
+          "B4-022"
+        ],
+        [
+          "B2-037",
+          "B4-003"
+        ],
+        [
+          "B2-041",
+          "S02"
+        ],
+        [
+          "B2-085",
+          "B4-030"
+        ]
+      ],
+      "duplicate_review_note": "These are possible overlaps or incorrect links, not proven duplicates. Do not retire or merge without explicit approval.",
+      "verified_source_links": [
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42028974697",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42027337417",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/41909909026"
+      ],
+      "web_limitations": "Some live pages could not be fetched consistently; no current browser end-to-end test was performed."
     }
   ]
 }
