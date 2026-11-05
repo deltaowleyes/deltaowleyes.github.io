@@ -11,7 +11,7 @@
     "migration_audit": {
       "checked_on": "2026-11-05",
       "original_source": "ChatGPT conversation: Delta Owl Eyes — BAKE PRO 3.0 MASTER ROADMAP, 2026-11-05T11:23:44Z",
-      "retrieval_result": "Overview found, complete 52 task records and standalone BAKE prompts not retrievable from available prior-conversation context, files or repository.",
+      "retrieval_result": "PRO 2.0 93-action export archived separately; complete PRO 3.0 52-task detailed roadmap not yet supplied.",
       "unmigrated_count": 49,
       "unmigrated_ids_known": [
         "S04",
@@ -22,6 +22,15 @@
       "unmigrated_ids_unknown_count": 45,
       "required_input": "Original complete 52-task roadmap text or export, pasted or uploaded by the user. Preserve exact IDs, requirements and BAKE prompts.",
       "policy": "Do not generate replacement IDs, task descriptions, priorities, dependencies, acceptance criteria, or prompts from project generalities."
+    },
+    "additional_source": {
+      "title": "BAKE PRO 2.0 — 93 BAKE actions",
+      "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/blob/main/docs/BAKE-PRO-2-ORIGINAL-93-ACTIONS.md",
+      "action_count": 93,
+      "workstream_count": 9,
+      "classification": "Historical PRO 2.0 reference, not the original 52-task PRO 3.0 roadmap",
+      "limitations": "The 93-action export lacks original PRO 3.0 task IDs, task priorities, dependencies, status, acceptance criteria, and standalone BAKE prompts.",
+      "migration_policy": "Keep as separate reference; do not overwrite migrated tasks or assume one-to-one match."
     }
   },
   "status_definitions": {
