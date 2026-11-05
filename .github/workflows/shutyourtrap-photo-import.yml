@@ -1,0 +1,52 @@
+name: Shut Your Trap verified photo import
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'shutyourtrap/photo-inbox/shutyourtrap-photography-pack.zip'
+      - '.github/workflows/shutyourtrap-photo-import.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: shut-your-trap-photo-import
+  cancel-in-progress: false
+jobs:
+  verify-and-import:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Check inbox
+        id: inbox
+        shell: bash
+        run: |
+          if test -f shutyourtrap/photo-inbox/shutyourtrap-photography-pack.zip; then
+            echo "has_zip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_zip=false" >> "$GITHUB_OUTPUT"
+            echo "No photo ZIP uploaded; no changes required."
+          fi
+      - name: Validate checksums and extract exactly 17 WebP images
+        if: steps.inbox.outputs.has_zip == 'true'
+        run: python3 shutyourtrap/scripts/import-photo-pack.py
+      - name: Commit verified photo assets and activate photo mode
+        if: steps.inbox.outputs.has_zip == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shutyourtrap/assets/photos
+          git rm -f shutyourtrap/photo-inbox/shutyourtrap-photography-pack.zip
+          git diff --cached --stat
+          if ! git diff --cached --quiet; then
+            git commit -m "Integrate 17 verified AI photographs into Shut Your Trap site"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "No verified changes to commit."
+          fi
