@@ -4450,7 +4450,7 @@
       "priority_basis": "Explicit user-directed highest priority on 2026-11-05",
       "effort": "Large / phased",
       "status": "in_progress",
-      "status_basis": "132 public pages normalized and deployed; Playwright smoke matrix passed Chromium, Firefox and WebKit for 12 routes × 4 viewports, including sticky position, centered PNG, menu toggle/Escape, and overflow. Broader full redesign still in progress.",
+      "status_basis": "User-requested split header assets installed sitewide, left medicine wheel owl/hawk at 100×35 and independently centered dark-grey accented wordmark at 260×35; 132 public pages normalized, browser smoke success across Chromium, Firefox, WebKit. Cache-bust rollout and remaining full UX work continue.",
       "dependencies": [],
       "dependencies_basis": "No hard prerequisite to begin UX audit and redesign; coordinate regression, accessibility, SEO and performance checks before release",
       "related_task_ids": [
@@ -4557,6 +4557,26 @@
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42046952800",
           "result": "success",
           "detail": "Latest site deployment passed for roadmap commit 4487c3c46d247292546e0acc59c2f9f610dc7fea, which followed 132-page header rollout and browser workflow files."
+        },
+        {
+          "type": "github_header_assets",
+          "date": "2026-11-05",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/230b7f6022327a1980ab2c05177d6cf3e1ed15dd",
+          "detail": "Two separate transparent PNGs, assets/doe-header-symbol-100x35.png and assets/doe-header-wordmark-260x35.png, each 35px high. Corrected byte-verified wordmark PNG after CI caught an invalid initial blob. No 480x70 asset used."
+        },
+        {
+          "type": "github_header_tests",
+          "date": "2026-11-05",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42049725429",
+          "result": "success",
+          "detail": "Chromium/Firefox/WebKit tested 12 public routes x 4 widths. Verified centered wordmark, left symbol, both images loaded, sticky header, menu keyboard Escape and header overflow."
+        },
+        {
+          "type": "github_pages_deployment",
+          "date": "2026-11-05",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42049724133",
+          "result": "success",
+          "detail": "Pages deployment succeeded for corrected image commit 230b7f6; later cache-bust version commit 27d99ed pending at roadmap update."
         }
       ],
       "notes": "Header slice verified across Chromium, Firefox and WebKit on 12 routes × 4 widths, deployment succeeded. Distinct device/manual QA and remaining B4-037 broader public redesign still open; no admin/data changes."
@@ -4781,6 +4801,12 @@
       "type": "B4-037_header_cross_browser_pass",
       "task_id": "B4-037",
       "summary": "Passed 144 headless browser smoke scenarios (12 public routes × four viewport sizes × Chromium, Firefox, WebKit) and production Pages workflow; task remains in progress for broader redesign."
+    },
+    {
+      "date": "2026-11-05",
+      "type": "B4-037_split_header_35px",
+      "task_id": "B4-037",
+      "summary": "Replaced integrated 240x35 logo with left 100x35 picture and separately centered 260x35 wordmark, geometric Indigenous-inspired accent; corrected invalid PNG; 132 public pages normalized and 144 browser test scenarios passed; continuing UX roadmap."
     }
   ]
 }
