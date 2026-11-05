@@ -1,0 +1,45 @@
+name: Build optimized business directory
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'indigenous-businesses/businesses-with-phone.json'
+      - 'indigenous-businesses/businesses-without-phone.json'
+      - 'indigenous-businesses/category-mapping.js'
+      - '.github/deletion-ledger.json'
+      - 'scripts/build_business_index.cjs'
+      - '.github/workflows/build-business-index.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: doe-directory-data-write
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Refresh latest main
+        run: git pull --ff-only origin main
+      - name: Validate canonical business records and deletion safeguards
+        run: |
+          python3 scripts/check_directory_data.py
+          python3 scripts/test_deletion_safety.py
+      - name: Build compact index and hashed profile shards
+        run: |
+          node scripts/build_business_index.cjs
+          node scripts/build_business_index.cjs --check
+      - name: Commit only generated assets
+        run: |
+          git config user.name "delta-owl-eyes-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A indigenous-businesses/optimized/
+          if ! git diff --cached --quiet; then
+            git commit -m "data: regenerate optimized business index and profile shards"
+            git push origin HEAD:main
+          fi
