@@ -27,6 +27,15 @@ try{
    await page.screenshot({path:'mommamade/qa-artifacts/design-'+(i+1)+'-desktop.png',fullPage:false});
    await visit(page,u+'#shop');
    for(let j=0;j<4;j++){check(await page.locator('a[href$="product-'+(j+1)+'"]').count()>0,'Missing product route in collection '+(i+1)+'/'+(j+1))}
+   check(await page.locator('.fit-catalog-toolbar').count()===1,'Catalogue filter toolbar missing '+(i+1));
+   await page.locator('.fit-catalog-toolbar [data-filter="cleaning"]').click();
+   check(await page.locator('.fit-collection-cards .item:visible').count()===2,'Category filter did not show two cleaning items '+(i+1));
+   await page.locator('.fit-catalog-toolbar [data-filter="all"]').click();
+   check(await page.locator('.fit-collection-cards .item:visible').count()===4,'All filter did not restore items '+(i+1));
+   await page.locator('[data-sort-products]').selectOption('alphabetic');
+   const sorted=await page.locator('.fit-collection-cards .item h3').allInnerTexts();
+   check(sorted.join('|')===[...sorted].sort().join('|'),'Alphabetical sorting failed '+(i+1));
+   await page.locator('[data-sort-products]').selectOption('featured');
    if([3,7,9].includes(i)){await page.locator('[data-search-form] input').fill('Snack');await page.locator('[data-search-form] button').click();check(await page.locator('.items .item:visible').count()>=1,'Header product search found no matching item '+(i+1));}
    await visit(page,u+'#about');check(await page.locator('.story-page').count()===1,'Missing story '+(i+1));
    await visit(page,u+'#care');check(await page.locator('.care-grid article').count()===4,'Missing care guide '+(i+1));
@@ -34,6 +43,11 @@ try{
      await visit(page,u+'#product-'+j);
      check(await page.locator('.product-info h1').innerText()===products[j-1], 'Wrong product detail '+(i+1)+'/'+j);
      check(await page.locator('button.disabled').isDisabled(), 'Checkout not disabled '+(i+1)+'/'+j);
+     check(await page.locator('[data-gallery-thumb]').count()===3,'Missing product thumbnail selector '+(i+1)+'/'+j);
+     const artBefore=await page.locator('.fit-primary-img').getAttribute('src');
+     await page.locator('[data-gallery-thumb="1"]').click();
+     check(await page.locator('.fit-primary-img').getAttribute('src')!==artBefore,'Product thumbnail did not change primary art '+(i+1)+'/'+j);
+     check(await page.locator('[data-pattern-choice="1"]').getAttribute('aria-pressed')==='true','Pattern state not synchronized '+(i+1)+'/'+j);
      check(await images(page),'Product artwork not loading '+(i+1)+'/'+j);
    }
    report.desktop.push({template:i+1,theme:concepts[i],homepage:true,shop:true,about:true,care:true,productPages:4,checkoutDisabled:true,artwork:true});
