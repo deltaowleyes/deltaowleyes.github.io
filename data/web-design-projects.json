@@ -12,6 +12,14 @@
       "revision_index": "/mommamade/revisions/",
       "revisions": [
         {
+          "id": "v3",
+          "status": "candidate",
+          "url": "/mommamade/v3/",
+          "templates": 10,
+          "source": "mommamade/v3/site.js",
+          "fidelity": "original structurally distinct compositions; reference screenshot fidelity unverified; candidate QA pending"
+        },
+        {
           "id": "v2",
           "status": "latest",
           "url": "/mommamade/v2/",
