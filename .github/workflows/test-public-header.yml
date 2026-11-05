@@ -1,0 +1,46 @@
+name: Cross-browser public sticky header
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/header-v3.css'
+      - 'assets/header-v3.js'
+      - 'assets/delta-owl-eyes-header-240x35.png'
+      - 'scripts/test_public_header.mjs'
+      - '.github/workflows/test-public-header.yml'
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  header:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        run: npm install --no-save --ignore-scripts playwright@1.64.1
+      - name: Install browser
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+      - name: Serve local site
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/doe-header-server.log 2>&1 &
+          sleep 2
+      - name: Check centered logo, sticky header and menus
+        env:
+          DOE_BROWSER: ${{ matrix.browser }}
+        run: node scripts/test_public_header.mjs
+      - name: Keep failure screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: header-${{ matrix.browser }}-screenshots
+          path: test-results/*.png
+          if-no-files-found: ignore
