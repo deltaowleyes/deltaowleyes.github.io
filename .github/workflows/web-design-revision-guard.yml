@@ -1,0 +1,25 @@
+name: Web design project release and archive guard
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mommamade/**'
+      - 'shutyourtrap/**'
+      - 'data/web-design-projects.json'
+      - 'docs/WEB-DESIGN-VERSIONING-AND-REFERENCE-QA.md'
+      - 'tests/web-design-revisions.qa.cjs'
+      - '.github/workflows/web-design-revision-guard.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  release-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate latest gallery, archival routing and essential assets
+        run: node tests/web-design-revisions.qa.cjs
