@@ -24,8 +24,8 @@
   "scope": {
     "historical_pro2_actions": 93,
     "historical_pro3_verified_entries": 3,
-    "pro4_proposed_projects": 36,
-    "total_tasks": 132,
+    "pro4_proposed_projects": 37,
+    "total_tasks": 133,
     "unrecovered_pro3_original_52": 49,
     "unrecovered_note": "Historical original PRO 3.0 52-item source unavailable. It is no longer required to build best-guess PRO 4.0; do not fabricate its exact IDs or status.",
     "priority_note": "P0–P2 are planning proposals except preserved S01–S03 priority from original registry."
@@ -4440,6 +4440,51 @@
         "source_context": "Prior Delta Owl Eyes project discussions, observed repository scope and user-approved best-guess planning"
       },
       "evidence": []
+    },
+    {
+      "id": "B4-037",
+      "title": "Complete public website app-style redesign",
+      "description": "Rebuild public-facing Delta Owl Eyes user experience with cohesive app-like design, compact responsive grouped navigation, improved information architecture, less scrolling, and fast routes to key content across pages.",
+      "category": "Website, UX & Design",
+      "priority": "P0",
+      "priority_basis": "Explicit user-directed highest priority on 2026-11-05",
+      "effort": "Large / phased",
+      "status": "pending",
+      "status_basis": "New user-requested redesign; no implementation or completion verified",
+      "dependencies": [],
+      "dependencies_basis": "No hard prerequisite to begin UX audit and redesign; coordinate regression, accessibility, SEO and performance checks before release",
+      "related_task_ids": [
+        "B2-008",
+        "B2-028",
+        "B2-029",
+        "B2-024",
+        "B2-007"
+      ],
+      "acceptance_criteria": [
+        "Inventory public page templates, navigation links, information architecture and current desktop/mobile pain points; document baseline screenshots and key journeys.",
+        "Deliver coherent app-like responsive visual system and reusable public layout components, preserving approved brand identity and all existing content and URLs.",
+        "Replace oversized menus with accessible desktop and mobile grouped navigation, visible active states, keyboard/screen reader support and direct access to primary sections.",
+        "Reduce avoidable scroll depth and clicks to reach high-value content on homepage and key public sections; document before/after task-path measures.",
+        "Verify responsive layouts at phone, tablet and desktop widths; avoid horizontal overflow, obstructed controls and excessive visual density.",
+        "Run and document applicable accessibility, navigation, links, forms, privacy-consent, content rendering, directory, SEO and performance regression tests; preserve admin and data-suppression safeguards.",
+        "Deploy only after reviewable staged changes, smoke checks and rollback plan; verify live pages and provide exact commit/deployment evidence."
+      ],
+      "acceptance_criteria_basis": "Specific user-requested outcome and assistant-authored verifiable UX/release criteria",
+      "bake_prompt": "BAKE PRO 4.0 — B4-037: Complete public website app-style redesign (P0). Work in deltaowleyes/deltaowleyes.github.io for deltaowleyes.ca. First fetch latest main and data/bake-pro-4-roadmap.json, audit existing public pages, shared header/navigation, content hierarchy, CSS, mobile behavior, accessibility, performance and relevant existing roadmap tasks. Redesign the public website as a cohesive professional, responsive app-like experience: compact adaptive navigation with sensible grouped menus, clear priority actions, prominent search/discovery paths where justified, less vertical scrolling and faster access to news, TRC Calls to Action, videos, business/church directories, events, services and contact. Establish reusable design tokens, typography, spacing, cards, consistent page templates and mobile-first navigation; keep Delta Owl Eyes owl branding, river teal/forest green/gold palette and editorial trust. Plan IA/wireframes first, then implement safely in reviewable stages and validate desktop/mobile/tablet, keyboard and screen-reader accessibility, forms, links, navigation, consent, SEO URLs, existing content, directories, admin isolation, privacy, deletion suppression and publishing. Use test/preview before shipping, provide rollback, and do not rewrite factual content or migrate data merely for styling. Provide before/after evidence and measured improvements (page depth/task click counts, responsive checks, performance, WCAG-oriented checks), exact commits and deployment verification. Update B4-037 in the canonical roadmap with evidence; do not mark complete until acceptance criteria are demonstrated.",
+      "bake_prompt_basis": "Standalone execution prompt for explicitly requested P0 redesign",
+      "source": {
+        "roadmap": "BAKE PRO 4.0",
+        "type": "explicit user request",
+        "source_date": "2026-11-05",
+        "source_context": "User explicitly requested a complete P0 redesign because the menu is too large, current layout is basic, and information requires too much scrolling."
+      },
+      "evidence": [
+        {
+          "type": "source_inspection",
+          "date": "2026-11-05",
+          "detail": "Repository homepage index.html contains multiple inline style layers and homepage app CSS; roadmap has related scoped testing/performance/admin tasks, but no equivalent whole-public-site redesign."
+        }
+      ]
     }
   ],
   "archived_source_references": [
@@ -4504,6 +4549,20 @@
         "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/41909909026"
       ],
       "web_limitations": "Some live pages could not be fetched consistently; no current browser end-to-end test was performed."
+    },
+    {
+      "date": "2026-11-05",
+      "type": "user_requested_project_added",
+      "task_id": "B4-037",
+      "priority": "P0",
+      "summary": "Added distinct complete public website app-style redesign project; did not modify implementation or unrelated task statuses.",
+      "reviewed_related_task_ids": [
+        "B2-008",
+        "B2-028",
+        "B2-029",
+        "B2-024",
+        "B2-007"
+      ]
     }
   ]
 }
