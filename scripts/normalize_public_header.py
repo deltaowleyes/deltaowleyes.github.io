@@ -8,7 +8,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-LOGO = "/assets/doe-header-wordmark-260x35.png?v=b4037d"
+LOGO = "/assets/doe-header-wordmark-260x35.png?v=b4037e"
 SYMBOL = "/assets/doe-header-symbol-100x35.png?v=b4037d"
 HEADER_CSS = '<link rel="stylesheet" href="/assets/header-v3.css?v=b4037d">'
 HEADER_JS = '<script defer src="/assets/header-v3.js?v=b4037c"></script>'
