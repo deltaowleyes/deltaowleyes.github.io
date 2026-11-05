@@ -7,8 +7,8 @@ const concepts=[
  {title:"The Linen Edit",strap:"Beautifully useful things.",note:"Minimal gallery composition, asymmetrical hero and slow product reveal",ref:"Grovemade",refUrl:"https://grovemade.com/",lead:1},
  {title:"Sunday Picnic",strap:"The good days come naturally.",note:"Picnic-minded cinematic feature and curated everyday moments",ref:"Loeffler Randall",refUrl:"https://loefflerrandall.com/",lead:3},
  {title:"Fresh Start Supply",strap:"Useful goods. Less fuss.",note:"Functional department-store grid and needs-based shopping",ref:"Package Free",refUrl:"https://packagefreeshop.com/",lead:1},
- {title:"The Maker Notebook",strap:"A little care in every detail.",note:"Tactile notebook story, maker chapters and crafted catalogue",ref:"Totem theme",refUrl:"https://themes.shopify.com/themes/blum/styles/totem",lead:2},
- {title:"Bloom & Fold",strap:"Bring the garden into the everyday.",note:"Botanical arch, soft portrait layout and calm story sections",ref:"Togetherness Design",refUrl:"https://togethernessdesign.com/",lead:0},
+ {title:"The Maker Notebook",strap:"A little care in every detail.",note:"Tactile notebook story, maker chapters and crafted catalogue",ref:"Schoolhouse",refUrl:"https://schoolhouse.com/",lead:2},
+ {title:"Bloom & Fold",strap:"Bring the garden into the everyday.",note:"Botanical arch, soft portrait layout and calm story sections",ref:"Block Shop Textiles",refUrl:"https://www.blockshoptextiles.com/",lead:0},
  {title:"No-Waste Studio",strap:"USE. CARE. REPEAT.",note:"Dark technical studio with product facts and disciplined typography",ref:"Ocean Bottle",refUrl:"https://oceanbottle.co/",lead:2},
  {title:"Market Morning",strap:"Fresh ideas from the kitchen table.",note:"Market-stall geometry, striped wayfinding and category stalls",ref:"Abode New York",refUrl:"https://abode-newyork.com/",lead:0},
  {title:"The Little Things",strap:"Made for those little everyday moments.",note:"Family-routine storytelling, arch composition and editorial timeline",ref:"Homesick",refUrl:"https://homesick.com/",lead:3}
