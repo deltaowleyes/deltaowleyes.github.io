@@ -4507,6 +4507,16 @@
             "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/094fd5c554e5beb5251abcae5b3f8eabb1c24c77",
             "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/097ffd11ce877113cb8537ca3aa26035d50cb1e0"
           ]
+        },
+        {
+          "type": "github_commits",
+          "date": "2026-11-05",
+          "detail": "Moved motto beneath page content into footers of primary public pages, guides, highlights and investigations; applied shared CSS fallback to legacy TRC script pages, preserving community-hub introduction. Live browser verification not yet performed.",
+          "urls": [
+            "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/1302e510a763b60ef1b0b4ed046cbb186495683a",
+            "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/d7cfbb63a0ad44c3955eefc30c766edb7b1beb1c",
+            "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/d26a80d6058ef456cad39912cbab665dcbdf934d"
+          ]
         }
       ],
       "notes": "Live-first workflow authorized. Outstanding: check production deployment and responsive rendering, keyboard/screen readers, forms and filters, performance, remaining landing/article/profile pages, before/after measurements, and full UX acceptance. Keep P0 in progress."
@@ -4707,6 +4717,12 @@
         "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42037179635",
         "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42037304101"
       ]
+    },
+    {
+      "date": "2026-11-05",
+      "type": "B4-037_footer_motto_relocation",
+      "task_id": "B4-037",
+      "summary": "Moved tagline from above main content into footers of public pages. Legacy revised TRC scripts visually relocated through shared CSS; no data or admin changes."
     }
   ]
 }
