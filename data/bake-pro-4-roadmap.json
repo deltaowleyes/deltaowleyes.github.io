@@ -4450,7 +4450,7 @@
       "priority_basis": "Explicit user-directed highest priority on 2026-11-05",
       "effort": "Large / phased",
       "status": "in_progress",
-      "status_basis": "Live-first phase two public layout and compact mobile menu committed on main; source checks passed for eight key pages, but browser/mobile/deployment verification and remaining templates unfinished.",
+      "status_basis": "Content-first redesign on main: removed homepage intro/Latest updates and visible introductory headings on eight public landing pages; moved research and verification explanations into below-data disclosures where applicable. Browser QA and secondary pages outstanding.",
       "dependencies": [],
       "dependencies_basis": "No hard prerequisite to begin UX audit and redesign; coordinate regression, accessibility, SEO and performance checks before release",
       "related_task_ids": [
@@ -4517,6 +4517,12 @@
             "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/d7cfbb63a0ad44c3955eefc30c766edb7b1beb1c",
             "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/d26a80d6058ef456cad39912cbab665dcbdf934d"
           ]
+        },
+        {
+          "type": "github_commit",
+          "date": "2026-11-05",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/6bdd9a77b59a053a4149ed608f821b37a4036b60",
+          "detail": "Eight public landing pages updated to put cards, filters, search or video results first; accessible hidden h1 retained; safeguards and source notes preserved in expandable below-data sections."
         }
       ],
       "notes": "Live-first workflow authorized. Outstanding: check production deployment and responsive rendering, keyboard/screen readers, forms and filters, performance, remaining landing/article/profile pages, before/after measurements, and full UX acceptance. Keep P0 in progress."
@@ -4723,6 +4729,12 @@
       "type": "B4-037_footer_motto_relocation",
       "task_id": "B4-037",
       "summary": "Moved tagline from above main content into footers of public pages. Legacy revised TRC scripts visually relocated through shared CSS; no data or admin changes."
+    },
+    {
+      "date": "2026-11-05",
+      "type": "B4-037_content_first_layout",
+      "task_id": "B4-037",
+      "summary": "User directed removal of homepage Community Hub/Explore introduction and other opening headings/descriptions; eight main public pages updated directly on main without changing directory datasets or admin code."
     }
   ]
 }
