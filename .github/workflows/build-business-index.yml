@@ -8,6 +8,9 @@ on:
       - 'indigenous-businesses/category-mapping.js'
       - '.github/deletion-ledger.json'
       - 'scripts/build_business_index.cjs'
+      - 'scripts/test_business_index.cjs'
+      - 'indigenous-businesses/index.html'
+      - 'indigenous-businesses/profile.html'
       - '.github/workflows/build-business-index.yml'
   workflow_dispatch:
 permissions:
@@ -34,6 +37,7 @@ jobs:
         run: |
           node scripts/build_business_index.cjs
           node scripts/build_business_index.cjs --check
+          node scripts/test_business_index.cjs
       - name: Commit only generated assets
         run: |
           git config user.name "delta-owl-eyes-bot"
