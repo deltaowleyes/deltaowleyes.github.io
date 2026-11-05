@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-05T05:25:23Z",
+      "commit": "77715aa3119158a4c13a3383d7594fed3fd45301",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "indigenouswintermarketwampumlearninglodge|20261205|london|ontario",
+            "name": "Indigenous Winter Market — Wampum Learning Lodge",
+            "place": "London, Ontario",
+            "category": "Indigenous arts and artisan market",
+            "date": "2026-12-05",
+            "source": "https://www.uwo.ca/events/2026/12/indigenous-winter-market.html",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-03T20:50:29Z",
       "commit": "97028de74e31e854b68fbf75594854ad589f111b",
       "mode": "import",
