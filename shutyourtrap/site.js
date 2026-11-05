@@ -32,7 +32,7 @@ const photoMap=[
   "sharpening": "macro_razor_blade_on_wet_whetstone.webp"
  },
  {
-  "hero": "golden_dawn_lakeside_cabin.webp",
+  "hero": "golden_dawn_at_the_lakeside_cabin.webp",
   "trapping": "rugged_outdoor_gear_flat_lay.webp",
   "snaring": "rustic_wire_rope_workshop_still_life.webp",
   "sharpening": "vintage_workshop_grinding_wheel_still_life.webp"
