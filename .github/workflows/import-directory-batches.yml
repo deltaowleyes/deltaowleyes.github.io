@@ -28,11 +28,16 @@ jobs:
         run: python3 scripts/record_directory_additions.py --base "$GITHUB_SHA" --run "$GITHUB_SHA" --mode import
       - name: Validate directory JSON and verification rules
         run: python3 scripts/check_directory_data.py
+      - name: Generate matching optimized business files
+        run: |
+          node scripts/build_business_index.cjs
+          node scripts/build_business_index.cjs --check
       - name: Commit only modified directory data
         run: |
           git config user.name "delta-owl-eyes-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add indigenous-businesses/businesses-with-phone.json indigenous-businesses/businesses-without-phone.json data/directory-updates.json
+          git add -A indigenous-businesses/optimized/
           if ! git diff --cached --quiet; then
             git commit -m "data: import sourced Indigenous business directory batches"
             git pull --rebase origin main
