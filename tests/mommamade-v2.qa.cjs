@@ -12,7 +12,7 @@ fs.mkdirSync(photos,{recursive:true});
  const errors=[];
  page.on("pageerror",error=>errors.push(error.message));
  const go=async(n,route)=>{
-  const response=await page.goto(base+"?template="+n+"#"+route,{waitUntil:"domcontentloaded"});
+  const response=await page.goto(base+"?template="+n+"&qa="+(visited+1)+"#"+route,{waitUntil:"domcontentloaded"});
   assert.equal(response.status(),200,"HTTP failure for "+n+" "+route);
   await page.locator(".site-header").waitFor({timeout:10000});
   visited++;
