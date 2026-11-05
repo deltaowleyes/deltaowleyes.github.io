@@ -63,7 +63,20 @@ all_businesses=[]
 for part in ("indigenous-businesses/businesses-with-phone.json","indigenous-businesses/businesses-without-phone.json"):
  try: all_businesses.extend(json.loads((ROOT/part).read_text(encoding="utf-8")))
  except (OSError,ValueError,TypeError) as exc: errors.append(f"{part}: {exc}")
-if len(all_businesses)<4999: errors.append("Business split dropped the 4,999-record baseline")
+# Account for recoverable admin deletions without masking unexplained record loss.
+try:
+ ledger=json.loads((ROOT/".github/deletion-ledger.json").read_text(encoding="utf-8"))
+ if not isinstance(ledger,list): raise ValueError("Expected deletion ledger array")
+ deleted_ids=[]
+ for entry in ledger:
+  if not isinstance(entry,dict): raise ValueError("Invalid deletion ledger entry")
+  if entry.get("source")=="businesses":
+   identifier=("id:"+str(entry["source_id"])) if entry.get("source_id") else ("location:"+str(entry.get("key","")))
+   deleted_ids.append(identifier)
+ if len(deleted_ids)!=len(set(deleted_ids)):errors.append("Duplicate business deletion tombstones")
+ if len(all_businesses)+len(set(deleted_ids))<4999:errors.append("Business split and deletion ledger dropped the 4,999-record baseline")
+except (OSError,ValueError,TypeError,KeyError) as exc:
+ errors.append(f"Deletion ledger: {exc}")
 identities=[("id:"+str(r["source_id"])) if r.get("source_id") else ("location:"+str(r.get("name","")).strip().casefold()+"|"+str(r.get("city","")).strip().casefold()+"|"+str(r.get("province","")).strip().casefold()) for r in all_businesses if isinstance(r,dict)]
 if any(n>1 for n in Counter(identities).values()): errors.append("Duplicate source identifiers across business datasets")
 for err in errors:print("ERROR:",err,file=sys.stderr)
