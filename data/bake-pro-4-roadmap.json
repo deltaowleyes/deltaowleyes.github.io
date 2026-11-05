@@ -4450,7 +4450,7 @@
       "priority_basis": "Explicit user-directed highest priority on 2026-11-05",
       "effort": "Large / phased",
       "status": "in_progress",
-      "status_basis": "132 public HTML templates normalized to identical centered 240x35 logo header and sticky navigation; GitHub Actions generation and PNG validation passed; cross-browser Playwright smoke run still pending, so overall redesign remains P0 in progress.",
+      "status_basis": "132 public pages normalized and deployed; Playwright smoke matrix passed Chromium, Firefox and WebKit for 12 routes × 4 viewports, including sticky position, centered PNG, menu toggle/Escape, and overflow. Broader full redesign still in progress.",
       "dependencies": [],
       "dependencies_basis": "No hard prerequisite to begin UX audit and redesign; coordinate regression, accessibility, SEO and performance checks before release",
       "related_task_ids": [
@@ -4543,9 +4543,23 @@
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42046484605",
           "result": "success",
           "detail": "Pages deployment succeeded for mass header rollout commit 2bec18cb6035f28895af72758a47e975a02452ac."
+        },
+        {
+          "type": "browser_e2e",
+          "date": "2026-11-05",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42046857554",
+          "result": "success",
+          "detail": "Chromium, Firefox and WebKit all passed 12 representative public routes at 1280, 900, 390 and 320 px widths (48 checks per engine; 144 browser/route/viewport scenarios). Checks centered logo, 35px height, 240px natural PNG, sticky after scroll, no header overflow, mobile/desktop menu open and Escape close. These are headless browser engines, not every device-specific browser/version."
+        },
+        {
+          "type": "github_pages_deployment",
+          "date": "2026-11-05",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42046952800",
+          "result": "success",
+          "detail": "Latest site deployment passed for roadmap commit 4487c3c46d247292546e0acc59c2f9f610dc7fea, which followed 132-page header rollout and browser workflow files."
         }
       ],
-      "notes": "Cross-browser browser tests configured using Chromium, Firefox and WebKit (GitHub Actions run 42046857554), results pending. Full B4-037 app redesign remains in progress. Sticky header 240x35 centered logo on all public pages; no admin/data modifications."
+      "notes": "Header slice verified across Chromium, Firefox and WebKit on 12 routes × 4 widths, deployment succeeded. Distinct device/manual QA and remaining B4-037 broader public redesign still open; no admin/data changes."
     },
     {
       "id": "B4-038",
@@ -4761,6 +4775,12 @@
       "type": "B4-037_132_page_sticky_header",
       "task_id": "B4-037",
       "summary": "Commit 2bec18c normalized all 132 public headers using compact 240x35 PNG. Successful rollout CI and Pages deployment. WebKit/Firefox/Chromium test pending."
+    },
+    {
+      "date": "2026-11-05",
+      "type": "B4-037_header_cross_browser_pass",
+      "task_id": "B4-037",
+      "summary": "Passed 144 headless browser smoke scenarios (12 public routes × four viewport sizes × Chromium, Firefox, WebKit) and production Pages workflow; task remains in progress for broader redesign."
     }
   ]
 }
