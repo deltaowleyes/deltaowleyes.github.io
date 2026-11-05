@@ -4450,7 +4450,7 @@
       "priority_basis": "Explicit user-directed highest priority on 2026-11-05",
       "effort": "Large / phased",
       "status": "in_progress",
-      "status_basis": "User-requested split header assets installed sitewide, left medicine wheel owl/hawk at 100×35 and independently centered dark-grey accented wordmark at 260×35; 132 public pages normalized, browser smoke success across Chromium, Firefox, WebKit. Cache-bust rollout and remaining full UX work continue.",
+      "status_basis": "User-approved 75x55 emblem, 250x55 centered wordmark and pale patterned background deployed across 132 public pages. Normalizer and headless Chromium/Firefox/WebKit browser smoke passed; overall B4-037 remains in progress for wider UX work.",
       "dependencies": [],
       "dependencies_basis": "No hard prerequisite to begin UX audit and redesign; coordinate regression, accessibility, SEO and performance checks before release",
       "related_task_ids": [
@@ -4577,9 +4577,36 @@
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42049724133",
           "result": "success",
           "detail": "Pages deployment succeeded for corrected image commit 230b7f6; later cache-bust version commit 27d99ed pending at roadmap update."
+        },
+        {
+          "type": "github_artwork",
+          "date": "2026-11-05",
+          "detail": "Approved generated source images exported to optimized 75×55 transparent emblem, 250×55 transparent dark-grey wordmark, and 1200×150 pale native-inspired WebP header background. Uploaded as binary blobs and verified by Git object SHA. No directory/admin data changed.",
+          "urls": [
+            "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/85f5407a51b404fde1e72aba261e0800067fb67f"
+          ]
+        },
+        {
+          "type": "github_actions_verification",
+          "date": "2026-11-05",
+          "result": "success",
+          "detail": "Automated sitewide 132-public-page header update with PNG dimension checks, followed by successful Chromium, Firefox and WebKit smoke tests (12 representative pages × 4 widths each).",
+          "urls": [
+            "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42054837370",
+            "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42054858409"
+          ]
+        },
+        {
+          "type": "github_pages",
+          "date": "2026-11-05",
+          "result": "success",
+          "detail": "GitHub Pages deploy succeeded for complete header update at f0a927a5a9163f5114c6891025a93875cc741c14. Manual visual review of specific mobile devices remains outstanding.",
+          "urls": [
+            "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42054872851"
+          ]
         }
       ],
-      "notes": "Header slice verified across Chromium, Firefox and WebKit on 12 routes × 4 widths, deployment succeeded. Distinct device/manual QA and remaining B4-037 broader public redesign still open; no admin/data changes."
+      "notes": "Approved header artwork deployed with 75×55 left emblem, 250×55 centered wordmark, light patterned background. Cross-browser automated tests pass. B4-037 is still in progress for general site UX/redesign improvements; no modifications to admin/data."
     },
     {
       "id": "B4-038",
@@ -4807,6 +4834,12 @@
       "type": "B4-037_split_header_35px",
       "task_id": "B4-037",
       "summary": "Replaced integrated 240x35 logo with left 100x35 picture and separately centered 260x35 wordmark, geometric Indigenous-inspired accent; corrected invalid PNG; 132 public pages normalized and 144 browser test scenarios passed; continuing UX roadmap."
+    },
+    {
+      "date": "2026-11-05",
+      "type": "B4-037_user_approved_55px_branded_header",
+      "task_id": "B4-037",
+      "summary": "Approved 3-image header treatment published across 132 public pages; responsive sticky layout tests passed across Chromium Firefox WebKit; GitHub Pages successful; task remains in progress."
     }
   ]
 }
