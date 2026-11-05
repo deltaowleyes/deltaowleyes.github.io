@@ -15,6 +15,7 @@ try{
     if(!response||response.status()>=400)throw Error('HTTP error');
     const header=page.locator('header.doe-header-v3');
     if(await header.count()!==1)throw Error('Missing header');
+    await Promise.all([header.locator('.doe-center-brand img').evaluate(img=>img.decode()),header.locator('.doe-left-symbol img').evaluate(img=>img.decode())]);
     const data=await page.evaluate(()=>{
       const h=document.querySelector('header.doe-header-v3'),i=h.querySelector('.doe-center-brand img'),symbol=h.querySelector('.doe-left-symbol img');
       const b=i.getBoundingClientRect();
