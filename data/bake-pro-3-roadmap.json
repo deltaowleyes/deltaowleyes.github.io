@@ -7,7 +7,22 @@
     "original_roadmap_task_count": 52,
     "migrated_task_count": 3,
     "full_migration_complete": false,
-    "warning": "Only S01–S03 are reconstructed with verified identities; the original 52-task roadmap must be imported before treating this as complete. Never interpret absent IDs as completed or cancelled."
+    "warning": "INCOMPLETE MIGRATION: exactly 3 verified task identities out of 52 are in tasks. Remaining 49 original tasks (4 partly known IDs, 45 unknown IDs) must be recovered from original source; no missing task can be treated as complete, cancelled, or absent.",
+    "migration_audit": {
+      "checked_on": "2026-11-05",
+      "original_source": "ChatGPT conversation: Delta Owl Eyes — BAKE PRO 3.0 MASTER ROADMAP, 2026-11-05T11:23:44Z",
+      "retrieval_result": "Overview found, complete 52 task records and standalone BAKE prompts not retrievable from available prior-conversation context, files or repository.",
+      "unmigrated_count": 49,
+      "unmigrated_ids_known": [
+        "S04",
+        "X01",
+        "W02",
+        "C01"
+      ],
+      "unmigrated_ids_unknown_count": 45,
+      "required_input": "Original complete 52-task roadmap text or export, pasted or uploaded by the user. Preserve exact IDs, requirements and BAKE prompts.",
+      "policy": "Do not generate replacement IDs, task descriptions, priorities, dependencies, acceptance criteria, or prompts from project generalities."
+    }
   },
   "status_definitions": {
     "complete": "Task acceptance criteria supported by evidence; remaining independent work tracked separately",
