@@ -72,3 +72,9 @@ html body .doe-header-v2 .doe-menu-panel{z-index:100!important}
 }
 @media(max-width:360px){html body .doe-header-v2 .doe-brand{font-size:14px!important}html body .doe-header-v2 .doe-brand img{width:32px!important;height:32px!important}html body .doe-header-v2 .doe-mobile-navigation>summary{padding:10px 11px!important}}
 html body .doe-header-v2 :is(a,summary):focus-visible{outline:3px solid #be8e46!important;outline-offset:3px!important}
+
+/* B4-037: footer motto for modern templates and unmigrated public archives. */
+body .doe-tagline-bar{display:none!important}
+body footer .doe-footer-motto{width:100%;padding:10px 8px;margin:0 auto 8px!important;text-align:center;color:#174d44;font:850 clamp(12px,1.6vw,15px)/1.45 system-ui,sans-serif;letter-spacing:.1em}
+body footer .doe-footer-meta{text-align:center}
+body footer:not(:has(.doe-footer-motto))::before{content:"HARD TRUTHS.  EDUCATION.  ACCOUNTABILITY.";display:block;width:100%;margin:0 auto 9px;color:#174d44;font:850 clamp(12px,1.6vw,15px)/1.45 system-ui,sans-serif;letter-spacing:.1em;text-align:center}
