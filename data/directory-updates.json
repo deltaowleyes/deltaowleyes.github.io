@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-05T17:26:03Z",
+      "commit": "5027ecbe50d2f5b696d1e2d92d3818191033fa87",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "microouvertautochtone2026|20261114|montreal|quebec",
+            "name": "Micro ouvert autochtone — 2026",
+            "place": "Montréal, Quebec",
+            "category": "Indigenous arts and cultural gathering",
+            "date": "2026-11-14",
+            "source": "https://www.placedesarts.com/en/festival/micro-ouvert-autochtone",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-05T12:27:59Z",
       "commit": "7030e8580bfc822b5de31504ebc7bfd8c873484e",
       "mode": "data",
