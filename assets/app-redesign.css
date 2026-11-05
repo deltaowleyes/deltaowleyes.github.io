@@ -1,0 +1,27 @@
+/* BAKE PRO 4.0 B4-037 — public dashboard surface, phase one */
+.app-home{background:linear-gradient(180deg,#e8f1ec 0,#f5f8f6 280px)!important;color:#143b38!important}
+.app-home .app-shell{max-width:1280px!important;padding:clamp(18px,3vw,34px) clamp(14px,2.5vw,30px) 48px!important}
+.app-home .app-heading{align-items:flex-end!important;margin-bottom:18px!important;padding:14px 2px 8px!important}
+.app-home .app-heading h1{font-size:clamp(1.9rem,4vw,3.2rem)!important;letter-spacing:-.04em!important;line-height:1.1!important;margin:6px 0 9px!important}
+.app-home .app-heading p{max-width:650px!important}
+.app-home .app-searchlink{display:inline-flex;padding:12px 18px;border-radius:11px;background:#12685f;color:white!important;white-space:nowrap;text-decoration:none}
+.app-home .app-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important}
+.app-home .app-tile{position:relative;min-width:0;min-height:152px!important;padding:18px!important;overflow:hidden;background:#fff!important;border:1px solid #d4e3dc!important;border-radius:16px!important;box-shadow:0 5px 19px #143b380d!important;transition:transform .15s,box-shadow .15s!important}
+.app-home .app-tile:first-child{background:linear-gradient(135deg,#143e3b,#12685f)!important;color:white!important;border-color:#143e3b!important}
+.app-home .app-tile:first-child span,.app-home .app-tile:first-child p,.app-home .app-tile:first-child b,.app-home .app-tile:first-child h2{color:white!important}
+.app-home .app-tile:hover{transform:translateY(-3px);box-shadow:0 9px 22px #143b381b!important}
+.app-home .app-tile span{font-size:.66rem!important}
+.app-home .app-tile h2{font-size:clamp(1rem,1.4vw,1.2rem)!important;margin:7px 0 5px!important}
+.app-home .app-tile p{font-size:.83rem!important;line-height:1.4!important;margin-bottom:11px!important}
+.app-home .app-tile b{font-size:.81rem!important}
+.app-home .app-columns{margin-top:14px!important;gap:14px!important}
+.app-home .app-panel,.app-home .app-about{border-radius:16px!important;border:1px solid #d4e3dc!important;box-shadow:0 4px 18px #143b380b!important}
+.app-home .app-panel{padding:22px!important}
+.app-home .app-about{margin-top:14px!important}
+.app-home .app-row{padding:10px 0!important}
+.app-home a:focus-visible{outline:3px solid #b07b37!important;outline-offset:3px!important}
+@media(max-width:1040px){.app-home .app-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media(max-width:750px){.app-home .app-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.app-home .app-heading{display:block!important}.app-home .app-searchlink{margin-top:15px!important}.app-home .app-columns{grid-template-columns:1fr!important}}
+@media(max-width:430px){.app-home .app-shell{padding:14px 12px 35px!important}.app-home .app-grid{gap:9px!important}.app-home .app-tile{min-height:150px!important;padding:13px!important}.app-home .app-tile h2{font-size:1rem!important}.app-home .app-tile p{font-size:.78rem!important}.app-home .app-panel{padding:16px!important}}
+@media(max-width:330px){.app-home .app-grid{grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){.app-home .app-tile{transition:none!important}}
