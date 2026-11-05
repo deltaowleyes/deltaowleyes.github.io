@@ -1,0 +1,58 @@
+/* Momma Made V3 candidate-only browser audit. */
+'use strict';
+const {chromium}=require('playwright'),fs=require('node:fs'),assert=require('node:assert/strict');
+const base=process.env.MOMMA_V3_BASE_URL||'http://127.0.0.1:8765/mommamade/v3/';
+const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
+(async()=>{
+ const browser=await chromium.launch({headless:true});
+ const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1});
+ const errors=[];page.on('pageerror',e=>errors.push(String(e)));
+ async function go(n,route){const r=await page.goto(base+'?template='+n+'#'+route,{waitUntil:'domcontentloaded',timeout:20000});assert.equal(r.status(),200,'HTTP '+n+' '+route);await page.locator('.mast').waitFor({timeout:9000})}
+ async function geometry(where){const v=await page.evaluate(()=>({content:document.documentElement.scrollWidth,viewport:document.documentElement.clientWidth}));assert.ok(v.content<=v.viewport+2,where+' horizontal overflow '+JSON.stringify(v))}
+ const g=await page.goto(base,{waitUntil:'domcontentloaded'});assert.equal(g.status(),200);
+ assert.equal(await page.locator('.gallery-card').count(),10,'gallery count');
+ await page.screenshot({path:dir+'gallery-desktop.png',fullPage:true});
+ for(let n=1;n<=10;n++){
+  for(const [device,width,height] of [['desktop',1440,900],['mobile',390,844],['narrow',320,700],['tablet',768,1024],['laptop',1024,768]]){
+   await page.setViewportSize({width,height});await go(n,'home');await geometry('design '+n+' '+device);
+   assert.equal(await page.locator('.hero h1').count(),1);
+   assert.equal(await page.locator('.products .item').count(),4);
+   const bg=await page.locator('.hero .visual').evaluate(x=>getComputedStyle(x,'::before').backgroundImage);
+   assert.ok(bg.includes('hero-'),'missing hero source image '+n);
+   if(device==='mobile'){
+     await page.locator('[data-menu]').click();
+     assert.equal(await page.locator('[data-menu]').getAttribute('aria-expanded'),'true');
+     assert.equal(await page.locator('#mobile-menu').isVisible(),true);
+   }
+   if(device==='mobile'||device==='desktop')await page.screenshot({path:dir+'design-'+String(n).padStart(2,'0')+'-'+device+'.png',fullPage:false});
+  }
+  await page.setViewportSize({width:1440,height:900});
+  const routes=[['shop','.catalogue .item',4],['about','section.story',1],['care','.care-grid article',4],['contact','#demo-form',1],['product-1','.checkout:disabled',1],['product-2','.checkout:disabled',1],['product-3','.checkout:disabled',1],['product-4','.checkout:disabled',1]];
+  for(const [route,selector,count] of routes){
+   await go(n,route);assert.equal(await page.locator(selector).count(),count,'route '+n+' '+route);await geometry('route '+n+' '+route);
+  }
+  await go(n,'shop');await page.locator('[data-filter="Cleaning"]').click();
+  assert.equal(await page.locator('.catalogue .item').count(),2);
+  await page.locator('[data-filter="All"]').click();await page.locator('[data-search]').fill('Snack');
+  assert.equal(await page.locator('.catalogue .item').count(),1);
+  await go(n,'product-2');await page.locator('[data-mood="Neutral"]').click();
+  assert.equal(await page.locator('#mood-text').innerText(),'Selected mood: Neutral');
+  await go(n,'contact');await page.locator('#who').fill('Preview Only');
+  await page.locator('#email').fill('qa@example.test');await page.locator('#message').fill('Demonstration');
+  await page.locator('#demo-form button[type=submit]').click();
+  assert.match(await page.locator('#form-status').innerText(),/no inquiry was sent or stored/i);
+  console.log('PASS V3 design '+n+' 5 widths, 9 views and demo interactions');
+ }
+ for(let n=1;n<=10;n++)for(const prefix of ['hero','story']){
+  const path=base+'../v2/images/'+prefix+'-'+String(n).padStart(2,'0')+'.webp';
+  const res=await page.request.get(path);assert.equal(res.status(),200,path);
+  assert.equal((await res.body()).toString('ascii',0,4),'RIFF');
+ }
+ for(let n=1;n<=4;n++){
+  const res=await page.request.get(base+'../v2/images/product-'+String(n).padStart(2,'0')+'.webp');
+  assert.equal(res.status(),200,'product image '+n);
+ }
+ assert.deepEqual(errors,[],'JavaScript console page errors');
+ await browser.close();
+ console.log('PASS all 10 candidate designs, 90 direct routes, 50 responsive checks, 21 screenshots, 24 existing images');
+})().catch(e=>{console.error('MOMMA MADE V3 QA FAILED',e);process.exitCode=1});
