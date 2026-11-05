@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-05",
+  "currency": "CAD",
+  "policy": {
+    "development_max_exclusive_cad": 1,
+    "commercial_max_per_100_templates_cad": 5,
+    "existing_subscriptions_excluded": true,
+    "new_subscriptions_allowed": false,
+    "paid_apis_allowed": false,
+    "overages_allowed": false,
+    "approval_required_for_billable_changes": true
+  },
+  "verified_actual_cash_expenditure_cad": null,
+  "verified_actual_status": "UNVERIFIED: no GitHub billing statement, purchase ledger, or provider invoice was accessible. Null is not zero.",
+  "observed_changes": [
+    "No paid service or API provisioned by this branch",
+    "Standard public-repository GitHub Actions runner only; per published GitHub billing policy these compute minutes are free",
+    "No third-party AI image generation, paid templates, external deployments or checkout configured"
+  ],
+  "forecast": {
+    "development_incremental_cad": 0,
+    "commercial_per_100_templates_cad": 0,
+    "caveat": "conditional planning estimate for static HTML/CSS, free standard public-repo CI and manual QA, excluding storage overages and any future paid asset generation; not a verified invoice"
+  },
+  "usage_limits": [
+    "ChatGPT Plus may limit actual concurrent processing; ten branches do not imply ten simultaneous ChatGPT jobs",
+    "Github public standard runners are free but larger runners and some storage usage can incur charges; never enable larger runners or billable services",
+    "No API keys, agent service credentials or persistent background workers are provisioned; branch creation does not start autonomous design workers"
+  ],
+  "verification_needed": [
+    "Owner to verify GitHub billing and Actions artifact storage budget",
+    "Owner to verify any other provider expenses to establish actual C$0 baseline",
+    "Repeat ledger for every commercial 100-template batch with invoices and usage evidence"
+  ]
+}
