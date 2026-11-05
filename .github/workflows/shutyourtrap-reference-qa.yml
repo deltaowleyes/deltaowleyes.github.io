@@ -1,0 +1,39 @@
+name: Shut Your Trap reference composition captures
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'shutyourtrap/**'
+      - 'tests/shutyourtrap-reference-capture.cjs'
+      - '.github/workflows/shutyourtrap-reference-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reference-capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+      - name: Start isolated static preview server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/shutyourtrap-qa.log 2>&1 &
+          sleep 2
+          curl --fail --silent --show-error http://127.0.0.1:8765/shutyourtrap/ >/dev/null
+      - name: Capture inspiration and local screenshot pairs
+        run: node tests/shutyourtrap-reference-capture.cjs
+      - name: Upload desktop/mobile comparison evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shutyourtrap-reference-comparison
+          path: artifacts/shutyourtrap/reference-comparison/
+          retention-days: 14
+          if-no-files-found: ignore
