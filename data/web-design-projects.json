@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "policy": "docs/WEB-DESIGN-VERSIONING-AND-REFERENCE-QA.md",
+  "updated_at": "2026-11-05",
+  "projects": [
+    {
+      "id": "momma-made",
+      "name": "Momma Made",
+      "root": "/mommamade/",
+      "latest_revision": "v2",
+      "latest_url": "/mommamade/v2/",
+      "revision_index": "/mommamade/revisions/",
+      "revisions": [
+        {
+          "id": "v2",
+          "status": "latest",
+          "url": "/mommamade/v2/",
+          "templates": 10,
+          "source": "mommamade/v2/designs.js",
+          "fidelity": "reference-aware; unverified screenshot parity"
+        },
+        {
+          "id": "v1",
+          "status": "archived",
+          "url": "/mommamade/revisions/v1/",
+          "templates": 10,
+          "source": "mommamade/designs.js",
+          "fidelity": "reference-inspired; unverified screenshot parity"
+        }
+      ]
+    },
+    {
+      "id": "shut-your-trap",
+      "name": "Shut Your Trap — Ermatinger's Trapping, Snaring and Sharpening",
+      "root": "/shutyourtrap/",
+      "latest_revision": "v1",
+      "latest_url": "/shutyourtrap/",
+      "revision_index": "/shutyourtrap/revisions/",
+      "revisions": [
+        {
+          "id": "v1",
+          "status": "latest",
+          "url": "/shutyourtrap/",
+          "templates": 10,
+          "source": "shutyourtrap/site.js",
+          "fidelity": "reference-inspired; unverified screenshot parity"
+        }
+      ]
+    }
+  ]
+}
