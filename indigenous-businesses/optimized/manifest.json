@@ -22,5 +22,6 @@
     "verification_status",
     "owner_confirmed",
     "address"
-  ]
+  ],
+  "asset_sha256": "07e65ec5aa75cd147b75be368b4e5bbd3d15be22b3dcc9c30307f5eb8eba199b"
 }
