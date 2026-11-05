@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-05T22:23:41Z",
+      "commit": "e56ec66396a1b1c60ada0df312bcbaa9f03a9cde",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "indigenousartisanmarketmonova2026|20261128|northvancouver|britishcolumbia",
+            "name": "Indigenous Artisan Market — MONOVA 2026",
+            "place": "North Vancouver, British Columbia",
+            "category": "Indigenous artisan market",
+            "date": "2026-11-28",
+            "source": "https://monova.ca/events/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-05T21:25:14Z",
       "commit": "76bce445c70bd9f6798eee9ec8cf206c699d4e11",
       "mode": "data",
