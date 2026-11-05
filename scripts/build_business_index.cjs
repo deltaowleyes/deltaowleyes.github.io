@@ -39,6 +39,28 @@ for(const b of all){
 const manifest={schema:1,record_count:all.length,profile_shards:shards.size,source_sha256:source.map(b=>crypto.createHash('sha256').update(b).digest('hex')),fields};
 const expected=new Map();
 expected.set('search-index.json',JSON.stringify({schema:1,fields,records:rows})+'\n');
+
+/* Featured first screen mirrors the directory's established Walpole-first ordering. */
+function priority(b){
+ const t=[b.city,b.community,b.address,b.description].filter(Boolean).join(' ').toLowerCase();
+ const groups=[/walpole island|bkejwanong/,/aamjiwnaang|chippewas of sarnia/,/moraviantown|delaware nation|eel.u.naap.eewi|thamesville/,/caldwell first nation/,/kettle.*stony point|kettle point|stony point|ipperwash/,/chippewas of the thames|deshkan ziibiing|munsee.delaware|oneida nation of the thames/];
+ for(let i=0;i<groups.length;i++)if(groups[i].test(t))return i;
+ const city=String(b.city||'').toLowerCase();
+ if(/wallaceburg|sombra|port lambton|courtright|sarnia|thamesville|chatham|blenheim|forest|leamington|muncey|southwold|london/.test(city))return 6;
+ return /^(on|ontario)$/i.test(String(b.province||''))?7:8;
+}
+const order=all.map((b,i)=>i).sort((i,j)=>priority(all[i])-priority(all[j])||String(all[i].name||'').localeCompare(String(all[j].name||'')));
+const featured=order.slice(0,48).map(i=>rows[i]);
+const cityMap={};const provinces=new Set(),allCities=new Set();
+for(const b of all){
+ const p=String(b.province||''),city=String(b.city||'').trim();
+ if(p){provinces.add(p);if(!cityMap[p])cityMap[p]=new Set();if(city)cityMap[p].add(city)}
+ if(city)allCities.add(city);
+}
+const facets={schema:1,provinces:[...provinces].sort(),all_cities:[...allCities].sort((a,b)=>a.localeCompare(b)),cities_by_province:Object.fromEntries(Object.entries(cityMap).map(([p,items])=>[p,[...items].sort((a,b)=>a.localeCompare(b))]))};
+expected.set('featured.json',JSON.stringify({schema:1,fields,records:featured})+'\n');
+expected.set('facets.json',JSON.stringify(facets)+'\n');
+
 expected.set('manifest.json',JSON.stringify(manifest,null,2)+'\n');
 for(const [id,list] of shards)expected.set('profiles/'+id+'.json',JSON.stringify(list)+'\n');
 const check=process.argv.includes('--check');
