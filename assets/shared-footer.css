@@ -5,3 +5,14 @@ body > footer{display:flex!important;flex-direction:column!important;align-items
 /* B4-037: motto in footer, not the top navigation area. */
 footer .doe-footer-motto{width:100%;padding:12px 8px;margin:0 auto 8px!important;color:#174d44;font:850 clamp(12px,1.6vw,15px)/1.45 system-ui,sans-serif;letter-spacing:.10em;text-align:center}
 footer .doe-footer-meta{width:100%;text-align:center;font-size:.9rem}
+
+/* Legacy TRC script and archive templates still contain their old top motto.
+   Visually suppress that legacy bar and put one motto in their footer.
+   Modern templates have actual semantic .doe-footer-motto markup. */
+body .doe-tagline-bar{display:none!important}
+body footer:not(:has(.doe-footer-motto))::before{
+ content:"HARD TRUTHS.  EDUCATION.  ACCOUNTABILITY.";
+ display:block;width:100%;margin:0 auto 9px;
+ color:#174d44;font:850 clamp(12px,1.6vw,15px)/1.45 system-ui,sans-serif;
+ letter-spacing:.1em;text-align:center
+}
