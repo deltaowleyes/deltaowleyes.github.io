@@ -21,7 +21,101 @@ const $=s=>document.querySelector(s),app=$("#app");
 const qs=new URLSearchParams(location.search),index=Number(qs.get("template"))-1,valid=index>=0&&index<10,preview=qs.get("preview")==="1";
 function num(n){return String(n+1).padStart(2,"0")}
 function to(route,at=index){return '?template='+(at+1)+'#'+route}
-function image(kind='hero',cls='',i=index,load='lazy'){return `<img src="./assets/${num(i)}-${kind}.svg" class="${cls}" alt="Original conceptual ${kind} scene for Shut Your Trap" width="1600" height="900" loading="${load}">`}
+// Original AI-generated images: 17 verified unique sources curated for 40 image placements.
+// This feature remains dormant until the photo-import workflow verifies every binary
+// and atomically enables assets/photos/status.json. All SVGs remain working fallbacks.
+const photoMap=[
+ {
+  "hero": "rustic_sunlit_sharpening_workshop.webp",
+  "trapping": "misty_morning_forest_camp_gear.webp",
+  "snaring": "rustic_wire_rope_workshop_still_life.webp",
+  "sharpening": "macro_razor_blade_on_wet_whetstone.webp"
+ },
+ {
+  "hero": "golden_dawn_lakeside_cabin.webp",
+  "trapping": "rugged_outdoor_gear_flat_lay.webp",
+  "snaring": "rustic_wire_rope_workshop_still_life.webp",
+  "sharpening": "vintage_workshop_grinding_wheel_still_life.webp"
+ },
+ {
+  "hero": "rugged_expedition_gear_flat_lay.webp",
+  "trapping": "misty_morning_forest_camp_gear.webp",
+  "snaring": "rustic_wire_rope_workshop_still_life.webp",
+  "sharpening": "woodworking_sharpening_station_flat_lay.webp"
+ },
+ {
+  "hero": "golden_sunrise_in_a_misty_pine_forest.webp",
+  "trapping": "sunrise_backpack_over_misty_mountains.webp",
+  "snaring": "rugged_expedition_gear_flat_lay.webp",
+  "sharpening": "droplets_on_a_sharpened_blade.webp"
+ },
+ {
+  "hero": "water_kissed_blade_on_whetstone.webp",
+  "trapping": "rugged_outdoor_gear_flat_lay.webp",
+  "snaring": "rustic_wire_rope_workshop_still_life.webp",
+  "sharpening": "rustic_sunlit_sharpening_workshop.webp"
+ },
+ {
+  "hero": "woodworking_sharpening_station_flat_lay.webp",
+  "trapping": "misty_morning_forest_camp_gear.webp",
+  "snaring": "rugged_outdoor_gear_flat_lay.webp",
+  "sharpening": "macro_razor_blade_on_wet_whetstone.webp"
+ },
+ {
+  "hero": "misty_morning_forest_camp_gear.webp",
+  "trapping": "sunrise_backpack_over_misty_mountains.webp",
+  "snaring": "rustic_wire_rope_workshop_still_life.webp",
+  "sharpening": "lantern_lit_rustic_sharpening_workshop.webp"
+ },
+ {
+  "hero": "lantern_lit_rustic_sharpening_workshop.webp",
+  "trapping": "golden_dawn_lakeside_cabin.webp",
+  "snaring": "rustic_wire_rope_workshop_still_life.webp",
+  "sharpening": "woodworking_sharpening_station_flat_lay.webp"
+ },
+ {
+  "hero": "vintage_workshop_grinding_wheel_still_life.webp",
+  "trapping": "rugged_expedition_gear_flat_lay.webp",
+  "snaring": "rustic_wire_rope_workshop_still_life.webp",
+  "sharpening": "droplets_on_a_sharpened_blade.webp"
+ },
+ {
+  "hero": "rustic_cabin_at_sunrise_lake.webp",
+  "trapping": "golden_sunrise_at_the_lakeside_cabin.webp",
+  "snaring": "rugged_outdoor_gear_flat_lay.webp",
+  "sharpening": "water_kissed_blade_on_whetstone.webp"
+ }
+];
+let photoReady=false;
+function image(kind='hero',cls='',i=index,load='lazy'){
+ const svg='./assets/'+num(i)+'-'+kind+'.svg';
+ const filename=(photoMap[i]||{})[kind];
+ const photo=filename?'./assets/photos/'+filename:'';
+ const src=photoReady&&photo?photo:svg;
+ return `<img src="${src}" data-syt-photo="${photo}" data-syt-fallback="${svg}" class="${cls}" alt="Original AI-generated concept ${kind} scene for Shut Your Trap; not a photo of the actual business" width="1600" height="900" loading="${load}" decoding="async">`;
+}
+function attachPhotoFallbacks(){
+ app.querySelectorAll('img[data-syt-fallback]').forEach(img=>{
+   img.addEventListener('error',()=>{
+    const fallback=img.dataset.sytFallback;
+    if(fallback&&!img.getAttribute('src').endsWith('.svg'))img.src=fallback;
+   },{once:true});
+ });
+}
+async function discoverPhotographs(){
+ try{
+   const response=await fetch('./assets/photos/status.json',{cache:'no-cache'});
+   if(!response.ok)return;
+   const status=await response.json();
+   if(status.enabled!==true||status.image_count!==17)return;
+   photoReady=true;
+   document.querySelectorAll('img[data-syt-photo]').forEach(img=>{
+     const photo=img.dataset.sytPhoto;
+     if(photo)img.src=photo;
+   });
+ }catch(_error){/* Keep verified SVG fallback without interrupting the design. */}
+}
+
 function btn(route,label,klass='btn'){return `<a href="${to(route)}" class="${klass}">${label} <span aria-hidden="true">↗</span></a>`}
 function serviceLinks(cls='service-grid'){return `<div class="${cls}">${serv.map((s,n)=>`<a class="service-card" href="${to(s.slug)}">${image(s.k,'')}<span><small>0${n+1} / ${s.label}</small><b>${s.title}</b><em>Explore service ↗</em></span></a>`).join('')}</div>`}
 function line(){return `<div class="assurance">TRAPPING <span>✳</span> SNARING <span>✳</span> SHARPENING <span>✳</span> SERVICES SUBJECT TO CONFIRMATION</div>`}
@@ -63,6 +157,7 @@ document.documentElement.style.setProperty('--ink',c.fg);
 document.title=c.title+" | Shut Your Trap";
 let page=route==="home"?home(c):route==="services"?services(c):route==="about"?about(c):route==="contact"?contact(c):serv.some(s=>s.slug===route)?detail(c,route):home(c);
 app.innerHTML='<div class="demo-ribbon">WEBSITE CONCEPT • NO LIVE BOOKINGS • SERVICE DETAILS TO BE CONFIRMED</div>'+nav(c)+'<main id="content">'+page+'</main>'+footer();
+attachPhotoFallbacks();
 const toggle=$("#menu-toggle"),drawer=$("#mobile-menu");
 toggle?.addEventListener("click",()=>{drawer.hidden=!drawer.hidden;toggle.setAttribute("aria-expanded",String(!drawer.hidden));toggle.innerHTML=drawer.hidden?'☰ <span>Menu</span>':'× <span>Close</span>'});
 drawer?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{drawer.hidden=true;toggle?.setAttribute("aria-expanded","false")}));
@@ -72,4 +167,5 @@ window.scrollTo(0,0)
 }
 window.addEventListener("hashchange",render);
 render();
+discoverPhotographs();
 })();
