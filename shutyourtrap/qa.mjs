@@ -58,7 +58,7 @@ try{
  for(let i=0;i<10;i++){
    await visit(mobile,base+'?template='+(i+1)+'#home');
    const metrics=await mobile.evaluate(()=>({scroll:document.documentElement.scrollWidth,width:document.documentElement.clientWidth}));
-   assert(metrics.scroll<=metrics.width+8,'Mobile overflow template '+(i+1)+': '+JSON.stringify(metrics));
+   const offenders=await mobile.evaluate(()=>[...document.querySelectorAll('*')].filter(e=>{const r=e.getBoundingClientRect();return r.right>innerWidth+5&&r.width>10}).slice(0,16).map(e=>({tag:e.tagName,cls:String(e.className).slice(0,70),text:(e.textContent||'').trim().slice(0,55),right:Math.round(e.getBoundingClientRect().right),width:Math.round(e.getBoundingClientRect().width)})));assert(metrics.scroll<=metrics.width+8,'Mobile overflow template '+(i+1)+': '+JSON.stringify(metrics)+' offenders: '+JSON.stringify(offenders));
    let toggle=mobile.locator('#menu-toggle');
    assert(await toggle.isVisible(),'Mobile menu toggle hidden template '+i);
    await toggle.click();
