@@ -71,7 +71,18 @@ try:
  for entry in ledger:
   if not isinstance(entry,dict): raise ValueError("Invalid deletion ledger entry")
   if entry.get("source")=="businesses":
-   identifier=("id:"+str(entry["source_id"])) if entry.get("source_id") else ("location:"+str(entry.get("key","")))
+   source_id=entry.get("source_id")
+   key=entry.get("key")
+   record=entry.get("record")
+   if not isinstance(key,str) or not key.strip():
+    raise ValueError("Business deletion tombstone missing identity key")
+   if source_id is not None and (not isinstance(source_id,str) or not source_id.strip()):
+    raise ValueError("Business deletion tombstone has invalid source ID")
+   if not isinstance(entry.get("deleted_at"),str) or not entry["deleted_at"].strip():
+    raise ValueError("Business deletion tombstone missing deletion timestamp")
+   if not isinstance(record,dict) or not isinstance(record.get("name"),str) or not record["name"].strip():
+    raise ValueError("Business deletion tombstone missing recoverable record")
+   identifier=("id:"+source_id) if source_id else ("key:"+key)
    deleted_ids.append(identifier)
  if len(deleted_ids)!=len(set(deleted_ids)):errors.append("Duplicate business deletion tombstones")
  if len(all_businesses)+len(set(deleted_ids))<4999:errors.append("Business split and deletion ledger dropped the 4,999-record baseline")
