@@ -887,6 +887,18 @@
     "status": "verified"
   },
   {
+    "title": "Micro ouvert autochtone — 2026",
+    "start_date": "2026-11-14",
+    "end_date": "2026-11-15",
+    "city": "Montréal",
+    "province": "Quebec",
+    "category": "Indigenous arts and cultural gathering",
+    "organizer": "Place des Arts / Kim O’Bomsawin (curator)",
+    "description": "Sixth annual Indigenous cultural celebration themed Roots, featuring First Peoples dance, Indigenous music, artisan activities and cultural programming. November 14–15, noon–6 p.m., Place des Arts, 175 Sainte-Catherine Street West, Montréal. Public admission is free for the festival activities; check individual ticketed performances separately.",
+    "url": "https://www.placedesarts.com/en/festival/micro-ouvert-autochtone",
+    "status": "verified"
+  },
+  {
     "title": "Otipemisiwak Métis Registry Extended Hours — Edmonton (2026-11-14)",
     "start_date": "2026-11-14",
     "city": "Edmonton",
@@ -1138,6 +1150,18 @@
     "status": "verified"
   },
   {
+    "title": "Holiday Market at the River Cree — 2026",
+    "start_date": "2026-11-19",
+    "end_date": "2026-11-21",
+    "city": "Enoch",
+    "province": "Alberta",
+    "category": "Indigenous artisan and holiday market",
+    "organizer": "Enoch Cree Nation / River Cree Resort & Casino",
+    "description": "November 19–21, 2026, 1–9 p.m. daily at The Venue, River Cree Resort & Casino, 300 East Lapotac Boulevard, Enoch. Public indoor market featuring First Nations, Métis and Inuit artisan vendors, Indigenous cuisine and entertainment. Admission by donation of hygiene/toiletry items or non-perishable foods to the Kanaweymik Initiative.",
+    "url": "https://www.rivercreeresort.com/holiday-market-details-2026/",
+    "status": "verified"
+  },
+  {
     "title": "Indigenous Business Showcase",
     "start_date": "2026-11-19",
     "end_date": "2026-11-20",
@@ -1192,18 +1216,6 @@
     "organizer": "Lakehead University",
     "description": "10 a.m. at Orsi Family Learning Commons, Orillia campus. Check event details.",
     "url": "https://www.lakeheadu.ca/indigenous/events",
-    "status": "verified"
-  },
-  {
-    "title": "Holiday Market at the River Cree — 2026",
-    "start_date": "2026-11-19",
-    "end_date": "2026-11-21",
-    "city": "Enoch",
-    "province": "Alberta",
-    "category": "Indigenous artisan and holiday market",
-    "organizer": "Enoch Cree Nation / River Cree Resort & Casino",
-    "description": "November 19–21, 2026, 1–9 p.m. daily at The Venue, River Cree Resort & Casino, 300 East Lapotac Boulevard, Enoch. Public indoor market featuring First Nations, Métis and Inuit artisan vendors, Indigenous cuisine and entertainment. Admission by donation of hygiene/toiletry items or non-perishable foods to the Kanaweymik Initiative.",
-    "url": "https://www.rivercreeresort.com/holiday-market-details-2026/",
     "status": "verified"
   },
   {
