@@ -4450,7 +4450,7 @@
       "priority_basis": "Explicit user-directed highest priority on 2026-11-05",
       "effort": "Large / phased",
       "status": "in_progress",
-      "status_basis": "Content-first redesign on main: removed homepage intro/Latest updates and visible introductory headings on eight public landing pages; moved research and verification explanations into below-data disclosures where applicable. Browser QA and secondary pages outstanding.",
+      "status_basis": "132 public HTML templates normalized to identical centered 240x35 logo header and sticky navigation; GitHub Actions generation and PNG validation passed; cross-browser Playwright smoke run still pending, so overall redesign remains P0 in progress.",
       "dependencies": [],
       "dependencies_basis": "No hard prerequisite to begin UX audit and redesign; coordinate regression, accessibility, SEO and performance checks before release",
       "related_task_ids": [
@@ -4523,9 +4523,29 @@
           "date": "2026-11-05",
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/6bdd9a77b59a053a4149ed608f821b37a4036b60",
           "detail": "Eight public landing pages updated to put cards, filters, search or video results first; accessible hidden h1 retained; safeguards and source notes preserved in expandable below-data sections."
+        },
+        {
+          "type": "logo_asset",
+          "date": "2026-11-05",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/blob/main/assets/delta-owl-eyes-header-240x35.png",
+          "detail": "Exact 240x35 transparent PNG compressed for small header; medicine wheel, great grey owl, red-tailed hawk and dark-grey Delta Owl Eyes wordmark. Generated with earlier user-approved visual reference; image readability at 35px warrants manual visual review."
+        },
+        {
+          "type": "github_actions",
+          "date": "2026-11-05",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42046450423",
+          "result": "success",
+          "detail": "132/132 public HTML pages normalized, second deterministic check 0 changes, exact 240x35 PNG validated; admin/data files excluded. Main header commit 2bec18cb6035f28895af72758a47e975a02452ac."
+        },
+        {
+          "type": "github_pages",
+          "date": "2026-11-05",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42046484605",
+          "result": "success",
+          "detail": "Pages deployment succeeded for mass header rollout commit 2bec18cb6035f28895af72758a47e975a02452ac."
         }
       ],
-      "notes": "Live-first workflow authorized. Outstanding: check production deployment and responsive rendering, keyboard/screen readers, forms and filters, performance, remaining landing/article/profile pages, before/after measurements, and full UX acceptance. Keep P0 in progress."
+      "notes": "Cross-browser browser tests configured using Chromium, Firefox and WebKit (GitHub Actions run 42046857554), results pending. Full B4-037 app redesign remains in progress. Sticky header 240x35 centered logo on all public pages; no admin/data modifications."
     },
     {
       "id": "B4-038",
@@ -4735,6 +4755,12 @@
       "type": "B4-037_content_first_layout",
       "task_id": "B4-037",
       "summary": "User directed removal of homepage Community Hub/Explore introduction and other opening headings/descriptions; eight main public pages updated directly on main without changing directory datasets or admin code."
+    },
+    {
+      "date": "2026-11-05",
+      "type": "B4-037_132_page_sticky_header",
+      "task_id": "B4-037",
+      "summary": "Commit 2bec18c normalized all 132 public headers using compact 240x35 PNG. Successful rollout CI and Pages deployment. WebKit/Firefox/Chromium test pending."
     }
   ]
 }
