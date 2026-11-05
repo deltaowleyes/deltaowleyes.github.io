@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-05T12:27:59Z",
+      "commit": "7030e8580bfc822b5de31504ebc7bfd8c873484e",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "holidaymarketattherivercree2026|20261119|enoch|alberta",
+            "name": "Holiday Market at the River Cree — 2026",
+            "place": "Enoch, Alberta",
+            "category": "Indigenous artisan and holiday market",
+            "date": "2026-11-19",
+            "source": "https://www.rivercreeresort.com/holiday-market-details-2026/",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-05T05:25:23Z",
       "commit": "77715aa3119158a4c13a3383d7594fed3fd45301",
       "mode": "data",
