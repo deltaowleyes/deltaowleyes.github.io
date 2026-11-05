@@ -1,0 +1,36 @@
+/* B4-037 phase 2: cohesive compact public app shell. Non-admin pages only. */
+body.doe-app-page{background:linear-gradient(#e8f3ee 0,#f5f8f6 260px)!important;color:#183d39!important;font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif!important}
+body.doe-app-page main{max-width:1200px!important;width:min(100%,1200px)!important;margin:0 auto!important;padding:clamp(18px,2.8vw,34px) clamp(14px,2.5vw,28px) 65px!important;min-width:0!important}
+body.doe-app-page main h1{font:800 clamp(1.8rem,3vw,2.85rem)/1.13 system-ui,-apple-system,"Segoe UI",sans-serif!important;letter-spacing:-.04em!important;color:#143d38!important;margin:4px 0 12px!important;max-width:100%!important}
+body.doe-app-page main h1 span{color:#286e61!important}
+body.doe-app-page main>p,body.doe-app-page main>.lead{max-width:920px!important;color:#536e65!important;font-size:clamp(.93rem,1.6vw,1.06rem)!important;line-height:1.55!important;margin:0 0 13px!important}
+body.doe-app-page main h2,body.doe-app-page main h3{font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;letter-spacing:-.022em!important;line-height:1.25!important}
+body.doe-app-page main a{color:#09675b}
+body.doe-app-page main :is(a,button,input,select,summary):focus-visible{outline:3px solid #be8e46!important;outline-offset:3px!important}
+body.doe-app-page main :is(.card,article,.notice,.filters,.controls){border-radius:15px!important}
+body.doe-app-page main :is(.card,article){background:#fff!important;color:#1d423d!important;border:1px solid #d9e6df!important;box-shadow:0 5px 22px #163b310d!important}
+body.doe-app-page main :is(.cards,.grid){gap:14px!important}
+body.doe-app-page main :is(input,select,button){font-family:inherit!important;border-radius:10px!important}
+body.doe-app-page main input,body.doe-app-page main select{min-height:43px!important;border:1px solid #abc9bd!important;background:white!important;color:#183d39!important}
+body.doe-app-page main input::placeholder{color:#60776e!important}
+body.doe-app-page main :is(.filters,.controls){background:#eef5f1!important;border:1px solid #dce9e2!important;padding:14px!important;margin:16px 0!important}
+body.doe-app-page main .notice{padding:15px!important;margin:15px 0!important}
+body.doe-app-page main .muted,body.doe-app-page main .meta{color:#57746c!important}
+body.doe-app-page main .card :is(h2,h3),body.doe-app-page main article h2{color:#194b42!important}
+body.doe-app-page main .card:hover{border-color:#9fc8b9!important}
+body.doe-app-page main .doe-page-actions{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:14px 0 20px}
+body.doe-app-page main .doe-page-actions a{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;border-radius:11px;border:1px solid #bad7ca;background:white;font-weight:700;text-decoration:none;font-size:.89rem}
+body.doe-app-page main .doe-page-actions a:first-child{background:#11675e;color:white;border-color:#11675e}
+body.doe-app-page main .doe-page-actions a:hover{box-shadow:0 4px 13px #173a301a}
+body.doe-app-page main .doe-news-search{display:flex;gap:10px;align-items:center;background:#e9f3ee;padding:12px 15px;border-radius:14px;border:1px solid #d5e5dc;margin:15px 0 20px}
+body.doe-app-page main .doe-news-search label{font-size:.9rem;font-weight:750;white-space:nowrap}
+body.doe-app-page main .doe-news-search input{flex:1;min-width:0;max-width:100%;padding:10px 13px}
+body.doe-app-page main article{padding:clamp(17px,2vw,24px)!important;margin:12px 0!important}
+body.doe-app-page main article h2{font-size:clamp(1.08rem,1.7vw,1.4rem)!important;margin:7px 0!important}
+body.doe-app-page main article p{line-height:1.55!important}
+body.doe-app-page main .doe-hide{display:none!important}
+body.doe-app-page main .doe-banner-container{padding-top:12px!important}
+body.doe-app-page main .doe-banner-container img{max-height:220px!important;object-fit:contain!important}
+@media(min-width:850px){body.doe-app-page main .filters{gap:10px!important}}
+@media(max-width:700px){body.doe-app-page main{padding:16px 13px 48px!important}body.doe-app-page main .doe-news-search{flex-direction:column;align-items:stretch!important}body.doe-app-page main .filters{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))!important}body.doe-app-page main .controls{gap:8px!important}body.doe-app-page main .card{min-width:0!important}}
+@media(prefers-reduced-motion:reduce){body.doe-app-page main *{scroll-behavior:auto!important}}
