@@ -3,7 +3,7 @@
 This inbox exists because the ChatGPT container has the 17-photo ZIP, but it cannot transfer local binary bytes to the GitHub connector. **Do not use base64 placeholders or fake uploads.**
 
 ## Upload the verified ZIP
-1. Download the original [photography pack](sandbox:/mnt/data/shutyourtrap-photography-pack.zip) from the ChatGPT conversation.
+1. Download the original `shutyourtrap-photography-pack.zip` attachment from the ChatGPT conversation (sandbox download links do not resolve from GitHub).
 2. Open the GitHub upload page: https://github.com/deltaowleyes/deltaowleyes.github.io/upload/main/shutyourtrap/photo-inbox
 3. Upload the file exactly as named: `shutyourtrap-photography-pack.zip` (about 5 MiB). Commit to `main`.
 
