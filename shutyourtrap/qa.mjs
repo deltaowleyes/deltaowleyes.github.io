@@ -7,16 +7,40 @@ const kinds=['hero','trapping','snaring','sharpening'];
 const report={project:'Shut Your Trap',desktop:[],mobile:[],routes:0,assets:0,forms:0,privacy:false,directory:false,errors:[],timestamp:new Date().toISOString()};
 mkdirSync('shutyourtrap/qa-artifacts',{recursive:true});
 const browser=await chromium.launch({headless:true});
+let photoModeEnabled=false;
+async function verifyPhotography(page,route){
+ if(!photoModeEnabled||route==='contact')return;
+ await page.waitForFunction(()=>{const im=document.querySelector('#content img[data-syt-photo]');return !im||(im.currentSrc.includes('/assets/photos/')&&im.complete&&im.naturalWidth>0)},null,{timeout:15000});
+}
+
 function assert(x,s){if(!x)throw new Error(s)}
 async function visit(page,url){const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:30000});assert(!response||response.ok(),'HTTP error '+url);await page.locator('#content').waitFor({timeout:15000});await page.waitForTimeout(150)}
 async function imgLoaded(page){return page.locator('#content img').first().evaluate(async img=>{if(!img.complete)await new Promise((r,j)=>{img.addEventListener('load',r,{once:true});img.addEventListener('error',j,{once:true})});return img.naturalWidth>0})}
 try{
  const page=await browser.newPage({viewport:{width:1440,height:900}});
  await page.addInitScript(()=>{try{localStorage.setItem('doe-analytics-consent-v1','rejected')}catch{}});
+ const photoStatusResponse=await page.request.get(base+'assets/photos/status.json');
+ assert(photoStatusResponse.ok(),'Photography activation status file is missing');
+ const photoStatus=await photoStatusResponse.json();
+ photoModeEnabled=photoStatus.enabled===true;
+ report.photoModeEnabled=photoModeEnabled;
+ if(photoModeEnabled){
+   assert(photoStatus.image_count===17&&photoStatus.images.length===17,'Activated photo manifest is incomplete');
+   for(const name of photoStatus.images){
+     assert(/^[a-z0-9_]+\\.webp$/.test(name),'Unsafe image filename '+name);
+     const response=await page.request.get(base+'assets/photos/'+name);
+     assert(response.ok(),'Imported image not found '+name);
+     const mime=response.headers()['content-type']||'';
+     assert(/webp|octet-stream/.test(mime),'Incorrect image MIME for '+name+': '+mime);
+   }
+   report.importedPhotos=17;
+ }else{report.importedPhotos=0;}
+
  for(let i=0;i<10;i++){
   let u=base+'?template='+(i+1);
   for(const route of pages){
    await visit(page,u+'#'+route);
+   await verifyPhotography(page,route);
    assert(await page.locator('body').getAttribute('class')==='site theme-'+names[i], 'Theme mismatch '+i+'/'+route);
    if(route!=='contact')assert(await imgLoaded(page),'Broken main image '+i+'/'+route);
    assert(await page.locator('.site-header').count()===1,'Missing navigation '+i+'/'+route);
@@ -57,6 +81,7 @@ try{
  await mobile.addInitScript(()=>{try{localStorage.setItem('doe-analytics-consent-v1','rejected')}catch{}});
  for(let i=0;i<10;i++){
    await visit(mobile,base+'?template='+(i+1)+'#home');
+   await verifyPhotography(mobile,'home');
    const metrics=await mobile.evaluate(()=>({scroll:document.documentElement.scrollWidth,width:document.documentElement.clientWidth}));
    const offenders=await mobile.evaluate(()=>[...document.querySelectorAll('*')].filter(e=>e.clientWidth>0&&e.scrollWidth>e.clientWidth+5).slice(0,25).map(e=>({tag:e.tagName,cls:String(e.className).slice(0,70),text:(e.textContent||'').trim().slice(0,55),scroll:e.scrollWidth,client:e.clientWidth,overflow:getComputedStyle(e).overflowX})));assert(metrics.scroll<=metrics.width+8,'Mobile overflow template '+(i+1)+': '+JSON.stringify(metrics)+' offenders: '+JSON.stringify(offenders));
    let toggle=mobile.locator('#menu-toggle');
