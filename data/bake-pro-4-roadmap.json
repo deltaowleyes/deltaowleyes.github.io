@@ -4450,7 +4450,7 @@
       "priority_basis": "Explicit user-directed highest priority on 2026-11-05",
       "effort": "Large / phased",
       "status": "in_progress",
-      "status_basis": "User authorized live-first workflow; phase-one navigation and homepage design merged to main; Pages deployment not independently verified.",
+      "status_basis": "Live-first phase two public layout and compact mobile menu committed on main; source checks passed for eight key pages, but browser/mobile/deployment verification and remaining templates unfinished.",
       "dependencies": [],
       "dependencies_basis": "No hard prerequisite to begin UX audit and redesign; coordinate regression, accessibility, SEO and performance checks before release",
       "related_task_ids": [
@@ -4496,9 +4496,20 @@
           "date": "2026-11-05",
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/4eccb42b6ecd81f0135592d39fba2682267de8f4",
           "detail": "PR #1 merged into main; public deployment not confirmed"
+        },
+        {
+          "type": "github_source_updates",
+          "date": "2026-11-05",
+          "detail": "B4-037 phase-two live-first redesign: mobile grouped menu, main-page app CSS, searchable compact newsroom cards on eight public pages; structural source checks passed. Not a verified live-browser acceptance.",
+          "urls": [
+            "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/4bb5e2351c881234cb594c5815e43b94f854a12f",
+            "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/fa04a8cd6610454ed218e27c6d56104fb878a897",
+            "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/094fd5c554e5beb5251abcae5b3f8eabb1c24c77",
+            "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/097ffd11ce877113cb8537ca3aa26035d50cb1e0"
+          ]
         }
       ],
-      "notes": "User approved incremental direct-to-production visual changes without preview requirement. Still P0 in_progress; broad page coverage, browser responsiveness, navigation usability, accessibility and live verification remain."
+      "notes": "Live-first workflow authorized. Outstanding: check production deployment and responsive rendering, keyboard/screen readers, forms and filters, performance, remaining landing/article/profile pages, before/after measurements, and full UX acceptance. Keep P0 in progress."
     }
   ],
   "archived_source_references": [
@@ -4591,6 +4602,12 @@
       "task_id": "B4-037",
       "commit": "4eccb42b6ecd81f0135592d39fba2682267de8f4",
       "summary": "User approved direct live visual updates. First redesign merged to main; deployment not independently verified."
+    },
+    {
+      "date": "2026-11-05",
+      "type": "B4-037_phase_two_production_commits",
+      "task_id": "B4-037",
+      "summary": "Eight primary public pages received compact mobile menu, coherent public CSS and newsroom search/cards; structural checks passed. Browser visual QA/deployment not verified; no data/admin modifications."
     }
   ]
 }
