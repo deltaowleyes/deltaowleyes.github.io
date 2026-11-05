@@ -184,6 +184,19 @@ function render(){
   document.querySelector('[data-sort-products]')?.addEventListener('change',e=>{sort=e.target.value;refresh()});
   refresh();
  }
+ const gallery=document.querySelector('[data-gallery]');
+ if(gallery){
+  const currentProduct=Number(r.split('-')[1])-1;
+  const choose=variant=>{
+   const main=gallery.querySelector('.fit-primary-img');
+   main.src=svgImage(currentProduct,id+variant);
+   main.alt='Original illustration of '+products[currentProduct].name+' – concept pattern '+(variant+1);
+   gallery.querySelectorAll('[data-gallery-thumb]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.galleryThumb)===variant)));
+   document.querySelectorAll('[data-pattern-choice]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.patternChoice)===variant)));
+  };
+  gallery.querySelectorAll('[data-gallery-thumb]').forEach(b=>b.addEventListener('click',()=>choose(Number(b.dataset.galleryThumb))));
+  document.querySelectorAll('[data-pattern-choice]').forEach(b=>b.addEventListener('click',()=>choose(Number(b.dataset.patternChoice))));
+ }
  const slider=document.querySelector('[data-slider]');
  if(slider){
   const type=slider.getAttribute('data-slider');
