@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-05T21:25:14Z",
+      "commit": "76bce445c70bd9f6798eee9ec8cf206c699d4e11",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "holidayindigenousartisansmarket2026billreidgallery|20261205|vancouver|britishcolumbia",
+            "name": "Holiday Indigenous Artisans Market 2026 — Bill Reid Gallery",
+            "place": "Vancouver, British Columbia",
+            "category": "Indigenous artisan market and cultural gathering",
+            "date": "2026-12-05",
+            "source": "https://www.billreidgallery.ca/blogs/public-programs/holiday-indigenous-artisans-market-2026",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-05T17:26:03Z",
       "commit": "5027ecbe50d2f5b696d1e2d92d3818191033fa87",
       "mode": "data",
