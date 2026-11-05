@@ -5,7 +5,9 @@ on:
     paths:
       - 'assets/header-v3.css'
       - 'assets/header-v3.js'
-      - 'assets/delta-owl-eyes-header-240x35.png'
+      - 'assets/doe-header-symbol-100x35.png'
+      - 'assets/doe-header-wordmark-260x35.png'
+      - 'scripts/normalize_public_header.py'
       - 'scripts/test_public_header.mjs'
       - '.github/workflows/test-public-header.yml'
   pull_request:
