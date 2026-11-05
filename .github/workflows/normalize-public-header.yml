@@ -1,0 +1,52 @@
+name: Normalize public sticky header
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/normalize_public_header.py'
+      - 'assets/header-v3.css'
+      - 'assets/header-v3.js'
+      - 'assets/delta-owl-eyes-header-240x35.png'
+      - '.github/workflows/normalize-public-header.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: doe-public-header-write
+  cancel-in-progress: false
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Synchronize latest main
+        run: git pull --ff-only origin main
+      - name: Normalize all public pages (never admin or data)
+        run: |
+          python3 scripts/normalize_public_header.py
+          python3 scripts/normalize_public_header.py --check
+      - name: Ensure logo dimensions and image type
+        run: |
+          file assets/delta-owl-eyes-header-240x35.png
+          python3 - <<'PY'
+          import pathlib,struct
+          p=pathlib.Path("assets/delta-owl-eyes-header-240x35.png").read_bytes()
+          assert p[:8]==b"\x89PNG\r\n\x1a\n"
+          assert struct.unpack(">II",p[16:24])==(240,35)
+          print("PNG dimensions: 240 x 35 PASS")
+          PY
+      - name: Commit normalized public HTML only
+        run: |
+          git config user.name "delta-owl-eyes-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html'
+          git diff --cached --name-only | grep -E '(^admin/|/admin/)' && { echo "Refusing admin modification"; exit 1; } || true
+          if ! git diff --cached --quiet; then
+            git commit -m "B4-037: standardize public sticky headers sitewide"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
