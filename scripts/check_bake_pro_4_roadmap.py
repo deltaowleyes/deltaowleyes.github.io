@@ -1,36 +1,54 @@
 #!/usr/bin/env python3
-"""Validate canonical BAKE PRO 4.0 roadmap identities, references and evidence."""
+"""Validate the extensible BAKE PRO 4.0 roadmap, including retained IDs."""
 import json
 import re
 from pathlib import Path
 
-ROOT=Path(__file__).resolve().parents[1]
-roadmap=json.loads((ROOT/"data/bake-pro-4-roadmap.json").read_text(encoding="utf-8"))
-assert roadmap["schema_version"]==1
-tasks=roadmap["tasks"]
-by_id={t["id"]:t for t in tasks}
-assert len(tasks)==len(by_id)==roadmap["scope"]["total_tasks"]==132
-assert {f"B2-{i:03d}" for i in range(1,94)}.issubset(by_id)
-assert {f"B4-{i:03d}" for i in range(1,37)}.issubset(by_id)
-for id in ("S01","S02","S03"):
-    assert id in by_id
-assert by_id["S01"]["status"]=="complete"
-assert by_id["S01"].get("evidence")
-assert len([t for t in tasks if t["id"].startswith("B2-")])==93
-assert len([t for t in tasks if t["id"].startswith("B4-")])==36
-allowed=set(roadmap["status_definitions"])
-for t in tasks:
-    assert t.get("title") and t.get("description",t.get("notes","")) or t["id"] in ("S01","S02","S03")
-    assert t["status"] in allowed,(t["id"],t["status"])
-    for dep in t.get("dependencies",t.get("depends_on",[])):
-        assert dep in by_id and dep!=t["id"],(t["id"],dep)
-    if t["status"]=="complete":
-        assert t.get("evidence"),f"Completion missing evidence {t['id']}"
-    if t["status"]=="retired":
-        assert t.get("retirement",{}).get("reason"),f"Retirement missing reason {t['id']}"
-    if t["id"].startswith(("B2-","B4-")):
-        assert "data/bake-pro-4-roadmap.json" in t["bake_prompt"],t["id"]
-        assert t.get("source",{}).get("roadmap"),t["id"]
-assert roadmap["scope"]["unrecovered_pro3_original_52"]==49
-assert roadmap["policy"]["source_of_truth"]
-print("PASS: 132 stable tasks (93 B2, 36 B4, S01–S03), evidence, tasks, dependencies and retirement rules")
+ROOT = Path(__file__).resolve().parents[1]
+data = json.loads((ROOT / "data/bake-pro-4-roadmap.json").read_text(encoding="utf-8"))
+assert data["schema_version"] == 1
+tasks = data["tasks"]
+by_id = {t["id"]: t for t in tasks}
+assert len(tasks) == len(by_id) == data["scope"]["total_tasks"], "Duplicate IDs or stale count"
+assert {f"B2-{i:03d}" for i in range(1, 94)}.issubset(by_id), "Historic B2 ID removed"
+assert {f"B4-{i:03d}" for i in range(1, 37)}.issubset(by_id), "Historic B4 ID removed"
+assert {"S01", "S02", "S03"}.issubset(by_id), "Historic S task removed"
+assert by_id["S01"]["status"] == "complete" and by_id["S01"]["evidence"]
+assert len([x for x in tasks if x["id"].startswith("B2-")]) == 93
+assert all(re.fullmatch(r"B4-\d{3,}", x) for x in by_id if x.startswith("B4-"))
+allowed = set(data["status_definitions"])
+adj = {}
+for task in tasks:
+    ident = task["id"]
+    assert task.get("title"), ident
+    assert task["status"] in allowed, ident
+    adj[ident] = task.get("dependencies", task.get("depends_on", []))
+    if task["status"] == "complete":
+        assert task.get("evidence"), f"Completed without evidence: {ident}"
+    if task["status"] == "retired":
+        assert task.get("retirement", {}).get("reason"), f"Retired without reason: {ident}"
+    if ident.startswith(("B2-", "B4-")):
+        assert "data/bake-pro-4-roadmap.json" in task["bake_prompt"], ident
+        assert task.get("source", {}).get("roadmap"), ident
+    for dep in adj[ident]:
+        assert dep in by_id and dep != ident, f"Invalid dependency: {ident} -> {dep}"
+
+visiting = set()
+visited = set()
+def visit(ident):
+    if ident in visiting:
+        raise AssertionError(f"Dependency cycle involving {ident}")
+    if ident in visited:
+        return
+    visiting.add(ident)
+    for dep in adj[ident]:
+        visit(dep)
+    visiting.remove(ident)
+    visited.add(ident)
+for ident in by_id:
+    visit(ident)
+
+assert data["scope"]["unrecovered_pro3_original_52"] == 49
+assert data["policy"]["source_of_truth"]
+print(f"PASS: {len(tasks)} unique tasks, immutable historic IDs, valid statuses, "
+      "evidence, retirement rules and acyclic dependencies")
