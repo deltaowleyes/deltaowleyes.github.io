@@ -12,6 +12,7 @@ async function visit(page,url){const resp=await page.goto(url,{waitUntil:'domcon
 async function images(page){return await page.locator('#content img.art').evaluateAll(imgs=>imgs.every(i=>i.complete && i.naturalWidth>0))}
 try{
  const page=await browser.newPage({viewport:{width:1440,height:1000},deviceScaleFactor:1});
+ await page.addInitScript(()=>{try{localStorage.setItem('doe-analytics-consent-v1','rejected')}catch{}});
  const visitedSelectors=new Set();
  for(let i=0;i<10;i++){
    const u=base+'?template='+(i+1);
@@ -21,7 +22,7 @@ try{
    const hero=['.heritage-hero','.happy-poster','.quiet-intro','.supply-header','.lab-hero','.maker-open','.pattern-hero','.slow-mast','.utility-hero','.market-mast'][i];
    check(await page.locator(hero).count()===1,'Unique homepage anatomy missing '+hero);visitedSelectors.add(hero);
    check(await images(page),'Broken inline product art on home '+(i+1));
-   if(i===4){await page.locator('[data-scroll-finder]').click();await page.locator('[data-find="1"]').click();check(await page.locator('#lab-result h3').innerText()==='Reusable Paper Towels','Wrap Lab product finder did not update');await page.evaluate(()=>window.scrollTo(0,0));}
+   if(i===4){await page.locator('[data-scroll-finder]').click();await page.locator('[data-find="1"]').click();check(await page.locator('#lab-result h3').innerText()==='Reusable Paper Towels','Wrap Lab product finder did not update');await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));}
    await page.screenshot({path:'mommamade/qa-artifacts/design-'+(i+1)+'-desktop.png',fullPage:false});
    await visit(page,u+'#shop');
    for(let j=0;j<4;j++){check(await page.locator('a[href$="product-'+(j+1)+'"]').count()>0,'Missing product route in collection '+(i+1)+'/'+(j+1))}
@@ -37,6 +38,7 @@ try{
  }
  check(visitedSelectors.size===10,'Less than ten distinct DOM structures');
  const mobile=await browser.newPage({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
+ await mobile.addInitScript(()=>{try{localStorage.setItem('doe-analytics-consent-v1','rejected')}catch{}});
  for(let i=0;i<10;i++){
     await visit(mobile,base+'?template='+(i+1)+'#home');
     const widths=await mobile.evaluate(()=>({scroll:document.documentElement.scrollWidth,viewport:document.documentElement.clientWidth}));
@@ -49,7 +51,14 @@ try{
  check(await page.locator('.dir-card').count()===10,'Gallery has not ten previews');
  check(await page.locator('.dir-card iframe').count()===10,'Gallery missing actual live previews');
  check(await page.locator('.dir-card .dir-action').count()===10,'Gallery missing design links');
+ const anonymous=await browser.newPage({viewport:{width:1100,height:800}});
+ await anonymous.goto(base,{waitUntil:'domcontentloaded'});
+ check(await anonymous.locator('#doe-consent-banner').isVisible(),'Gallery must retain public privacy consent prompt');
+ const embedded=anonymous.frameLocator('.dir-card iframe').first();
+ await embedded.locator('html.embedded-preview').waitFor({timeout:15000});
+ check(await embedded.locator('#doe-consent-banner').isHidden(),'Embedded thumbnail should not repeat consent prompt');
  report.gallery=true;
+ report.privacy={parentConsentVisible:true,embeddedConsentHidden:true};
  writeFileSync('mommamade/qa-artifacts/results.json',JSON.stringify(report,null,2));
  console.log('MOMMA MADE QA PASS: 10 unique layouts, 10 desktop homes, 10 mobile homes, 10 collections, 10 maker stories, 10 care guides, 40 product routes, disabled checkout, 10 gallery previews.');
 }catch(e){report.errors.push(String(e));writeFileSync('mommamade/qa-artifacts/results.json',JSON.stringify(report,null,2));console.error('MOMMA MADE QA FAILED:',e);process.exitCode=1}
