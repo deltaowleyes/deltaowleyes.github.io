@@ -1,0 +1,21 @@
+name: Validate BAKE PRO 4.0 roadmap
+on:
+  push:
+    paths:
+      - 'data/bake-pro-4-roadmap.json'
+      - 'scripts/check_bake_pro_4_roadmap.py'
+      - '.github/workflows/validate-bake-pro-4-roadmap.yml'
+  pull_request:
+    paths:
+      - 'data/bake-pro-4-roadmap.json'
+      - 'scripts/check_bake_pro_4_roadmap.py'
+      - '.github/workflows/validate-bake-pro-4-roadmap.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/check_bake_pro_4_roadmap.py
