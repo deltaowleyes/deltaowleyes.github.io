@@ -1,0 +1,44 @@
+name: Momma Made V3 — Zero-cost candidate quality gate
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mommamade/v3/**'
+      - 'tests/mommamade-v3.qa.cjs'
+      - 'tests/website-factory-cost-guard.cjs'
+      - 'data/web-design-projects.json'
+      - 'data/website-factory-cost-ledger.json'
+      - '.github/workflows/mommamade-v3-candidate-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  candidate-chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static cost and release preflight
+        run: node tests/website-factory-cost-guard.cjs
+      - name: Install free Playwright test runner
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+      - name: Start isolated local static server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/mommamade-v3-server.log 2>&1 &
+          sleep 2
+          curl --fail --silent --show-error http://127.0.0.1:8765/mommamade/v3/ >/dev/null
+      - name: Test ten candidates, 90 routes, 50 breakpoints and imagery
+        run: node tests/mommamade-v3.qa.cjs
+      - name: Archive desktop/mobile screenshot evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mommamade-v3-candidate-visual-qa
+          path: artifacts/mommamade-v3/
+          if-no-files-found: ignore
+          retention-days: 14
