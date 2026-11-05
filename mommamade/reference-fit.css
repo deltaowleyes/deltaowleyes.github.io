@@ -237,3 +237,5 @@
 .fit-technical-product-note{padding:30px 6%}
 }
 @media(max-width:450px){.fit-product-recommendations .items{grid-template-columns:repeat(2,1fr)}.fit-gallery-thumbs{gap:7px}.fit-gallery-thumbs button{width:70px;height:60px}.fit-technical-product-note>div{grid-template-columns:1fr}.fit-product-recommendations h2{font-size:28px}}
+
+@media(max-width:760px){.site-nav .nav-utils{display:none!important}}
