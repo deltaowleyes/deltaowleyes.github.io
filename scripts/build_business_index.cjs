@@ -63,6 +63,8 @@ expected.set('facets.json',JSON.stringify(facets)+'\n');
 
 expected.set('manifest.json',JSON.stringify(manifest,null,2)+'\n');
 for(const [id,list] of shards)expected.set('profiles/'+id+'.json',JSON.stringify(list)+'\n');
+manifest.asset_sha256=crypto.createHash('sha256').update([...expected.entries()].filter(([p])=>p!=='manifest.json').map(([p,c])=>p+'\0'+c).join('\0')).digest('hex');
+expected.set('manifest.json',JSON.stringify(manifest,null,2)+'\n');
 const check=process.argv.includes('--check');
 const existing=new Map();
 if(fs.existsSync(out)){
