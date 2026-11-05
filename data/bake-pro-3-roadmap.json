@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "project": "Delta Owl Eyes — BAKE PRO 3.0",
+  "canonical_source": "https://github.com/deltaowleyes/deltaowleyes.github.io/blob/main/data/bake-pro-3-roadmap.json",
+  "updated_at": "2026-11-05",
+  "scope": {
+    "original_roadmap_task_count": 52,
+    "migrated_task_count": 3,
+    "full_migration_complete": false,
+    "warning": "Only S01–S03 are reconstructed with verified identities; the original 52-task roadmap must be imported before treating this as complete. Never interpret absent IDs as completed or cancelled."
+  },
+  "status_definitions": {
+    "complete": "Task acceptance criteria supported by evidence; remaining independent work tracked separately",
+    "pending": "Known task awaiting verification or action",
+    "blocked": "Unable to proceed without dependency",
+    "in_progress": "Active work, completion unverified"
+  },
+  "tasks": [
+    {
+      "id": "S01",
+      "title": "Repair Directory Validation",
+      "status": "complete",
+      "priority": "P0",
+      "completed_on": "2026-11-05",
+      "evidence": [
+        {
+          "type": "github_actions",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42021706092",
+          "result": "success"
+        },
+        {
+          "type": "github_actions",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42023360706",
+          "result": "success"
+        },
+        {
+          "type": "github_actions",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42023361586",
+          "result": "success"
+        },
+        {
+          "type": "user_live_check",
+          "result": "HTTP 200: businesses 4632 with phone, 364 without phone, churches 200; both HTML directory pages HTTP 200"
+        }
+      ],
+      "follow_up_ids": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "id": "S02",
+      "title": "Repair Directory Update Logging",
+      "status": "pending",
+      "priority": "P0",
+      "notes": "Original log failure explained by obsolete count check; missed Winter Market history restored. Still requires a successful new Record new directory and event listings workflow run on actual dataset change. Do not manufacture data.",
+      "evidence": [
+        {
+          "type": "github_commit",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/9c349229587926d9e5fdc34c028dbcd5eebd0625",
+          "result": "history repaired"
+        }
+      ],
+      "depends_on": [
+        "S01"
+      ]
+    },
+    {
+      "id": "S03",
+      "title": "Repair Chromium Browser Tests",
+      "status": "pending",
+      "priority": "P0",
+      "notes": "HTML and JSON live checks passed. Still requires real browser JavaScript-rendered business and church listings; inspect and repair Chromium workflow only if actual failure remains.",
+      "depends_on": [
+        "S01"
+      ]
+    }
+  ],
+  "unmigrated_known_tasks": [
+    {
+      "id": "S04",
+      "title": "Deletion safety"
+    },
+    {
+      "id": "X01",
+      "title": "Discovery audit"
+    },
+    {
+      "id": "W02",
+      "title": "Business email"
+    },
+    {
+      "id": "C01",
+      "title": "Council presentation"
+    }
+  ],
+  "rules": [
+    "This file is the authoritative persisted status record for migrated tasks, not chat memory.",
+    "Every BAKE starts by reading latest main and this file, and ends by applying evidenced status updates to this file in the same task commit or a follow-up commit.",
+    "Never mark a task complete solely because a script or deployment was invoked; retain proof links and unresolved follow-ups.",
+    "Never infer missing entries are complete; the original 52 tasks remain in migration backlog until faithfully imported.",
+    "Do not modify directory JSON or deletion tombstones to manufacture passing tests.",
+    "Use expected blob SHA on updates, re-fetch on conflict, and preserve unrelated task edits."
+  ]
+}
