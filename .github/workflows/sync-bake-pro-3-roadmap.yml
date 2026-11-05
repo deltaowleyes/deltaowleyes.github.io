@@ -1,8 +1,6 @@
 name: Synchronize BAKE PRO 3.0 roadmap
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '17 11 * * *'
 permissions:
   actions: read
   contents: write
