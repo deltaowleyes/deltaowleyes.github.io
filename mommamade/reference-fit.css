@@ -34,3 +34,121 @@
  .site-nav .nav-row{min-height:0!important;flex-direction:row!important;justify-content:space-between!important;align-items:center!important;gap:7px!important;flex-wrap:nowrap!important;padding:14px 3%!important;position:relative}.site-nav .brand{font-size:23px!important;line-height:1.05}.site-nav .brand span{font-size:7px}.site-nav .nav-row nav,.site-nav .nav-row .back,.site-nav .nav-secondary,.site-nav .sub-nav{display:none!important}.mobile-toggle{display:block;order:-1;white-space:nowrap}.nav-utils{gap:7px}.nav-search{display:none}.mobile-drawer{display:block;position:absolute;z-index:200;background:#fffef8;color:#293b30;box-shadow:0 18px 35px #0002;border-bottom:2px solid #748778;left:0;right:0;padding:20px 6% 30px}.mobile-drawer a{display:block;text-decoration:none;padding:16px 10px;border-bottom:1px solid #ddd;font-size:15px;font-weight:700}.mobile-drawer .drawer-label{font-size:10px;color:#66796b;letter-spacing:.13em;padding:8px 10px}.mobile-drawer .drawer-small{font-size:12px}.site-nav{position:relative}.theme-maker .site-nav .nav-row,.theme-pattern .site-nav .nav-row,.theme-happy .site-nav .nav-row{min-height:88px!important}.theme-quiet .site-nav .nav-row{min-height:159px!important}.theme-quiet .brand{font-size:32px!important}.theme-quiet .nav-utils{position:static}.theme-pattern .site-nav .nav-row{min-height:170px!important}.theme-pattern .brand{font-size:30px!important}.theme-market .site-nav .nav-row{min-height:100px!important}.theme-slow .site-nav .nav-row{min-height:125px!important}.theme-utility .site-nav .nav-row{min-height:109px!important}.theme-maker .site-nav .nav-row{min-height:146px!important}.theme-happy .site-nav .nav-row{min-height:106px!important}
 }
 @media(max-width:450px){.fit-tiles{grid-template-columns:repeat(2,1fr)}.fit-tiles .fit-tile span{padding:10px;font-size:11px}.fit-beewise-statement p{font-size:23px}.fit-earthology-benefits h3{font-size:19px}.fit-package-hero{height:585px}.fit-dual-buttons{flex-direction:column;align-items:flex-start;gap:9px}.fit-superbee-copy h1{font-size:39px}.fit-superbee-photo .art{height:380px}.fit-louise-copy h1{font-size:39px}.fit-louise-hero{min-height:698px}.fit-mind-intro h1{font-size:30px}.fit-hearterra-overlay h1{font-size:31px}.fit-beebagz-main .art{height:300px}.fit-ethikli-shade h1{font-size:32px}.fit-ethikli-best .items{grid-template-columns:repeat(2,1fr)}}
+
+/* Reference-fit collection layouts and genuine demo filtering. */
+.fit-shop-width,.fit-beewise-cat,.fit-earthology-cat,.fit-package-cat-head,.fit-superbee-cat,.fit-maker-cat,.fit-mind-cat,.fit-hearterra-cat,.fit-beebagz-cat,.fit-market-cat{width:min(1380px,94%);margin:0 auto;padding:48px 0 85px}
+.fit-shop-shell{display:grid;grid-template-columns:230px minmax(0,1fr);gap:32px;align-items:start}
+.fit-shop-shell>section{min-width:0}
+.fit-filter-sidebar{display:flex;flex-direction:column;gap:12px;padding:18px;border-top:2px solid #5b6255;background:#ffffffa6}
+.fit-filter-sidebar b{font-size:13px}
+.fit-filter-sidebar span{font-size:12px;margin-top:10px;font-weight:700}
+.fit-filter-sidebar button{display:block;border:0;background:none;text-align:left;font:500 13px 'DM Sans',sans-serif;padding:8px;cursor:pointer;color:inherit}
+.fit-filter-sidebar button[aria-pressed="true"]{font-weight:800;text-decoration:underline}
+.fit-filter-sidebar small{font-size:10px;opacity:.7;margin-top:20px;line-height:1.4}
+.fit-catalog-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:18px 0 10px;padding:13px 0;border-top:1px solid #0002;border-bottom:1px solid #0002}
+.fit-filter-tabs{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.fit-filter-tabs button{padding:7px 12px;background:#ffffffa5;color:inherit;border:1px solid #0003;border-radius:50px;font:600 11px 'DM Sans',sans-serif;cursor:pointer}
+.fit-filter-tabs button[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.fit-catalog-toolbar label{display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:12px}
+.fit-catalog-toolbar select{padding:8px;background:#fff;border:1px solid #b4b4ac;color:#26342e}
+.fit-filter-message,.search-status{font-size:11px;opacity:.7;margin:0 0 18px}
+.fit-collection-cards{gap:18px}.fit-collection-cards .item{background:#fff}
+.fit-collection-cards .item-text{padding:14px}.fit-collection-cards .item .image{aspect-ratio:1;overflow:hidden}
+.fit-collection-cards .item .art{width:100%;height:100%;object-fit:cover}
+.item[hidden]{display:none!important}
+.fit-heritage-cat-hero{display:grid;grid-template-columns:1fr 1fr;min-height:220px;background:#f4e7c5}
+.fit-heritage-cat-hero>div{padding:32px 8%;display:flex;flex-direction:column;justify-content:center}
+.fit-heritage-cat-hero h1{font:500 clamp(34px,4vw,59px) 'Playfair Display',serif;margin:10px 0}
+.fit-heritage-cat-hero .art{height:220px;object-fit:cover}
+.fit-heritage-cat-hero+.fit-shop-width{padding-top:34px}
+.theme-heritage .fit-shop-shell .fit-collection-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.theme-heritage .fit-collection-cards .item .image{aspect-ratio:1}
+.fit-beewise-cat{text-align:center;padding-top:55px}
+.fit-beewise-cat h1{font:500 44px 'Playfair Display',serif}
+.fit-beewise-cat>p{font-size:15px}
+.fit-beewise-cat .items{text-align:left;grid-template-columns:repeat(4,1fr)}
+.fit-earthology-cat{text-align:center;width:min(1120px,94%);padding-top:55px}
+.fit-earthology-cat h1{font:400 49px 'DM Serif Display',serif;margin:15px auto 35px}
+.fit-earthology-cat .items{grid-template-columns:repeat(4,1fr);text-align:left}
+.fit-earthology-cat .item h3{font-size:15px;font-weight:500}
+.fit-package-cat-head{padding-bottom:5px}
+.fit-package-cat-head h1{font:700 42px 'Space Grotesk',sans-serif;margin:5px 0}
+.fit-package-cat-head p{max-width:700px}
+.theme-supply .fit-shop-shell .items{grid-template-columns:repeat(4,1fr)}
+.theme-supply .fit-collection-cards .item .image{aspect-ratio:.8}
+.theme-supply .fit-collection-cards .item{border:0}
+.fit-superbee-cat{padding-top:25px}
+.fit-superbee-cat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:12px 0 50px}
+.fit-superbee-cat-strip a{text-decoration:none;font-size:12px;font-weight:700}
+.fit-superbee-cat-strip .art{width:100%;height:120px;object-fit:cover;border-radius:7px}
+.fit-superbee-cat-strip span{display:block;padding:10px 0}
+.fit-superbee-cat h1{font:700 55px 'Space Grotesk',sans-serif;max-width:750px;margin:10px 0}
+.fit-superbee-cat>p{font-size:15px}
+.fit-superbee-cat .items{grid-template-columns:repeat(4,1fr)}
+.fit-superbee-cat .item{background:#fff;border-radius:8px;overflow:hidden}
+.fit-maker-cat-hero{height:680px;position:relative;overflow:hidden}
+.fit-maker-cat-hero>.art{width:100%;height:100%;object-fit:cover;filter:brightness(.7)}
+.fit-maker-cat-hero>div{position:absolute;left:5%;bottom:12%;color:#fff8eb;max-width:700px}
+.fit-maker-cat-hero h1{font:400 clamp(47px,6vw,85px) 'DM Serif Display',serif;margin:0}
+.fit-maker-cat-hero p{font-size:18px}
+.fit-maker-cat{padding:60px 5% 80px;max-width:1400px;margin:auto}
+.fit-maker-cat h2{font:400 42px 'DM Serif Display',serif}
+.fit-maker-cat .items{grid-template-columns:repeat(4,1fr)}
+.fit-maker-cat .item .image{aspect-ratio:3/4}
+.fit-mind-cat-hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;background:#f1eee5}
+.fit-mind-cat-hero>div{padding:55px 9%}
+.fit-mind-cat-hero h1{font:500 clamp(38px,4vw,58px) 'Playfair Display',serif;margin:15px 0}
+.fit-mind-cat-hero .art{height:390px;object-fit:cover}
+.fit-mind-cat .items{grid-template-columns:repeat(4,1fr)}
+.fit-hearterra-cat h1{font:500 51px 'DM Serif Display',serif;margin:15px 0}
+.fit-hearterra-cat .fit-catalog-toolbar{border:0}
+.fit-hearterra-cat .items{grid-template-columns:repeat(3,1fr)}
+.fit-hearterra-cat .item{border-radius:9px;overflow:hidden}
+.fit-hearterra-cat .item .image{aspect-ratio:4/3}
+.fit-beebagz-cat-hero{min-height:280px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;background:#ebeeeb}
+.fit-beebagz-cat-hero>div{padding:50px 8%}
+.fit-beebagz-cat-hero h1{font:700 clamp(36px,4vw,57px) 'Space Grotesk',sans-serif;margin:10px 0}
+.fit-beebagz-cat-hero .art{height:280px;object-fit:cover}
+.fit-beebagz-cat .items{grid-template-columns:repeat(3,1fr)}
+.fit-beebagz-cat .item .image{aspect-ratio:3/2}
+.fit-market-breadcrumb{max-width:1380px;margin:22px auto 0;padding:0 3%;font-size:11px}
+.fit-market-cat h1{font:700 41px 'Space Grotesk',sans-serif;margin:12px 0 30px}
+.fit-market-cat .items{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1080px){
+.theme-supply .fit-shop-shell .items,.fit-beewise-cat .items,.fit-earthology-cat .items,.fit-superbee-cat .items,.fit-maker-cat .items,.fit-mind-cat .items,.fit-market-cat .items{grid-template-columns:repeat(3,1fr)}
+.fit-shop-shell{grid-template-columns:180px minmax(0,1fr);gap:20px}
+}
+@media(max-width:760px){
+.fit-shop-shell{display:block}
+.fit-filter-sidebar{display:none}
+.fit-catalog-toolbar{align-items:flex-start;flex-direction:column;gap:10px}
+.fit-filter-tabs{width:100%;overflow:auto;flex-wrap:nowrap;padding-bottom:8px}
+.fit-filter-tabs button{white-space:nowrap;flex:none}
+.fit-catalog-toolbar label{align-self:flex-end}
+.fit-heritage-cat-hero{display:flex;flex-direction:column;min-height:0}
+.fit-heritage-cat-hero>div{padding:30px 6%}
+.fit-heritage-cat-hero .art{height:120px;order:-1}
+.fit-beewise-cat .items,.fit-earthology-cat .items,.theme-supply .fit-shop-shell .items,.fit-superbee-cat .items,.fit-maker-cat .items,.fit-mind-cat .items,.fit-market-cat .items{grid-template-columns:repeat(2,1fr)}
+.theme-heritage .fit-shop-shell .fit-collection-cards,.fit-hearterra-cat .items,.fit-beebagz-cat .items{grid-template-columns:repeat(2,1fr)}
+.fit-superbee-cat-strip{grid-template-columns:repeat(2,1fr);margin-bottom:30px}
+.fit-superbee-cat-strip .art{height:112px}
+.fit-superbee-cat h1{font-size:38px}
+.fit-maker-cat-hero{height:460px}
+.fit-maker-cat-hero>div{bottom:10%;left:6%;right:6%}
+.fit-maker-cat-hero h1{font-size:39px}
+.fit-mind-cat-hero{grid-template-columns:1fr}
+.fit-mind-cat-hero .art{height:240px;order:-1}
+.fit-mind-cat-hero>div{padding:30px 6%}
+.fit-mind-cat-hero h1{font-size:40px}
+.fit-beebagz-cat-hero{grid-template-columns:1fr}
+.fit-beebagz-cat-hero>div{padding:28px 6%}
+.fit-beebagz-cat-hero .art{height:200px}
+}
+@media(max-width:450px){
+.fit-beewise-cat h1,.fit-earthology-cat h1,.fit-hearterra-cat h1,.fit-market-cat h1{font-size:37px}
+.fit-beewise-cat .items,.fit-earthology-cat .items,.theme-supply .fit-shop-shell .items,.fit-superbee-cat .items,.fit-maker-cat .items,.fit-mind-cat .items,.fit-market-cat .items,.fit-hearterra-cat .items,.fit-beebagz-cat .items,.theme-heritage .fit-shop-shell .fit-collection-cards{grid-template-columns:repeat(2,1fr)}
+.fit-collection-cards .item h3{font-size:15px}
+.fit-collection-cards .item .action{font-size:10px;padding:9px}
+.fit-collection-cards .item-text{padding:10px}
+.fit-collection-cards .item small{font-size:8px}
+}
