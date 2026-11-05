@@ -48,3 +48,17 @@ body.doe-news-index main .doe-news-grid .doe-news-read{display:inline-flex;margi
 body.doe-news-index main .doe-news-grid article.doe-hide{display:none!important}
 body.doe-news-index main #doe-news-count{font-size:.83rem;color:#49695e}
 @media(max-width:690px){body.doe-news-index main .doe-news-grid{grid-template-columns:1fr}}
+
+/* BAKE PRO 4.0 B4-037: content-first public pages */
+.doe-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;clip-path:inset(50%)!important}
+body.doe-app-page main{padding-top:12px!important}
+body.doe-app-page main .filters,body.doe-app-page main .controls,body.doe-app-page main .doe-news-search{margin-top:6px!important;margin-bottom:12px!important}
+body.doe-app-page main .doe-below-data,main.app-home .doe-below-data{margin:22px 0 14px;padding:12px 16px;border:1px solid #d5e4dc;border-radius:12px;background:#fff;color:#274a43}
+body.doe-app-page main .doe-below-data summary,main.app-home .doe-below-data summary{font-weight:750;cursor:pointer;color:#18594e;padding:5px}
+body.doe-app-page main .doe-below-data> :not(summary){margin-block:12px}
+body.doe-app-page main .doe-count{font-size:.87rem;margin:8px 0;color:#58766d}
+main.app-home .app-grid{margin-top:0!important}
+main.app-home .app-tile{min-height:84px!important;padding:16px!important;justify-content:center!important}
+main.app-home .app-tile h2{margin:0!important}
+main.app-home .app-columns{margin-top:12px!important}
+@media(max-width:600px){main.app-home .app-tile{min-height:70px!important;padding:13px!important}body.doe-app-page main{padding-top:8px!important}}
