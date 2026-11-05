@@ -19,13 +19,15 @@ try{
    await visit(page,u+'#home');
    check(await page.locator('body').getAttribute('class')==='store theme-'+concepts[i], 'Incorrect body style '+(i+1));
    check(await page.locator('.brand').innerText().then(x=>x.includes('Momma')), 'Brand missing '+(i+1));
-   const hero=['.heritage-hero','.happy-poster','.quiet-intro','.supply-header','.lab-hero','.maker-open','.pattern-hero','.slow-mast','.utility-hero','.market-mast'][i];
+   const hero=['.fit-heritage-hero','.fit-beewise-hero','.fit-earthology-hero','.fit-package-hero','.fit-superbee-hero','.fit-louise-hero','.fit-mind-hero','.fit-hearterra-hero','.fit-beebagz-banner','.fit-ethikli-hero'][i];
    check(await page.locator(hero).count()===1,'Unique homepage anatomy missing '+hero);visitedSelectors.add(hero);
    check(await images(page),'Broken inline product art on home '+(i+1));
-   if(i===4){await page.locator('[data-scroll-finder]').click();await page.locator('[data-find="1"]').click();check(await page.locator('#lab-result h3').innerText()==='Reusable Paper Towels','Wrap Lab product finder did not update');await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));}
+   if(i===4){await page.locator('[data-find="1"]').click();check(await page.locator('#lab-result h3').innerText()==='Reusable Paper Towels','Wrap Lab product finder did not update');await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));}
+   if(i===7||i===9){const before=await page.locator('[data-slider] h1').innerText();await page.locator('[data-slide-next]').click();check(await page.locator('[data-slider] h1').innerText()!==before,'Hero slider did not change on design '+(i+1));}
    await page.screenshot({path:'mommamade/qa-artifacts/design-'+(i+1)+'-desktop.png',fullPage:false});
    await visit(page,u+'#shop');
    for(let j=0;j<4;j++){check(await page.locator('a[href$="product-'+(j+1)+'"]').count()>0,'Missing product route in collection '+(i+1)+'/'+(j+1))}
+   if([3,7,9].includes(i)){await page.locator('[data-search-form] input').fill('Snack');await page.locator('[data-search-form] button').click();check(await page.locator('.items .item:visible').count()>=1,'Header product search found no matching item '+(i+1));}
    await visit(page,u+'#about');check(await page.locator('.story-page').count()===1,'Missing story '+(i+1));
    await visit(page,u+'#care');check(await page.locator('.care-grid article').count()===4,'Missing care guide '+(i+1));
    for(let j=1;j<=4;j++){
@@ -43,6 +45,7 @@ try{
     await visit(mobile,base+'?template='+(i+1)+'#home');
     const widths=await mobile.evaluate(()=>({scroll:document.documentElement.scrollWidth,viewport:document.documentElement.clientWidth}));
     check(widths.scroll<=widths.viewport+8,'Mobile horizontal overflow in design '+(i+1)+': '+JSON.stringify(widths));
+    const menu=mobile.locator('.mobile-toggle');check(await menu.isVisible(),'Mobile navigation toggle absent on '+(i+1));await menu.click();check(await mobile.locator('#momma-mobile-menu').isVisible(),'Mobile drawer failed to open '+(i+1));await menu.click();check(await mobile.locator('#momma-mobile-menu').isHidden(),'Mobile drawer failed to close '+(i+1));
     await mobile.screenshot({path:'mommamade/qa-artifacts/design-'+(i+1)+'-mobile.png',fullPage:false});
     report.mobile.push({template:i+1,viewport:390,overflow:false});
  }
