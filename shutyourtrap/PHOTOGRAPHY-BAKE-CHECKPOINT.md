@@ -45,3 +45,27 @@
 - Photo files integrated in live site: **0 verified**.
 - Post-photography browser QA: **not run**.
 - New photo deployment: **not verified**.
+
+## Continuation checkpoint — staged safe photo integration (November 5, 2026)
+
+**This is staging, not final photo publication.** All 17 actual WebP files still exist only in the attached ZIP, not in GitHub.
+
+- The 5.0 MiB `shutyourtrap-photography-pack.zip` was verified locally: 17 WebPs, expected filenames and per-image SHA-256 manifest checksums, no mismatches.
+- `shutyourtrap/site.js` now contains a curated mapping of **all 17 verified photographs across 40 intended placements** (ten template concepts × hero / trapping / snaring / sharpening). Photo rendering remains disabled until `shutyourtrap/assets/photos/status.json` is enabled after actual binary import; 40 original SVG assets remain live as fallbacks.
+- `shutyourtrap/scripts/import-photo-pack.py` validates all exact SHA-256 hashes and WebP headers before writing any assets or activating photo mode.
+- `.github/workflows/shutyourtrap-photo-import.yml` is a native GitHub Actions import workflow using the repository's existing GitHub token (no new paid services). On ZIP push, it verifies, extracts 17 WebPs, removes the staging ZIP, commits the files, and thereby triggers existing browser QA / Pages deployment.
+- `shutyourtrap/qa.mjs` checks photo activation status. With mode enabled it must find all 17 actual WebPs and see loaded photo sources in the home, service, about and mobile views. With mode disabled it continues to validate the existing SVG fallback.
+- **Successful staged-site browser QA:** commit `ffe83214af226d75a491d3c4f46459948af5f76f`, run https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133205367. This tests fallbacks, **not yet the photographic version**.
+- **Confirmed transfer blocker:** GitHub's available connector `create_blob` requires a literal UTF-8/base64 content string. This environment exposes local generated files to the container but not their binary bytes to the connector's isolated JavaScript runner. The container has no DNS/network access to `github.com` or `api.github.com`; a local `git push` or HTTP POST cannot work. Passing a local path or opaque ChatGPT image pointer as blob content would not upload valid WebP bytes. **No binary upload or photo deployment is claimed.**
+
+### Exact next trigger
+
+Download the existing 17-photo ZIP from the conversation and upload **the ZIP as one file** at:
+
+https://github.com/deltaowleyes/deltaowleyes.github.io/upload/main/shutyourtrap/photo-inbox
+
+Name must remain `shutyourtrap-photography-pack.zip`. The workflow then commits the actual 17 images to `shutyourtrap/assets/photos/`, enables the photo status, and removes the temporary ZIP. Check the importer, 70-route Chromium QA and Pages deployment before declaring success.
+
+If this transfer can be executed directly in a future ChatGPT turn with a binary-capable GitHub tool, do that instead of asking for manual upload. Do not regenerate the initial 17 assets. **After** photo activation succeeds, consider 13–23 new original photographs to reach the larger 30–40 asset goal, with owner review of imagery and crop fidelity.
+
+**BAKE handoff:** Every unfinished turn must end with a working one-click BAKE continuation control, not just copied prompt text.
