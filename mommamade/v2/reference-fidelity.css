@@ -1,0 +1,73 @@
+/* Reference-composition corrections, 2026-11-05.
+   Original layouts and imagery; no third-party code, copy, logos, or photography copied. */
+.header-right{display:flex;gap:14px;align-items:center}
+.inspired-category-nav{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:clamp(15px,3vw,35px);padding:14px 4%;border-bottom:1px solid #b4aaa080;background:var(--paper)}
+.inspired-category-nav a{font:700 12px/1.3 Arial,sans-serif;white-space:nowrap}
+.inspired-category-nav a:hover{text-decoration:underline;text-underline-offset:4px}
+/* Papier: editorial merchandise-first hierarchy; remove arbitrary rotated-bubble hero. */
+.theme-1 .site-header{min-height:93px;flex-direction:row;justify-content:space-between;gap:22px;border-radius:0;border-bottom:1px solid #d7c8c4;background:#fff9f4}
+.theme-1 .logo{font-size:clamp(27px,3vw,43px)}
+.theme-1 .hero{padding:0;gap:0;grid-template-columns:.9fr 1.1fr;min-height:590px;background:#f7edeb}
+.theme-1 .hero-text{background:#f4e9e9;border:0;border-radius:0;transform:none;padding:70px 10%;align-items:flex-start}
+.theme-1 .hero h1{font:800 clamp(45px,5.5vw,89px)/1.02 Arial,sans-serif;letter-spacing:-.07em;color:#503659}
+.theme-1 .hero-image{border:0;border-radius:0;transform:none;overflow:hidden;min-height:590px}
+.theme-1 .hero-image .photo{height:100%}
+.theme-1 .category{border:1px solid #a7948b;border-radius:0;background:#fff4f0}
+.theme-1 .note-block{background:#f0d5da}
+.theme-1 .product-card .photo{border-radius:0}
+/* Grovemade: quiet materials, large visual breathing room, minimal controls. */
+.theme-2 .hero{grid-template-columns:1.15fr .85fr;gap:4%;padding:65px 7%}
+.theme-2 .hero-image{box-shadow:none}
+.theme-2 .hero-text{padding:5% 0}
+.theme-2 .hero h1{font-weight:400;letter-spacing:-.045em}
+.theme-2 .section{padding-top:105px;padding-bottom:105px}
+.theme-2 .category{background:#edeae4;border:0}
+/* Loeffler Randall: fashion-style cinematic visual and restrained overlay. */
+.theme-3 .hero h1{font-size:clamp(44px,5.8vw,83px);font-weight:400;letter-spacing:-.035em}
+.theme-3 .hero-text{max-width:1000px;margin:auto}
+.theme-3 .cta{padding:16px 28px}
+/* Package Free: department-style practical category exploration. */
+.theme-4 .category-grid{gap:9px}
+.theme-4 .category{min-height:255px;border:1px solid #658578}
+.theme-4 .section-head h2{max-width:700px}
+/* Schoolhouse: homeware editorial, soft typography, fewer decorative angles. */
+.theme-5 .site-header{border-bottom:1px solid var(--ink);min-height:99px}
+.theme-5 .hero{gap:0;padding:0;background:#e9dbca}
+.theme-5 .hero-text{margin:0;border:0;outline:none;transform:none;background:#f4e7d7}
+.theme-5 .hero-image{transform:none;box-shadow:none}
+.theme-5 .story{grid-template-columns:1fr 1fr}
+/* Block Shop: navigation and product-merchandising hierarchy, not floral-arch landing page. */
+.theme-6 .site-header{min-height:100px;border-bottom:1px solid var(--ink);background:#fffaf5}
+.theme-6 .hero{grid-template-columns:.8fr 1.2fr;gap:0;padding:0;background:#f6f1ea;min-height:625px}
+.theme-6 .hero-text{text-align:left;align-items:flex-start;padding:75px 11%}
+.theme-6 .hero h1{font-style:normal;font-weight:400;font-size:clamp(48px,5.7vw,86px);letter-spacing:-.05em}
+.theme-6 .hero-image{height:auto;min-height:625px;border:0;border-radius:0}
+.theme-6 .product-grid{gap:12px}
+.theme-6 .product-card h3{font-size:clamp(21px,2.1vw,27px)}
+.theme-6 .category{border:0;background:#f1e7dc}
+/* Ocean Bottle: modern bold utility, functional and high contrast. */
+.theme-7 .hero h1{font-family:Arial,sans-serif;font-weight:900;line-height:.94}
+.theme-7 .category{border:1px solid #748a7e}
+.theme-7 .utility-band{background:#bed3b1;color:#172a25}
+/* Abode New York: catalogue-forward interiors, rather than decorative market stripes. */
+.theme-8 .site-header{border-top:0;border-bottom:1px solid #a9a295;background:#f9f5e9}
+.theme-8 .hero{grid-template-columns:.46fr .54fr;background:#ece7da}
+.theme-8 .hero-text{background:#f8f4eb;padding:75px 11%}
+.theme-8 .hero-image{margin:0;border:0}
+.theme-8 .category{border:1px solid #b9b4a3}
+/* Homesick: accessible, soft everyday-story merchandising. */
+.theme-9 .hero h1{font-size:clamp(47px,5.5vw,83px)}
+.theme-9 .category{border-radius:10px}
+@media(max-width:1300px){.header-right{display:none}}
+@media(max-width:760px){
+ .inspired-category-nav{display:none}
+ .theme-1 .hero,.theme-2 .hero,.theme-3 .hero,.theme-4 .hero,.theme-5 .hero,.theme-6 .hero,.theme-7 .hero,.theme-8 .hero,.theme-9 .hero{display:flex;flex-direction:column;min-height:0;padding:0;gap:0}
+ .theme-1 .site-header,.theme-6 .site-header{min-height:75px;flex-direction:row}
+ .theme-1 .hero-text,.theme-2 .hero-text,.theme-3 .hero-text,.theme-4 .hero-text,.theme-5 .hero-text,.theme-6 .hero-text,.theme-7 .hero-text,.theme-8 .hero-text,.theme-9 .hero-text{padding:54px 6%;min-height:0;width:100%;transform:none;border:0;align-items:flex-start;text-align:left}
+ .theme-1 .hero-image,.theme-2 .hero-image,.theme-3 .hero-image,.theme-4 .hero-image,.theme-5 .hero-image,.theme-6 .hero-image,.theme-7 .hero-image,.theme-8 .hero-image,.theme-9 .hero-image{height:390px;min-height:390px;width:100%;border:0;transform:none;margin:0;border-radius:0;box-shadow:none}
+ .theme-3 .hero-text{background:#f3e7d9;color:#674a31}
+ .theme-3 .hero p{color:#674a31}
+ .theme-3 .hero .cta{background:#674a31;color:white}
+ .theme-6 .hero h1{font-size:clamp(43px,10vw,67px)}
+}
+@media(max-width:390px){.theme-1 .hero h1,.theme-6 .hero h1{font-size:43px}}
