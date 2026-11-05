@@ -34,3 +34,17 @@ body.doe-app-page main .doe-banner-container img{max-height:220px!important;obje
 @media(min-width:850px){body.doe-app-page main .filters{gap:10px!important}}
 @media(max-width:700px){body.doe-app-page main{padding:16px 13px 48px!important}body.doe-app-page main .doe-news-search{flex-direction:column;align-items:stretch!important}body.doe-app-page main .filters{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))!important}body.doe-app-page main .controls{gap:8px!important}body.doe-app-page main .card{min-width:0!important}}
 @media(prefers-reduced-motion:reduce){body.doe-app-page main *{scroll-behavior:auto!important}}
+
+/* News list: scan headlines quickly, open the canonical article to read in full. */
+body.doe-news-index main .doe-news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
+body.doe-news-index main .doe-news-grid article{display:flex;flex-direction:column;min-width:0;margin:0!important;padding:20px!important}
+body.doe-news-index main .doe-news-grid article>p:not(.meta){display:none!important}
+body.doe-news-index main .doe-news-grid article>h2+p{display:-webkit-box!important;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-size:.91rem!important;line-height:1.55!important;color:#526b63!important;margin:0 0 12px!important}
+body.doe-news-index main .doe-news-grid article h2{font-size:1.14rem!important;line-height:1.3!important;margin:6px 0 12px!important}
+body.doe-news-index main .doe-news-grid article h2 a{text-decoration:none!important;color:#184e44!important}
+body.doe-news-index main .doe-news-grid article h2 a:hover{text-decoration:underline!important}
+body.doe-news-index main .doe-news-grid .meta{font-size:.76rem!important;font-weight:700!important;color:#51766d!important;margin:0!important}
+body.doe-news-index main .doe-news-grid .doe-news-read{display:inline-flex;margin-top:auto;padding-top:12px;font-size:.86rem;font-weight:750;text-decoration:none}
+body.doe-news-index main .doe-news-grid article.doe-hide{display:none!important}
+body.doe-news-index main #doe-news-count{font-size:.83rem;color:#49695e}
+@media(max-width:690px){body.doe-news-index main .doe-news-grid{grid-template-columns:1fr}}
