@@ -10,3 +10,5 @@ Original composition: An information-dense, monospace utility catalogue with rai
 - No live payment, checkout, booking, contact submission or storage.
 - Required Chromium: 1440x900 + 390x844 screenshots; 320/390/768/1024/1440/1920 widths; keyboard navigation, anchor, disclosure and privacy checks.
 - Do not merge into `main` or change Momma Made V2 or archived versions.
+
+- QA retry note (2026-11-05): prior hosted Chromium install job stalled on the runner; requeue as a new read-only candidate check. No design source changes.
