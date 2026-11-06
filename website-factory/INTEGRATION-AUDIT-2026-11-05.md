@@ -35,7 +35,7 @@ Individual suites covered static routes, 320,390,768,1024,1440,1920px overflow, 
 - Mobile focus, colour contrast and automated accessibility still require combined evaluation through the new integrated CI. Do not equate axe rules with a complete WCAG audit.
 
 ## Separate work already on main
-The latest `data/web-design-projects.json` already lists Momma Made V3 as a candidate and V2 as the latest approved version. Do **not** conflate the separate V3 candidate with Factory 2.0 exploratory layouts (21–30), and do not silently promote either.
+The latest `data/web-design-projects.json` already lists Momma Made V3 as a candidate and V2 as the latest approved version. Do **not** conflate the separate V3 candidate with Factory 2.0 parallel exploratory layouts, and do not silently promote either.
 
 ## Cost & concurrency
 Canonical hard policy: `docs/WEBSITE-FACTORY-COST-POLICY.md`. Aggregate incremental development cash must remain **strictly below C$1**, not C$1 per bake; commercial generation and QA must remain **at or below C$5 per 100 options**. Existing entitlements are excluded only without overages.
@@ -76,3 +76,5 @@ Canonical hard policy: `docs/WEBSITE-FACTORY-COST-POLICY.md`. Aggregate incremen
 - Actual aggregate incremental cash spend: **unknown, not C$0**. Billing statements, artifact-storage quota and external account invoices were not accessible to the reviewer; owner must verify before declaring the strict **<C$1** cap proven.
 - Commercial C$5 per 100 generated-and-QA options is a policy ceiling, not proven commercial-scale throughput or billing. Ten prototype layouts do not constitute an unattended production factory.
 - Production candidate release remains **blocked on visual/reference/owner approval and cost verification**, despite the green technical suite.
+
+**Naming correction:** Factory 2.0 candidates have their own IDs F2-01 through F2-10 and are not the Momma Made V3 generation or an approved designs 21–30 release. No stable production numbering has been assigned.
