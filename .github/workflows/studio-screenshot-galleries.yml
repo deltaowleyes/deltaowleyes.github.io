@@ -1,0 +1,61 @@
+name: Publish Studio screenshot-only galleries
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'studio-sandbox/build_screenshot_galleries.py'
+      - '.github/workflows/studio-screenshot-galleries.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  screenshot-only-publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser and WebP encoder
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.56.0 Pillow==11.3.0
+          python -m playwright install --with-deps chromium
+      - name: Capture actual full-page screenshots at six responsive widths
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 >/tmp/studio-screenshots.log 2>&1 &
+          sleep 2
+          python studio-sandbox/build_screenshot_galleries.py
+      - name: Verify screenshot counts and publish only sandbox generated output
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,pathlib
+          root=pathlib.Path('studio-sandbox')
+          data=json.loads((root/'screenshot-manifest.json').read_text())
+          assert len(data['families'])==6
+          assert all(len(f['screenshots'])==6 for f in data['families'])
+          for family in data['families']:
+              assert all((root/'previews'/family['slug']/r['file']).exists() for r in family['screenshots'])
+          assert all((root/f'header-slim-{w}.webp').exists() for w in [320,390,500,768,1024,1440])
+          assert (root/'index.html').read_text().count('href="/studio-sandbox/previews/')==12
+          print('Verified 36 full-page previews, 6 family pages and 6 proportional headers')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add studio-sandbox/index.html studio-sandbox/previews/ studio-sandbox/header-slim-*.webp studio-sandbox/screenshot-manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Studio: publish six screenshot-only design preview galleries, 36 real viewport captures"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: studio-screenshot-gallery-pilot-evidence
+          path: |
+            studio-sandbox/screenshot-manifest.json
+            studio-sandbox/previews/
+          retention-days: 7
