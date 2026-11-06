@@ -99,11 +99,29 @@ a:focus-visible,button:focus-visible{outline:3px solid #ffe8aa;outline-offset:3p
  .header-picture,.mobile-header-art{display:block;width:100%;height:auto}
 }
 @media(max-width:600px){.mobile-head{min-height:0}}
+
+/* One shared art-directed header at every viewport; desktop artwork starts below its original 171px header. */
+.studio-header{background:#0b1c26;line-height:0}
+.studio-header .responsive-header,.studio-header .responsive-header>img{display:block;width:100%;height:auto}
+.desktop-master{aspect-ratio:1536/853;overflow:hidden}
+.desktop-master>img{position:absolute;top:0;left:0;width:100%;height:auto;transform:translateY(-16.69921875%)}
+.hotspot:nth-of-type(-n+3){top:0;height:48.8%}
+.hotspot:nth-of-type(n+4){top:50.05%;height:48%}
 </style>
 </head>
 <body>
 <a class="skip" href="#designs">Skip to the six designs</a>
 <main class="studio" id="designs">
+<header class="studio-header" aria-label="Responsive Website Design Studio banner">
+<picture class="responsive-header">
+<source media="(max-width: 354px)" srcset="header-320.webp" width="320" height="212">
+<source media="(max-width: 439px)" srcset="header-390.webp" width="390" height="220">
+<source media="(max-width: 629px)" srcset="header-500.webp" width="500" height="230">
+<source media="(max-width: 895px)" srcset="header-768.webp" width="768" height="225">
+<source media="(max-width: 1279px)" srcset="header-1024.webp" width="1024" height="200">
+<img src="header-1440.webp" width="1536" height="171" decoding="async" fetchpriority="high" alt="Delta Owl Eyes Website Design Studio — 40 Exceptional Website Designs, with original owl, hawk, and gold lettering.">
+</picture>
+</header>
 <section class="desktop-master" aria-label="Six cinematic Website Design Studio options">
 <img src="reference-40.webp" width="1536" height="1024" decoding="async" fetchpriority="high" alt="Delta Owl Eyes Website Design Studio. Forty exceptional website designs. Original cinematic artwork with great grey owl, red-tailed hawk, sunset and six design directions with full-page screenshot previews.">
 <a class="hotspot" href="/studio-sandbox/previews/river-voice/" data-label="River Voice" aria-label="Explore River Voice editorial demo"></a>
@@ -114,14 +132,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #ffe8aa;outline-offset:3p
 <a class="hotspot" href="/studio-sandbox/previews/owls-lens/" data-label="The Owl's Lens" aria-label="Explore The Owl's Lens media demo"></a>
 </section>
 <section class="mobile-studio" aria-label="Six responsive Website Design Studio options">
-<header class="mobile-head"><picture class="header-picture">
-<source media="(max-width: 354px)" srcset="header-slim-320.webp">
-<source media="(max-width: 439px)" srcset="header-slim-390.webp">
-<source media="(max-width: 629px)" srcset="header-slim-500.webp">
-<source media="(max-width: 895px)" srcset="header-slim-768.webp">
-<source media="(max-width: 1279px)" srcset="header-slim-1024.webp">
-<img class="mobile-header-art" src="header-slim-1024.webp" width="1024" height="114" decoding="async" alt="Delta Owl Eyes. Website Design Studio. 40 Exceptional Website Designs. Original photographic owl, hawk and gold title artwork.">
-</picture></header>
+
 <div class="features" aria-label="Design studio features"><span>▣ Real navigation</span><span>▤ Six design directions</span><span>▣ Responsive</span><span>✓ Working demos</span></div>
 <div class="family-grid">
 <a class="family" href="/studio-sandbox/previews/river-voice/" aria-label="Explore River Voice editorial demo"><div class="family-art" role="img" aria-label="River Voice cinematic sunset editorial design"></div><div class="family-footer"><b class="family-number">1</b><span class="family-name">River Voice</span><span class="family-action">View screenshots ▶</span></div></a>
@@ -133,7 +144,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #ffe8aa;outline-offset:3p
 </div>
 <p class="gallery-note">Design images illustrate the six proposed directions. Choose a design to view six full-page screenshots at different viewport sizes; source code is not provided through the gallery.</p>
 </section>
-<p class="sr-only">The six designs link to existing public demo websites. Some demo layouts differ from the illustrated concepts. No additional design families or subpages have been published as part of this visual checkpoint.</p>
+<p class="sr-only">The six design choices open screenshot-only galleries. The older public demos remain separately accessible and are not protected by the screenshots.</p>
 </main>
 </body>
 </html>
