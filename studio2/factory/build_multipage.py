@@ -144,7 +144,7 @@ document.getElementById('design-inquiry').addEventListener('submit', function(e)
 </style></head>
 <body class="{theme}"><a class="skip" href="#main">Skip to main content</a>
 <div class="top"><div class="wrap">Delta Owl Eyes / {esc(site["name"])} · Unpublished candidate</div></div>
-<header><div class="wrap header-inner"><a class="brand" href="{esc(base)}">Delta Owl Eyes</a><details class="menu-disclosure"><summary aria-label="Toggle design navigation">Explore pages <span aria-hidden="true">☰</span></summary><nav aria-label="Candidate site navigation">{links}</nav></details></div></header>
+<header><div class="wrap header-inner"><a class="brand" href="{esc(base)}">Delta Owl Eyes</a><details class="menu-disclosure" open><summary aria-label="Toggle design navigation">Explore pages <span aria-hidden="true">☰</span></summary><nav aria-label="Candidate site navigation">{links}</nav></details></div></header>
 <main id="main"><section class="hero"><div class="wrap"><span class="kicker">{esc(route["eyebrow"])}</span>
 <h1>{esc(route["title"])}</h1><p class="lead">{esc(route["summary"])}</p></div><figure class="hero-art"><img src="{esc(visual_src)}" alt="{esc(visual_alt)}" decoding="async"><figcaption>Conceptual visual · Not documentary evidence</figcaption></figure></section>
 <div class="wrap"><div class="content-strap"><span>{esc(site["name"])}</span><span>{esc(route["nav"])}</span><span>Original Delta Owl Eyes content pathways</span></div></div><div class="wrap article-grid"><div class="sections">{sections}<a class="source" href="{esc(route["source"])}">{esc(route["source_label"])} ↗</a>{inquiries}</div>
@@ -153,6 +153,12 @@ document.getElementById('design-inquiry').addEventListener('submit', function(e)
 <p><small>Design demonstration. Conceptual artwork and reporting links are not evidence of unpublished stories.</small></p></aside></div></main>
 <footer><div class="wrap">Hard Truths. Education. Accountability. <p><a href="{esc(base)}">Back to homepage</a><a href="/privacy/">Privacy</a><a href="/services/">Services</a></p></div></footer>
 <script>
+(function(){{
+ const m=document.querySelector('.menu-disclosure');
+ const mq=window.matchMedia('(max-width:1000px)');
+ const sync=()=>{{if(m)m.open=!mq.matches;}};
+ sync();mq.addEventListener('change',sync);
+}})();
 document.addEventListener('keydown',function(e){{
  if(e.key==='Escape'){{
   const menu=document.querySelector('.menu-disclosure[open]');
