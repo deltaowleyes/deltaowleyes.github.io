@@ -7,9 +7,12 @@ const {chromium}=require('playwright');
 const fs=require('node:fs');
 const path=require('node:path');
 const assert=require('node:assert/strict');
+const crypto=require('node:crypto');
 const ROOT='http://127.0.0.1:8765';
 const SITE='/shutyourtrap/express/';
 const WIDTHS=[320,390,500,768,1024,1440];
+const ASSETS=JSON.parse(fs.readFileSync('studio-sandbox/header-restoration-manifest.json','utf8')).assets;
+const HEADERS=Object.fromEntries(ASSETS.filter(x=>/^header-\\d+\\.webp$/.test(x.file)).map(x=>[x.file,x]));
 const OUTPUT='artifacts/express-master-standard';
 fs.mkdirSync(OUTPUT,{recursive:true});
 async function loadImages(page){
@@ -28,6 +31,13 @@ function validateHeader(page,width){
  }),width);
 }
 async function run(){
+ for(const width of WIDTHS){
+  const name='header-'+width+'.webp';
+  const approved=HEADERS[name];
+  assert.ok(approved,'Canonical restored header missing from source manifest: '+name);
+  const bytes=fs.readFileSync('studio-sandbox/'+name);
+  assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),approved.sha256,'Canonical master header image changed: '+name);
+ }
  const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
  const results=[];
  try{
@@ -46,8 +56,9 @@ async function run(){
    assert.equal(await page.locator('iframe').count(),0,'no live template iframe');
    await loadImages(page);
    const header=await validateHeader(page,width);
-   assert.ok(header.src.endsWith('/studio-sandbox/header-slim-'+width+'.webp'),width+' uses exactly canonical header '+header.src);
-   assert.equal(header.naturalWidth,width,'canonical header pixel width');
+   assert.ok(header.src.endsWith('/studio-sandbox/header-'+width+'.webp'),width+' uses exactly canonical header '+header.src);
+   assert.equal(header.naturalWidth,HEADERS['header-'+width+'.webp'].width,'canonical header original width');
+   assert.equal(header.naturalHeight,HEADERS['header-'+width+'.webp'].height,'canonical header original height');
    assert.equal(header.responsiveOptions,5,'header picture exact responsive sources');
    const thumbs=await page.locator('.family-art img').evaluateAll(es=>es.map(i=>({src:i.currentSrc,ok:i.complete&&i.naturalWidth>0})));
    assert.ok(thumbs.every(i=>i.ok),width+' all 12 template screenshots visible');
@@ -71,8 +82,9 @@ async function run(){
     assert.equal(await page.locator('.shot').count(),6,href+' six preview shots');
     assert.equal(await page.locator('iframe').count(),0,'no iframe in screenshot preview');
     const h=await validateHeader(page,width);
-    assert.ok(h.src.endsWith('/studio-sandbox/header-slim-'+width+'.webp'),href+' canonical responsive header');
-    assert.equal(h.naturalWidth,width,href+' header original width');
+    assert.ok(h.src.endsWith('/studio-sandbox/header-'+width+'.webp'),href+' canonical responsive header');
+    assert.equal(h.naturalWidth,HEADERS['header-'+width+'.webp'].width,href+' header original width');
+    assert.equal(h.naturalHeight,HEADERS['header-'+width+'.webp'].height,href+' header original height');
     overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
     assert.ok(overflow<=2,href+' @ '+width+' no overflow: '+overflow);
     const inquiry=await page.locator('#inquire').getAttribute('href');
