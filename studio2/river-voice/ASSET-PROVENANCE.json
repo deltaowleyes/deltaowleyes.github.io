@@ -39,10 +39,10 @@
       "requires_article_caption": false
     },
     {
-      "path": "/assets/podcast-archive.png",
-      "purpose": "The Owl's Lens media section",
-      "provenance": "Pre-existing Delta Owl Eyes brand asset",
-      "depicts_real_event": null,
+      "path": "/studio2/river-voice/assets/owl-lens-studio.svg",
+      "purpose": "Original illustrative Owl's Lens media poster and studio microphone imagery",
+      "provenance": "Original SVG created for candidate; page overlays title and link as accessible HTML",
+      "depicts_real_event": false,
       "requires_article_caption": false
     }
   ],
