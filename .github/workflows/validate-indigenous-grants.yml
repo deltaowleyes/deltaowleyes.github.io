@@ -46,3 +46,29 @@ jobs:
           PY
           node --check /tmp/grants-page.js
           node --check assets/header-v3.js
+
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright and Chromium
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.64.1
+          npx playwright install --with-deps chromium
+      - name: Start local static site
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/doe-grants-http.log 2>&1 &
+          sleep 2
+      - name: Test Grants responsive rendering, safe links, status expiry and consent
+        run: node scripts/test_grants_browser.mjs
+      - name: Store grants visual acceptance screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: grants-responsive-qa
+          path: test-results/grants/*.png
+          if-no-files-found: ignore
