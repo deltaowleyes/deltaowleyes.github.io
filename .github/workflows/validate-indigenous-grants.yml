@@ -1,0 +1,48 @@
+name: Validate Indigenous Grants — Discovery 4.0
+on:
+  pull_request:
+    paths:
+      - "grants/**"
+      - "data/indigenous-grants*.json"
+      - "scripts/check_indigenous_grants.py"
+      - "assets/header-v3.js"
+      - "index.html"
+      - "sitemap.xml"
+      - ".github/workflows/validate-indigenous-grants.yml"
+  push:
+    branches: [main]
+    paths:
+      - "grants/**"
+      - "data/indigenous-grants*.json"
+      - "scripts/check_indigenous_grants.py"
+      - ".github/workflows/validate-indigenous-grants.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate original sources, schema, duplicates, suppression and UI links
+        run: python3 scripts/check_indigenous_grants.py
+      - name: Validate browser JavaScript syntax
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          class Scripts(HTMLParser):
+              def __init__(self): super().__init__(); self.capture=False; self.code=[]
+              def handle_starttag(self,tag,attrs):
+                  if tag=='script' and not dict(attrs).get('src'): self.capture=True
+              def handle_endtag(self,tag):
+                  if tag=='script': self.capture=False
+              def handle_data(self,data):
+                  if self.capture and 'function' in data: self.code.append(data)
+          p=Scripts();p.feed(Path('grants/index.html').read_text())
+          assert len(p.code)==1
+          Path('/tmp/grants-page.js').write_text(p.code[0])
+          PY
+          node --check /tmp/grants-page.js
+          node --check assets/header-v3.js
