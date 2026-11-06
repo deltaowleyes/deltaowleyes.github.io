@@ -24,6 +24,7 @@ fs.mkdirSync(folder,{recursive:true});
   for(const [device,width,height] of [['desktop',1440,900],['mobile',390,844]]){
    const item={candidate:i+1,name,device,reference,candidate_capture:'not attempted',reference_capture:'not attempted',fidelity:'NOT ASSESSED'};
    const local=await browser.newPage({viewport:{width,height}});
+   await local.addInitScript(()=>localStorage.setItem('doe-analytics-consent-v1','rejected'));
    try{
     const response=await local.goto(base+'?template='+(i+1)+'#home',{waitUntil:'domcontentloaded',timeout:14000});
     if(!response||response.status()!==200)throw Error('candidate response '+(response&&response.status()));
