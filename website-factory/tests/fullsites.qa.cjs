@@ -64,6 +64,15 @@ const errors=[],report={suite:"factory2.1-fullsites",sites:[],routesChecked:0,wi
       const dim=await page.evaluate(()=>({scroll:document.documentElement.scrollWidth,viewport:document.documentElement.clientWidth}));
       assert.ok(dim.scroll<=dim.viewport+2,c.slug+" "+route+" "+width+"px overflows "+JSON.stringify(dim));
       report.widthChecks++;
+      if(c.slug==="still-life-studio"&&route==="index.html"&&width===390){
+        const positions=await page.evaluate(()=>{
+          const feature=document.querySelector(".f2-home-gallery");
+          const gallery=document.querySelector(".f2-gallery-pieces");
+          const last=gallery?.lastElementChild;
+          return {featureBottom:feature?.getBoundingClientRect().bottom,lastBottom:last?.getBoundingClientRect().bottom};
+        });
+        assert.ok(positions.lastBottom<=positions.featureBottom+2,c.slug+" mobile gallery protrudes beyond its section "+JSON.stringify(positions));
+      }
       if((width===390||width===1440)&&["index.html","shop.html","contact.html"].includes(route)){
         const name=c.slug+"-"+route.replace(".html","")+"-"+width+".png";
         await page.screenshot({path:path.join(dir,name),animations:"disabled",fullPage:true});

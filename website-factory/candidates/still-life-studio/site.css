@@ -101,3 +101,6 @@ body.f2{margin:0;color:var(--ink);background:var(--paper);font:16px/1.6 Arial,sy
 
 /* Gallery caption and art must remain sequential on narrow screens. */
 @media(max-width:760px){.f2-gallery-pieces{grid-template-columns:1fr;gap:23px}.f2-gallery-pieces .f2-piece:first-child .f2-object,.f2-gallery-pieces .f2-piece .f2-object{height:240px;min-height:240px}}
+
+/* Visual review repair: mobile gallery must use natural document flow. */
+@media(max-width:760px){.f2-home-gallery{display:flex;flex-direction:column;gap:36px}.f2-home-gallery .f2-gallery-pieces{display:flex;flex-direction:column;gap:24px;width:100%}.f2-home-gallery .f2-piece{display:block;width:100%;height:auto;min-height:0}.f2-home-gallery .f2-piece .f2-object,.f2-home-gallery .f2-piece:first-child .f2-object{height:220px;min-height:220px}}
