@@ -46,3 +46,12 @@ No paid API, new CMS, premium theme, subscription or other billable tool was int
 
 ## Publication
 **No V2 archive mutation, root redirect change, revision promotion or registry status change** has been made. V2 remains the live-approved target in repository metadata, V3 an unapproved public test candidate.
+
+
+## Final hosted rerun — verified completed
+- [GitHub Actions run 42138997739](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42138997739), job `127634251349`: **COMPLETED / SUCCESS**. This run includes reference-domain redirects and the privacy rejection tests. Its logs show 10/10 candidates passing the revised responsive, route, photo and interaction suite. All hosted steps completed successfully; no `##[error]` log entries.
+- Artifact [13465984613](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42138997739/artifacts/13465984613), `mommamade-v3-candidate-visual-qa`, 31,336,885 bytes: **20/20 candidate** source-pair screenshots and **16/20 valid source** screenshots.
+- Exact four source screenshot gaps: **Pattern Studio/Rifle Paper Co.** desktop and mobile redirected offsite to `google.com` and are correctly rejected; **Quiet Catalogue/Grovemade** desktop and mobile returned HTTP **403**.
+- The gallery and candidate screenshots no longer display the initial analytics consent overlay because the test selected **Reject analytics**. The test verifies saved rejection and no analytics initialization; all preserved privacy controls remain operational. Standard mobile screenshots intentionally capture the expanded navigation after testing it; the reference-comparison mobile screenshots capture the default collapsed navigation for parity analysis.
+- A successful GitHub Chromium result establishes **technical candidate QA**, **not** approved inspiration fidelity. The exact remaining source gaps above and unresolved design/layout differences mean `human_reference_comparison` remains `PENDING` and `promotion_authorized` remains `false`.
+- Direct access to `https://deltaowleyes.ca/mommamade/v3/` and `https://deltaowleyes.ca/mommamade/` remained blocked from the available independent live-site verification tool, so production HTTP and deployed asset status cannot be certified.
