@@ -4848,7 +4848,7 @@
       "priority": "P1",
       "effort": "Large / phased",
       "status": "in_progress",
-      "status_basis": "Governance 1.2 review branch: public mailto nomination, corrections and takedown contact; staff-local private metadata queue; GitHub API write/admin permission and dedicated-clean-feature-branch gate before catalogue edits; generic tombstone suppression; bounded weekly read-only source link audit; explicit Nation/language/date/cost filter evidence policy; read-only business full-checkout shard audit. Two primary-source courses added cautiously (30 planned). Community-appointed governance, confidential shared case management, server-enforced two-person approval and production evidence remain outstanding. Do not mark complete until verified.",
+      "status_basis": "Education Governance 1.2 implemented and live: PR #20 merged at 8da4f468, original-provider catalogue 30, public email-based report/correction/takedown links with no static PII form, staff-local no-contact queue and CLI guarded by GitHub write/admin role, dedicated clean feature branch and explicit source-review/write flags; permanent ID/URL tombstone validation, weekly read-only source-health, editorial safety tests. GitHub-hosted production HTTP acceptance run 42240657170 returned 30 records; 29 of 30 provider links reachable, 1 University of Alberta 403 needs manual review; full-checkout business audit counted 4,632 phone, 364 no-phone, 3 recoverable deletions with 0 duplicate IDs/restorations. Remains IN_PROGRESS because community-appointed review, shared confidential case-management, verified real staff credential exercise, server-enforced two-person approval and structured identity/language/deadline filters are not yet complete.",
       "dependencies": [
         "B4-039"
       ],
@@ -4892,6 +4892,43 @@
             "https://aeipostsecondary.ca/programs/pre-health-sciences-certificate-program/"
           ],
           "detail": "Official provider verifies fully online Oneida language diploma (September 2027, language assessment) and AEI pre-health certificate (online, first-year listed tuition C$3,967.62 subject to change). Entries have check-provider access; no Indigenous-only claim."
+        },
+        {
+          "type": "merged_release",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/20",
+          "commit_sha": "8da4f468c6002db6aaeec70b2589255533068e91",
+          "detail": "Education Governance 1.2 reviewed release: 30 sourced entries, protected staff-local queue, authorized reviewer-only CLI, consent-aware public contact, source-health checks, business shard diagnostics and tests."
+        },
+        {
+          "type": "production_http_acceptance",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42240657170",
+          "detail": "Real public HTTP probe succeeded at 2026-11-06 15:13:15 UTC: 30 unique Education records, original-source course anchors, knowledge keepers, navigation, filters, canonical and privacy script."
+        },
+        {
+          "type": "editorial_authorization_unit_qa",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42240321459",
+          "detail": "12 editorial unit tests passed: no unexpected PII fields, secure HTTPS-only URLs, source advisories, tombstone block, GitHub role refusal, dedicated clean branch refusal, private owner-only queue, safe generic removals. Live human credential role exercise not performed."
+        },
+        {
+          "type": "link_health_first_run",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42240657238",
+          "detail": "30 official source URLs checked; 29 reachable; one U Alberta Indigenous Canada automated HTTP 403 flagged as unknown/needs manual review, not deleted. No stale (>120 day) records; read-only."
+        },
+        {
+          "type": "business_shard_checkout_audit",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42240657052",
+          "detail": "GitHub runner full-checkout read-only audit: phone 4,632, without phone 364, active 4,996, recoverable business tombstones 3, baseline 4,999, duplicate source IDs 0, resurrected deleted IDs 0. GitHub connector still cannot retrieve 3.7 MB phone file; this is diagnostic, not safe-import authorization."
+        },
+        {
+          "type": "automation_policy_extension",
+          "date": "2026-11-06",
+          "automation_id": "6ae5e840127c819182aa85253cc64f0b",
+          "detail": "Hourly Discovery 3.0 prompt extended to respect Governance 1.2, exclude unreviewed email/community nominations from scheduled imports and preserve all business/church/event safeguards and original schedule."
         }
       ]
     }
@@ -5111,6 +5148,18 @@
       "summary": "Governance 1.2 branch adds editorial request mailto links, no public PII intake, GitHub-authenticated staff-local queue, reversible source review/takedown operations, source link monitoring, 2 provider-verified course candidates for 30 total, metadata evidence plan and separate full-checkout phone-shard diagnostics. PR and live QA still required; B4-041 in progress.",
       "links": [
         "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/education-governance-1-2-20261106"
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "type": "education_governance_1_2_post_release_evidence",
+      "task_id": "B4-041",
+      "summary": "PR #20 merged 8da4f468. All 9 final PR checks green; 12 privacy/editorial unit tests, 4-width Chromium filters and cross-browser header, directory regression and validation passed. Production Education HTTP independently verified 30 records. First weekly source audit 29 reachable/1 HTTP 403 unknown, business full-checkout audit 4,632 phone +364 no phone+3 tombstones with zero duplicate/resurrected IDs. Discovery 3.0 hourly prompt extended with consent safeguards and schedule unchanged. No paid APIs. Actual GitHub Actions billing not independently verified. B4-041 remains in progress pending community-led governance, shared case management and enforced multi-party review.",
+      "evidence_urls": [
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/20",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42240657170",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42240657238",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42240657052"
       ]
     }
   ]
