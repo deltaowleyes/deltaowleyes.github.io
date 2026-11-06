@@ -1,0 +1,304 @@
+{
+  "schema": 1,
+  "project": "Shut Your Trap EXPRESS",
+  "captureType": "actual Chromium full-page JPEG",
+  "source": "Existing original Shut Your Trap website concepts",
+  "viewportWidths": [
+    320,
+    390,
+    768,
+    1024,
+    1280,
+    1440
+  ],
+  "files": [
+    {
+      "filename": "sharp-edge-320.jpg",
+      "slug": "sharp-edge",
+      "template": 1,
+      "width": 320,
+      "bytes": 176795,
+      "sha256": "908a9a8c15fa400698396ebbb93683f63b4d834e091a286c88c29307e5abe77f"
+    },
+    {
+      "filename": "sharp-edge-390.jpg",
+      "slug": "sharp-edge",
+      "template": 1,
+      "width": 390,
+      "bytes": 191095,
+      "sha256": "ac3d7a8a84e8cb2d447f4a6a9474ce2f64c1dea93aeceb13d21fc68f01955fec"
+    },
+    {
+      "filename": "sharp-edge-768.jpg",
+      "slug": "sharp-edge",
+      "template": 1,
+      "width": 768,
+      "bytes": 288561,
+      "sha256": "e60c933cb53be3e0cb739950f28eb2d3ebbfbcf1710d026c768905774cf81e8a"
+    },
+    {
+      "filename": "sharp-edge-1024.jpg",
+      "slug": "sharp-edge",
+      "template": 1,
+      "width": 1024,
+      "bytes": 314726,
+      "sha256": "9aa6193c00fcc367543ea975e2b632da71c5469111a7fbbff7f998b8ba3065f2"
+    },
+    {
+      "filename": "sharp-edge-1280.jpg",
+      "slug": "sharp-edge",
+      "template": 1,
+      "width": 1280,
+      "bytes": 377446,
+      "sha256": "8d982409daecf5da7159eb250b7fc0d321ff716aef05fac2ed4819b3beaa731f"
+    },
+    {
+      "filename": "sharp-edge-1440.jpg",
+      "slug": "sharp-edge",
+      "template": 1,
+      "width": 1440,
+      "bytes": 408979,
+      "sha256": "07d3a724ee2f484095c8317a6c87e837c4e4df3743d622092a5b23ead35b8140"
+    },
+    {
+      "filename": "family-trapline-320.jpg",
+      "slug": "family-trapline",
+      "template": 2,
+      "width": 320,
+      "bytes": 184977,
+      "sha256": "3b39eeaa4a1eb5b4a00e5854ede2c516868c942b59ed68b108a920829a1c8ea0"
+    },
+    {
+      "filename": "family-trapline-390.jpg",
+      "slug": "family-trapline",
+      "template": 2,
+      "width": 390,
+      "bytes": 208200,
+      "sha256": "3afbb750db71183cee82e65845edf78df063770c25a76c83e2b7f487a211881a"
+    },
+    {
+      "filename": "family-trapline-768.jpg",
+      "slug": "family-trapline",
+      "template": 2,
+      "width": 768,
+      "bytes": 308216,
+      "sha256": "c368fe9ed613ac1042d8b8ffa1c5aae5b0b9e7289cdacd64d07d24447c15b667"
+    },
+    {
+      "filename": "family-trapline-1024.jpg",
+      "slug": "family-trapline",
+      "template": 2,
+      "width": 1024,
+      "bytes": 363468,
+      "sha256": "348c613092079e9b6abde5408eb4ff5b4ea22714a8b2416a3d439cd654dd3885"
+    },
+    {
+      "filename": "family-trapline-1280.jpg",
+      "slug": "family-trapline",
+      "template": 2,
+      "width": 1280,
+      "bytes": 435677,
+      "sha256": "4cdaa4b7c70a0d32d9fa7d9eef659aabf186342222951fdef2af0e2dc833ce9a"
+    },
+    {
+      "filename": "family-trapline-1440.jpg",
+      "slug": "family-trapline",
+      "template": 2,
+      "width": 1440,
+      "bytes": 463939,
+      "sha256": "8edb7e6f24b42a4e405e6c5cbf941891fe420575440d31db3c09ab67061dc0b7"
+    },
+    {
+      "filename": "expedition-320.jpg",
+      "slug": "expedition",
+      "template": 4,
+      "width": 320,
+      "bytes": 166565,
+      "sha256": "c9a247360069ce414c29e4ed24ed43fc1757620e56319fa170c653f730493b10"
+    },
+    {
+      "filename": "expedition-390.jpg",
+      "slug": "expedition",
+      "template": 4,
+      "width": 390,
+      "bytes": 187080,
+      "sha256": "2b6e9cd100cc3db6418d13416e7bac5af9510dca35d5cb35689ade12dadf3ec0"
+    },
+    {
+      "filename": "expedition-768.jpg",
+      "slug": "expedition",
+      "template": 4,
+      "width": 768,
+      "bytes": 254183,
+      "sha256": "5647106f4b36b7f81205242345b5aef9409786321cf432930a7a2346050540ef"
+    },
+    {
+      "filename": "expedition-1024.jpg",
+      "slug": "expedition",
+      "template": 4,
+      "width": 1024,
+      "bytes": 316537,
+      "sha256": "dbeeb336a4c4903afa6f38a6b84872224f3d3556705fdea25b02b83d55c50308"
+    },
+    {
+      "filename": "expedition-1280.jpg",
+      "slug": "expedition",
+      "template": 4,
+      "width": 1280,
+      "bytes": 383808,
+      "sha256": "05c621b0c4ca52b1974fa6eee73505f333f5240e1be31697bfedb8893cd5296b"
+    },
+    {
+      "filename": "expedition-1440.jpg",
+      "slug": "expedition",
+      "template": 4,
+      "width": 1440,
+      "bytes": 416193,
+      "sha256": "b39318e7da7d7d57caa000551523d435f83a49dae56eaba1e4ee095a32ac7a3c"
+    },
+    {
+      "filename": "sharpening-flow-320.jpg",
+      "slug": "sharpening-flow",
+      "template": 5,
+      "width": 320,
+      "bytes": 209215,
+      "sha256": "a07ebe3637f55d070dae523ce2409d3d950df4dc070db2e793200f43c2d24c23"
+    },
+    {
+      "filename": "sharpening-flow-390.jpg",
+      "slug": "sharpening-flow",
+      "template": 5,
+      "width": 390,
+      "bytes": 225420,
+      "sha256": "240b04faeaa960a66715fa3f88361a262bd40a123e531c1cb1dc0394d7ae32c8"
+    },
+    {
+      "filename": "sharpening-flow-768.jpg",
+      "slug": "sharpening-flow",
+      "template": 5,
+      "width": 768,
+      "bytes": 331194,
+      "sha256": "ca5fed98b6b11452f07f90c8c45753625613bf4543de5bd4a109ac3de78ed8be"
+    },
+    {
+      "filename": "sharpening-flow-1024.jpg",
+      "slug": "sharpening-flow",
+      "template": 5,
+      "width": 1024,
+      "bytes": 347536,
+      "sha256": "fa09a144e994d5d24a55745b55b98679997debcb27c5afe6f0350848fdb0923b"
+    },
+    {
+      "filename": "sharpening-flow-1280.jpg",
+      "slug": "sharpening-flow",
+      "template": 5,
+      "width": 1280,
+      "bytes": 418436,
+      "sha256": "c947cc464e7b48073d164e881bc061d6c451a1311622eea0801e2ac28344b4db"
+    },
+    {
+      "filename": "sharpening-flow-1440.jpg",
+      "slug": "sharpening-flow",
+      "template": 5,
+      "width": 1440,
+      "bytes": 455986,
+      "sha256": "39f074693d1b1574179734132fe3a00a86785b7a2a96eb78ada0f34232124a7d"
+    },
+    {
+      "filename": "field-journal-320.jpg",
+      "slug": "field-journal",
+      "template": 7,
+      "width": 320,
+      "bytes": 171924,
+      "sha256": "0a322924cb4b64f5fa625ac45531f0b1aefe9ec108bea3fedd0cce50ced748e6"
+    },
+    {
+      "filename": "field-journal-390.jpg",
+      "slug": "field-journal",
+      "template": 7,
+      "width": 390,
+      "bytes": 193110,
+      "sha256": "89f19dd431e82ff6cf2a6951a64b4b642849ce60a4624fddb1e87aa55d2ed493"
+    },
+    {
+      "filename": "field-journal-768.jpg",
+      "slug": "field-journal",
+      "template": 7,
+      "width": 768,
+      "bytes": 364701,
+      "sha256": "75164a2d6ea89217e71dd127a6f541d557b77ebbd19f1bde161a001858cc9313"
+    },
+    {
+      "filename": "field-journal-1024.jpg",
+      "slug": "field-journal",
+      "template": 7,
+      "width": 1024,
+      "bytes": 361019,
+      "sha256": "1895d33e27ec18c3850b1f9d9a51e0bd380c6ca6a884d2e0e519671a89dc5f1a"
+    },
+    {
+      "filename": "field-journal-1280.jpg",
+      "slug": "field-journal",
+      "template": 7,
+      "width": 1280,
+      "bytes": 414938,
+      "sha256": "6e62e14a14a1f749317afb0a153830b738d4a8bee17af9f2ac1afca33ded02a2"
+    },
+    {
+      "filename": "field-journal-1440.jpg",
+      "slug": "field-journal",
+      "template": 7,
+      "width": 1440,
+      "bytes": 447671,
+      "sha256": "0db372566bae999137a5febf4a307234e0aaaac1bca285a02d56c0f7083190fb"
+    },
+    {
+      "filename": "bold-operator-320.jpg",
+      "slug": "bold-operator",
+      "template": 9,
+      "width": 320,
+      "bytes": 133573,
+      "sha256": "cfa54971b5648c817c58f0910ce97edec32e978d06a041edce935e35abd11964"
+    },
+    {
+      "filename": "bold-operator-390.jpg",
+      "slug": "bold-operator",
+      "template": 9,
+      "width": 390,
+      "bytes": 154095,
+      "sha256": "028b33fdb56aee48f37ec45d45e7cff4cbc6a88bf6351788d3b1f024c72ba8a9"
+    },
+    {
+      "filename": "bold-operator-768.jpg",
+      "slug": "bold-operator",
+      "template": 9,
+      "width": 768,
+      "bytes": 172220,
+      "sha256": "7f0926b8f070bd4372a0ae8a3507bbf0b62c0b5862d8a6820cbb1d522bb709f9"
+    },
+    {
+      "filename": "bold-operator-1024.jpg",
+      "slug": "bold-operator",
+      "template": 9,
+      "width": 1024,
+      "bytes": 220568,
+      "sha256": "2db0522e382acd58d944eeb7503868e2ccda39caf62a9e0016ece36fe611ca11"
+    },
+    {
+      "filename": "bold-operator-1280.jpg",
+      "slug": "bold-operator",
+      "template": 9,
+      "width": 1280,
+      "bytes": 265223,
+      "sha256": "9e584966f13c120d6d0e1967c76725dbcbbdda4d7f1287befea2c01d7b2132be"
+    },
+    {
+      "filename": "bold-operator-1440.jpg",
+      "slug": "bold-operator",
+      "template": 9,
+      "width": 1440,
+      "bytes": 291158,
+      "sha256": "a88b4291fa7afb43fcdd7c8cffcfb462afa7eea618741db4326e351ffa89592b"
+    }
+  ]
+}
