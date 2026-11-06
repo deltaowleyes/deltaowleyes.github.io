@@ -19,8 +19,10 @@ jobs:
           python-version: '3.12'
       - name: Install Chromium and Playwright
         run: |
-          python -m pip install --disable-pip-version-check playwright==1.56.0
+          python -m pip install --disable-pip-version-check playwright==1.56.0 Pillow==11.3.0
           python -m playwright install --with-deps chromium
+      - name: Validate importer fail-closed contract
+        run: python studio2/tests/photo_import_contract.py
       - name: Check local candidate
         run: |
           python -m http.server 8765 --bind 127.0.0.1 >/tmp/studio2-http.log 2>&1 &
