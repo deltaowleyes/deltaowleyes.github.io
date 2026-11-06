@@ -71,9 +71,10 @@ try{
  });
  const page=await context.newPage();
  await page.goto(origin+'/grants/');
- await page.waitForFunction(()=>document.querySelector('#total-metric')?.textContent==='20');
+ const expectedCount=await page.evaluate(async()=>{const response=await fetch('/data/indigenous-grants.json');return (await response.json()).length});
+ await page.waitForFunction(total=>document.querySelector('#total-metric')?.textContent===String(total),expectedCount);
  await page.locator('#grant-status').selectOption('open');
  if(await page.locator('.grant').count()!==0)throw Error('Past deadlines incorrectly presented as open in a future year');
  await context.close();
- console.log('PASS Discovery 4.0: 4 viewports, 20 source-linked listings, searchable filters, privacy rejection and deadline expiry');
+ console.log('PASS Discovery 4.0: 4 viewports, data-derived source-linked listings, searchable filters, privacy rejection and deadline expiry');
 }finally{await browser.close()}

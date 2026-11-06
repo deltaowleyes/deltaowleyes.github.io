@@ -38,3 +38,30 @@ Initial primary-source pages and exact funding-stream summaries are in each JSON
 
 ## Acceptance
 Before publishing: validate source data and tombstones, check page JS and shared navigation syntax, run the page on 320/390/768/1440px Chromium, test search/facets, expiring deadlines, keyboard navigation, no overflow, external rel values, privacy reject, homepage and sitemap links. Check live site after merge, not just GitHub branch. Preserve current Education Hub and all other directory rules. No paid APIs or unapproved upgrades. Actual provider charges/Actions billing are unknown until verified.
+
+
+## Discovery 4.0 expansion batch — 2026-11-06
+
+**QA and release gate:** Original 20-entry release independently passed public HTTP 200, exact live JSON parity and homepage/Grants navigation in `https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42247481010` attempt 2, after the previous attempt hit HTTP 404 while the Pages deployment was still pending. The 13-entry expansion is separate and must pass its own validator, Chromium review and post-merge live test.
+
+**13 reviewed additions (official provider-controlled source pages):**
+
+| ID | Source | Timing and caution |
+| --- | --- | --- |
+| wifn-postsecondary-sponsorship | https://www.walpoleislandfirstnation.ca/post-secondary | Walpole Island First Nation applicants; annual fall/winter May 31, spring/summer April 1, approvals not guaranteed |
+| ontario-first-nations-resource-scholarship | https://osap.gov.on.ca/OSAPPortal/en/A-ZListofAid/POCONT1_110873 | 2026–27 program direct costs plus C$2,500; institution-specific application |
+| rhf-ite-retain-2026 | https://rhf-frh.ca/programs/indigenous-teacher-education-initiative/grants/ | Open through March 26, 2027 11:59 p.m. ET; up to C$200,000 per qualifying project |
+| fgf-organizational-funding-2026 | https://fgfoundation.ca/programs/organization-funding/ | November newsletter says Nov 6 opening but funding overview retains old closed language; labelled **recheck**, not guaranteed open |
+| fgf-continuing-their-journey | https://fgfoundation.ca/programs/continuing-their-journey-program/ | Rolling for First Nations communities / residential-school Survivor groups; up to C$200,000 |
+| fgf-individual-funding-2027 | https://fgfoundation.ca/programs/individual-funding/ | Prior individual call closed; next expected April 2027 with exact date unknown |
+| iso-production-for-all-2026 | https://iso-bea.ca/funding-opportunities/production-program-for-all-2026/ | Nov 25, 2026 at 5 p.m. PST; differentiated contributor ceilings |
+| iso-interactive-immersive-2026 | https://iso-bea.ca/funding-opportunities/interactive-and-immersive-program-2026/ | Dec 2, 2026 at 5 p.m. PST; CMF co-funding only for separately eligible projects |
+| iso-finishing-fund-2026 | https://iso-bea.ca/funding-opportunities/finishing-fund-program/ | **Temporarily closed** per detailed program page, despite broader listings naming Mar 1, 2027 |
+| iso-marketing-distribution-2026 | https://iso-bea.ca/funding-opportunities/marketing-promotion-distribution-2026/ | Rolling until funds depleted or Mar 1, 2027 |
+| iso-travel-2026 | https://iso-bea.ca/funding-opportunities/travel-program-2026/ | Rolling, at least 15 business days before travel, program-end Mar 1, 2027 |
+| canada-cultural-spaces-indigenous | https://www.canada.ca/en/canadian-heritage/services/funding/cultural-spaces-fund/application-guidelines.html | Continuous limited funding for eligible organizations; projects must meet Mar 31, 2028 timeline |
+| toronto-indigenous-arts-projects | https://torontoartscouncil.org/grants/indigenous-arts-projects/ | Rolling but **Toronto-linked eligible projects only**; not generic Ontario eligibility |
+
+**Exclusions / duplicates:** FNCCEC's Ontario administration of First Nations language funding is not duplicated as a second award because the first release already lists the federal language program. The Future Generations Foundation Métis Fund is exhausted (official provider statement), so it was not added as an available grant. Ontario Arts Council Indigenous Arts Projects 2026 deadlines have passed, so no unverified 2027 call is asserted. Future Generations organization 2026 opening and ISO Finishing Fund show page-level inconsistencies; conservative intake labels take priority.
+
+**Review conventions:** Funding amounts are ceilings, not promised award values. Repeated funders are allowed only for distinct funding streams, each with its own original source and stable ID. Do not publish personal information, collect application documents, or reproduce cultural material without permission.
