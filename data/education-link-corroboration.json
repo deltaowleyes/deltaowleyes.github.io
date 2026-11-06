@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "policy": "Independent manual source corroboration never overrides the automated HTTP result and never authorizes rehosting or publication of restricted material.",
+  "records": [
+    {
+      "id": "uofa-indigenous-canada",
+      "source_url": "https://www.ualberta.ca/en/admissions-programs/online-courses/indigenous-canada/index.html",
+      "reviewed_on": "2026-11-06",
+      "finding": "Official University of Alberta Indigenous Canada course page accessible and lists course outline, registration and module-one preview; automated HEAD returned 403.",
+      "review_method": "independent_original_provider_page_review",
+      "expires_on": "2027-02-06"
+    }
+  ]
+}

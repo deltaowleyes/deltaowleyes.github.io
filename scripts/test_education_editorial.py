@@ -119,10 +119,12 @@ class EditorialTests(unittest.TestCase):
         with patch.object(ed,"verify_reviewer",return_value="approvedstaff"), \
              patch.object(ed,"verify_review_branch",return_value="feature/education-test"), \
              patch.object(ed,"read_json",side_effect=[[deepcopy(self.sample)],[]]), \
+             patch("scripts.education_review_cases.require_two_reviewers",return_value=["reviewer1","reviewer2"]), \
+             patch.object(ed,"read_queue",return_value=[{"ticket":"abcdef123456","status":"pending"}]), \
              patch.object(ed,"save_public") as save, \
              patch.object(ed,"resolve_ticket"):
             args=SimpleNamespace(action="remove",resource_id=self.sample["id"],reason="rights-holder-request",
-                 write=True,confirm_source_reviewed=True,ticket=None)
+                 write=True,confirm_source_reviewed=True,ticket="abcdef123456")
             ed.public_edit(args)
             catalogue,tombstones=save.call_args.args
             self.assertEqual(catalogue,[])

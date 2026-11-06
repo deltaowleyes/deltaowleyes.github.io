@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - "scripts/check_education_links.py"
+      - "data/education-link-corroboration.json"
+      - "data/education-verified-facets.json"
       - ".github/workflows/education-source-health.yml"
   workflow_dispatch:
 permissions:
@@ -19,6 +21,7 @@ jobs:
       - name: Read-only external source availability and freshness
         run: |
           python3 scripts/check_education_resources.py
+          python3 scripts/check_education_facets.py
           python3 scripts/check_education_links.py /tmp/education-source-health.json
       - name: Save review-only evidence
         if: always()

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "policy": "Optional facts corroborated on the original provider source; missing facts are unknown, not inferred.",
+  "records": [
+    {
+      "id": "wifn-anishinaabemowin-immersion",
+      "source_url": "https://www.walpoleislandfirstnation.ca/ak-immersion",
+      "reviewed_on": "2026-11-06",
+      "community": "Walpole Island First Nation (Bkejwanong)",
+      "learning_language": "Anishinaabemowin",
+      "credential": "Kindergarten–Grade 6 immersion school",
+      "delivery_area": "Bkejwanong, Ontario"
+    },
+    {
+      "id": "fanshawe-oneida-advanced-diploma",
+      "source_url": "https://www.fanshawec.ca/programs/oni1-oneida-language-immersion-culture-and-teaching/next",
+      "reviewed_on": "2026-11-06",
+      "community": "Oneida Nation of the Thames (program partnership)",
+      "learning_language": "Onyota’a:ka (Oneida)",
+      "credential": "Ontario College Advanced Diploma",
+      "delivery_area": "Online (regional restrictions may apply)",
+      "start_month": "2027-09"
+    },
+    {
+      "id": "aei-pre-health-sciences",
+      "source_url": "https://aeipostsecondary.ca/programs/pre-health-sciences-certificate-program/",
+      "reviewed_on": "2026-11-06",
+      "credential": "One-year pre-health certificate",
+      "delivery_area": "Online",
+      "tuition_cad": 3967.62,
+      "tuition_note": "Provider-listed Year 1; fees may change. Does not guarantee funding or seats."
+    },
+    {
+      "id": "uofa-indigenous-canada",
+      "source_url": "https://www.ualberta.ca/en/admissions-programs/online-courses/indigenous-canada/index.html",
+      "reviewed_on": "2026-11-06",
+      "credential": "Optional course completion certificate",
+      "delivery_area": "Online"
+    }
+  ]
+}

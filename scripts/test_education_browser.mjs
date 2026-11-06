@@ -57,12 +57,35 @@ try {
    await page.locator('#quickpaths [data-topic="knowledge-keepers"]').click();
    if(await page.locator('.resource').count()!==records.filter(r=>r.category==='knowledge-keepers').length)throw Error('Knowledge keepers quickpath');
    await page.locator('#reset').click();
+   const facets=await page.evaluate(async()=>{
+      const response=await fetch('/data/education-verified-facets.json');
+      if(!response.ok)throw Error('Verified facets HTTP '+response.status);
+      return (await response.json()).records;
+   });
+   if(facets.length<4)throw Error('Expected source-verified facets');
+   await page.locator('#learning-language').selectOption('Onyota’a:ka (Oneida)');
+   if(await page.locator('.resource').count()!==1)throw Error('Oneida learning language filter');
+   const oneidaText=await page.locator('.resource').first().textContent();
+   if(!oneidaText.includes('2027-09'))throw Error('Provider-listed intake not displayed');
+   await page.locator('#reset').click();
+   await page.locator('#community').selectOption('Walpole Island First Nation (Bkejwanong)');
+   if(await page.locator('.resource').count()!==1)throw Error('Bkejwanong community connection filter');
+   await page.locator('#reset').click();
    if(await page.locator('.resource').count()!==records.length)throw Error('Reset incorrect');
    const feedbackLinks=await page.locator('#education-feedback a.feedback-action').evaluateAll(
      anchors=>anchors.map(a=>({href:a.getAttribute('href'),text:a.textContent.trim()})));
    if(feedbackLinks.length!==3||feedbackLinks.some(a=>!a.href.startsWith('mailto:deltaowleyes@gmail.com?')))
      throw Error('Public feedback actions must use private email, never an unprotected web form');
    if(await page.locator('#education-feedback form').count())throw Error('Unprotected submission form not permitted');
+   if(width===320){
+     const degraded=await context.newPage();
+     await degraded.route('**/data/education-verified-facets.json',r=>r.fulfill({status:503,body:'Offline'}));
+     await degraded.goto(origin+'/education/',{waitUntil:'domcontentloaded'});
+     await degraded.waitForFunction(expected=>document.querySelector('#count')?.textContent===expected+' of '+expected+' resources shown',records.length);
+     if(await degraded.locator('#list .resource').count()!==records.length)throw Error('Optional facet outage hid core catalogue');
+     if(await degraded.locator('#error').isVisible())throw Error('Optional data outage falsely marked main directory unavailable');
+     await degraded.close();
+   }
    if(errors.length)throw Error('Page errors: '+errors.join('; '));
    const privacyBanner=page.locator('#doe-consent-banner');
    if(await privacyBanner.count()!==1)throw Error('Privacy banner missing before consent');

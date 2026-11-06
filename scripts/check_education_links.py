@@ -20,6 +20,7 @@ from urllib.request import Request, build_opener, HTTPRedirectHandler
 
 ROOT=Path(__file__).resolve().parents[1]
 CATALOGUE=ROOT/"data/education-resources.json"
+CORROBORATION=ROOT/"data/education-link-corroboration.json"
 USER_AGENT="DeltaOwlEyesEducationLinkAudit/1.0 (human-review only; no rehosting)"
 TIMEOUT=10
 
@@ -59,7 +60,8 @@ def inspect(row):
                     return result
             except HTTPError as err:
                 result["http_status"]=err.code
-                if err.code in (405,501) and method=="HEAD":
+                if err.code in (401,403,405,429,501) and method=="HEAD":
+                    # HEAD-only blocks can be false positives. Retry one bounded GET.
                     continue
                 if err.code in (404,410):
                     result["state"]="possible-missing"
@@ -77,17 +79,25 @@ def main():
     rows=json.loads(CATALOGUE.read_text(encoding="utf-8"))
     if not isinstance(rows,list) or not rows:
         raise ValueError("Missing source catalogue")
+    manual=json.loads(CORROBORATION.read_text(encoding="utf-8"))
+    by_id={x["id"]:x for x in manual["records"]}
     with ThreadPoolExecutor(max_workers=4) as pool:
         report=list(pool.map(inspect,rows))
+    for item in report:
+        review=by_id.get(item["id"])
+        if review and date.fromisoformat(review["expires_on"])>=date.today() and review["source_url"]==item["url"]:
+            item["manual_source_corrob"]={"reviewed_on":review["reviewed_on"],"expires_on":review["expires_on"],"finding":review["finding"]}
+            # Intentionally preserve real automated result: 403 remains needs-review.
     counts={state:sum(x["state"]==state for x in report) for state in ("reachable","possible-missing","needs-review")}
     stale=sum(x.get("stale_review",False) for x in report)
-    output={"as_of":date.today().isoformat(),"record_count":len(rows),"status_counts":counts,
+    manual_reviewed=sum("manual_source_corrob" in item for item in report)
+    output={"as_of":date.today().isoformat(),"record_count":len(rows),"status_counts":counts,"manual_original_source_corrob":manual_reviewed,
             "stale_over_120_days":stale,"results":report,
-            "policy":"Read-only: failures require editorial verification; no automatic takedown or content scraping"}
+            "policy":"Read-only: HTTPS checks may be blocked; manual source corroboration never overrides automated results; no automatic takedown or scraping"}
     dest=Path(sys.argv[1]) if len(sys.argv)>1 else Path("/tmp/education-link-health.json")
     dest.write_text(json.dumps(output,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     summary=f"Education link audit: {len(rows)} records, {counts['reachable']} reachable, {counts['possible-missing']} possible missing, {counts['needs-review']} needs review, {stale} stale source reviews"
-    print(summary)
+    print(summary+"; "+str(manual_reviewed)+" original-provider manual corroboration records")
     print("Full report:",dest)
     reportfile=__import__("os").environ.get("GITHUB_STEP_SUMMARY")
     if reportfile:
