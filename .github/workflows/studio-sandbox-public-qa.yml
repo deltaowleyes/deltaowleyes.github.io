@@ -28,5 +28,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: studio-sandbox-public-browser-evidence
-          path: artifacts/public-studio/
+          path: artifacts/studio-header-recovery/
           if-no-files-found: warn
