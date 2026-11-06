@@ -78,7 +78,7 @@ try{
       if(i===4||i===10){
         const visual=await first.evaluate(im=>{
           const s=getComputedStyle(im),r=im.getBoundingClientRect();
-          return {template:i,viewport:width,display:s.display,visibility:s.visibility,opacity:s.opacity,filter:s.filter,
+          return {display:s.display,visibility:s.visibility,opacity:s.opacity,filter:s.filter,
                   width:Math.round(r.width),height:Math.round(r.height),naturalWidth:im.naturalWidth,currentSrc:im.currentSrc};
         });
         results.checks.push({visualDebug:visual});
