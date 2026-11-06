@@ -56,6 +56,20 @@ try {
    await page.locator('#reset').click();
    await page.locator('#quickpaths [data-topic="knowledge-keepers"]').click();
    if(await page.locator('.resource').count()!==records.filter(r=>r.category==='knowledge-keepers').length)throw Error('Knowledge keepers quickpath');
+   const facets=await page.evaluate(async()=>{
+      const response=await fetch('/data/education-verified-facets.json');
+      if(!response.ok)throw Error('Verified facets HTTP '+response.status);
+      return (await response.json()).records;
+   });
+   if(facets.length<4)throw Error('Expected source-verified facets');
+   await page.locator('#learning-language').selectOption('Onyota’a:ka (Oneida)');
+   if(await page.locator('.resource').count()!==1)throw Error('Oneida learning language filter');
+   const oneidaText=await page.locator('.resource').first().textContent();
+   if(!oneidaText.includes('2027-09'))throw Error('Provider-listed intake not displayed');
+   await page.locator('#reset').click();
+   await page.locator('#community').selectOption('Walpole Island First Nation (Bkejwanong)');
+   if(await page.locator('.resource').count()!==1)throw Error('Bkejwanong community connection filter');
+   await page.locator('#reset').click();
    await page.locator('#reset').click();
    if(await page.locator('.resource').count()!==records.length)throw Error('Reset incorrect');
    const feedbackLinks=await page.locator('#education-feedback a.feedback-action').evaluateAll(
