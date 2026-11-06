@@ -105,3 +105,39 @@
  .papier-feature>.visual{height:290px;min-height:290px}
 }
 @media(prefers-reduced-motion:reduce){.pattern-tile{transition:none}.pattern-tile:hover{transform:none}}
+
+
+/* 1.2b: source-screen-informed, original cinematic-craft and textile-hero corrections.
+   Heath screenshot: dark, styled homeware hero. Block Shop screenshot: full-width tabletop
+   visual with concise type. No reference images, logos, code or copy are reused. */
+.theme-ledger .mast{background:#202c28;color:#f4ede1;border-bottom:1px solid #859087}
+.theme-ledger .hero{grid-template-columns:.40fr .60fr;min-height:670px;background:#202b26;color:#f4eee2}
+.theme-ledger .hero-copy{padding:76px 9%;background:#26322c;color:#f4eee2;border-right:1px solid #9c958440}
+.theme-ledger .hero-copy small{color:#dfd3bc}
+.theme-ledger .hero h1{font:400 clamp(49px,5vw,80px)/1.05 Georgia,serif;letter-spacing:-.045em}
+.theme-ledger .hero p{color:#e7ddca}
+.theme-ledger .hero .action{background:#efdfbb;color:#23322c;border-color:#efdfbb}
+.theme-ledger .hero-media{height:100%;min-height:670px;transform:none;box-shadow:none}
+.theme-ledger .hero-media .visual{height:100%;min-height:670px}
+.theme-ledger .hero-media .visual:before{filter:brightness(.78) saturate(.92)}
+.theme-garden .hero{position:relative;display:block;min-height:680px;padding:0;overflow:hidden;background:#253a2b;color:#fffdf2}
+.theme-garden .hero-media{position:absolute;inset:0;border:0;border-radius:0;width:100%;height:100%;min-height:680px;transform:none;overflow:hidden}
+.theme-garden .hero-media .visual{width:100%;height:100%;min-height:680px}
+.theme-garden .hero-media .visual:before{filter:brightness(.61) saturate(.95)}
+.theme-garden .hero-copy{position:relative;z-index:1;min-height:680px;max-width:980px;margin:0 auto;justify-content:center;align-items:center;text-align:center;padding:72px 8%;border:0;background:transparent;color:#fffdf2;transform:none}
+.theme-garden .hero-copy small{color:#fff4dc}
+.theme-garden .hero h1{font:italic 400 clamp(56px,6.8vw,106px)/1.03 Georgia,serif;color:#fffdf2;text-shadow:0 3px 20px #14261770}
+.theme-garden .hero p{color:#fffaf0}
+.theme-garden .hero .action{background:#fff8e7;border:1px solid #fff8e7;color:#273d2c}
+@media(max-width:760px){
+ .theme-ledger .hero{display:flex;flex-direction:column;min-height:0}
+ .theme-ledger .hero-copy{min-height:0;background:#26322c;color:#f4eee2;padding:58px 7%;border:0}
+ .theme-ledger .hero p{color:#e7ddca}
+ .theme-ledger .hero-media,.theme-ledger .hero-media .visual{height:380px;min-height:380px}
+ .theme-garden .hero{display:block;min-height:590px;background:#253a2b}
+ .theme-garden .hero-media,.theme-garden .hero-media .visual{position:absolute;inset:0;width:100%;height:100%;min-height:590px;border:0;border-radius:0;margin:0;filter:none}
+ .theme-garden .hero-copy{position:relative;z-index:1;min-height:590px;max-width:none;background:transparent;color:#fffdf2;align-items:center;text-align:center;padding:70px 7%;margin:0}
+ .theme-garden .hero h1{font-size:clamp(48px,11vw,69px);color:#fffdf2}
+ .theme-garden .hero p{color:#fffdf2}
+ .theme-garden .hero .action{background:#fff8e7;border-color:#fff8e7;color:#273d2c}
+}
