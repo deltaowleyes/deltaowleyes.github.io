@@ -45,3 +45,14 @@ Do not copy external trademarks, proprietary CSS/JS, copyrighted photography, lo
 - Development cap: aggregate **strictly below C$1 CAD** incremental cash.
 - Production generation/QA target: **C$5 CAD per 100** options, excluding existing within-quota subscriptions.
 - New paid operations intentionally initiated in this audit: **zero identified**. Actual billed account charges are **unknown**, not verified as zero.
+
+## Website Factory 1.2 addendum — 2026-11-05
+**Release decision remains HOLD; V2 is still current.** See [REFERENCE-FIDELITY-1.2.md](REFERENCE-FIDELITY-1.2.md) for public source-site DOM architecture and per-design corrections.
+
+- Added original merchandising navigation for 10 candidates, image-backed thematic collections for designs 23–27, and a Papier-style curated editorial feature for candidate 28. No external brand assets or copyrighted source code were used.
+- Fixed previously missing gallery-image check fallback in the candidate QA harness; improved navigation touch targets to 44px across desktop/mobile.
+- Isolated local Chromium review of a source-equivalent development mirror: 10 candidates, 50 five-viewport geometry checks, 90 route views, 20 screenshots, demo filters/forms and mobile menus passed; no page JavaScript exceptions or horizontal overflow observed. **This does not constitute a hosted Actions pass or exact live GitHub-site test.**
+- The GitHub connector still exposed no usable workflow run ID or uploaded screenshot artifact for the candidate workflow. Public-reference page screenshot pairs could not be captured from this environment. Live `deltaowleyes.ca` deployment and provider billing remain unverified.
+- The repository received additional concurrent stylesheet changes (`reference-fidelity-1-2.css`) during this audit. Both CSS files are loaded in the candidate only; their combined production behavior requires hosted browser QA before acceptance.
+- No new paid tools or subscriptions intentionally enabled. Ledger actual expenditure remains **unknown (`null`)**, not C$0 verified.
+- **Do not archive V2, change the root redirect, or mark V3 latest until all acceptance gates are independently verified.**
