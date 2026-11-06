@@ -151,7 +151,7 @@ body.ledger .hero h1{{font-size:clamp(2.35rem,4.1vw,4.5rem);line-height:1.035;le
 }}
 @media(max-width:600px){{
  .content-strap span:last-child{{display:none}}
- body.ledger .hero h1{{font-size:clamp(2.15rem,8vw,3.05rem);line-height:1.08}}
+ body.ledger .hero h1{{font-size:clamp(1.8rem,7.4vw,2.45rem);line-height:1.11;letter-spacing:-.035em}}
  .sections article{{padding:20px 0}}
  body.media .sections article{{padding:22px}}
 }}
