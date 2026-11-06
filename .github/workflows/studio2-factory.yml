@@ -7,6 +7,9 @@ on:
     paths:
       - 'studio2/factory/**'
       - '.github/workflows/studio2-factory.yml'
+concurrency:
+  group: studio3-multipage-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
