@@ -115,11 +115,37 @@ class EditorialTests(unittest.TestCase):
                 if sys.platform!="win32":
                     self.assertEqual(queue.stat().st_mode & 0o777,0o600)
 
+    def test_one_authorized_editor_needs_no_second_reviewer_or_ticket(self):
+        with patch.object(ed,"verify_reviewer",return_value="owner"), \
+             patch.object(ed,"verify_review_branch",return_value="fix/education-owner"), \
+             patch.object(ed,"read_json",side_effect=[[deepcopy(self.sample)],[]]), \
+             patch.object(ed,"save_public") as save, \
+             patch.object(ed,"resolve_ticket") as resolve:
+            args=SimpleNamespace(action="remove",resource_id=self.sample["id"],
+                 reason="rights-holder-request",write=True,
+                 confirm_source_reviewed=True,ticket=None)
+            ed.public_edit(args)
+            cat,ledger=save.call_args.args
+            self.assertEqual(cat,[])
+            self.assertEqual(len(ledger),1)
+            self.assertEqual(ledger[0]["id"],self.sample["id"])
+            resolve.assert_called_once_with(None)
+
+    def test_optional_private_ticket_must_match_edit_type(self):
+        with patch.object(ed,"verify_reviewer",return_value="owner"), \
+             patch.object(ed,"verify_review_branch",return_value="fix/education-owner"), \
+             patch.object(ed,"read_queue",return_value=[{"ticket":"abc012abc012","status":"pending","kind":"suggest"}]), \
+             patch.object(ed,"save_public") as save:
+            args=SimpleNamespace(action="remove",resource_id=self.sample["id"],
+                 reason="withdrawn",write=True,confirm_source_reviewed=True,ticket="abc012abc012")
+            with self.assertRaises(ValueError):
+                ed.public_edit(args)
+            save.assert_not_called()
+
     def test_authorized_remove_stages_generic_tombstone_only(self):
         with patch.object(ed,"verify_reviewer",return_value="approvedstaff"), \
              patch.object(ed,"verify_review_branch",return_value="feature/education-test"), \
              patch.object(ed,"read_json",side_effect=[[deepcopy(self.sample)],[]]), \
-             patch("scripts.education_review_cases.require_two_reviewers",return_value=["reviewer1","reviewer2"]), \
              patch.object(ed,"read_queue",return_value=[{"ticket":"abcdef123456","status":"pending"}]), \
              patch.object(ed,"save_public") as save, \
              patch.object(ed,"resolve_ticket"):
