@@ -95,4 +95,4 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
  assert.deepEqual(errors,[],'JavaScript console page errors');
  await browser.close();
  console.log('PASS all 10 candidate designs, 90 direct routes, 50 responsive checks, 21 screenshots, 24 existing images');
-})().catch(e=>{console.error('MOMMA MADE V3 QA FAILED',e);process.exitCode=1});
+})().catch(e=>{console.error('MOMMA MADE V3 QA FAILED',e);process.exit(1)});
