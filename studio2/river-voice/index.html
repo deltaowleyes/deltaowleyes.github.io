@@ -66,4 +66,17 @@ footer{background:#061820;color:#d6e3dc;padding:42px 0}.foot{display:flex;justif
 <section class="section media" aria-labelledby="media-title"><div class="wrap"><div class="section-head"><div><span class="kicker" style="color:#edbf77">Watch and listen</span><h2 id="media-title">The Owl's Lens</h2></div><p>Videos, conversations and community reporting in a dedicated media experience.</p></div><div class="media-layout"><div class="media-pic"><img src="/studio2/river-voice/assets/owl-lens-studio.svg" alt="Original illustrated podcast studio, owl emblem and microphone; conceptual art rather than a recorded episode" width="1280" height="760" decoding="async"><div class="media-poster-copy"><span>DELTA OWL EYES PRESENTS</span><strong>The Owl’s Lens</strong><small>Stories. Education. Accountability.</small></div><a class="play" href="/videos/" aria-label="Explore Delta Owl Eyes video library">▶ Explore videos</a></div><div class="media-copy"><span class="eyebrow">A closer perspective</span><h3>Hear the stories. Ask better questions.</h3><p>Explore The Owl's Lens, behind-the-scenes video and reporting that connects education with action.</p><a href="/videos/">Enter the media library →</a></div></div></div></section>
 <section class="outro"><div class="wrap"><span class="kicker">Work with Delta Owl Eyes</span><h2>Bring your community, business or story into focus.</h2><p>Learn about directory listings, media support and custom web development services.</p><a class="btn" href="/services/">Explore our services →</a></div></section>
 </main><footer><div class="wrap foot"><div><strong>Delta Owl Eyes</strong><p>Hard Truths. Education. Accountability.</p><p>Website Design Studio 2.0 candidate — not the current production homepage.</p></div><nav aria-label="Footer navigation"><a href="/news/">News</a><a href="/calls-to-action/">TRC Calls</a><a href="/videos/">Media</a><a href="/services/">Services</a><a href="/privacy/">Privacy</a><a href="mailto:info@deltaowleyes.ca">Contact</a></nav></div></footer>
+<script>
+document.addEventListener('keydown',function(event){
+  if(event.key==='Escape'){
+    document.querySelectorAll('.mobile-menu[open]').forEach(function(menu){
+      menu.open=false;
+      menu.querySelector('summary')?.focus();
+    });
+  }
+});
+document.querySelectorAll('.mobile-menu a').forEach(function(link){
+  link.addEventListener('click',function(){const menu=link.closest('details');if(menu)menu.open=false;});
+});
+</script>
 </body></html>
