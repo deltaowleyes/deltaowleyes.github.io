@@ -53,3 +53,26 @@ Canonical hard policy: `docs/WEBSITE-FACTORY-COST-POLICY.md`. Aggregate incremen
 6. Apply proper branch protections / approval rules before ever considering production. Archive-first published releases need separate explicit user approval and full rollback evidence.
 
 **No deployment or merge authorization is implied by passing technical tests.**
+
+## Final integrated technical QA — recorded after source audit
+- [**PASS**](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133): commit `ee49bb9b2fdd2f16d483471fe48753b80c4dedaf` passed all ten candidate Chromium route/interaction checks at 320, 390, 768, 1024, 1440 and 1920 px.
+- [**PASS**](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133): all ten desktop **and** all ten 390×844 mobile pages passed automated axe-core `wcag2a`, `wcag2aa`, `wcag21a`, `wcag21aa` rules. Keyboard skip link and disabled real form/checkout were checked.
+- The [GitHub artifact](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133) contains **20 PNG screenshots**, `results.json`, and `accessibility-results.json`; both JSON reports read `pass:true`, ten candidates, zero recorded axe violations. Artifact retention is short (3 days); preserve a copy for any longer-term decision record.
+- Earlier CI [run 42135781242](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42135781242) found three serious large-heading `color-contrast` defects: Ritual Route 1.81:1, Orbit Home 1.39:1, Pantry Atlas 2.85:1 (required >=3:1). Corrected only those headings on the integrated branch with darker accents `#8a5b39`, `#426d61`, `#9e6847` respectively; rerun passed.
+- The first run [42135611673](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42135611673) passed all ten page tests, but the axe harness initially required `browser.newContext()`; that testing harness was fixed before valid axe review.
+- [**PASS**](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133): `tests/web-design-revisions.qa.cjs` confirms Momma Made current **V2**, V3 a candidate, and Shut Your Trap intact; `tests/website-factory-cost-guard.cjs` confirms **policy preflight, not invoices**.
+- [**PASS**](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42135611698): separate internal website links workflow for the initial combined snapshot.
+
+### Unresolved visual-approval findings (not technical regressions)
+1. All ten **share exactly the same main navigation markup**, and all ten **share byte-identical collection-and-care section markup**, as measured by direct source comparison. Distinct heroes are demonstrated, but calling them ten distinct full-production websites would be misleading.
+2. The ten are **homepage studies**, without separate fleshed-out product/detail/contact applications, and they must not displace Momma Made V2 or the existing separate V3 candidate.
+3. Some visual directions overlap existing Momma Made V3: **Field Notes / Maker Field Notes**, **Daily Ledger / Atelier Ledger or Utility Index**, **Countertop Mosaic / Pattern Studio**, and **Pantry Atlas / Utility Index**. This is an overlap risk, not a finding of copied code. No historical revisions were deleted.
+4. No source-site inspiration screenshots or client-approved reference URLs were supplied for these ten, so external visual-fidelity status is **unverified**. The concept markup contains no externally loaded media/scripts beyond the preserved local privacy integration; this does not replace independent rights review.
+5. Automated axe passes are **not a complete accessibility certification**: test keyboard order beyond the skip link, user zoom/assistive technologies, and real client content before publication.
+6. Client/owner visual acceptance, production-quality content, release archive preparation and enforced branch restrictions remain outstanding. **No production merge, approval or deployment was performed.**
+
+### Cost accounting
+- Known new paid API calls, purchased media, new subscriptions, premium CI runners and billable deployment operations initiated during this review: **none**.
+- Actual aggregate incremental cash spend: **unknown, not C$0**. Billing statements, artifact-storage quota and external account invoices were not accessible to the reviewer; owner must verify before declaring the strict **<C$1** cap proven.
+- Commercial C$5 per 100 generated-and-QA options is a policy ceiling, not proven commercial-scale throughput or billing. Ten prototype layouts do not constitute an unattended production factory.
+- Production candidate release remains **blocked on visual/reference/owner approval and cost verification**, despite the green technical suite.

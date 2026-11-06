@@ -38,3 +38,6 @@ See `website-factory/cost-ledger.json`. Development incremental cash must remain
 - [ ] Reference comparisons honestly marked verified/unverified
 - [ ] Cost audit and GitHub billing visibility recorded
 - [ ] Approved release archived first; latest-only promotion only with owner approval
+
+## Integrated review snapshot (2026-11-05)
+A separate protected-by-convention snapshot of **all ten** candidates is at branch `factory2/integration-review-10-2026-11-05`; exact starting main `9dfcd888515fcea6281972acdcf8b78c59af04b4`. Individual PRs #2–#11 remain open and unmerged. The [combined Chromium + axe WCAG technical suite](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133) passes on 10 desktop and 10 mobile layouts, with short-retention screenshot evidence. See [integration findings](INTEGRATION-AUDIT-2026-11-05.md): repeated lower-page structures, external reference parity, owner acceptance and actual billing are **not approved**. The approved Momma Made V2 remains current; the separate V3 candidate is untouched. No production deployment is authorized.

@@ -32,5 +32,19 @@
     "Owner to verify GitHub billing and Actions artifact storage budget",
     "Owner to verify any other provider expenses to establish actual C$0 baseline",
     "Repeat ledger for every commercial 100-template batch with invoices and usage evidence"
-  ]
+  ],
+  "integration_review": {
+    "date": "2026-11-05",
+    "branch": "factory2/integration-review-10-2026-11-05",
+    "baseline_main_sha": "9dfcd888515fcea6281972acdcf8b78c59af04b4",
+    "technical_qa_run": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133",
+    "known_new_purchases_cad": 0,
+    "known_paid_apis_invoked": 0,
+    "actual_spend_cad": null,
+    "invoices_verified": false,
+    "artifact_zip_size_bytes": 1279566,
+    "storage_billing_verified": false,
+    "commercial_target_verified": false,
+    "note": "Unknown actual billing is not zero; audited cost policy is cumulative below C$1, not a per-run cap."
+  }
 }

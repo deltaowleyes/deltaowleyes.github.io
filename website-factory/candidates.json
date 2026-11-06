@@ -18,8 +18,9 @@
       "referenceStatus": "unverified-original-direction-no-reference-pair",
       "approval": "pending-owner-review",
       "requiresVisualReview": true,
-      "integratedReviewStatus": "pending-all-ten-validation",
-      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133152924"
+      "integratedReviewStatus": "all-ten-chromium-and-desktop-mobile-axe-passed",
+      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133152924",
+      "lastIntegratedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133"
     },
     {
       "id": "02",
@@ -34,8 +35,9 @@
       "referenceStatus": "unverified-original-direction-no-reference-pair",
       "approval": "pending-owner-review",
       "requiresVisualReview": true,
-      "integratedReviewStatus": "pending-all-ten-validation",
-      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133585001"
+      "integratedReviewStatus": "all-ten-chromium-and-desktop-mobile-axe-passed",
+      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133585001",
+      "lastIntegratedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133"
     },
     {
       "id": "03",
@@ -50,8 +52,9 @@
       "referenceStatus": "unverified-original-direction-no-reference-pair",
       "approval": "pending-owner-review",
       "requiresVisualReview": true,
-      "integratedReviewStatus": "pending-all-ten-validation",
-      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42134197687"
+      "integratedReviewStatus": "all-ten-chromium-and-desktop-mobile-axe-passed",
+      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42134197687",
+      "lastIntegratedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133"
     },
     {
       "id": "04",
@@ -66,8 +69,9 @@
       "referenceStatus": "unverified-original-direction-no-reference-pair",
       "approval": "pending-owner-review",
       "requiresVisualReview": true,
-      "integratedReviewStatus": "pending-all-ten-validation",
-      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133210160"
+      "integratedReviewStatus": "all-ten-chromium-and-desktop-mobile-axe-passed",
+      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133210160",
+      "lastIntegratedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133"
     },
     {
       "id": "05",
@@ -82,8 +86,9 @@
       "referenceStatus": "unverified-original-direction-no-reference-pair",
       "approval": "pending-owner-review",
       "requiresVisualReview": true,
-      "integratedReviewStatus": "pending-all-ten-validation",
-      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133215234"
+      "integratedReviewStatus": "all-ten-chromium-and-desktop-mobile-axe-passed",
+      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133215234",
+      "lastIntegratedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133"
     },
     {
       "id": "06",
@@ -98,8 +103,9 @@
       "referenceStatus": "unverified-original-direction-no-reference-pair",
       "approval": "pending-owner-review",
       "requiresVisualReview": true,
-      "integratedReviewStatus": "pending-all-ten-validation",
-      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133220885"
+      "integratedReviewStatus": "all-ten-chromium-and-desktop-mobile-axe-passed",
+      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133220885",
+      "lastIntegratedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133"
     },
     {
       "id": "07",
@@ -114,8 +120,9 @@
       "referenceStatus": "unverified-original-direction-no-reference-pair",
       "approval": "pending-owner-review",
       "requiresVisualReview": true,
-      "integratedReviewStatus": "pending-all-ten-validation",
-      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42134193729"
+      "integratedReviewStatus": "all-ten-chromium-and-desktop-mobile-axe-passed",
+      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42134193729",
+      "lastIntegratedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133"
     },
     {
       "id": "08",
@@ -130,8 +137,9 @@
       "referenceStatus": "unverified-original-direction-no-reference-pair",
       "approval": "pending-owner-review",
       "requiresVisualReview": true,
-      "integratedReviewStatus": "pending-all-ten-validation",
-      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133229456"
+      "integratedReviewStatus": "all-ten-chromium-and-desktop-mobile-axe-passed",
+      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133229456",
+      "lastIntegratedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133"
     },
     {
       "id": "09",
@@ -146,8 +154,9 @@
       "referenceStatus": "unverified-original-direction-no-reference-pair",
       "approval": "pending-owner-review",
       "requiresVisualReview": true,
-      "integratedReviewStatus": "pending-all-ten-validation",
-      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133231627"
+      "integratedReviewStatus": "all-ten-chromium-and-desktop-mobile-axe-passed",
+      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133231627",
+      "lastIntegratedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133"
     },
     {
       "id": "10",
@@ -162,11 +171,15 @@
       "referenceStatus": "unverified-original-direction-no-reference-pair",
       "approval": "pending-owner-review",
       "requiresVisualReview": true,
-      "integratedReviewStatus": "pending-all-ten-validation",
-      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133237301"
+      "integratedReviewStatus": "all-ten-chromium-and-desktop-mobile-axe-passed",
+      "lastIsolatedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42133237301",
+      "lastIntegratedChromiumRun": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133"
     }
   ],
   "integration_review_branch": "factory2/integration-review-10-2026-11-05",
   "review_base_main_sha": "9dfcd888515fcea6281972acdcf8b78c59af04b4",
-  "approval_required": true
+  "approval_required": true,
+  "integrationReviewStage": "technical-qa-passed-design-approval-pending",
+  "lastIntegratedReviewUrl": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133",
+  "lastIntegratedGreenCommit": "ee49bb9b2fdd2f16d483471fe48753b80c4dedaf"
 }
