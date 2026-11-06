@@ -6,6 +6,7 @@ on:
       - "education/**"
       - "data/education-resources.json"
       - "index.html"
+      - "scripts/check_education_live.py"
       - ".github/workflows/education-live-check.yml"
   workflow_dispatch:
 permissions:
@@ -15,32 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Verify external production Education page and catalogue
-        shell: bash
-        run: |
-          set -euo pipefail
-          base="https://deltaowleyes.ca"
-          for attempt in $(seq 1 12); do
-            if curl --fail --silent --show-error --location --max-time 20 --output /tmp/education-live.html "$base/education/" &&
-               curl --fail --silent --show-error --location --max-time 20 --output /tmp/education-live.json "$base/data/education-resources.json"; then
-              if python3 - <<'PY'
-import json
-from pathlib import Path
-page=Path('/tmp/education-live.html').read_text(encoding='utf-8')
-rows=json.loads(Path('/tmp/education-live.json').read_text(encoding='utf-8'))
-assert len(rows)>=28, f"Only {len(rows)} resources published"
-assert 'https://deltaowleyes.ca/education/' in page
-assert '/data/education-resources.json' in page
-assert 'Knowledge keepers' in page
-assert 'doe-header-v3' in page
-print(f'PASS: HTTP 200 live Education page, {len(rows)} public source records, canonical/navigation')
-PY
-              then
-                exit 0
-              fi
-            fi
-            echo "Production Education not yet at accepted version (attempt $attempt/12)."
-            sleep 15
-          done
-          echo "Live Education acceptance FAILED; investigate Pages and DNS separately." >&2
-          exit 1
+      - uses: actions/checkout@v4
+      - name: Verify production HTTP, content and navigation
+        run: python3 scripts/check_education_live.py
