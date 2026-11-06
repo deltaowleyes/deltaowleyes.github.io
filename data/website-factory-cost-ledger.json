@@ -78,6 +78,23 @@
       "artifact_bytes": 6258177,
       "artifact_retention_days": 3,
       "notes": "Public standard GitHub-hosted runner; no new paid APIs, subscriptions, third-party media, larger runners or purchases intentionally initiated. Actual provider billing remains unknown. Site remains V2 latest; V3 not visually approved."
+    },
+    {
+      "date": "2026-11-05",
+      "project": "Momma Made",
+      "candidate_revision": "v3",
+      "phase": "Website Factory 1.4 visual acceptance audit",
+      "new_design_candidates": 0,
+      "known_payable_tools_invoked": false,
+      "new_paid_services_activated": false,
+      "invoice_or_billing_verified": false,
+      "actual_spend_cad": null,
+      "technical_qa_run_id": 42153765120,
+      "screenshot_artifact_id": 13472953303,
+      "artifact_bytes": 6043648,
+      "design_review": "ten visual comparisons; 8/10 source pairs available; zero owner-approved fidelity matches",
+      "release_status": "hold; branch-only original layout changes, no V2 replacement",
+      "notes": "No new paid AI API, provider subscription, premium CMS theme or licensed images invoked. Actual provider cash charges unknown until billing statements are inspected."
     }
   ]
 }
