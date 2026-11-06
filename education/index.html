@@ -32,7 +32,7 @@ h2{font:700 clamp(1.45rem,3vw,2rem)/1.2 Georgia,serif;margin:0 0 12px}h3{font:75
 .filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:12px;align-items:end}.filters label{display:block;font-weight:700;font-size:.87rem;margin-bottom:5px}
 .filters input,.filters select{width:100%;border:1px solid #a5bab3;background:white;border-radius:7px;padding:11px;min-height:46px;font:inherit}
 .filters button{min-height:46px;border:1px solid #38796c;color:#225c54;background:white;border-radius:7px;font-weight:700;cursor:pointer;padding:9px 12px}
-.filter-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:13px}.filter-actions p{margin:0;font-weight:750}
+.verified-facets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}.verified-facets label{font-weight:700;display:block;font-size:.87rem;margin-bottom:5px}.verified-facets select{width:100%;min-height:46px;background:white;border:1px solid #a5bab3;border-radius:7px;padding:11px;font:inherit}.fact-note{font-size:.83rem;margin:8px 0 0;color:#416459}.resource .verified-detail{border-top:1px solid #d4e3dc;padding-top:9px;margin-top:9px;font-size:.86rem;color:#33574e}.filter-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:13px}.filter-actions p{margin:0;font-weight:750}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.resource{background:white;border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;box-shadow:0 3px 12px #15392f0b}
 .resource .provider{margin:0;color:#52746d;font-size:.87rem;font-weight:750}.resource .tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 10px}
 .tag{border-radius:16px;padding:3px 9px;background:#eaf2ed;color:#315c53;font-size:.76rem;font-weight:750}.tag.access{background:#f8eddb;color:#695019}
@@ -42,7 +42,7 @@ h2{font:700 clamp(1.45rem,3vw,2rem)/1.2 Georgia,serif;margin:0 0 12px}h3{font:75
 .notice-panel{margin-top:28px;background:#f4f5ed}.notice-panel summary{cursor:pointer;font-weight:800}.notice-panel p{max-width:950px}
 footer{background:#f1f6f3;color:#183d3c;padding:22px 5%}
 @media(max-width:1000px){.filters{grid-template-columns:1fr 1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:650px){.hero{padding:35px 20px}.shell{padding:25px 13px 45px}.intro,.filters,.grid{grid-template-columns:1fr}.panel,.resource{padding:18px}.quickpaths{gap:6px}.quickpaths button{padding:7px 10px}.filter-panel{padding:16px}}
+@media(max-width:650px){.verified-facets{grid-template-columns:1fr}.hero{padding:35px 20px}.shell{padding:25px 13px 45px}.intro,.filters,.grid{grid-template-columns:1fr}.panel,.resource{padding:18px}.quickpaths{gap:6px}.quickpaths button{padding:7px 10px}.filter-panel{padding:16px}}
 </style>
 <link rel="stylesheet" href="/assets/header-v3.css?v=a6dac1686605"><script defer src="/assets/header-v3.js?v=c7c77cd27a8c"></script></head><body class="doe-app-page">
 <header class="doe-header doe-header-v3"><nav class="doe-header-left" aria-label="Quick navigation"><a class="doe-left-symbol" href="/" aria-label="Delta Owl Eyes home"><img src="/assets/doe-header-symbol-75x55.png?v=b4037f" alt="Medicine wheel, great grey owl and red-tailed hawk" width="75" height="55"></a><a href="/news/">News</a><a href="/calls-to-action/">94 Calls</a></nav><a class="doe-center-brand" href="/" aria-label="Delta Owl Eyes home"><img src="/assets/doe-header-wordmark-250x55.png?v=b4037f" alt="Delta Owl Eyes" width="250" height="55" decoding="async"></a><nav class="doe-header-right" aria-label="Site sections"><details class="doe-menu"><summary>Explore</summary><div class="doe-menu-panel"><a href="/education/" aria-current="page">Education</a><a href="/videos/">Videos</a><a href="/#investigations">Investigations</a><a href="/news/">Newsroom</a><a href="/calls-to-action/">TRC research</a></div></details><details class="doe-menu"><summary>Community</summary><div class="doe-menu-panel"><a href="/indigenous-businesses/">Businesses</a><a href="/indigenous-churches/">Churches</a><a href="/events/">Events</a></div></details><details class="doe-menu"><summary>More</summary><div class="doe-menu-panel"><a href="/services/">Services</a><a href="/#about">About</a><a href="mailto:deltaowleyes@gmail.com">Contact</a></div></details></nav><details class="doe-mobile-navigation"><summary aria-label="Open site navigation"><span aria-hidden="true">☰</span> Menu</summary><nav aria-label="Mobile navigation"><div class="doe-mobile-section"><strong>Explore</strong><a href="/">Home</a><a href="/news/">Latest news</a><a href="/calls-to-action/">94 Calls to Action</a><a href="/education/" aria-current="page">Education</a><a href="/videos/">Videos</a><a href="/#investigations">Investigations</a></div><div class="doe-mobile-section"><strong>Community</strong><a href="/indigenous-businesses/">Indigenous Businesses</a><a href="/indigenous-churches/">Church Directory</a><a href="/events/">Community Events</a></div><div class="doe-mobile-section"><strong>More</strong><a href="/services/">Services</a><a href="/#about">About</a><a href="mailto:deltaowleyes@gmail.com">Contact</a></div></nav></details></header>
@@ -67,7 +67,7 @@ footer{background:#f1f6f3;color:#183d3c;padding:22px 5%}
 <div><label for="topic">Topic</label><select id="topic"><option value="">All topics</option><option value="schools">Schools & programs</option><option value="courses">Courses</option><option value="land">Land-based learning</option><option value="languages">Languages</option><option value="survivor-stories">Survivor stories</option><option value="videos">Videos</option><option value="advocacy">Activism & land rights</option><option value="funding">Scholarships & funding</option><option value="teaching">Educator resources</option><option value="knowledge-keepers">Knowledge keepers</option></select></div>
 <div><label for="eligibility">Access</label><select id="eligibility"><option value="">All access types</option><option value="indigenous-only">Indigenous-only eligibility</option><option value="open">Open to learners</option><option value="check-provider">Check provider requirements</option></select></div>
 <div><label for="format">Format</label><select id="format"><option value="">Any format</option><option value="online">Online</option><option value="hybrid">Online & in person</option><option value="on-site">In person</option></select></div></div>
-<div class="filter-actions"><button type="button" id="reset">Clear filters</button><p id="count" role="status" aria-live="polite">Loading educational resources…</p></div></div>
+<div class="verified-facets" aria-label="Source-verified optional filters"><div><label for="learning-language">Learning language (verified only)</label><select id="learning-language"><option value="">All languages, including unknown</option></select></div><div><label for="community">Nation or community connection (verified only)</label><select id="community"><option value="">All communities, including unknown</option></select></div></div><p class="fact-note">These filters include only resources with facts confirmed on their original provider pages. Missing metadata means unknown, not excluded from the directory.</p><div class="filter-actions"><button type="button" id="reset">Clear filters</button><p id="count" role="status" aria-live="polite">Loading educational resources…</p></div></div>
 <div id="list" class="grid" aria-live="off"></div><p id="error" role="alert" hidden>Resources are temporarily unavailable. Please try again later.</p>
 </section>
 <section class="panel" id="education-feedback" aria-labelledby="feedback-title" style="margin-bottom:22px">
@@ -93,13 +93,15 @@ footer{background:#f1f6f3;color:#183d3c;padding:22px 5%}
 const topicNames={schools:'Schools & programs',courses:'Courses',land:'Land-based learning',languages:'Languages','survivor-stories':'Survivor testimony',videos:'Video learning',advocacy:'Activism & rights',funding:'Scholarships & funding',teaching:'Teaching resources','knowledge-keepers':'Knowledge keepers'};
 const formatNames={online:'Online',hybrid:'Online & in person','on-site':'In person'};
 const accessNames={'indigenous-only':'Indigenous-only eligibility',open:'Open to learners','check-provider':'Check provider requirements'};
-const search=document.getElementById('search'),topic=document.getElementById('topic'),eligibility=document.getElementById('eligibility'),format=document.getElementById('format'),list=document.getElementById('list'),count=document.getElementById('count'),error=document.getElementById('error');
-let records=[];
+const search=document.getElementById('search'),topic=document.getElementById('topic'),eligibility=document.getElementById('eligibility'),format=document.getElementById('format'),language=document.getElementById('learning-language'),community=document.getElementById('community'),list=document.getElementById('list'),count=document.getElementById('count'),error=document.getElementById('error');
+let records=[],verified=new Map();
+function facts(x){return verified.get(x.id)||{}}
+function setOptions(select,values){for(const v of [...new Set(values)].sort((a,b)=>a.localeCompare(b))){const opt=document.createElement('option');opt.value=v;opt.textContent=v;select.append(opt)}}
 function el(tag,className,contents){const node=document.createElement(tag);if(className)node.className=className;if(contents!==undefined)node.textContent=contents;return node}
 function tag(label,extra){return el('span','tag'+(extra?' '+extra:''),label)}
 function render(){
  const q=search.value.trim().toLocaleLowerCase();
- const found=records.filter(x=>(!q||[x.title,x.provider,x.description,x.region,x.category].join(' ').toLocaleLowerCase().includes(q))&&(!topic.value||x.category===topic.value)&&(!eligibility.value||x.eligibility===eligibility.value)&&(!format.value||x.format===format.value));
+ const found=records.filter(x=>(!q||[x.title,x.provider,x.description,x.region,x.category].join(' ').toLocaleLowerCase().includes(q))&&(!topic.value||x.category===topic.value)&&(!eligibility.value||x.eligibility===eligibility.value)&&(!format.value||x.format===format.value)&&(!language.value||facts(x).learning_language===language.value)&&(!community.value||facts(x).community===community.value));
  list.replaceChildren();
  count.textContent=found.length+' of '+records.length+' resources shown';
  if(!found.length){list.append(el('p','',records.length?'No matches. Try removing a filter.':'No resources available.'));return}
@@ -108,6 +110,36 @@ function render(){
   const card=el('article','resource'),provider=el('p','provider',x.provider),title=el('h3','',x.title),tags=el('div','tags'),desc=el('p','description',x.description),meta=el('p','meta',x.region+' · '+(formatNames[x.format]||x.format)+' · '+x.price);
   tags.append(tag(topicNames[x.category]||x.category),tag(accessNames[x.eligibility]||'Check provider','access'));
   card.append(provider,title,tags,desc,meta);
+  const f=facts(x),details=[];
+  if(f.learning_language)details.push('Language: '+f.learning_language);
+  if(f.community)details.push('Community connection: '+f.community);
+  if(f.credential)details.push('Learning type: '+f.credential);
+  if(f.start_month)details.push('Provider-listed start: '+f.start_month+' (confirm current intake)');
+  if(typeof f.tuition_cad==='number')details.push('Provider-listed Year 1 tuition: C
+  card.append(el('p','meta','Source reviewed '+x.last_source_review+' · See provider for current availability'));
+  const link=el('a','visit','Visit original resource');link.href=x.url;link.target='_blank';link.rel='noopener noreferrer external';link.setAttribute('aria-label','Open '+x.title+' at '+x.provider+' in a new tab');
+  card.append(link);list.append(card);
+ }
+}
+[search,topic,eligibility,format,language,community].forEach(control=>control.addEventListener(control===search?'input':'change',render));
+document.getElementById('reset').addEventListener('click',()=>{search.value='';topic.value='';eligibility.value='';format.value='';language.value='';community.value='';render();search.focus()});
+document.querySelectorAll('#quickpaths button').forEach(btn=>btn.addEventListener('click',()=>{topic.value=btn.dataset.topic||'';search.value=btn.dataset.query||'';render();document.getElementById('resources').scrollIntoView({block:'start'});(btn.dataset.query?search:topic).focus({preventScroll:true})}));
+Promise.all([
+ fetch('/data/education-resources.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Catalogue unavailable');return r.json()}),
+ fetch('/data/education-verified-facets.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Facts unavailable');return r.json()})
+]).then(([items,facets])=>{
+ if(!Array.isArray(items)||facets.version!==1||!Array.isArray(facets.records))throw Error('Unexpected Education data');
+ records=items.filter(x=>x&&typeof x.title==='string'&&typeof x.url==='string');
+ const publicIds=new Set(records.map(x=>x.id));
+ verified=new Map(facets.records.filter(x=>publicIds.has(x.id)&&typeof x.source_url==='string').map(x=>[x.id,x]));
+ setOptions(language,facets.records.map(x=>x.learning_language).filter(Boolean));
+ setOptions(community,facets.records.map(x=>x.community).filter(Boolean));
+ render();
+}).catch(()=>{error.hidden=false;count.textContent='Resources unavailable';});
+})();
+</script>
+</body></html>+f.tuition_cad.toFixed(2)+' (may change)');
+  if(details.length)card.append(el('p','verified-detail',details.join(' · ')));
   if(x.notice)card.append(el('p','notice',x.notice));
   card.append(el('p','meta','Source reviewed '+x.last_source_review+' · See provider for current availability'));
   const link=el('a','visit','Visit original resource');link.href=x.url;link.target='_blank';link.rel='noopener noreferrer external';link.setAttribute('aria-label','Open '+x.title+' at '+x.provider+' in a new tab');
