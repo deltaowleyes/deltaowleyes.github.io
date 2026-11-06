@@ -63,7 +63,7 @@ main{max-width:1460px;margin:auto;padding:clamp(18px,3.5vw,52px)}
 .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .shot{min-width:0;border:1px solid #d0d1c6;background:#fffdf8;border-radius:7px;overflow:hidden;box-shadow:0 7px 19px #26352917}
 .shot button{display:block;background:transparent;color:var(--ink);cursor:zoom-in;border:0;width:100%;padding:0;text-align:left}
-.shot .crop{height:290px;overflow:hidden;background:#f0ebe3;border-bottom:1px solid #d7d1c4}
+.shot .crop{display:block;height:290px;overflow:hidden;background:#f0ebe3;border-bottom:1px solid #d7d1c4}
 .shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
 .shot .shot-name{display:flex;justify-content:space-between;align-items:center;padding:13px 15px;font-weight:800;gap:10px}
 .shot-name small{font-size:.75rem;color:#945f4a}
@@ -77,7 +77,7 @@ dialog::backdrop{background:#13211be0}
 @media(prefers-reduced-motion:reduce){.card{transition:none}}
 """
 JS = """(()=>{'use strict';const d=document.getElementById('zoom'),im=document.getElementById('full-image'),title=document.getElementById('zoom-title');let origin=null;document.querySelectorAll('[data-screenshot]').forEach(b=>b.addEventListener('click',()=>{origin=b;im.src=b.dataset.screenshot;im.alt=b.dataset.alt;im.style.width=b.dataset.width+'px';title.textContent=b.dataset.width+'px — entire page';d.showModal();}));document.getElementById('zoom-close').addEventListener('click',()=>d.close());d.addEventListener('click',e=>{if(e.target===d)d.close()});d.addEventListener('close',()=>{im.removeAttribute('src');origin?.focus()})})();"""
-HEAD = '<a class="skip" href="#content">Skip to designs</a><header class="top"><span>DELTA OWL EYES · BAKE EXPRESS</span><a href="/mommamade/v2/">Momma Made current V2 ↗</a></header>'
+HEAD = '<a class="skip" href="#content">Skip to designs</a><header class="top"><span>DELTA OWL EYES · BAKE EXPRESS</span><span>V2 remains active · preview images only</span></header>'
 def shell(title, body):
     return ('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
     '<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#283f37">'
