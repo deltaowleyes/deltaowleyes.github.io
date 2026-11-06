@@ -126,7 +126,7 @@ document.getElementById('reset').addEventListener('click',()=>{search.value='';t
 document.querySelectorAll('#quickpaths button').forEach(btn=>btn.addEventListener('click',()=>{topic.value=btn.dataset.topic||'';search.value=btn.dataset.query||'';render();document.getElementById('resources').scrollIntoView({block:'start'});(btn.dataset.query?search:topic).focus({preventScroll:true})}));
 Promise.all([
  fetch('/data/education-resources.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Catalogue unavailable');return r.json()}),
- fetch('/data/education-verified-facets.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Facts unavailable');return r.json()})
+ fetch('/data/education-verified-facets.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Facts unavailable');return r.json()}).catch(()=>({version:1,records:[]}))
 ]).then(([items,facets])=>{
  if(!Array.isArray(items)||facets.version!==1||!Array.isArray(facets.records))throw Error('Unexpected Education data');
  records=items.filter(x=>x&&typeof x.title==='string'&&typeof x.url==='string');
