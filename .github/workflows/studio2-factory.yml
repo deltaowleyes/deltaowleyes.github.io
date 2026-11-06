@@ -26,7 +26,7 @@ jobs:
           python -m pip install --disable-pip-version-check Pillow==11.3.0 playwright==1.56.0
           python -m playwright install --with-deps chromium
       - name: Compile Python generators and tests before browser setup
-        run: python -m py_compile studio2/factory/build.py studio2/factory/build_three.py studio2/factory/build_multipage.py studio2/factory/qa.py studio2/factory/qa_three.py studio2/factory/qa_multipage.py studio2/factory/qa_accessibility.py studio2/factory/qa_experiences.py
+        run: python -m py_compile studio2/factory/build.py studio2/factory/build_three.py studio2/factory/build_multipage.py studio2/factory/qa.py studio2/factory/qa_three.py studio2/factory/qa_multipage.py studio2/factory/qa_accessibility.py studio2/factory/qa_experiences.py studio2/factory/build_visual_thumbnails.py studio2/factory/qa_visual_review.py
       - name: Validate existing independent photo importer
         run: python studio2/tests/photo_import_contract.py
       - name: Generate WebP images, provenance, and working preview
@@ -45,6 +45,9 @@ jobs:
           python studio2/factory/qa_multipage.py
           python studio2/factory/qa_accessibility.py
           python studio2/factory/qa_experiences.py
+          python studio2/factory/build_visual_thumbnails.py
+          cp studio2/factory/visual-review-template.html studio2/factory-previews/visual-review/index.html
+          python studio2/factory/qa_visual_review.py
       - name: Preserve non-deployed preview, full-page screenshots and JSON QA
         if: always()
         uses: actions/upload-artifact@v4
@@ -59,5 +62,6 @@ jobs:
             artifacts/studio3-multipage/
             artifacts/studio3-a11y/
             artifacts/studio3-experiences/
+            artifacts/studio3-gallery/
           if-no-files-found: warn
 # No GITHUB_TOKEN write permission, no merge, no Pages, no paid APIs.
