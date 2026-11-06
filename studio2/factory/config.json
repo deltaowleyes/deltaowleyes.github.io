@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "project": "delta-owl-eyes-river-voice",
+  "state": "candidate-only",
+  "current_page": "studio2/river-voice/index.html",
+  "preview_page": "studio2/river-voice/factory-preview/index.html",
+  "owner_visual_approval": false,
+  "asset_provenance": "studio2/river-voice/ASSET-PROVENANCE.json",
+  "assets": [
+    {
+      "id": "hero",
+      "source": "assets/wetlands.png",
+      "output": "hero.webp",
+      "role": "decorative existing image; has embedded lettering and is not visually approved",
+      "max_width": 2048,
+      "quality": 83,
+      "selector": "hero-css",
+      "accepted_for_final": false
+    },
+    {
+      "id": "trc",
+      "source": "shutyourtrap/assets/photos/golden_sunrise_in_a_misty_pine_forest.webp",
+      "output": "trc-landscape.webp",
+      "role": "conceptual AI forest; not documentary photography",
+      "max_width": 1440,
+      "quality": 84,
+      "selector": "trc-image",
+      "accepted_for_final": false
+    },
+    {
+      "id": "logo",
+      "source": "assets/owl-logo.png",
+      "output": "owl-logo.webp",
+      "role": "existing Delta Owl Eyes brand logo",
+      "max_width": 400,
+      "quality": 89,
+      "selector": "logo",
+      "accepted_for_final": false
+    }
+  ],
+  "immutable_core": [
+    "assets/privacy-consent.js",
+    "assets/privacy-consent.css"
+  ],
+  "caps": {
+    "max_source_bytes": 9000000,
+    "max_image_pixels": 24000000,
+    "max_output_bytes": 1200000
+  },
+  "release": {
+    "allow_merge": false,
+    "allow_deploy": false,
+    "allow_external_paid_dependencies": false,
+    "cash_limit_CAD_strictly_below": 1
+  },
+  "forbidden_in_pipeline": [
+    "paid model API",
+    "unapproved third-party artwork",
+    "fake documentary images",
+    "billing claims"
+  ]
+}
