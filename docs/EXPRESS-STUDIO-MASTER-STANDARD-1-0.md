@@ -46,6 +46,6 @@ To add a new project:
 
 ## Status / remaining work
 
-This standard was **first implemented for Shut Your Trap** and is now used by Momma Made. The Shut Your Trap master-standard implementation is on its feature branch until integrated separately. Momma Made `/mommamade/studio/` has been migrated to this exact shared CSS/JS shell, using the existing 36 screenshot images and six shared header assets. `/mommamade/` still points to its approved V2 website. Its V3 candidates have not been promoted. Nothing in this change automatically rewrites that approved Momma Made layout or replaces its V2 product website.
+This standard was **first implemented for Shut Your Trap** and is now used by Momma Made. Shut Your Trap was integrated in PR #32 and independently verified on the live custom domain by the GitHub-hosted BAKE EXPRESS Master public acceptance workflow. The public QA confirmed the shared HTML, CSS/JS, all six original header checksums, six gallery routes and 36 screenshots. Momma Made `/mommamade/studio/` has been migrated to this exact shared CSS/JS shell, using the existing 36 screenshot images and six shared header assets. `/mommamade/` still points to its approved V2 website. Its V3 candidates have not been promoted. Nothing in this change automatically rewrites that approved Momma Made layout or replaces its V2 product website.
 
 Use no paid APIs or billable services without approval. A GitHub Actions no-cost development workflow is not independent proof of account billing.
