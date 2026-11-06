@@ -17,3 +17,15 @@
 @media(max-width:820px){.theme-utility .head-row{justify-content:flex-start;min-width:0}.theme-utility .logo{font-size:19px;min-width:0;flex-shrink:1}.theme-utility .logo small{font-size:6px;letter-spacing:.04em;max-width:170px}}
 
 @media(max-width:620px){.theme-utility .utility-copy h1{font-size:41px;line-height:1.02;overflow-wrap:anywhere}.site h1,.site h2,.site h3{overflow-wrap:anywhere;max-width:100%}}
+
+/* Photo QA 2026-11-05: the long operator headline must not split a letter on narrow screens. */
+@media (max-width:620px){
+  .theme-operator .operator-hero h1{
+    font-size:clamp(36px,11.5vw,49px);
+    line-height:.97;
+    letter-spacing:-.022em;
+    overflow-wrap:normal;
+    word-break:normal;
+    hyphens:none;
+  }
+}
