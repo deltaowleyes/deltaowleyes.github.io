@@ -41,8 +41,8 @@
       "slug": "sharp-edge",
       "template": 1,
       "width": 768,
-      "bytes": 288561,
-      "sha256": "e60c933cb53be3e0cb739950f28eb2d3ebbfbcf1710d026c768905774cf81e8a"
+      "bytes": 289340,
+      "sha256": "4cf45ce1f9bd9e36784f7c87532570adb95734b750103df7618a5d35e7d1f611"
     },
     {
       "filename": "sharp-edge-1024.jpg",
@@ -97,8 +97,8 @@
       "slug": "family-trapline",
       "template": 2,
       "width": 1024,
-      "bytes": 363468,
-      "sha256": "348c613092079e9b6abde5408eb4ff5b4ea22714a8b2416a3d439cd654dd3885"
+      "bytes": 362099,
+      "sha256": "96b7f62f99b1ac139610c88f3fd6c58097450c8ecb33c066be28459e1d339744"
     },
     {
       "filename": "family-trapline-1440.jpg",
@@ -209,8 +209,8 @@
       "slug": "field-journal",
       "template": 7,
       "width": 320,
-      "bytes": 171935,
-      "sha256": "414db03331c1cb41dc4238299be73b9703e591dc29a500af4d3afc25f34e08bc"
+      "bytes": 171924,
+      "sha256": "0a322924cb4b64f5fa625ac45531f0b1aefe9ec108bea3fedd0cce50ced748e6"
     },
     {
       "filename": "field-journal-390.jpg",
@@ -273,8 +273,8 @@
       "slug": "bold-operator",
       "template": 9,
       "width": 500,
-      "bytes": 177520,
-      "sha256": "d2a36a1e5b320ffb63af51d0daf8aee3c14b5149af50341800b23ce577ca8c3d"
+      "bytes": 177698,
+      "sha256": "499eb330eef80a694bd68a31209915d63ff7add7176cc82a7586a2cea5f2343a"
     },
     {
       "filename": "bold-operator-768.jpg",
