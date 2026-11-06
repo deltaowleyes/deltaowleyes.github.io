@@ -129,8 +129,41 @@ async function run(){
    assert.ok(bytes.length>2000&&bytes[0]===0xff&&bytes[1]===0xd8,u+' is JPEG');
   }
   await ctx.close();
-  fs.writeFileSync(path.join(OUTPUT,'results.json'),JSON.stringify({pass:true,project:'Shut Your Trap',headers:WIDTHS,checkedRoutes:results.length,screenshotFiles:36,results},null,2)+'\n');
-  console.log('PASS: six unchanged responsive headers, 6 design routes, 36 real JPEGs, 42 route/viewport combinations, modal, keyboard, privacy and no overflow.');
+  // Integration guard: Momma Made now shares this EXACT studio.js and studio.css.
+  // Its published candidate screenshots must remain accessible when a new
+  // studio adopts or adjusts the universal master header.
+  const mommaProof=[];
+  for(const width of WIDTHS){
+   const context=await browser.newContext({viewport:{width,height:900},serviceWorkers:'block'});
+   const page=await context.newPage(),errors=[];
+   page.on('pageerror',error=>errors.push(String(error)));
+   const response=await page.goto(ROOT+'/mommamade/studio/',{waitUntil:'networkidle',timeout:30000});
+   await page.locator('.family').first().waitFor({timeout:12000});
+   assert.equal(response.status(),200,'Momma Made landing HTTP 200');
+   assert.equal(await page.locator('.family').count(),6,'Momma Made six identical-layout gallery cards');
+   const h=await validateHeader(page,width);
+   const asset=HEADERS['header-'+width+'.webp'];
+   assert.ok(h.src.endsWith('/studio-sandbox/header-'+width+'.webp'),'Momma Made same restored header at '+width);
+   assert.equal(h.naturalWidth,asset.width,'Momma Made canonical header width');
+   assert.equal(h.naturalHeight,asset.height,'Momma Made canonical header height');
+   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth)<=2,'Momma Made no landing overflow');
+   const href=await page.locator('.family').first().getAttribute('href');
+   assert.ok(href.startsWith('/mommamade/studio/previews/'),'Momma Made first design destination');
+   await page.goto(ROOT+href,{waitUntil:'networkidle'});
+   await page.locator('.shot').first().waitFor({timeout:12000});
+   assert.equal(await page.locator('.shot').count(),6,'Momma Made six full-page screenshot options');
+   assert.equal(await page.locator('iframe').count(),0,'Momma Made no template iframe');
+   const trigger=page.locator('.shot button[data-width="500"]');
+   await trigger.focus();await page.keyboard.press('Enter');
+   assert.equal(await page.locator('#enlarge').evaluate(e=>e.open),true,'Momma Made screenshot modal');
+   await page.keyboard.press('Escape');
+   assert.equal(await page.locator('#enlarge').evaluate(e=>e.open),false,'Momma Made Escape close');
+   assert.deepEqual(errors,[],'Momma Made no client-side errors');
+   mommaProof.push({width,header:h.src,pass:true});
+   await context.close();
+  }
+  fs.writeFileSync(path.join(OUTPUT,'results.json'),JSON.stringify({pass:true,project:'Shut Your Trap',headers:WIDTHS,checkedRoutes:results.length,mommaRoutes:mommaProof.length,screenshotFiles:36,mommaProof,results},null,2)+'\n');
+  console.log('PASS: six unchanged responsive headers, 6 design routes, 36 real JPEGs, 42 Shut Your Trap route/viewport combinations plus six Momma Made regression checks, modal, keyboard, privacy and no overflow.');
  }finally{await browser.close();}
 }
 run().catch(err=>{console.error('EXPRESS MASTER STANDARD FAIL',err);process.exitCode=1;});
