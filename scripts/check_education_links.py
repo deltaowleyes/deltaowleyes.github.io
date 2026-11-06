@@ -24,6 +24,7 @@ USER_AGENT="DeltaOwlEyesEducationLinkAudit/1.0 (human-review only; no rehosting)
 TIMEOUT=10
 
 def allowed_url(url):
+    if str(ROOT) not in sys.path: sys.path.insert(0,str(ROOT))
     from scripts.education_editorial import canonical
     canonical(url)
     host=urlsplit(url).hostname
