@@ -2,6 +2,14 @@ name: Studio six-breakpoint restoration Chromium QA
 on:
   push:
     branches: [main]
+    paths:
+      - 'studio-sandbox/index.html'
+      - 'studio-sandbox/previews/**/index.html'
+      - 'studio-sandbox/header-*.webp'
+      - 'studio-sandbox/reference-40.webp'
+      - 'studio-sandbox/header-restoration-manifest.json'
+      - 'studio-sandbox/qa_public.py'
+      - '.github/workflows/studio-header-qa-local.yml'
   pull_request:
     branches: [main]
     paths:
