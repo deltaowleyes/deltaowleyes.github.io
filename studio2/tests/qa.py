@@ -11,6 +11,22 @@ with sync_playwright() as p:
   errors=[]
   page.on("pageerror",lambda e:errors.append(str(e)))
   response=page.goto(base+"/studio2/river-voice/",wait_until="networkidle",timeout=45000)
+  # A loaded image may not yet be decoded/painted in long mobile screenshots.
+  # Explicitly decode every image before the screenshot, then revisit the top.
+  page.evaluate("""async () => {
+    await Promise.all([...document.images].map(async img => {
+      if (!img.complete) await new Promise(resolve => {
+        img.addEventListener('load',resolve,{once:true});
+        img.addEventListener('error',resolve,{once:true});
+        setTimeout(resolve,12000);
+      });
+      if (img.naturalWidth && img.decode) await img.decode().catch(()=>{});
+    }));
+  }""")
+  page.locator(".media-pic img").scroll_into_view_if_needed()
+  page.wait_for_function("() => { const img=document.querySelector('.media-pic img'); return img && img.complete && img.naturalWidth>0; }",timeout=15000)
+  page.evaluate("window.scrollTo(0,0)")
+  page.wait_for_timeout(250)
   page.screenshot(path=str(out/f"river-voice-{w}.png"),full_page=True,animations="disabled")
   info=page.evaluate("""() => ({
     overflow:document.documentElement.scrollWidth>innerWidth+1,
