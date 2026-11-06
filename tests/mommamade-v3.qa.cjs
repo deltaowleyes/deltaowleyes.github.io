@@ -26,6 +26,7 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
    assert.equal(heights.length,4,label+' product links missing');
    assert.ok(heights.every(h=>h>=44),label+' product detail link below 44px '+JSON.stringify(heights));
  }
+ const style=await page.request.get(base+'reference-fidelity-1-2.css');assert.equal(style.status(),200,'missing V3 source-fidelity stylesheet');
  const g=await page.goto(base,{waitUntil:'domcontentloaded'});assert.equal(g.status(),200);
  assert.equal(await page.locator('.gallery-card').count(),10,'gallery count');
  await verifyPhoto('.gallery-image','gallery');
@@ -39,6 +40,20 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
    assert.equal(await page.locator('.products .item').count(),4);
    await verifyPhoto('.hero .visual','design '+n+' '+device);
    await verifyTapTargets('design '+n+' '+device);
+
+   assert.equal(await page.locator('.browse-nav').count(),1,'design '+n+' missing reference-inspired category navigation');
+   assert.ok(await page.locator('.browse-nav a[href]').count()>=3,'design '+n+' empty category navigation');
+   const fidelityModules={3:'.reference-departments',4:'.reference-departments',5:'.pattern-browser',6:'.reference-departments',7:'.reference-departments',8:'.papier-edit'};
+   if(fidelityModules[n]){
+     const selector=fidelityModules[n];
+     assert.equal(await page.locator(selector).count(),1,'design '+n+' missing reference section '+selector);
+     const moduleStyle=await page.locator(selector).evaluate(el=>({visible:el.getBoundingClientRect().height>50,layout:getComputedStyle(el).display}));
+     assert.ok(moduleStyle.visible,'design '+n+' hidden reference module');
+     if(n===5)assert.equal(await page.locator('.pattern-grid .pattern-tile').count(),4,'pattern browsing needs four distinct concept pathways');
+     if(n===8)assert.equal(await page.locator('.papier-edit nav a').count(),4,'editorial collections require four links');
+     if([3,4,6,7].includes(n))assert.equal(await page.locator('.department-grid .department-card').count(),3,'source-aligned departments missing');
+   }
+
    assert.equal(await page.locator('.browse-nav a').count()>=3,true,'missing category discovery nav '+n);
    const expected={3:['.utility-departments .department-card',3],4:['.garden-departments .department-card',3],5:['.pattern-browser .pattern-tile',4],6:['.muji-departments .department-card',3],7:['.schoolhouse-departments .department-card',3],8:['.papier-edit nav a',4]};
    if(expected[n]){const [selector,count]=expected[n];assert.equal(await page.locator(selector).count(),count,'reference merchandising '+n+' '+device);}
