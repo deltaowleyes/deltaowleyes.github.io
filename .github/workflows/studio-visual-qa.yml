@@ -1,0 +1,32 @@
+name: Website Design Studio Visual QA
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'newdesigns/**'
+      - 'scripts/studio-visual-smoke.py'
+      - '.github/workflows/studio-visual-qa.yml'
+permissions:
+  contents: read
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser tools
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Capture hosted studio screenshots and test navigation
+        run: python scripts/studio-visual-smoke.py
+      - name: Upload screenshots and test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: design-studio-visual-qa
+          path: artifacts/studio-qa/
+          if-no-files-found: warn
