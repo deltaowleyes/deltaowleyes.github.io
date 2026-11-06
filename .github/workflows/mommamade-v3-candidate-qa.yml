@@ -62,4 +62,4 @@ jobs:
           name: mommamade-v3-candidate-visual-qa
           path: artifacts/mommamade-v3/
           if-no-files-found: ignore
-          retention-days: 14
+          retention-days: 3
