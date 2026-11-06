@@ -76,3 +76,12 @@ A previous automated HEAD request to the official Indigenous Canada URL returned
 Pending: two independent authorized reviewers identified and onboarded; real multi-device encrypted handoff; an authorized staff test exercising current CLI GH auth; verified server-enforced review rules; community-selected governance/consultation and consent; private correspondence handling/retention and backup policy; expanding facets to further provider-reviewed records; periodic cultural rights review.
 
 No paid APIs, subscriptions, licences, private cloud databases, GitHub branch-protection upgrades or provider fees are authorized. The CI/Actions scripts use the repository's existing infrastructure; **actual GitHub/third-party billing remains unverified**.
+
+
+## Initial release audits — 2026-11-06
+
+- Governance 1.3 implementation merged through PR #22, commit \`bec4a12c7981c67d9198b80c42c943a08953dfb7\`. All nine final PR checks passed, including the governance authorization fixtures, metadata schema, original directories, responsive Chromium and three-browser public header. The 4-width screenshot artifact was inspected before merging.
+- The first main-branch source-health run after 1.3 was successful as a **read-only diagnostic**: **30 records; 25 automated reachable; 0 confirmed missing; 5 needing review**. The flagged records were four original Oneida language-provider URLs (\`oneida-learning-language\`, \`oneida-language-videos\`, \`oneida-master-speakers\`, \`oneida-hunt-camp-learning\`) which returned network URLError in CI, plus \`uofa-indigenous-canada\` with HTTP 403. Source audit: https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42245394390 .
+- All **five** flagged original provider pages were independently accessed in a browser on November 6, 2026. This evidence is stored in \`data/education-link-corroboration.json\` with a finite review expiry. It must not override the network audit status or falsely imply automatic reachability; preserve those entries for follow-up.
+- Connected GitHub session \`deltaowleyes\` has real **admin** collaborator permission, confirmed through the GitHub connector. No second reviewer identity is established. Live GPG casebook exchange, a dual-human signed case and a branch-ruleset enforcement probe remain untested.
+- No original 30 catalogue records, suppressions, business/church/event directories, or culturally restricted content were changed by 1.3; only optional evidence-backed learning facets and governance infrastructure were added. Billing remains unverified.
