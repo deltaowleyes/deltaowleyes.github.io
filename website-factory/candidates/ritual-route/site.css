@@ -99,3 +99,7 @@ body.f2{margin:0;color:var(--ink);background:var(--paper);font:16px/1.6 Arial,sy
 .f2-contact-route .f2-contact-intro{min-width:0}
 .f2-contact-route .f2-contact-intro h2{overflow-wrap:anywhere}
 @media(max-width:450px){.f2-contact-route .f2-contact-intro{padding-left:16px}.f2-contact-route .f2-contact-intro h2{font-size:clamp(28px,8vw,42px)}}
+
+/* Factory 2.1 visual-contrast patch: original hero CTA needs explicit foreground. */
+.f2 .hero .cta{color:var(--paper)}
+.f2 .hero .cta:hover{color:var(--paper)}
