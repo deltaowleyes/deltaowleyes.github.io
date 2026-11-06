@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'shutyourtrap/photo-inbox/shutyourtrap-photography-pack.zip'
+      - 'shutyourtrap/photo-inbox/ONLY-17-PHOTOGRAPHS-JPG.zip'
       - '.github/workflows/shutyourtrap-photo-import.yml'
   workflow_dispatch:
 permissions:
@@ -24,19 +25,30 @@ jobs:
           ref: main
           persist-credentials: true
       - name: Validate photo importer Python syntax
-        run: python3 -m py_compile shutyourtrap/scripts/import-photo-pack.py
+        run: python3 -m py_compile shutyourtrap/scripts/import-photo-pack.py shutyourtrap/scripts/import-jpg-photo-pack.py
       - name: Check inbox
         id: inbox
         shell: bash
         run: |
-          if test -f shutyourtrap/photo-inbox/shutyourtrap-photography-pack.zip; then
+          if test -f shutyourtrap/photo-inbox/ONLY-17-PHOTOGRAPHS-JPG.zip; then
+            echo "has_jpg=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_jpg=false" >> "$GITHUB_OUTPUT"
+          fi
+          if test -f shutyourtrap/photo-inbox/shutyourtrap-photography-pack.zip || test -f shutyourtrap/photo-inbox/ONLY-17-PHOTOGRAPHS-JPG.zip; then
             echo "has_zip=true" >> "$GITHUB_OUTPUT"
           else
             echo "has_zip=false" >> "$GITHUB_OUTPUT"
             echo "No photo ZIP uploaded; no changes required."
           fi
-      - name: Validate checksums and extract exactly 17 WebP images
-        if: steps.inbox.outputs.has_zip == 'true'
+      - name: Install image conversion library for verified JPG upload
+        if: steps.inbox.outputs.has_jpg == 'true'
+        run: python3 -m pip install --disable-pip-version-check pillow==11.3.0
+      - name: Verify uploaded JPG photo archive and transcode to 17 WebPs
+        if: steps.inbox.outputs.has_jpg == 'true'
+        run: python3 shutyourtrap/scripts/import-jpg-photo-pack.py
+      - name: Validate existing WebP archive when JPG not uploaded
+        if: steps.inbox.outputs.has_zip == 'true' && steps.inbox.outputs.has_jpg != 'true'
         run: python3 shutyourtrap/scripts/import-photo-pack.py
       - name: Install Chromium for pre-publication photo QA
         if: steps.inbox.outputs.has_zip == 'true'
@@ -67,7 +79,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add shutyourtrap/assets/photos
-          git rm -f shutyourtrap/photo-inbox/shutyourtrap-photography-pack.zip
+          if test -f shutyourtrap/photo-inbox/shutyourtrap-photography-pack.zip; then git rm -f shutyourtrap/photo-inbox/shutyourtrap-photography-pack.zip; fi
+          if test -f shutyourtrap/photo-inbox/ONLY-17-PHOTOGRAPHS-JPG.zip; then git rm -f shutyourtrap/photo-inbox/ONLY-17-PHOTOGRAPHS-JPG.zip; fi
           git diff --cached --stat
           if ! git diff --cached --quiet; then
             git commit -m "Integrate 17 verified AI photographs into Shut Your Trap site"
