@@ -27,6 +27,23 @@ jobs:
           from playwright.sync_api import sync_playwright
           out=pathlib.Path('artifacts/mommamade-express-live');out.mkdir(parents=True,exist_ok=True)
           base='https://www.deltaowleyes.ca/mommamade/studio/'
+          # Require the actual new published screenshot build, not cached older 200 pages.
+          import time
+          expected=json.loads(pathlib.Path('mommamade/studio/screenshot-manifest.json').read_text())
+          expected_hash=expected['capture_polish_sha256']
+          for attempt in range(35):
+              try:
+                  with urllib.request.urlopen(base+'screenshot-manifest.json',timeout=15) as reply:
+                      public=json.loads(reply.read().decode('utf-8'))
+                  if (public.get('capture_polish_sha256')==expected_hash
+                      and public['families'][0]['screenshots'][0]['sha256']==expected['families'][0]['screenshots'][0]['sha256']):
+                      print('MATCH: deployed Momma Made 1.1 screenshot manifest',expected_hash)
+                      break
+              except Exception as e:
+                  print('Public deployment not ready:',str(e),flush=True)
+              if attempt<34:time.sleep(8)
+          else:
+              raise RuntimeError('Public gallery does not yet serve the exact Momma Made 1.1 screenshot manifest')
           families=['atelier-ledger','picnic-club','utility-index','garden-folio','pattern-studio','quiet-catalogue']
           widths=[320,390,500,768,1024,1440]
           checks=[]
