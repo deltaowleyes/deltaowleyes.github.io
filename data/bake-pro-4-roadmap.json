@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "Delta Owl Eyes — BAKE PRO 4.0",
   "created_at": "2026-11-05",
-  "updated_at": "2026-11-05",
+  "updated_at": "2026-11-06",
   "canonical_source": "https://github.com/deltaowleyes/deltaowleyes.github.io/blob/main/data/bake-pro-4-roadmap.json",
   "policy": {
     "source_of_truth": "This file on latest GitHub main, not ChatGPT messages",
@@ -24,8 +24,8 @@
   "scope": {
     "historical_pro2_actions": 93,
     "historical_pro3_verified_entries": 3,
-    "pro4_proposed_projects": 38,
-    "total_tasks": 134,
+    "pro4_proposed_projects": 41,
+    "total_tasks": 137,
     "unrecovered_pro3_original_52": 49,
     "unrecovered_note": "Historical original PRO 3.0 52-item source unavailable. It is no longer required to build best-guess PRO 4.0; do not fabricate its exact IDs or status.",
     "priority_note": "P0–P2 are planning proposals except preserved S01–S03 priority from original registry."
@@ -4690,6 +4690,92 @@
         }
       ],
       "notes": "Verified CI and Pages deployment. Remaining: real-browser spot-check on mobile/desktop for first-load network requests, first 48 ordering, full search/filter/show-more, profile deep links, user cache behavior, and periodic importer update. Keep in progress pending browser verification."
+    },
+    {
+      "id": "B4-039",
+      "title": "Launch Indigenous Education source-linked learning hub",
+      "description": "Publish /education/ with sourced schools, courses, land-based resources, languages, Survivor testimony, activism, scholarships and Indigenous community learning, clearly separating Indigenous-only access from open learning.",
+      "category": "Education & Discovery",
+      "priority": "P0",
+      "effort": "Medium",
+      "status": "in_progress",
+      "status_basis": "User explicitly requested a new page; Education catalogue/page/home navigation/sitemap/validator committed to an unmerged review branch; live deployment and browser acceptance not yet demonstrated.",
+      "dependencies": [],
+      "acceptance_criteria": [
+        "Source-reviewed original provider links and respectful public access/eligibility labels.",
+        "Search and filters work with keyboard and without unsafe HTML injection; no private or culturally restricted content is copied.",
+        "Home tile, shared navigation, canonical and sitemap include Education, with mobile/desktop validation.",
+        "PR CI schema checks, accessibility/privacy/manual browser smoke, then reviewed merge and independent live verification."
+      ],
+      "bake_prompt": "BAKE PRO 4.0 — B4-039 EDUCATION HUB. Work in deltaowleyes/deltaowleyes.github.io using latest main; first inspect data/bake-pro-4-roadmap.json and docs/DISCOVERY-3-EDUCATION-PLAN.md. Preserve the existing Discovery 2.0 businesses, churches, events, JSON-only import rules, provenance, privacy and deletion safeguards. Inspect feature/education-discovery-3-20261106 and /education/ implementation, fix data/schema, responsive and accessibility issues, run validation and browser checks, open/review PR, merge/deploy only after QA and verify live. Preserve all source links, original owners, restricted cultural knowledge, and original records. Record exact commit, PR and verified deployment evidence in the roadmap.",
+      "source": {
+        "roadmap": "BAKE PRO 4.0",
+        "type": "explicit user request",
+        "source_date": "2026-11-06",
+        "source_context": "User requested Education section collecting Indigenous-only learning and Indigenous-topic learning of every kind."
+      },
+      "evidence": [
+        {
+          "type": "github_feature_branch",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/education-discovery-3-20261106",
+          "detail": "14 source-reviewed resources; Education page, navigation, sitemap, validation workflow and Discovery 3.0 plan. Review and live acceptance still required."
+        }
+      ]
+    },
+    {
+      "id": "B4-040",
+      "title": "Upgrade Discovery 2.0 to Discovery 3.0 with education source research",
+      "description": "Expand the existing hourly evidence-based discovery task with a separate Indigenous education source review and JSON-only publication stream without reducing business/church/event safeguards.",
+      "category": "Education & Discovery",
+      "priority": "P0",
+      "effort": "Medium",
+      "status": "pending",
+      "status_basis": "Automation requires explicit prompt update and a verified post-release run; no recurring education additions yet.",
+      "dependencies": [
+        "B4-039"
+      ],
+      "acceptance_criteria": [
+        "Preserve all existing business, church and event instructions and cadence, including source rotation, no synthetic quotas and safe imports.",
+        "Update active Discovery automation title and prompt to version 3.0, adding education primary-source records to data/education-resources.json only after page/schema is live.",
+        "Dedupe normalized title/provider and canonical URL, check conditions, consent/access, content advisories, and past removals.",
+        "Demonstrate a logged run with evidence, exact safe commits or justified no-change results, verified CI and deployment."
+      ],
+      "bake_prompt": "BAKE PRO 4.0 — B4-040 DISCOVERY 3.0. Work in deltaowleyes/deltaowleyes.github.io using latest main; first inspect data/bake-pro-4-roadmap.json and docs/DISCOVERY-3-EDUCATION-PLAN.md. Preserve the existing Discovery 2.0 businesses, churches, events, JSON-only import rules, provenance, privacy and deletion safeguards. Read current automated task Delta Owl Eyes Discovery 2.0, preserve its hourly schedule and business/church/event eligibility, source rotation and JSON-only safeguards. Upgrade title and instructions to Discovery 3.0 with a separately validated Indigenous education stream that discovers source-backed, eligible resources for /education/. First audit latest site/schema and safeguard removals. Update existing automation, test one run and report verified resource changes, deduplication, provenance, CI and live status without assuming publication.",
+      "source": {
+        "roadmap": "BAKE PRO 4.0",
+        "type": "explicit user request",
+        "source_date": "2026-11-06",
+        "source_context": "User proposed turning Discovery 2.0 into Discovery 3.0 to research schools, courses, land-based learning and videos."
+      },
+      "evidence": []
+    },
+    {
+      "id": "B4-041",
+      "title": "Education contributor governance, corrections and removal suppression",
+      "description": "Add controlled community submissions, source governance, review queues, correction/removal suppression, link-health checks and cultural protocol safeguards before automating education records at scale.",
+      "category": "Education & Discovery",
+      "priority": "P1",
+      "effort": "Large / phased",
+      "status": "pending",
+      "status_basis": "Planning task; intake, tombstones and link health not yet implemented.",
+      "dependencies": [
+        "B4-039"
+      ],
+      "acceptance_criteria": [
+        "Document Indigenous data sovereignty and consent, provenance, availability and rights for source media.",
+        "Implement contributor correction, removal and suppression logging with an audit trail and no silent re-import.",
+        "Add staff review queue, expiry/deadline checks and link health and category freshness reporting.",
+        "Add educational pathways, accessibility and age/grade/language filters only where supported by source facts."
+      ],
+      "bake_prompt": "BAKE PRO 4.0 — B4-041 EDUCATION GOVERNANCE. Work in deltaowleyes/deltaowleyes.github.io using latest main; first inspect data/bake-pro-4-roadmap.json and docs/DISCOVERY-3-EDUCATION-PLAN.md. Preserve the existing Discovery 2.0 businesses, churches, events, JSON-only import rules, provenance, privacy and deletion safeguards. Implement consent-aware Education nominations, editorial reviews, corrections, soft removal and durable suppression for culturally sensitive or withdrawn resources. Add scheduled source link checks, stale enrollment/deadline flags, source evidence and rights metadata. Do not scrape, mirror videos, publish restricted knowledge or collect minors' data. Validate removal privacy, backups, admin authorization and public site regression; write evidence to canonical roadmap.",
+      "source": {
+        "roadmap": "BAKE PRO 4.0",
+        "type": "explicit user request and implementation dependency",
+        "source_date": "2026-11-06",
+        "source_context": "Safeguards required for scaling Indigenous education and knowledge keeper discovery."
+      },
+      "evidence": []
     }
   ],
   "archived_source_references": [
@@ -4840,6 +4926,18 @@
       "type": "B4-037_user_approved_55px_branded_header",
       "task_id": "B4-037",
       "summary": "Approved 3-image header treatment published across 132 public pages; responsive sticky layout tests passed across Chromium Firefox WebKit; GitHub Pages successful; task remains in progress."
+    },
+    {
+      "date": "2026-11-06",
+      "type": "education_discovery_3_feature_branch_registration",
+      "source_head_at_start": "d6d39ba159b5ba474f9ae49cb6e40161199e4f7b",
+      "summary": "Added B4-039–041 for Education hub, Discovery 3.0 automation and Indigenous knowledge governance. Page and catalogue on feature branch pending merge, visual QA and live verification; automation not yet upgraded.",
+      "task_ids": [
+        "B4-039",
+        "B4-040",
+        "B4-041"
+      ],
+      "evidence_url": "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/education-discovery-3-20261106"
     }
   ]
 }
