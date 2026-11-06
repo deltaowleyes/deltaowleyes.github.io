@@ -1,0 +1,259 @@
+{
+  "version": "Shut Your Trap Premium Photo V3",
+  "repo": "deltaowleyes/deltaowleyes.github.io",
+  "baseline_verified_images": 17,
+  "desired_new_images": 20,
+  "desired_combined_total": 37,
+  "quality_policy": "Original individual photorealistic AI imagery only; reject collages, contact sheets, website UI mockups and copied/licensed third-party artwork; no actual owner or business locations implied",
+  "safe_publication": "Do not activate any new photograph until 13–23 checksum-verified images with genuine JPEG dimensions are imported, website browser QA passes and live custom domain is independently verified",
+  "import_zip_name": "SHUT-YOUR-TRAP-V3-PHOTOS.zip",
+  "one_valid_local_asset": {
+    "name": "v3_steel_blade_detail.jpg",
+    "width": 1672,
+    "height": 941,
+    "sha256": "4e573da38f4c40e782b61dbeb52dbc075be702e026d119cdeb6e7dce96672bff",
+    "status": "local_conversation_attachment_only"
+  },
+  "images": [
+    {
+      "name": "v3_steel_blade_detail.jpg",
+      "scene": "A standalone macro of a clean sharpened steel blade on weathered timber; warm workshop light",
+      "concept": "edge",
+      "kind": "sharpening",
+      "hero": true,
+      "required_min_size": [
+        1500,
+        850
+      ],
+      "status": "generated_individual_locally_not_uploaded"
+    },
+    {
+      "name": "v3_precision_honing_edge.jpg",
+      "scene": "Close-up of a polished edge, honing cloth and fine abrasive stone, no hands",
+      "concept": "edge",
+      "kind": "sharpening",
+      "hero": false,
+      "required_min_size": [
+        1000,
+        650
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_winter_cabin_lantern.jpg",
+      "scene": "Rustic cabin in winter at blue hour, porch lantern warmly lit",
+      "concept": "family",
+      "kind": "outdoors",
+      "hero": true,
+      "required_min_size": [
+        1500,
+        850
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_field_boots_pack.jpg",
+      "scene": "Rugged boots and field bag beside forest trail, natural light",
+      "concept": "family",
+      "kind": "trapping",
+      "hero": false,
+      "required_min_size": [
+        1000,
+        650
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_coiled_cable_leather_gloves.jpg",
+      "scene": "Neatly coiled steel cable and leather gloves on an old workbench",
+      "concept": "family",
+      "kind": "snaring",
+      "hero": false,
+      "required_min_size": [
+        1000,
+        650
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_steel_cable_hardware.jpg",
+      "scene": "Tidy close-up of generic steel cable coils and fittings, no diagrams",
+      "concept": "utility",
+      "kind": "snaring",
+      "hero": true,
+      "required_min_size": [
+        1500,
+        850
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_workbench_cutting_pliers.jpg",
+      "scene": "Generic hardware workshop with pliers and cable on aged timber, no instructional steps",
+      "concept": "utility",
+      "kind": "snaring",
+      "hero": false,
+      "required_min_size": [
+        1000,
+        650
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_moody_river_bend.jpg",
+      "scene": "Wide river bend in northern boreal forest, overcast early dawn",
+      "concept": "expedition",
+      "kind": "outdoors",
+      "hero": true,
+      "required_min_size": [
+        1500,
+        850
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_backcountry_map_compass.jpg",
+      "scene": "Field compass, folded map and weathered pack in forest setting",
+      "concept": "expedition",
+      "kind": "trapping",
+      "hero": false,
+      "required_min_size": [
+        1000,
+        650
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_whetstone_blue_water.jpg",
+      "scene": "Blue-green wet whetstone and clean knife with water droplets; premium macro",
+      "concept": "intake",
+      "kind": "sharpening",
+      "hero": true,
+      "required_min_size": [
+        1500,
+        850
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_sharpening_oils_still_life.jpg",
+      "scene": "Honing oil, sharpening stones and clean cloth on a rural workbench",
+      "concept": "intake",
+      "kind": "sharpening",
+      "hero": false,
+      "required_min_size": [
+        1000,
+        650
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_workshop_tool_wall.jpg",
+      "scene": "Warm rural workshop tool wall with grindstone and neatly arranged tools",
+      "concept": "knowledge",
+      "kind": "sharpening",
+      "hero": true,
+      "required_min_size": [
+        1500,
+        850
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_wooden_strop_brass_tools.jpg",
+      "scene": "Wooden leather strop with brass oiling tools on table; no instructions",
+      "concept": "knowledge",
+      "kind": "sharpening",
+      "hero": false,
+      "required_min_size": [
+        1000,
+        650
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_dawn_lake_gear.jpg",
+      "scene": "Misty lakeside dawn with canvas field pack, quiet cinematic scene",
+      "concept": "journal",
+      "kind": "outdoors",
+      "hero": true,
+      "required_min_size": [
+        1500,
+        850
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_northern_wetland_boardwalk.jpg",
+      "scene": "Northern wetland and cattails with a distant forest boardwalk at dawn",
+      "concept": "journal",
+      "kind": "trapping",
+      "hero": false,
+      "required_min_size": [
+        1000,
+        650
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_old_rural_barn.jpg",
+      "scene": "Weathered red-brown rural barn exterior in golden evening light",
+      "concept": "rustic",
+      "kind": "outdoors",
+      "hero": true,
+      "required_min_size": [
+        1500,
+        850
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_grinding_wheel_closeup.jpg",
+      "scene": "Large vintage sharpening grinding wheel in authentic workshop, no people",
+      "concept": "operator",
+      "kind": "sharpening",
+      "hero": true,
+      "required_min_size": [
+        1500,
+        850
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_birch_forest_first_frost.jpg",
+      "scene": "Frosted white birch trees and a winding trail under cool dawn light",
+      "concept": "outfitter",
+      "kind": "outdoors",
+      "hero": true,
+      "required_min_size": [
+        1500,
+        850
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_autumn_hardwood_trail.jpg",
+      "scene": "Deep orange hardwood woodland path, wide atmospheric landscape",
+      "concept": "outfitter",
+      "kind": "trapping",
+      "hero": false,
+      "required_min_size": [
+        1000,
+        650
+      ],
+      "status": "pending_single_scene_generation"
+    },
+    {
+      "name": "v3_stacked_firewood_workshop.jpg",
+      "scene": "Stacked firewood, simple carpentry supplies and warm rural shed light",
+      "concept": "outfitter",
+      "kind": "outdoors",
+      "hero": false,
+      "required_min_size": [
+        1000,
+        650
+      ],
+      "status": "pending_single_scene_generation"
+    }
+  ]
+}
