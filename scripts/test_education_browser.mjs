@@ -59,6 +59,9 @@ try {
    await page.locator('#reset').click();
    if(await page.locator('.resource').count()!==records.length)throw Error('Reset incorrect');
    if(errors.length)throw Error('Page errors: '+errors.join('; '));
+   await page.evaluate(()=>{document.activeElement?.blur();window.scrollTo(0,0)});
+   await page.waitForTimeout(120);
+   if(await page.evaluate(()=>window.scrollY)>2)throw Error('Could not reset screenshot scroll position');
    fs.mkdirSync('test-results/education',{recursive:true});
    await page.screenshot({path:'test-results/education/education-1-1-'+width+'.png',fullPage:true});
    completed++;
