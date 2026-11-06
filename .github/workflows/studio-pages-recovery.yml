@@ -1,0 +1,42 @@
+name: Recover stuck Pages deployment for Studio sandbox
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/studio-pages-recovery.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+jobs:
+  cancel-confirmed-stale-deployment:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 4
+    steps:
+      - name: Inspect and cancel only the known timed-out Pages deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          STALE_ID: fdfdf6fdab08100fcf65fcf1432c9266a0205773
+        shell: bash
+        run: |
+          set -euo pipefail
+          API="https://api.github.com/repos/${GH_REPO}/pages/deployments/${STALE_ID}"
+          STATUS=$(curl --fail --silent --show-error \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "${API}" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("status","unknown"))')
+          echo "Stale deployment ${STALE_ID}: ${STATUS}"
+          case "${STATUS}" in
+            succeed|success|cancelled|canceled)
+              echo "Already terminal; no cancellation needed."
+              ;;
+            *)
+              curl --fail --silent --show-error --output /dev/null \
+                -X POST \
+                -H "Authorization: Bearer ${GH_TOKEN}" \
+                -H "Accept: application/vnd.github+json" \
+                "${API}/cancel"
+              echo "Sent cancellation to known timed-out deployment."
+              ;;
+          esac
