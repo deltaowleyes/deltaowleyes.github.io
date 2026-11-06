@@ -1,6 +1,12 @@
 name: DOE Studio 3 River Voice factory one-run build and QA
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - feature/doe-studio-2-redesign-pilot
+    paths:
+      - 'studio2/factory/**'
+      - '.github/workflows/studio2-factory.yml'
 permissions:
   contents: read
 jobs:
