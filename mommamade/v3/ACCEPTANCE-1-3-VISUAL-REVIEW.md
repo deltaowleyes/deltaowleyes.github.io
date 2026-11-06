@@ -35,3 +35,12 @@ The comparison is **composition-oriented**, not a pixel-similarity score. Real c
 
 ## Cost policy
 C$1 aggregate incremental development spending (strictly less), C$5 incremental generation/QA per 100 commercial options. No paid API/subscription/CI runner/third-party asset purchase intentionally initiated in 1.3. **Actual provider charges: unknown (not C$0 verified).**
+
+## Final hosted regression and live deployment result
+
+- **PASS**: [GitHub Actions run 42141805738](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42141805738), job and every step concluded success. Artifact **13468625400** (6,258,177 bytes) contains 57 JPEG images plus two JSON reports. Actual logs confirm 10/10 design scenarios, 90 direct route checks, 50 responsive viewport checks, original photo decoding, mobile menu open/close, simulated forms/checkout and privacy/cost preflight.
+- Reference capture: **20/20 current candidate screenshots** and **16/20 valid official-source desktop/mobile screenshot captures**. Rifle Paper Co. and Grovemade remain unavailable in this hosted browser; zero human-approved visual matches. Historical third-party examples are context only, never substitute for current source proof.
+- Public live smoke independently fetched these five paths from `https://www.deltaowleyes.ca`, each HTTP **200** with expected content: `/mommamade/v3/`, `/mommamade/v3/site.js`, `/mommamade/v3/site.css`, `/mommamade/v3/reference-fidelity-1-3.css` (including post-repair Quiet Catalogue mobile-order selector), and `/mommamade/` (still refers to `./v2/`). This is public HTTP verification, not an independently reviewed live-browser screenshot.
+- **Original visual bug fixed**: Quiet Catalogue 390px prior screenshot placed text before product image; final hosted reference comparison shows photograph before headline on mobile. Pattern Studio final hosted screenshot shows earlier pattern shopping hierarchy and shorter hero.
+- **QA capture issue fixed**: mobile navigation is now closed after the interaction test before saving evidence. Screenshots encoded as JPEG at quality 82 and retained three days to lower artifact storage exposure. Artifact shrank from 32,100,645 to **6,258,177 bytes**, an 80.5% reduction. This does not verify provider billing.
+- **Release decision remains HOLD**: source-fidelity approval and exceptions are not complete. Do not archive V2, change `/mommamade/`, or mark V3 latest in `data/web-design-projects.json` until all required approvals are complete.
