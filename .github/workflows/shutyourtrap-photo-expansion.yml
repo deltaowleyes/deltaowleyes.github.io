@@ -1,0 +1,98 @@
+name: Shut Your Trap premium photography V3 import
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'shutyourtrap/photo-inbox/SHUT-YOUR-TRAP-V3-PHOTOS.zip'
+      - '.github/workflows/shutyourtrap-photo-expansion.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+  pages: write
+concurrency:
+  group: shut-your-trap-photo-expansion
+  cancel-in-progress: false
+jobs:
+  verify-import-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 17
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Check whether photo collection is present
+        id: inbox
+        shell: bash
+        run: |
+          if test -f shutyourtrap/photo-inbox/SHUT-YOUR-TRAP-V3-PHOTOS.zip; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            echo 'No V3 ZIP uploaded; original 17-image gallery remains unchanged.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Set up free Python runtime
+        if: steps.inbox.outputs.ready == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow
+        if: steps.inbox.outputs.ready == 'true'
+        run: python3 -m pip install --disable-pip-version-check pillow==11.3.0
+      - name: Compile and verify all new photographs before writing
+        if: steps.inbox.outputs.ready == 'true'
+        run: |
+          python3 -m py_compile shutyourtrap/scripts/import-photo-expansion.py
+          python3 shutyourtrap/scripts/import-photo-expansion.py
+      - name: Install Chromium for pre-publication tests
+        if: steps.inbox.outputs.ready == 'true'
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Run privacy, 70 routes, 40 legacy SVGs, new photo decoding and mobile QA
+        if: steps.inbox.outputs.ready == 'true'
+        shell: bash
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/shutyourtrap-photo-v3.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8765/shutyourtrap/ >/dev/null; then break; fi
+            sleep 1
+          done
+          node shutyourtrap/qa.mjs
+      - name: Keep visual QA evidence
+        if: always() && steps.inbox.outputs.ready == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: shutyourtrap-v3-photo-preflight-qa
+          path: shutyourtrap/qa-artifacts/
+          if-no-files-found: warn
+      - name: Commit validated images, remove temp ZIP, preserve all original photos
+        if: steps.inbox.outputs.ready == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shutyourtrap/assets/photos
+          git rm -f shutyourtrap/photo-inbox/SHUT-YOUR-TRAP-V3-PHOTOS.zip
+          git diff --cached --stat
+          git commit -m "Expand Shut Your Trap with verified original premium photos"
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - name: Dispatch follow-up Chromium verification
+        if: steps.inbox.outputs.ready == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run shutyourtrap-qa.yml --ref main
+      - name: Request GitHub Pages rebuild
+        if: steps.inbox.outputs.ready == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds"; then
+            echo 'Requested Pages rebuild for V3 photography.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Pages rebuild request unavailable; verify deployment independently.' >> "$GITHUB_STEP_SUMMARY"
+          fi
