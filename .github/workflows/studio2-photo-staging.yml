@@ -1,0 +1,39 @@
+name: DOE River Voice approved photo pack staging
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/doe-studio-2-redesign-pilot
+    paths:
+      - 'studio2/river-voice/photo-inbox/RIVER-VOICE-ORIGINAL-PHOTOS.zip'
+      - 'studio2/river-voice/PHOTO-APPROVALS.json'
+permissions:
+  contents: read
+jobs:
+  validate-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install local image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Test fail-closed validator
+        run: python studio2/tests/photo_import_contract.py
+      - name: Validate and stage actual approved five-photo pack
+        run: |
+          test -f studio2/river-voice/photo-inbox/RIVER-VOICE-ORIGINAL-PHOTOS.zip
+          python studio2/scripts/import_photo_pack.py \
+            studio2/river-voice/photo-inbox/RIVER-VOICE-ORIGINAL-PHOTOS.zip \
+            --approvals studio2/river-voice/PHOTO-APPROVALS.json \
+            --destination artifacts/studio2/photo-staging
+      - name: Upload staged originals for independent review
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: river-voice-five-photo-staging-NOT-PUBLISHED
+          path: artifacts/studio2/photo-staging/
+          if-no-files-found: error
+# Deliberately NO commit, Pages deploy, paid AI, or published activation step.
