@@ -17,6 +17,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: bake-express-master-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   canonical-chromium:
     runs-on: ubuntu-24.04
