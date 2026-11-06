@@ -7,7 +7,7 @@ from datetime import date
 root=Path(__file__).resolve().parents[1]
 items=json.loads((root/"data/education-resources.json").read_text(encoding="utf-8"))
 assert isinstance(items,list) and items,"Empty or invalid Education catalogue"
-categories=set("schools courses land languages survivor-stories videos advocacy funding teaching".split())
+categories=set("schools courses land languages survivor-stories videos advocacy funding teaching knowledge-keepers".split())
 formats={"online","hybrid","on-site"}
 eligibility={"indigenous-only","open","check-provider"}
 ids=set(); pairs=set(); urls=set()
@@ -26,6 +26,9 @@ for item in items:
   pairs.add(pair)
   for key in ("url","source_url"):
     u=urlsplit(item[key]);assert u.scheme=="https" and u.netloc and not u.username and not u.password and not u.fragment,ident
+  assert item["source_url"].lower().rstrip("/") == item["url"].lower().rstrip("/"),ident
+  if item["category"]=="survivor-stories":
+    assert any(t in item["notice"].casefold() for t in ("advisory", "trauma", "residential-school")),f"Missing survivor content advisory: {ident}"
   url=item["url"].lower().rstrip("/")
   assert url not in urls,ident
   urls.add(url)
@@ -49,6 +52,8 @@ assert '<link rel="canonical" href="https://deltaowleyes.ca/education/">' in pag
 for element in ('id="search"','id="topic"','id="eligibility"','id="format"','id="list"','/data/education-resources.json'):
   assert element in page,element
 assert "innerHTML" not in page and '<iframe' not in page
+assert 'data-topic="knowledge-keepers"' in page
+assert '<option value="on-site">In person</option>' in page
 assert 'href="/education/"' in home
 assert "https://deltaowleyes.ca/education/" in sitemap
 print(f"PASS: {len(items)} source-linked learning listings, valid IDs and schema, homepage, filters and sitemap")

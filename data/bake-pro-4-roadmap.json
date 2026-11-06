@@ -4699,7 +4699,7 @@
       "priority": "P0",
       "effort": "Medium",
       "status": "in_progress",
-      "status_basis": "PR #16 merged to main 2026-11-06 with Education data, navigation, filters, suppression validator and browser test; site-wide header-normalization pipeline passed. Pages run and independent live HTTP acceptance still being checked.",
+      "status_basis": "PR #16 merged; latest Pages run 42232933571 reported success. PR #17 adds 14 sourced entries, responsive/keyboard/eligibility QA, and a post-merge live HTTP acceptance workflow. Public HTTP acceptance and PR #17 deployment must be verified before marking complete.",
       "dependencies": [],
       "acceptance_criteria": [
         "Source-reviewed original provider links and respectful public access/eligibility labels.",
@@ -4732,6 +4732,24 @@
           "date": "2026-11-06",
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42232648097",
           "detail": "Public header normalizer succeeded after excluding unrelated standalone template pages; news/index.html shows two Education menu links in main."
+        },
+        {
+          "type": "education_1_1_feature_pr",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/17",
+          "detail": "Added 14 verified primary-source listings (6 Walpole Island, 5 Oneida, 3 NCTR), 28 total, knowledge-keeper filtering and source audit; pending merge and live acceptance."
+        },
+        {
+          "type": "chromium_browser_qa",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42234584921",
+          "detail": "Education 1.1 Playwright 4 viewport data-driven 320/390/768/1440 tests passed; automated screenshot artifact 13508759983 downloaded and visually inspected. Capture scroll-reset correction included on feature branch."
+        },
+        {
+          "type": "pages_deployment_status",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42232933571",
+          "detail": "GitHub Pages build/deployment succeeded for prior main SHA 9bfe520. Not independent production HTTP evidence; live check workflow added for release."
         }
       ]
     },
@@ -4743,7 +4761,7 @@
       "priority": "P0",
       "effort": "Medium",
       "status": "in_progress",
-      "status_basis": "Existing hourly Discovery 2.0 automation renamed Discovery 3.0 and prompt extended to add separate provenance-checked Education research while preserving original business/church/event rules and hourly schedule; no verified post-upgrade run yet.",
+      "status_basis": "The existing hourly automation is enabled and renamed Discovery 3.0. Original business/church/event rules were preserved, with a separate Education JSON-only stream. At latest recorded status check no post-upgrade Education run was observed, so the next successful run and write/no-change audit remains required.",
       "dependencies": [
         "B4-039"
       ],
@@ -4766,6 +4784,12 @@
           "date": "2026-11-06",
           "automation_id": "6ae5e840127c819182aa85253cc64f0b",
           "detail": "Connected automations update confirmed success; new title Delta Owl Eyes Discovery 3.0, existing hourly RRULE unchanged, full original Discovery 2.0 instructions retained with additional two-resource-per-run cautious education stream."
+        },
+        {
+          "type": "automation_audit",
+          "date": "2026-11-06",
+          "automation_id": "6ae5e840127c819182aa85253cc64f0b",
+          "detail": "Verified title, enabled state, unchanged RRULE FREQ=HOURLY; latest recorded run still 2026-11-06 13:22:52 UTC (old Discovery 2.0), so no post-upgrade results may be claimed."
         }
       ]
     },
@@ -4776,8 +4800,8 @@
       "category": "Education & Discovery",
       "priority": "P1",
       "effort": "Large / phased",
-      "status": "pending",
-      "status_basis": "Roadmap task remains pending. Initial persistent data/education-suppressed.json tombstones and reimport rejection validator are implemented in merged PR #16, but editorial review queue, source-health checks and community governance processes are still unfinished.",
+      "status": "in_progress",
+      "status_basis": "Initial tombstone ledger and validator exist on main; Education 1.1 adds stronger Survivor advisory validation, provider-only external links and source/audience audit. Community nominations, approved takedown process, automated source-health checks, expiry review and governance approvals remain outstanding.",
       "dependencies": [
         "B4-039"
       ],
@@ -4800,6 +4824,12 @@
           "date": "2026-11-06",
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/16",
           "detail": "Initial Education suppression ledger and validator included; does not prove full editorial governance."
+        },
+        {
+          "type": "education_1_1_governance",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/17",
+          "detail": "Expanded original-provider attribution, access notices, Survivor advisories, knowledge-keeper source controls and category validation. Not proof of complete community-led moderation."
         }
       ]
     }
@@ -4977,6 +5007,21 @@
       "evidence_urls": [
         "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/16",
         "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42232648097"
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "type": "education_1_1_source_and_QA_audit",
+      "task_ids": [
+        "B4-039",
+        "B4-040",
+        "B4-041"
+      ],
+      "summary": "On latest-main-derived feature branch, added 14 primary-source Indigenous education listings (WIFN 6, Oneida 5, NCTR 3), giving 28 total. Reviewed initial-provider access caveats, strengthened NCTR Survivor archive advisory, filters, page accessibility smoke and suppression schema, documented first post-upgrade automation run still outstanding. Chromium 4-viewport test and validator passed on PR #17 early commit; late screenshot reset correction requires rerun. PR #17 merge/live verification pending.",
+      "evidence_urls": [
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/17",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42234584921",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42232933571"
       ]
     }
   ]

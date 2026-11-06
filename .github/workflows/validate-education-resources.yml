@@ -19,6 +19,7 @@ on:
       - "index.html"
       - "sitemap.xml"
       - "scripts/check_education_resources.py"
+      - "scripts/test_education_browser.mjs"
       - ".github/workflows/validate-education-resources.yml"
   workflow_dispatch:
 permissions:
