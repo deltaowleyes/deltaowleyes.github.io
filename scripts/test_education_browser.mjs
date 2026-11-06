@@ -59,6 +59,16 @@ try {
    await page.locator('#reset').click();
    if(await page.locator('.resource').count()!==records.length)throw Error('Reset incorrect');
    if(errors.length)throw Error('Page errors: '+errors.join('; '));
+   const privacyBanner=page.locator('#doe-consent-banner');
+   if(await privacyBanner.count()!==1)throw Error('Privacy banner missing before consent');
+   await page.locator('#doe-reject').click();
+   await page.waitForFunction(()=>!document.querySelector('#doe-consent-banner'));
+   const privacy=await page.evaluate(()=>({
+     choice:localStorage.getItem('doe-analytics-consent-v1'),
+     noAnalytics:!window.__doeAnalyticsLoaded&&!document.querySelector('script[src*="googletagmanager.com/gtag/"]'),
+     preferences:!!document.querySelector('#doe-privacy-choices'),
+   }));
+   if(privacy.choice!=='rejected'||!privacy.noAnalytics||!privacy.preferences)throw Error('Privacy reject not honored: '+JSON.stringify(privacy));
    await page.evaluate(()=>{
      document.activeElement?.blur();
      document.documentElement.style.scrollBehavior='auto';
