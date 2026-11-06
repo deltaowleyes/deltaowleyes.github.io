@@ -105,42 +105,42 @@ document.getElementById('design-inquiry').addEventListener('submit', function(e)
 <title>{esc(route["title"])} | {esc(site["name"])} candidate</title>
 <link rel="stylesheet" href="/assets/privacy-consent.css"><script defer src="/assets/privacy-consent.js"></script>
 <style>{styles(theme)}{visual_style(theme)}\n/* BAKE 3.4: discoverable, keyboard-operable navigation and precision editorial refinement */
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.menu-disclosure{min-width:0;flex:1}
-.menu-disclosure summary{display:none;list-style:none;cursor:pointer;min-height:44px;padding:12px 16px;border:1px solid currentColor}
-.menu-disclosure summary::-webkit-details-marker{display:none}
-.menu-disclosure nav{justify-content:flex-end;gap:5px}
-.hero>.wrap{min-width:0}
-.hero h1{text-wrap:balance;overflow-wrap:break-word}
-.hero .lead{font-size:clamp(1rem,1.35vw,1.15rem);line-height:1.55}
-.sections p{max-width:67ch}
-.sections article{border-bottom-color:#78878355}
-.inquiry-form input,.inquiry-form textarea{background:#fff;color:#152226}
-.inquiry-form button:hover{filter:brightness(1.13)}
-@media(max-width:1000px){
- .header-inner{position:relative}
- .menu-disclosure{flex:0 0 auto}
- .menu-disclosure summary{display:block;font-size:.82rem;font-weight:850;white-space:nowrap}
- .menu-disclosure nav{display:none;position:absolute;right:0;top:100%;z-index:8;width:min(340px,calc(100vw - 32px));padding:12px;background:#132b33;color:#fff4dc;box-shadow:0 14px 32px #0007;border-top:3px solid #d8ab72;flex-direction:column;align-items:stretch;overflow:visible;max-height:70vh;overflow-y:auto}
- .menu-disclosure[open] nav{display:flex}
- .menu-disclosure nav a{white-space:normal;display:flex;padding:10px 14px;border-bottom:1px solid #ffffff22;color:#fff4dc}
- .menu-disclosure nav a[aria-current=page]{background:#ffffff19}
-}
-@media(max-width:600px){
- .hero{min-height:0}
- .hero h1{font-size:clamp(2.05rem,8.2vw,3.1rem);line-height:1.055;letter-spacing:-.035em}
- .hero .lead{font-size:1rem;line-height:1.5}
- .hero>.wrap{padding:34px 17px 29px}
- .hero-art img{height:205px;max-height:205px}
- .header-inner{padding-block:10px!important}
- .brand{font-size:1.03rem}
- .content-strap{gap:8px;letter-spacing:.08em}
- .content-strap span{padding:7px 9px}
- .sections h2{font-size:clamp(1.3rem,5vw,1.7rem)}
- body.ledger .sections article{grid-template-columns:36px minmax(0,1fr);gap:10px}
- body.ledger .sections article:before{font-size:1.4rem}
-}
-@media(prefers-reduced-motion:reduce){.hero,.hero-art,.sections article{animation:none;transition:none}}
+.header-inner{{display:flex;align-items:center;justify-content:space-between;gap:24px}}
+.menu-disclosure{{min-width:0;flex:1}}
+.menu-disclosure summary{{display:none;list-style:none;cursor:pointer;min-height:44px;padding:12px 16px;border:1px solid currentColor}}
+.menu-disclosure summary::-webkit-details-marker{{display:none}}
+.menu-disclosure nav{{justify-content:flex-end;gap:5px}}
+.hero>.wrap{{min-width:0}}
+.hero h1{{text-wrap:balance;overflow-wrap:break-word}}
+.hero .lead{{font-size:clamp(1rem,1.35vw,1.15rem);line-height:1.55}}
+.sections p{{max-width:67ch}}
+.sections article{{border-bottom-color:#78878355}}
+.inquiry-form input,.inquiry-form textarea{{background:#fff;color:#152226}}
+.inquiry-form button:hover{{filter:brightness(1.13)}}
+@media(max-width:1000px){{
+ .header-inner{{position:relative}}
+ .menu-disclosure{{flex:0 0 auto}}
+ .menu-disclosure summary{{display:block;font-size:.82rem;font-weight:850;white-space:nowrap}}
+ .menu-disclosure nav{{display:none;position:absolute;right:0;top:100%;z-index:8;width:min(340px,calc(100vw - 32px));padding:12px;background:#132b33;color:#fff4dc;box-shadow:0 14px 32px #0007;border-top:3px solid #d8ab72;flex-direction:column;align-items:stretch;overflow:visible;max-height:70vh;overflow-y:auto}}
+ .menu-disclosure[open] nav{{display:flex}}
+ .menu-disclosure nav a{{white-space:normal;display:flex;padding:10px 14px;border-bottom:1px solid #ffffff22;color:#fff4dc}}
+ .menu-disclosure nav a[aria-current=page]{{background:#ffffff19}}
+}}
+@media(max-width:600px){{
+ .hero{{min-height:0}}
+ .hero h1{{font-size:clamp(2.05rem,8.2vw,3.1rem);line-height:1.055;letter-spacing:-.035em}}
+ .hero .lead{{font-size:1rem;line-height:1.5}}
+ .hero>.wrap{{padding:34px 17px 29px}}
+ .hero-art img{{height:205px;max-height:205px}}
+ .header-inner{{padding-block:10px!important}}
+ .brand{{font-size:1.03rem}}
+ .content-strap{{gap:8px;letter-spacing:.08em}}
+ .content-strap span{{padding:7px 9px}}
+ .sections h2{{font-size:clamp(1.3rem,5vw,1.7rem)}}
+ body.ledger .sections article{{grid-template-columns:36px minmax(0,1fr);gap:10px}}
+ body.ledger .sections article:before{{font-size:1.4rem}}
+}}
+@media(prefers-reduced-motion:reduce){{.hero,.hero-art,.sections article{{animation:none;transition:none}}}}
 </style></head>
 <body class="{theme}"><a class="skip" href="#main">Skip to main content</a>
 <div class="top"><div class="wrap">Delta Owl Eyes / {esc(site["name"])} · Unpublished candidate</div></div>
