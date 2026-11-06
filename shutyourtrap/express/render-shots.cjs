@@ -14,7 +14,7 @@ const models=[
  ['sharp-edge',1],['family-trapline',2],['expedition',4],
  ['sharpening-flow',5],['field-journal',7],['bold-operator',9]
 ];
-const widths=[320,390,768,1024,1280,1440];
+const widths=[320,390,500,768,1024,1440];
 fs.mkdirSync(output,{recursive:true});
 const manifest={schema:1,project:'Shut Your Trap EXPRESS',captureType:'actual Chromium full-page JPEG',source:'Existing original Shut Your Trap website concepts',viewportWidths:widths,files:[]};
 let count=0;
@@ -73,22 +73,8 @@ let count=0;
    await context.close();
   }
  }
- const page=await browser.newPage({viewport:{width:390,height:820}});
- await page.goto(root+'/shutyourtrap/express/',{waitUntil:'domcontentloaded'});
- assert.equal(await page.locator('.card').count(),6,'six cards');
- await page.locator('.card-btn').first().click();
- assert.equal(await page.locator('dialog[open]').count(),1,'preview dialog opens');
- assert.equal(await page.locator('.screen-btn').count(),6,'six viewport options');
- await page.locator('.screen-btn[data-width="1440"]').click();
- await page.locator('#capture:not([hidden])').waitFor({timeout:8000});
- const displayed=await page.locator('#capture').getAttribute('src');
- assert.equal(displayed,'/shutyourtrap/express/shots/sharp-edge-1440.jpg','selecting viewport chooses exact screenshot');
- await page.keyboard.press('Escape');
- assert.equal(await page.locator('dialog[open]').count(),0,'Escape closes dialog');
- const ov=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
- assert.ok(ov<=4,'gallery has no horizontal overflow at 390');
- await page.close();
+ // Shared shell QA is run separately by the Express Studio master acceptance suite.
  fs.writeFileSync(path.join(output,'manifest.json'),JSON.stringify(manifest,null,2)+'\n');
- console.log('PASS',count,'real screenshots + gallery interactions; 0 page errors');
+ console.log('PASS',count,'real Chromium screenshots; shared shell QA runs next');
  }finally{await browser.close();}
 })().catch(e=>{console.error('FAIL',e);process.exitCode=1;});

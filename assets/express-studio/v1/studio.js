@@ -8,7 +8,7 @@ var c=window.BAKE_EXPRESS_STUDIO;
 var app=document.getElementById('express-app');
 if(!app||!c||!Array.isArray(c.designs)||c.designs.length!==6){if(app)app.textContent='The six-design studio configuration is unavailable.';return;}
 var WIDTHS=[320,390,500,768,1024,1440];
-var HEADER='/studio-sandbox/header-slim-';
+var HEADER='/studio-sandbox/header-';
 var lastFocus=null,activeDesign=null,activeWidth=390;
 function escapeHtml(v){return String(v==null?'':v).replace(/[&<>"']/g,function(k){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[k];});}
 function shot(d,w){return c.shotsBase+d.shotSlug+'-'+w+'.'+(c.imageExt||'jpg');}
@@ -19,7 +19,7 @@ function header(){return '<header class="site-header" aria-label="BAKE EXPRESS W
  '<source media="(max-width:629px)" srcset="'+HEADER+'500.webp">'+
  '<source media="(max-width:895px)" srcset="'+HEADER+'768.webp">'+
  '<source media="(max-width:1279px)" srcset="'+HEADER+'1024.webp">'+
- '<img src="'+HEADER+'1440.webp" width="1440" height="160" alt="Delta Owl Eyes Website Design Studio, 40 Exceptional Website Designs" fetchpriority="high" decoding="async">'+
+ '<img src="'+HEADER+'1440.webp" width="1536" height="171" alt="Delta Owl Eyes Website Design Studio, 40 Exceptional Website Designs" fetchpriority="high" decoding="async">'+
  '</picture></header>';}
 function footer(){return '<footer class="footer">Delta Owl Eyes · BAKE EXPRESS Website Design Studio · Six design directions · Screenshot-only review · <a href="/services/">Website services</a></footer>';}
 function landing(){
