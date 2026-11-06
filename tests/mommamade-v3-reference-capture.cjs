@@ -36,6 +36,11 @@ fs.mkdirSync(folder,{recursive:true});
    try{
     const response=await ref.goto(reference,{waitUntil:'domcontentloaded',timeout:12000});
     if(!response||response.status()>=400)throw Error('reference response '+(response&&response.status()));
+    const expectedHost=new URL(reference).hostname.replace(/^www\./,'');
+    const actualHost=new URL(ref.url()).hostname.replace(/^www\./,'');
+    if(actualHost!==expectedHost&&!actualHost.endsWith('.'+expectedHost))
+      throw Error('redirected off reference domain to '+actualHost);
+    await ref.waitForTimeout(1200);
     await ref.screenshot({path:path.join(folder,id+'-'+device+'-reference.png'),fullPage:false,timeout:10000});
     item.reference_capture='captured';
    }catch(e){item.reference_capture='UNVERIFIED: '+String(e.message).slice(0,150)}
