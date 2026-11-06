@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-05",
+  "currency": "CAD",
+  "policy": {
+    "development_max_exclusive_cad": 1,
+    "commercial_max_per_100_templates_cad": 5,
+    "existing_subscriptions_excluded": true,
+    "new_subscriptions_allowed": false,
+    "paid_apis_allowed": false,
+    "overages_allowed": false,
+    "approval_required_for_billable_changes": true
+  },
+  "verified_actual_cash_expenditure_cad": null,
+  "verified_actual_status": "UNVERIFIED: no GitHub billing statement, purchase ledger, or provider invoice was accessible. Null is not zero.",
+  "observed_changes": [
+    "No paid service or API provisioned by this branch",
+    "Standard public-repository GitHub Actions runner only; per published GitHub billing policy these compute minutes are free",
+    "No third-party AI image generation, paid templates, external deployments or checkout configured"
+  ],
+  "forecast": {
+    "development_incremental_cad": 0,
+    "commercial_per_100_templates_cad": 0,
+    "caveat": "conditional planning estimate for static HTML/CSS, free standard public-repo CI and manual QA, excluding storage overages and any future paid asset generation; not a verified invoice"
+  },
+  "usage_limits": [
+    "ChatGPT Plus may limit actual concurrent processing; ten branches do not imply ten simultaneous ChatGPT jobs",
+    "Github public standard runners are free but larger runners and some storage usage can incur charges; never enable larger runners or billable services",
+    "No API keys, agent service credentials or persistent background workers are provisioned; branch creation does not start autonomous design workers"
+  ],
+  "verification_needed": [
+    "Owner to verify GitHub billing and Actions artifact storage budget",
+    "Owner to verify any other provider expenses to establish actual C$0 baseline",
+    "Repeat ledger for every commercial 100-template batch with invoices and usage evidence"
+  ],
+  "integration_review": {
+    "date": "2026-11-05",
+    "branch": "factory2/integration-review-10-2026-11-05",
+    "baseline_main_sha": "9dfcd888515fcea6281972acdcf8b78c59af04b4",
+    "technical_qa_run": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42136144133",
+    "known_new_purchases_cad": 0,
+    "known_paid_apis_invoked": 0,
+    "actual_spend_cad": null,
+    "invoices_verified": false,
+    "artifact_zip_size_bytes": 1279566,
+    "storage_billing_verified": false,
+    "commercial_target_verified": false,
+    "note": "Unknown actual billing is not zero; audited cost policy is cumulative below C$1, not a per-run cap."
+  },
+  "integration_review_2_1": {
+    "date": "2026-11-05",
+    "branch": "factory2/fullsites-2-1-2026-11-05",
+    "base_main_sha": "2fa4a0e0810be8e18e3b7e891241426c2f7b9bb7",
+    "sites": 10,
+    "pages": 60,
+    "known_new_paid_api_calls": 0,
+    "known_new_purchases_or_upgrades": 0,
+    "actual_spend_cad": null,
+    "billing_verified": false,
+    "commercial_cost_per_100_verified": false,
+    "comment": "No newly activated billable services. Aggregate actual cash expenditure remains unknown without provider invoices. Strict under C$1 is cumulative across all development bakes; C$5 per 100 remains an unproven commercial cap."
+  }
+}
