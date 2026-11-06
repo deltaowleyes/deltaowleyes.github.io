@@ -42,5 +42,3 @@ jobs:
       - name: Authorized owner, private ticket and takedown tests
         run: |
           python3 scripts/test_education_editorial.py
-          python3 
-          python3 
