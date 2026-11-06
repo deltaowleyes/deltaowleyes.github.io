@@ -6,9 +6,9 @@
   "viewportWidths": [
     320,
     390,
+    500,
     768,
     1024,
-    1280,
     1440
   ],
   "files": [
@@ -29,12 +29,20 @@
       "sha256": "ac3d7a8a84e8cb2d447f4a6a9474ce2f64c1dea93aeceb13d21fc68f01955fec"
     },
     {
+      "filename": "sharp-edge-500.jpg",
+      "slug": "sharp-edge",
+      "template": 1,
+      "width": 500,
+      "bytes": 217914,
+      "sha256": "0bbb7594f930f5c67afa2d52d40ae780f874f8232705ec17197ba96af65bd679"
+    },
+    {
       "filename": "sharp-edge-768.jpg",
       "slug": "sharp-edge",
       "template": 1,
       "width": 768,
-      "bytes": 289340,
-      "sha256": "4cf45ce1f9bd9e36784f7c87532570adb95734b750103df7618a5d35e7d1f611"
+      "bytes": 288561,
+      "sha256": "e60c933cb53be3e0cb739950f28eb2d3ebbfbcf1710d026c768905774cf81e8a"
     },
     {
       "filename": "sharp-edge-1024.jpg",
@@ -45,20 +53,12 @@
       "sha256": "9aa6193c00fcc367543ea975e2b632da71c5469111a7fbbff7f998b8ba3065f2"
     },
     {
-      "filename": "sharp-edge-1280.jpg",
-      "slug": "sharp-edge",
-      "template": 1,
-      "width": 1280,
-      "bytes": 377446,
-      "sha256": "8d982409daecf5da7159eb250b7fc0d321ff716aef05fac2ed4819b3beaa731f"
-    },
-    {
       "filename": "sharp-edge-1440.jpg",
       "slug": "sharp-edge",
       "template": 1,
       "width": 1440,
-      "bytes": 408979,
-      "sha256": "07d3a724ee2f484095c8317a6c87e837c4e4df3743d622092a5b23ead35b8140"
+      "bytes": 409781,
+      "sha256": "606f908428bf27c2ec95fcfe4816cbe0b4631cedc5532aa6ab80be9c1229a197"
     },
     {
       "filename": "family-trapline-320.jpg",
@@ -73,8 +73,16 @@
       "slug": "family-trapline",
       "template": 2,
       "width": 390,
-      "bytes": 208200,
-      "sha256": "3afbb750db71183cee82e65845edf78df063770c25a76c83e2b7f487a211881a"
+      "bytes": 208379,
+      "sha256": "e841eb24df743ce6df49d9f87762c001bfac75d258081040b327230333417c7a"
+    },
+    {
+      "filename": "family-trapline-500.jpg",
+      "slug": "family-trapline",
+      "template": 2,
+      "width": 500,
+      "bytes": 241748,
+      "sha256": "1731c95132d76b924c3354b6a3beb6e631dfed3c113c5151736523484b6689d6"
     },
     {
       "filename": "family-trapline-768.jpg",
@@ -89,32 +97,24 @@
       "slug": "family-trapline",
       "template": 2,
       "width": 1024,
-      "bytes": 362099,
-      "sha256": "96b7f62f99b1ac139610c88f3fd6c58097450c8ecb33c066be28459e1d339744"
-    },
-    {
-      "filename": "family-trapline-1280.jpg",
-      "slug": "family-trapline",
-      "template": 2,
-      "width": 1280,
-      "bytes": 435677,
-      "sha256": "4cdaa4b7c70a0d32d9fa7d9eef659aabf186342222951fdef2af0e2dc833ce9a"
+      "bytes": 363468,
+      "sha256": "348c613092079e9b6abde5408eb4ff5b4ea22714a8b2416a3d439cd654dd3885"
     },
     {
       "filename": "family-trapline-1440.jpg",
       "slug": "family-trapline",
       "template": 2,
       "width": 1440,
-      "bytes": 463939,
-      "sha256": "8edb7e6f24b42a4e405e6c5cbf941891fe420575440d31db3c09ab67061dc0b7"
+      "bytes": 462346,
+      "sha256": "6354747f7066c3779ef618c2de93ab37e0bb2fadc02c4037c3f3fc95cda4a68b"
     },
     {
       "filename": "expedition-320.jpg",
       "slug": "expedition",
       "template": 4,
       "width": 320,
-      "bytes": 165516,
-      "sha256": "ca0c44f5e49fc1003355852fbb8d2c83a0893b3ea2d01908ca86f2970c4af8e1"
+      "bytes": 166565,
+      "sha256": "c9a247360069ce414c29e4ed24ed43fc1757620e56319fa170c653f730493b10"
     },
     {
       "filename": "expedition-390.jpg",
@@ -123,6 +123,14 @@
       "width": 390,
       "bytes": 187080,
       "sha256": "2b6e9cd100cc3db6418d13416e7bac5af9510dca35d5cb35689ade12dadf3ec0"
+    },
+    {
+      "filename": "expedition-500.jpg",
+      "slug": "expedition",
+      "template": 4,
+      "width": 500,
+      "bytes": 233757,
+      "sha256": "50df076e0eb63fd72278f380f400cafdd1388ed436b6f4dfc349613629db618b"
     },
     {
       "filename": "expedition-768.jpg",
@@ -139,14 +147,6 @@
       "width": 1024,
       "bytes": 316537,
       "sha256": "dbeeb336a4c4903afa6f38a6b84872224f3d3556705fdea25b02b83d55c50308"
-    },
-    {
-      "filename": "expedition-1280.jpg",
-      "slug": "expedition",
-      "template": 4,
-      "width": 1280,
-      "bytes": 383808,
-      "sha256": "05c621b0c4ca52b1974fa6eee73505f333f5240e1be31697bfedb8893cd5296b"
     },
     {
       "filename": "expedition-1440.jpg",
@@ -173,6 +173,14 @@
       "sha256": "240b04faeaa960a66715fa3f88361a262bd40a123e531c1cb1dc0394d7ae32c8"
     },
     {
+      "filename": "sharpening-flow-500.jpg",
+      "slug": "sharpening-flow",
+      "template": 5,
+      "width": 500,
+      "bytes": 257174,
+      "sha256": "a6039f1d43bbe4bffa99e84610cfdde27904e3260b3e168494102206072d13ef"
+    },
+    {
       "filename": "sharpening-flow-768.jpg",
       "slug": "sharpening-flow",
       "template": 5,
@@ -189,14 +197,6 @@
       "sha256": "fa09a144e994d5d24a55745b55b98679997debcb27c5afe6f0350848fdb0923b"
     },
     {
-      "filename": "sharpening-flow-1280.jpg",
-      "slug": "sharpening-flow",
-      "template": 5,
-      "width": 1280,
-      "bytes": 418436,
-      "sha256": "c947cc464e7b48073d164e881bc061d6c451a1311622eea0801e2ac28344b4db"
-    },
-    {
       "filename": "sharpening-flow-1440.jpg",
       "slug": "sharpening-flow",
       "template": 5,
@@ -209,8 +209,8 @@
       "slug": "field-journal",
       "template": 7,
       "width": 320,
-      "bytes": 171924,
-      "sha256": "0a322924cb4b64f5fa625ac45531f0b1aefe9ec108bea3fedd0cce50ced748e6"
+      "bytes": 171935,
+      "sha256": "414db03331c1cb41dc4238299be73b9703e591dc29a500af4d3afc25f34e08bc"
     },
     {
       "filename": "field-journal-390.jpg",
@@ -219,6 +219,14 @@
       "width": 390,
       "bytes": 193110,
       "sha256": "89f19dd431e82ff6cf2a6951a64b4b642849ce60a4624fddb1e87aa55d2ed493"
+    },
+    {
+      "filename": "field-journal-500.jpg",
+      "slug": "field-journal",
+      "template": 7,
+      "width": 500,
+      "bytes": 223567,
+      "sha256": "d74a6703cb5ab21ed1c04339a53fb453b8dba40117295b373e4b9815244918b7"
     },
     {
       "filename": "field-journal-768.jpg",
@@ -235,14 +243,6 @@
       "width": 1024,
       "bytes": 361019,
       "sha256": "1895d33e27ec18c3850b1f9d9a51e0bd380c6ca6a884d2e0e519671a89dc5f1a"
-    },
-    {
-      "filename": "field-journal-1280.jpg",
-      "slug": "field-journal",
-      "template": 7,
-      "width": 1280,
-      "bytes": 414938,
-      "sha256": "6e62e14a14a1f749317afb0a153830b738d4a8bee17af9f2ac1afca33ded02a2"
     },
     {
       "filename": "field-journal-1440.jpg",
@@ -269,6 +269,14 @@
       "sha256": "028b33fdb56aee48f37ec45d45e7cff4cbc6a88bf6351788d3b1f024c72ba8a9"
     },
     {
+      "filename": "bold-operator-500.jpg",
+      "slug": "bold-operator",
+      "template": 9,
+      "width": 500,
+      "bytes": 177520,
+      "sha256": "d2a36a1e5b320ffb63af51d0daf8aee3c14b5149af50341800b23ce577ca8c3d"
+    },
+    {
       "filename": "bold-operator-768.jpg",
       "slug": "bold-operator",
       "template": 9,
@@ -283,14 +291,6 @@
       "width": 1024,
       "bytes": 220568,
       "sha256": "2db0522e382acd58d944eeb7503868e2ccda39caf62a9e0016ece36fe611ca11"
-    },
-    {
-      "filename": "bold-operator-1280.jpg",
-      "slug": "bold-operator",
-      "template": 9,
-      "width": 1280,
-      "bytes": 265223,
-      "sha256": "9e584966f13c120d6d0e1967c76725dbcbbdda4d7f1287befea2c01d7b2132be"
     },
     {
       "filename": "bold-operator-1440.jpg",
