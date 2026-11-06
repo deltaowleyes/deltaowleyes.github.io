@@ -3,7 +3,7 @@
  * no external logos, images, source CSS or business claims copied. */
 .browse-nav{display:flex;gap:clamp(14px,2.4vw,34px);align-items:center;padding:12px 5%;background:var(--paper);border-bottom:1px solid #b9b5a4;overflow-x:auto;scrollbar-width:thin;white-space:nowrap}
 .browse-nav span{font:800 9px Arial,sans-serif;letter-spacing:.16em;flex:0 0 auto;opacity:.65}
-.browse-nav a{font:700 12px/1.4 Arial,sans-serif;display:inline-flex;align-items:center;min-height:40px;flex:0 0 auto;text-decoration:none;border-bottom:2px solid transparent}
+.browse-nav a{font:700 12px/1.4 Arial,sans-serif;display:inline-flex;align-items:center;min-height:44px;flex:0 0 auto;text-decoration:none;border-bottom:2px solid transparent}
 .browse-nav a:hover,.browse-nav a:focus-visible{border-color:currentColor;text-decoration:none}
 .browse-index,.browse-proof{background:#24433d;color:#f2f5eb}
 .browse-pattern{background:#fff7f2;color:#613d52;border-top:1px solid #e3cdcb}
