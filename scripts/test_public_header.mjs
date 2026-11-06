@@ -3,7 +3,7 @@ import {chromium,firefox,webkit} from 'playwright';
 import fs from 'node:fs';
 const engine=process.env.DOE_BROWSER||'chromium';
 const browser=await ({chromium,firefox,webkit})[engine].launch({headless:true});
-const paths=['/','/news/','/calls-to-action/','/indigenous-businesses/','/indigenous-businesses/profile.html?business=missing','/indigenous-churches/','/events/','/videos/','/services/','/privacy/','/calls-to-action/scripts/revised-01.html','/news/articles/canada-announces-additional-130-million-for-inuit-led-housing/'];
+const paths=['/','/education/','/news/','/calls-to-action/','/indigenous-businesses/','/indigenous-businesses/profile.html?business=missing','/indigenous-churches/','/events/','/videos/','/services/','/privacy/','/calls-to-action/scripts/revised-01.html','/news/articles/canada-announces-additional-130-million-for-inuit-led-housing/'];
 let done=0;
 try{
  for(const width of [1280,900,390,320]){
