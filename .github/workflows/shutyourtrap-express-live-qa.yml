@@ -1,0 +1,32 @@
+name: BAKE EXPRESS Master — independent public site acceptance
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'shutyourtrap/express/verify_live.py'
+      - '.github/workflows/shutyourtrap-express-live-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: bake-express-master-live-acceptance
+  cancel-in-progress: true
+jobs:
+  check-public-custom-domain:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify deployed HTML, shared source, six original header checksums and 36 JPEG routes
+        run: python shutyourtrap/express/verify_live.py
+      - name: Save independently observed live acceptance
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: express-master-public-release-verification
+          path: artifacts/shutyourtrap-express-live/results.json
+          if-no-files-found: warn
+          retention-days: 7
