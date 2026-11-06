@@ -89,7 +89,7 @@
 @media(max-width:760px){
  .browse-nav{padding:8px 5%;gap:20px}
  .browse-nav span{display:none}
- .browse-nav a{min-height:38px}
+ .browse-nav a{min-height:44px}
  .reference-departments,.pattern-browser,.papier-edit{padding:44px 5%}
  .department-grid{grid-template-columns:1fr;gap:12px}
  .department-card,.department-card:nth-child(2),.department-card:nth-child(3){transform:none}
