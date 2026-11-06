@@ -226,16 +226,18 @@ def resolve_ticket(ticket: str|None):
 def public_edit(args):
     if not args.confirm_source_reviewed or not args.write:
         raise PermissionError("Preview first; --confirm-source-reviewed and --write are mandatory")
-    # Always check GitHub role and exact ticket state before modifying public JSON.
+    # Require a real authorized GitHub account and clean review branch for tracked changes.
     reviewer=verify_reviewer()
     branch=verify_review_branch()
-    if str(ROOT) not in sys.path:
-        sys.path.insert(0, str(ROOT))
-    from scripts.education_review_cases import require_two_reviewers
-    signoffs=require_two_reviewers(args.ticket,args.action)
-    print("Two GitHub-authorized staff decisions checked:", ", ".join(signoffs))
-    if not any(x["ticket"]==args.ticket and x["status"]=="pending" for x in read_queue()):
-        raise ValueError("Ticket missing or already resolved")
+    # An optional local ticket helps track emailed corrections, but is not
+    # required for owner-managed, original-provider public resources.
+    if args.ticket:
+        matched_ticket=next((x for x in read_queue() if x.get("ticket")==args.ticket),None)
+        expected_kind={"approve":"suggest","correct":"correct","remove":"remove"}[args.action]
+        if not matched_ticket or matched_ticket.get("status")!="pending":
+            raise ValueError("Ticket missing or already resolved")
+        if matched_ticket.get("kind")!=expected_kind:
+            raise ValueError("Ticket kind does not match proposed edit")
     catalogue=read_json(CATALOGUE)
     ledger=read_json(SUPPRESSED)
     if args.action in {"approve","correct"}:
@@ -272,7 +274,7 @@ def public_edit(args):
         print("Reviewer",reviewer,"authorized removal",matched["id"])
     save_public(catalogue,ledger)
     resolve_ticket(args.ticket)
-    print("Validated on",branch,"for editor",reviewer,". Local approvals are NOT tamper-proof; separate GitHub PR review and deployment verification remain required.")
+    print("Validated on",branch,"for authorized editor",reviewer,". Inspect the Git diff, merge through GitHub and verify live deployment.")
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -289,7 +291,7 @@ def main():
         else:
             cmd.add_argument("--resource-id",required=True)
             cmd.add_argument("--reason",required=True,choices=sorted(REASONS))
-        cmd.add_argument("--ticket",required=True,help="Mandatory private case ticket with two distinct staff approvals")
+        cmd.add_argument("--ticket",help="Optional local email follow-up ticket; not required for routine owner editorial changes")
         cmd.add_argument("--write",action="store_true",help="Explicitly modify PUBLIC tracked catalogue/ledger")
         cmd.add_argument("--confirm-source-reviewed",action="store_true",help="Staff confirms original source and rights/access conditions")
     args=parser.parse_args()
