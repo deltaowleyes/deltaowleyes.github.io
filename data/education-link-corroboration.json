@@ -9,6 +9,38 @@
       "finding": "Official University of Alberta Indigenous Canada course page accessible and lists course outline, registration and module-one preview; automated HEAD returned 403.",
       "review_method": "independent_original_provider_page_review",
       "expires_on": "2027-02-06"
+    },
+    {
+      "id": "oneida-learning-language",
+      "source_url": "https://oneidalanguage.ca/learn-our-language/",
+      "reviewed_on": "2026-11-06",
+      "finding": "Official Oneida Language & Cultural Centre Learn Our Language page opened independently; original provider describes 48 lessons, self-study and cultural audio advisories.",
+      "review_method": "independent_original_provider_page_review",
+      "expires_on": "2027-02-06"
+    },
+    {
+      "id": "oneida-language-videos",
+      "source_url": "https://oneidalanguage.ca/oneida-culture/enjoy-some-oneidalanguage-videos/",
+      "reviewed_on": "2026-11-06",
+      "finding": "Official Oneida Language & Cultural Centre source page opened independently and lists original-provider video learning resources.",
+      "review_method": "independent_original_provider_page_review",
+      "expires_on": "2027-02-06"
+    },
+    {
+      "id": "oneida-master-speakers",
+      "source_url": "https://oneidalanguage.ca/about-us/master-speakers/",
+      "reviewed_on": "2026-11-06",
+      "finding": "Official Oneida Language & Cultural Centre Master Speakers page opened independently; provider includes a caution about people who are no longer living.",
+      "review_method": "independent_original_provider_page_review",
+      "expires_on": "2027-02-06"
+    },
+    {
+      "id": "oneida-hunt-camp-learning",
+      "source_url": "https://oneidalanguage.ca/learn-our-language/speak-oneidalanguage-now/oneida-hunt-camp/",
+      "reviewed_on": "2026-11-06",
+      "finding": "Official Oneida Language & Cultural Centre Hunt Camp study page opened independently; language vocabulary and provider video links are publicly visible.",
+      "review_method": "independent_original_provider_page_review",
+      "expires_on": "2027-02-06"
     }
   ]
 }
