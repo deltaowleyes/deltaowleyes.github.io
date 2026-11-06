@@ -67,6 +67,7 @@ async function run(){
     const result=await page.goto(ROOT+href,{waitUntil:'networkidle',timeout:30000});
     assert.equal(result.status(),200,href+' HTTP 200');
     await page.locator('.shot').first().waitFor({timeout:12000});
+    await loadImages(page); // Lazy full-page screenshots need intrinsic dimensions before interaction.
     assert.equal(await page.locator('.shot').count(),6,href+' six preview shots');
     assert.equal(await page.locator('iframe').count(),0,'no iframe in screenshot preview');
     const h=await validateHeader(page,width);
