@@ -45,3 +45,34 @@ No paid services or purchases deliberately initiated. Actual provider billing re
 - **Not final visual acceptance:** Imagery is original and topic-appropriate but predominantly illustrative SVG rather than the premium photorealistic composition in the owner's six-panel reference. Some first-screen art depends on an older `/assets/wetlands.png` whose provenance/rights still need review. No source-image matching, full WCAG audit, service/API form submission, production deployment or independent live verification claimed.
 - **Release gate remains CLOSED:** no merge or deploy before customer visual approval; separate asset rights verification and substantial premium visual polish remain.
 - **Cost:** no paid APIs/assets/upgrades deliberately initiated in this BAKE. Provider billing invoices and aggregate CAD charges unverified; do not claim confirmed C$0.
+
+## 2.3 photorealistic visual study / acceptance (2026-11-06)
+
+**Disposition: technical QA PASSED; premium visual approval still WITHHELD.** Feature branch only. No production merge/deployment.
+
+### Actual work completed
+- Reused the existing GitHub-committed `shutyourtrap/assets/photos/golden_sunrise_in_a_misty_pine_forest.webp` as photorealistic conceptual artwork in the TRC section. Its source project `shutyourtrap/assets/photos/status.json` confirms original AI-generated imagery (SHA-256 e78d49ad1d76eb637b443dc2743148baa5eb808d229332a2d2c1caa2504e1e27). It does *not* document a real community or event.
+- Added caption and accurate alternative text; reconciled `studio2/river-voice/ASSET-PROVENANCE.json`.
+- Fixed narrow mobile top navigation spacing, added Escape-to-close mobile disclosure, and refined hero contrast and editorial image rhythm.
+- Moved the conceptual artwork disclosure beneath the linked stories rather than placing it as a large interruption above them.
+- Hardened `studio2/tests/qa.py` for 320/390 touch, Escape and focus, persistent analytics rejection, absence of GA loading, real route HTTP checks, browser page errors, background image response, poster decoding, TRC photograph decoding/caption, and screenshots at 320/390/768/1440.
+
+### Hosted evidence
+- **Final updated code run:** https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42165013231 — success, artifact 13478831446. Four of four responsive checks passed, no horizontally overflowing content, broken image elements or page exceptions, internal links on 1440 passed, privacy rejection persisted across reload, keyboard/mobile disclosures worked.
+- **Link check:** https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42165013246 — success.
+- The downloaded 1440 and 390 full-page screenshot images were visually inspected, not just the source code. The 390 screenshot shows shorter navigation chrome and a continuous, visible media section. The 1440 screenshot shows the editorial layout and photoreal landscape section.
+- Browser `performance.navigation.duration` from a local static GitHub runner is only an environment-specific sample. No real user Core Web Vitals or public-site performance claim is made.
+
+### Original visual generation study — not integrated into GitHub
+- Original AI-generated cinematic mockup (1536×1024) created in this BAKE shows River Voice with photoreal wildlife/river sunset and editorial panels.
+- Six single-region concept crops extracted to local `river-voice-2-3-photographic-study.zip` with an asset contact sheet, and sample provenance JSON. These files are in the conversation's downloadable artifact, not in GitHub; no claim of asset integration.
+- Crops are only 200–500 native pixels wide and do not meet premium desktop asset acceptance. Some mockup features are fictional and must **never** be copied into the factual Delta Owl Eyes news site; no illustrative image should be represented as photographic evidence of a real event.
+
+### Remaining blockers before human visual approval
+1. Source/produce legitimate standalone 1200+ pixel original high-resolution photoreal landscape, owl/hawk, archive/microphone and article-context assets, with explicit provenance. Current crops are insufficient.
+2. Remove the faint embedded "Delta Owl Eyes" lettering in the existing wetlands image itself by replacing it with a truly clean, high-resolution asset. CSS overlay alone only reduces it.
+3. Replace flat SVG article illustrations or upgrade them to user-approved, consistently art-directed editorial visuals while preserving the conceptual/non-documentary labels.
+4. Independently review real desktop/mobile screenshot composition against the user's supplied six-panel Studio reference. Keyboard/touch/contrast audit should go beyond smoke tests; verify actual user-device performance.
+5. Review provider usage/billing before certifying cost compliance; known paid operations intentionally initiated this BAKE: none, but actual charges are **unverified**.
+
+**Release gate stays CLOSED.** No main changes, no production release, no broad 36-site rollout based on this candidate.
