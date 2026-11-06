@@ -4699,7 +4699,7 @@
       "priority": "P0",
       "effort": "Medium",
       "status": "in_progress",
-      "status_basis": "User explicitly requested a new page; Education catalogue/page/home navigation/sitemap/validator committed to an unmerged review branch; live deployment and browser acceptance not yet demonstrated.",
+      "status_basis": "PR #16 merged to main 2026-11-06 with Education data, navigation, filters, suppression validator and browser test; site-wide header-normalization pipeline passed. Pages run and independent live HTTP acceptance still being checked.",
       "dependencies": [],
       "acceptance_criteria": [
         "Source-reviewed original provider links and respectful public access/eligibility labels.",
@@ -4720,6 +4720,18 @@
           "date": "2026-11-06",
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/education-discovery-3-20261106",
           "detail": "14 source-reviewed resources; Education page, navigation, sitemap, validation workflow and Discovery 3.0 plan. Review and live acceptance still required."
+        },
+        {
+          "type": "github_merge",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/commit/283ae810f55cbbbb3b6ec473009b130b004cf532",
+          "detail": "Education Hub PR #16 merged; 14 source-linked resources, local Chromium filter/responsive test and validation succeeded."
+        },
+        {
+          "type": "github_workflow",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42232648097",
+          "detail": "Public header normalizer succeeded after excluding unrelated standalone template pages; news/index.html shows two Education menu links in main."
         }
       ]
     },
@@ -4730,8 +4742,8 @@
       "category": "Education & Discovery",
       "priority": "P0",
       "effort": "Medium",
-      "status": "pending",
-      "status_basis": "Automation requires explicit prompt update and a verified post-release run; no recurring education additions yet.",
+      "status": "in_progress",
+      "status_basis": "Existing hourly Discovery 2.0 automation renamed Discovery 3.0 and prompt extended to add separate provenance-checked Education research while preserving original business/church/event rules and hourly schedule; no verified post-upgrade run yet.",
       "dependencies": [
         "B4-039"
       ],
@@ -4748,7 +4760,14 @@
         "source_date": "2026-11-06",
         "source_context": "User proposed turning Discovery 2.0 into Discovery 3.0 to research schools, courses, land-based learning and videos."
       },
-      "evidence": []
+      "evidence": [
+        {
+          "type": "automation_update",
+          "date": "2026-11-06",
+          "automation_id": "6ae5e840127c819182aa85253cc64f0b",
+          "detail": "Connected automations update confirmed success; new title Delta Owl Eyes Discovery 3.0, existing hourly RRULE unchanged, full original Discovery 2.0 instructions retained with additional two-resource-per-run cautious education stream."
+        }
+      ]
     },
     {
       "id": "B4-041",
@@ -4758,7 +4777,7 @@
       "priority": "P1",
       "effort": "Large / phased",
       "status": "pending",
-      "status_basis": "Planning task; intake, tombstones and link health not yet implemented.",
+      "status_basis": "Roadmap task remains pending. Initial persistent data/education-suppressed.json tombstones and reimport rejection validator are implemented in merged PR #16, but editorial review queue, source-health checks and community governance processes are still unfinished.",
       "dependencies": [
         "B4-039"
       ],
@@ -4775,7 +4794,14 @@
         "source_date": "2026-11-06",
         "source_context": "Safeguards required for scaling Indigenous education and knowledge keeper discovery."
       },
-      "evidence": []
+      "evidence": [
+        {
+          "type": "github_merge",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/16",
+          "detail": "Initial Education suppression ledger and validator included; does not prove full editorial governance."
+        }
+      ]
     }
   ],
   "archived_source_references": [
@@ -4938,6 +4964,20 @@
         "B4-041"
       ],
       "evidence_url": "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/education-discovery-3-20261106"
+    },
+    {
+      "date": "2026-11-06",
+      "type": "education_hub_merged_and_discovery_automation_updated",
+      "task_ids": [
+        "B4-039",
+        "B4-040",
+        "B4-041"
+      ],
+      "summary": "Education Hub PR #16 merged. GitHub browser validation succeeded, site-wide header normalizer and cross-browser header passed; Pages publication was not yet independently accepted at this evidence point. Existing hourly Discovery automation updated to 3.0, pending first verified education discovery run.",
+      "evidence_urls": [
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/16",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42232648097"
+      ]
     }
   ]
 }
