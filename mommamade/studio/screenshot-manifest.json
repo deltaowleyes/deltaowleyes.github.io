@@ -1,0 +1,357 @@
+{
+  "status": "candidate-review-only",
+  "source": "existing-Momma-Made-V3-HTML-captured-locally",
+  "widths": [
+    320,
+    390,
+    500,
+    768,
+    1024,
+    1440
+  ],
+  "note": "Screenshot-only gallery. V3 remains unapproved; V2 is still the current default. Existing public V3 page source remains independently accessible; screenshots are not copy protection.",
+  "families": [
+    {
+      "template": 1,
+      "slug": "atelier-ledger",
+      "title": "Atelier Ledger",
+      "mood": "Editorial craft",
+      "tagline": "A considered kitchen, one useful piece at a time.",
+      "screenshots": [
+        {
+          "width": 320,
+          "height": 4483,
+          "file": "full-320.webp",
+          "bytes": 174174,
+          "sha256": "a1a577b7c4194785bfea437ce11393ace9686c05216c3fd640d4ccb9f86ef410",
+          "page_errors": []
+        },
+        {
+          "width": 390,
+          "height": 4335,
+          "file": "full-390.webp",
+          "bytes": 188968,
+          "sha256": "5c9f51198dd5b3fbc90ec2c411d2b5456781c1a378177e4c657420f79d654ab4",
+          "page_errors": []
+        },
+        {
+          "width": 500,
+          "height": 4305,
+          "file": "full-500.webp",
+          "bytes": 209514,
+          "sha256": "2109472f14e69b5915cee871be410841ed470d05bd0c881efdefe5142ef93a2a",
+          "page_errors": []
+        },
+        {
+          "width": 768,
+          "height": 3958,
+          "file": "full-768.webp",
+          "bytes": 276794,
+          "sha256": "e4fb76a167343c4cb3695050b85fe4888c5656451b89526b2b8da8ceade7c416",
+          "page_errors": []
+        },
+        {
+          "width": 1024,
+          "height": 4212,
+          "file": "full-1024.webp",
+          "bytes": 334982,
+          "sha256": "37116bd1314c86d243d36dedd32f33bb697569d88a6ebe7ce8b0d0bd54a625cb",
+          "page_errors": []
+        },
+        {
+          "width": 1440,
+          "height": 3262,
+          "file": "full-1440.webp",
+          "bytes": 309996,
+          "sha256": "82bb66b01eb5bab13e9bf236d3d82a246658e792eabd1728db6a6af607f20430",
+          "page_errors": []
+        }
+      ]
+    },
+    {
+      "template": 2,
+      "slug": "picnic-club",
+      "title": "Picnic Club",
+      "mood": "Playful & vibrant",
+      "tagline": "Pack a little more joy.",
+      "screenshots": [
+        {
+          "width": 320,
+          "height": 3968,
+          "file": "full-320.webp",
+          "bytes": 154134,
+          "sha256": "5f2d5e3094bae113ed7cd40258e7453e94d4b50d4e8486024d8c613b50ebb944",
+          "page_errors": []
+        },
+        {
+          "width": 390,
+          "height": 3837,
+          "file": "full-390.webp",
+          "bytes": 168484,
+          "sha256": "73334e7b4347c9f4d9bf8750243460d89778747041b38922d946b97d3c269803",
+          "page_errors": []
+        },
+        {
+          "width": 500,
+          "height": 3820,
+          "file": "full-500.webp",
+          "bytes": 187942,
+          "sha256": "32a4854ac632c5856a6d02a4d0b8937c1a1b1b31cecb170a4c02f59d0be3e15c",
+          "page_errors": []
+        },
+        {
+          "width": 768,
+          "height": 3579,
+          "file": "full-768.webp",
+          "bytes": 272776,
+          "sha256": "a7ca5f8718efaa7aa1d18504e23bb730f4ba0b1f5ec66ae72b802b9afa200b9a",
+          "page_errors": []
+        },
+        {
+          "width": 1024,
+          "height": 3843,
+          "file": "full-1024.webp",
+          "bytes": 329262,
+          "sha256": "16c6bd015cbd82f5246a6bb7d1e8d2024614d60ac13616f42cb5f5f72ef360ee",
+          "page_errors": []
+        },
+        {
+          "width": 1440,
+          "height": 2951,
+          "file": "full-1440.webp",
+          "bytes": 302974,
+          "sha256": "e9421e216c37158b897f8580685f87203c93e1e44009ee532c7782afc51bc5d1",
+          "page_errors": []
+        }
+      ]
+    },
+    {
+      "template": 3,
+      "slug": "utility-index",
+      "title": "Utility Index",
+      "mood": "Functional catalogue",
+      "tagline": "Everyday goods, well organized.",
+      "screenshots": [
+        {
+          "width": 320,
+          "height": 5785,
+          "file": "full-320.webp",
+          "bytes": 200948,
+          "sha256": "c7489d86aee6cc3825a75818524df1d196e7cacf0752831ea5e95ef83c34e01e",
+          "page_errors": []
+        },
+        {
+          "width": 390,
+          "height": 5593,
+          "file": "full-390.webp",
+          "bytes": 226692,
+          "sha256": "2137783d0d5722faa80989b9d6c029300021d13a1567eccd51131f476114deff",
+          "page_errors": []
+        },
+        {
+          "width": 500,
+          "height": 5562,
+          "file": "full-500.webp",
+          "bytes": 242678,
+          "sha256": "02e827bbd7acbd7032cebcb6ed308c5db6d342f978defe8cf6f6877c73645e88",
+          "page_errors": []
+        },
+        {
+          "width": 768,
+          "height": 4064,
+          "file": "full-768.webp",
+          "bytes": 295828,
+          "sha256": "2f808c97b1078fc1611d02822a85d0dd4b8b11498ee99c56480604f0204fd791",
+          "page_errors": []
+        },
+        {
+          "width": 1024,
+          "height": 4339,
+          "file": "full-1024.webp",
+          "bytes": 355272,
+          "sha256": "c5e00c53ce71046696da31d421dc05bd387e2eca02ac73cd8b621b01079c986f",
+          "page_errors": []
+        },
+        {
+          "width": 1440,
+          "height": 3369,
+          "file": "full-1440.webp",
+          "bytes": 341586,
+          "sha256": "f9a4ce038ffc40251b55fe2a53f74a0d7ed101fd6909e839a49afe0d99f20530",
+          "page_errors": []
+        }
+      ]
+    },
+    {
+      "template": 4,
+      "slug": "garden-folio",
+      "title": "Garden Folio",
+      "mood": "Botanical & refined",
+      "tagline": "The gentle art of keeping things.",
+      "screenshots": [
+        {
+          "width": 320,
+          "height": 5526,
+          "file": "full-320.webp",
+          "bytes": 217136,
+          "sha256": "055f6e2a72602a3286c80d6868eea8dc97d62a8d77ce222fb8286af613af710a",
+          "page_errors": []
+        },
+        {
+          "width": 390,
+          "height": 5671,
+          "file": "full-390.webp",
+          "bytes": 251914,
+          "sha256": "bf11f0fa4cfc15107bd4bf3a3b3d53a01cb13dbc178ca0754d93dc4111f649b3",
+          "page_errors": []
+        },
+        {
+          "width": 500,
+          "height": 5964,
+          "file": "full-500.webp",
+          "bytes": 299468,
+          "sha256": "39657ba8c8a65949ccb53bd8827033691272a201d6e482063b1f9809474ce787",
+          "page_errors": []
+        },
+        {
+          "width": 768,
+          "height": 4541,
+          "file": "full-768.webp",
+          "bytes": 294468,
+          "sha256": "34d22177ebd471be224bebf630e16f3b498e72109359782a3a9b2d867abb1bcd",
+          "page_errors": []
+        },
+        {
+          "width": 1024,
+          "height": 4792,
+          "file": "full-1024.webp",
+          "bytes": 372762,
+          "sha256": "03b94e3f20236f499cacf6ec463cbf0f54fd325e224f0ccb7f33d4950cc54130",
+          "page_errors": []
+        },
+        {
+          "width": 1440,
+          "height": 4001,
+          "file": "full-1440.webp",
+          "bytes": 362826,
+          "sha256": "e8dfcd31b0e7f75bf49582cc53fa9936bb8024ed95043b00717ef3472ee881f3",
+          "page_errors": []
+        }
+      ]
+    },
+    {
+      "template": 5,
+      "slug": "pattern-studio",
+      "title": "Pattern Studio",
+      "mood": "Graphic & expressive",
+      "tagline": "Colour the everyday.",
+      "screenshots": [
+        {
+          "width": 320,
+          "height": 4955,
+          "file": "full-320.webp",
+          "bytes": 169966,
+          "sha256": "506f498cc9ae6a1b2282077bcb987fac908caf6de775399573e1c03152b7b42a",
+          "page_errors": []
+        },
+        {
+          "width": 390,
+          "height": 4842,
+          "file": "full-390.webp",
+          "bytes": 194242,
+          "sha256": "eb01b3efd631cd14fdd7a65ea40d641aeb914976ea39ed935c23c879c0cf7da0",
+          "page_errors": []
+        },
+        {
+          "width": 500,
+          "height": 4814,
+          "file": "full-500.webp",
+          "bytes": 216100,
+          "sha256": "3ae4f10032b5ca1c7a36bec9d76d6ef94947558c324a82ae38bb14244a8ffd06",
+          "page_errors": []
+        },
+        {
+          "width": 768,
+          "height": 4462,
+          "file": "full-768.webp",
+          "bytes": 335472,
+          "sha256": "d2ce9aef069ff145bb8b108e4c8028d2a154bd0282dae62115fea76e66b36eb8",
+          "page_errors": []
+        },
+        {
+          "width": 1024,
+          "height": 4736,
+          "file": "full-1024.webp",
+          "bytes": 402004,
+          "sha256": "e0705eeec471e61c3de1d2bdd54274db074fa547b46742ce17c2d5cc27b20fc4",
+          "page_errors": []
+        },
+        {
+          "width": 1440,
+          "height": 3520,
+          "file": "full-1440.webp",
+          "bytes": 333038,
+          "sha256": "29f590bfcc2fca1d345f8193cfb267e280785bd75d472ee71ba3ecadbf860a9e",
+          "page_errors": []
+        }
+      ]
+    },
+    {
+      "template": 9,
+      "slug": "quiet-catalogue",
+      "title": "Quiet Catalogue",
+      "mood": "Modern minimal",
+      "tagline": "Useful, thoughtfully chosen.",
+      "screenshots": [
+        {
+          "width": 320,
+          "height": 3838,
+          "file": "full-320.webp",
+          "bytes": 132274,
+          "sha256": "d20b8407714c2177e2651a965a89892f527812bd054844eeb041bd9cf20c6dde",
+          "page_errors": []
+        },
+        {
+          "width": 390,
+          "height": 3721,
+          "file": "full-390.webp",
+          "bytes": 138482,
+          "sha256": "f63d9307d2750951f21bb148a719d18a8558ee8caedd1382e059d1a1ef5193d8",
+          "page_errors": []
+        },
+        {
+          "width": 500,
+          "height": 3752,
+          "file": "full-500.webp",
+          "bytes": 158698,
+          "sha256": "17e32b8a8282d7cb24ec2f3ab52e92c3e96108ead55412747d2ac90cb1389f3c",
+          "page_errors": []
+        },
+        {
+          "width": 768,
+          "height": 3761,
+          "file": "full-768.webp",
+          "bytes": 227426,
+          "sha256": "a452df4eb12c178fc33b4220cc5a320718ad46b4a69823a055b53ab5ea60b5dd",
+          "page_errors": []
+        },
+        {
+          "width": 1024,
+          "height": 4196,
+          "file": "full-1024.webp",
+          "bytes": 281936,
+          "sha256": "55ac1f1557c7a67125fcea4885844e8209dee9c2023d7cab5b48ba51335affce",
+          "page_errors": []
+        },
+        {
+          "width": 1440,
+          "height": 3468,
+          "file": "full-1440.webp",
+          "bytes": 255772,
+          "sha256": "4bc23fb18e7a21174ff6d547ac3d5b7d428c58e0023a1269f36aa3d3a7090bc3",
+          "page_errors": []
+        }
+      ]
+    }
+  ]
+}
