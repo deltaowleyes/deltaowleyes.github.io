@@ -91,3 +91,24 @@ If this transfer can be executed directly in a future ChatGPT turn with a binary
 3. If needed, improve image-specific `object-position` mobile crop rules without overwriting the original SVG fallbacks.
 4. Continue the 30–40 original-photo target and ten-choice design revisions only after imported photographs are confirmed live.
 5. End unfinished BAKE responses with a working one-click continuation button.
+
+## Premium photography V3 staging (November 6, 2026 UTC)
+
+The previously published 17 WebP images and ten designs remain active. **This V3 phase is NOT complete or deployed with new images.**
+
+### Verified committed infrastructure
+- Import: `shutyourtrap/scripts/import-photo-expansion.py` accepts **13–23 genuinely new individual JPGs** in `shutyourtrap/photo-inbox/SHUT-YOUR-TRAP-V3-PHOTOS.zip`. Every JPG must match a `manifest.json` source SHA-256, byte count and 800×600-or-greater dimensions, with a filename starting `v3_`. The importer converts to WebP, preserves all 17 original files and updates `status.json` after all image checks pass.
+- Workflow: `.github/workflows/shutyourtrap-photo-expansion.yml` runs the image verification and Playwright prepublication QA before committing or requesting Pages deployment. No paid APIs, themes or subscriptions added.
+- `shutyourtrap/site.js` stages 20 mapped new photo names for 22 potential placements, retaining all original WebPs as first fallback and SVGs as last fallback; new images are **never selected unless listed in the activated manifest**.
+- `shutyourtrap/qa.mjs` and `shutyourtrap/live-photo-qa.mjs` now allow 17–40 verified images and check V3 hero activation when a larger manifest is published.
+- Exact scene descriptions, image dimensions and candidacy statuses: `shutyourtrap/PHOTO-V3-PRODUCTION-INVENTORY.json`.
+- Original 17-image fallback Chromium suite **passed** on GitHub Actions run 42153630661, commit `f77ae2bc2f899ef3f145929f00b28a7a77b7d37e`.
+
+### Actual generated image status
+- **ONE** new independently generated usable 1672×941 premium photograph: `v3_steel_blade_detail.jpg`, SHA-256 `4e573da38f4c40e782b61dbeb52dbc075be702e026d119cdeb6e7dce96672bff`; saved in the ChatGPT working area `/mnt/data/shutyourtrap-v3-validated-single-photo/`. **NOT uploaded to GitHub or publicly served.**
+- Several image-generation attempts instead produced **multi-panel collages** despite requests for standalone high-resolution photos. Those collages were REJECTED; do not crop/upscale and falsely label them independent premium assets, and do not count them toward the photo inventory.
+- New verified standalone images available locally: **1**. Still required for a minimum 30-image library: **12** more. Still required for the staged 37-image plan: **19** more.
+- Current actual live asset count: **17**, not 18, 30 or 37.
+
+### Next action
+Generate individual scenes one at a time using **narrow, SINGLE-PHOTO** user-turn requests rather than a broad multi-image prompt, or use another genuinely individual premium source with no paid APIs. Name each photograph according to `PHOTO-V3-PRODUCTION-INVENTORY.json`. Do not republish collage tiles as high-resolution photos. Once **at least 13** new genuinely distinct, full-size images are verified, assemble the EXACT standalone-photo-only ZIP with checksum/dimension manifest, upload it to the GitHub inbox using a supported binary route, run import and full Chromium QA, inspect actual desktop/mobile screenshot artifacts, and independently verify the published custom domain. Until then **leave V3 inactive** and show a one-click BAKE continuation button on every unfinished turn.
