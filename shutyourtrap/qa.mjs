@@ -93,6 +93,25 @@ try{
    await mobile.screenshot({path:'shutyourtrap/qa-artifacts/concept-'+String(i+1).padStart(2,'0')+'-mobile.png',fullPage:false});
    report.mobile.push({template:i+1,viewport:390,overflow:false,menu:true});
  }
+ // Additional narrow / tablet breakpoints with real photographs and headline geometry checks.
+ report.extraResponsive=[];
+ for(const width of [320,768]){
+   const responsive=await browser.newPage({viewport:{width,height:900},isMobile:width===320,hasTouch:width===320});
+   await responsive.addInitScript(()=>{try{localStorage.setItem('doe-analytics-consent-v1','rejected')}catch{}});
+   for(let i=0;i<10;i++){
+     await visit(responsive,base+'?template='+(i+1)+'#home');
+     await verifyPhotography(responsive,'home');
+     const extent=await responsive.evaluate(()=>({scroll:document.documentElement.scrollWidth,width:document.documentElement.clientWidth}));
+     assert(extent.scroll<=extent.width+8,'Responsive horizontal overflow '+width+' template '+(i+1)+': '+JSON.stringify(extent));
+     if(i===8){
+       const wraps=await responsive.locator('.operator-hero h1 em').evaluate(el=>el.getClientRects().length);
+       assert(wraps===1,'SHARPENING headline wraps mid-word at width '+width);
+     }
+     if(width===320)await responsive.screenshot({path:'shutyourtrap/qa-artifacts/concept-'+String(i+1).padStart(2,'0')+'-mobile-320.png',fullPage:false});
+     report.extraResponsive.push({template:i+1,width,photoMode:photoModeEnabled,overflow:false});
+   }
+   await responsive.close();
+ }
  const gallery=await browser.newPage({viewport:{width:1440,height:900}});
  await gallery.goto(base,{waitUntil:'domcontentloaded'});
  await gallery.locator('.dir-card').first().waitFor();
