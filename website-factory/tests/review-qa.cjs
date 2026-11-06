@@ -15,7 +15,8 @@ fs.mkdirSync(output,{recursive:true});
  const report={base:reg.review_base_main_sha,mode:"all-ten-a11y-review",results:[],violations:[],pass:false};
  try {
    for(const c of reg.candidates) {
-     const page=await browser.newPage({viewport:{width:1440,height:900}});
+     const context=await browser.newContext({viewport:{width:1440,height:900}});
+     const page=await context.newPage();
      await page.addInitScript(()=>{try{localStorage.setItem("doe-analytics-consent-v1","rejected")}catch{}});
      const url="http://127.0.0.1:8765/"+c.path;
      const response=await page.goto(url,{waitUntil:"load",timeout:25000});
@@ -46,7 +47,7 @@ fs.mkdirSync(output,{recursive:true});
      report.results.push({slug:c.slug,pass:violations.length===0,landmarks,axeViolations:violations});
      if(violations.length)report.violations.push({slug:c.slug,violations});
      console.log(c.slug,violations.length?"AXE VIOLATIONS "+JSON.stringify(violations.map(v=>v.id)):"AXE PASS");
-     await page.close();
+     await context.close();
    }
    report.pass=report.violations.length===0;
    fs.writeFileSync(path.join(output,"accessibility-results.json"),JSON.stringify(report,null,2));
