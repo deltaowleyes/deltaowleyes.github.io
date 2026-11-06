@@ -1,6 +1,6 @@
 # Delta Owl Eyes Education Hub / Discovery 3.0
 
-Status (2026-11-06): Education Hub 1.0 was merged via PR #16. Education Hub 1.1 expands the catalogue on a reviewed feature branch, with final live acceptance pending. Existing business, Indigenous church and event discovery rules remain in force.
+Status (2026-11-06): Education Hub 1.1 was merged and independently verified live with 28 resources; Education Governance 1.2 adds two official-provider courses, privacy-conscious correction/takedown contact, an authenticated local editorial queue, source-health checks and business shard diagnostics on a review branch. Refer to docs/EDUCATION-GOVERNANCE-1-2.md. Existing business, Indigenous church and event rules remain in force.
 
 ## Purpose and eligibility
 
@@ -91,3 +91,7 @@ Initial catalogue spot-audit: official source pages and access statements for In
 ## Discovery 3.0 scheduled task verification
 
 The existing enabled automation was retitled `Delta Owl Eyes Discovery 3.0` with its exact hourly RRULE preserved, and a separate two-candidate-per-run Education stream was appended to the original business/church/event instructions (unchanged old-directory safeguards). The recorded last run immediately after the upgrade lookup was still the prior Discovery 2.0 run at 2026-11-06 13:22 UTC, so it cannot prove an Education run or publication. An **explicitly observed post-upgrade run**, its source research, safe JSON commits (or reasoned no-change), CI and live status are required before closing B4-040. Do not infer publication from the automation being enabled.
+
+## Education Governance 1.2 implementation reference
+
+Read [Education Governance 1.2](EDUCATION-GOVERNANCE-1-2.md) for the owner-consent policy, staff-local request queue, mandatory GitHub write/admin authorization and dedicated review branch requirements, permanent deletion suppression, weekly read-only external link monitoring, 30-record candidate expansion and a detailed filter evidence plan. The site publishes **mailto** reporting links only; it does not operate an unprotected public database form or expose personal submissions. B4-041 remains in progress until community governance and a confidential multi-reviewer case process are independently verified.
