@@ -12,7 +12,7 @@ const ROOT='http://127.0.0.1:8765';
 const SITE='/shutyourtrap/express/';
 const WIDTHS=[320,390,500,768,1024,1440];
 const ASSETS=JSON.parse(fs.readFileSync('studio-sandbox/header-restoration-manifest.json','utf8')).assets;
-const HEADERS=Object.fromEntries(ASSETS.filter(x=>/^header-\\d+\\.webp$/.test(x.file)).map(x=>[x.file,x]));
+const HEADERS=Object.fromEntries(ASSETS.filter(x=>/^header-\d+\.webp$/.test(x.file)).map(x=>[x.file,x]));
 const OUTPUT='artifacts/express-master-standard';
 fs.mkdirSync(OUTPUT,{recursive:true});
 async function loadImages(page){
