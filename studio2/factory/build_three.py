@@ -69,6 +69,9 @@ def main():
    for old,new in cfg["css_replacements"].items():
     if old not in css:raise ValueError(f"CSS image source missing {old}")
     css=css.replace(old,new)
+   if slug=="media-hub":
+    # Reserve a readable dark editorial column; keep the illustrated poster on the right.
+    css += """\n.media .hero{background-color:#080f18;background-size:cover,auto 90%;background-position:center,right center;background-repeat:no-repeat;background-image:linear-gradient(90deg,#08121b 0%,#08121bf7 38%,#08121bcb 59%,#08121b47 100%),url('/studio2/river-voice/assets/owl-lens-studio.svg')}.media .hero-content{max-width:1200px}.media .hero h1{max-width:650px;font-size:clamp(3.1rem,5.7vw,6.6rem)}.media .hero p{max-width:540px}@media(max-width:800px){.media .hero{background-size:cover,auto 76%;background-position:center,right top 25px;background-image:linear-gradient(90deg,#08121bf8,#08121bdd 78%,#08121b99),url('/studio2/river-voice/assets/owl-lens-studio.svg')}.media .hero h1{max-width:630px}}@media(max-width:600px){.media .hero{min-height:500px;background-size:cover,auto 59%;background-position:center,right top 28px;background-image:linear-gradient(90deg,#08121bf4,#08121be8),url('/studio2/river-voice/assets/owl-lens-studio.svg')}.media .hero h1{font-size:clamp(2.7rem,10.3vw,4rem)}.media .hero-content{padding:60px 0}}\n"""
    for old,new in cfg["html_replacements"].items():
     if old not in html:raise ValueError(f"HTML image source missing {old}")
     html=html.replace(old,local_base+new)
