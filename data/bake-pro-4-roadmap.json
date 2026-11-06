@@ -4698,8 +4698,8 @@
       "category": "Education & Discovery",
       "priority": "P0",
       "effort": "Medium",
-      "status": "in_progress",
-      "status_basis": "PR #16 merged; latest Pages run 42232933571 reported success. PR #17 adds 14 sourced entries, responsive/keyboard/eligibility QA, and a post-merge live HTTP acceptance workflow. Public HTTP acceptance and PR #17 deployment must be verified before marking complete.",
+      "status": "complete",
+      "status_basis": "PR #16 implemented Education Hub; PR #17 published a 28-entry, sourced, searchable Education 1.1 directory and browser QA. GitHub Actions successfully validated schema, internal links, original-directory regressions, responsive Chromium at four widths and cross-browser shared header; independent production verification run 42236334350 fetched public HTTP 200 for /education/ and /data/education-resources.json, checking all 28 unique records, local/Survivor/knowledge-keeper records, canonical, filters, header and privacy script.",
       "dependencies": [],
       "acceptance_criteria": [
         "Source-reviewed original provider links and respectful public access/eligibility labels.",
@@ -4750,8 +4750,35 @@
           "date": "2026-11-06",
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42232933571",
           "detail": "GitHub Pages build/deployment succeeded for prior main SHA 9bfe520. Not independent production HTTP evidence; live check workflow added for release."
+        },
+        {
+          "type": "github_merged_pr",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/17",
+          "commit_sha": "b2f0bd47d8779b58eb0d731690de0b9fa5633cd9",
+          "detail": "Education 1.1 source/cultural audit, 14 additions (28 total), Knowledge keepers & on-site category, local-first search; merged after all 8 final PR checks green."
+        },
+        {
+          "type": "github_cross_browser_and_privacy_qa",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42235504211",
+          "detail": "Chromium 320/390/768/1440 data-driven filter, keyboard, links, script privacy rejection smoke passed, plus Firefox/WebKit/Chromium sticky header, directory, links and validators."
+        },
+        {
+          "type": "production_http_acceptance",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42236334350",
+          "detail": "GitHub-hosted read-only probe, 2026-11-06 14:42:43 UTC: PASS public Education HTTP 200, 28 unique source records, local/Survivor/knowledge-keeper entries, canonical, filters, header and privacy script."
+        },
+        {
+          "type": "github_workflow_hotfix",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/18",
+          "commit_sha": "a4d6de5a8b823828b9372e30118840c3e8a26403",
+          "detail": "Repaired malformed live-check YAML so independent HTTP acceptance could run and pass."
         }
-      ]
+      ],
+      "completed_on": "2026-11-06"
     },
     {
       "id": "B4-040",
@@ -4760,8 +4787,8 @@
       "category": "Education & Discovery",
       "priority": "P0",
       "effort": "Medium",
-      "status": "in_progress",
-      "status_basis": "The existing hourly automation is enabled and renamed Discovery 3.0. Original business/church/event rules were preserved, with a separate Education JSON-only stream. At latest recorded status check no post-upgrade Education run was observed, so the next successful run and write/no-change audit remains required.",
+      "status": "complete",
+      "status_basis": "Existing enabled Discovery task retitled Discovery 3.0 with same hourly RRULE and original business/church/event rules intact. First observed post-upgrade run ID 95e4dc19-8184-8320-9ce0-673669a90577, scheduled 2026-11-06 14:22:52 UTC, completed 14:27:47 UTC; researched two official Education candidates but correctly published 0 records due incomplete safe validation/branch reconciliation. Honest no-change is an approved outcome. Production Education page verified with HTTP 200 and 28 records. Ongoing coverage targets/business shard retrieval are operational follow-ups, not evidence of a failed version upgrade.",
       "dependencies": [
         "B4-039"
       ],
@@ -4790,8 +4817,28 @@
           "date": "2026-11-06",
           "automation_id": "6ae5e840127c819182aa85253cc64f0b",
           "detail": "Verified title, enabled state, unchanged RRULE FREQ=HOURLY; latest recorded run still 2026-11-06 13:22:52 UTC (old Discovery 2.0), so no post-upgrade results may be claimed."
+        },
+        {
+          "type": "post_upgrade_automation_run",
+          "date": "2026-11-06",
+          "automation_id": "6ae5e840127c819182aa85253cc64f0b",
+          "run_id": "95e4dc19-8184-8320-9ce0-673669a90577",
+          "scheduled_for": "2026-11-06T14:22:52Z",
+          "completed_at": "2026-11-06T14:27:47.994532Z",
+          "result": "completed",
+          "detail": "First Discovery 3.0 run confirmed required Education files and 14 initial records at run time, discovered Fanshawe Oneida Language Immersion/Teaching (September 2027 online) and Anishinabek Educational Institute Pre-Health certificate as two additional candidates; conservatively published zero new records and touched no original directory files because full validation was unavailable. No unsafe assertion of seat availability, eligibility or costs."
+        },
+        {
+          "type": "primary_source_candidates",
+          "date": "2026-11-06",
+          "urls": [
+            "https://www.fanshawec.ca/programs/oni1-oneida-language-immersion-culture-and-teaching/next",
+            "https://aeipostsecondary.ca/programs/pre-health-sciences-certificate-program/"
+          ],
+          "detail": "Candidates from the successful hourly run, not yet committed; should be considered in a future source-validation batch."
         }
-      ]
+      ],
+      "completed_on": "2026-11-06"
     },
     {
       "id": "B4-041",
@@ -4801,7 +4848,7 @@
       "priority": "P1",
       "effort": "Large / phased",
       "status": "in_progress",
-      "status_basis": "Initial tombstone ledger and validator exist on main; Education 1.1 adds stronger Survivor advisory validation, provider-only external links and source/audience audit. Community nominations, approved takedown process, automated source-health checks, expiry review and governance approvals remain outstanding.",
+      "status_basis": "Initial suppression ledger, reimport rejection, original-provider links, Survivor advisories, rights notices and source review evidence now published. Submission/moderation queue, authorization-based takedown workflow, community governance review, link-health expiry alerts and future accessible metadata filters remain incomplete.",
       "dependencies": [
         "B4-039"
       ],
@@ -5023,6 +5070,23 @@
         "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42234584921",
         "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42232933571"
       ]
+    },
+    {
+      "date": "2026-11-06",
+      "type": "education_1_1_live_acceptance_and_first_discovery_3_run",
+      "task_ids": [
+        "B4-039",
+        "B4-040",
+        "B4-041"
+      ],
+      "summary": "B4-039 complete: PR #17 merged at b2f0bd47, all eight PR CI checks passed, independent live HTTP succeeded with 28 unique records. PR #18 repaired live-check workflow. B4-040 complete: scheduled hourly Discovery 3.0 first post-upgrade run completed 14:27 UTC with two sourced candidates and justified safe no-change. B4-041 remains in_progress: editorial/community governance and correction workflow outstanding. No old business/church/event JSON touched and no paid APIs purchased. External provider billing charges not available.",
+      "evidence_urls": [
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/17",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/18",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42236334350",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42235504211"
+      ],
+      "automation_run_id": "95e4dc19-8184-8320-9ce0-673669a90577"
     }
   ]
 }
