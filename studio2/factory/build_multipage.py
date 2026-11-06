@@ -77,7 +77,7 @@ def main():
   menu+='</nav>'
   if "</body>" not in home:raise RuntimeError("Missing body")
   if 'class="studio-subnav"' not in home:
-   home=home.replace("</body>",menu+"</body>")
+   home=home.replace("</header>","</header>"+menu,1)
   (path/"index.html").write_text(home)
   for route in cfg["routes"]:
    folder=path/route["slug"];folder.mkdir(parents=True,exist_ok=True)
