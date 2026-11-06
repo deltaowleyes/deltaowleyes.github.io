@@ -12,6 +12,12 @@ on:
       - 'data/website-factory-cost-ledger.json'
       - '.github/workflows/mommamade-v3-candidate-qa.yml'
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'mommamade/v3/**'
+      - 'tests/mommamade-v3.qa.cjs'
+      - '.github/workflows/mommamade-v3-candidate-qa.yml'
 permissions:
   contents: read
 jobs:
