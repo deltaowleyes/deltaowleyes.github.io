@@ -44,6 +44,16 @@ with sync_playwright() as p:
        unnamedLinks:[...document.querySelectorAll('a')].filter(a=>!a.textContent.trim()&&!a.getAttribute('aria-label')).length
      })""")
      record.update(properties)
+     art=page.locator(".hero-art img")
+     record["heroArt"]=art.count()==1
+     if record["heroArt"]:
+      art.scroll_into_view_if_needed()
+      page.wait_for_function("() => {const i=document.querySelector('.hero-art img');return !!(i&&i.complete&&i.naturalWidth>0)}",timeout=12000)
+      record["heroDecoded"]=art.evaluate("(i)=>i.complete && i.naturalWidth>0 && i.getBoundingClientRect().width>110")
+     else:record["heroDecoded"]=False
+     record["conceptCaption"]=page.locator(".hero-art figcaption").count()==1
+     record["contentChecks"]=("Sheila Cote-Meek" in page.locator("main").inner_text() and "not allegations" in page.locator("main").inner_text().lower()) if route["slug"]=="report" else True
+     record["navigationTimingMs"]=round(page.evaluate("performance.getEntriesByType('navigation')[0]?.duration || 0"))
      record["designNav"]=bool(page.locator("header nav a[aria-current=page]").count()==1)
      if route["slug"]=="inquiry":
       record["formExists"]=bool(page.locator("form#design-inquiry").count()==1)
@@ -63,13 +73,14 @@ with sync_playwright() as p:
        res=page.request.get(BASE+link,timeout=10000)
        if res.status>=400:record["brokenCandidateLinks"].append(link)
      else:record["brokenCandidateLinks"]=[]
+     page.evaluate('window.scrollTo(0,0)')
      page.screenshot(path=str(OUT/f"{site['id']}-{route['slug']}-{width}.png"),full_page=True,animations="disabled")
      record["jsErrors"]=errors
      record["pass"]=bool(record["http"]==200 and record["noindex"] and not record["overflow"] and
       record["headings"]==1 and record["sectionArticles"]>=2 and record["navLinks"]==6 and
       record["consentVisible"] and record["rejectPersists"] and record["analyticsDisabled"] and
       not record["brokenImg"] and record["missingAlt"]==0 and not record["unnamedLinks"] and
-      record["designNav"] and record["formExists"] and record["formValid"] and
+      record["designNav"] and record["heroArt"] and record["heroDecoded"] and record["conceptCaption"] and record["contentChecks"] and record["formExists"] and record["formValid"] and
       record["formHasDraftOnly"] and record["noNetworkSubmit"] and not record["brokenCandidateLinks"] and not errors)
     except Exception as e:
      record["error"]=str(e);record["pass"]=False
