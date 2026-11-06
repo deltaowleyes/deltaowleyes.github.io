@@ -11,17 +11,17 @@ TEMPLATES=ROOT/"studio2/factory/templates"
 SITES={
  "accountability-ledger":{
    "file":"accountability-ledger.html",
-   "assets":{"logo":("assets/owl-logo.png",400,88),"hero":("assets/hero.png",1920,83)},
+   "assets":{"logo":("assets/owl-logo.png",400,88),"hero":("shutyourtrap/assets/photos/golden_sunrise_in_a_misty_pine_forest.webp",1920,83)},
    "css_replacements":{"/assets/hero.png":"assets/hero.webp"},
    "html_replacements":{"/assets/owl-logo.png":"assets/logo.webp"},
    "structure":"dark documentary split hero, facts rail, evidence links and public-interest methodology"
  },
  "media-hub":{
    "file":"media-hub.html",
-   "assets":{"logo":("assets/owl-logo.png",400,88),"hero":("assets/podcast-archive.png",1920,83),"river":("assets/wetlands.png",1440,81)},
-   "css_replacements":{"/assets/podcast-archive.png":"assets/hero.webp"},
+   "assets":{"logo":("assets/owl-logo.png",400,88),"river":("shutyourtrap/assets/photos/rustic_cabin_at_sunrise_lake.webp",1440,81)},
+   "css_replacements":{"/assets/podcast-archive.png":"/studio2/river-voice/assets/owl-lens-studio.svg"},
    "html_replacements":{"/assets/owl-logo.png":"assets/logo.webp","/assets/wetlands.png":"assets/river.webp"},
-   "structure":"screen-first podcast masthead, episode browsing rails and documentary/media discovery"
+   "structure":"screen-first podcast masthead, episode browsing rails and documentary/media discovery; original conceptual vector studio masthead"
  }
 }
 def digest(b):return hashlib.sha256(b).hexdigest()
