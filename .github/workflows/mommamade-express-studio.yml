@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'mommamade/studio/build.py'
+      - 'mommamade/studio/polish.css'
+      - 'mommamade/studio/qa.py'
       - '.github/workflows/mommamade-express-studio.yml'
   workflow_dispatch:
 permissions:
@@ -75,6 +77,8 @@ jobs:
               browser.close()
           print('PASS: 6 design pages, 36 screenshot images, six landing widths, dialog/Escape, no direct V3 source links')
           PY
+      - name: Check gallery accessibility, keyboard and privacy behavior
+        run: python mommamade/studio/qa.py
       - name: Commit screenshot-only public review output without promoting V3
         run: |
           set -euo pipefail
@@ -95,5 +99,6 @@ jobs:
             mommamade/studio/index.html
             mommamade/studio/screenshot-manifest.json
             mommamade/studio/previews/
+            artifacts/mommamade-studio-1-1/
           if-no-files-found: warn
           retention-days: 5

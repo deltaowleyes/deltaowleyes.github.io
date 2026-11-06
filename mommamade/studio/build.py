@@ -14,6 +14,8 @@ from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 OUT = ROOT / "mommamade" / "studio"
+POLISH = OUT / "polish.css"
+assert POLISH.exists(), "Capture-only polish.css missing"
 BASE = "http://127.0.0.1:8765"
 WIDTHS = [320, 390, 500, 768, 1024, 1440]
 FAMILIES = [
@@ -76,6 +78,27 @@ dialog::backdrop{background:#13211be0}
 @media(max-width:650px){.hero-inner{grid-template-columns:1fr}.hero-copy{padding:36px 22px 29px}.hero-photo{height:245px;min-height:245px}.intro{display:block}.cards,.shots{grid-template-columns:1fr}.card .image{height:265px}.top{padding:11px 14px;flex-wrap:wrap}.shot .crop{height:330px}main{padding:21px 14px}}
 @media(prefers-reduced-motion:reduce){.card{transition:none}}
 """
+STYLE += """
+/* BAKE 1.1: screenshot-based desktop / phone comparisons and better gallery presentation. */
+.hero-inner{min-height:455px}
+.hero-photo{background-position:55% 50%;box-shadow:inset 30px 0 42px #334b2922}
+.hero-photo span{background:#fff8eced;border:1px solid #eadac0;box-shadow:0 5px 15px #253b3020}
+.hero-chips{display:flex;gap:8px;flex-wrap:wrap;margin:5px 0 14px}
+.hero-chips span{font-size:.67rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;background:#fffaf4d9;border:1px solid #cfcbb9;padding:7px 10px}
+.card .image{height:clamp(185px,21vw,285px);isolation:isolate}
+.card .image img.desktop-shot{width:100%;height:100%;object-fit:cover;object-position:top}
+.card .image img.mobile-shot{position:absolute;right:12px;bottom:-9px;width:25%;height:78%;object-fit:cover;object-position:top;border:5px solid #fffdf5;border-radius:12px 12px 0 0;box-shadow:0 0 0 1px #223b3166,-7px 7px 20px #172d2c7a;z-index:2}
+.card .counter{z-index:3}
+.card-copy h3{font-size:clamp(1.65rem,2.3vw,2.3rem)}
+.comparison{background:#eeece5;border:1px solid #d0d2c7;border-radius:10px;overflow:hidden;padding:20px 18px 0;margin:23px 0 35px;display:grid;grid-template-columns:minmax(0,1fr) minmax(170px,.24fr);gap:24px;align-items:end}
+.comparison figure{margin:0;min-width:0;display:flex;flex-direction:column;gap:10px}
+.comparison figcaption{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#4d5b51}
+.comparison .desktop-frame{height:310px;border:9px solid #334a3d;border-bottom-width:16px;border-radius:9px 9px 0 0;background:#fff;overflow:hidden;box-shadow:0 7px 20px #203b2d33}
+.comparison .desktop-frame img,.comparison .phone-frame img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.comparison .phone-frame{max-width:216px;margin-inline:auto;height:331px;border:9px solid #334a3d;border-bottom:0;border-radius:24px 24px 0 0;background:#fff;overflow:hidden;box-shadow:0 7px 18px #203b2d3b}
+.sizes-title{font:400 clamp(1.75rem,3vw,2.8rem)/1.1 Georgia,serif;letter-spacing:-.04em;margin:12px 0 19px}
+@media(max-width:650px){.hero-inner{min-height:0}.card .image{height:260px}.comparison{padding:12px 9px 0;gap:11px;grid-template-columns:minmax(0,1fr) 94px}.comparison .desktop-frame{height:180px;border-width:5px;border-bottom-width:11px}.comparison .phone-frame{height:198px;border-width:5px;border-bottom:0;border-radius:14px 14px 0 0}.comparison figcaption{font-size:.61rem;letter-spacing:.02em}.hero-chips span{font-size:.62rem;padding:6px 8px}}
+"""
 JS = """(()=>{'use strict';const d=document.getElementById('zoom'),im=document.getElementById('full-image'),title=document.getElementById('zoom-title');let origin=null;document.querySelectorAll('[data-screenshot]').forEach(b=>b.addEventListener('click',()=>{origin=b;im.src=b.dataset.screenshot;im.alt=b.dataset.alt;im.style.width=b.dataset.width+'px';title.textContent=b.dataset.width+'px — entire page';d.showModal();}));document.getElementById('zoom-close').addEventListener('click',()=>d.close());d.addEventListener('click',e=>{if(e.target===d)d.close()});d.addEventListener('close',()=>{im.removeAttribute('src');origin?.focus()})})();"""
 HEAD = '<a class="skip" href="#content">Skip to designs</a><header class="top"><span>DELTA OWL EYES · BAKE EXPRESS</span><span>V2 remains active · preview images only</span></header>'
 def shell(title, body):
@@ -84,8 +107,8 @@ def shell(title, body):
     '<link rel="stylesheet" href="/assets/privacy-consent.css"><script defer src="/assets/privacy-consent.js"></script>'
     '<title>'+html.escape(title)+'</title><style>'+STYLE+'</style></head><body>'+HEAD+body+
     '<footer class="bottom"><span>Momma Made · visual design study, not a functioning store</span><span>No live orders, invented prices, or unapproved product claims</span></footer></body></html>')
-manifest={"status":"candidate-review-only","source":"existing-Momma-Made-V3-HTML-captured-locally","widths":WIDTHS,
-          "note":"Screenshot-only gallery. V3 remains unapproved; V2 is still the current default. Existing public V3 page source remains independently accessible; screenshots are not copy protection.","families":[]}
+manifest={"status":"candidate-review-only","source":"V3-candidate-HTML-with-capture-only-studio-CSS","widths":WIDTHS,
+          "note":"Screenshot-only concept refinements: CSS is injected only during browser capture and does not modify public V3 or current V2. Public V3 source remains accessible independently.", "capture_polish_sha256":hashlib.sha256(POLISH.read_bytes()).hexdigest(),"families":[]}
 OUT.mkdir(parents=True,exist_ok=True)
 with sync_playwright() as p:
     browser=p.chromium.launch(headless=True,args=["--no-sandbox"])
@@ -102,6 +125,7 @@ with sync_playwright() as p:
             assert response and response.status==200,(slug,width,"HTTP failed")
             if page.locator("#doe-reject").count() and page.locator("#doe-reject").first.is_visible():
                 page.locator("#doe-reject").first.click()
+            page.add_style_tag(path=str(POLISH))
             page.evaluate("""async()=>{await document.fonts.ready;await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})));window.scrollTo(0,0)}""")
             page.wait_for_timeout(110)
             assert page.locator(".site").count()==1,(slug,width,"candidate didn't render")
@@ -123,14 +147,16 @@ with sync_playwright() as p:
             page.close()
         cards="".join('<article class="shot"><button type="button" data-screenshot="full-{w}.webp" data-width="{w}" data-alt="Full page Momma Made {n} screenshot at {w} pixels" aria-label="Enlarge {n} full-page screenshot at {w} pixels"><span class="crop"><img loading="lazy" src="full-{w}.webp" width="{w}" height="{h}" alt="{n} page as captured at {w} pixels"></span><span class="shot-name">{w}px viewport <small>View full page +</small></span></button></article>'.format(w=x["width"],n=html.escape(name),h=x["height"]) for x in shots)
         body='<main id="content"><a class="back" href="/mommamade/studio/">← All six designs</a><div class="preview-head"><span class="eyebrow">MOMMA MADE · '+html.escape(mood)+'</span><h1>'+html.escape(name)+'</h1><p>Six actual complete-page Chromium screenshots from one experimental Momma Made V3 concept. Select a viewport to open and scroll the entire image. These are static screenshots, not working source-code demos.</p></div><section class="shots" aria-label="Six screenshot sizes">'+cards+'</section><p class="note">Experimental design, not released. Mock products and photographs are illustrative; V2 remains the current version. Screenshots do not make publicly accessible source code impossible to copy.</p></main><dialog id="zoom" aria-label="Full-page screenshot viewer"><div class="dialog-toolbar"><b id="zoom-title">Full-page screenshot</b><button type="button" id="zoom-close">Close ×</button></div><img id="full-image" alt="Expanded screenshot"></dialog><script>'+JS+'</script>'
+        comparison='<section class="comparison" aria-label="Desktop and mobile screenshot comparison"><figure><figcaption>Desktop · 1440px</figcaption><div class="desktop-frame"><img src="full-1440.webp" loading="lazy" width="1440" height="'+str(shots[-1]["height"])+'" alt="Desktop screenshot detail of '+html.escape(name)+'"></div></figure><figure><figcaption>Mobile · 390px</figcaption><div class="phone-frame"><img src="full-390.webp" loading="lazy" width="390" height="'+str(shots[1]["height"])+'" alt="Mobile screenshot detail of '+html.escape(name)+'"></div></figure></section><h2 class="sizes-title">Explore every viewport</h2>'
+        body=body.replace('<section class="shots" aria-label="Six screenshot sizes">',comparison+'<section class="shots" aria-label="Six screenshot sizes">')
         (folder/"index.html").write_text(shell(name+" — Momma Made Studio",body),encoding="utf-8")
         manifest["families"].append({"template":no,"slug":slug,"title":name,"mood":mood,"tagline":tagline,"screenshots":shots})
     browser.close()
 cards=[]
 for i,f in enumerate(manifest["families"],1):
     slug,name=f["slug"],f["title"]
-    cards.append('<article class="card"><a href="/mommamade/studio/previews/{slug}/" aria-label="View six complete-page screenshots of {name}"><div class="image"><img loading="lazy" src="previews/{slug}/thumbnail.webp" width="740" height="500" alt="Actual browser screenshot preview of {name}"><span class="counter">{no:02d} / 06</span></div><div class="card-copy"><small>{mood}</small><h3>{name}</h3><p>{tagline}</p><b>Explore six viewport previews ↗</b></div></a></article>'.format(slug=slug,name=html.escape(name),no=i,mood=html.escape(f["mood"]),tagline=html.escape(f["tagline"])))
-landing='<section class="hero"><div class="hero-inner"><div class="hero-copy"><span class="eyebrow">MOMMA MADE · WEBSITE DESIGN STUDIO</span><h1>Handmade spirit.<br><em>Six fresh looks.</em></h1><p>Six carefully different directions for Momma Made’s reusable kitchen-goods website. Explore real browser captures, from pocket-sized mobile to wide desktop, before deciding what deserves to become the finished design.</p><div class="brand">Momma <i>Made.</i></div></div><div class="hero-photo" role="img" aria-label="Original illustrated Momma Made kitchen textiles artwork"><span>THE EVERYDAY, MADE BEAUTIFUL</span></div></div></section><main id="content"><div class="intro"><div><span class="eyebrow">CURATED FIRST COLLECTION</span><h2>Find your direction.</h2></div><p>Choose a design to open six genuine, full-page screenshots at 320, 390, 500, 768, 1024 and 1440 pixels.</p></div><div class="cards">'+''.join(cards)+'</div><p class="note">Visual-only review of six existing V3 candidates, not six finalized stores. The remaining four V3 experiments are untouched. No online checkout or real customer data. Site code is deliberately not embedded in these preview galleries, but existing public candidate code is accessible elsewhere.</p></main>'
+    cards.append('<article class="card"><a href="/mommamade/studio/previews/{slug}/" aria-label="View six complete-page screenshots of {name}"><div class="image"><img class="desktop-shot" loading="lazy" src="previews/{slug}/thumbnail.webp" width="740" height="500" alt="Actual desktop browser screenshot preview of {name}"><img class="mobile-shot" loading="lazy" src="previews/{slug}/full-390.webp" width="390" height="844" alt="" aria-hidden="true"><span class="counter">{no:02d} / 06</span></div><div class="card-copy"><small>{mood}</small><h3>{name}</h3><p>{tagline}</p><b>Explore six viewport previews ↗</b></div></a></article>'.format(slug=slug,name=html.escape(name),no=i,mood=html.escape(f["mood"]),tagline=html.escape(f["tagline"])))
+landing='<section class="hero"><div class="hero-inner"><div class="hero-copy"><span class="eyebrow">MOMMA MADE · WEBSITE DESIGN STUDIO</span><h1>Handmade spirit.<br><em>Six fresh looks.</em></h1><p>Six carefully different directions for Momma Made’s reusable kitchen-goods website. Explore real browser captures, from pocket-sized mobile to wide desktop, before deciding what deserves to become the finished design.</p><div class="hero-chips" aria-label="Preview details"><span>Six design families</span><span>36 real screenshots</span><span>V2 unchanged</span></div><div class="brand">Momma <i>Made.</i></div></div><div class="hero-photo" role="img" aria-label="Original illustrated Momma Made kitchen textiles artwork"><span>THE EVERYDAY, MADE BEAUTIFUL</span></div></div></section><main id="content"><div class="intro"><div><span class="eyebrow">CURATED FIRST COLLECTION</span><h2>Find your direction.</h2></div><p>Choose a design to open six genuine, full-page screenshots at 320, 390, 500, 768, 1024 and 1440 pixels.</p></div><div class="cards">'+''.join(cards)+'</div><p class="note">Visual-only review of six existing V3 candidates, not six finalized stores. The remaining four V3 experiments are untouched. No online checkout or real customer data. Site code is deliberately not embedded in these preview galleries, but existing public candidate code is accessible elsewhere.</p></main>'
 (OUT/"index.html").write_text(shell("Momma Made — BAKE EXPRESS Design Studio",landing),encoding="utf-8")
 (OUT/"screenshot-manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
 assert len(manifest["families"])==6 and all(len(x["screenshots"])==6 for x in manifest["families"])
