@@ -29,7 +29,7 @@ fs.mkdirSync(folder,{recursive:true});
     const response=await local.goto(base+'?template='+(i+1)+'#home',{waitUntil:'domcontentloaded',timeout:14000});
     if(!response||response.status()!==200)throw Error('candidate response '+(response&&response.status()));
     await local.locator('section.hero').first().waitFor({timeout:7000});
-    await local.screenshot({path:path.join(folder,id+'-'+device+'-candidate.png'),fullPage:false,timeout:12000});
+    await local.screenshot({path:path.join(folder,id+'-'+device+'-candidate.jpg'),type:'jpeg',quality:82,fullPage:false,timeout:12000});
     item.candidate_capture='captured';
    }catch(e){item.candidate_capture='FAILED: '+String(e.message).slice(0,150);localFailures++}
    await local.close();
@@ -42,7 +42,7 @@ fs.mkdirSync(folder,{recursive:true});
     if(actualHost!==expectedHost&&!actualHost.endsWith('.'+expectedHost))
       throw Error('redirected off reference domain to '+actualHost);
     await ref.waitForTimeout(1200);
-    await ref.screenshot({path:path.join(folder,id+'-'+device+'-reference.png'),fullPage:false,timeout:10000});
+    await ref.screenshot({path:path.join(folder,id+'-'+device+'-reference.jpg'),type:'jpeg',quality:82,fullPage:false,timeout:10000});
     item.reference_capture='captured';
    }catch(e){item.reference_capture='UNVERIFIED: '+String(e.message).slice(0,150)}
    await ref.close();
