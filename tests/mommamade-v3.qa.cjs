@@ -9,16 +9,34 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
  const errors=[];page.on('pageerror',e=>errors.push(String(e)));
  async function go(n,route){const r=await page.goto(base+'?template='+n+'#'+route,{waitUntil:'domcontentloaded',timeout:20000});assert.equal(r.status(),200,'HTTP '+n+' '+route);await page.locator('.mast').waitFor({timeout:9000})}
  async function geometry(where){const v=await page.evaluate(()=>({content:document.documentElement.scrollWidth,viewport:document.documentElement.clientWidth}));assert.ok(v.content<=v.viewport+2,where+' horizontal overflow '+JSON.stringify(v))}
+
+ async function verifyPhoto(selector,label){
+   const photos=await page.locator(selector).evaluateAll(async els=>Promise.all(els.map(async el=>{
+     const css=getComputedStyle(el,'::before').backgroundImage;
+     if(!css||!css.startsWith('url('))return {ok:false,css};
+     const src=css.slice(4,-1).replace(/^["']|["']$/g,'');
+     const img=new Image();img.src=src;
+     try{await img.decode();return {ok:img.naturalWidth>=500&&img.naturalHeight>=500,width:img.naturalWidth,height:img.naturalHeight};}
+     catch(e){return {ok:false,error:String(e),src}}
+   })));
+   assert.ok(photos.length>0&&photos.every(x=>x.ok),label+' photo decode failure '+JSON.stringify(photos));
+ }
+ async function verifyTapTargets(label){
+   const heights=await page.locator('.item-copy .action.subtle').evaluateAll(els=>els.map(el=>Math.round(el.getBoundingClientRect().height)));
+   assert.equal(heights.length,4,label+' product links missing');
+   assert.ok(heights.every(h=>h>=44),label+' product detail link below 44px '+JSON.stringify(heights));
+ }
  const g=await page.goto(base,{waitUntil:'domcontentloaded'});assert.equal(g.status(),200);
  assert.equal(await page.locator('.gallery-card').count(),10,'gallery count');
+ await verifyPhoto('.gallery-image','gallery');
  await page.screenshot({path:dir+'gallery-desktop.png',fullPage:true});
  for(let n=1;n<=10;n++){
   for(const [device,width,height] of [['desktop',1440,900],['mobile',390,844],['narrow',320,700],['tablet',768,1024],['laptop',1024,768]]){
    await page.setViewportSize({width,height});await go(n,'home');await geometry('design '+n+' '+device);
    assert.equal(await page.locator('.hero h1').count(),1);
    assert.equal(await page.locator('.products .item').count(),4);
-   const bg=await page.locator('.hero .visual').evaluate(x=>getComputedStyle(x,'::before').backgroundImage);
-   assert.ok(bg.includes('hero-'),'missing hero source image '+n);
+   await verifyPhoto('.hero .visual','design '+n+' '+device);
+   await verifyTapTargets('design '+n+' '+device);
    if(device==='mobile'){
      await page.locator('[data-menu]').click();
      assert.equal(await page.locator('[data-menu]').getAttribute('aria-expanded'),'true');
