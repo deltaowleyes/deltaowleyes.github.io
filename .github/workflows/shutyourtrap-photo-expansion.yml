@@ -23,6 +23,12 @@ jobs:
         with:
           ref: main
           persist-credentials: true
+      - name: Validate staged importer and rendering syntax
+        run: |
+          python3 -m py_compile shutyourtrap/scripts/import-photo-expansion.py
+          node --check shutyourtrap/site.js
+          node --check shutyourtrap/qa.mjs
+          node --check shutyourtrap/live-photo-qa.mjs
       - name: Check whether photo collection is present
         id: inbox
         shell: bash
