@@ -12,7 +12,7 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
 
  async function verifyPhoto(selector,label){
    const photos=await page.locator(selector).evaluateAll(async els=>Promise.all(els.map(async el=>{
-     const css=getComputedStyle(el,'::before').backgroundImage;
+     const css=getComputedStyle(el,'::before').backgroundImage!=='none'?getComputedStyle(el,'::before').backgroundImage:getComputedStyle(el).backgroundImage;
      if(!css||!css.startsWith('url('))return {ok:false,css};
      const src=css.slice(4,-1).replace(/^["']|["']$/g,'');
      const img=new Image();img.src=src;
@@ -29,6 +29,8 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
  const g=await page.goto(base,{waitUntil:'domcontentloaded'});assert.equal(g.status(),200);
  assert.equal(await page.locator('.gallery-card').count(),10,'gallery count');
  await verifyPhoto('.gallery-image','gallery');
+ const altCount=await page.locator('a:not([href]),button:not([aria-label]):empty').count();
+ assert.equal(altCount,0,'potential unlabeled/invalid interactive elements');
  await page.screenshot({path:dir+'gallery-desktop.png',fullPage:true});
  for(let n=1;n<=10;n++){
   for(const [device,width,height] of [['desktop',1440,900],['mobile',390,844],['narrow',320,700],['tablet',768,1024],['laptop',1024,768]]){
@@ -37,6 +39,11 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
    assert.equal(await page.locator('.products .item').count(),4);
    await verifyPhoto('.hero .visual','design '+n+' '+device);
    await verifyTapTargets('design '+n+' '+device);
+   assert.equal(await page.locator('.browse-nav a').count()>=3,true,'missing category discovery nav '+n);
+   const expected={3:['.utility-departments .department-card',3],4:['.garden-departments .department-card',3],5:['.pattern-browser .pattern-tile',4],6:['.muji-departments .department-card',3],7:['.schoolhouse-departments .department-card',3],8:['.papier-edit nav a',4]};
+   if(expected[n]){const [selector,count]=expected[n];assert.equal(await page.locator(selector).count(),count,'reference merchandising '+n+' '+device);}
+   const activeShop=await page.locator('.browse-nav a').first().getAttribute('href');
+   assert.ok(activeShop.includes('?template='+n+'#shop'),'collection navigation wrong template '+n);
    if(device==='mobile'){
      await page.locator('[data-menu]').click();
      assert.equal(await page.locator('[data-menu]').getAttribute('aria-expanded'),'true');
