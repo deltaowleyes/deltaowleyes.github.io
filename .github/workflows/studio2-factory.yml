@@ -1,4 +1,4 @@
-name: DOE Studio 3 Three Distinct Redesigns Factory QA
+name: DOE Studio 3 Multipage Factory QA
 on:
   workflow_dispatch:
   push:
@@ -12,7 +12,7 @@ permissions:
 jobs:
   build-and-qa:
     runs-on: ubuntu-24.04
-    timeout-minutes: 18
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,7 +25,9 @@ jobs:
       - name: Validate existing independent photo importer
         run: python studio2/tests/photo_import_contract.py
       - name: Generate WebP images, provenance, and working preview
-        run: python studio2/factory/build_three.py
+        run: |
+          python studio2/factory/build_three.py
+          python studio2/factory/build_multipage.py
       - name: Verify candidate and preserved original pilot in Chromium
         run: |
           python -m http.server 8765 --bind 127.0.0.1 >/tmp/studio-factory-http.log 2>&1 &
@@ -35,16 +37,18 @@ jobs:
           python studio2/tests/qa.py
           python studio2/factory/qa.py
           python studio2/factory/qa_three.py
+          python studio2/factory/qa_multipage.py
       - name: Preserve non-deployed preview, full-page screenshots and JSON QA
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: doe-studio3-three-designs-UNPUBLISHED
+          name: doe-studio3-multipage-UNPUBLISHED
           path: |
             studio2/river-voice/factory-preview/
             studio2/factory-previews/
             artifacts/studio2/
             artifacts/studio3/
             artifacts/studio3-three/
+            artifacts/studio3-multipage/
           if-no-files-found: warn
 # No GITHUB_TOKEN write permission, no merge, no Pages, no paid APIs.
