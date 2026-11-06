@@ -44,6 +44,18 @@ fs.mkdirSync(folder,{recursive:true});
   }
  }
  await browser.close();
- fs.writeFileSync(path.join(folder,'reference-capture-report.json'),JSON.stringify({notice:'Reference screenshots are provided for human judgment. Their presence does not prove visual similarity or authorize copying third-party content.',report},null,2));
+ const referenceCaptured=report.filter(x=>x.reference_capture==='captured').length;
+ const localCaptured=report.filter(x=>x.candidate_capture==='captured').length;
+ fs.writeFileSync(path.join(folder,'reference-capture-report.json'),JSON.stringify({
+   notice:'Evidence collection only. A completed screenshot is NOT a fidelity assessment or release approval.',
+   candidate_screenshots_captured:localCaptured,
+   reference_screenshots_captured:referenceCaptured,
+   reference_screenshots_expected:20,
+   verified_visual_matches:0,
+   human_reference_comparison:'PENDING',
+   promotion_authorized:false,
+   report
+ },null,2));
+ console.log('V3 CANDIDATE ONLY: '+localCaptured+'/20 candidate captures, '+referenceCaptured+'/20 reference captures; 0 human-approved matches; promotion remains blocked.');
  if(localFailures)process.exitCode=1;
 })().catch(e=>{console.error('Reference capture failed',e);process.exitCode=1});
