@@ -2,6 +2,21 @@
 document.addEventListener('DOMContentLoaded',()=>{
  const header=document.querySelector('header.doe-header-v3');
  if(!header)return;
+ // Discovery 4.0: expose Grants in the shared Explore menus, including legacy pages.
+ const menusToEnhance=[
+  header.querySelector('.doe-header-right .doe-menu-panel'),
+  header.querySelector('.doe-mobile-navigation .doe-mobile-section')
+ ];
+ menusToEnhance.forEach(panel=>{
+  if(!panel||panel.querySelector('a[href="/grants/"]'))return;
+  const education=panel.querySelector('a[href="/education/"]');
+  if(!education)return;
+  const link=document.createElement('a');
+  link.href='/grants/';
+  link.textContent='Grants & Funding';
+  education.after(link);
+ });
+
  const menus=[...header.querySelectorAll('details')];
  header.addEventListener('toggle',event=>{
   const target=event.target;

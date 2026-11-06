@@ -24,8 +24,8 @@
   "scope": {
     "historical_pro2_actions": 93,
     "historical_pro3_verified_entries": 3,
-    "pro4_proposed_projects": 41,
-    "total_tasks": 137,
+    "pro4_proposed_projects": 42,
+    "total_tasks": 138,
     "unrecovered_pro3_original_52": 49,
     "unrecovered_note": "Historical original PRO 3.0 52-item source unavailable. It is no longer required to build best-guess PRO 4.0; do not fabricate its exact IDs or status.",
     "priority_note": "P0–P2 are planning proposals except preserved S01–S03 priority from original registry."
@@ -4955,6 +4955,41 @@
           "detail": "Official providers corroborated education language and connection, course credential/intake, online status, source-listed tuition and U Alberta original-page availability. Missing metadata deliberately remains unknown."
         }
       ]
+    },
+    {
+      "id": "B4-042",
+      "title": "Discovery 4.0 Indigenous grants and funding discovery",
+      "description": "Launch a separate source-attributed grants page, catalogue and safe ongoing Indigenous funding discovery stream; preserve Discovery 3.0 and education community governance.",
+      "category": "Education & Discovery",
+      "priority": "P0",
+      "effort": "Medium / phased",
+      "status": "in_progress",
+      "status_basis": "Initial implementation in feature branch with 20 source-reviewed official-provider funding records, public route, category/applicant/region/intake filters, suppression ledger, automated deadline downgrade, validation and Chromium CI, weekly read-only source health. Publication and active hourly Discovery 4.0 automation upgrade remain unverified pending PR review, CI and live acceptance.",
+      "dependencies": [
+        "B4-040",
+        "B4-041"
+      ],
+      "acceptance_criteria": [
+        "Launch /grants/ with verified original-funder URLs, correct grant/contribution/loan/bursary labels, eligibility and known deadline/source-review dates, no claim of exhaustive coverage.",
+        "Preserve all existing businesses, churches, events and education Discovery 3.0 streams, quotas and deletion/consent safeguards.",
+        "Add a distinct small grants discovery workload to the same hourly cadence, JSON-only after release, with dedupe, tombstone protection and source verification.",
+        "Complete GitHub-hosted schema and responsive Chromium QA, independent live checks and a logged post-upgrade Discovery 4.0 run or justified zero changes."
+      ],
+      "bake_prompt": "BAKE PRO 4.0 — B4-042 DISCOVERY 4.0 INDIGENOUS GRANTS. Start from latest main of deltaowleyes/deltaowleyes.github.io; inspect data/bake-pro-4-roadmap.json, docs/DISCOVERY-4-GRANTS.md, grants/index.html, data/indigenous-grants.json and source-health workflows. Complete code review, CI, responsive Chromium and independent live QA. Preserve all Discovery 3.0 business/church/event/education streams and original-owner governance. Update the EXISTING hourly Discovery automation to Discovery 4.0, retaining its entire pre-existing prompt and schedule while adding a separate maximum two primary-source grants research candidates per run, JSON-only verified updates, dedupe, suppressions and no fabricated status/deadlines. Verify the first observed upgraded run, update roadmap evidence and report precise additions, safe commits, deployment and any blockers. No paid APIs or secret exposure.",
+      "source": {
+        "roadmap": "BAKE PRO 4.0",
+        "type": "explicit user request",
+        "source_date": "2026-11-06",
+        "source_context": "Build an Indigenous grants page listing available grants as part of Discovery 4.0."
+      },
+      "evidence": [
+        {
+          "type": "implementation_branch",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/discovery-4-grants-current-main-20261106",
+          "detail": "Initial Grants catalogue and browser/source verification implementation; release pending."
+        }
+      ]
     }
   ],
   "archived_source_references": [
@@ -5194,6 +5229,15 @@
       "summary": "Proposed dual-review local cases, optional GPG transport, advisory GitHub current-head review checker, four source-grounded metadata facets, U Alberta 403 manual corroboration and source-health retry. Real GitHub account deltaowleyes has admin permission; branch protection inaccessible, no rulesets, second reviewer not known. Preserve in_progress until community-appointed review and enforced approvals are evidenced.",
       "evidence_urls": [
         "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/education-community-governance-1-3-20261106"
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "type": "grants_discovery_4_initial_branch",
+      "task_id": "B4-042",
+      "summary": "Added proposed 20-record original-source Indigenous Grants & Funding page and dedicated Discovery 4.0 JSON source review and CI guardrails on a feature branch; pending CI, production verification and hourly automation upgrade.",
+      "evidence_urls": [
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/discovery-4-grants-current-main-20261106"
       ]
     }
   ]
