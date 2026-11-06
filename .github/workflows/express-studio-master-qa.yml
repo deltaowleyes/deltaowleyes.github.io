@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feature/express-studio-master-standard-1-0
+      - feature/express-studio-master-reconciled-20261106
       - main
     paths:
       - 'assets/express-studio/v1/**'
@@ -11,6 +12,7 @@ on:
       - 'shutyourtrap/express/config.js'
       - 'shutyourtrap/express/render-shots.cjs'
       - 'shutyourtrap/express/previews/**'
+      - 'mommamade/studio/qa.py'
       - '.github/workflows/express-studio-master-qa.yml'
   workflow_dispatch:
 
@@ -47,7 +49,7 @@ jobs:
       - name: Generate exact six-width real screenshots (feature only)
         if: github.ref_name != 'main'
         run: node shutyourtrap/express/render-shots.cjs
-      - name: Verify six canonical headers, 42 routes, 36 screenshots, keyboard and privacy
+      - name: Verify six canonical headers, 42 Shut Your Trap routes, Momma Made, screenshots and privacy
         run: node assets/express-studio/v1/qa.cjs
       - name: Upload screenshot and browser proof
         if: always()
@@ -60,7 +62,7 @@ jobs:
           retention-days: 7
           if-no-files-found: warn
       - name: Publish verified image files only to the feature branch
-        if: github.ref_name == 'feature/express-studio-master-standard-1-0'
+        if: github.ref_name != 'main'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -69,7 +71,7 @@ jobs:
             echo "No screenshot changes to commit."
           else
             git commit -m "visual(express): real six-width Shut Your Trap captures"
-            git fetch origin feature/express-studio-master-standard-1-0
-            git rebase origin/feature/express-studio-master-standard-1-0
-            git push origin HEAD:feature/express-studio-master-standard-1-0
+            git fetch origin "$GITHUB_REF_NAME"
+            git rebase "origin/$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
           fi
