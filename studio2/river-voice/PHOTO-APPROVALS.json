@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "owner_visual_approval": false,
+  "asset_definition": "Image generation does not imply approval; set SHA pins only after downloading and inspecting all five standalone photographs.",
+  "assets": {
+    "river-hero.jpg": {
+      "sha256": null,
+      "status": "not-generated-or-not-approved",
+      "conceptual_only": true
+    },
+    "education-research.jpg": {
+      "sha256": null,
+      "status": "not-generated-or-not-approved",
+      "conceptual_only": true
+    },
+    "archaeology-policy.jpg": {
+      "sha256": null,
+      "status": "not-generated-or-not-approved",
+      "conceptual_only": true
+    },
+    "historical-learning.jpg": {
+      "sha256": null,
+      "status": "not-generated-or-not-approved",
+      "conceptual_only": true
+    },
+    "owl-lens-studio.jpg": {
+      "sha256": null,
+      "status": "not-generated-or-not-approved",
+      "conceptual_only": true
+    }
+  }
+}
