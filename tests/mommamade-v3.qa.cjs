@@ -61,7 +61,7 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
      if(device==='desktop'||device==='mobile')assert.ok(pattern.y<900,'pattern collection buried too far below initial viewport '+device+' '+pattern.y);
    }
    if(n===9){
-     const position=await page.locator('.hero').evaluate(el=>({photo:el.querySelector('.hero-media').getBoundingClientRect().top,copy:el.querySelector('.hero-copy').getBoundingClientRect().top}));
+     const position=await page.locator('section.hero').evaluate(el=>({photo:el.querySelector('.hero-media').getBoundingClientRect().top,copy:el.querySelector('.hero-copy').getBoundingClientRect().top}));
      assert.ok(position.photo<position.copy,'quiet catalogue photo must precede copy '+device+' '+JSON.stringify(position));
    }
 
