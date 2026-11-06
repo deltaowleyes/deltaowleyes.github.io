@@ -14,7 +14,7 @@ ROUTES=["home","faith","running","rosaries","coffee","about"]
 results=[]
 with sync_playwright() as p:
     browser=p.chromium.launch(headless=True)
-    cases=[("gallery",BASE+"/",w) for w in (320,390,768,1440)]
+    cases=[("gallery",BASE+"/",w) for w in (320,390,768,1024,1440,1920)]
     cases += [(name+"-home",BASE+"/"+name+"/#home",w) for name in THEMES for w in (320,390,768,1440)]
     cases += [(name+"-"+route,BASE+"/"+name+"/#"+route,390) for name in THEMES for route in ROUTES if route!="home"]
     for label,url,width in cases:
@@ -22,7 +22,7 @@ with sync_playwright() as p:
         errors=[]
         page.on("pageerror",lambda e: errors.append(str(e)))
         try:
-            response=page.goto(url,wait_until="domcontentloaded",timeout=30000)
+            response=page.goto(url,wait_until="load",timeout=30000)
             page.screenshot(path=str(OUT/(label+"-"+str(width)+".png")),full_page=True,animations="disabled")
             state=page.evaluate("""() => ({
               overflow: document.documentElement.scrollWidth > innerWidth + 1,
