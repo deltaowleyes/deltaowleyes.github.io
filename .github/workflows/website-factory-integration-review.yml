@@ -1,0 +1,47 @@
+name: Website Factory 2.0 — isolated ten-candidate integration review
+on:
+  push:
+    branches:
+      - 'factory2/integration-review-10-2026-11-05'
+    paths:
+      - 'website-factory/**'
+      - '.github/workflows/website-factory-integration-review.yml'
+permissions:
+  contents: read
+concurrency:
+  group: factory2-review-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  all-ten-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preserve existing live-gallery and cost policy invariants
+        run: |
+          node tests/web-design-revisions.qa.cjs
+          node tests/website-factory-cost-guard.cjs
+      - name: Install free Chromium and axe-core testing
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Start isolated localhost test server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/factory2-integrated.log 2>&1 &
+          for i in $(seq 1 25); do curl -fsS http://127.0.0.1:8765/mommamade/v2/ >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: All ten candidate routes and six breakpoints
+        run: node website-factory/tests/qa.cjs --all
+      - name: Automated WCAG 2.x and keyboard-safety review
+        run: node website-factory/tests/review-qa.cjs
+      - name: Save combined screenshots and accessibility evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-factory-2-integrated-visual-and-a11y-evidence
+          path: website-factory/qa-artifacts/
+          if-no-files-found: warn
+          retention-days: 3
