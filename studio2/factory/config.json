@@ -9,9 +9,9 @@
   "assets": [
     {
       "id": "hero",
-      "source": "assets/wetlands.png",
+      "source": "shutyourtrap/assets/photos/golden_sunrise_in_a_misty_pine_forest.webp",
       "output": "hero.webp",
-      "role": "decorative existing image; has embedded lettering and is not visually approved",
+      "role": "Original conceptual photorealistic sunrise forest artwork; no embedded text, not documentary reporting",
       "max_width": 2048,
       "quality": 83,
       "selector": "hero-css",
