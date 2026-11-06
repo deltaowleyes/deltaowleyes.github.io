@@ -38,6 +38,11 @@ jobs:
       - name: Capture inspiration comparisons and explicitly log unavailable sources
         if: always()
         run: node tests/mommamade-v3-reference-capture.cjs
+      - name: Candidate-only warning — approval requires human reference comparison
+        if: always()
+        run: |
+          echo "::notice::This is a CANDIDATE check only. A green Chromium test is not reference-fidelity approval or deployment verification."
+          echo "::notice::Keep Momma Made V2 current until source screenshot pairs are reviewed and the live site is verified."
       - name: Archive desktop/mobile screenshot evidence
         if: always()
         uses: actions/upload-artifact@v4
