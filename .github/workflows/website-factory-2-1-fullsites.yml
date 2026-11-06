@@ -1,8 +1,8 @@
-name: Factory 2.1 — isolated 10 full-site Chromium QA
+name: Factory 2.1 — final acceptance and V2/V3 comparison
 on:
   push:
     branches:
-      - 'factory2/fullsites-2-1-2026-11-05'
+      - 'factory2/acceptance-review-2026-11-05'
     paths:
       - 'website-factory/**'
       - '.github/workflows/website-factory-2-1-fullsites.yml'
@@ -14,7 +14,7 @@ concurrency:
 jobs:
   fullsite-acceptance:
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -37,11 +37,16 @@ jobs:
         run: node website-factory/tests/fullsites.qa.cjs
       - name: Check automated WCAG rules and keyboard skip on 120 viewport/routes
         run: node website-factory/tests/fullsites-a11y.qa.cjs
+      - name: Capture V2 and V3 desktop/mobile baselines for human review
+        if: always()
+        run: node website-factory/tests/revision-comparison.cjs
       - name: Upload genuine screenshots and QA evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: factory21-fullsites-browser-a11y-evidence
-          path: website-factory/qa-artifacts/fullsites/
+          path: |
+            website-factory/qa-artifacts/fullsites/
+            website-factory/qa-artifacts/revision-comparison/
           if-no-files-found: warn
           retention-days: 3
