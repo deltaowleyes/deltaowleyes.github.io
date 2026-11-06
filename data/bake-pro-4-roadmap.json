@@ -4848,7 +4848,7 @@
       "priority": "P1",
       "effort": "Large / phased",
       "status": "in_progress",
-      "status_basis": "Education Governance 1.3 branch adds ticket-bound local two-reviewer attestation with current GH role recheck; optional GPG-encrypted two-recipient metadata-only case handoff; advisory GitHub current-head PR approval check (two non-author write/maintain/admin reviews) but NOT enforced branch protection (403 on branch-protection API, no rulesets and second reviewer unverified). Sparse source-verified Nation/language/credential/date/tuition facets for four of 30 records; U Alberta bot-block review documented and bounded HEAD-to-GET health checks. Community appointments, real multi-reviewer credential and GPG exercises, enforced protections and confidential case retention remain unverified. Do not mark complete.",
+      "status_basis": "Governance 1.3 PR #22 merged at bec4a12 on Nov 6 and independently verified live HTTP 200 with 30 original-source entries and four provider-verified optional facets. Local casebook now requires 2 distinct currently authorized GitHub staff decisions before editorial mutations, optional two-recipient GPG metadata-only transfer is implemented, and an on-demand GitHub current-head PR auditor exists. Real connected GitHub login deltaowleyes confirmed admin; branch protection read returned 403 and no rulesets; no second reviewer/GPG key exchange/community appointment has been established, so server-enforced PR approvals and community review remain incomplete. 1.3 provider-health run: 25/30 reachable from runner, 0 confirmed missing, 5 needs review (four Oneida URLErrors and U Alberta 403) independently viewable on official source pages; the manual corroboration record is separate and does not mask automated failures. Business/church/event datasets unchanged. B4-041 stays in_progress.",
       "dependencies": [
         "B4-039"
       ],
@@ -4953,6 +4953,32 @@
             "https://www.ualberta.ca/en/admissions-programs/online-courses/indigenous-canada/index.html"
           ],
           "detail": "Official providers corroborated education language and connection, course credential/intake, online status, source-listed tuition and U Alberta original-page availability. Missing metadata deliberately remains unknown."
+        },
+        {
+          "type": "merged_release",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/22",
+          "commit_sha": "bec4a12c7981c67d9198b80c42c943a08953dfb7",
+          "detail": "1.3 governance code, local dual-review casebook and GPG export/import, advisory GitHub approvals check, verified 4-record optional metadata, U Alberta provenance, Education UI. All 9 PR checks green including 4-width responsive Chromium and cross-browser header."
+        },
+        {
+          "type": "production_http_acceptance",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42245394305",
+          "detail": "Independently fetched real /education/, 30 unique public records, 4 verified optional provider fact records and language/community controls, navigation and privacy. GitHub runner passed after Pages propagation."
+        },
+        {
+          "type": "post_release_source_health",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42245394390",
+          "detail": "30 source links: 25 reachable from Actions runner, four Oneida official URLs URLError, U Alberta Indigenous Canada 403. 0 definite 404/410, 0 stale provider reviews, five original pages independently accessible via web. Preserve automated state and manual corroboration separately."
+        },
+        {
+          "type": "actual_connected_reviewer_permission",
+          "date": "2026-11-06",
+          "github_login": "deltaowleyes",
+          "permission": "admin",
+          "detail": "Authenticated GitHub connector get_user_login and get_repo_collaborator_permission returned admin. Branch protection endpoint inaccessible with 403 and rulesets returned []; two independent persons and an enforced protection rule were NOT verified."
         }
       ]
     },
@@ -5229,6 +5255,17 @@
       "summary": "Proposed dual-review local cases, optional GPG transport, advisory GitHub current-head review checker, four source-grounded metadata facets, U Alberta 403 manual corroboration and source-health retry. Real GitHub account deltaowleyes has admin permission; branch protection inaccessible, no rulesets, second reviewer not known. Preserve in_progress until community-appointed review and enforced approvals are evidenced.",
       "evidence_urls": [
         "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/education-community-governance-1-3-20261106"
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "type": "education_1_3_review_and_deployment_audit",
+      "task_id": "B4-041",
+      "summary": "PR #22 merged at bec4a12 and 9 final PR checks passed, production Education 30 records and 4 provider metadata facets verified, reviewer casebook/PR review script implemented but not server enforced. Github user deltaowleyes admin verified; no second reviewer. Source health 25 reachable, 5 needs review, 0 missing; independent public-source checks succeeded for Oneida four and U Alberta. B4-041 remains in_progress. No paid integrations; actual GitHub Actions billing not independently verified.",
+      "evidence_urls": [
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/22",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42245394305",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42245394390"
       ]
     },
     {
