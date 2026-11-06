@@ -1,0 +1,69 @@
+/* 1.4: original source-composition repairs. Keep owned WebP imagery and demo commerce. */
+/* Heath Ceramics — dark, image-led seasonal editorial. */
+.theme-ledger .hero{position:relative;display:grid;grid-template-columns:1fr;min-height:610px;overflow:hidden;background:#1b2c25}
+.theme-ledger .hero-media{position:absolute;inset:0;width:100%;height:100%;min-height:610px;z-index:0;border:0;transform:none}
+.theme-ledger .hero-media .visual{height:100%;min-height:610px}
+.theme-ledger .hero-media .visual:before{filter:brightness(.48) saturate(.8);background-position:center 43%}
+.theme-ledger .hero-copy{position:relative;z-index:1;min-height:610px;width:min(730px,92%);margin:auto;align-items:center;text-align:center;background:transparent;box-shadow:none;color:#fff5de;padding:90px 6%}
+.theme-ledger .hero h1{font:400 clamp(48px,5vw,80px)/1.06 Georgia,serif}
+.theme-ledger .hero p{color:#fff4dc}
+.theme-ledger .hero .action{background:#fff4dc;border-color:#fff4dc;color:#233b31}
+/* BAGGU — original exuberant ribbon, not copied campaign text. */
+.theme-picnic .hero{position:relative}
+.theme-picnic .hero:after{content:"BOLD LITTLE THINGS  •  BIG EVERYDAY JOY  •  COLOUR FOR KEEPING";position:absolute;bottom:0;left:0;right:0;z-index:2;display:block;background:repeating-linear-gradient(100deg,#e6ea8b 0 22%,#a8dbdb 22% 50%,#eeb2d5 50% 77%,#fad1a0 77% 100%);color:#263548;text-align:center;padding:13px 3%;font:900 clamp(12px,1.5vw,21px)/1.3 Arial,sans-serif}
+/* Package Free — clean retail photo, strong practical department hierarchy. */
+.theme-index .hero{grid-template-columns:.43fr .57fr;min-height:560px;background:#dce8d9}
+.theme-index .hero-copy{background:#dce8d9;min-height:560px}
+.theme-index .hero-media,.theme-index .hero-media .visual{min-height:560px}
+.theme-index .reference-departments{border-top:7px solid #426453}
+/* Schoolhouse — image-led interiors instead of notebook-first hero. Notebook returns below. */
+.theme-notes .hero{position:relative;display:grid;grid-template-columns:1fr;min-height:610px;padding:0;overflow:hidden;background:#4b4b3f}
+.theme-notes .hero-media{position:absolute;inset:0;width:100%;height:100%;min-height:610px;z-index:0;transform:none;box-shadow:none}
+.theme-notes .hero-media .visual{height:100%;min-height:610px}
+.theme-notes .hero-media .visual:before{filter:brightness(.46);background-position:center}
+.theme-notes .hero-copy{position:relative;z-index:1;width:min(680px,84%);margin:0 auto 0 0;min-height:610px;background:transparent;transform:none;box-shadow:none;align-items:flex-start;text-align:left;color:#fff6e7;padding:85px 10%}
+.theme-notes .hero h1{font:400 clamp(50px,5vw,80px)/1.04 Georgia,serif}
+.theme-notes .hero p{color:#fff5e6}
+.theme-notes .hero .action{background:#fff3df;color:#3a362b;border-color:#fff3df}
+/* Papier — dark cinematic editorial image, distinct from the Market stalls below. */
+.theme-market .hero{position:relative;display:grid;grid-template-columns:1fr;min-height:635px;background:#302f32;overflow:hidden}
+.theme-market .hero-media{position:absolute;inset:0;z-index:0;width:100%;height:100%;min-height:635px;grid-column:auto;grid-row:auto}
+.theme-market .hero-media .visual{height:100%;min-height:635px}
+.theme-market .hero-media .visual:before{filter:brightness(.37) saturate(.85);background-position:center 34%}
+.theme-market .hero-copy{position:relative;z-index:1;width:min(730px,85%);min-height:635px;align-items:flex-start;text-align:left;background:transparent;color:#fff4e9;padding:85px 9%;margin:0}
+.theme-market .hero h1{font:400 clamp(55px,6.1vw,95px)/.98 Georgia,serif;color:#fff4e9}
+.theme-market .hero p{color:#fff4e9}
+.theme-market .hero .action{background:#fff4e9;color:#2c4334;border-color:#fff4e9}
+/* Ocean Bottle — large overlaid typography, no copied offers or environmental metrics. */
+.theme-proof .hero{position:relative;display:grid;grid-template-columns:1fr;min-height:650px;overflow:hidden;background:#102829}
+.theme-proof .hero-media{position:absolute;inset:0;z-index:0;width:100%;height:100%;min-height:650px}
+.theme-proof .hero-media .visual{height:100%;min-height:650px}
+.theme-proof .hero-media .visual:before{filter:brightness(.42);background-position:center 45%}
+.theme-proof .hero-copy{position:relative;z-index:1;max-width:880px;min-height:650px;padding:87px 7%;background:transparent;align-items:flex-start;color:#fff}
+.theme-proof .hero h1{font:900 clamp(60px,7.3vw,110px)/.91 Arial,sans-serif;text-shadow:0 4px 20px #0007}
+.theme-proof .hero p{color:#fff}
+@media(max-width:760px){
+ .theme-ledger .hero,.theme-notes .hero,.theme-market .hero,.theme-proof .hero{display:flex;flex-direction:column;min-height:0}
+ .theme-ledger .hero-media,.theme-notes .hero-media,.theme-market .hero-media,.theme-proof .hero-media{order:0;position:relative;inset:auto;height:350px;min-height:350px;width:100%;transform:none;box-shadow:none}
+ .theme-ledger .hero-media .visual,.theme-notes .hero-media .visual,.theme-market .hero-media .visual,.theme-proof .hero-media .visual{height:350px;min-height:350px}
+ .theme-ledger .hero-copy,.theme-notes .hero-copy,.theme-market .hero-copy,.theme-proof .hero-copy{order:1;position:relative;width:100%;max-width:none;margin:0;min-height:0;padding:48px 7%;align-items:flex-start;text-align:left;transform:none;box-shadow:none}
+ .theme-ledger .hero-copy{background:#21382e;color:#fff5de}
+ .theme-ledger .hero h1{font-size:clamp(43px,10vw,63px)}
+ .theme-notes .hero-copy{background:#e9dec8;color:#4c3b30}
+ .theme-notes .hero p{color:#4c3b30}
+ .theme-notes .hero .action{background:#4c3b30;color:#fff5e6;border-color:#4c3b30}
+ .theme-notes .hero h1{font-size:clamp(43px,10vw,61px)}
+ .theme-market .hero-copy{background:#302d31;color:#fff4e9}
+ .theme-market .hero h1{font-size:clamp(43px,10vw,65px)}
+ .theme-proof .hero-copy{background:#102829;color:#fff}
+ .theme-proof .hero h1{font-size:clamp(48px,11vw,67px)}
+ .theme-index .hero{display:flex;flex-direction:column;min-height:0}
+ .theme-index .hero-copy{order:0;min-height:0;padding:50px 7%;background:#dce8d9}
+ .theme-index .hero-media{order:1;min-height:340px;height:340px;width:100%}
+ .theme-index .hero-media .visual{height:340px;min-height:340px}
+ .theme-picnic .hero:after{font-size:10px;letter-spacing:0;padding:9px 2%}
+}
+@media(max-width:390px){
+ .theme-ledger .hero-media,.theme-notes .hero-media,.theme-market .hero-media,.theme-proof .hero-media{height:310px;min-height:310px}
+ .theme-ledger .hero-media .visual,.theme-notes .hero-media .visual,.theme-market .hero-media .visual,.theme-proof .hero-media .visual{height:310px;min-height:310px}
+}

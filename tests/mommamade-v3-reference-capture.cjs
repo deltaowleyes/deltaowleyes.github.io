@@ -6,11 +6,11 @@ const sources=[
  ['Picnic Club','https://www.baggu.com/'],
  ['Utility Index','https://packagefreeshop.com/'],
  ['Garden Folio','https://www.blockshoptextiles.com/'],
- ['Pattern Studio','https://riflepaperco.com/'],
+ ['Pattern Studio','https://riflepaperco.com/pages/shop-by-pattern'],
  ['Tidy Counter','https://www.muji.us/'],
  ['Maker Field Notes','https://schoolhouse.com/'],
  ['Weekend Market','https://www.papier.com/'],
- ['Quiet Catalogue','https://grovemade.com/'],
+ ['Quiet Catalogue','https://grovemade.com/home/'],
  ['Workshop Proof','https://oceanbottle.co/']
 ];
 const base=process.env.MOMMA_V3_BASE_URL||'http://127.0.0.1:8765/mommamade/v3/';
