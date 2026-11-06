@@ -8,6 +8,7 @@ on:
       - "index.html"
       - "sitemap.xml"
       - "scripts/check_education_resources.py"
+      - "scripts/test_education_browser.mjs"
       - ".github/workflows/validate-education-resources.yml"
   pull_request:
     paths:
@@ -28,3 +29,29 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check schema, ID uniqueness, URL hygiene and hub integration
         run: python3 scripts/check_education_resources.py
+
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright and Chromium
+        run: |
+          npm install --no-save --ignore-scripts playwright@1.64.1
+          npx playwright install --with-deps chromium
+      - name: Serve public site
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/doe-education-server.log 2>&1 &
+          sleep 2
+      - name: Check responsive Education page, filters, safe links and privacy
+        run: node scripts/test_education_browser.mjs
+      - name: Archive visual acceptance screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: education-chromium-screenshots
+          path: test-results/education/*.png
+          if-no-files-found: ignore
