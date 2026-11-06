@@ -1,0 +1,25 @@
+name: Indigenous Grants original-source health audit
+on:
+  schedule:
+    - cron: "45 12 * * 2"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  grant-source-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read-only catalogue and link audit
+        run: |
+          python3 scripts/check_indigenous_grants.py
+          python3 scripts/check_grant_links.py /tmp/indigenous-grant-source-health.json
+      - name: Save review-only source evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: discovery-4-grant-source-health
+          path: /tmp/indigenous-grant-source-health.json
+          if-no-files-found: ignore
+          retention-days: 30
