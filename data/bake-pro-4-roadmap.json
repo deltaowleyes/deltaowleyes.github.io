@@ -4842,23 +4842,23 @@
     },
     {
       "id": "B4-041",
-      "title": "Education contributor governance, corrections and removal suppression",
-      "description": "Add controlled community submissions, source governance, review queues, correction/removal suppression, link-health checks and cultural protocol safeguards before automating education records at scale.",
+      "title": "Education source checks, corrections and removal protection",
+      "description": "Keep Education resources accurate using a simple one-owner editor workflow: public suggestions by email, official-provider fact checks, corrections and respectful takedowns, permanent suppression and read-only link monitoring. Optional case-management and committees are not prerequisites.",
       "category": "Education & Discovery",
       "priority": "P1",
-      "effort": "Large / phased",
+      "effort": "Small ongoing editorial maintenance",
       "status": "in_progress",
-      "status_basis": "Governance 1.3 PR #22 merged at bec4a12 on Nov 6 and independently verified live HTTP 200 with 30 original-source entries and four provider-verified optional facets. Local casebook now requires 2 distinct currently authorized GitHub staff decisions before editorial mutations, optional two-recipient GPG metadata-only transfer is implemented, and an on-demand GitHub current-head PR auditor exists. Real connected GitHub login deltaowleyes confirmed admin; branch protection read returned 403 and no rulesets; no second reviewer/GPG key exchange/community appointment has been established, so server-enforced PR approvals and community review remain incomplete. 1.3 provider-health run: 25/30 reachable from runner, 0 confirmed missing, 5 needs review (four Oneida URLErrors and U Alberta 403) independently viewable on official source pages; the manual corroboration record is separate and does not mask automated failures. Business/church/event datasets unchanged. B4-041 stays in_progress.",
+      "status_basis": "User explicitly chose a simple owner-managed Education Hub on 2026-11-06. Overengineered two-person local review, GPG case exchange and advisory PR-approval audit are being removed; authorized one-editor changes, optional private email tickets, official-provider verification, GitHub feature branches/tests, existing ID/URL suppression, 30 records, provider-supported filters and weekly read-only source checks remain. Mark complete after this simplification PR passes tests and production acceptance; no committee, second reviewer, encryption or forced branch-protection approval is required.",
       "dependencies": [
         "B4-039"
       ],
       "acceptance_criteria": [
-        "Document Indigenous data sovereignty and consent, provenance, availability and rights for source media.",
-        "Implement contributor correction, removal and suppression logging with an audit trail and no silent re-import.",
-        "Add staff review queue, expiry/deadline checks and link health and category freshness reporting.",
-        "Add educational pathways, accessibility and age/grade/language filters only where supported by source facts."
+        "Public source suggestions, corrections and removal concerns reach the established business email; no sensitive public submission form.",
+        "One authorized editor can approve, correct or remove an Education resource using original provider evidence; optional private ticket cannot block routine owner actions.",
+        "Removal retains a durable ID/URL suppression entry so scheduled discovery does not re-import withdrawn listings.",
+        "Automated source health and original-provider evidence-only filters work without copying restricted cultural materials; live 30-record page and privacy checks remain healthy."
       ],
-      "bake_prompt": "BAKE PRO 4.0 — B4-041 EDUCATION GOVERNANCE. Work in deltaowleyes/deltaowleyes.github.io using latest main; first inspect data/bake-pro-4-roadmap.json and docs/DISCOVERY-3-EDUCATION-PLAN.md. Preserve the existing Discovery 2.0 businesses, churches, events, JSON-only import rules, provenance, privacy and deletion safeguards. Implement consent-aware Education nominations, editorial reviews, corrections, soft removal and durable suppression for culturally sensitive or withdrawn resources. Add scheduled source link checks, stale enrollment/deadline flags, source evidence and rights metadata. Do not scrape, mirror videos, publish restricted knowledge or collect minors' data. Validate removal privacy, backups, admin authorization and public site regression; write evidence to canonical roadmap.",
+      "bake_prompt": "BAKE — EDUCATION HUB SIMPLE MAINTENANCE. Work from latest main in deltaowleyes/deltaowleyes.github.io. First inspect the canonical data/bake-pro-4-roadmap.json task B4-041. Follow docs/EDUCATION-COMMUNITY-GOVERNANCE-1-3.md as the current plain-language owner policy. Research official provider pages, add or correct only well-sourced public resources, and handle a removal concern by a verified source/rights-holder review with ID/URL tombstone suppression. One authorized owner editor is sufficient; do not require an appointed committee, second GitHub reviewer, GPG encryption or branch-protection configuration. Keep any email complaint private, maintain GitHub authorization, clean review branch, resource schema, original-provider links, weekly link health, tested privacy and 30-entry catalogue protections, existing business/church/event safeguards, and hourly Discovery schedule. Report changes, tests, deployment and actual cost limitations.",
       "source": {
         "roadmap": "BAKE PRO 4.0",
         "type": "explicit user request and implementation dependency",
@@ -4979,6 +4979,12 @@
           "github_login": "deltaowleyes",
           "permission": "admin",
           "detail": "Authenticated GitHub connector get_user_login and get_repo_collaborator_permission returned admin. Branch protection endpoint inaccessible with 403 and rulesets returned []; two independent persons and an enforced protection rule were NOT verified."
+        },
+        {
+          "type": "user_scope_simplification",
+          "date": "2026-11-06",
+          "detail": "Owner explicitly rejected committee, second reviewer, GPG case exchange and enforced two-person GitHub merges as unnecessary for current Education Hub. These are optional separate future initiatives, not B4-041 blockers.",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/fix/education-simple-editorial-20261106"
         }
       ]
     },
@@ -5300,6 +5306,15 @@
       "summary": "Added proposed 20-record original-source Indigenous Grants & Funding page and dedicated Discovery 4.0 JSON source review and CI guardrails on a feature branch; pending CI, production verification and hourly automation upgrade.",
       "evidence_urls": [
         "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/discovery-4-grants-current-main-20261106"
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "type": "education_owner_editorial_simplification_in_progress",
+      "task_id": "B4-041",
+      "summary": "Owner requested an understandable, simple Education Hub. Replaced committee/second-reviewer/GPG obligations with owner-managed one authorized GitHub editor, original-provider fact check, email suggestions, optional private tracking ticket, durable source suppression and weekly read-only link monitoring. Technical changes and live acceptance pending; no business/church/event data affected.",
+      "links": [
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/fix/education-simple-editorial-20261106"
       ]
     },
     {
