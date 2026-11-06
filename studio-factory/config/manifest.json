@@ -1,0 +1,513 @@
+{
+  "schemaVersion": 1,
+  "canonicalExistingStudio": "/newdesigns/",
+  "deploymentState": "isolated branch; not deployed",
+  "workingPilotCode": "Provided in separately downloadable local pilot archive; not yet committed in repo",
+  "assetPolicy": "Reuse owned/original media with documented provenance; culturally specific images need review",
+  "families": [
+    {
+      "id": "river-voice",
+      "name": "River Voice",
+      "focus": "editorial"
+    },
+    {
+      "id": "modern-longhouse",
+      "name": "Modern Longhouse",
+      "focus": "community"
+    },
+    {
+      "id": "accountability-ledger",
+      "name": "Accountability Ledger",
+      "focus": "investigative"
+    },
+    {
+      "id": "northern-horizons",
+      "name": "Northern Horizons",
+      "focus": "cultural"
+    },
+    {
+      "id": "community-network",
+      "name": "Community Network",
+      "focus": "directory"
+    },
+    {
+      "id": "media-hub",
+      "name": "Media Hub",
+      "focus": "media"
+    }
+  ],
+  "variations": [
+    {
+      "id": "cinematic",
+      "hero": "full-bleed hero",
+      "navigation": "overlay",
+      "content": "three-column cards"
+    },
+    {
+      "id": "split",
+      "hero": "two-column split hero",
+      "navigation": "side",
+      "content": "staggered sections"
+    },
+    {
+      "id": "journal",
+      "hero": "masthead article hero",
+      "navigation": "masthead",
+      "content": "timeline"
+    },
+    {
+      "id": "tiles",
+      "hero": "visual mosaic hero",
+      "navigation": "compact",
+      "content": "mosaic index"
+    },
+    {
+      "id": "campaign",
+      "hero": "typographic campaign hero",
+      "navigation": "rail",
+      "content": "action modules"
+    },
+    {
+      "id": "quiet",
+      "hero": "minimal asymmetric hero",
+      "navigation": "text",
+      "content": "long-form narrative"
+    }
+  ],
+  "totalDesignsPlanned": 36,
+  "generatedAndQAVerifiedOnBranch": 0,
+  "items": [
+    {
+      "id": "river-voice--cinematic",
+      "family": "river-voice",
+      "variation": "cinematic",
+      "label": "River Voice — cinematic",
+      "structure": {
+        "hero": "full-bleed hero",
+        "navigation": "overlay",
+        "content": "three-column cards"
+      },
+      "status": "local-pilot"
+    },
+    {
+      "id": "river-voice--split",
+      "family": "river-voice",
+      "variation": "split",
+      "label": "River Voice — split",
+      "structure": {
+        "hero": "two-column split hero",
+        "navigation": "side",
+        "content": "staggered sections"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "river-voice--journal",
+      "family": "river-voice",
+      "variation": "journal",
+      "label": "River Voice — journal",
+      "structure": {
+        "hero": "masthead article hero",
+        "navigation": "masthead",
+        "content": "timeline"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "river-voice--tiles",
+      "family": "river-voice",
+      "variation": "tiles",
+      "label": "River Voice — tiles",
+      "structure": {
+        "hero": "visual mosaic hero",
+        "navigation": "compact",
+        "content": "mosaic index"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "river-voice--campaign",
+      "family": "river-voice",
+      "variation": "campaign",
+      "label": "River Voice — campaign",
+      "structure": {
+        "hero": "typographic campaign hero",
+        "navigation": "rail",
+        "content": "action modules"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "river-voice--quiet",
+      "family": "river-voice",
+      "variation": "quiet",
+      "label": "River Voice — quiet",
+      "structure": {
+        "hero": "minimal asymmetric hero",
+        "navigation": "text",
+        "content": "long-form narrative"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "modern-longhouse--cinematic",
+      "family": "modern-longhouse",
+      "variation": "cinematic",
+      "label": "Modern Longhouse — cinematic",
+      "structure": {
+        "hero": "full-bleed hero",
+        "navigation": "overlay",
+        "content": "three-column cards"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "modern-longhouse--split",
+      "family": "modern-longhouse",
+      "variation": "split",
+      "label": "Modern Longhouse — split",
+      "structure": {
+        "hero": "two-column split hero",
+        "navigation": "side",
+        "content": "staggered sections"
+      },
+      "status": "local-pilot"
+    },
+    {
+      "id": "modern-longhouse--journal",
+      "family": "modern-longhouse",
+      "variation": "journal",
+      "label": "Modern Longhouse — journal",
+      "structure": {
+        "hero": "masthead article hero",
+        "navigation": "masthead",
+        "content": "timeline"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "modern-longhouse--tiles",
+      "family": "modern-longhouse",
+      "variation": "tiles",
+      "label": "Modern Longhouse — tiles",
+      "structure": {
+        "hero": "visual mosaic hero",
+        "navigation": "compact",
+        "content": "mosaic index"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "modern-longhouse--campaign",
+      "family": "modern-longhouse",
+      "variation": "campaign",
+      "label": "Modern Longhouse — campaign",
+      "structure": {
+        "hero": "typographic campaign hero",
+        "navigation": "rail",
+        "content": "action modules"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "modern-longhouse--quiet",
+      "family": "modern-longhouse",
+      "variation": "quiet",
+      "label": "Modern Longhouse — quiet",
+      "structure": {
+        "hero": "minimal asymmetric hero",
+        "navigation": "text",
+        "content": "long-form narrative"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "accountability-ledger--cinematic",
+      "family": "accountability-ledger",
+      "variation": "cinematic",
+      "label": "Accountability Ledger — cinematic",
+      "structure": {
+        "hero": "full-bleed hero",
+        "navigation": "overlay",
+        "content": "three-column cards"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "accountability-ledger--split",
+      "family": "accountability-ledger",
+      "variation": "split",
+      "label": "Accountability Ledger — split",
+      "structure": {
+        "hero": "two-column split hero",
+        "navigation": "side",
+        "content": "staggered sections"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "accountability-ledger--journal",
+      "family": "accountability-ledger",
+      "variation": "journal",
+      "label": "Accountability Ledger — journal",
+      "structure": {
+        "hero": "masthead article hero",
+        "navigation": "masthead",
+        "content": "timeline"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "accountability-ledger--tiles",
+      "family": "accountability-ledger",
+      "variation": "tiles",
+      "label": "Accountability Ledger — tiles",
+      "structure": {
+        "hero": "visual mosaic hero",
+        "navigation": "compact",
+        "content": "mosaic index"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "accountability-ledger--campaign",
+      "family": "accountability-ledger",
+      "variation": "campaign",
+      "label": "Accountability Ledger — campaign",
+      "structure": {
+        "hero": "typographic campaign hero",
+        "navigation": "rail",
+        "content": "action modules"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "accountability-ledger--quiet",
+      "family": "accountability-ledger",
+      "variation": "quiet",
+      "label": "Accountability Ledger — quiet",
+      "structure": {
+        "hero": "minimal asymmetric hero",
+        "navigation": "text",
+        "content": "long-form narrative"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "northern-horizons--cinematic",
+      "family": "northern-horizons",
+      "variation": "cinematic",
+      "label": "Northern Horizons — cinematic",
+      "structure": {
+        "hero": "full-bleed hero",
+        "navigation": "overlay",
+        "content": "three-column cards"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "northern-horizons--split",
+      "family": "northern-horizons",
+      "variation": "split",
+      "label": "Northern Horizons — split",
+      "structure": {
+        "hero": "two-column split hero",
+        "navigation": "side",
+        "content": "staggered sections"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "northern-horizons--journal",
+      "family": "northern-horizons",
+      "variation": "journal",
+      "label": "Northern Horizons — journal",
+      "structure": {
+        "hero": "masthead article hero",
+        "navigation": "masthead",
+        "content": "timeline"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "northern-horizons--tiles",
+      "family": "northern-horizons",
+      "variation": "tiles",
+      "label": "Northern Horizons — tiles",
+      "structure": {
+        "hero": "visual mosaic hero",
+        "navigation": "compact",
+        "content": "mosaic index"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "northern-horizons--campaign",
+      "family": "northern-horizons",
+      "variation": "campaign",
+      "label": "Northern Horizons — campaign",
+      "structure": {
+        "hero": "typographic campaign hero",
+        "navigation": "rail",
+        "content": "action modules"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "northern-horizons--quiet",
+      "family": "northern-horizons",
+      "variation": "quiet",
+      "label": "Northern Horizons — quiet",
+      "structure": {
+        "hero": "minimal asymmetric hero",
+        "navigation": "text",
+        "content": "long-form narrative"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "community-network--cinematic",
+      "family": "community-network",
+      "variation": "cinematic",
+      "label": "Community Network — cinematic",
+      "structure": {
+        "hero": "full-bleed hero",
+        "navigation": "overlay",
+        "content": "three-column cards"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "community-network--split",
+      "family": "community-network",
+      "variation": "split",
+      "label": "Community Network — split",
+      "structure": {
+        "hero": "two-column split hero",
+        "navigation": "side",
+        "content": "staggered sections"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "community-network--journal",
+      "family": "community-network",
+      "variation": "journal",
+      "label": "Community Network — journal",
+      "structure": {
+        "hero": "masthead article hero",
+        "navigation": "masthead",
+        "content": "timeline"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "community-network--tiles",
+      "family": "community-network",
+      "variation": "tiles",
+      "label": "Community Network — tiles",
+      "structure": {
+        "hero": "visual mosaic hero",
+        "navigation": "compact",
+        "content": "mosaic index"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "community-network--campaign",
+      "family": "community-network",
+      "variation": "campaign",
+      "label": "Community Network — campaign",
+      "structure": {
+        "hero": "typographic campaign hero",
+        "navigation": "rail",
+        "content": "action modules"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "community-network--quiet",
+      "family": "community-network",
+      "variation": "quiet",
+      "label": "Community Network — quiet",
+      "structure": {
+        "hero": "minimal asymmetric hero",
+        "navigation": "text",
+        "content": "long-form narrative"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "media-hub--cinematic",
+      "family": "media-hub",
+      "variation": "cinematic",
+      "label": "Media Hub — cinematic",
+      "structure": {
+        "hero": "full-bleed hero",
+        "navigation": "overlay",
+        "content": "three-column cards"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "media-hub--split",
+      "family": "media-hub",
+      "variation": "split",
+      "label": "Media Hub — split",
+      "structure": {
+        "hero": "two-column split hero",
+        "navigation": "side",
+        "content": "staggered sections"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "media-hub--journal",
+      "family": "media-hub",
+      "variation": "journal",
+      "label": "Media Hub — journal",
+      "structure": {
+        "hero": "masthead article hero",
+        "navigation": "masthead",
+        "content": "timeline"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "media-hub--tiles",
+      "family": "media-hub",
+      "variation": "tiles",
+      "label": "Media Hub — tiles",
+      "structure": {
+        "hero": "visual mosaic hero",
+        "navigation": "compact",
+        "content": "mosaic index"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "media-hub--campaign",
+      "family": "media-hub",
+      "variation": "campaign",
+      "label": "Media Hub — campaign",
+      "structure": {
+        "hero": "typographic campaign hero",
+        "navigation": "rail",
+        "content": "action modules"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "media-hub--quiet",
+      "family": "media-hub",
+      "variation": "quiet",
+      "label": "Media Hub — quiet",
+      "structure": {
+        "hero": "minimal asymmetric hero",
+        "navigation": "text",
+        "content": "long-form narrative"
+      },
+      "status": "planned"
+    }
+  ]
+}
