@@ -9,7 +9,7 @@
     1024,
     1440
   ],
-  "note": "Screenshot-only concept refinements: CSS is injected only during browser capture and does not modify public V3 or current V2. Public V3 source remains accessible independently.",
+  "note": "Six immutable original BAKE EXPRESS headers, shared studio CSS/JS, six real client template screenshot families. V2 is current, V3 sources remain publicly accessible independently; no private template sources embedded in this gallery.",
   "capture_polish_sha256": "56dffeb701443fff4d77ffc78e36377d9d0dcaf1378e1f2e69d37cefc4abbfaa",
   "families": [
     {
@@ -354,5 +354,6 @@
         }
       ]
     }
-  ]
+  ],
+  "shell_contract": "BAKE-EXPRESS-MASTER-1.0"
 }
