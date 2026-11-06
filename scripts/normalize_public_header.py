@@ -146,8 +146,14 @@ def main() -> int:
         and ".git" not in p.relative_to(ROOT).parts
     )
     changed = []
+    skipped = []
     for page in pages:
         original = page.read_text(encoding="utf-8")
+        # Standalone design galleries and project demos have their own layouts.
+        # Normalize only pages already using the canonical public header.
+        if not re.search(r'<header\\b[^>]*\\bdoe-header-v3\\b', original, re.I):
+            skipped.append(page.relative_to(ROOT).as_posix())
+            continue
         transformed = update(page, original)
         if transformed != original:
             changed.append(page.relative_to(ROOT).as_posix())
