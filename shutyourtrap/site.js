@@ -86,20 +86,70 @@ const photoMap=[
   "sharpening": "water_kissed_blade_on_whetstone.webp"
  }
 ];
+const photoMapV3=[
+ {
+  "hero": "v3_steel_blade_detail.webp",
+  "sharpening": "v3_precision_honing_edge.webp"
+ },
+ {
+  "hero": "v3_winter_cabin_lantern.webp",
+  "trapping": "v3_field_boots_pack.webp",
+  "snaring": "v3_coiled_cable_leather_gloves.webp"
+ },
+ {
+  "hero": "v3_steel_cable_hardware.webp",
+  "snaring": "v3_workbench_cutting_pliers.webp"
+ },
+ {
+  "hero": "v3_moody_river_bend.webp",
+  "trapping": "v3_backcountry_map_compass.webp"
+ },
+ {
+  "hero": "v3_whetstone_blue_water.webp",
+  "sharpening": "v3_sharpening_oils_still_life.webp"
+ },
+ {
+  "hero": "v3_workshop_tool_wall.webp",
+  "sharpening": "v3_wooden_strop_brass_tools.webp"
+ },
+ {
+  "hero": "v3_dawn_lake_gear.webp",
+  "trapping": "v3_northern_wetland_boardwalk.webp"
+ },
+ {
+  "hero": "v3_old_rural_barn.webp",
+  "snaring": "v3_coiled_cable_leather_gloves.webp"
+ },
+ {
+  "hero": "v3_grinding_wheel_closeup.webp",
+  "sharpening": "v3_steel_blade_detail.webp"
+ },
+ {
+  "hero": "v3_birch_forest_first_frost.webp",
+  "trapping": "v3_autumn_hardwood_trail.webp",
+  "snaring": "v3_stacked_firewood_workshop.webp"
+ }
+];
+let availablePhotos=new Set();
 let photoReady=false;
 function image(kind='hero',cls='',i=index,load='lazy'){
  const svg='./assets/'+num(i)+'-'+kind+'.svg';
  const filename=(photoMap[i]||{})[kind];
  const photo=filename?'./assets/photos/'+filename:'';
- const src=photoReady&&photo?photo:svg;
- return `<img src="${src}" data-syt-photo="${photo}" data-syt-fallback="${svg}" class="${cls}" alt="Original AI-generated concept ${kind} scene for Shut Your Trap; not a photo of the actual business" width="1600" height="900" loading="${load}" decoding="async">`;
+ const upgraded=(photoMapV3[i]||{})[kind];
+ const selected=photoReady&&availablePhotos.has(upgraded)?'./assets/photos/'+upgraded:photo;
+ const src=photoReady&&selected?selected:svg;
+ return `<img src="${src}" data-syt-photo="${photo}" data-syt-index="${i}" data-syt-kind="${kind}" data-syt-fallback="${svg}" class="${cls}" alt="Original AI-generated concept ${kind} scene for Shut Your Trap; not a photo of the actual business" width="1600" height="900" loading="${load}" decoding="async">`;
 }
 function attachPhotoFallbacks(){
  app.querySelectorAll('img[data-syt-fallback]').forEach(img=>{
    img.addEventListener('error',()=>{
+    const current=img.getAttribute('src')||'';
+    const oldPhoto=img.dataset.sytPhoto;
     const fallback=img.dataset.sytFallback;
-    if(fallback&&!img.getAttribute('src').endsWith('.svg'))img.src=fallback;
-   },{once:true});
+    if(current.includes('/assets/photos/v3_')&&oldPhoto&&current!==oldPhoto){img.src=oldPhoto;return}
+    if(fallback&&!current.endsWith('.svg'))img.src=fallback;
+   });
  });
 }
 async function discoverPhotographs(){
@@ -107,11 +157,15 @@ async function discoverPhotographs(){
    const response=await fetch('./assets/photos/status.json',{cache:'no-cache'});
    if(!response.ok)return;
    const status=await response.json();
-   if(status.enabled!==true||status.image_count!==17)return;
+   if(status.enabled!==true||status.image_count<17||status.image_count>40||!Array.isArray(status.images)||status.images.length!==status.image_count)return;
+   availablePhotos=new Set(status.images);
    photoReady=true;
    document.querySelectorAll('img[data-syt-photo]').forEach(img=>{
-     const photo=img.dataset.sytPhoto;
-     if(photo)img.src=photo;
+     const i=Number(img.dataset.sytIndex);
+     const candidate=(photoMapV3[i]||{})[img.dataset.sytKind];
+     const upgraded=candidate&&availablePhotos.has(candidate)?'./assets/photos/'+candidate:'';
+     const next=upgraded||img.dataset.sytPhoto;
+     if(next)img.src=next;
    });
  }catch(_error){/* Keep verified SVG fallback without interrupting the design. */}
 }
