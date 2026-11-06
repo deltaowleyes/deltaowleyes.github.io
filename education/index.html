@@ -28,7 +28,7 @@ a{color:#12665c}a:focus-visible,button:focus-visible,input:focus-visible,select:
 h2{font:700 clamp(1.45rem,3vw,2rem)/1.2 Georgia,serif;margin:0 0 12px}h3{font:750 1.18rem/1.4 system-ui,sans-serif;margin:8px 0}
 .panel p{margin:6px 0 0}.panel ul{margin:8px 0 0;padding-left:20px}
 .quickpaths{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0 30px}.quickpaths button{border:1px solid #a7c7bc;color:#1f554e;background:#f2f8f4;border-radius:999px;padding:8px 14px;font:700 .9rem system-ui;cursor:pointer}
-.quickpaths button:hover{background:#dcefe7}.filter-panel{background:#eaf3ef;padding:20px;border-radius:13px;border:1px solid #cdded4;margin:0 0 22px}
+.quickpaths button:hover{background:#dcefe7}.feedback-action{display:inline-flex;align-items:center;min-height:43px;padding:9px 14px;border:1px solid #8fb8a6;border-radius:8px;background:#f1f8f3;color:#205d50;text-decoration:none;font-weight:750}.feedback-action:hover{background:#e1f0e7}.filter-panel{background:#eaf3ef;padding:20px;border-radius:13px;border:1px solid #cdded4;margin:0 0 22px}
 .filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:12px;align-items:end}.filters label{display:block;font-weight:700;font-size:.87rem;margin-bottom:5px}
 .filters input,.filters select{width:100%;border:1px solid #a5bab3;background:white;border-radius:7px;padding:11px;min-height:46px;font:inherit}
 .filters button{min-height:46px;border:1px solid #38796c;color:#225c54;background:white;border-radius:7px;font-weight:700;cursor:pointer;padding:9px 12px}
@@ -69,6 +69,17 @@ footer{background:#f1f6f3;color:#183d3c;padding:22px 5%}
 <div><label for="format">Format</label><select id="format"><option value="">Any format</option><option value="online">Online</option><option value="hybrid">Online & in person</option><option value="on-site">In person</option></select></div></div>
 <div class="filter-actions"><button type="button" id="reset">Clear filters</button><p id="count" role="status" aria-live="polite">Loading educational resources…</p></div></div>
 <div id="list" class="grid" aria-live="off"></div><p id="error" role="alert" hidden>Resources are temporarily unavailable. Please try again later.</p>
+</section>
+<section class="panel" id="education-feedback" aria-labelledby="feedback-title" style="margin-bottom:22px">
+<h2 id="feedback-title">Help protect and improve this directory</h2>
+<p>Is there a public Indigenous learning resource we should include? Is a listing inaccurate, withdrawn or shared without appropriate cultural permission? Send a request directly to our editorial inbox; nothing is submitted or stored by this website.</p>
+<div class="quickpaths" style="margin:18px 0 10px">
+<a class="feedback-action" href="mailto:deltaowleyes@gmail.com?subject=Education%20-%20suggest%20a%20public%20resource&amp;body=Original%20provider%20URL%3A%0AResource%20title%3A%0AWhat%20the%20provider%20says%20about%20eligibility%20or%20permissions%3A">Suggest a public resource</a>
+<a class="feedback-action" href="mailto:deltaowleyes@gmail.com?subject=Education%20-%20request%20a%20listing%20correction&amp;body=Listing%20URL%20or%20title%3A%0AOfficial%20source%20for%20correction%3A%0AWhat%20needs%20updating%3A">Request a correction</a>
+<a class="feedback-action" href="mailto:deltaowleyes@gmail.com?subject=Education%20-%20sensitive%20removal%20request&amp;body=Public%20listing%20URL%20or%20title%3A%0APlease%20contact%20me%20privately%20to%20discuss%20a%20removal.%20I%20will%20not%20include%20restricted%20material%20in%20this%20first%20email.">Request review or removal</a>
+</div>
+<p><strong>Community knowledge and consent come first.</strong> Do not email private ceremonial teachings, recordings, photographs of children, documents with personal details, or material you do not have permission to share. For sensitive concerns, send only the public listing link and request a private conversation.</p>
+<p><small>These links open your own email app; they do not publish submissions. Staff review publicly supported facts before changing the directory. An emailed nomination is not automatic approval.</small></p>
 </section>
 <details class="panel notice-panel"><summary>Care, consent and accuracy: before opening a resource</summary>
 <p>Survivor testimony may include accounts of child removal, violence, loss and trauma. Choose when and how you engage. Some language, ceremonial or community knowledge is not intended for unrestricted circulation: please follow the source's instructions. Each listing identifies the original provider and source-review date, not guaranteed current admission, availability or cost.</p>
