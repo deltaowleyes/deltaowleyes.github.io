@@ -1,0 +1,35 @@
+name: DOE Studio 2 candidate Chromium QA
+on:
+  push:
+    branches: [feature/doe-studio-2-redesign-pilot]
+    paths:
+      - 'studio2/**'
+      - '.github/workflows/studio2-redesign-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  visual-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Chromium and Playwright
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Check local candidate
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 >/tmp/studio2-http.log 2>&1 &
+          sleep 2
+          python studio2/tests/qa.py
+      - name: Upload inspected screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: doe-studio-2-redesign-qa
+          path: artifacts/studio2/
+          if-no-files-found: warn
