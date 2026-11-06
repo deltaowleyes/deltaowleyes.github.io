@@ -70,7 +70,20 @@ try{
         assert(lineBoxes===1,'SHARPENING headline splits at viewport '+width);
       }
       assert(errors.length===0,'Browser JavaScript errors '+i+' '+width+': '+errors.join(';'));
+      // The CSS hero-image brightness filter composites asynchronously in Chromium:
+      // wait for a rendered frame after DOM image decode before screenshot acceptance.
       await page.evaluate(()=>window.scrollTo(0,0));
+      await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+      await page.waitForTimeout(450);
+      if(i===4||i===10){
+        const visual=await first.evaluate(im=>{
+          const s=getComputedStyle(im),r=im.getBoundingClientRect();
+          return {template:i,viewport:width,display:s.display,visibility:s.visibility,opacity:s.opacity,filter:s.filter,
+                  width:Math.round(r.width),height:Math.round(r.height),naturalWidth:im.naturalWidth,currentSrc:im.currentSrc};
+        });
+        results.checks.push({visualDebug:visual});
+        assert(visual.visibility==='visible'&&Number(visual.opacity)>0&&visual.width>50&&visual.height>50,'Hidden hero image '+i+' at '+width);
+      }
       if(width===390||width===1440){
         const file='shutyourtrap/live-qa-artifacts/concept-'+String(i).padStart(2,'0')+'-'+width+'.png';
         await page.screenshot({path:file,fullPage:false});
