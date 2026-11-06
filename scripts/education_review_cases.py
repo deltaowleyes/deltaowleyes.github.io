@@ -16,6 +16,8 @@ import re
 import subprocess
 import sys
 import tempfile
+if str(Path(__file__).resolve().parents[1]) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts import education_editorial as ed
 
 LOGIN = re.compile(r"^[A-Za-z0-9-]{1,39}$")
