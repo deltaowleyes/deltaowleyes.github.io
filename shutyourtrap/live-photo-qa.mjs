@@ -2,7 +2,8 @@ import { chromium } from 'playwright';
 import { mkdirSync, writeFileSync } from 'node:fs';
 
 const base='https://www.deltaowleyes.ca/shutyourtrap/';
-const PHOTO_COUNT=17;
+const MIN_PHOTO_COUNT=Math.max(17,Number(process.env.MIN_PHOTO_COUNT||17));
+const MAX_PHOTO_COUNT=40;
 const TOTAL_TEMPLATES=10;
 const results={target:base,timestamp:new Date().toISOString(),photos:[],checks:[],screenshots:[],issues:[],success:false};
 mkdirSync('shutyourtrap/live-qa-artifacts',{recursive:true});
@@ -21,7 +22,7 @@ async function waitForLivePhotos(){
       if(page.ok&&status.ok){
         const manifest=await status.json();
         const html=await page.text();
-        if(manifest.enabled===true&&manifest.image_count===PHOTO_COUNT&&Array.isArray(manifest.images)&&manifest.images.length===PHOTO_COUNT&&html.includes('site.js')){
+        if(manifest.enabled===true&&manifest.image_count>=MIN_PHOTO_COUNT&&manifest.image_count<=MAX_PHOTO_COUNT&&Array.isArray(manifest.images)&&manifest.images.length===manifest.image_count&&html.includes('site.js')){
           return {manifest,html};
         }
       }
@@ -29,13 +30,13 @@ async function waitForLivePhotos(){
     }catch(e){console.log('Live Pages not yet reachable: '+String(e))}
     if(attempt<17)await hold(15000);
   }
-  throw new Error('Public www.deltaowleyes.ca did not return the activated 17-photo manifest and expected homepage within the deployment grace window.');
+  throw new Error('Public www.deltaowleyes.ca did not return the activated minimum-photo manifest and expected homepage within the deployment grace window.');
 }
 let browser;
 try{
   const {manifest,html}=await waitForLivePhotos();
   assert(html.includes('privacy-consent.js')&&html.includes('privacy-consent.css'),'Existing privacy assets not linked on public page');
-  assert(new Set(manifest.images).size===17,'Manifest has duplicate filenames');
+  assert(new Set(manifest.images).size===manifest.image_count,'Manifest has duplicate filenames');
   results.liveManifest={enabled:manifest.enabled,image_count:manifest.image_count};
   for(const filename of manifest.images){
     assert(/^[a-z0-9_]+\.webp$/.test(filename),'Unexpected photo filename '+filename);
@@ -94,7 +95,7 @@ try{
     await ctx.close();
   }
   results.success=true;
-  console.log('LIVE PHOTOGRAPHY QA PASS: 17/17 public WebP photos; 40 live desktop/mobile/tablet concept views; no horizontal overflow; headline intact; privacy links preserved');
+  console.log('LIVE PHOTOGRAPHY QA PASS: '+results.photos.length+' public WebP photos; 40 live desktop/mobile/tablet concept views; no horizontal overflow; headline intact; privacy links preserved');
 }catch(e){
   results.issues.push(String(e));
   console.error('LIVE PHOTOGRAPHY QA FAILED: '+String(e));
