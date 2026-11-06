@@ -4848,7 +4848,7 @@
       "priority": "P1",
       "effort": "Large / phased",
       "status": "in_progress",
-      "status_basis": "Initial suppression ledger, reimport rejection, original-provider links, Survivor advisories, rights notices and source review evidence now published. Submission/moderation queue, authorization-based takedown workflow, community governance review, link-health expiry alerts and future accessible metadata filters remain incomplete.",
+      "status_basis": "Governance 1.2 review branch: public mailto nomination, corrections and takedown contact; staff-local private metadata queue; GitHub API write/admin permission and dedicated-clean-feature-branch gate before catalogue edits; generic tombstone suppression; bounded weekly read-only source link audit; explicit Nation/language/date/cost filter evidence policy; read-only business full-checkout shard audit. Two primary-source courses added cautiously (30 planned). Community-appointed governance, confidential shared case management, server-enforced two-person approval and production evidence remain outstanding. Do not mark complete until verified.",
       "dependencies": [
         "B4-039"
       ],
@@ -4877,6 +4877,21 @@
           "date": "2026-11-06",
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/17",
           "detail": "Expanded original-provider attribution, access notices, Survivor advisories, knowledge-keeper source controls and category validation. Not proof of complete community-led moderation."
+        },
+        {
+          "type": "feature_branch_governance_1_2",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/education-governance-1-2-20261106",
+          "detail": "Implemented mailto suggestions/corrections/owner takedown, local queue (0600), gh role & topic branch authorization, source-health workflow, read-only full-shard auditor and safety tests. Pending PR CI, publication and community review."
+        },
+        {
+          "type": "provider_candidate_verification",
+          "date": "2026-11-06",
+          "urls": [
+            "https://www.fanshawec.ca/programs/oni1-oneida-language-immersion-culture-and-teaching/next",
+            "https://aeipostsecondary.ca/programs/pre-health-sciences-certificate-program/"
+          ],
+          "detail": "Official provider verifies fully online Oneida language diploma (September 2027, language assessment) and AEI pre-health certificate (online, first-year listed tuition C$3,967.62 subject to change). Entries have check-provider access; no Indigenous-only claim."
         }
       ]
     }
@@ -5087,6 +5102,16 @@
         "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42235504211"
       ],
       "automation_run_id": "95e4dc19-8184-8320-9ce0-673669a90577"
+    },
+    {
+      "date": "2026-11-06",
+      "type": "education_governance_1_2_pre_release",
+      "task_id": "B4-041",
+      "source_head_at_start": "30f27c6d794f0eaea6df4a09290cb13a3401b900",
+      "summary": "Governance 1.2 branch adds editorial request mailto links, no public PII intake, GitHub-authenticated staff-local queue, reversible source review/takedown operations, source link monitoring, 2 provider-verified course candidates for 30 total, metadata evidence plan and separate full-checkout phone-shard diagnostics. PR and live QA still required; B4-041 in progress.",
+      "links": [
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/education-governance-1-2-20261106"
+      ]
     }
   ]
 }
