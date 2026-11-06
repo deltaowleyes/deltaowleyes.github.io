@@ -33,8 +33,8 @@
       "slug": "sharp-edge",
       "template": 1,
       "width": 768,
-      "bytes": 288561,
-      "sha256": "e60c933cb53be3e0cb739950f28eb2d3ebbfbcf1710d026c768905774cf81e8a"
+      "bytes": 289340,
+      "sha256": "4cf45ce1f9bd9e36784f7c87532570adb95734b750103df7618a5d35e7d1f611"
     },
     {
       "filename": "sharp-edge-1024.jpg",
@@ -89,8 +89,8 @@
       "slug": "family-trapline",
       "template": 2,
       "width": 1024,
-      "bytes": 363468,
-      "sha256": "348c613092079e9b6abde5408eb4ff5b4ea22714a8b2416a3d439cd654dd3885"
+      "bytes": 362099,
+      "sha256": "96b7f62f99b1ac139610c88f3fd6c58097450c8ecb33c066be28459e1d339744"
     },
     {
       "filename": "family-trapline-1280.jpg",
@@ -113,8 +113,8 @@
       "slug": "expedition",
       "template": 4,
       "width": 320,
-      "bytes": 166565,
-      "sha256": "c9a247360069ce414c29e4ed24ed43fc1757620e56319fa170c653f730493b10"
+      "bytes": 165516,
+      "sha256": "ca0c44f5e49fc1003355852fbb8d2c83a0893b3ea2d01908ca86f2970c4af8e1"
     },
     {
       "filename": "expedition-390.jpg",
