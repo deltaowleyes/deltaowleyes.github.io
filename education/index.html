@@ -55,18 +55,18 @@ footer{background:#f1f6f3;color:#183d3c;padding:22px 5%}
 <section class="panel"><h2>Two ways to learn</h2><p><strong>For Indigenous learners:</strong> find opportunities with eligibility or funding intended for First Nations, Inuit or Métis people.</p><p><strong>For everyone seeking to learn:</strong> explore Indigenous histories, perspectives, cultural work and contemporary issues, with Indigenous-led and community-controlled sources prioritized.</p></section>
 <aside class="panel"><h2>Knowledge belongs to its keepers</h2><p>We link to original educators and organizations. Cultural permissions, community protocols, fees, enrolment and access conditions always belong to the source provider.</p></aside>
 </div>
-<section aria-label="Explore learning topics"><h2>Find your learning path</h2><div class="quickpaths" id="quickpaths">
+<section aria-label="Explore learning topics"><h2>Find your learning path</h2><p>Start with community sources from Bkejwanong and neighbouring Nations, or browse learning opportunities across Canada.</p><div class="quickpaths" id="quickpaths"><button type="button" data-query="Bkejwanong">Bkejwanong first</button>
 <button type="button" data-topic="schools">Schools & programs</button><button type="button" data-topic="courses">Online courses</button>
 <button type="button" data-topic="land">Land-based learning</button><button type="button" data-topic="languages">Languages</button>
 <button type="button" data-topic="survivor-stories">Survivor stories</button><button type="button" data-topic="videos">Videos</button>
 <button type="button" data-topic="advocacy">Activism & land rights</button><button type="button" data-topic="funding">Scholarships</button>
-<button type="button" data-topic="teaching">Educator resources</button></div></section>
+<button type="button" data-topic="knowledge-keepers">Knowledge keepers</button><button type="button" data-topic="teaching">Educator resources</button></div></section>
 <section id="resources" aria-labelledby="resource-title"><h2 id="resource-title">Learning opportunities directory</h2>
 <div class="filter-panel"><div class="filters">
 <div><label for="search">Search resources</label><input id="search" type="search" autocomplete="off" placeholder="e.g., treaty, language, scholarships"></div>
-<div><label for="topic">Topic</label><select id="topic"><option value="">All topics</option><option value="schools">Schools & programs</option><option value="courses">Courses</option><option value="land">Land-based learning</option><option value="languages">Languages</option><option value="survivor-stories">Survivor stories</option><option value="videos">Videos</option><option value="advocacy">Activism & land rights</option><option value="funding">Scholarships & funding</option><option value="teaching">Educator resources</option></select></div>
+<div><label for="topic">Topic</label><select id="topic"><option value="">All topics</option><option value="schools">Schools & programs</option><option value="courses">Courses</option><option value="land">Land-based learning</option><option value="languages">Languages</option><option value="survivor-stories">Survivor stories</option><option value="videos">Videos</option><option value="advocacy">Activism & land rights</option><option value="funding">Scholarships & funding</option><option value="teaching">Educator resources</option><option value="knowledge-keepers">Knowledge keepers</option></select></div>
 <div><label for="eligibility">Access</label><select id="eligibility"><option value="">All access types</option><option value="indigenous-only">Indigenous-only eligibility</option><option value="open">Open to learners</option><option value="check-provider">Check provider requirements</option></select></div>
-<div><label for="format">Format</label><select id="format"><option value="">Any format</option><option value="online">Online</option><option value="hybrid">Online & in person</option></select></div></div>
+<div><label for="format">Format</label><select id="format"><option value="">Any format</option><option value="online">Online</option><option value="hybrid">Online & in person</option><option value="on-site">In person</option></select></div></div>
 <div class="filter-actions"><button type="button" id="reset">Clear filters</button><p id="count" role="status" aria-live="polite">Loading educational resources…</p></div></div>
 <div id="list" class="grid" aria-live="off"></div><p id="error" role="alert" hidden>Resources are temporarily unavailable. Please try again later.</p>
 </section>
@@ -79,7 +79,8 @@ footer{background:#f1f6f3;color:#183d3c;padding:22px 5%}
 <script>
 (function(){
 'use strict';
-const topicNames={schools:'Schools & programs',courses:'Courses',land:'Land-based learning',languages:'Languages','survivor-stories':'Survivor testimony',videos:'Video learning',advocacy:'Activism & rights',funding:'Scholarships & funding',teaching:'Teaching resources'};
+const topicNames={schools:'Schools & programs',courses:'Courses',land:'Land-based learning',languages:'Languages','survivor-stories':'Survivor testimony',videos:'Video learning',advocacy:'Activism & rights',funding:'Scholarships & funding',teaching:'Teaching resources','knowledge-keepers':'Knowledge keepers'};
+const formatNames={online:'Online',hybrid:'Online & in person','on-site':'In person'};
 const accessNames={'indigenous-only':'Indigenous-only eligibility',open:'Open to learners','check-provider':'Check provider requirements'};
 const search=document.getElementById('search'),topic=document.getElementById('topic'),eligibility=document.getElementById('eligibility'),format=document.getElementById('format'),list=document.getElementById('list'),count=document.getElementById('count'),error=document.getElementById('error');
 let records=[];
@@ -93,7 +94,7 @@ function render(){
  if(!found.length){list.append(el('p','',records.length?'No matches. Try removing a filter.':'No resources available.'));return}
  for(const x of found){
   if(!/^https:\/\/[^\s]+$/.test(x.url))continue;
-  const card=el('article','resource'),provider=el('p','provider',x.provider),title=el('h3','',x.title),tags=el('div','tags'),desc=el('p','description',x.description),meta=el('p','meta',x.region+' · '+x.format+' · '+x.price);
+  const card=el('article','resource'),provider=el('p','provider',x.provider),title=el('h3','',x.title),tags=el('div','tags'),desc=el('p','description',x.description),meta=el('p','meta',x.region+' · '+(formatNames[x.format]||x.format)+' · '+x.price);
   tags.append(tag(topicNames[x.category]||x.category),tag(accessNames[x.eligibility]||'Check provider','access'));
   card.append(provider,title,tags,desc,meta);
   if(x.notice)card.append(el('p','notice',x.notice));
@@ -104,7 +105,7 @@ function render(){
 }
 [search,topic,eligibility,format].forEach(control=>control.addEventListener(control===search?'input':'change',render));
 document.getElementById('reset').addEventListener('click',()=>{search.value='';topic.value='';eligibility.value='';format.value='';render();search.focus()});
-document.querySelectorAll('#quickpaths button').forEach(btn=>btn.addEventListener('click',()=>{topic.value=btn.dataset.topic;render();document.getElementById('resources').scrollIntoView({block:'start'});topic.focus({preventScroll:true})}));
+document.querySelectorAll('#quickpaths button').forEach(btn=>btn.addEventListener('click',()=>{topic.value=btn.dataset.topic||'';search.value=btn.dataset.query||'';render();document.getElementById('resources').scrollIntoView({block:'start'});(btn.dataset.query?search:topic).focus({preventScroll:true})}));
 fetch('/data/education-resources.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Resource catalogue unavailable');return r.json()}).then(items=>{if(!Array.isArray(items))throw Error('Unexpected catalogue');records=items.filter(x=>x&&typeof x.title==='string'&&typeof x.url==='string');render()}).catch(()=>{error.hidden=false;count.textContent='Resources unavailable'});
 })();
 </script>
