@@ -7,7 +7,7 @@
     "known_billable_actions_initiated_this_bake": 0,
     "known_new_purchases_or_subscriptions_this_bake": 0,
     "actual_cash_spend_verified_cad": null,
-    "actual_cash_spend_verification_status": "Unknown: no provider billing/usage records available. No paid operations intentionally initiated by Website Factory 1.2.",
+    "actual_cash_spend_verification_status": "UNVERIFIED: no provider billing or usage statement accessed for aggregate development cash charges; never treat this as C$0.",
     "unverified_spending_not_assumed_zero": true,
     "cost_evidence": "Used existing ChatGPT access, offline editing, existing owned project images, GitHub repository writes. No pay-per-use AI API, purchased theme, media license, new CMS, or billable hosting operation was initiated in this BAKE. Account-level charges cannot be inferred."
   },
@@ -61,6 +61,23 @@
       "invoice_or_billing_verified": false,
       "actual_spend_cad": null,
       "notes": "Edited original JS/CSS, existing browser QA and Markdown in public GitHub repo. Consulted public sources, reused existing V2 AI photographs, and ran isolated local Chromium. No paid AI API, purchased theme, new subscription or paid CI runner deliberately enabled. Hosted GitHub Actions run/artifacts, live public deployment and external billing are not verified. Release remains candidate."
+    },
+    {
+      "date": "2026-11-05",
+      "project": "Momma Made",
+      "candidate_revision": "v3",
+      "phase": "Website Factory 1.3 final hosted acceptance",
+      "hosted_chromium_run_id": 42141805738,
+      "screenshot_artifact_id": 13468625400,
+      "hosted_job_result": "success",
+      "original_photo_assets_purchased": 0,
+      "new_paid_services_activated": false,
+      "known_payable_tools_invoked": false,
+      "invoice_or_billing_verified": false,
+      "actual_spend_cad": null,
+      "artifact_bytes": 6258177,
+      "artifact_retention_days": 3,
+      "notes": "Public standard GitHub-hosted runner; no new paid APIs, subscriptions, third-party media, larger runners or purchases intentionally initiated. Actual provider billing remains unknown. Site remains V2 latest; V3 not visually approved."
     }
   ]
 }
