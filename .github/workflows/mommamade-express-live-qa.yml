@@ -1,0 +1,77 @@
+name: Momma Made BAKE EXPRESS live screenshot studio acceptance
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/mommamade-express-live-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-browser-acceptance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install free Chromium browser driver
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Independently check deployed public gallery and six viewport views
+        run: |
+          python - <<'PY'
+          import json,pathlib,urllib.request
+          from playwright.sync_api import sync_playwright
+          out=pathlib.Path('artifacts/mommamade-express-live');out.mkdir(parents=True,exist_ok=True)
+          base='https://www.deltaowleyes.ca/mommamade/studio/'
+          families=['atelier-ledger','picnic-club','utility-index','garden-folio','pattern-studio','quiet-catalogue']
+          widths=[320,390,500,768,1024,1440]
+          checks=[]
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True,args=['--no-sandbox'])
+              for w in widths:
+                  page=browser.new_page(viewport={'width':w,'height':900},device_scale_factor=1,is_mobile=w<=500,has_touch=w<=500)
+                  errors=[]
+                  page.on('pageerror',lambda e:errors.append(str(e)))
+                  resp=page.goto(base,wait_until='networkidle',timeout=60000)
+                  if page.locator('#doe-reject').count() and page.locator('#doe-reject').first.is_visible():
+                      page.locator('#doe-reject').first.click()
+                  links=page.locator('a[href^="/mommamade/studio/previews/"]')
+                  routes=set(links.evaluate_all("(es)=>es.map(x=>x.getAttribute('href'))"))
+                  expected=set('/mommamade/studio/previews/'+f+'/' for f in families)
+                  overflow=page.evaluate("document.documentElement.scrollWidth>innerWidth+2")
+                  direct=page.locator('a[href*="/mommamade/v3/"]').count()
+                  page.screenshot(path=str(out/f'gallery-{w}.png'),animations='disabled')
+                  passed=bool(resp and resp.status==200 and page.locator('.card').count()==6 and routes==expected and not overflow and direct==0 and not errors)
+                  checks.append({'width':w,'gallery_status':resp.status if resp else None,'gallery_cards':page.locator('.card').count(),'unique_routes':len(routes),'overflow':overflow,'direct_v3_source_links':direct,'page_errors':errors,'passed':passed})
+                  page.close()
+              page=browser.new_page(viewport={'width':390,'height':844},is_mobile=True,has_touch=True)
+              for slug in families:
+                  resp=page.goto(base+'previews/'+slug+'/',wait_until='networkidle',timeout=60000)
+                  assert resp and resp.status==200,(slug,'route')
+                  assert page.locator('.shot').count()==6,(slug,'screenshots')
+                  assert not page.evaluate("document.documentElement.scrollWidth>innerWidth+2"),(slug,'overflow')
+                  for w in widths:
+                      assert page.request.get(base+'previews/'+slug+'/full-'+str(w)+'.webp',timeout=20000).status==200,(slug,w,'image')
+                  assert page.request.get(base+'previews/'+slug+'/thumbnail.webp',timeout=20000).status==200,(slug,'thumbnail')
+                  page.locator('.shot button').first.click()
+                  assert page.locator('dialog').evaluate('(e)=>e.open'),slug
+                  page.screenshot(path=str(out/f'viewer-{slug}.png'),animations='disabled')
+                  page.keyboard.press('Escape')
+                  assert not page.locator('dialog').evaluate('(e)=>e.open'),slug
+              page.close();browser.close()
+          (out/'results.json').write_text(json.dumps({'gallery_width_tests':checks,'preview_pages':len(families),'image_responses_checked':len(families)*(len(widths)+1),'live_status':'pass' if all(x['passed'] for x in checks) else 'failed'},indent=2)+'\n')
+          print(json.dumps(checks,indent=2))
+          assert all(x['passed'] for x in checks),'Public responsive acceptance failure'
+          print('PASS: public gallery, six design routes, 36 images, six thumbnails, accessible dialog and responsive widths')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mommamade-express-public-acceptance
+          path: artifacts/mommamade-express-live/
+          retention-days: 5
+          if-no-files-found: warn
