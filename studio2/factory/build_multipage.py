@@ -17,12 +17,70 @@ def styles(theme):
  if theme=="ledger":
   return common+"""body{background:#efede9;color:#1c1d20;font-family:Arial,sans-serif}header{background:#121719;color:#fff;border-bottom:7px solid #ab2636}header .wrap{padding:22px 0}h1,h2,.brand{font-family:Arial,sans-serif;letter-spacing:-.055em}h1{font-size:clamp(2.7rem,7vw,6.5rem);font-weight:950;text-transform:uppercase;max-width:980px}.hero{background:#151b20;color:white;padding:80px 0 60px;border-bottom:18px solid #af2937}.hero .kicker{color:#ff858c}.lead{max-width:630px}.article-grid{padding-top:50px}.sections{counter-reset:case}.sections article{display:grid;grid-template-columns:60px 1fr;gap:20px;border-top:3px solid #252b2d}.sections article:before{counter-increment:case;content:counter(case,decimal-leading-zero);font-size:2.2rem;font-weight:950;color:#a62531}.sections article>*{grid-column:2}.sections h2{font:900 1.85rem/1.08 Arial,sans-serif}.side{background:#b02c38;color:white}.source,.inquiry-form button{background:#a52632;color:white}footer{background:#14181b;color:white}"""
  return common+"""body{background:#101b29;color:#f0ede4}header{background:#070e19;color:#fff;border-bottom:3px solid #b7434d}header .wrap{padding:22px 0}h1,h2,.brand{font-family:Georgia,serif}h1{font-size:clamp(2.7rem,6.4vw,6rem);max-width:850px;letter-spacing:-.06em}.hero{background:radial-gradient(circle at 84% 10%,#96543f 0%,transparent 32%),linear-gradient(135deg,#192e3f,#070e1a);padding:90px 0 80px}.hero .kicker{color:#efb9a4}.hero h1{color:#ffe2be}.article-grid{padding-top:45px}.sections{display:grid;gap:16px}.sections article{padding:28px;background:#1a3242;border:1px solid #4b6979}.sections h2{font-size:1.9rem;color:#f9d4b9}.side{background:#e5d0aa;color:#0e1926}.source,.inquiry-form button{background:#b02d42;color:white}footer{background:#070c13;color:#dbe3e3}"""
+def visual_media(theme,slug):
+ """Decorative images are original/controlled assets, never evidence for article claims."""
+ if theme=="river":
+  return ('/shutyourtrap/assets/photos/golden_sunrise_in_a_misty_pine_forest.webp',
+          'Conceptual forest sunrise artwork, not a photograph of a reported location')
+ if theme=="ledger":
+  return ('/studio2/river-voice/assets/archaeology-policy.svg',
+          'Conceptual illustration of earth strata and historical research, not evidence from a real case')
+ return ('/studio2/river-voice/assets/owl-lens-studio.svg',
+         'Original illustrated podcast production studio, not a photograph of a recording')
+
+def visual_style(theme):
+ base="""
+.hero-art{position:relative;margin:0;overflow:hidden;min-height:240px;background:#152c32}
+.hero-art img{display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;max-height:450px}
+.hero-art figcaption{position:absolute;left:16px;right:16px;bottom:12px;font-size:.7rem;line-height:1.35;
+ background:#081921dc;color:#fff;padding:8px 12px;max-width:42ch}
+.content-strap{display:flex;flex-wrap:wrap;align-items:center;gap:15px;margin:24px 0 35px;
+ font-size:.7rem;font-weight:850;text-transform:uppercase;letter-spacing:.15em}
+.content-strap span{padding:9px 12px;border:1px solid currentColor}
+.page-tools{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:25px 0}
+.page-tools a{display:inline-flex;align-items:center;min-height:44px;font-weight:850;text-underline-offset:5px}
+.sub-label{font-size:.77rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
+@media(max-width:750px){.hero-art img{max-height:270px}.hero-art figcaption{font-size:.64rem}
+ .content-strap{margin:15px 0 22px}.article-grid{padding-top:24px}}
+"""
+ if theme=="river":
+  return base+""".hero{padding:0;display:grid;grid-template-columns:1fr 43%;min-height:430px}
+.hero>.wrap{padding:70px 35px 75px max(20px,calc((100vw - 1160px)/2));width:100%;margin:0}
+.hero-art{grid-column:2;grid-row:1}.hero-art img{height:100%;aspect-ratio:auto;max-height:none}
+.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#10374066,transparent);pointer-events:none}
+.article-grid{grid-template-columns:minmax(0,1.8fr) minmax(230px,.58fr)}.sections article:first-child{padding-top:40px}
+.content-strap{color:#8d502f}
+@media(max-width:850px){.hero{display:flex;flex-direction:column}.hero>.wrap{padding:55px 22px 40px;width:100%}
+.hero-art{min-height:210px}.hero-art img{max-height:260px;height:260px}.hero-art figcaption{z-index:2}}
+"""
+ if theme=="ledger":
+  return base+""".hero{display:grid;grid-template-columns:1fr minmax(270px,34%);min-height:390px;padding:0}
+.hero>.wrap{width:100%;padding:80px 35px 70px max(20px,calc((100vw - 1160px)/2));margin:0}
+.hero-art{grid-row:1;grid-column:2;border-left:10px solid #b32b3b}
+.hero-art img{height:100%;max-height:none;aspect-ratio:auto;filter:grayscale(1) contrast(1.15)}
+.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#11171b83,transparent)}
+.content-strap{color:#a92c3d}.sections article{grid-template-columns:60px 1fr}
+.sections article:nth-child(odd){background:#e6e4e0}.sections article>*{padding-right:18px}
+@media(max-width:850px){.hero{display:flex;flex-direction:column}.hero>.wrap{padding:45px 20px 30px}
+.hero-art{border-left:0;border-top:7px solid #a7293b;min-height:220px}.hero-art img{height:240px;max-height:260px}}
+"""
+ return base+""".hero{position:relative;display:grid;grid-template-columns:1fr 41%;min-height:460px;padding:0}
+.hero>.wrap{width:100%;padding:90px 35px 75px max(20px,calc((100vw - 1160px)/2));margin:0;z-index:1}
+.hero-art{grid-column:2;grid-row:1;align-self:stretch;background:#0a1620}
+.hero-art img{height:100%;max-height:none;aspect-ratio:auto}
+.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#111f2f77,transparent)}
+.content-strap{color:#e8b18a}.sections article{box-shadow:0 16px 30px #0002}.sections article:hover{border-color:#cca68c}
+@media(max-width:850px){.hero{display:flex;flex-direction:column}.hero>.wrap{padding:55px 20px 30px}
+.hero-art img{height:250px;max-height:250px}.hero-art{min-height:220px}}
+"""
+
 def build_page(site,route,cfg):
  theme=site["theme"];base=site["base"];sid=site["id"]
  nav=[("Home",base)]+[(r["nav"],base+r["slug"]+"/") for r in cfg["routes"]]
  active=base+route["slug"]+"/"
  links="".join(f'<a href="{esc(url)}"'+(' aria-current="page"' if url==active else '')+f'>{esc(label)}</a>' for label,url in nav)
  sections="".join('<article><h2>'+esc(s["title"])+'</h2><p>'+esc(s["body"])+'</p>'+ (f'<p><a href="{esc(s["href"])}">{esc(s["link"])} ↗</a></p>' if "href" in s else "")+'</article>' for s in route["sections"])
+ visual_src,visual_alt=visual_media(theme,route["slug"])
  inquiries=""
  if route["slug"]=="inquiry":
   inquiries=f'''<form class="inquiry-form" id="design-inquiry">
@@ -46,13 +104,13 @@ document.getElementById('design-inquiry').addEventListener('submit', function(e)
 <meta name="robots" content="noindex,nofollow"><meta name="description" content="Unpublished Delta Owl Eyes design prototype">
 <title>{esc(route["title"])} | {esc(site["name"])} candidate</title>
 <link rel="stylesheet" href="/assets/privacy-consent.css"><script defer src="/assets/privacy-consent.js"></script>
-<style>{styles(theme)}</style></head>
+<style>{styles(theme)}{visual_style(theme)}</style></head>
 <body class="{theme}"><a class="skip" href="#main">Skip to main content</a>
 <div class="top"><div class="wrap">Delta Owl Eyes / {esc(site["name"])} · Unpublished candidate</div></div>
 <header><div class="wrap"><a class="brand" href="{esc(base)}">Delta Owl Eyes</a><nav aria-label="Candidate site navigation">{links}</nav></div></header>
 <main id="main"><section class="hero"><div class="wrap"><span class="kicker">{esc(route["eyebrow"])}</span>
-<h1>{esc(route["title"])}</h1><p class="lead">{esc(route["summary"])}</p></div></section>
-<div class="wrap article-grid"><div class="sections">{sections}<a class="source" href="{esc(route["source"])}">{esc(route["source_label"])} ↗</a>{inquiries}</div>
+<h1>{esc(route["title"])}</h1><p class="lead">{esc(route["summary"])}</p></div><figure class="hero-art"><img src="{esc(visual_src)}" alt="{esc(visual_alt)}" decoding="async"><figcaption>Conceptual visual · Not documentary evidence</figcaption></figure></section>
+<div class="wrap"><div class="content-strap"><span>{esc(site["name"])}</span><span>{esc(route["nav"])}</span><span>Original Delta Owl Eyes content pathways</span></div></div><div class="wrap article-grid"><div class="sections">{sections}<a class="source" href="{esc(route["source"])}">{esc(route["source_label"])} ↗</a>{inquiries}</div>
 <aside class="side"><strong>Within this design</strong><p>Explore the other working views of this candidate.</p>
 {''.join(f'<a href="{esc(url)}">{esc(label)} ↗</a>' for label,url in nav if url!=active)}
 <p><small>Design demonstration. Conceptual artwork and reporting links are not evidence of unpublished stories.</small></p></aside></div></main>
