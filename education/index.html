@@ -115,7 +115,9 @@ function render(){
   if(f.community)details.push('Community connection: '+f.community);
   if(f.credential)details.push('Learning type: '+f.credential);
   if(f.start_month)details.push('Provider-listed start: '+f.start_month+' (confirm current intake)');
-  if(typeof f.tuition_cad==='number')details.push('Provider-listed Year 1 tuition: C
+  if(typeof f.tuition_cad==='number')details.push('Provider-listed Year 1 tuition: C$'+f.tuition_cad.toFixed(2)+' (may change)');
+  if(details.length)card.append(el('p','verified-detail',details.join(' · ')));
+  if(x.notice)card.append(el('p','notice',x.notice));
   card.append(el('p','meta','Source reviewed '+x.last_source_review+' · See provider for current availability'));
   const link=el('a','visit','Visit original resource');link.href=x.url;link.target='_blank';link.rel='noopener noreferrer external';link.setAttribute('aria-label','Open '+x.title+' at '+x.provider+' in a new tab');
   card.append(link);list.append(card);
@@ -136,20 +138,6 @@ Promise.all([
  setOptions(community,facets.records.map(x=>x.community).filter(Boolean));
  render();
 }).catch(()=>{error.hidden=false;count.textContent='Resources unavailable';});
-})();
-</script>
-</body></html>+f.tuition_cad.toFixed(2)+' (may change)');
-  if(details.length)card.append(el('p','verified-detail',details.join(' · ')));
-  if(x.notice)card.append(el('p','notice',x.notice));
-  card.append(el('p','meta','Source reviewed '+x.last_source_review+' · See provider for current availability'));
-  const link=el('a','visit','Visit original resource');link.href=x.url;link.target='_blank';link.rel='noopener noreferrer external';link.setAttribute('aria-label','Open '+x.title+' at '+x.provider+' in a new tab');
-  card.append(link);list.append(card);
- }
-}
-[search,topic,eligibility,format].forEach(control=>control.addEventListener(control===search?'input':'change',render));
-document.getElementById('reset').addEventListener('click',()=>{search.value='';topic.value='';eligibility.value='';format.value='';render();search.focus()});
-document.querySelectorAll('#quickpaths button').forEach(btn=>btn.addEventListener('click',()=>{topic.value=btn.dataset.topic||'';search.value=btn.dataset.query||'';render();document.getElementById('resources').scrollIntoView({block:'start'});(btn.dataset.query?search:topic).focus({preventScroll:true})}));
-fetch('/data/education-resources.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Resource catalogue unavailable');return r.json()}).then(items=>{if(!Array.isArray(items))throw Error('Unexpected catalogue');records=items.filter(x=>x&&typeof x.title==='string'&&typeof x.url==='string');render()}).catch(()=>{error.hidden=false;count.textContent='Resources unavailable'});
 })();
 </script>
 </body></html>
