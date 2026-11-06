@@ -1,0 +1,36 @@
+name: Education governance and removal safety
+on:
+  pull_request:
+    paths:
+      - "education/**"
+      - "data/education-*.json"
+      - "scripts/education_editorial.py"
+      - "scripts/test_education_editorial.py"
+      - "scripts/check_education_resources.py"
+      - "scripts/check_education_links.py"
+      - ".github/workflows/validate-education-governance.yml"
+  push:
+    branches: [main]
+    paths:
+      - "education/**"
+      - "data/education-*.json"
+      - "scripts/education_editorial.py"
+      - "scripts/test_education_editorial.py"
+      - "scripts/check_education_resources.py"
+      - "scripts/check_education_links.py"
+      - ".github/workflows/validate-education-governance.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python syntax and static resource validation
+        run: |
+          python3 -m py_compile scripts/education_editorial.py scripts/check_education_links.py scripts/check_education_resources.py scripts/test_education_editorial.py
+          python3 scripts/check_education_resources.py
+      - name: Authorization, takedown and private intake tests
+        run: python3 scripts/test_education_editorial.py

@@ -1,0 +1,30 @@
+name: Education original-source health audit
+on:
+  schedule:
+    - cron: "35 12 * * 1"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/check_education_links.py"
+      - ".github/workflows/education-source-health.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read-only external source availability and freshness
+        run: |
+          python3 scripts/check_education_resources.py
+          python3 scripts/check_education_links.py /tmp/education-source-health.json
+      - name: Save review-only evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: education-provider-link-health
+          path: /tmp/education-source-health.json
+          if-no-files-found: ignore
+          retention-days: 30

@@ -1,5 +1,37 @@
 [
   {
+    "id": "fanshawe-oneida-advanced-diploma",
+    "title": "Oneida Language Immersion, Culture and Teaching",
+    "provider": "Fanshawe College with the Oneida community",
+    "category": "languages",
+    "format": "online",
+    "eligibility": "check-provider",
+    "price": "Tuition varies; see official program page",
+    "description": "An accelerated Ontario college advanced diploma delivered fully online, focused on Onyota’a:ka language immersion, teaching and revitalization. Fanshawe lists a September 2027 intake and recommends prior language skills.",
+    "url": "https://www.fanshawec.ca/programs/oni1-oneida-language-immersion-culture-and-teaching/next",
+    "source_url": "https://www.fanshawec.ca/programs/oni1-oneida-language-immersion-culture-and-teaching/next",
+    "region": "Oneida Nation of the Thames / Ontario / online",
+    "notice": "Admission requires secondary-school eligibility and a Oneida-language pre-admission assessment. Fanshawe says regional availability may vary and particularly encourages Oneida community applications; it does not state this course is Indigenous-only. Confirm intake and fees with Fanshawe.",
+    "last_source_review": "2026-11-06",
+    "verification": "provider_source_reviewed"
+  },
+  {
+    "id": "aei-pre-health-sciences",
+    "title": "Pre-Health Sciences Certificate",
+    "provider": "Anishinabek Educational Institute",
+    "category": "courses",
+    "format": "online",
+    "eligibility": "check-provider",
+    "price": "Provider lists C$3,967.62 Year 1 tuition; subject to change",
+    "description": "An Anishinabek Educational Institute one-year certificate to develop science, math, communication and health-sector preparation for further health sciences study. The provider describes online delivery.",
+    "url": "https://aeipostsecondary.ca/programs/pre-health-sciences-certificate-program/",
+    "source_url": "https://aeipostsecondary.ca/programs/pre-health-sciences-certificate-program/",
+    "region": "Ontario / online",
+    "notice": "AEI lists OSSD-level requirements, potential funding and limited seats; check current admission rules, Indigenous eligibility, seat availability, costs and application dates with the provider before applying.",
+    "last_source_review": "2026-11-06",
+    "verification": "provider_source_reviewed"
+  },
+  {
     "id": "wifn-post-secondary-support",
     "title": "Post-secondary education support",
     "provider": "Walpole Island First Nation Education Department",

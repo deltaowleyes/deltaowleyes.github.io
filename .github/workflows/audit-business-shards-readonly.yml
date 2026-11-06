@@ -1,0 +1,27 @@
+name: Read-only business phone-shard audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit_business_shards_readonly.py"
+      - ".github/workflows/audit-business-shards-readonly.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Parse full business shards on runner and audit deletion ledger
+        run: |
+          python3 scripts/audit_business_shards_readonly.py /tmp/business-shard-audit.json
+      - name: Save aggregate report only (no personal contacts)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: business-shards-readonly-summary
+          path: /tmp/business-shard-audit.json
+          if-no-files-found: ignore
+          retention-days: 30

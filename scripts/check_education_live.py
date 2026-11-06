@@ -32,14 +32,16 @@ def fetch(path: str) -> str:
 def check() -> int:
     html = fetch("/education/")
     records = json.loads(fetch("/data/education-resources.json"))
-    assert isinstance(records, list) and len(records) >= 28, (
-        f"Expected at least 28 live Education records, found {len(records)}"
+    assert isinstance(records, list) and len(records) >= 30, (
+        f"Expected at least 30 live Education records, found {len(records)}"
     )
     ids = {entry.get("id") for entry in records if isinstance(entry, dict)}
     assert len(ids) == len(records), "Production IDs missing or duplicated"
     assert "wifn-post-secondary-support" in ids, "Walpole Island support not live"
     assert "oneida-master-speakers" in ids, "Oneida knowledge keeper link not live"
     assert "nctr-northern-survivors" in ids, "Survivor source not live"
+    assert "fanshawe-oneida-advanced-diploma" in ids, "Fanshawe Oneida course not live"
+    assert "aei-pre-health-sciences" in ids, "AEI health course not live"
     for marker in (
         'href="https://deltaowleyes.ca/education/"',
         "/data/education-resources.json",
@@ -47,6 +49,7 @@ def check() -> int:
         'value="on-site"',
         "doe-header-v3",
         "privacy-consent.js",
+        'id="education-feedback"',
     ):
         assert marker in html, f"Missing live page feature: {marker}"
     print(
