@@ -21,8 +21,27 @@ jobs:
         run: |
           python -m pip install --disable-pip-version-check playwright==1.56.0
           python -m playwright install --with-deps chromium
-      - name: Capture hosted studio screenshots and test navigation
-        run: python scripts/studio-visual-smoke.py
+      - name: Capture local build screenshots and test navigation
+        env:
+          STUDIO_BASE_URL: http://127.0.0.1:8765
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 >/tmp/studio-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 2
+          python scripts/studio-visual-smoke.py
+      - name: Probe live deployment separately
+        if: always()
+        run: |
+          python - <<'PY'
+          import urllib.request
+          try:
+              r=urllib.request.urlopen('https://deltaowleyes.ca/newdesigns/',timeout=15)
+              print('Live HTTP status:',r.status)
+              print('Live title available:',b'Website Design Studio' in r.read())
+          except Exception as e:
+              print('Live probe inconclusive:',repr(e))
+          PY
       - name: Upload screenshots and test report
         if: always()
         uses: actions/upload-artifact@v4
