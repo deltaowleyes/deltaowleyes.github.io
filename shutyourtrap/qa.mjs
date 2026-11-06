@@ -45,6 +45,9 @@ try{
    if(route!=='contact')assert(await imgLoaded(page),'Broken main image '+i+'/'+route);
    assert(await page.locator('.site-header').count()===1,'Missing navigation '+i+'/'+route);
    assert(await page.locator('a[href$="#contact"]').count()>0,'No contact link '+i+'/'+route);
+   if(route==='home'&&photoStatus.image_count>17){
+     await page.waitForFunction(()=>{const im=document.querySelector('#content img[data-syt-photo]');return im&&im.currentSrc.includes('/assets/photos/v3_')&&im.complete&&im.naturalWidth>0},null,{timeout:15000});
+   }
    if(route==='home'){
     let structure=await page.locator('#content > section, #content > div').first().getAttribute('class');
     assert(structure&&structure.includes(names[i]),'Independent homepage structure missing '+i);
