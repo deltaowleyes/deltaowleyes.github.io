@@ -2,12 +2,12 @@
 'use strict';
 var ROOT='/deltaexpress/';
 var FAMILIES=[
- {slug:'river-voice',title:'River Voice',tag:'Editorial & News',num:'01',icon:'◉',headline:'Stories that move communities forward.',sub:'A bold, immersive editorial identity for journalism, advocacy, and meaningful stories.',hero:'/assets/hero.png',support:'/assets/wetlands.png',accent:'#e5ae69',base:'river'},
- {slug:'modern-longhouse',title:'Modern Longhouse',tag:'Community & Gathering',num:'02',icon:'✦',headline:'A place to gather. A place to grow.',sub:'A warm community-first direction with inviting gatherings, education and resources.',hero:'/assets/wetlands.png',support:'/assets/hero.png',accent:'#e9b16a',base:'longhouse'},
- {slug:'accountability-ledger',title:'Accountability Ledger',tag:'Investigations & Impact',num:'03',icon:'◆',headline:'Facts first. Change follows.',sub:'A powerful documentary-inspired system for accountability, evidence and action.',hero:'/assets/hero.png',support:'/assets/wetlands.png',accent:'#cf3e45',base:'ledger'},
- {slug:'northern-horizons',title:'Northern Horizons',tag:'Culture & Landscape',num:'04',icon:'✺',headline:'A deeper connection to land and story.',sub:'An atmospheric, image-rich design for culture, people, and place.',hero:'/assets/wetlands.png',support:'/assets/hero.png',accent:'#7bd6ca',base:'horizons'},
- {slug:'community-network',title:'Community Network',tag:'Directory & Services',num:'05',icon:'⬡',headline:'Find local. Build community.',sub:'A practical and beautifully organized home for businesses, events and services.',hero:'/assets/wetlands.png',support:'/assets/hero.png',accent:'#bd7748',base:'network'},
- {slug:'media-hub',title:'Media Hub',tag:'Video & Podcast',num:'06',icon:'▶',headline:'Ideas worth watching. Stories worth sharing.',sub:'A high-contrast, screen-first identity for video, audio, interviews and episodes.',hero:'/assets/podcast-archive.png',support:'/assets/hero.png',accent:'#fa6164',base:'media'}
+ {slug:'river-voice',title:'River Voice',tag:'Editorial & News',num:'01',icon:'◉',headline:'Stories that move communities forward.',sub:'A bold, immersive editorial identity for journalism, advocacy, and meaningful stories.',hero:'/deltaexpress/assets/scene-river-voice.svg',support:'/assets/wetlands.png',accent:'#e5ae69',base:'river'},
+ {slug:'modern-longhouse',title:'Modern Longhouse',tag:'Community & Gathering',num:'02',icon:'✦',headline:'A place to gather. A place to grow.',sub:'A warm community-first direction with inviting gatherings, education and resources.',hero:'/deltaexpress/assets/scene-modern-longhouse.svg',support:'/assets/hero.png',accent:'#e9b16a',base:'longhouse'},
+ {slug:'accountability-ledger',title:'Accountability Ledger',tag:'Investigations & Impact',num:'03',icon:'◆',headline:'Facts first. Change follows.',sub:'A powerful documentary-inspired system for accountability, evidence and action.',hero:'/deltaexpress/assets/scene-accountability-ledger.svg',support:'/assets/wetlands.png',accent:'#cf3e45',base:'ledger'},
+ {slug:'northern-horizons',title:'Northern Horizons',tag:'Culture & Landscape',num:'04',icon:'✺',headline:'A deeper connection to land and story.',sub:'An atmospheric, image-rich design for culture, people, and place.',hero:'/deltaexpress/assets/scene-northern-horizons.svg',support:'/assets/hero.png',accent:'#7bd6ca',base:'horizons'},
+ {slug:'community-network',title:'Community Network',tag:'Directory & Services',num:'05',icon:'⬡',headline:'Find local. Build community.',sub:'A practical and beautifully organized home for businesses, events and services.',hero:'/deltaexpress/assets/scene-community-network.svg',support:'/assets/hero.png',accent:'#bd7748',base:'network'},
+ {slug:'media-hub',title:'Media Hub',tag:'Video & Podcast',num:'06',icon:'▶',headline:'Ideas worth watching. Stories worth sharing.',sub:'A high-contrast, screen-first identity for video, audio, interviews and episodes.',hero:'/deltaexpress/assets/scene-media-hub.svg',support:'/assets/hero.png',accent:'#fa6164',base:'media'}
 ];
 var VARIANTS=[
  {slug:'signature',name:'Signature Cinematic',tag:'Image-led hero',summary:'A dramatic opening with high-impact visuals and direct actions.',layout:'signature'},
@@ -49,7 +49,7 @@ function frameDoc(f,v){
  '<footer class="preview-footer"><strong>'+esc(f.title)+'</strong><span>Original demonstration · Content and images are illustrative.</span></footer></div></body></html>';
 }
 function attachFrame(box,f,v){
- var iframe=h('iframe',{class:'design-frame',title:'Visual preview: '+f.title+' / '+v.name,loading:'lazy',tabindex:'-1',sandbox:''});
+ var iframe=h('iframe',{class:'design-frame',title:'Visual preview: '+f.title+' / '+v.name,loading:'eager',tabindex:'-1',sandbox:''});
  iframe.srcdoc=frameDoc(f,v);
  box.appendChild(iframe);
  var ro=new ResizeObserver(function(){

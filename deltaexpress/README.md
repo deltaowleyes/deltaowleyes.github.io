@@ -26,3 +26,6 @@ A seven-page, no-purchase website-design selection flow owned by Delta Owl Eyes.
 - Generate screenshot files (WebP desktop/mobile) from each preview in isolated Chromium CI, then compare against visual baselines.
 - Add an authenticated, consent-based, spam-protected contact endpoint after provider and mailbox verification.
 - Add pricing rules, lead tracking, repeatable design generation jobs, and approved client customization without automatic charges.
+
+### Visual QA repair
+The six background artworks in `assets/scene-*.svg` are original, self-hosted vector compositions (no embedded Delta Owl Eyes wordmarks). Card previews load eagerly so all six display in gallery screenshots.
