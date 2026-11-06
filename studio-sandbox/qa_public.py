@@ -17,7 +17,7 @@ for attempt in range(12):
   req=urllib.request.Request(URL,headers={"User-Agent":"DeltaOwlEyes-PublicStudio6-QA/1.0","Cache-Control":"no-cache"})
   with urllib.request.urlopen(req,timeout=18) as response:
    source=response.read().decode("utf-8")
-  if "mobile-studio" in source and "desktop-master" in source and "reference.webp" in source:break
+  if "mobile-header-art" in source and "header-mobile.webp" in source and "header-desktop.webp" in source:break
  except Exception as exc:
   print("Public fetch attempt",attempt+1,repr(exc))
  if attempt<11:time.sleep(8)
@@ -26,18 +26,30 @@ with urllib.request.urlopen(BASE+"/studio-sandbox/reference.webp",timeout=20) as
  image=response.read()
 actual=hashlib.sha256(image).hexdigest()
 assert actual==EXPECTED_IMAGE_SHA256, "Public reference art differs from approved image"
+
+# Validate that the public web server is serving the precise approved header images.
+for asset_name,expected in [
+ ("header-desktop.webp","ef3db73ea7c80f595c882d153c662758d9975193ba4a9c2d9961a1d59c13b410"),
+ ("header-mobile.webp","1932115f336d4dfa89cf3ea415884f3d6dc7ba1a4b58d08c0e9a7640dc61e851")]:
+ with urllib.request.urlopen(BASE+"/studio-sandbox/"+asset_name,timeout=20) as response:
+  payload=response.read()
+ assert hashlib.sha256(payload).hexdigest()==expected, "Public header asset hash mismatch: "+asset_name
 records=[]
 with sync_playwright() as p:
  browser=p.chromium.launch(headless=True,args=["--no-sandbox"])
- for width in [320,390,768,1440]:
+ for width in [320,390,500,768,1024,1440]:
   context=browser.new_context(viewport={"width":width,"height":900},
     is_mobile=width<=390,has_touch=width<=768)
   page=context.new_page()
   errors=[];page.on("pageerror",lambda e:errors.append(str(e)))
   response=page.goto(URL,wait_until="networkidle",timeout=45000)
-  master=page.locator(".desktop-master img")
+  master=page.locator(".desktop-master > img:first-child")
   image_info=master.evaluate("(img)=>({width:img.naturalWidth,height:img.naturalHeight,loaded:img.complete})")
-  desktop=width>=1000
+  desktop=width>=1280
+  header=page.locator(".desktop-header-art" if desktop else ".mobile-header-art")
+  header_info=header.evaluate("(img)=>({complete:img.complete,width:img.naturalWidth,height:img.naturalHeight,visible:!!img.getClientRects().length})")
+  header_expected={"complete":True,"width":1536,"height":171,"visible":True} if desktop else {"complete":True,"width":1100,"height":430,"visible":True}
+  old_mobile_html_text=page.locator(".mobile-head h1, .mobile-head h2, .mobile-head .ribbon").count()
   selector=".hotspot" if desktop else ".family"
   links=page.locator(selector)
   hrefs=links.evaluate_all("(els)=>els.map(el=>el.getAttribute('href'))")
@@ -57,13 +69,13 @@ with sync_playwright() as p:
   if width==1440:
    routes=[page.request.get(BASE+x,timeout=15000).status for x in ROUTES]
   rec={"width":width,"http":response.status if response else None,
-   "native_image":image_info,"desktop_mode":desktop,"visible_links":shown,
+   "native_image":image_info,"header_image":header_info,"desktop_mode":desktop,"visible_links":shown,"mobile_html_text":old_mobile_html_text,
    "hrefs":hrefs,"focus":focus,"horizontal_overflow":overflow,
    "mobile_grid_columns":grid_cols,"privacy_present":privacy,
    "privacy_rejected":consent,"consent_persisted":consent_persisted,
    "routes_http":routes,"js_errors":errors}
   rec["pass"]=bool(rec["http"]==200 and image_info=={"width":1536,"height":1024,"loaded":True}
-   and shown==6 and hrefs==ROUTES and focus and not overflow
+   and shown==6 and hrefs==ROUTES and focus and not overflow and header_info==header_expected and old_mobile_html_text==0
    and privacy and consent and consent_persisted and not errors and
    (not routes or all(status==200 for status in routes)))
   records.append(rec);context.close()
@@ -71,4 +83,4 @@ with sync_playwright() as p:
 (OUT/"results.json").write_text(json.dumps({"reference_sha256":actual,"checks":records},indent=2)+"\n")
 failures=[rec for rec in records if not rec["pass"]]
 print(json.dumps({"viewport_checks":len(records),"passed":len(records)-len(failures),"failures":failures},indent=2))
-if failures or len(records)!=4:raise SystemExit(1)
+if failures or len(records)!=6:raise SystemExit(1)
