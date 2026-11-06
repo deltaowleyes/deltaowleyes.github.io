@@ -39,8 +39,19 @@ assert "wifn-anishinaabemowin-immersion" in seen
 assert "fanshawe-oneida-advanced-diploma" in seen
 assert "aei-pre-health-sciences" in seen
 assert "uofa-indigenous-canada" in seen
+manual=json.loads((ROOT/"data/education-link-corroboration.json").read_text(encoding="utf-8"))
+assert manual["version"]==1
+review_ids=set()
+for item in manual["records"]:
+    assert set(item)=={"id","source_url","reviewed_on","finding","review_method","expires_on"}
+    assert item["id"] in sources and item["id"] not in review_ids
+    assert item["source_url"]==sources[item["id"]]
+    assert item["review_method"]=="independent_original_provider_page_review"
+    assert date.fromisoformat(item["reviewed_on"])<=date.today()<=date.fromisoformat(item["expires_on"])
+    assert 20<=len(item["finding"])<=300
+    review_ids.add(item["id"])
 page=(ROOT/"education/index.html").read_text(encoding="utf-8")
 for expected in ('education-verified-facets.json','id="learning-language"','id="community"'):
     assert expected in page,expected
 assert "innerHTML" not in page
-print(f"PASS: {len(seen)} sparse provider-verified Education facets tied to {len(catalogue)} public records")
+print(f"PASS: {len(seen)} provider-verified facets, {len(review_ids)} manual source corroborations, {len(catalogue)} catalogue records")
