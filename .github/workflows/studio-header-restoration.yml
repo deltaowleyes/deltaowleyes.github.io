@@ -1,0 +1,43 @@
+name: Studio faithful six-breakpoint header restoration
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'studio-sandbox/build_header_assets_v2.py'
+      - '.github/workflows/studio-header-restoration.yml'
+permissions:
+  contents: write
+jobs:
+  render-and-commit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Rebuild six header assets and prove only the original desktop ribbon changed
+        run: python studio-sandbox/build_header_assets_v2.py
+      - name: Commit only isolated sandbox image assets
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add studio-sandbox/header-320.webp studio-sandbox/header-390.webp studio-sandbox/header-500.webp studio-sandbox/header-768.webp studio-sandbox/header-1024.webp studio-sandbox/header-1440.webp studio-sandbox/reference-40.webp studio-sandbox/header-restoration-manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Studio: faithful original desktop header with 40 designs and five responsive image compositions"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: studio-faithful-six-headers
+          path: |
+            studio-sandbox/header-*.webp
+            studio-sandbox/reference-40.webp
+            studio-sandbox/header-restoration-manifest.json
+          if-no-files-found: warn
