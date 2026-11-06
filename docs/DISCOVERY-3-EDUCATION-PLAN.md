@@ -1,6 +1,6 @@
 # Delta Owl Eyes Education Hub / Discovery 3.0
 
-Status: initial source-linked Education hub implemented on a review branch, pending live acceptance. The existing business, Indigenous church and event discovery rules remain in force.
+Status (2026-11-06): Education Hub 1.0 was merged via PR #16. Education Hub 1.1 expands the catalogue on a reviewed feature branch, with final live acceptance pending. Existing business, Indigenous church and event discovery rules remain in force.
 
 ## Purpose and eligibility
 
@@ -26,7 +26,7 @@ Supported opportunities include schools, university/college certificate programs
 Location: `data/education-resources.json`. JSON array of objects in display order. Required fields:
 - `id`: immutable kebab-case string; never reuse deleted IDs.
 - `title`, `provider`, `description`: readable, source-faithful summary and attribution.
-- `category`: one of `schools`, `courses`, `land`, `languages`, `survivor-stories`, `videos`, `advocacy`, `funding`, `teaching`.
+- `category`: one of `schools`, `courses`, `land`, `languages`, `survivor-stories`, `videos`, `advocacy`, `funding`, `teaching`, `knowledge-keepers`.
 - `format`: `online`, `hybrid` or `on-site`.
 - `eligibility`: `indigenous-only`, `open`, `check-provider`.
 - `price`: cautious text; changing prices must not be guessed.
@@ -36,7 +36,7 @@ Location: `data/education-resources.json`. JSON array of objects in display orde
 - `last_source_review`: ISO local review date (YYYY-MM-DD).
 - `verification`: `provider_source_reviewed` only when the resource was actually reviewed at a primary source; **does not assert enrollment/open seats**.
 
-V1 displays text-only cards with direct external links, search, category/eligibility/format filters, visible provenance and advisory. It does **not** scrape arbitrary platforms, automatically embed videos, take user submissions, or guarantee program availability.
+V1.1 displays text-only cards with direct external links, search, category/eligibility/format filters (including on-site), a Bkejwanong local-first shortcut, community knowledge-keeper discovery, visible provenance and advisory. It does **not** scrape arbitrary platforms, automatically embed videos, take user submissions, or guarantee program availability.
 
 ## Phase 2 and phase 3
 
@@ -57,3 +57,37 @@ Rollback: revert the Education page, homepage tile/navigation and sitemap commit
 ## Deletion/suppression protocol (v1)
 
 When an owner or legitimate rights holder requests removal, stop publication of that record, append a durable tombstone to `data/education-suppressed.json` with `id`, `url`, `reason`, `removed_on`, then remove the live catalogue entry in the same reviewed change. The validator will reject reusing either the ID or original URL. Do not expose complainant personal details or sensitive cultural context in the public repository. Verify the published site no longer shows the record and retain the restoration decision log offline or in an access-controlled system. Never delete or edit tombstones to make new imports pass.
+
+## Education Hub 1.1 source-review batch — 2026-11-06
+
+The following were checked against official provider-controlled public pages at the time of this batch. These are *directory links*, not confirmation of current seats, funding approvals, open drop-in availability or permission to reuse video/audio/cultural material. All new records are source-linked and have conservative access labels.
+
+| ID | Original provider page | Review / caution |
+| --- | --- | --- |
+| wifn-post-secondary-support | https://www.walpoleislandfirstnation.ca/post-secondary | Funding support for WIFN members; Indigenous-only eligibility expressly supported |
+| wifn-adult-learning | https://www.walpoleislandfirstnation.ca/education-department | Adult credit learning; contact for enrolment and fees |
+| wifn-anishinaabemowin-immersion | https://www.walpoleislandfirstnation.ca/ak-immersion | Kindergarten–Grade 6 school, includes land learning; not public drop-in |
+| wifn-employment-training | https://www.walpoleislandfirstnation.ca/employment-and-training | Skills/career support; no invented course schedule |
+| wifn-bbk-elders-language | https://www.walpoleislandfirstnation.ca/bbk | Early years language circle and Visiting Elders; provider-managed participation |
+| wifn-heritage-centre | https://www.walpoleislandfirstnation.ca/heritage-centre | Official archive/environmental research centre; no guaranteed open instruction |
+| oneida-standing-stone | https://oneida.on.ca/education/standing-stone-school/ | JK–Grade 6; cultural component; admissions unverified |
+| oneida-learning-language | https://oneidalanguage.ca/learn-our-language/ | Original language lessons and self-study materials |
+| oneida-language-videos | https://oneidalanguage.ca/oneida-culture/enjoy-some-oneidalanguage-videos/ | Original-provider video catalogue; no third-party rehosting |
+| oneida-master-speakers | https://oneidalanguage.ca/about-us/master-speakers/ | Community-controlled Master Speaker recordings; provider's deceased-speaker advisory |
+| oneida-hunt-camp-learning | https://oneidalanguage.ca/learn-our-language/speak-oneidalanguage-now/oneida-hunt-camp/ | Language/hunt-camp vocabulary; not a live hunting workshop |
+| nctr-indigenous-reclaim | https://trw-svr.nctr.ca/portal/virtual/indigenous-reclaim-living-traditional-teachings/ | NCTR provider video; registration/access conditions; hide-tanning and cultural teachings |
+| nctr-northern-survivors | https://trw-svr.nctr.ca/portal/virtual/northern-survivors-of-ile-a-la-crosse-stories-of-strength-loss-and-resilience/ | NCTR Survivor video; trauma advisory and portal conditions |
+| nctr-eugene-arcand | https://nctr.ca/exhibits/eugene-arcand-survivor-shares-his-truth-of-survival-sports-and-healing/ | Public NCTR Survivor exhibit with content advisory |
+
+Initial catalogue spot-audit: official source pages and access statements for Indspire, Six Nations Polytechnic, FNUniv Reconciliation certificate, Alberta Indigenous Canada, Yellowhead School, NCTR virtual education and Survivor resources, NCTR Archives, NCCIE Teaching Resource Centre, FirstVoices, OISE and Woodland Cultural Centre were reviewed. The U of Alberta offers a free *first-module preview*, not a fully free certificate; the NCTR teacher portal requires registration; FirstVoices communities retain ownership and can restrict content. One existing NCTR archives listing received a trauma advisory correction. Remaining initial listings should continue to be rechecked periodically; current intake, prices and link accessibility are not guaranteed.
+
+## Automated quality and production checks
+
+- `scripts/check_education_resources.py` validates all required fields, unique IDs/provider-title and canonical URLs, approved categories/formats/eligibility, survivor-specific advisory and the persistent `data/education-suppressed.json` reimport block.
+- `scripts/test_education_browser.mjs` uses actual catalogue count, not a brittle fixed number. Chromium tests 320/390/768/1440 widths, no horizontal overflow, title/header/labels, privacy script, outbound HTTPS no-opener links, Indigenous-only/open/check-provider and category/in-person filters, keyboard-triggered Bkejwanong discovery and reset.
+- `.github/workflows/education-live-check.yml` checks public `/education/` and `/data/education-resources.json` from a runner with HTTP requests, retrying transient publication delays. It is a separate **live** check; GitHub Pages' successful status alone is not independent public acceptance.
+- Public video files remain with the source owner. Do not automate downloads, transcripts, videos, Elder voice cloning, or cultural content redistribution. Contact the original provider for reuse permission.
+
+## Discovery 3.0 scheduled task verification
+
+The existing enabled automation was retitled `Delta Owl Eyes Discovery 3.0` with its exact hourly RRULE preserved, and a separate two-candidate-per-run Education stream was appended to the original business/church/event instructions (unchanged old-directory safeguards). The recorded last run immediately after the upgrade lookup was still the prior Discovery 2.0 run at 2026-11-06 13:22 UTC, so it cannot prove an Education run or publication. An **explicitly observed post-upgrade run**, its source research, safe JSON commits (or reasoned no-change), CI and live status are required before closing B4-040. Do not infer publication from the automation being enabled.
