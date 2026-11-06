@@ -141,6 +141,20 @@ document.getElementById('design-inquiry').addEventListener('submit', function(e)
  body.ledger .sections article:before{{font-size:1.4rem}}
 }}
 @media(prefers-reduced-motion:reduce){{.hero,.hero-art,.sections article{{animation:none;transition:none}}}}
+
+/* BAKE 3.4 final mobile column repair and investigative headline calibration */
+body.ledger .hero h1{{font-size:clamp(2.35rem,4.1vw,4.5rem);line-height:1.035;letter-spacing:-.055em}}
+@media(max-width:850px){{
+ .article-grid{{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:20px!important}}
+ .article-grid>.sections,.article-grid>.side{{min-width:0;width:100%;grid-column:1!important}}
+ .side{{position:static;max-width:none}}
+}}
+@media(max-width:600px){{
+ .content-strap span:last-child{{display:none}}
+ body.ledger .hero h1{{font-size:clamp(2.15rem,8vw,3.05rem);line-height:1.08}}
+ .sections article{{padding:20px 0}}
+ body.media .sections article{{padding:22px}}
+}}
 </style></head>
 <body class="{theme}"><a class="skip" href="#main">Skip to main content</a>
 <div class="top"><div class="wrap">Delta Owl Eyes / {esc(site["name"])} · Unpublished candidate</div></div>
