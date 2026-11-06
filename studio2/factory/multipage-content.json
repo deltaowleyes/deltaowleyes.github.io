@@ -28,25 +28,26 @@
     {
       "slug": "report",
       "nav": "Reporting",
-      "eyebrow": "Editorial · Reporting",
-      "title": "Reporting that starts with the public record",
-      "summary": "A demonstration article-reading view for Delta Owl Eyes. Follow published reporting through the newsroom; this page does not invent findings, quotations, or sources.",
+      "eyebrow": "Published reporting · November 2026",
+      "title": "Brock researcher describes progress and persistent barriers for Indigenous students and faculty",
+      "summary": "This layout presents an existing, editorially approved Delta Owl Eyes report. It is not a newly investigated claim or a fabricated story.",
       "sections": [
         {
-          "title": "The reporting",
-          "body": "Accurate reporting begins with dates, primary documents, named institutions and clear distinctions between what has been confirmed and what remains uncertain."
+          "title": "News",
+          "body": "In a November 3, 2026 expert advisory, Brock University reported on research by Professor Sheila Cote-Meek, its Interim Vice-Provost, Indigenous Engagement. Drawing on the second edition of her book Colonized Classrooms, Cote-Meek described the growth of Indigenous leadership roles, faculty appointments, strategic plans, student supports and dedicated campus spaces since the Truth and Reconciliation Commission published its Calls to Action."
         },
         {
-          "title": "Why source context matters",
-          "body": "A developing story can change as documents and responses become available. Check article publication dates and corrections before drawing conclusions."
+          "title": "Education",
+          "body": "Cote-Meek also described continuing experiences of racism, stereotyping and isolation among Indigenous students and faculty. She noted that Indigenous faculty may be expected to provide extensive student support and lead institutional change, sometimes at the expense of research and scholarship. These are observations and concerns attributed to the researcher, not findings that every post-secondary institution has the same conditions."
         },
         {
-          "title": "Explore current coverage",
-          "body": "This prototype provides a reading layout, not a new investigation. Open the current Delta Owl Eyes newsroom for the verified articles."
+          "title": "Accountability",
+          "body": "The research raises questions about how institutions measure inclusion beyond representation, respond to discrimination, distribute responsibility for reconciliation and support Indigenous faculty. These are editorial follow-up questions, not allegations against a particular institution. The report provides context for education and reconciliation discussions but does not establish that any specific TRC Call to Action has been completed or violated."
         }
       ],
-      "source": "/news/",
-      "source_label": "Read verified published news"
+      "source": "/news/articles/brock-researcher-describes-progress-and-persistent-barriers-for-indigenous-students-and-fa/",
+      "source_label": "Read the original Delta Owl Eyes article",
+      "source_provenance": "news/approved/brock-researcher-describes-progress-and-persistent-barriers-for-indigenous-students-and-fa.json; user-approved 2026-11-04"
     },
     {
       "slug": "trc",
