@@ -1,0 +1,20 @@
+name: Verify live Indigenous Grants deployment
+on:
+  push:
+    branches: [main]
+    paths:
+      - "grants/**"
+      - "data/indigenous-grants.json"
+      - "scripts/check_grants_live.py"
+      - ".github/workflows/verify-grants-live.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  production-http:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independently verify live Pages grant HTML and exact JSON catalogue
+        run: python3 scripts/check_grants_live.py
