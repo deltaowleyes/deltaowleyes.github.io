@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "project": "Delta Owl Eyes / Studio 2.1 River Voice",
+  "approval_status": "candidate-unapproved",
+  "assets": [
+    {
+      "path": "/studio2/river-voice/assets/education-research.svg",
+      "purpose": "Decorative illustration of research environment for education coverage",
+      "provenance": "Original code-created artwork for this candidate",
+      "depicts_real_event": false,
+      "requires_article_caption": true
+    },
+    {
+      "path": "/studio2/river-voice/assets/archaeology-policy.svg",
+      "purpose": "Conceptual archaeology soil-strata illustration for policy coverage",
+      "provenance": "Original code-created artwork for this candidate",
+      "depicts_real_event": false,
+      "requires_article_caption": true
+    },
+    {
+      "path": "/studio2/river-voice/assets/treaty-learning.svg",
+      "purpose": "Decorative illustration of archival records and landscape for learning item",
+      "provenance": "Original code-created artwork; explicitly not a reproduction of a treaty",
+      "depicts_real_event": false,
+      "requires_article_caption": true
+    },
+    {
+      "path": "/studio2/river-voice/assets/reconciliation-landscape.svg",
+      "purpose": "Decorative river landscape for TRC education",
+      "provenance": "Original code-created artwork for this candidate",
+      "depicts_real_event": false,
+      "requires_article_caption": true
+    },
+    {
+      "path": "/assets/wetlands.png",
+      "purpose": "Cinematic hero, source is existing Delta Owl Eyes site imagery",
+      "provenance": "Pre-existing repository asset; rights/photographic accuracy must be checked before final release",
+      "depicts_real_event": null,
+      "requires_article_caption": false
+    },
+    {
+      "path": "/assets/podcast-archive.png",
+      "purpose": "The Owl's Lens media section",
+      "provenance": "Pre-existing Delta Owl Eyes brand asset",
+      "depicts_real_event": null,
+      "requires_article_caption": false
+    }
+  ],
+  "restrictions": [
+    "No article images claimed to document a real event when conceptual",
+    "No cultural symbols or ceremony implied in generic art",
+    "Require visual review and rights check of previously existing media before release",
+    "No use of borrowed reference-site images"
+  ]
+}
