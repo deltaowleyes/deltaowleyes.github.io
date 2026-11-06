@@ -69,3 +69,25 @@ Name must remain `shutyourtrap-photography-pack.zip`. The workflow then commits 
 If this transfer can be executed directly in a future ChatGPT turn with a binary-capable GitHub tool, do that instead of asking for manual upload. Do not regenerate the initial 17 assets. **After** photo activation succeeds, consider 13–23 new original photographs to reach the larger 30–40 asset goal, with owner review of imagery and crop fidelity.
 
 **BAKE handoff:** Every unfinished turn must end with a working one-click BAKE continuation control, not just copied prompt text.
+
+## Verified photo import completion — 6 November 2026 (UTC)
+
+**The earlier 0-photo checkpoint above is now superseded.**
+
+- The user-provided `shutyourtrap/photo-inbox/ONLY-17-PHOTOGRAPHS-JPG.zip` was verified byte-for-byte against the existing locally tested 17-photo JPG archive (Git blob SHA `7a4edcf6d70db2c0f3e14464db8594c599d0d9e8`; 6,305,517 bytes).
+- The GitHub Actions workflow was updated to recognize the photo-only JPG ZIP, run `scripts/import-jpg-photo-pack.py` with 17 exact SHA-256 checks, convert to production WebP, and execute Chromium before commit.
+- Verified importer run: https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42138157842 — **success**, with `PHOTO IMPORT PASS: 17 matching JPGs, 17 decoded original images, 17 converted WebPs; photography enabled`.
+- The same pre-publication Chromium run passed **70 routes, 40 legacy SVG fallback assets, 10 mobile designs, 10 non-submitting forms, 10 gallery previews, privacy scripts intact**.
+- Imported photo asset commit: `0adc33e051a7a0dd815bad7541af8c5b2bb533b2`.
+- Confirmed `shutyourtrap/assets/photos/` contains all 17 `.webp` files and `status.json` with `enabled: true`, `image_count: 17`, and per-file hashes. The original JPG ZIP was removed from the inbox in the same commit.
+- `site.js` maps all 17 photos to 40 placements across the ten designs, retaining the original SVGs as image-error fallbacks. The photos are *concept illustrations*, not actual business photos.
+- Independent post-commit Chromium workflow was requested at https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42138375079; do not claim success until run finishes and is verified.
+- GitHub Pages deployment was requested, but the final live `https://www.deltaowleyes.ca/shutyourtrap/` asset response must be verified before claiming photos are publicly visible. Frequent unrelated commits can cancel stale Pages runs, so check the latest deployment against current main.
+- Further premium imagery target: 30–40 unique photos; **17 images produced and imported**, so 13–23 additional distinct images remain optional quality work. Preserve all approved site layouts and demo privacy/functionality.
+
+## Remaining QA/deployment tasks
+1. Verify successful final post-commit Chromium QA and Pages deployment on or after imported assets commit.
+2. Verify 17 WebPs are publicly served at the custom domain and visually inspect all ten desktop/mobile designs to confirm acceptable crops and original reference fidelity.
+3. If needed, improve image-specific `object-position` mobile crop rules without overwriting the original SVG fallbacks.
+4. Continue the 30–40 original-photo target and ten-choice design revisions only after imported photographs are confirmed live.
+5. End unfinished BAKE responses with a working one-click continuation button.
