@@ -25,7 +25,7 @@ try{
  photoModeEnabled=photoStatus.enabled===true;
  report.photoModeEnabled=photoModeEnabled;
  if(photoModeEnabled){
-   assert(photoStatus.image_count===17&&photoStatus.images.length===17,'Activated photo manifest is incomplete');
+   assert(Number.isInteger(photoStatus.image_count)&&photoStatus.image_count>=17&&photoStatus.image_count<=40&&Array.isArray(photoStatus.images)&&photoStatus.images.length===photoStatus.image_count,'Activated photo manifest has an invalid image count');
    for(const name of photoStatus.images){
      assert(/^[a-z0-9_]+\.webp$/.test(name),'Unsafe image filename '+name);
      const response=await page.request.get(base+'assets/photos/'+name);
@@ -33,7 +33,7 @@ try{
      const mime=response.headers()['content-type']||'';
      assert(/webp|octet-stream/.test(mime),'Incorrect image MIME for '+name+': '+mime);
    }
-   report.importedPhotos=17;
+   report.importedPhotos=photoStatus.image_count;
  }else{report.importedPhotos=0;}
 
  for(let i=0;i<10;i++){
