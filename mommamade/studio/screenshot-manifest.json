@@ -1,6 +1,7 @@
 {
   "status": "candidate-review-only",
-  "source": "V3-candidate-HTML-with-capture-only-studio-CSS",
+  "source": "existing Momma Made V3 browser captures with capture-only CSS",
+  "shell_contract": "BAKE-EXPRESS-MASTER-1.0",
   "widths": [
     320,
     390,
@@ -9,8 +10,8 @@
     1024,
     1440
   ],
-  "note": "Six immutable original BAKE EXPRESS headers, shared studio CSS/JS, six real client template screenshot families. V2 is current, V3 sources remain publicly accessible independently; no private template sources embedded in this gallery.",
   "capture_polish_sha256": "56dffeb701443fff4d77ffc78e36377d9d0dcaf1378e1f2e69d37cefc4abbfaa",
+  "note": "Original common BAKE EXPRESS header and layout are not altered by this screenshot generator. Existing V3 candidate sources remain independently public; V2 stays current.",
   "families": [
     {
       "template": 1,
@@ -73,7 +74,7 @@
       "template": 2,
       "slug": "picnic-club",
       "title": "Picnic Club",
-      "mood": "Playful & vibrant",
+      "mood": "Playful and vibrant",
       "tagline": "Pack a little more joy.",
       "screenshots": [
         {
@@ -187,7 +188,7 @@
       "template": 4,
       "slug": "garden-folio",
       "title": "Garden Folio",
-      "mood": "Botanical & refined",
+      "mood": "Botanical and refined",
       "tagline": "The gentle art of keeping things.",
       "screenshots": [
         {
@@ -244,7 +245,7 @@
       "template": 5,
       "slug": "pattern-studio",
       "title": "Pattern Studio",
-      "mood": "Graphic & expressive",
+      "mood": "Graphic and expressive",
       "tagline": "Colour the everyday.",
       "screenshots": [
         {
@@ -354,6 +355,5 @@
         }
       ]
     }
-  ],
-  "shell_contract": "BAKE-EXPRESS-MASTER-1.0"
+  ]
 }
