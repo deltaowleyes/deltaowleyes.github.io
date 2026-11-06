@@ -55,5 +55,9 @@ jobs:
             echo "No screenshot changes."
           else
             git commit -m "visual: capture 36 actual Shut Your Trap EXPRESS viewport screenshots"
+            # Source edits can land while Chromium is running. Replay the screenshot-only
+            # commit over the latest remote branch rather than force-pushing or losing them.
+            git fetch origin feature/express-shut-your-trap-20261106
+            git rebase origin/feature/express-shut-your-trap-20261106
             git push origin HEAD:feature/express-shut-your-trap-20261106
           fi
