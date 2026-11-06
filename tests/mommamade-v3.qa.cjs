@@ -47,7 +47,7 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
  await verifyPhoto('.gallery-image','gallery');
  const altCount=await page.locator('a:not([href]),button:not([aria-label]):empty').count();
  assert.equal(altCount,0,'potential unlabeled/invalid interactive elements');
- await page.screenshot({path:dir+'gallery-desktop.png',fullPage:true});
+ await page.screenshot({path:dir+'gallery-desktop.jpg',type:'jpeg',quality:82,fullPage:true});
  for(let n=1;n<=10;n++){
   for(const [device,width,height] of [['desktop',1440,900],['mobile',390,844],['narrow',320,700],['tablet',768,1024],['laptop',1024,768]]){
    await page.setViewportSize({width,height});await go(n,'home');await geometry('design '+n+' '+device);
@@ -88,8 +88,11 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
      await page.locator('[data-menu]').click();
      assert.equal(await page.locator('[data-menu]').getAttribute('aria-expanded'),'true');
      assert.equal(await page.locator('#mobile-menu').isVisible(),true);
+     await page.locator('[data-menu]').click();
+     assert.equal(await page.locator('[data-menu]').getAttribute('aria-expanded'),'false');
+     assert.equal(await page.locator('#mobile-menu').isVisible(),false);
    }
-   if(device==='mobile'||device==='desktop')await page.screenshot({path:dir+'design-'+String(n).padStart(2,'0')+'-'+device+'.png',fullPage:false});
+   if(device==='mobile'||device==='desktop')await page.screenshot({path:dir+'design-'+String(n).padStart(2,'0')+'-'+device+'.jpg',type:'jpeg',quality:82,fullPage:false});
   }
   await page.setViewportSize({width:1440,height:900});
   const routes=[['shop','.catalogue .item',4],['about','section.story',1],['care','.care-grid article',4],['contact','#demo-form',1],['product-1','.checkout:disabled',1],['product-2','.checkout:disabled',1],['product-3','.checkout:disabled',1],['product-4','.checkout:disabled',1]];
