@@ -2,6 +2,24 @@
   "version": 1,
   "runs": [
     {
+      "at": "2026-11-06T04:26:30Z",
+      "commit": "7b3624b77687c70b6372021032a53444369b6944",
+      "mode": "data",
+      "additions": {
+        "events": [
+          {
+            "key": "adawaningindigenouswomensartmarket2026|20261205|ottawa|ontario",
+            "name": "Adàwàning: Indigenous Women’s Art Market 2026",
+            "place": "Ottawa, Ontario",
+            "category": "Indigenous women’s artisan market",
+            "date": "2026-12-05",
+            "source": "https://nac-cna.ca/en/event/42253",
+            "status": "Verified event"
+          }
+        ]
+      }
+    },
+    {
       "at": "2026-11-05T22:23:41Z",
       "commit": "e56ec66396a1b1c60ada0df312bcbaa9f03a9cde",
       "mode": "data",
