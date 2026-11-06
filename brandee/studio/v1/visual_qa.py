@@ -25,6 +25,11 @@ with sync_playwright() as p:
         page.on("response", lambda resp: bad_responses.append(resp.url+" "+str(resp.status)) if resp.status>=400 and "/brandee/" in resp.url else None)
         try:
             response=page.goto(url,wait_until="load",timeout=30000)
+            if label=="gallery" and width==390:
+                page.screenshot(path=str(OUT/"gallery-consent-390.png"),full_page=True,animations="disabled")
+            reject=page.get_by_role("button",name="Reject analytics")
+            if reject.count()>0 and reject.first.is_visible():
+                reject.first.click(timeout=5000)
             page.screenshot(path=str(OUT/(label+"-"+str(width)+".png")),full_page=True,animations="disabled")
             state=page.evaluate("""() => ({
               overflow: document.documentElement.scrollWidth > innerWidth + 1,

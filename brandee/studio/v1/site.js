@@ -45,7 +45,7 @@ const pageLink = (slug,label) => '<a href="#' + slug + '" data-route="' + slug +
 const imageTag = (key,alt,cls) => '<img class="' + (cls || "") + '" loading="eager" src="' + asset(key) + '" alt="' + alt + '">';
 function nav(){return PAGES.map(p => pageLink(p.slug,p.name)).join("");}
 function header(){
-  return '<header class="site-header"><a class="brand" href="#home" aria-label="Brandee’s Rosary Road, Home"><span class="brand-mark" aria-hidden="true">✦</span><span class="brand-title">Brandee’s Rosary Road</span><span class="brand-tag">A Beautiful Journey Through Catholic Life.</span></a><nav class="site-nav" aria-label="Main navigation">' + nav() + '</nav></header>';
+  return '<header class="site-header"><a class="brand" href="#home" aria-label="Brandee’s Rosary Road, Home"><img class="brand-icon" src="' + asset("brand-mark") + '" alt="" aria-hidden="true"><span class="brand-title">Brandee’s Rosary Road</span><span class="brand-tag">A Beautiful Journey Through Catholic Life.</span></a><nav class="site-nav" aria-label="Main navigation">' + nav() + '</nav></header>';
 }
 const artAlts = {cathedral:"Original illustration of a sunlit cathedral",rose:"Original illustration of roses framing a chapel",woodland:"Original illustration of a sunrise woodland trail",rosary:"Original illustration of rosary beads on linen",journal:"Original illustration of an open devotional journal",coffee:"Original illustration of morning coffee and a journal"};
 function actionLink(text,slug,extra){
@@ -54,10 +54,10 @@ function actionLink(text,slug,extra){
 function commonSections(){
   return '<section class="section-intro"><p class="mini-heading">A ROAD WITH MANY MOMENTS</p><h2>Find a place to begin.</h2><p>Explore the subjects that will shape Brandee’s Rosary Road as her own articles and handmade collections grow.</p></section>' +
   '<section class="story-grid" aria-label="Explore the site">' +
-  '<article class="story story-faith"><span class="story-index">01 / DEVOTION</span><h3>Faith & Devotions</h3><p>Prayer, tradition and wonder in everyday life.</p>' + actionLink("Explore reflections","faith") + '</article>' +
-  '<article class="story story-run"><span class="story-index">02 / MOVEMENT</span><h3>Running with Faith</h3><p>Walking and jogging with purpose.</p>' + actionLink("Follow the journey","running") + '</article>' +
-  '<article class="story story-rosary"><span class="story-index">03 / CRAFT</span><h3>Handmade Rosaries</h3><p>Thoughtful making, meaningful materials.</p>' + actionLink("View the studio","rosaries") + '</article>' +
-  '<article class="story story-coffee"><span class="story-index">04 / COMMUNITY</span><h3>Coffee & Community</h3><p>Warm conversations and future partnerships.</p>' + actionLink("Join the conversation","coffee") + '</article></section>';
+  '<article class="story story-faith"><div class="story-image">' + imageTag("cathedral",artAlts.cathedral,"story-art") + '</div><span class="story-index">01 / DEVOTION</span><h3>Faith & Devotions</h3><p>Prayer, tradition and wonder in everyday life.</p>' + actionLink("Explore reflections","faith") + '</article>' +
+  '<article class="story story-run"><div class="story-image">' + imageTag("woodland",artAlts.woodland,"story-art") + '</div><span class="story-index">02 / MOVEMENT</span><h3>Running with Faith</h3><p>Walking and jogging with purpose.</p>' + actionLink("Follow the journey","running") + '</article>' +
+  '<article class="story story-rosary"><div class="story-image">' + imageTag("rosary",artAlts.rosary,"story-art") + '</div><span class="story-index">03 / CRAFT</span><h3>Handmade Rosaries</h3><p>Thoughtful making, meaningful materials.</p>' + actionLink("View the studio","rosaries") + '</article>' +
+  '<article class="story story-coffee"><div class="story-image">' + imageTag("coffee",artAlts.coffee,"story-art") + '</div><span class="story-index">04 / COMMUNITY</span><h3>Coffee & Community</h3><p>Warm conversations and future partnerships.</p>' + actionLink("Join the conversation","coffee") + '</article></section>';
 }
 function homepage(){
   let hero = "";

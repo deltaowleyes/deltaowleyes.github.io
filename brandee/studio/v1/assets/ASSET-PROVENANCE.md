@@ -1,0 +1,5 @@
+# Original artwork manifest — Brandee's Rosary Road v1.1
+
+Assets in this directory (`cathedral.svg`, `rose.svg`, `woodland.svg`, `rosary.svg`, `journal.svg`, `coffee.svg`, and `brand-mark.svg`) are originally authored vector **concept illustrations**, not photos of Brandee, authentic handmade rosaries, real places or AI-generated photographs. The new brand mark is an original generic rosary-bead/path/crucifix composition, not an Indigenous cultural symbol.
+
+Commercial depiction and Indigenous motifs are deliberately withheld pending Brandee's guidance, permissions and cultural review. The visual screenshot board generated in the ChatGPT conversation is an **inspiration mockup only**; it is not used as website source media and its pictured Indigenous cultural elements should not be reproduced automatically. Replacing these placeholders with six individually reviewed, high-quality original photographs remains a later acceptance gate. No third-party imagery or paid media has been purchased.
