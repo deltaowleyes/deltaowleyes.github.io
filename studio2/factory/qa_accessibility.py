@@ -26,7 +26,7 @@ with sync_playwright() as p:
                 record["consentPersisted"]=page.evaluate("localStorage.getItem('doe-analytics-consent-v1')==='rejected' && !window.__doeAnalyticsLoaded")
                 record.update(page.evaluate("""() => {
                   const rgb = c => {
-                    let m=(c||'').match(/^rgba?\\(([0-9]+),[ ]*([0-9]+),[ ]*([0-9]+)/);
+                    let m=(c||'').match(/^rgba?[(]([0-9]+),[ ]*([0-9]+),[ ]*([0-9]+)/);
                     return m ? [Number(m[1]),Number(m[2]),Number(m[3])] : null;
                   };
                   const lum = c => {
