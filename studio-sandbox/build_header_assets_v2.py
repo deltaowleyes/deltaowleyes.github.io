@@ -27,7 +27,7 @@ def patched_reference():
  ft=font_fit(draw,label,29,460)
  bounds=draw.textbbox((0,0),label,font=ft,stroke_width=1)
  x=(1536-(bounds[2]-bounds[0]))//2-bounds[0]
- draw.text((x+1,105),label,font=ft,fill="#fff6e9",stroke_width=1,stroke_fill="#946a61")
+ draw.text((x+1,101),label,font=ft,fill="#fff6e9",stroke_width=1,stroke_fill="#946a61")
  final=Image.alpha_composite(top.convert("RGBA"),overlay).convert("RGB")
  bbox=ImageChops.difference(SRC,final).getbbox()
  assert bbox and bbox[0]>=505 and bbox[1]>=104 and bbox[2]<=1015 and bbox[3]<=135, f"Changes escaped original ribbon: {bbox}"
