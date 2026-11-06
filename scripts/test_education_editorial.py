@@ -84,6 +84,22 @@ class EditorialTests(unittest.TestCase):
             with self.assertRaises(PermissionError):
                 ed.verify_reviewer()
 
+    def test_writes_refused_on_main_or_dirty_catalogue(self):
+        from subprocess import CompletedProcess
+        def git_main(args,**kwargs):
+            if "branch" in args:return CompletedProcess(args,0,stdout="main\\n")
+            if "--show-toplevel" in args:return CompletedProcess(args,0,stdout=str(ROOT)+"\\n")
+            return CompletedProcess(args,0,stdout="")
+        with patch.object(ed.subprocess,"run",side_effect=git_main):
+            with self.assertRaises(PermissionError):ed.verify_review_branch()
+
+        def git_dirty(args,**kwargs):
+            if "branch" in args:return CompletedProcess(args,0,stdout="feature/education-test\\n")
+            if "--show-toplevel" in args:return CompletedProcess(args,0,stdout=str(ROOT)+"\\n")
+            return CompletedProcess(args,0,stdout=" M data/education-resources.json\\n")
+        with patch.object(ed.subprocess,"run",side_effect=git_dirty):
+            with self.assertRaises(PermissionError):ed.verify_review_branch()
+
     def test_private_queue_dedupe_and_no_personal_data(self):
         with tempfile.TemporaryDirectory() as folder:
             queue=Path(folder)/"staff"/"queue.json"
@@ -101,6 +117,7 @@ class EditorialTests(unittest.TestCase):
 
     def test_authorized_remove_stages_generic_tombstone_only(self):
         with patch.object(ed,"verify_reviewer",return_value="approvedstaff"), \
+             patch.object(ed,"verify_review_branch",return_value="feature/education-test"), \
              patch.object(ed,"read_json",side_effect=[[deepcopy(self.sample)],[]]), \
              patch.object(ed,"save_public") as save, \
              patch.object(ed,"resolve_ticket"):
