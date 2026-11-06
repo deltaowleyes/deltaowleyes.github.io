@@ -1,0 +1,42 @@
+name: Generate exact-text Studio header artwork
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'studio-sandbox/build_header_assets.py'
+      - '.github/workflows/studio-header-artifacts.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  image-assets:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned image encoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Generate and verify header artwork
+        run: python studio-sandbox/build_header_assets.py
+      - name: Commit only generated header assets
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add studio-sandbox/header-desktop.webp studio-sandbox/header-mobile.webp studio-sandbox/header-assets-manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Studio sandbox: render exact 40-design wording into responsive header images"
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: studio-header-assets-only
+          path: |
+            studio-sandbox/header-desktop.webp
+            studio-sandbox/header-mobile.webp
+            studio-sandbox/header-assets-manifest.json
