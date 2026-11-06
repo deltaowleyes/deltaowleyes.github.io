@@ -5,6 +5,7 @@ No publish, merge, payment, API calls, invented reporting or automatic email tra
 from __future__ import annotations
 import html,json,pathlib,re,subprocess,sys,time
 from urllib.parse import quote
+from experiences import experience, EXPERIENCE_STYLE
 ROOT=pathlib.Path(__file__).resolve().parents[2]
 CFG=ROOT/"studio2/factory/multipage-content.json"
 TYPES={"river-voice":"river","accountability-ledger":"ledger","media-hub":"media"}
@@ -79,7 +80,7 @@ def build_page(site,route,cfg):
  nav=[("Home",base)]+[(r["nav"],base+r["slug"]+"/") for r in cfg["routes"]]
  active=base+route["slug"]+"/"
  links="".join(f'<a href="{esc(url)}"'+(' aria-current="page"' if url==active else '')+f'>{esc(label)}</a>' for label,url in nav)
- sections="".join('<article><h2>'+esc(s["title"])+'</h2><p>'+esc(s["body"])+'</p>'+ (f'<p><a href="{esc(s["href"])}">{esc(s["link"])} ↗</a></p>' if "href" in s else "")+'</article>' for s in route["sections"])
+ sections="".join(f'<article id="section-{i}"><h2>'+esc(s["title"])+'</h2><p>'+esc(s["body"])+'</p>'+ (f'<p><a href="{esc(s["href"])}">{esc(s["link"])} ↗</a></p>' if "href" in s else "")+'</article>' for i,s in enumerate(route["sections"],1))
  visual_src,visual_alt=visual_media(theme,route["slug"])
  inquiries=""
  if route["slug"]=="inquiry":
@@ -184,6 +185,8 @@ document.querySelectorAll('.menu-disclosure nav a').forEach(function(a){{
 }});
 </script>
 </body></html>'''
+ doc=doc.replace("</style></head>",EXPERIENCE_STYLE+"</style></head>")
+ doc=doc.replace("</main>",experience(theme,route,site)+"</main>")
  return doc
 def main():
  started=time.monotonic()
