@@ -32,7 +32,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #ffe8aa;outline-offset:3p
 .hotspot:nth-of-type(6){left:67.03%;top:58.4%;width:32.7%;height:40%}
 .mobile-studio{display:none}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-@media(max-width:999px){
+@media(max-width:1279px){
   .desktop-master{display:none}
   .mobile-studio{display:block;padding:0 12px 24px}
   .mobile-head{position:relative;overflow:hidden;text-align:center;min-height:205px;display:flex;align-items:center;justify-content:center;isolation:isolate;background:radial-gradient(ellipse at center 94%,#c1704c9e,transparent 55%),linear-gradient(115deg,#102b39,#463448 50%,#0f2e3b);border-bottom:3px solid #e7b77a;box-shadow:0 7px 22px #0008}
@@ -77,6 +77,19 @@ a:focus-visible,button:focus-visible{outline:3px solid #ffe8aa;outline-offset:3p
   .family-action{font-size:.73rem}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hotspot::after{transition:none}}
+
+/* Mobile art direction: both original birds visible, brand text clear below. */
+@media(max-width:600px){
+ .mobile-head{min-height:216px;align-items:flex-end;background:radial-gradient(ellipse at 50% 94%,#a75d4599,transparent 63%),linear-gradient(105deg,#0e2837,#332939 48%,#0e2837);}
+ .mobile-head::before,.mobile-head::after{top:0;width:43%;height:70px;background-size:auto,640px auto;opacity:1;}
+ .mobile-head::before{background-position:center,left top -3px;mask-image:linear-gradient(90deg,#000 62%,transparent 100%);}
+ .mobile-head::after{background-position:center,right top -3px;mask-image:linear-gradient(270deg,#000 62%,transparent 100%);}
+ .head-copy{padding:80px 9px 17px;}
+ .head-copy .eyebrow{display:none;}
+ .head-copy h1{font-size:clamp(2.25rem,10.8vw,3.35rem);}
+ .head-copy h2{font-size:clamp(1.2rem,5.6vw,1.7rem);}
+ .family{border-color:#bbccd3;}
+}
 </style>
 </head>
 <body>
