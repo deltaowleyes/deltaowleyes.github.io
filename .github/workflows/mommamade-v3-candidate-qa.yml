@@ -7,6 +7,7 @@ on:
       - 'tests/mommamade-v3.qa.cjs'
       - 'tests/website-factory-cost-guard.cjs'
       - 'tests/mommamade-v3-reference-capture.cjs'
+      - 'tests/mommamade-v3-live-smoke.cjs'
       - 'data/web-design-projects.json'
       - 'data/website-factory-cost-ledger.json'
       - '.github/workflows/mommamade-v3-candidate-qa.yml'
@@ -43,6 +44,9 @@ jobs:
         run: |
           echo "::notice::This is a CANDIDATE check only. A green Chromium test is not reference-fidelity approval or deployment verification."
           echo "::notice::Keep Momma Made V2 current until source screenshot pairs are reviewed and the live site is verified."
+      - name: Independently verify live candidate assets and V2 default
+        if: always()
+        run: node tests/mommamade-v3-live-smoke.cjs
       - name: Archive desktop/mobile screenshot evidence
         if: always()
         uses: actions/upload-artifact@v4
