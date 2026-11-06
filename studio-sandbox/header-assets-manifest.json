@@ -1,0 +1,24 @@
+{
+  "source": "reference.webp",
+  "source_sha256": "f67af65d25c986507b8d867621cfc02d413ec3a1110879904f4dbdc36218ee8d",
+  "assets": [
+    {
+      "name": "header-desktop.webp",
+      "dimensions": [
+        1536,
+        171
+      ],
+      "sha256": "ef3db73ea7c80f595c882d153c662758d9975193ba4a9c2d9961a1d59c13b410",
+      "bytes": 58234
+    },
+    {
+      "name": "header-mobile.webp",
+      "dimensions": [
+        1100,
+        430
+      ],
+      "sha256": "1932115f336d4dfa89cf3ea415884f3d6dc7ba1a4b58d08c0e9a7640dc61e851",
+      "bytes": 63778
+    }
+  ]
+}
