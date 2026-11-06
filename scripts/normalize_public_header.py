@@ -53,6 +53,7 @@ def header_for(page: pathlib.Path) -> str:
 
     left = links([("/news/", "News"), ("/calls-to-action/", "94 Calls")])
     explore = links([
+        ("/education/", "Education"),
         ("/videos/", "Videos"),
         ("/#investigations", "Investigations"),
         ("/news/", "Newsroom"),
@@ -77,7 +78,8 @@ def header_for(page: pathlib.Path) -> str:
     mobile_groups = [
         ("Explore", [
             ("/", "Home"), ("/news/", "Latest news"),
-            ("/calls-to-action/", "94 Calls to Action"), ("/videos/", "Videos"),
+            ("/calls-to-action/", "94 Calls to Action"),
+            ("/education/", "Education"), ("/videos/", "Videos"),
             ("/#investigations", "Investigations"),
         ]),
         ("Community", [
