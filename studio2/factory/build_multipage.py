@@ -104,10 +104,47 @@ document.getElementById('design-inquiry').addEventListener('submit', function(e)
 <meta name="robots" content="noindex,nofollow"><meta name="description" content="Unpublished Delta Owl Eyes design prototype">
 <title>{esc(route["title"])} | {esc(site["name"])} candidate</title>
 <link rel="stylesheet" href="/assets/privacy-consent.css"><script defer src="/assets/privacy-consent.js"></script>
-<style>{styles(theme)}{visual_style(theme)}</style></head>
+<style>{styles(theme)}{visual_style(theme)}\n/* BAKE 3.4: discoverable, keyboard-operable navigation and precision editorial refinement */
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.menu-disclosure{min-width:0;flex:1}
+.menu-disclosure summary{display:none;list-style:none;cursor:pointer;min-height:44px;padding:12px 16px;border:1px solid currentColor}
+.menu-disclosure summary::-webkit-details-marker{display:none}
+.menu-disclosure nav{justify-content:flex-end;gap:5px}
+.hero>.wrap{min-width:0}
+.hero h1{text-wrap:balance;overflow-wrap:break-word}
+.hero .lead{font-size:clamp(1rem,1.35vw,1.15rem);line-height:1.55}
+.sections p{max-width:67ch}
+.sections article{border-bottom-color:#78878355}
+.inquiry-form input,.inquiry-form textarea{background:#fff;color:#152226}
+.inquiry-form button:hover{filter:brightness(1.13)}
+@media(max-width:1000px){
+ .header-inner{position:relative}
+ .menu-disclosure{flex:0 0 auto}
+ .menu-disclosure summary{display:block;font-size:.82rem;font-weight:850;white-space:nowrap}
+ .menu-disclosure nav{display:none;position:absolute;right:0;top:100%;z-index:8;width:min(340px,calc(100vw - 32px));padding:12px;background:#132b33;color:#fff4dc;box-shadow:0 14px 32px #0007;border-top:3px solid #d8ab72;flex-direction:column;align-items:stretch;overflow:visible;max-height:70vh;overflow-y:auto}
+ .menu-disclosure[open] nav{display:flex}
+ .menu-disclosure nav a{white-space:normal;display:flex;padding:10px 14px;border-bottom:1px solid #ffffff22;color:#fff4dc}
+ .menu-disclosure nav a[aria-current=page]{background:#ffffff19}
+}
+@media(max-width:600px){
+ .hero{min-height:0}
+ .hero h1{font-size:clamp(2.05rem,8.2vw,3.1rem);line-height:1.055;letter-spacing:-.035em}
+ .hero .lead{font-size:1rem;line-height:1.5}
+ .hero>.wrap{padding:34px 17px 29px}
+ .hero-art img{height:205px;max-height:205px}
+ .header-inner{padding-block:10px!important}
+ .brand{font-size:1.03rem}
+ .content-strap{gap:8px;letter-spacing:.08em}
+ .content-strap span{padding:7px 9px}
+ .sections h2{font-size:clamp(1.3rem,5vw,1.7rem)}
+ body.ledger .sections article{grid-template-columns:36px minmax(0,1fr);gap:10px}
+ body.ledger .sections article:before{font-size:1.4rem}
+}
+@media(prefers-reduced-motion:reduce){.hero,.hero-art,.sections article{animation:none;transition:none}}
+</style></head>
 <body class="{theme}"><a class="skip" href="#main">Skip to main content</a>
 <div class="top"><div class="wrap">Delta Owl Eyes / {esc(site["name"])} · Unpublished candidate</div></div>
-<header><div class="wrap"><a class="brand" href="{esc(base)}">Delta Owl Eyes</a><nav aria-label="Candidate site navigation">{links}</nav></div></header>
+<header><div class="wrap header-inner"><a class="brand" href="{esc(base)}">Delta Owl Eyes</a><details class="menu-disclosure"><summary aria-label="Toggle design navigation">Explore pages <span aria-hidden="true">☰</span></summary><nav aria-label="Candidate site navigation">{links}</nav></details></div></header>
 <main id="main"><section class="hero"><div class="wrap"><span class="kicker">{esc(route["eyebrow"])}</span>
 <h1>{esc(route["title"])}</h1><p class="lead">{esc(route["summary"])}</p></div><figure class="hero-art"><img src="{esc(visual_src)}" alt="{esc(visual_alt)}" decoding="async"><figcaption>Conceptual visual · Not documentary evidence</figcaption></figure></section>
 <div class="wrap"><div class="content-strap"><span>{esc(site["name"])}</span><span>{esc(route["nav"])}</span><span>Original Delta Owl Eyes content pathways</span></div></div><div class="wrap article-grid"><div class="sections">{sections}<a class="source" href="{esc(route["source"])}">{esc(route["source_label"])} ↗</a>{inquiries}</div>
@@ -115,6 +152,17 @@ document.getElementById('design-inquiry').addEventListener('submit', function(e)
 {''.join(f'<a href="{esc(url)}">{esc(label)} ↗</a>' for label,url in nav if url!=active)}
 <p><small>Design demonstration. Conceptual artwork and reporting links are not evidence of unpublished stories.</small></p></aside></div></main>
 <footer><div class="wrap">Hard Truths. Education. Accountability. <p><a href="{esc(base)}">Back to homepage</a><a href="/privacy/">Privacy</a><a href="/services/">Services</a></p></div></footer>
+<script>
+document.addEventListener('keydown',function(e){{
+ if(e.key==='Escape'){{
+  const menu=document.querySelector('.menu-disclosure[open]');
+  if(menu){{menu.open=false;menu.querySelector('summary').focus();}}
+ }}
+}});
+document.querySelectorAll('.menu-disclosure nav a').forEach(function(a){{
+ a.addEventListener('click',function(){{const m=a.closest('details');if(m)m.open=false;}});
+}});
+</script>
 </body></html>'''
  return doc
 def main():
