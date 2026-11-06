@@ -16,9 +16,9 @@ Status: **feature-branch candidate, not released or owner approved**. Three inde
 
 ## Technical acceptance and verified evidence
 - Previous Studio 3.3 benchmark: https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42226843764, 98/98 checks passed before 3.4 changes.
-- New Studio 3.4 workflow: https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42228186821. Its final conclusion and exact passing counts must be inspected; **do not infer success from the presence of commits or previously passing runs**.
+- New Studio 3.4 workflow: https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42228186821. **SUCCESS** on tested code SHA `d2a7bbad8f94e9db4284f4c241217e2d744ac7f3`. Downloaded artifact `13506394600` and independently inspected all six JSON test reports and key 1440px screenshots. Results: original candidate 4/4, River factory 4/4, three homepages 12/12, multipage routes 63/63, accessibility-oriented 15/15, and new experiences 18/18; **116/116 passed**.
 - Failed or cancelled concurrent runs must not be cited as passing.
-- The main 3.4 acceptance targets are 98 legacy checks plus 18 new checks; counts are not proof until the updated workflow completes.
+- The 3.4 acceptance consists of 98 prior checks plus 18 new interaction cases. The hosted run and artifact were inspected. This is scoped technical acceptance, not a claim of complete WCAG or premium visual approval.
 
 ## Remaining visual/functional limitations
 1. Factual editorial content continues to originate from the curated 3.2 content specification; no new investigation or individual published episode is fabricated.
@@ -28,3 +28,9 @@ Status: **feature-branch candidate, not released or owner approved**. Three inde
 5. Browser smoke tests do not establish full WCAG 2.2 AA conformance, assistive-technology acceptance, real-world Core Web Vitals or end-to-end external email delivery.
 6. Cost policy strictly below C$1 aggregate incremental development cash remains in force; no paid API/service knowingly initiated. Provider billing invoices **unverified**.
 7. No main branch write, merge, publication or production deployment. Owner visual approval withheld.
+
+## Actual visual inspection and remaining defects
+- Examined real full-page Chromium screenshots for River Voice article guide, Accountability Ledger TRC methodology and The Owl's Lens channel discovery. The three components are spatially and stylistically different, with distinct page structures and no detected horizontal overflow in tested captures.
+- The internal experiences improve usability but are still visually simpler than the cinematic six-panel inspiration. The scenic River Voice hero lacks the owl/hawk character composition. Article and media imagery remains clearly labelled conceptual art. Full assistive-technology reviews and external production performance audits remain unverified.
+- The GitHub workflow is branch-only, with `contents: read` and no release action. The approval flag and production homepage were not changed.
+- Billing: no paid API/service deliberately initiated during 3.4, but cumulative actual CAD charges remain unknown until provider records are reviewed.
