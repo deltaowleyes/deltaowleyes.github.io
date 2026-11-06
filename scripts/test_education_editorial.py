@@ -146,7 +146,7 @@ class EditorialTests(unittest.TestCase):
         with patch.object(ed,"verify_reviewer",return_value="approvedstaff"), \
              patch.object(ed,"verify_review_branch",return_value="feature/education-test"), \
              patch.object(ed,"read_json",side_effect=[[deepcopy(self.sample)],[]]), \
-             patch.object(ed,"read_queue",return_value=[{"ticket":"abcdef123456","status":"pending"}]), \
+             patch.object(ed,"read_queue",return_value=[{"ticket":"abcdef123456","status":"pending","kind":"remove"}]), \
              patch.object(ed,"save_public") as save, \
              patch.object(ed,"resolve_ticket"):
             args=SimpleNamespace(action="remove",resource_id=self.sample["id"],reason="rights-holder-request",
