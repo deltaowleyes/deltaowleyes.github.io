@@ -35,6 +35,7 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
    assert.ok(heights.every(h=>h>=44),label+' product detail link below 44px '+JSON.stringify(heights));
  }
  const style=await page.request.get(base+'reference-fidelity-1-2.css');assert.equal(style.status(),200,'missing V3 source-fidelity stylesheet');
+ const style13=await page.request.get(base+'reference-fidelity-1-3.css');assert.equal(style13.status(),200,'missing V3 1.3 visual repair stylesheet');
  const g=await page.goto(base,{waitUntil:'domcontentloaded'});assert.equal(g.status(),200);
  const reject=page.locator('#doe-reject');
  assert.equal(await reject.count(),1,'Expected privacy consent choice before testing');
@@ -54,6 +55,16 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
    assert.equal(await page.locator('.products .item').count(),4);
    await verifyPhoto('.hero .visual','design '+n+' '+device);
    await verifyTapTargets('design '+n+' '+device);
+   if(n===5){
+     const pattern=await page.locator('.pattern-browser').evaluate(el=>({y:el.getBoundingClientRect().top,grid:getComputedStyle(el.querySelector('.pattern-grid')).display}));
+     assert.equal(pattern.grid,'grid','pattern merchandising grid not styled');
+     if(device==='desktop'||device==='mobile')assert.ok(pattern.y<900,'pattern collection buried too far below initial viewport '+device+' '+pattern.y);
+   }
+   if(n===9){
+     const position=await page.locator('.hero').evaluate(el=>({photo:el.querySelector('.hero-media').getBoundingClientRect().top,copy:el.querySelector('.hero-copy').getBoundingClientRect().top}));
+     assert.ok(position.photo<position.copy,'quiet catalogue photo must precede copy '+device+' '+JSON.stringify(position));
+   }
+
 
    assert.equal(await page.locator('.browse-nav').count(),1,'design '+n+' missing reference-inspired category navigation');
    assert.ok(await page.locator('.browse-nav a[href]').count()>=3,'design '+n+' empty category navigation');
