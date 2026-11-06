@@ -1,0 +1,44 @@
+name: Brandee Rosary Road Studio Branch QA
+on:
+  push:
+    branches:
+      - design/brandee-rosary-road-studio-v1
+    paths:
+      - "brandee/**"
+      - ".github/workflows/brandee-studio-qa.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: brandee-studio-qa-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  local-chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Static navigation and route tests
+        run: node brandee/studio/v1/qa.mjs
+      - name: Install open-source browser runner
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Render all candidates locally and capture responsive evidence
+        run: |
+          python3 -m http.server 8000 --bind 127.0.0.1 > /tmp/brandee-http.log 2>&1 &
+          HTTP_PID=$!
+          trap 'kill "$HTTP_PID" 2>/dev/null || true' EXIT
+          sleep 2
+          BRANDEE_STUDIO_URL=http://127.0.0.1:8000/brandee/studio/v1 python3 brandee/studio/v1/visual_qa.py
+      - name: Upload QA screenshots and machine report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: brandee-studio-v1-qa
+          path: artifacts/brandee-studio-qa/
+          if-no-files-found: warn
+          retention-days: 1

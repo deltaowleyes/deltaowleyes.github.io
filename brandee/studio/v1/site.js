@@ -40,7 +40,7 @@ const CONTENT = {
     ["Contact & collaboration","Contact channels will only be published with Brandee's approval; this prototype collects no visitor information."]]}
 };
 const theme = themes[themeId] || themes["cathedral-sunrise"];
-const asset = (key) => "../../assets/" + key + ".svg";
+const asset = (key) => "../assets/" + key + ".svg";
 const pageLink = (slug,label) => '<a href="#' + slug + '" data-route="' + slug + '">' + label + '</a>';
 const imageTag = (key,alt,cls) => '<img class="' + (cls || "") + '" loading="eager" src="' + asset(key) + '" alt="' + alt + '">';
 function nav(){return PAGES.map(p => pageLink(p.slug,p.name)).join("");}
