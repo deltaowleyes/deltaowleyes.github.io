@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "brandee-rosary-road",
+  "working_name": "Brandee's Rosary Road",
+  "tagline": "A Beautiful Journey Through Catholic Life.",
+  "status": "planning_branch_only",
+  "approved_for_publication": false,
+  "approved_for_spend": false,
+  "brand_clearance": "not_verified",
+  "root_future": "/brandee/",
+  "studio_version": "v1",
+  "candidate_count": 6,
+  "pages": [
+    "Home",
+    "Faith & Devotions",
+    "Running with Faith",
+    "Handmade Rosaries",
+    "Coffee & Community",
+    "Meet Brandee"
+  ],
+  "candidate_slugs": [
+    "cathedral-sunrise",
+    "marian-rose-garden",
+    "woodland-pilgrimage",
+    "rosary-atelier",
+    "catholic-journal",
+    "coffee-grace"
+  ],
+  "media_status": "original SVG illustrations as placeholders; photorealistic AI media not generated",
+  "qa": "pending Chromium checks; static inspection only",
+  "billing": "no new paid service initiated; account-level billing unverified"
+}
