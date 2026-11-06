@@ -4848,7 +4848,7 @@
       "priority": "P1",
       "effort": "Large / phased",
       "status": "in_progress",
-      "status_basis": "Education Governance 1.2 implemented and live: PR #20 merged at 8da4f468, original-provider catalogue 30, public email-based report/correction/takedown links with no static PII form, staff-local no-contact queue and CLI guarded by GitHub write/admin role, dedicated clean feature branch and explicit source-review/write flags; permanent ID/URL tombstone validation, weekly read-only source-health, editorial safety tests. GitHub-hosted production HTTP acceptance run 42240657170 returned 30 records; 29 of 30 provider links reachable, 1 University of Alberta 403 needs manual review; full-checkout business audit counted 4,632 phone, 364 no-phone, 3 recoverable deletions with 0 duplicate IDs/restorations. Remains IN_PROGRESS because community-appointed review, shared confidential case-management, verified real staff credential exercise, server-enforced two-person approval and structured identity/language/deadline filters are not yet complete.",
+      "status_basis": "Education Governance 1.3 branch adds ticket-bound local two-reviewer attestation with current GH role recheck; optional GPG-encrypted two-recipient metadata-only case handoff; advisory GitHub current-head PR approval check (two non-author write/maintain/admin reviews) but NOT enforced branch protection (403 on branch-protection API, no rulesets and second reviewer unverified). Sparse source-verified Nation/language/credential/date/tuition facets for four of 30 records; U Alberta bot-block review documented and bounded HEAD-to-GET health checks. Community appointments, real multi-reviewer credential and GPG exercises, enforced protections and confidential case retention remain unverified. Do not mark complete.",
       "dependencies": [
         "B4-039"
       ],
@@ -4929,6 +4929,30 @@
           "date": "2026-11-06",
           "automation_id": "6ae5e840127c819182aa85253cc64f0b",
           "detail": "Hourly Discovery 3.0 prompt extended to respect Governance 1.2, exclude unreviewed email/community nominations from scheduled imports and preserve all business/church/event safeguards and original schedule."
+        },
+        {
+          "type": "feature_branch",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/education-community-governance-1-3-20261106",
+          "detail": "Draft governance 1.3: casebook dual-review, optional encrypted recipient handoff, two-person PR auditor, 4 verified learning facets, U Alberta 403 manual corroboration; CI and production verification pending."
+        },
+        {
+          "type": "connected_github_permission",
+          "date": "2026-11-06",
+          "username": "deltaowleyes",
+          "permission": "admin",
+          "detail": "Connected GitHub get_user_login and get_repo_collaborator_permission confirmed repository admin account; branch protection GET returned 403 for GitHub App, repository rulesets API returned []; cannot verify enforced 2-person merge approvals or identify a second reviewer."
+        },
+        {
+          "type": "original_provider_fact_review",
+          "date": "2026-11-06",
+          "urls": [
+            "https://www.walpoleislandfirstnation.ca/ak-immersion",
+            "https://www.fanshawec.ca/programs/oni1-oneida-language-immersion-culture-and-teaching/next",
+            "https://aeipostsecondary.ca/programs/pre-health-sciences-certificate-program/",
+            "https://www.ualberta.ca/en/admissions-programs/online-courses/indigenous-canada/index.html"
+          ],
+          "detail": "Official providers corroborated education language and connection, course credential/intake, online status, source-listed tuition and U Alberta original-page availability. Missing metadata deliberately remains unknown."
         }
       ]
     }
@@ -5160,6 +5184,16 @@
         "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42240657170",
         "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42240657238",
         "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42240657052"
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "type": "education_governance_1_3_branch_audit",
+      "task_id": "B4-041",
+      "source_main": "fdfdf6fdab08100fcf65fcf1432c9266a0205773",
+      "summary": "Proposed dual-review local cases, optional GPG transport, advisory GitHub current-head review checker, four source-grounded metadata facets, U Alberta 403 manual corroboration and source-health retry. Real GitHub account deltaowleyes has admin permission; branch protection inaccessible, no rulesets, second reviewer not known. Preserve in_progress until community-appointed review and enforced approvals are evidenced.",
+      "evidence_urls": [
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/education-community-governance-1-3-20261106"
       ]
     }
   ]
