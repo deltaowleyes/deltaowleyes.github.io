@@ -8,11 +8,25 @@ const pages=["index.html","shop.html","product.html","care.html","about.html","c
 const widths=[320,390,768,1024,1440,1920];
 const dir="website-factory/qa-artifacts/fullsites";
 fs.mkdirSync(dir,{recursive:true});
-const errors=[],report={suite:"factory2.1-fullsites",sites:[],routesChecked:0,widthChecks:0,screenshots:[],pass:false};
+const errors=[],report={suite:"factory2.2-premium-fullsites",sites:[],routesChecked:0,widthChecks:0,screenshots:[],mediaAssetsVerified:0,conceptDisclosureChecks:0,pass:false};
 (async()=>{
  assert.equal(reg.candidates.length,10,"Exactly ten candidates required");
  assert.equal(new Set(reg.candidates.map(c=>c.anatomy)).size,10,"duplicate design fingerprints");
  const browser=await chromium.launch({headless:true});
+ // Reused first-party WebP assets must be real and accessible before visual acceptance.
+ const mediaPage=await browser.newPage();
+ for(const file of [...Array.from({length:10},(_,i)=>"hero-"+String(i+1).padStart(2,"0")+".webp"),...Array.from({length:10},(_,i)=>"story-"+String(i+1).padStart(2,"0")+".webp"),...Array.from({length:4},(_,i)=>"product-"+String(i+1).padStart(2,"0")+".webp")]){
+   const response=await mediaPage.request.get(root+"mommamade/v2/images/"+file);
+   assert.equal(response.status(),200,"missing first-party image "+file);
+   const imageBytes=await response.body();
+   assert.equal(imageBytes.toString("ascii",0,4),"RIFF",file+" not RIFF");
+   assert.equal(imageBytes.toString("ascii",8,12),"WEBP",file+" not WebP");
+   assert.ok(imageBytes.length>10000,file+" unexpectedly small");
+   report.mediaAssetsVerified++;
+ }
+ const premium=await mediaPage.request.get(root+"website-factory/assets/premium-base.css");
+ assert.equal(premium.status(),200,"premium visual system missing");
+ await mediaPage.close();
  const navStructures=[],shopStructures=[],careStructures=[],aboutStructures=[],contactStructures=[];
  try{
   for(const c of reg.candidates){
@@ -54,6 +68,30 @@ const errors=[],report={suite:"factory2.1-fullsites",sites:[],routesChecked:0,wi
         assert.ok(await page.locator(".hero .directory a").count()>=3,c.slug+" no directory-style hero navigation");
       }
     }
+    const premiumVisual=await page.evaluate((route)=>{
+      const bodyStyle=getComputedStyle(document.body);
+      const hero=bodyStyle.getPropertyValue("--f22-hero");
+      const story=bodyStyle.getPropertyValue("--f22-story");
+      const isWebp=x=>String(x||"").includes(".webp");
+      let target=null;
+      if(route==="index.html"){
+        const sections=[...document.querySelectorAll(".hero,.hero *")];
+        return {hero:isWebp(hero),story:isWebp(story),photo:sections.some(el=>
+          [getComputedStyle(el).backgroundImage,getComputedStyle(el,"::before").backgroundImage,getComputedStyle(el,"::after").backgroundImage].some(isWebp)
+        )};
+      }
+      if(route==="shop.html")target=document.querySelector(".f2-product-grid .f2-object");
+      if(route==="product.html")target=document.querySelector('[data-product-view="wraps"] .f2-product-visual');
+      if(route==="care.html")target=document.querySelector(".f2-care-main");
+      if(route==="about.html")target=document.querySelector(".f2-story-main");
+      if(route==="contact.html")target=document.querySelector(".f2-contact-intro");
+      const visual=(route==="care.html"||route==="about.html"||route==="contact.html")?getComputedStyle(target,"::before").backgroundImage:getComputedStyle(target).backgroundImage;
+      return {hero:isWebp(hero),story:isWebp(story),photo:isWebp(visual)};
+    },route);
+    assert.ok(premiumVisual.hero&&premiumVisual.story&&premiumVisual.photo,c.slug+" "+route+" missing verified concept photo "+JSON.stringify(premiumVisual));
+    const footerNotice=await page.locator(".f2-footer").innerText();
+    assert.match(footerNotice,/AI concept imagery.*Unverified products/i,c.slug+" missing transparent AI media disclosure");
+    report.conceptDisclosureChecks++;
     if(route==="index.html")navStructures.push(await page.locator("nav[aria-label='Main navigation']").evaluate(x=>x.innerHTML.replace(/Momma Made|Field Notes|Countertop Mosaic|The Daily Ledger|Still Life Studio|Ritual Route|White Space Works|Patchwork Press|Orbit Home|Pantry Atlas|A Letter Home/g,"")));
     if(route==="shop.html")shopStructures.push(await page.locator("[data-collection]").evaluate(x=>x.querySelector("[class^='f2-shop-'],[class*=' f2-shop-']")?.className));
     if(route==="care.html")careStructures.push(await page.locator(".f2-care-main").evaluate(x=>x.firstElementChild?.className));
@@ -117,7 +155,7 @@ const errors=[],report={suite:"factory2.1-fullsites",sites:[],routesChecked:0,wi
     assert.equal(new Set(list).size,10,label+" design layout fingerprint repeats");
   }
   assert.deepEqual(errors,[],"Browser JavaScript errors");
-  assert.equal(report.routesChecked,60);assert.equal(report.widthChecks,360);assert.equal(report.screenshots.length,60);
+  assert.equal(report.routesChecked,60);assert.equal(report.widthChecks,360);assert.equal(report.screenshots.length,60);assert.equal(report.mediaAssetsVerified,24);assert.equal(report.conceptDisclosureChecks,60);
   report.pass=true;
   fs.writeFileSync(path.join(dir,"fullsite-results.json"),JSON.stringify(report,null,2));
   console.log("FACTORY 2.1 FULL SITES PASS: 60 views; 360 responsive viewport checks; 60 screenshots; 10 distinct nav and lower-page fingerprints");

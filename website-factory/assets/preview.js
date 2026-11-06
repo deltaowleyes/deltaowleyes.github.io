@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded",()=>{
    update();
  }
  // Explicitly identify inherited AI concept photos: never imply real merchandise.
- const footerNotice=document.querySelector(".f2-footer span:last-child");
+ const footerNotice=[...document.querySelectorAll(".f2-footer > span")].find(el=>el.textContent.includes("Original CSS artwork"));
  if(footerNotice)footerNotice.textContent="Existing project AI concept imagery · Unverified products and inventory · Demo only";
  for(const caption of document.querySelectorAll(".f2-product-visual>p"))caption.textContent="AI-GENERATED CONCEPT IMAGE / NOT VERIFIED PRODUCT PHOTOGRAPHY";
  document.addEventListener("click",event=>{

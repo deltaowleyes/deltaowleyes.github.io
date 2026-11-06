@@ -2,7 +2,6 @@
   No third-party images, paid fonts, remote scripts, data collection or checkout.
   Photographs do NOT depict verified finished Momma Made merchandise. */
 :root{--f22-radius:9px}
-.f2 *, .f2 *::before, .f2 *::after{box-sizing:border-box}
 .f2{font-family:Arial,system-ui,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
 .f2 .f2-banner{letter-spacing:.13em;padding-block:12px}
 .f2 .f2-header .f2-brand{letter-spacing:-.06em}
