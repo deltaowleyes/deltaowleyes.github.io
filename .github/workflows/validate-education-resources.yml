@@ -1,0 +1,30 @@
+name: Validate education resource directory
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/education-resources.json"
+      - "education/**"
+      - "index.html"
+      - "sitemap.xml"
+      - "scripts/check_education_resources.py"
+      - ".github/workflows/validate-education-resources.yml"
+  pull_request:
+    paths:
+      - "data/education-resources.json"
+      - "education/**"
+      - "index.html"
+      - "sitemap.xml"
+      - "scripts/check_education_resources.py"
+      - ".github/workflows/validate-education-resources.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check schema, ID uniqueness, URL hygiene and hub integration
+        run: python3 scripts/check_education_resources.py
