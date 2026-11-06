@@ -54,3 +54,10 @@ No owner visual approval means **do not merge or publish**.
 ## Next recommended BAKE
 
 Studio 3.3: premium final visual acceptance: design-specific internal views, original photographic hero and article imagery where rights and cultural accuracy permit, contrast and screen-reader audit, real user device navigation, functional inquiry backend only with explicit cost/privacy approval, reproducible screenshots and user signoff. Continue automation incrementally; do not multiply to 36 templates before 3 full demonstration sites are visually approved.
+
+## Final BAKE 3.2 responsive polish verification
+
+- Investigative reporting headline typography was refined by source commit `65952c2cfaa19189d1f5abebb2b714b5516f6d74`: 390px heading size decreased from 34.4px to **28.9px**, improving uppercase line wrapping without modifying reporting content.
+- [Final GitHub Actions run 42225737382](https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42225737382) **SUCCESS** on source commit `65952c2cfaa19189d1f5abebb2b714b5516f6d74`; artifact `13505876342`, `doe-studio3-multipage-UNPUBLISHED`. Verified by opening the downloaded artifact's four JSON results.
+- Results: **4/4** old candidate regression, **4/4** River Voice factory regression, **12/12** three-homepage, **63/63** internal multipage checks = **83/83** overall. Also visually inspected final 390px River Voice, Accountability Ledger and Owl's Lens reporting-page screenshots. River Voice article now stacks vertically; Ledger headline fits with improved visual rhythm; Media Hub remains visually distinct.
+- This technical QA does not establish premium photographic art direction, server-backed inquiry delivery, full WCAG conformance or final owner acceptance. All 18 demo routes remain **unpublished**.
