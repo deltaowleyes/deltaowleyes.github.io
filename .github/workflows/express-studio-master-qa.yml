@@ -7,7 +7,10 @@ on:
       - main
     paths:
       - 'assets/express-studio/v1/**'
-      - 'shutyourtrap/express/**'
+      - 'shutyourtrap/express/index.html'
+      - 'shutyourtrap/express/config.js'
+      - 'shutyourtrap/express/render-shots.cjs'
+      - 'shutyourtrap/express/previews/**'
       - '.github/workflows/express-studio-master-qa.yml'
   workflow_dispatch:
 
