@@ -5004,7 +5004,7 @@
       "priority": "P0",
       "effort": "Medium / phased",
       "status": "in_progress",
-      "status_basis": "Grants v1 release was merged in PR #24 (commit 24e5464d), 20 original-source records and responsive Chromium/schema/privacy QA passed. Independent production HTML and exact public JSON comparison succeeded in GitHub Actions run 42247481010 attempt 2 after first attempt failed HTTP 404 while Pages was still deploying. Existing hourly Discovery automation ID 6ae5e840127c819182aa85253cc64f0b is enabled, retitled Discovery 4.0 with former instructions and schedule intact, but the last observed run was still the pre-upgrade 2026-11-06 15:22 UTC Discovery 3.0 run; no post-upgrade run proven. Separate source-reviewed batch of 13 candidate grant records prepared on review branch, awaiting CI and Pages verification. Remains IN_PROGRESS pending post-upgrade hourly run evidence and wider ongoing coverage. Do not claim guaranteed funding availability.",
+      "status_basis": "Grants page v1 merged in PR #24 (20 source-reviewed records); independent original-release production HTTP + exact JSON check passed in run 42247481010 attempt 2 after Pages deployment. Current main contains 33 grant records after the 13-record official-source expansion merged via PR #26 (commit ea7c71c3); Grants schema and responsive Chromium QA succeeded on the reviewed PR branch, original business/church/event/Education JSON unchanged. Initial independent expansion public check failed because live site still served the old JSON while Pages deployment for 33 was in progress; do NOT claim live 33 until a later production check succeeds. Existing hourly automation 6ae5e840127c819182aa85253cc64f0b is enabled as Discovery 4.0 at its old hourly schedule with original three streams and Education maintained. First post-upgrade automation run had not yet been observed as of this audit. Remains IN_PROGRESS for public 33 acceptance, first upgraded run evidence and long-term funding coverage.",
       "dependencies": [
         "B4-040",
         "B4-041"
@@ -5053,6 +5053,19 @@
           "date": "2026-11-06",
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/discovery-4-grants-expansion-20261106",
           "detail": "13 additional primary-source funding programs proposed, 33 total; pending CI, PR review and deployment."
+        },
+        {
+          "type": "expansion_merge",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/26",
+          "commit": "ea7c71c339a605412d944d2026a8a2be4c372a71",
+          "detail": "13 distinct primary-funder funding programs merged, 33 total; PR validation and 4-width Chromium tests passed. Public 33 parity pending deployment."
+        },
+        {
+          "type": "expansion_live_pending",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42250178661",
+          "detail": "Initial independent 33-record comparison failed while GitHub Pages still served older 20-record dataset. Confirm new public JSON via re-run only after Pages deploy 42250177900 succeeds."
         }
       ]
     }
@@ -5342,6 +5355,17 @@
       "evidence_urls": [
         "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42247481010",
         "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/24"
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "type": "discovery4_33_merge_pending_live",
+      "task_id": "B4-042",
+      "summary": "PR #26 merged at ea7c71c3 after 4-width grants Chromium and schema validation. Current main contains 33 original-funder records (20+13) and the shared Education work preserved. First 33 live check found old deployed JSON during Pages deployment; separate rerun/live 33 parity pending. Discovery 4 hourly task enabled; first post-upgrade run not yet observed.",
+      "evidence_urls": [
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/26",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42250178661",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42250177900"
       ]
     }
   ]
