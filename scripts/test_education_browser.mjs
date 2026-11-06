@@ -77,6 +77,15 @@ try {
    if(feedbackLinks.length!==3||feedbackLinks.some(a=>!a.href.startsWith('mailto:deltaowleyes@gmail.com?')))
      throw Error('Public feedback actions must use private email, never an unprotected web form');
    if(await page.locator('#education-feedback form').count())throw Error('Unprotected submission form not permitted');
+   if(width===320){
+     const degraded=await context.newPage();
+     await degraded.route('**/data/education-verified-facets.json',r=>r.fulfill({status:503,body:'Offline'}));
+     await degraded.goto(origin+'/education/',{waitUntil:'domcontentloaded'});
+     await degraded.waitForFunction(expected=>document.querySelector('#count')?.textContent===expected+' of '+expected+' resources shown',records.length);
+     if(await degraded.locator('#list .resource').count()!==records.length)throw Error('Optional facet outage hid core catalogue');
+     if(await degraded.locator('#error').isVisible())throw Error('Optional data outage falsely marked main directory unavailable');
+     await degraded.close();
+   }
    if(errors.length)throw Error('Page errors: '+errors.join('; '));
    const privacyBanner=page.locator('#doe-consent-banner');
    if(await privacyBanner.count()!==1)throw Error('Privacy banner missing before consent');
