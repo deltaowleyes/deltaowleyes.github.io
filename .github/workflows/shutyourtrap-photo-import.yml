@@ -8,6 +8,8 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
+  pages: write
 concurrency:
   group: shut-your-trap-photo-import
   cancel-in-progress: false
@@ -36,6 +38,28 @@ jobs:
       - name: Validate checksums and extract exactly 17 WebP images
         if: steps.inbox.outputs.has_zip == 'true'
         run: python3 shutyourtrap/scripts/import-photo-pack.py
+      - name: Install Chromium for pre-publication photo QA
+        if: steps.inbox.outputs.has_zip == 'true'
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Test the activated photo site before committing
+        if: steps.inbox.outputs.has_zip == 'true'
+        shell: bash
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/shutyourtrap-photo-qa.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8765/shutyourtrap/ >/dev/null; then break; fi
+            sleep 1
+          done
+          node shutyourtrap/qa.mjs
+      - name: Upload pre-publication photo screenshots and QA results
+        if: always() && steps.inbox.outputs.has_zip == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: shutyourtrap-photo-preflight-qa
+          path: shutyourtrap/qa-artifacts/
+          if-no-files-found: warn
       - name: Commit verified photo assets and activate photo mode
         if: steps.inbox.outputs.has_zip == 'true'
         shell: bash
@@ -52,3 +76,25 @@ jobs:
           else
             echo "No verified changes to commit."
           fi
+      - name: Trigger independent post-commit Chromium QA
+        if: steps.inbox.outputs.has_zip == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run shutyourtrap-qa.yml --ref main
+          echo 'Triggered independent browser QA on latest main' >> "$GITHUB_STEP_SUMMARY"
+      - name: Request a GitHub Pages rebuild after binary import
+        if: steps.inbox.outputs.has_zip == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds"; then
+            echo 'Requested a Pages rebuild after photo import' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'Pages rebuild could not be requested automatically; verify and trigger deployment manually.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Record no-upload checkpoint
+        if: steps.inbox.outputs.has_zip != 'true'
+        run: |
+          echo 'No ZIP uploaded. Existing SVG site remains unchanged; no photos imported.' >> "$GITHUB_STEP_SUMMARY"
