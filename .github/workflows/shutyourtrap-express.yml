@@ -1,0 +1,63 @@
+name: Shut Your Trap EXPRESS six-viewport visual captures
+
+on:
+  push:
+    branches:
+      - feature/express-shut-your-trap-20261106
+    paths:
+      - 'shutyourtrap/express/index.html'
+      - 'shutyourtrap/express/render-shots.cjs'
+      - '.github/workflows/shutyourtrap-express.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  real-screenshots:
+    if: github.ref_name == 'feature/express-shut-your-trap-20261106'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned Chromium test runtime
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Serve actual repository pages locally
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/syt-express.log 2>&1 &
+          for i in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:8765/shutyourtrap/express/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          exit 1
+      - name: Capture 36 full-page screenshots and verify gallery
+        run: node shutyourtrap/express/render-shots.cjs
+      - name: Preserve screenshots as inspection artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: shut-your-trap-express-36-real-screenshots
+          path: shutyourtrap/express/shots/
+          retention-days: 7
+          if-no-files-found: error
+      - name: Commit verified screenshots only to EXPRESS feature branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shutyourtrap/express/shots/
+          if git diff --cached --quiet; then
+            echo "No screenshot changes."
+          else
+            git commit -m "visual: capture 36 actual Shut Your Trap EXPRESS viewport screenshots"
+            # Source edits can land while Chromium is running. Replay the screenshot-only
+            # commit over the latest remote branch rather than force-pushing or losing them.
+            git fetch origin feature/express-shut-your-trap-20261106
+            git rebase origin/feature/express-shut-your-trap-20261106
+            git push origin HEAD:feature/express-shut-your-trap-20261106
+          fi
