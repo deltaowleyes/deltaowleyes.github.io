@@ -25,6 +25,8 @@ jobs:
         run: |
           python -m pip install --disable-pip-version-check Pillow==11.3.0 playwright==1.56.0
           python -m playwright install --with-deps chromium
+      - name: Compile Python generators and tests before browser setup
+        run: python -m py_compile studio2/factory/build.py studio2/factory/build_three.py studio2/factory/build_multipage.py studio2/factory/qa.py studio2/factory/qa_three.py studio2/factory/qa_multipage.py
       - name: Validate existing independent photo importer
         run: python studio2/tests/photo_import_contract.py
       - name: Generate WebP images, provenance, and working preview
