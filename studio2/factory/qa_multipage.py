@@ -71,6 +71,8 @@ with sync_playwright() as p:
      record["heroHeadingPx"]=round(page.locator("main h1").evaluate("(e)=>parseFloat(getComputedStyle(e).fontSize)"),1)
      record["headlineInViewport"]=page.locator("main h1").evaluate("(e)=>{let r=e.getBoundingClientRect();return r.width>0 && r.left>=-1 && r.right<=innerWidth+1}")
      record["mobileHeadlineSized"]=width>600 or record["heroHeadingPx"]<=51
+     record["stackedReadingLayout"]=width>850 or page.evaluate("() => {const a=document.querySelector('.sections').getBoundingClientRect();const b=document.querySelector('.side').getBoundingClientRect();return b.top>=a.bottom-1 && b.width>=a.width*0.8}")
+
 
      if route["slug"]=="inquiry":
       record["formExists"]=bool(page.locator("form#design-inquiry").count()==1)
@@ -97,7 +99,7 @@ with sync_playwright() as p:
       record["headings"]==1 and record["sectionArticles"]>=2 and record["navLinks"]==6 and
       record["consentVisible"] and record["rejectPersists"] and record["analyticsDisabled"] and
       not record["brokenImg"] and record["missingAlt"]==0 and not record["unnamedLinks"] and
-      record["designNav"] and record["navDisclosurePresent"] and record["navOpens"] and record["navEscape"] and record["headlineInViewport"] and record["mobileHeadlineSized"] and record["heroArt"] and record["heroDecoded"] and record["conceptCaption"] and record["contentChecks"] and record["formExists"] and record["formValid"] and
+      record["designNav"] and record["navDisclosurePresent"] and record["navOpens"] and record["navEscape"] and record["headlineInViewport"] and record["mobileHeadlineSized"] and record["stackedReadingLayout"] and record["heroArt"] and record["heroDecoded"] and record["conceptCaption"] and record["contentChecks"] and record["formExists"] and record["formValid"] and
       record["formHasDraftOnly"] and record["noNetworkSubmit"] and not record["brokenCandidateLinks"] and not errors)
     except Exception as e:
      record["error"]=str(e);record["pass"]=False
