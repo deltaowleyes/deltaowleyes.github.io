@@ -7,7 +7,7 @@ from __future__ import annotations
 import io, json, pathlib, hashlib, re, html
 from PIL import Image, ImageFilter, ImageDraw
 from playwright.sync_api import sync_playwright
-ROOT=pathlib.Path(__file__).resolve().parents[2]
+ROOT=pathlib.Path(__file__).resolve().parents[1]
 STUDIO=ROOT/"studio-sandbox"
 PORT="http://127.0.0.1:8765"
 WIDTHS=[320,390,500,768,1024,1440]
