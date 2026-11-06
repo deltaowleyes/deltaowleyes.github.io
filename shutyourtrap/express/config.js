@@ -1,6 +1,6 @@
 /* Only this file and actual screenshot assets vary by studio.
    Shared shell: /assets/express-studio/v1/{studio.css,studio.js}.
-   Header images: /studio-sandbox/header-slim-{320,390,500,768,1024,1440}.webp. */
+   Header images: /studio-sandbox/header-{320,390,500,768,1024,1440}.webp. */
 window.BAKE_EXPRESS_STUDIO={
   root:'/shutyourtrap/express/',
   shotsBase:'/shutyourtrap/express/shots/',
