@@ -30,7 +30,17 @@ let count=0;
    const response=await page.goto(url,{waitUntil:'domcontentloaded',timeout:30000});
    assert.equal(response.status(),200,url+' must return 200');
    await page.locator('main#content').waitFor({timeout:12000});
-   await page.waitForTimeout(1100); // allow optional verified photo-status upgrade
+   await page.waitForTimeout(1100); // allow verified photo-status upgrade and consent UI
+   // Never bake the privacy-choice bar into a marketing screenshot. Exercise the
+   // real Reject analytics control; this must not permit any analytics requests.
+   const analyticsRequests=[];
+   page.on('request',request=>{if(/googletagmanager|google-analytics|doubleclick/i.test(request.url()))analyticsRequests.push(request.url());});
+   const reject=page.getByRole('button',{name:/Reject analytics/i});
+   if(await reject.count() && await reject.first().isVisible()){
+     await reject.first().click();
+     await page.waitForTimeout(220);
+   }
+   assert.deepEqual(analyticsRequests,[],slug+' @ '+width+' no analytics after rejection');
    await page.evaluate(async()=>{
      document.querySelectorAll('img').forEach(x=>{x.loading='eager'; x.decoding='sync';});
      for(const y of [0,document.body.scrollHeight/2,document.body.scrollHeight]){
