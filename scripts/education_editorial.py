@@ -229,7 +229,12 @@ def public_edit(args):
     # Always check GitHub role and exact ticket state before modifying public JSON.
     reviewer=verify_reviewer()
     branch=verify_review_branch()
-    if args.ticket and not any(x["ticket"]==args.ticket and x["status"]=="pending" for x in read_queue()):
+    if str(ROOT) not in sys.path:
+        sys.path.insert(0, str(ROOT))
+    from scripts.education_review_cases import require_two_reviewers
+    signoffs=require_two_reviewers(args.ticket,args.action)
+    print("Two GitHub-authorized staff decisions checked:", ", ".join(signoffs))
+    if not any(x["ticket"]==args.ticket and x["status"]=="pending" for x in read_queue()):
         raise ValueError("Ticket missing or already resolved")
     catalogue=read_json(CATALOGUE)
     ledger=read_json(SUPPRESSED)
@@ -267,7 +272,7 @@ def public_edit(args):
         print("Reviewer",reviewer,"authorized removal",matched["id"])
     save_public(catalogue,ledger)
     resolve_ticket(args.ticket)
-    print("Validated on",branch,"for reviewer",reviewer,". Git diff, authenticated PR review and deployment are STILL required.")
+    print("Validated on",branch,"for editor",reviewer,". Local approvals are NOT tamper-proof; separate GitHub PR review and deployment verification remain required.")
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -284,7 +289,7 @@ def main():
         else:
             cmd.add_argument("--resource-id",required=True)
             cmd.add_argument("--reason",required=True,choices=sorted(REASONS))
-        cmd.add_argument("--ticket",help="Local request ticket to resolve")
+        cmd.add_argument("--ticket",required=True,help="Mandatory private case ticket with two distinct staff approvals")
         cmd.add_argument("--write",action="store_true",help="Explicitly modify PUBLIC tracked catalogue/ledger")
         cmd.add_argument("--confirm-source-reviewed",action="store_true",help="Staff confirms original source and rights/access conditions")
     args=parser.parse_args()
