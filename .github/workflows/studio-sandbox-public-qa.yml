@@ -1,0 +1,32 @@
+name: Verify public Studio sandbox after publishing
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'studio-sandbox/index.html'
+      - 'studio-sandbox/qa_public.py'
+      - '.github/workflows/studio-sandbox-public-qa.yml'
+permissions:
+  contents: read
+jobs:
+  public-browser-verification:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Chromium browser
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Check externally served HTML and image, then capture real public desktop/mobile screenshots
+        run: python studio-sandbox/qa_public.py
+      - name: Preserve public-site evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-sandbox-public-browser-evidence
+          path: artifacts/public-studio/
+          if-no-files-found: warn
