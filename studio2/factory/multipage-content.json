@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "release": "unpublished-candidate-only",
+  "designs": [
+    {
+      "id": "river-voice",
+      "base": "/studio2/river-voice/factory-preview/",
+      "name": "River Voice",
+      "theme": "river",
+      "structure": "editorial magazine with broad atmospheric mastheads, serif narrative columns, and warm investigative reading rhythm"
+    },
+    {
+      "id": "accountability-ledger",
+      "base": "/studio2/factory-previews/accountability-ledger/",
+      "name": "Accountability Ledger",
+      "theme": "ledger",
+      "structure": "investigative docket, block numerals, red evidence rail and method-first reading"
+    },
+    {
+      "id": "media-hub",
+      "base": "/studio2/factory-previews/media-hub/",
+      "name": "The Owl's Lens",
+      "theme": "media",
+      "structure": "screen-first episodes, media tiles, watchlist and programme-led hierarchy"
+    }
+  ],
+  "routes": [
+    {
+      "slug": "report",
+      "nav": "Reporting",
+      "eyebrow": "Editorial · Reporting",
+      "title": "Reporting that starts with the public record",
+      "summary": "A demonstration article-reading view for Delta Owl Eyes. Follow published reporting through the newsroom; this page does not invent findings, quotations, or sources.",
+      "sections": [
+        {
+          "title": "The reporting",
+          "body": "Accurate reporting begins with dates, primary documents, named institutions and clear distinctions between what has been confirmed and what remains uncertain."
+        },
+        {
+          "title": "Why source context matters",
+          "body": "A developing story can change as documents and responses become available. Check article publication dates and corrections before drawing conclusions."
+        },
+        {
+          "title": "Explore current coverage",
+          "body": "This prototype provides a reading layout, not a new investigation. Open the current Delta Owl Eyes newsroom for the verified articles."
+        }
+      ],
+      "source": "/news/",
+      "source_label": "Read verified published news"
+    },
+    {
+      "slug": "trc",
+      "nav": "TRC education",
+      "eyebrow": "Education · Reconciliation",
+      "title": "Canada's 94 Calls to Action",
+      "summary": "An educational starting point for understanding the Truth and Reconciliation Commission's 94 Calls to Action. The number 94 represents the official Calls, not the number completed.",
+      "sections": [
+        {
+          "title": "What the Calls represent",
+          "body": "The Truth and Reconciliation Commission of Canada issued 94 Calls to Action addressing the ongoing consequences of residential schools and responsibilities across institutions."
+        },
+        {
+          "title": "How to assess progress",
+          "body": "Read the exact wording of each Call, consider who has responsibility for implementation and distinguish commitments from independently verified outcomes."
+        },
+        {
+          "title": "Keep the record visible",
+          "body": "Explore the individual Calls and published updates. This demonstration does not assign invented completion ratings."
+        }
+      ],
+      "source": "/calls-to-action/",
+      "source_label": "Explore the 94 Calls"
+    },
+    {
+      "slug": "community",
+      "nav": "Community",
+      "eyebrow": "Community · Discovery",
+      "title": "Find connections in the community",
+      "summary": "Explore Indigenous businesses, churches and community events through Delta Owl Eyes' existing directories. Entries may be unverified until owners confirm them.",
+      "sections": [
+        {
+          "title": "Indigenous businesses",
+          "body": "Find local businesses and services and use the published directory to review contact details before visiting or making arrangements.",
+          "href": "/indigenous-businesses/",
+          "link": "Browse businesses"
+        },
+        {
+          "title": "Churches and faith communities",
+          "body": "Discover churches and faith resources that have been listed for the community.",
+          "href": "/indigenous-churches/",
+          "link": "Find churches"
+        },
+        {
+          "title": "Gatherings and events",
+          "body": "Find community gatherings, cultural events and public opportunities to connect.",
+          "href": "/events/",
+          "link": "Browse events"
+        }
+      ],
+      "source": "/indigenous-businesses/",
+      "source_label": "Open business directory"
+    },
+    {
+      "slug": "media",
+      "nav": "Video & podcast",
+      "eyebrow": "The Owl's Lens · Media",
+      "title": "Watch, listen and explore",
+      "summary": "A media discovery and programme-detail demonstration. Only the current Delta Owl Eyes video library can confirm which episodes are published; no invented episode descriptions or playback controls.",
+      "sections": [
+        {
+          "title": "The Owl's Lens",
+          "body": "Explore news, conversations and commentary through the existing video collection. This page is a demonstration of the media experience, not a video player.",
+          "href": "/videos/",
+          "link": "Open video library"
+        },
+        {
+          "title": "Truth and reconciliation",
+          "body": "Use the TRC education pages to find original Call text and related reporting.",
+          "href": "/calls-to-action/",
+          "link": "Read TRC material"
+        },
+        {
+          "title": "Community reporting",
+          "body": "Find new editorial coverage and community-focused news on the newsroom page.",
+          "href": "/news/",
+          "link": "Explore the newsroom"
+        }
+      ],
+      "source": "/videos/",
+      "source_label": "Watch available videos"
+    },
+    {
+      "slug": "inquiry",
+      "nav": "Select this design",
+      "eyebrow": "Design studio · Inquiry",
+      "title": "Make this design your own",
+      "summary": "Select a candidate and describe the custom website you want. This prototype opens a prefilled email draft; it does not submit, store, or send any message automatically.",
+      "sections": [
+        {
+          "title": "What happens after selection",
+          "body": "A custom project would be scoped around your content, the number of pages, visual requirements and desired features."
+        },
+        {
+          "title": "Privacy and control",
+          "body": "Your inquiry stays in your email application until you choose to send it. Nothing on this form is transmitted or stored by this prototype."
+        }
+      ],
+      "source": "/services/",
+      "source_label": "View current Delta Owl Eyes services"
+    }
+  ]
+}
