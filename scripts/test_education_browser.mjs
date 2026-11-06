@@ -62,14 +62,18 @@ try {
       if(!response.ok)throw Error('Verified facets HTTP '+response.status);
       return (await response.json()).records;
    });
-   if(facets.length<4)throw Error('Expected source-verified facets');
+   if(facets.length<10)throw Error('Expected source-verified facets for six new local providers');
    await page.locator('#learning-language').selectOption('Onyota’a:ka (Oneida)');
    if(await page.locator('.resource').count()!==1)throw Error('Oneida learning language filter');
    const oneidaText=await page.locator('.resource').first().textContent();
    if(!oneidaText.includes('2027-09'))throw Error('Provider-listed intake not displayed');
    await page.locator('#reset').click();
    await page.locator('#community').selectOption('Walpole Island First Nation (Bkejwanong)');
-   if(await page.locator('.resource').count()!==1)throw Error('Bkejwanong community connection filter');
+   if(await page.locator('.resource').count()!==facets.filter(f=>f.community==='Walpole Island First Nation (Bkejwanong)').length)throw Error('Bkejwanong community connection filter');
+   await page.locator('#reset').click();
+   await page.locator('#learning-language').selectOption('Anishinaabemowin');
+   if(await page.locator('.resource').count()!==facets.filter(f=>f.learning_language==='Anishinaabemowin').length)
+     throw Error('Source-confirmed Anishinaabemowin filter');
    await page.locator('#reset').click();
    if(await page.locator('.resource').count()!==records.length)throw Error('Reset incorrect');
    const feedbackLinks=await page.locator('#education-feedback a.feedback-action').evaluateAll(

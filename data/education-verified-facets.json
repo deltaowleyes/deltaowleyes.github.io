@@ -3,6 +3,56 @@
   "policy": "Optional facts corroborated on the original provider source; missing facts are unknown, not inferred.",
   "records": [
     {
+      "id": "wifn-bkejwanong-kinomaagewgamig",
+      "source_url": "https://www.bkthunderbirds.com/",
+      "reviewed_on": "2026-11-06",
+      "community": "Walpole Island First Nation (Bkejwanong)",
+      "credential": "Junior Kindergarten–Grade 8 elementary school",
+      "delivery_area": "Bkejwanong, Ontario"
+    },
+    {
+      "id": "wifn-bkejwanong-childrens-centre",
+      "source_url": "https://www.walpoleislandfirstnation.ca/bkejwanong-childrens-centre",
+      "reviewed_on": "2026-11-06",
+      "community": "Walpole Island First Nation (Bkejwanong)",
+      "credential": "Licensed early childhood learning and child care",
+      "delivery_area": "Bkejwanong, Ontario"
+    },
+    {
+      "id": "cott-post-secondary-support",
+      "source_url": "https://cottfn.com/post-secondary-education-support/",
+      "reviewed_on": "2026-11-06",
+      "community": "Chippewas of the Thames First Nation",
+      "credential": "Member post-secondary funding and educational guidance",
+      "delivery_area": "Muncey, Ontario"
+    },
+    {
+      "id": "cott-anishinaabe-aadziwin",
+      "source_url": "https://cottfn.com/departments/culture-language-heritage/",
+      "reviewed_on": "2026-11-06",
+      "community": "Chippewas of the Thames First Nation",
+      "learning_language": "Anishinaabemowin",
+      "credential": "Community language, culture and heritage learning services",
+      "delivery_area": "Muncey, Ontario"
+    },
+    {
+      "id": "ksp-hillside-ojibway-learning",
+      "source_url": "https://kettlepoint.org/kettle-stony-point-education-services/",
+      "reviewed_on": "2026-11-06",
+      "community": "Kettle and Stony Point First Nation",
+      "learning_language": "Ojibway",
+      "credential": "Elementary school with Ojibway language and land-based learning",
+      "delivery_area": "Kettle and Stony Point, Ontario"
+    },
+    {
+      "id": "aamjiwnaang-adult-learning-aace",
+      "source_url": "https://www.aamjiwnaang.ca/education/education-aamjiwnaang-alternative-and-continuing-education-program-aace/",
+      "reviewed_on": "2026-11-06",
+      "community": "Aamjiwnaang First Nation",
+      "credential": "Adult skills upgrading and secondary-school credit pathway",
+      "delivery_area": "Sarnia, Ontario"
+    },
+    {
       "id": "wifn-anishinaabemowin-immersion",
       "source_url": "https://www.walpoleislandfirstnation.ca/ak-immersion",
       "reviewed_on": "2026-11-06",
