@@ -8,7 +8,7 @@ const targets=[
  {path:'/mommamade/v3/',mime:'text/html',marker:'Momma Made 3.0'},
  {path:'/mommamade/v3/site.js',mime:'javascript',marker:'Momma Made V3'},
  {path:'/mommamade/v3/site.css',mime:'text/css',marker:'Website Factory 1.0'},
- {path:'/mommamade/v3/reference-fidelity-1-3.css',mime:'text/css',marker:'Momma Made V3: 1.3'},
+ {path:'/mommamade/v3/reference-fidelity-1-3.css',mime:'text/css',marker:'.theme-quiet .hero{display:flex;flex-direction:column;padding:0;min-height:0}'},
  {path:'/mommamade/',mime:'text/html',marker:'./v2/'}
 ];
 (async()=>{
