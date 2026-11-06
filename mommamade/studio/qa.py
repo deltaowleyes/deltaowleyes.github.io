@@ -8,6 +8,7 @@ WIDTHS=[320,390,500,768,1024,1440]
 FAMILIES=["atelier-ledger","picnic-club","utility-index","garden-folio","pattern-studio","quiet-catalogue"]
 m=json.loads((ROOT/"mommamade/studio/screenshot-manifest.json").read_text())
 assert m.get("shell_contract")=="BAKE-EXPRESS-MASTER-1.0"
+HEADER_ASSETS={a["file"]:a for a in json.loads((ROOT/"studio-sandbox/header-restoration-manifest.json").read_text())["assets"]}
 assert m["widths"]==WIDTHS and [f["slug"] for f in m["families"]]==FAMILIES
 checks=[]
 with sync_playwright() as p:
@@ -26,8 +27,9 @@ with sync_playwright() as p:
   assert page.locator("h1").count()==1 and page.locator("img:not([alt])").count()==0
   image=page.locator(".site-header picture img")
   src=image.evaluate("(e)=>e.currentSrc")
-  assert src.endswith(f"/studio-sandbox/header-slim-{width}.webp"),src
-  assert image.evaluate("(e)=>e.naturalWidth")==width,(width,"header pixel width")
+  assert src.endswith(f"/studio-sandbox/header-{width}.webp"),src
+  assert image.evaluate("(e)=>e.naturalWidth")==HEADER_ASSETS[f"header-{width}.webp"]["width"],(width,"header pixel width")
+  assert image.evaluate("(e)=>e.naturalHeight")==HEADER_ASSETS[f"header-{width}.webp"]["height"],(width,"header pixel height")
   assert image.evaluate("(e)=>e.parentNode.querySelectorAll('source').length")==5
   assert not page.evaluate("document.documentElement.scrollWidth>innerWidth+2"),width
   links=page.locator("a.family").evaluate_all("(nodes)=>nodes.map(n=>n.getAttribute('href'))")
