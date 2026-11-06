@@ -2,8 +2,11 @@ name: Studio six-breakpoint restoration Chromium QA
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
     paths:
       - 'studio-sandbox/index.html'
+      - 'studio-sandbox/previews/**/index.html'
       - 'studio-sandbox/header-*.webp'
       - 'studio-sandbox/reference-40.webp'
       - 'studio-sandbox/header-restoration-manifest.json'
