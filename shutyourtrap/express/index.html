@@ -1,107 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-express-shell="1.0">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Six original Shut Your Trap website design directions. Review full-page screenshots on six screen sizes before requesting a custom website.">
-<meta name="theme-color" content="#10181a"><meta name="robots" content="noindex">
-<title>EXPRESS | Shut Your Trap Website Design Studio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#101f29">
+<meta name="description" content="Six Shut Your Trap website design directions with full-page screenshots at six responsive viewport widths.">
+<title>Shut Your Trap — BAKE EXPRESS Design Studio</title>
 <link rel="stylesheet" href="/assets/privacy-consent.css?v=c6e42b4c7790">
+<link rel="stylesheet" href="/assets/express-studio/v1/studio.css">
 <script defer src="/assets/privacy-consent.js?v=1bc62541b40f"></script>
-<style>
-:root{color-scheme:dark;--bg:#0e171a;--surface:#172125;--edge:#334347;--paper:#f3eee3;--muted:#afbbb9;--sun:#efae72;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--paper)}button,a{font:inherit}a{color:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #ffd29c;outline-offset:4px}
-.skip{position:absolute;left:12px;top:-60px;z-index:100;background:white;color:#111;padding:12px}.skip:focus{top:8px}
-.header{border-bottom:1px solid var(--edge);background:#111b1df2;position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}
-.wrap{width:min(1280px,calc(100% - 40px));margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:900;letter-spacing:-.04em;font-size:1.28rem}.brand b{font-weight:900;color:var(--sun)}.brand-mark{width:40px;height:40px;display:grid;place-items:center;background:#d8975b;color:#172125;border-radius:7px;transform:rotate(-8deg);font-size:1.3rem}
-.top-nav{display:flex;gap:20px;align-items:center;font-size:.85rem;color:var(--muted)}.top-nav a{text-decoration:none}.top-nav a:hover{color:#fff}
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--edge);background:radial-gradient(circle at 86% 15%,#4b3928 0,transparent 34%),linear-gradient(140deg,#142225 0,#0f181a 65%)}
-.hero-inner{padding:70px 0 62px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}.eyebrow{font-size:.77rem;font-weight:800;letter-spacing:.19em;text-transform:uppercase;color:var(--sun)}
-.hero h1{font-size:clamp(3.1rem,7vw,7rem);line-height:.94;letter-spacing:-.075em;margin:19px 0 24px;max-width:780px}.hero h1 em{font-style:normal;color:var(--sun)}
-.lead{color:#c3cecb;font-size:clamp(1rem,1.6vw,1.25rem);line-height:1.65;max-width:650px}.hero-art{min-height:340px;border:1px solid #516065;position:relative;border-radius:14px;overflow:hidden;box-shadow:25px 26px 0 #0c1315}
-.hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.7) contrast(1.09)}.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0b1516ee,transparent 70%)}
-.hero-art-caption{position:absolute;z-index:1;left:22px;bottom:20px;right:22px;font-size:.75rem;letter-spacing:.16em;font-weight:800}
-.metrics{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.metrics span{border:1px solid #627072;padding:10px 13px;border-radius:100px;font-size:.8rem}
-.gallery-section{padding:65px 0 88px}.gallery-top{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:27px}.gallery-top h2{font-size:clamp(2rem,4vw,3.5rem);line-height:1;letter-spacing:-.06em;margin:10px 0}.gallery-top p{max-width:430px;color:var(--muted);line-height:1.5}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.card{background:#192427;border:1px solid #36464b;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-4px);border-color:#c8a37a}
-.card-visual{position:relative;aspect-ratio:1.36;overflow:hidden;background:#304042}.card-visual img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s;filter:saturate(.9)}.card:hover img{transform:scale(1.04)}.card-visual:after{position:absolute;inset:0;content:"";background:linear-gradient(0deg,#0e161bbb 0%,transparent 60%)}
-.card-num{position:absolute;top:16px;left:16px;z-index:1;font-size:.76rem;font-weight:900;letter-spacing:.12em;background:#0f191dd9;padding:8px 10px;border:1px solid #728084}.card-style{position:absolute;bottom:15px;left:16px;z-index:1;color:white;font-size:.75rem;letter-spacing:.1em;font-weight:800}
-.card-content{padding:24px;display:flex;flex-direction:column;flex:1}.card-content h3{font-size:1.6rem;line-height:1.06;letter-spacing:-.04em;margin:0 0 11px}.card-content p{font-size:.92rem;line-height:1.55;color:#b9c4c1;margin:0 0 24px;flex:1}.card-btn{border:1px solid #bd8f61;background:#dfaa73;color:#142022;padding:12px 16px;border-radius:5px;font-weight:800;text-align:center}.card-btn:hover{background:#f7c18b}
-.bottom-note{border:1px solid var(--edge);background:#142024;border-radius:10px;padding:20px 23px;color:#b8c5c0;line-height:1.6;margin-top:34px;font-size:.9rem}
-footer{border-top:1px solid var(--edge);color:var(--muted);padding:25px 0 40px;font-size:.85rem}
-dialog{width:min(1510px,calc(100vw - 24px));max-height:96dvh;border:1px solid #54656a;border-radius:12px;background:#0e171a;color:var(--paper);padding:0;box-shadow:0 15px 80px #000c}
-dialog::backdrop{background:#020708d9;backdrop-filter:blur(5px)}
-.modal-head{position:sticky;top:0;z-index:2;background:#162326;padding:17px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--edge)}
-.modal-head h2{font-size:clamp(1.2rem,2.5vw,2rem);margin:3px 0;letter-spacing:-.035em}.modal-meta{color:#b8c6c2;font-size:.78rem;letter-spacing:.1em}.close{border:1px solid #77868a;background:transparent;color:white;padding:10px 15px;border-radius:4px}
-.modal-tools{padding:15px 18px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:1px solid #334347}
-.screen-btn{padding:10px 13px;border:1px solid #526367;background:#172427;color:#d5dfdc;border-radius:5px;font-size:.86rem}.screen-btn[aria-pressed=true]{background:#e5ae72;color:#182327;border-color:#e5ae72;font-weight:800}
-.viewer{background:repeating-linear-gradient(45deg,#1b272b,#1b272b 15px,#202f34 15px,#202f34 30px);height:min(66dvh,820px);overflow:auto;text-align:center;padding:20px 10px 55px}
-.capture{display:block;margin:0 auto;width:auto;max-width:100%;height:auto;box-shadow:0 7px 34px #050a0ac7;background:white}.viewer-status{padding:42px 16px;color:#f3d4b0;line-height:1.5}
-.modal-footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:14px 19px;border-top:1px solid var(--edge)}.modal-footer p{margin:0;color:var(--muted);font-size:.8rem}.inquire{display:inline-block;background:#efae72;color:#0b1c20;text-decoration:none;border-radius:4px;padding:11px 18px;font-weight:850}.inquire:hover{background:#ffd09c}
-@media(max-width:980px){.hero-inner{grid-template-columns:1fr 1fr}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-art{min-height:280px}}
-@media(max-width:680px){.wrap{width:min(100% - 30px,1280px)}.top-nav a:nth-child(2){display:none}.topbar{padding:11px 0}.brand{font-size:1rem}.brand-mark{width:34px;height:34px}.hero-inner{grid-template-columns:1fr;padding:50px 0}.hero-art{min-height:220px;box-shadow:none}.gallery-top{display:block}.cards{grid-template-columns:1fr}.gallery-section{padding-top:45px}.card-visual{aspect-ratio:1.7}.modal-head{padding:12px}.viewer{padding:8px 3px;height:65dvh}.screen-btn{flex:1;min-width:74px;font-size:.78rem;padding:9px 6px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
-</style>
+<script defer src="/shutyourtrap/express/config.js"></script>
+<script defer src="/assets/express-studio/v1/studio.js"></script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to designs</a>
-<header class="header"><div class="wrap topbar"><a class="brand" href="/shutyourtrap/express/"><span class="brand-mark" aria-hidden="true">✦</span><span>SHUT YOUR <b>TRAP.</b></span></a><nav class="top-nav" aria-label="Studio links"><a href="/deltaexpress/">BAKE EXPRESS</a><a href="/shutyourtrap/">Ten original concepts</a><a href="/">Delta Owl Eyes</a></nav></div></header>
-<main id="main">
-<section class="hero"><div class="wrap hero-inner"><div><span class="eyebrow">Delta Owl Eyes / EXPRESS Design Studio</span><h1>Built for the <em>trapline.</em><br>Made to stand out.</h1><p class="lead">Six radically different website directions for <strong>Shut Your Trap — Ermatinger's Trapping, Snaring & Sharpening Services</strong>. Explore full-page, fixed screenshots at six real browser widths, without exposing a live editable preview.</p><div class="metrics"><span>06 premium concepts</span><span>06 screen sizes each</span><span>Screenshot-only review</span></div></div><div class="hero-art"><img alt="Original conceptual photography of a sharpening workshop" src="/shutyourtrap/assets/photos/rustic_sunlit_sharpening_workshop.webp"><div class="hero-art-caption">FIELDWORK / WORKSHOP / CRAFT</div></div></div></section>
-<section class="gallery-section"><div class="wrap"><div class="gallery-top"><div><span class="eyebrow">01—06 / Website directions</span><h2>Choose your edge.</h2></div><p>Every design is its own visual direction, not a colour swap. Select any card to inspect its full page on mobile, tablet, laptop and desktop.</p></div>
-<div class="cards" id="cards"></div>
-<div class="bottom-note"><strong>Design demonstration.</strong> Photographs are AI-created illustrative scenes, not documentation of the owner's business. No prices, credentials, address, service availability or booking are asserted. Screenshots make previews less directly copyable, but cannot prevent copying published imagery or reconstructing a design. Existing development concepts elsewhere on the public website remain publicly accessible.</div>
-</div></section>
-</main>
-<footer><div class="wrap">Shut Your Trap EXPRESS — original design concepts for review · No bookings, payments or personal information collected. · <a href="/services/">Delta Owl Eyes web services</a></div></footer>
-<dialog id="preview" aria-labelledby="preview-title"><div class="modal-head"><div><div class="modal-meta" id="modal-meta">EXPRESS / 01</div><h2 id="preview-title">Design preview</h2></div><button type="button" class="close" id="close-preview" aria-label="Close preview">✕ Close</button></div><div class="modal-tools" role="group" aria-label="Select screenshot viewport" id="screen-buttons"></div><div class="viewer" id="viewer"><img id="capture" class="capture" alt="Full-page website screenshot" hidden><p id="viewer-status" class="viewer-status" role="status">Select a viewport to inspect the full-page image.</p></div><div class="modal-footer"><p id="capture-note">Full-page browser capture · scroll to inspect</p><a id="inquire" class="inquire" href="mailto:deltaowleyes@gmail.com?subject=Shut%20Your%20Trap%20EXPRESS">Ask about this design ↗</a></div></dialog>
-<script>
-(function(){
-'use strict';
-const root='/shutyourtrap/express/';
-const models=[
- {id:'SYT-EX-01',slug:'sharp-edge',num:1,name:'Service-First Sharp Edge',style:'PRECISION / MODERN INDUSTRIAL',desc:'Clean machining-grade layout, decisive typography and a direct sharpening-service inquiry.',photo:'macro_razor_blade_on_wet_whetstone.webp'},
- {id:'SYT-EX-02',slug:'family-trapline',num:2,name:'Trapline Family Business',style:'FAMILY / WARM HERITAGE',desc:'Warm timber tones, familiar service categories and an approachable small-business identity.',photo:'golden_dawn_at_the_lakeside_cabin.webp'},
- {id:'SYT-EX-03',slug:'expedition',num:4,name:'Expedition Heritage',style:'CINEMATIC / WILDERNESS',desc:'Atmospheric wilderness photography, full-bleed storytelling and confident editorial panels.',photo:'golden_sunrise_in_a_misty_pine_forest.webp'},
- {id:'SYT-EX-04',slug:'sharpening-flow',num:5,name:'Sharpening Intake Flow',style:'SERVICE / CONVERSION',desc:'Practical service journey with prominent tool-care imagery and clear inquiry steps.',photo:'water_kissed_blade_on_whetstone.webp'},
- {id:'SYT-EX-05',slug:'field-journal',num:7,name:'Trapline Journal',style:'EDITORIAL / FIELD NOTES',desc:'A considered journal format for outdoor stories, seasonal work and workshop craft.',photo:'misty_morning_forest_camp_gear.webp'},
- {id:'SYT-EX-06',slug:'bold-operator',num:9,name:'Bold Utility Operator',style:'BOLD / HIGH CONTRAST',desc:'Hard-edged dark interface, oversized industrial headlines and unmistakable service navigation.',photo:'vintage_workshop_grinding_wheel_still_life.webp'}
-];
-const sizes=[320,390,768,1024,1280,1440];let selected=null,selectedWidth=390,lastFocus=null;
-const cards=document.querySelector('#cards'),dialog=document.querySelector('#preview'),img=document.querySelector('#capture'),status=document.querySelector('#viewer-status'),viewer=document.querySelector('#viewer'),btns=document.querySelector('#screen-buttons');
-function element(tag,cls,text){let e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
-models.forEach((m,i)=>{
- const card=element('article','card'),visual=element('div','card-visual');
- const pic=document.createElement('img');pic.src=root+'shots/'+m.slug+'-1440.jpg';pic.alt='Actual desktop screenshot preview: '+m.name;pic.loading='lazy';pic.onerror=function(){pic.onerror=null;pic.src='/shutyourtrap/assets/photos/'+m.photo;};visual.appendChild(pic);
- visual.appendChild(element('span','card-num',String(i+1).padStart(2,'0')+' / 06'));visual.appendChild(element('span','card-style',m.style));
- const body=element('div','card-content');body.appendChild(element('h3','',m.name));body.appendChild(element('p','',m.desc));
- const button=element('button','card-btn','View six full-page screenshots ↗');button.type='button';button.setAttribute('aria-label','View screenshots for '+m.name);button.addEventListener('click',()=>open(m,button));body.appendChild(button);card.append(visual,body);cards.appendChild(card);
-});
-sizes.forEach(w=>{const b=element('button','screen-btn',w+' px');b.type='button';b.dataset.width=w;b.addEventListener('click',()=>show(w));btns.appendChild(b);});
-function open(m,trigger){
- selected=m;selectedWidth=390;lastFocus=trigger;
- document.querySelector('#modal-meta').textContent=m.id+' / '+m.style;
- document.querySelector('#preview-title').textContent=m.name;
- const subject='Shut Your Trap EXPRESS inquiry — '+m.id+' — '+m.name;
- const body='I would like to discuss design '+m.id+' ('+m.name+'). Please contact me about the next steps.';
- document.querySelector('#inquire').href='mailto:deltaowleyes@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
- dialog.showModal();show(selectedWidth);
-}
-function show(w){
- if(!selected)return;selectedWidth=w;img.hidden=true;img.removeAttribute('src');status.hidden=false;
- status.textContent='Loading '+w+'px full-page screenshot…';viewer.scrollTop=0;
- btns.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.width)===w)));
- const src=root+'shots/'+selected.slug+'-'+w+'.jpg';
- // No iframe or live template markup is served to visitors by this gallery.
- img.onload=function(){if(img.getAttribute('src')!==src)return;status.hidden=true;img.hidden=false;document.querySelector('#capture-note').textContent=selected.name+' / '+w+'px full-page capture · Scroll within the panel'};
- img.onerror=function(){img.hidden=true;status.hidden=false;status.textContent='This screenshot has not been published yet. The capture workflow must finish and the reviewed images must be merged.';};
- img.alt=selected.name+' full-page website screenshot captured at '+w+' CSS pixels';
- img.src=src;
-}
-document.querySelector('#close-preview').addEventListener('click',()=>dialog.close());
-dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
-dialog.addEventListener('close',()=>{img.removeAttribute('src');if(lastFocus)lastFocus.focus();});
-document.addEventListener('keydown',e=>{if(!dialog.open)return;let n=sizes.indexOf(selectedWidth);if(e.key==='ArrowRight')show(sizes[(n+1)%sizes.length]);if(e.key==='ArrowLeft')show(sizes[(n-1+sizes.length)%sizes.length]);});
-})();
-</script>
-</body></html>
+<a class="skip" href="#content">Skip to the six designs</a>
+<div id="express-app"><main id="content"><p>Loading the BAKE EXPRESS screenshot gallery…</p></main></div>
+<noscript><p>Enable JavaScript to explore the design screenshots. No booking or payment is available.</p></noscript>
+</body>
+</html>
