@@ -32,3 +32,16 @@ Screenshots artifact: 13477144082 (desktop and mobile full-page views at 320, 39
 
 ## Costs
 No paid services or purchases deliberately initiated. Actual provider billing remains unknown; standard public repo GitHub-hosted CI cannot itself prove a C$0 invoice.
+
+
+## 2.2 follow-up — browser-verified media repair and privacy rejection (2026-11-06)
+
+- The previous mobile blank media frame was reproduced from the 390 px full-page screenshot, even when HTML image completeness checks passed.
+- Replaced `/assets/podcast-archive.png` in the media presentation with new original `/studio2/river-voice/assets/owl-lens-studio.svg` and accessible live text overlay. Updated asset provenance registry. Kept the videos link navigable.
+- Updated `studio2/tests/qa.py` to explicitly decode images, scroll the media poster into view before screenshot, verify the media artwork is complete and visible, then reject Google Analytics, reload and verify persistence and lack of loaded Analytics code.
+- **Hosted Chromium success for code and provenance state:** https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42164010251 on SHA `9050621858c67103ae1fc8fee2adf5411753636a`; prior full matrix run https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42163998299 on SHA `849cb8557067de41fe0138b445a290f27b1a7372` succeeded at 320, 390, 768 and 1440 px.
+- The screenshot set from the prior run was downloaded and directly inspected: 390 px mobile media artwork is now visible. The page has no horizontal overflow, broken image elements or browser JavaScript exceptions, and analytics rejection persisted after reload with analytics disabled.
+- GitHub internal-link QA: https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42163936336 succeeded on the media repair code.
+- **Not final visual acceptance:** Imagery is original and topic-appropriate but predominantly illustrative SVG rather than the premium photorealistic composition in the owner's six-panel reference. Some first-screen art depends on an older `/assets/wetlands.png` whose provenance/rights still need review. No source-image matching, full WCAG audit, service/API form submission, production deployment or independent live verification claimed.
+- **Release gate remains CLOSED:** no merge or deploy before customer visual approval; separate asset rights verification and substantial premium visual polish remain.
+- **Cost:** no paid APIs/assets/upgrades deliberately initiated in this BAKE. Provider billing invoices and aggregate CAD charges unverified; do not claim confirmed C$0.
