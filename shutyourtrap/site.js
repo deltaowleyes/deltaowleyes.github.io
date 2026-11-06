@@ -59,7 +59,7 @@ const photoMap=[
   "hero": "woodworking_sharpening_station_flat_lay.webp",
   "trapping": "misty_morning_forest_camp_gear.webp",
   "snaring": "rugged_outdoor_gear_flat_lay.webp",
-  "sharpening": "macro_razor_blade_on_wet_whetstone.webp"
+  "sharpening": "woodworking_sharpening_station_flat_lay.webp"
  },
  {
   "hero": "misty_morning_forest_camp_gear.webp",
