@@ -35,6 +35,8 @@ def check() -> int:
     assert isinstance(records, list) and len(records) >= 30, (
         f"Expected at least 30 live Education records, found {len(records)}"
     )
+    facts=json.loads(fetch("/data/education-verified-facets.json"))
+    assert facts.get("version")==1 and len(facts.get("records",[]))>=4, "Live verified metadata missing"
     ids = {entry.get("id") for entry in records if isinstance(entry, dict)}
     assert len(ids) == len(records), "Production IDs missing or duplicated"
     assert "wifn-post-secondary-support" in ids, "Walpole Island support not live"
@@ -52,6 +54,8 @@ def check() -> int:
         'id="education-feedback"',
     ):
         assert marker in html, f"Missing live page feature: {marker}"
+    assert "/data/education-verified-facets.json" in html, "Missing provider metadata loader"
+    assert 'id="learning-language"' in html and 'id="community"' in html, "Verified filters missing"
     print(
         "PASS: public Education HTTP 200, "
         f"{len(records)} unique source records, local/Survivor/knowledge-keeper "
