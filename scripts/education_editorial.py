@@ -109,6 +109,26 @@ def verify_reviewer():
         raise PermissionError("A GitHub repository write/admin role is required")
     return login
 
+def verify_review_branch():
+    """Never modify catalogue on main or atop existing unreviewed JSON edits."""
+    try:
+        branch=subprocess.run(("git","branch","--show-current"),cwd=ROOT,
+                              capture_output=True,text=True,timeout=10,check=True).stdout.strip()
+        top=subprocess.run(("git","rev-parse","--show-toplevel"),cwd=ROOT,
+                           capture_output=True,text=True,timeout=10,check=True).stdout.strip()
+        dirty=subprocess.run(("git","status","--porcelain","--",
+                              "data/education-resources.json","data/education-suppressed.json"),
+                             cwd=ROOT,capture_output=True,text=True,timeout=10,check=True).stdout.strip()
+    except (OSError, subprocess.SubprocessError) as exc:
+        raise PermissionError("Reviewed Git working tree required") from exc
+    if Path(top).resolve()!=ROOT.resolve():
+        raise PermissionError("Not operating in the canonical checked-out repository")
+    if not branch.startswith(("feature/education-","fix/education-")):
+        raise PermissionError("Education changes require a dedicated review branch, never main")
+    if dirty:
+        raise PermissionError("Education JSON already has local edits; reconcile and review before modifying")
+    return branch
+
 def queue_path() -> Path:
     p=QUEUE.resolve()
     if p.is_relative_to(ROOT.resolve()):
@@ -208,6 +228,7 @@ def public_edit(args):
         raise PermissionError("Preview first; --confirm-source-reviewed and --write are mandatory")
     # Always check GitHub role and exact ticket state before modifying public JSON.
     reviewer=verify_reviewer()
+    branch=verify_review_branch()
     if args.ticket and not any(x["ticket"]==args.ticket and x["status"]=="pending" for x in read_queue()):
         raise ValueError("Ticket missing or already resolved")
     catalogue=read_json(CATALOGUE)
@@ -246,7 +267,7 @@ def public_edit(args):
         print("Reviewer",reviewer,"authorized removal",matched["id"])
     save_public(catalogue,ledger)
     resolve_ticket(args.ticket)
-    print("Validated locally. Git diff, authenticated PR review and deployment are STILL required.")
+    print("Validated on",branch,"for reviewer",reviewer,". Git diff, authenticated PR review and deployment are STILL required.")
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
