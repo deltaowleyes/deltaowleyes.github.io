@@ -25,13 +25,6 @@
       "requires_article_caption": true
     },
     {
-      "path": "/studio2/river-voice/assets/reconciliation-landscape.svg",
-      "purpose": "Decorative river landscape for TRC education",
-      "provenance": "Original code-created artwork for this candidate",
-      "depicts_real_event": false,
-      "requires_article_caption": true
-    },
-    {
       "path": "/assets/wetlands.png",
       "purpose": "Cinematic hero, source is existing Delta Owl Eyes site imagery",
       "provenance": "Pre-existing repository asset; rights/photographic accuracy must be checked before final release",
@@ -44,6 +37,15 @@
       "provenance": "Original SVG created for candidate; page overlays title and link as accessible HTML",
       "depicts_real_event": false,
       "requires_article_caption": false
+    },
+    {
+      "path": "/shutyourtrap/assets/photos/golden_sunrise_in_a_misty_pine_forest.webp",
+      "purpose": "Photorealistic conceptual landscape in TRC education section",
+      "provenance": "Existing repository-owned AI-generated photo; source shutyourtrap/assets/photos/status.json lists image SHA-256 and flags conceptual AI photography",
+      "source_sha256": "e78d49ad1d76eb637b443dc2743148baa5eb808d229332a2d2c1caa2504e1e27",
+      "depicts_real_event": false,
+      "requires_article_caption": true,
+      "cross_project_reuse": "reused from existing Delta Owl Eyes-controlled Shut Your Trap design inventory"
     }
   ],
   "restrictions": [
@@ -51,5 +53,11 @@
     "No cultural symbols or ceremony implied in generic art",
     "Require visual review and rights check of previously existing media before release",
     "No use of borrowed reference-site images"
-  ]
+  ],
+  "unpublished_photographic_study": {
+    "status": "local_preview_only_not_committed",
+    "archive": "river-voice-2-3-photographic-study.zip",
+    "source": "Original generated visual concept; 6 selected crops",
+    "reason_not_integrated": "Asset widths of 200–500px do not meet final high-resolution editorial requirement and GitHub connector cannot accept local binary bytes directly"
+  }
 }
