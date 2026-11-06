@@ -24,8 +24,13 @@ with sync_playwright() as p:
               previews: document.querySelectorAll('.preview-window iframe').length,
               brokenImages: [...document.images].filter(i=>!i.complete||i.naturalWidth===0).map(i=>i.src)
             })""")
+            state["navigation"] = page.locator("a.view-demo").evaluate_all("(links) => links.map(a => ({href:a.getAttribute('href'), text:a.textContent.trim()}))")
+            state["navigation_ok"] = len(state["navigation"]) == 6 and all(x["href"].startswith("/newdesigns/") for x in state["navigation"])
+            state["keyboard_focus"] = page.evaluate("() => {const a=document.querySelector('.skip');a.focus();return document.activeElement===a}")
+            state["preview_sources"] = page.locator(".preview-window iframe").evaluate_all("(els)=>els.map(e=>e.getAttribute('src'))")
+            state["preview_sources_ok"] = len(set(state["preview_sources"])) == 6
             state.update(width=width,http_status=response.status if response else None,js_errors=errors)
-            state["pass"]=state["http_status"]==200 and not state["overflow"] and state["demos"]==6 and state["previews"]==6 and not errors and not state["brokenImages"]
+            state["pass"]=state["http_status"]==200 and not state["overflow"] and state["demos"]==6 and state["previews"]==6 and not errors and not state["brokenImages"] and state["navigation_ok"] and state["keyboard_focus"] and state["preview_sources_ok"]
             results.append(state)
         except Exception as e:results.append({"width":width,"pass":False,"error":str(e)})
         page.close()
