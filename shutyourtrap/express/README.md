@@ -2,7 +2,7 @@
 
 This studio is now **a client data configuration of the shared BAKE EXPRESS shell**, not a custom visual design. The authoritative contract is [docs/EXPRESS-STUDIO-MASTER-STANDARD-1-0.md](../../docs/EXPRESS-STUDIO-MASTER-STANDARD-1-0.md).
 
-- Exact six original responsive headers: `/studio-sandbox/header-slim-{320,390,500,768,1024,1440}.webp`.
+- Exact six original responsive headers: `/studio-sandbox/header-{320,390,500,768,1024,1440}.webp`.
 - Shared layout and interactions: `/assets/express-studio/v1/studio.css` and `studio.js`.
 - Client template content only: `./config.js`, 36 screenshots and six matching gallery routes.
 - Six distinct actual template themes from existing source templates 1, 2, 4, 5, 7 and 9, no invented qualifications, prices or testimonials.
