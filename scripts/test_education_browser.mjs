@@ -58,6 +58,11 @@ try {
    if(await page.locator('.resource').count()!==records.filter(r=>r.category==='knowledge-keepers').length)throw Error('Knowledge keepers quickpath');
    await page.locator('#reset').click();
    if(await page.locator('.resource').count()!==records.length)throw Error('Reset incorrect');
+   const feedbackLinks=await page.locator('#education-feedback a.feedback-action').evaluateAll(
+     anchors=>anchors.map(a=>({href:a.getAttribute('href'),text:a.textContent.trim()})));
+   if(feedbackLinks.length!==3||feedbackLinks.some(a=>!a.href.startsWith('mailto:deltaowleyes@gmail.com?')))
+     throw Error('Public feedback actions must use private email, never an unprotected web form');
+   if(await page.locator('#education-feedback form').count())throw Error('Unprotected submission form not permitted');
    if(errors.length)throw Error('Page errors: '+errors.join('; '));
    const privacyBanner=page.locator('#doe-consent-banner');
    if(await privacyBanner.count()!==1)throw Error('Privacy banner missing before consent');
