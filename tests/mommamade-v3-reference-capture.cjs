@@ -27,7 +27,7 @@ fs.mkdirSync(folder,{recursive:true});
    try{
     const response=await local.goto(base+'?template='+(i+1)+'#home',{waitUntil:'domcontentloaded',timeout:14000});
     if(!response||response.status()!==200)throw Error('candidate response '+(response&&response.status()));
-    await local.locator('.hero').waitFor({timeout:7000});
+    await local.locator('section.hero').first().waitFor({timeout:7000});
     await local.screenshot({path:path.join(folder,id+'-'+device+'-candidate.png'),fullPage:false,timeout:12000});
     item.candidate_capture='captured';
    }catch(e){item.candidate_capture='FAILED: '+String(e.message).slice(0,150);localFailures++}
