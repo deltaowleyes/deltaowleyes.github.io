@@ -1,0 +1,31 @@
+name: Shut Your Trap verified live photography QA
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'shutyourtrap/live-photo-qa.mjs'
+      - '.github/workflows/shutyourtrap-live-photo-qa.yml'
+permissions:
+  contents: read
+jobs:
+  live-photography-acceptance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Verify www custom domain and 17 WebP images at 4 viewport widths
+        run: node shutyourtrap/live-photo-qa.mjs
+      - name: Save live QA report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shutyourtrap-live-photo-acceptance
+          path: shutyourtrap/live-qa-artifacts/
+          if-no-files-found: warn
