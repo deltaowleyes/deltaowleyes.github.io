@@ -20,8 +20,10 @@ async function run(){
    const response=await page.goto(ROOT+route,{waitUntil:'domcontentloaded',timeout:25000});
    await page.locator('.design-card').first().waitFor({timeout:15000});
    const cardCount=await page.locator('.design-card').count();
+   const visualCount=await page.locator('.thumb-art').count();
    check(response.status()===200,route+' @'+w+' status 200');
    check(cardCount===6,route+' @'+w+' six cards, got '+cardCount);
+   check(visualCount===6,route+' @'+w+' six immediately rendered thumbnail visuals, got '+visualCount);
    const dims=await page.evaluate(()=>({scroll:document.documentElement.scrollWidth,client:document.documentElement.clientWidth}));
    check(dims.scroll<=dims.client+3,route+' @'+w+' no overflow ('+JSON.stringify(dims)+')');
    check(errors.length===0,route+' @'+w+' no errors '+errors.join('|'));

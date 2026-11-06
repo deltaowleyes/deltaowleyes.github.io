@@ -29,3 +29,6 @@ A seven-page, no-purchase website-design selection flow owned by Delta Owl Eyes.
 
 ### Visual QA repair
 The six background artworks in `assets/scene-*.svg` are original, self-hosted vector compositions (no embedded Delta Owl Eyes wordmarks). Card previews load eagerly so all six display in gallery screenshots.
+
+### Gallery thumbnail reliability
+Initial large iframe thumbnails could appear white in browser full-page captures while loading off screen. BAKE EXPRESS uses instantly rendered HTML/CSS miniature visual tiles in the gallery; the modal alone hosts the sandboxed live HTML/CSS desktop/mobile comparison.

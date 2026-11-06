@@ -48,23 +48,32 @@ function frameDoc(f,v){
  '<section class="story-band"><img src="'+esc(f.support)+'" alt=""><div><span class="eyebrow">THE NEXT CHAPTER</span><h2>Design with purpose.</h2><p>'+esc(v.summary)+'</p><span class="text-link">Discover the possibilities →</span></div></section></main>'+
  '<footer class="preview-footer"><strong>'+esc(f.title)+'</strong><span>Original demonstration · Content and images are illustrative.</span></footer></div></body></html>';
 }
-function attachFrame(box,f,v){
- var iframe=h('iframe',{class:'design-frame',title:'Visual preview: '+f.title+' / '+v.name,loading:'eager',tabindex:'-1',sandbox:''});
- iframe.srcdoc=frameDoc(f,v);
- box.appendChild(iframe);
- var ro=new ResizeObserver(function(){
-  var w=box.clientWidth;
-  var scale=w/1280;
-  iframe.style.transform='scale('+scale+')';
-  box.style.height=(760*scale)+'px';
- });
- ro.observe(box); 
- return iframe;
+function makeThumb(f,v){
+ var panel=h('div',{class:'thumb-art thumb-'+f.base+' thumb-layout-'+v.layout});
+ var header=h('div',{class:'thumb-nav'});
+ header.appendChild(h('b',{text:f.icon+'  '+f.title}));
+ header.appendChild(h('span',{text:'HOME    ABOUT    CONTACT'}));
+ panel.appendChild(header);
+ var body=h('div',{class:'thumb-hero'});
+ var pic=h('div',{class:'thumb-picture'});
+ pic.style.backgroundImage='url("'+f.hero+'")';
+ body.appendChild(pic);
+ var content=h('div',{class:'thumb-copy'});
+ content.appendChild(h('span',{class:'thumb-overline',text:v.tag.toUpperCase()}));
+ content.appendChild(h('strong',{text:f.headline}));
+ content.appendChild(h('small',{text:f.sub}));
+ content.appendChild(h('i',{text:'Explore the possibilities ↗'}));
+ body.appendChild(content);
+ panel.appendChild(body);
+ var footer=h('div',{class:'thumb-footer'});
+ ['Your story','Our work','Get in touch'].forEach(function(s){footer.appendChild(h('b',{text:s}));});
+ panel.appendChild(footer);
+ return panel;
 }
 function makeCard(f,v,index,main){
  var card=h('article',{class:'design-card '+(main?'family-card':'variation-card')});
  var stage=h('div',{class:'thumb-stage','aria-hidden':'true'});
- attachFrame(stage,f,v);card.appendChild(stage);
+ stage.appendChild(makeThumb(f,v));card.appendChild(stage);
  var body=h('div',{class:'card-body'});
  var label=h('div',{class:'card-overline',text:(main?'FAMILY '+f.num:selectId(FAMILIES.indexOf(f),index))+' · '+(main?f.tag:v.tag)});
  var title=h('h3',{},esc(main?f.title:v.name));
