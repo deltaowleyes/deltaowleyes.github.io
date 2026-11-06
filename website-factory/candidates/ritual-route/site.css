@@ -94,3 +94,8 @@ body.f2{margin:0;color:var(--ink);background:var(--paper);font:16px/1.6 Arial,sy
 
 /* Distinct visual system: Ritual Route */
 .f2-head-route{background:#dee6d9}.f2-head-route .f2-nav ol{display:flex;justify-content:space-around;width:100%;margin-top:25px}.f2-step{border-radius:50%;padding:10px;margin-right:6px;border:1px solid}.f2-home-route .f2-journey{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.f2-home-route .f2-journey>li{border-top:4px solid;padding:25px}.f2-home-route .f2-journey a{font-weight:700}.f2-shop-route{display:grid;grid-template-columns:240px 1fr;gap:6%}.f2-shop-route>aside{background:#d4e0d5;padding:25px}.f2-shop-route .f2-product-grid{grid-template-columns:repeat(2,1fr)}.f2-care-journey{position:relative;max-width:950px}.f2-care-journey>li{display:grid;grid-template-columns:90px 1fr;gap:30px;padding:20px 0;border-bottom:1px solid}.f2-story-route{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.f2-story-route li{background:#dde7d6;padding:26px}.f2-contact-route .f2-contact-intro{border-left:9px solid;padding-left:26px}@media(max-width:760px){.f2-head-route .f2-nav ol,.f2-home-route .f2-journey,.f2-shop-route,.f2-story-route{display:grid;grid-template-columns:1fr}.f2-shop-route .f2-product-grid{grid-template-columns:1fr}}
+
+/* Factory 2.1 responsive repair: route contact headline must fit 320px. */
+.f2-contact-route .f2-contact-intro{min-width:0}
+.f2-contact-route .f2-contact-intro h2{overflow-wrap:anywhere}
+@media(max-width:450px){.f2-contact-route .f2-contact-intro{padding-left:16px}.f2-contact-route .f2-contact-intro h2{font-size:clamp(28px,8vw,42px)}}
