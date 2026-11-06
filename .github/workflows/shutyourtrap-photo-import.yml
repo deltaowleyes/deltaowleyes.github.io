@@ -41,6 +41,11 @@ jobs:
             echo "has_zip=false" >> "$GITHUB_OUTPUT"
             echo "No photo ZIP uploaded; no changes required."
           fi
+      - name: Set up reliable Python runtime for image conversion
+        if: steps.inbox.outputs.has_jpg == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Install image conversion library for verified JPG upload
         if: steps.inbox.outputs.has_jpg == 'true'
         run: python3 -m pip install --disable-pip-version-check pillow==11.3.0
