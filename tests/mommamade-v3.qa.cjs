@@ -7,7 +7,15 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
  const browser=await chromium.launch({headless:true});
  const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1});
  const errors=[];page.on('pageerror',e=>errors.push(String(e)));
- async function go(n,route){const r=await page.goto(base+'?template='+n+'#'+route,{waitUntil:'domcontentloaded',timeout:20000});assert.equal(r.status(),200,'HTTP '+n+' '+route);await page.locator('.mast').waitFor({timeout:9000})}
+ async function go(n,route){
+  const target=base+'?template='+n+'#'+route;
+  const response=await page.goto(target,{waitUntil:'domcontentloaded',timeout:20000});
+  if(response)assert.equal(response.status(),200,'HTTP '+n+' '+route);
+  else assert.equal(new URL(page.url()).hash,'#'+route,'same-document hash navigation '+n+' '+route);
+  await page.locator('.mast').waitFor({timeout:9000});
+  const view=route==='home'?'.hero':route==='shop'?'.catalogue':route==='about'?'section.story':route==='care'?'.care-grid':route==='contact'?'#demo-form':route.startsWith('product-')?'.checkout':null;
+  if(view)await page.locator(view).first().waitFor({timeout:9000});
+ }
  async function geometry(where){const v=await page.evaluate(()=>({content:document.documentElement.scrollWidth,viewport:document.documentElement.clientWidth}));assert.ok(v.content<=v.viewport+2,where+' horizontal overflow '+JSON.stringify(v))}
 
  async function verifyPhoto(selector,label){
