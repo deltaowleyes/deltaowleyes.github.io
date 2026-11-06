@@ -4990,7 +4990,7 @@
       "priority": "P0",
       "effort": "Medium / phased",
       "status": "in_progress",
-      "status_basis": "Initial implementation in feature branch with 20 source-reviewed official-provider funding records, public route, category/applicant/region/intake filters, suppression ledger, automated deadline downgrade, validation and Chromium CI, weekly read-only source health. Publication and active hourly Discovery 4.0 automation upgrade remain unverified pending PR review, CI and live acceptance.",
+      "status_basis": "Grants v1 release was merged in PR #24 (commit 24e5464d), 20 original-source records and responsive Chromium/schema/privacy QA passed. Independent production HTML and exact public JSON comparison succeeded in GitHub Actions run 42247481010 attempt 2 after first attempt failed HTTP 404 while Pages was still deploying. Existing hourly Discovery automation ID 6ae5e840127c819182aa85253cc64f0b is enabled, retitled Discovery 4.0 with former instructions and schedule intact, but the last observed run was still the pre-upgrade 2026-11-06 15:22 UTC Discovery 3.0 run; no post-upgrade run proven. Separate source-reviewed batch of 13 candidate grant records prepared on review branch, awaiting CI and Pages verification. Remains IN_PROGRESS pending post-upgrade hourly run evidence and wider ongoing coverage. Do not claim guaranteed funding availability.",
       "dependencies": [
         "B4-040",
         "B4-041"
@@ -5014,6 +5014,31 @@
           "date": "2026-11-06",
           "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/discovery-4-grants-current-main-20261106",
           "detail": "Initial Grants catalogue and browser/source verification implementation; release pending."
+        },
+        {
+          "type": "merged_release",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/24",
+          "commit": "24e5464d759b5320d63ca7c4956aed0ed357aa91",
+          "detail": "20-record grants v1 released with page, data catalogue, safeguards, source-health and PR Chromium QA."
+        },
+        {
+          "type": "live_verified",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42247481010",
+          "detail": "Independent 20-record production HTML, homepage link and exact public JSON parity passed on rerun attempt 2 after Pages deploy; initial attempt 404 during deployment."
+        },
+        {
+          "type": "automation_read",
+          "date": "2026-11-06",
+          "automation_id": "6ae5e840127c819182aa85253cc64f0b",
+          "detail": "Enabled hourly Discovery 4.0; 4th/5th grant stream appended without removing original directions; latest run still pre-upgrade at 15:22 UTC; no post-upgrade result yet."
+        },
+        {
+          "type": "grants_expansion_branch",
+          "date": "2026-11-06",
+          "url": "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/discovery-4-grants-expansion-20261106",
+          "detail": "13 additional primary-source funding programs proposed, 33 total; pending CI, PR review and deployment."
         }
       ]
     }
@@ -5275,6 +5300,16 @@
       "summary": "Added proposed 20-record original-source Indigenous Grants & Funding page and dedicated Discovery 4.0 JSON source review and CI guardrails on a feature branch; pending CI, production verification and hourly automation upgrade.",
       "evidence_urls": [
         "https://github.com/deltaowleyes/deltaowleyes.github.io/tree/feature/discovery-4-grants-current-main-20261106"
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "type": "discovery4_grants_live_recovery_and_expansion",
+      "task_id": "B4-042",
+      "summary": "After Pages deployment finished, the independent public acceptance run passed on attempt 2 for original 20. Existing hourly grants automation confirmed enabled and schedule unchanged but first post-upgrade run not yet observed. New 13-record official-funder candidate batch (33 total) proposed on isolated review branch; no credentials, private applications or unrelated directory changes.",
+      "evidence_urls": [
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/actions/runs/42247481010",
+        "https://github.com/deltaowleyes/deltaowleyes.github.io/pull/24"
       ]
     }
   ]
