@@ -36,6 +36,12 @@ const dir='artifacts/mommamade-v3/';fs.mkdirSync(dir,{recursive:true});
  }
  const style=await page.request.get(base+'reference-fidelity-1-2.css');assert.equal(style.status(),200,'missing V3 source-fidelity stylesheet');
  const g=await page.goto(base,{waitUntil:'domcontentloaded'});assert.equal(g.status(),200);
+ const reject=page.locator('#doe-reject');
+ assert.equal(await reject.count(),1,'Expected privacy consent choice before testing');
+ await reject.click();
+ assert.equal(await page.evaluate(()=>localStorage.getItem('doe-analytics-consent-v1')),'rejected','Privacy rejection must be persisted');
+ assert.equal(await page.locator('#doe-reject').count(),0,'Privacy overlay must close when rejected');
+ assert.equal(await page.evaluate(()=>!!window.__doeAnalyticsLoaded),false,'Rejected consent must not load Google Analytics');
  assert.equal(await page.locator('.gallery-card').count(),10,'gallery count');
  await verifyPhoto('.gallery-image','gallery');
  const altCount=await page.locator('a:not([href]),button:not([aria-label]):empty').count();
