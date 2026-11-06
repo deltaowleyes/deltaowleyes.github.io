@@ -29,6 +29,19 @@ for item in items:
   url=item["url"].lower().rstrip("/")
   assert url not in urls,ident
   urls.add(url)
+suppressed=json.loads((root/"data/education-suppressed.json").read_text(encoding="utf-8"))
+assert isinstance(suppressed,list),"Bad suppression ledger"
+removed_ids=set();removed_urls=set()
+for record in suppressed:
+  assert isinstance(record,dict)
+  for k in ("id","url","reason","removed_on"):
+    assert isinstance(record.get(k),str) and record[k].strip(),record
+  assert date.fromisoformat(record["removed_on"]) <= date.today(),record
+  assert record["id"] not in removed_ids
+  assert record["url"].lower().rstrip("/") not in removed_urls
+  removed_ids.add(record["id"]);removed_urls.add(record["url"].lower().rstrip("/"))
+assert not (removed_ids & ids),"Suppressed resource id reintroduced"
+assert not (removed_urls & urls),"Suppressed resource URL reintroduced"
 page=(root/"education/index.html").read_text(encoding="utf-8")
 home=(root/"index.html").read_text(encoding="utf-8")
 sitemap=(root/"sitemap.xml").read_text(encoding="utf-8")
