@@ -55,6 +55,23 @@ with sync_playwright() as p:
      record["contentChecks"]=("Sheila Cote-Meek" in page.locator("main").inner_text() and "not allegations" in page.locator("main").inner_text().lower()) if route["slug"]=="report" else True
      record["navigationTimingMs"]=round(page.evaluate("performance.getEntriesByType('navigation')[0]?.duration || 0"))
      record["designNav"]=bool(page.locator("header nav a[aria-current=page]").count()==1)
+     menu=page.locator(".menu-disclosure")
+     record["navDisclosurePresent"]=menu.count()==1
+     if width<=768:
+      trigger=menu.locator("summary")
+      if width<=390:trigger.tap()
+      else:trigger.click()
+      record["navOpens"]=menu.get_attribute("open") is not None and menu.locator("nav").is_visible()
+      trigger.focus()
+      page.keyboard.press("Escape")
+      record["navEscape"]=menu.get_attribute("open") is None and trigger.evaluate("(e)=>document.activeElement===e")
+     else:
+      record["navOpens"]=menu.locator("nav").is_visible()
+      record["navEscape"]=True
+     record["heroHeadingPx"]=round(page.locator("main h1").evaluate("(e)=>parseFloat(getComputedStyle(e).fontSize)"),1)
+     record["headlineInViewport"]=page.locator("main h1").evaluate("(e)=>{let r=e.getBoundingClientRect();return r.width>0 && r.left>=-1 && r.right<=innerWidth+1}")
+     record["mobileHeadlineSized"]=width>600 or record["heroHeadingPx"]<=51
+
      if route["slug"]=="inquiry":
       record["formExists"]=bool(page.locator("form#design-inquiry").count()==1)
       page.locator("#visitor").fill("Test Visitor")
@@ -80,7 +97,7 @@ with sync_playwright() as p:
       record["headings"]==1 and record["sectionArticles"]>=2 and record["navLinks"]==6 and
       record["consentVisible"] and record["rejectPersists"] and record["analyticsDisabled"] and
       not record["brokenImg"] and record["missingAlt"]==0 and not record["unnamedLinks"] and
-      record["designNav"] and record["heroArt"] and record["heroDecoded"] and record["conceptCaption"] and record["contentChecks"] and record["formExists"] and record["formValid"] and
+      record["designNav"] and record["navDisclosurePresent"] and record["navOpens"] and record["navEscape"] and record["headlineInViewport"] and record["mobileHeadlineSized"] and record["heroArt"] and record["heroDecoded"] and record["conceptCaption"] and record["contentChecks"] and record["formExists"] and record["formValid"] and
       record["formHasDraftOnly"] and record["noNetworkSubmit"] and not record["brokenCandidateLinks"] and not errors)
     except Exception as e:
      record["error"]=str(e);record["pass"]=False
