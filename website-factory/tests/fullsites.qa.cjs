@@ -38,6 +38,15 @@ const errors=[],report={suite:"factory2.1-fullsites",sites:[],routesChecked:0,wi
     assert.ok((await page.locator("nav[aria-label='Main navigation'] a").count())>=5,c.slug+" navigation links");
     const links=await page.locator("nav[aria-label='Main navigation'] a").evaluateAll(els=>els.map(x=>x.getAttribute("href")));
     for(const link of links) assert.ok(fs.existsSync(path.join(path.dirname(local),link)),c.slug+": broken primary nav "+link);
+    if(route==="index.html"){
+      const cta=page.locator(".hero .cta").first();
+      assert.equal(await cta.count(),1,c.slug+" homepage CTA");
+      const css=await cta.evaluate(x=>({foreground:getComputedStyle(x).color,background:getComputedStyle(x).backgroundColor}));
+      const rgb=s=>[...s.matchAll(/[0-9.]+/g)].slice(0,3).map(x=>Number(x[0]));
+      const lum=s=>{const p=rgb(s).map(x=>{const v=x/255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4});return p[0]*.2126+p[1]*.7152+p[2]*.0722};
+      const ratio=(Math.max(lum(css.foreground),lum(css.background))+.05)/(Math.min(lum(css.foreground),lum(css.background))+.05);
+      assert.ok(ratio>=4.5,c.slug+" unreadable homepage CTA contrast "+ratio.toFixed(2));
+    }
     if(route==="index.html")navStructures.push(await page.locator("nav[aria-label='Main navigation']").evaluate(x=>x.innerHTML.replace(/Momma Made|Field Notes|Countertop Mosaic|The Daily Ledger|Still Life Studio|Ritual Route|White Space Works|Patchwork Press|Orbit Home|Pantry Atlas|A Letter Home/g,"")));
     if(route==="shop.html")shopStructures.push(await page.locator("[data-collection]").evaluate(x=>x.querySelector("[class^='f2-shop-'],[class*=' f2-shop-']")?.className));
     if(route==="care.html")careStructures.push(await page.locator(".f2-care-main").evaluate(x=>x.firstElementChild?.className));
