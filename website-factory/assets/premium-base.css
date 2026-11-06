@@ -1,0 +1,54 @@
+/* Factory 2.2 — retained project-owned AI concept imagery only.
+  No third-party images, paid fonts, remote scripts, data collection or checkout.
+  Photographs do NOT depict verified finished Momma Made merchandise. */
+:root{--f22-radius:9px}
+.f2{font-family:Arial,system-ui,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+.f2 .f2-banner{letter-spacing:.13em;padding-block:12px}
+.f2 .f2-header .f2-brand{letter-spacing:-.06em}
+.f2 .f2-page-lead{position:relative}
+.f2 .f2-page-lead h1{max-width:900px;letter-spacing:-.055em}
+.f2 .f2-product-card{transition:box-shadow .2s ease,transform .2s ease}
+.f2 .f2-product-link:hover,.f2 .f2-product-link:focus-visible{text-decoration:none}
+.f2 .f2-product-card:hover{box-shadow:0 15px 26px rgba(0,0,0,.095);transform:translateY(-2px)}
+.f2 .f2-object,.f2 .f2-product-visual{background-color:#ebe5d7;background-position:center;background-size:cover}
+.f2 .f2-product-grid .f2-object{height:clamp(180px,20vw,270px);min-height:180px;border-radius:4px}
+.f2 .f2-product-grid .f2-object .f2-object-shape{display:none}
+.f2 .f2-product-grid>li:nth-child(1) .f2-object,.f2 .f2-product-grid>article:nth-child(1) .f2-object{background-image:url('/mommamade/v2/images/product-01.webp')}
+.f2 .f2-product-grid>li:nth-child(2) .f2-object,.f2 .f2-product-grid>article:nth-child(2) .f2-object{background-image:url('/mommamade/v2/images/product-02.webp')}
+.f2 .f2-product-grid>li:nth-child(3) .f2-object,.f2 .f2-product-grid>article:nth-child(3) .f2-object{background-image:url('/mommamade/v2/images/product-03.webp')}
+.f2 .f2-product-grid>li:nth-child(4) .f2-object,.f2 .f2-product-grid>article:nth-child(4) .f2-object{background-image:url('/mommamade/v2/images/product-04.webp')}
+.f2 .f2-product-visual{background-size:cover;background-position:center;position:relative;isolation:isolate}
+.f2 .f2-product-visual .f2-object-shape{display:none}
+.f2 [data-product-view="wraps"] .f2-product-visual{background-image:url('/mommamade/v2/images/product-01.webp')}
+.f2 [data-product-view="cloths"] .f2-product-visual{background-image:url('/mommamade/v2/images/product-02.webp')}
+.f2 [data-product-view="scrubbies"] .f2-product-visual{background-image:url('/mommamade/v2/images/product-03.webp')}
+.f2 [data-product-view="bags"] .f2-product-visual{background-image:url('/mommamade/v2/images/product-04.webp')}
+.f2 .f2-product-visual>p{z-index:1;color:#203029!important;background:rgba(255,255,248,.94);padding:8px 11px;border-radius:2px;max-width:calc(100% - 30px)}
+.f2 .f2-product-visual.mood-warm{background-color:#edd1b0;background-blend-mode:luminosity;filter:sepia(.18)}
+.f2 .f2-product-visual.mood-botanical{background-color:#a1c1a1;background-blend-mode:luminosity;filter:saturate(.7)}
+.f2 .f2-care-main::before,.f2 .f2-story-main::before{
+  content:"";display:block;width:min(100%,1180px);height:clamp(210px,30vw,410px);
+  margin:0 auto 50px;background-image:var(--f22-story);
+  background-color:#d9d5c8;background-size:cover;background-position:center;
+  border-radius:var(--f22-radius)
+}
+.f2 .f2-contact-intro::before{
+ content:"";display:block;width:100%;height:clamp(180px,24vw,340px);
+ margin:0 0 26px;background-image:var(--f22-hero);
+ background-size:cover;background-position:center;border-radius:var(--f22-radius);
+}
+.f2 .f2-page-lead>small,.f2 .f2-contact-intro>small{letter-spacing:.12em}
+.f2 .f2-demo-contact{align-items:start}
+.f2 .f2-demo-inquiry{border-radius:4px;box-shadow:0 16px 35px rgba(25,26,24,.08)}
+.f2 .f2-demo-inquiry input,.f2 .f2-demo-inquiry textarea{border-radius:0}
+.f2 .f2-demo-inquiry button{min-height:46px}
+.f2 .f2-footer{font-size:12px}
+.f2 .f2-care-main .f2-object{background-image:var(--f22-story)}
+.f2 .f2-care-main .f2-object .f2-object-shape{display:none}
+@media(max-width:760px){
+ .f2 .f2-care-main::before,.f2 .f2-story-main::before{height:240px;margin-bottom:30px}
+ .f2 .f2-contact-intro::before{height:220px}
+ .f2 .f2-product-grid .f2-object{height:230px}
+ .f2 .f2-product-card:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){.f2 .f2-product-card{transition:none}.f2 .f2-product-card:hover{transform:none}}
