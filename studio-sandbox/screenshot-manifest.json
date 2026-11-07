@@ -1,5 +1,5 @@
 {
-  "status": "screenshots-of-existing-public-demo-pages",
+  "status": "staged-screenshot-only-previews",
   "note": "Existing public /newdesigns/ routes still expose HTML and CSS independently; screenshots do not provide DRM.",
   "families": [
     {
@@ -9,51 +9,45 @@
       "screenshots": [
         {
           "width": 320,
-          "height": 4529,
+          "height": 4547,
           "file": "full-320.webp",
-          "bytes": 94884,
-          "sha256": "b1db5f3622ac1c1226b385dd41df1827ed8d2e5f90933b875254983461c45ef8",
-          "page_errors": []
+          "bytes": 77842,
+          "sha256": "52ab3e2aeec7f80a8218fa681c8b581e84eaf2bfb64cc09c1206d6ed4f4abc7b"
         },
         {
           "width": 390,
-          "height": 4107,
+          "height": 4178,
           "file": "full-390.webp",
-          "bytes": 95406,
-          "sha256": "d8d5629b400cd0192cdada24e4d49f290cb1ccd4ccd1b81228142e5a7c7a7f89",
-          "page_errors": []
+          "bytes": 80532,
+          "sha256": "80b3a3e695bc715a29a25be93aab6bc81d91ab7d247b4df0e781820e26714dc6"
         },
         {
           "width": 500,
-          "height": 3846,
+          "height": 4020,
           "file": "full-500.webp",
-          "bytes": 95834,
-          "sha256": "57a602bf5033a5a78c38f7e5c3ec2edaf628af1883595884323f1a5c823bde0f",
-          "page_errors": []
+          "bytes": 80584,
+          "sha256": "5ed39ca76570e463a6e4ce032326c70afd2fa261c60e660fc8a925235a7365e9"
         },
         {
           "width": 768,
-          "height": 3482,
+          "height": 3580,
           "file": "full-768.webp",
-          "bytes": 95940,
-          "sha256": "946ca81163542796316b91b54935ee31993b303e7271013b154387bf2d684198",
-          "page_errors": []
+          "bytes": 84724,
+          "sha256": "2d36eddce88365d1a68e48d77c76343116fde964d95d08dfb73dae8e79587557"
         },
         {
           "width": 1024,
-          "height": 2947,
+          "height": 2668,
           "file": "full-1024.webp",
-          "bytes": 104428,
-          "sha256": "a7b5eeb9fd0097c50541dec295807b7f100d57f5c52e601ce368c3b32936487c",
-          "page_errors": []
+          "bytes": 84168,
+          "sha256": "0d48007938e9a5ce67830892d072feca3f27beef61c87e5c94b47d1cffb38de1"
         },
         {
           "width": 1440,
-          "height": 2994,
+          "height": 2682,
           "file": "full-1440.webp",
-          "bytes": 112824,
-          "sha256": "9b323a658cf5b8090c171adf74f0e92ce640a0738306f14103298e019a054457",
-          "page_errors": []
+          "bytes": 96716,
+          "sha256": "74e827205bc1fe2a2dfb62df03db172546de580f6922a6b89c4ca61104d731ea"
         }
       ]
     },
@@ -64,51 +58,45 @@
       "screenshots": [
         {
           "width": 320,
-          "height": 4686,
+          "height": 5183,
           "file": "full-320.webp",
-          "bytes": 96530,
-          "sha256": "9f4d611c036d697f419339921c27878b73e0b39ffda8ce3f09e990f3d9c58952",
-          "page_errors": []
+          "bytes": 79190,
+          "sha256": "9ec34819a88b00ac0d7452515b7a4bf1f5304cf8b607f85771505235678e2665"
         },
         {
           "width": 390,
-          "height": 4229,
+          "height": 4920,
           "file": "full-390.webp",
-          "bytes": 97580,
-          "sha256": "abb108728da7fb398aa4187f725bc8ba004d8f1b53231e2a85df3cfe5330b1cc",
-          "page_errors": []
+          "bytes": 82982,
+          "sha256": "411b47ee65baea531cd078dca7469e81fa732c091dbd03b72e2b2722780ec402"
         },
         {
           "width": 500,
-          "height": 3886,
+          "height": 4660,
           "file": "full-500.webp",
-          "bytes": 99364,
-          "sha256": "007beefdfa3e30d0ed95b37b757ecd7305134c98adb8967fd8e7aae8c5af0a9a",
-          "page_errors": []
+          "bytes": 85012,
+          "sha256": "015779b740a0e8b061bd77b79f4c3bdb7dd16c04c05b723c210b12a4c10774a8"
         },
         {
           "width": 768,
-          "height": 3495,
+          "height": 4283,
           "file": "full-768.webp",
-          "bytes": 100358,
-          "sha256": "810289eae99d34406fa5b9de216c8a72aac019e6a668170ba59a88f8cd073a49",
-          "page_errors": []
+          "bytes": 92780,
+          "sha256": "46413918c0469241add461f3280ddb8ecd9fad3b3edf3997e0f07527cf48f0dd"
         },
         {
           "width": 1024,
-          "height": 2986,
+          "height": 3082,
           "file": "full-1024.webp",
-          "bytes": 109548,
-          "sha256": "cfcd903e3aaf2c2a343b095d428338808815e181b1ef575a565b95673551c853",
-          "page_errors": []
+          "bytes": 86674,
+          "sha256": "6b4f31cf20e4bee03f2185ff973f37d7a45731680873a6078f55aaf2026f9f43"
         },
         {
           "width": 1440,
-          "height": 3015,
+          "height": 3095,
           "file": "full-1440.webp",
-          "bytes": 118792,
-          "sha256": "9b6bffe678b22818faedc9134ab4b12af5efa3a4dc47a51c1a5e46321fdb6cec",
-          "page_errors": []
+          "bytes": 103866,
+          "sha256": "0e06662f503ae2e48afb8eb64c5c22072f78c8b5b6b69ea5c4135eeb78cac8ef"
         }
       ]
     },
@@ -119,51 +107,45 @@
       "screenshots": [
         {
           "width": 320,
-          "height": 4676,
+          "height": 4777,
           "file": "full-320.webp",
-          "bytes": 96676,
-          "sha256": "e1952137c651196256c3b40e97c65f990bc59da7a1e1043608918502947a3a54",
-          "page_errors": []
+          "bytes": 95622,
+          "sha256": "ca5abd0b54ed479083440fc020a5b2909c5ef7dd78ea68605d722007a7b33bcb"
         },
         {
           "width": 390,
-          "height": 4287,
+          "height": 4386,
           "file": "full-390.webp",
-          "bytes": 99440,
-          "sha256": "c8976e13273e46c9a3cd8166df219845e6c0a2cd40504638a96a576a35b3a6dc",
-          "page_errors": []
+          "bytes": 98942,
+          "sha256": "9f22d43cd80d1b66c6ebdca80841efd4ca001ed33442bd97cd52f42030ca5858"
         },
         {
           "width": 500,
-          "height": 4051,
+          "height": 4071,
           "file": "full-500.webp",
-          "bytes": 101600,
-          "sha256": "73e28cd1bf744ad87c2c1487631483d1efa9ec4c8935bfb416d3de57ee8f9752",
-          "page_errors": []
+          "bytes": 101550,
+          "sha256": "fed03c1027e1b5dbed0e5d4ab0c37e54c74527d82220b710727a1a0a7a2ecdb4"
         },
         {
           "width": 768,
-          "height": 3793,
+          "height": 3796,
           "file": "full-768.webp",
-          "bytes": 101670,
-          "sha256": "2fbe2eace81c40db0d0bea6be75e15a2b8fb61984eaaf257c3fb93d355ad4528",
-          "page_errors": []
+          "bytes": 107338,
+          "sha256": "975af21362d222053382ad9adb5f7fb0ab680e30c92b779019a1f6187cc1d472"
         },
         {
           "width": 1024,
-          "height": 2883,
+          "height": 2765,
           "file": "full-1024.webp",
-          "bytes": 111076,
-          "sha256": "e9c6a9885e04107d409b037654331b3b612f373408e6453eeea38cdb41926f63",
-          "page_errors": []
+          "bytes": 100844,
+          "sha256": "67aead788a5a068e8ea0e8b32ad26a0fcb227df4fcd091b62e5f8d11e908ff75"
         },
         {
           "width": 1440,
-          "height": 2943,
+          "height": 2772,
           "file": "full-1440.webp",
-          "bytes": 119532,
-          "sha256": "ec897f64fec5999111a30b418719371bd670961ace4252830e1042ee46af7d66",
-          "page_errors": []
+          "bytes": 117784,
+          "sha256": "e8fcedda0f8d22f736bef5f5b82b6e3e53fa8ffec0fca4839c59526fd11c150a"
         }
       ]
     },
@@ -174,51 +156,45 @@
       "screenshots": [
         {
           "width": 320,
-          "height": 4578,
+          "height": 4824,
           "file": "full-320.webp",
-          "bytes": 94496,
-          "sha256": "0171feb6a54bd67b8c84cf3372e05f8248264f769d284b1174da9bade4a7ba5a",
-          "page_errors": []
+          "bytes": 75102,
+          "sha256": "2df9de17a996040f44274a56b429f463c0ac4823346f0c68eff9d4566838052c"
         },
         {
           "width": 390,
-          "height": 4077,
+          "height": 4711,
           "file": "full-390.webp",
-          "bytes": 95334,
-          "sha256": "6f44ff123e37a42965c9521cf08ff440863645d8b5e227e69429146320efd220",
-          "page_errors": []
+          "bytes": 77116,
+          "sha256": "e4c6b178ab165f01e4827c1ff56984f9f4c6105c877071d1dc0e6ef7d72a748b"
         },
         {
           "width": 500,
-          "height": 3846,
+          "height": 4451,
           "file": "full-500.webp",
-          "bytes": 98052,
-          "sha256": "0d4343b04fe7fbadc396270e962b591d6e5913973d6cc0cfa81a566b8c011f9b",
-          "page_errors": []
+          "bytes": 80914,
+          "sha256": "9c7468583b6f7cd8662ab2e408b377f14508a011b8a7119d77d362383c92414c"
         },
         {
           "width": 768,
-          "height": 3482,
+          "height": 4083,
           "file": "full-768.webp",
-          "bytes": 101786,
-          "sha256": "b55f80c2f8ed0537e5cbb2216933152541acb813faf773c12f64cc1f4f6cfba3",
-          "page_errors": []
+          "bytes": 88348,
+          "sha256": "f5e5ea0104b8ff99510504944c1c5d6cd4c4513e04d74116f7d1494b68a38351"
         },
         {
           "width": 1024,
-          "height": 3022,
+          "height": 3313,
           "file": "full-1024.webp",
-          "bytes": 111764,
-          "sha256": "a2acd20b595834e70ab582bac6fbea3fdabfbc05ac6c2cf08cf2b2624322a6aa",
-          "page_errors": []
+          "bytes": 88454,
+          "sha256": "9a5fec7d48e736592092d214ab52d4da8269ef519d222fe91a655e9e1f46335a"
         },
         {
           "width": 1440,
-          "height": 3045,
+          "height": 3496,
           "file": "full-1440.webp",
-          "bytes": 126988,
-          "sha256": "8382264e9a452ce21847c52e525b80f148f9cfcf1d6f92901bb12b6cf21ed3e8",
-          "page_errors": []
+          "bytes": 103044,
+          "sha256": "f15a0f40dbe0798551bd2120c55fd40274913454a2362b6602d766036d275a60"
         }
       ]
     },
@@ -229,51 +205,45 @@
       "screenshots": [
         {
           "width": 320,
-          "height": 4924,
+          "height": 4500,
           "file": "full-320.webp",
-          "bytes": 101944,
-          "sha256": "297fbdf7af8ef1e519c1653bb3fe9727ca52e373d2de8cc614bab266429adcc9",
-          "page_errors": []
+          "bytes": 74866,
+          "sha256": "4ec2890f99900173808c708c209c2ec15fd1875056070a279add916cbad6a97e"
         },
         {
           "width": 390,
-          "height": 4544,
+          "height": 4337,
           "file": "full-390.webp",
-          "bytes": 101562,
-          "sha256": "f8048f7f4ca561b70916779458c6f61158a9cda88a78cd74d0d6772cc2402164",
-          "page_errors": []
+          "bytes": 78008,
+          "sha256": "338e7bd03e26fd621ebd02d90353cb6be754384822d347e1bb9e5e9a59bde5f6"
         },
         {
           "width": 500,
-          "height": 4069,
+          "height": 4005,
           "file": "full-500.webp",
-          "bytes": 101644,
-          "sha256": "d916dab71b4888493b9a33681047f3f39e74d8734429e6f41c27b66958b7675e",
-          "page_errors": []
+          "bytes": 81662,
+          "sha256": "bc8dbbc6b31f4f043a51fc9f76399d59567fc26871f6b06ae9ba269909ab338d"
         },
         {
           "width": 768,
-          "height": 3299,
+          "height": 3701,
           "file": "full-768.webp",
-          "bytes": 103108,
-          "sha256": "05ba1c9aea91877b1308ca5353b7f1b73a5b41c69b7d3ed3b269c24c0660122b",
-          "page_errors": []
+          "bytes": 85542,
+          "sha256": "89fc797f245504568a236335f71e8a5e3518eb5015673391c2cf54bc5f19677f"
         },
         {
           "width": 1024,
-          "height": 3061,
+          "height": 2662,
           "file": "full-1024.webp",
-          "bytes": 112836,
-          "sha256": "fc3c7ecb091e010625fc719ff97f31f2654e6987882e76905466d7699ada977a",
-          "page_errors": []
+          "bytes": 84550,
+          "sha256": "3345a2fbfc3d2f3dd99b7fe1afaa37336060f6862701bc0bd89de7d39fb885e9"
         },
         {
           "width": 1440,
-          "height": 3172,
+          "height": 2698,
           "file": "full-1440.webp",
-          "bytes": 122162,
-          "sha256": "4bbe5792aa4cd15bdf2430456af65c9dfa5dc8011fe132c21804a8581445a789",
-          "page_errors": []
+          "bytes": 95612,
+          "sha256": "448989f9f48b8167b5a4b05f712ce21ae5904ec6051b769d4bcb710b6d1d8b24"
         }
       ]
     },
@@ -284,51 +254,45 @@
       "screenshots": [
         {
           "width": 320,
-          "height": 4638,
+          "height": 4544,
           "file": "full-320.webp",
-          "bytes": 94014,
-          "sha256": "b43508875b0d5cf66f758a539c819b9c5377592ae273456fb474bc23a2b6c2ba",
-          "page_errors": []
+          "bytes": 79022,
+          "sha256": "a1e82b1edd27e42d4f566da08a00e04c0053e1292d593440222410bf60835cd5"
         },
         {
           "width": 390,
-          "height": 4279,
+          "height": 4137,
           "file": "full-390.webp",
-          "bytes": 95724,
-          "sha256": "2ab615b9025240da0bee643552779a7891204de16cbd84a9267dffd1f9729b08",
-          "page_errors": []
+          "bytes": 79276,
+          "sha256": "296039594624bc47e7493be7a8061d9987d6377be3199c8251afb68126fd6de4"
         },
         {
           "width": 500,
-          "height": 4048,
+          "height": 4027,
           "file": "full-500.webp",
-          "bytes": 95458,
-          "sha256": "1abc4ea115b93c1412841aabcc45e8ddee5984cb765869d35eace3367d22208a",
-          "page_errors": []
+          "bytes": 82544,
+          "sha256": "fafe7cc9ab4b4e468f5257e1fa580bd17167d419ac2a31bcf43d7c91a203ad7d"
         },
         {
           "width": 768,
-          "height": 3614,
+          "height": 3578,
           "file": "full-768.webp",
-          "bytes": 96890,
-          "sha256": "167c5a2176644a5dceab32d0261935b663729daf746c4cf6454b05ba81ad69ea",
-          "page_errors": []
+          "bytes": 85824,
+          "sha256": "5a219289f5318c75134136b4680031800e2d8c1fbf5afac90fabccfdba2720d3"
         },
         {
           "width": 1024,
-          "height": 2984,
+          "height": 2618,
           "file": "full-1024.webp",
-          "bytes": 104906,
-          "sha256": "bbdec29fc40d9752533014c70bb374ce7e8015ecd68326eaa82fbe7697744890",
-          "page_errors": []
+          "bytes": 88238,
+          "sha256": "7f5515eccb9eaf41440077692b25ce33dd8da0963d47b445062e8d291f25c884"
         },
         {
           "width": 1440,
-          "height": 3067,
+          "height": 2731,
           "file": "full-1440.webp",
-          "bytes": 115352,
-          "sha256": "32aafbc13cdb32e09c6ab23fb64459d962931703f6cdcf896d747a269e657938",
-          "page_errors": []
+          "bytes": 100974,
+          "sha256": "18fd19fc6ebfe0bbb7390208ab332204feb2cb20e50d8930e49899e39dae2c5b"
         }
       ]
     }
