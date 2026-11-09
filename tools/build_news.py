@@ -1,13 +1,36 @@
 #!/usr/bin/env python3
 """Build an editorial news index from explicitly verified update records."""
-import json, pathlib, html, datetime, urllib.parse
+import json, pathlib, html, datetime, urllib.parse, re
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 SOURCE=ROOT/"news"/"updates"
 DEST=ROOT/"news"/"index.html"
 QUEUE=ROOT/"news"/"scripts"/"index.html"
 def esc(x): return html.escape(str(x),quote=True)
+def validate_qprompt(d, path):
+    """Validate opted-in new QPrompt scripts; leave historical records intact."""
+    if d.get("qprompt_format") != "10.1":
+        return
+    script = d.get("script")
+    if not isinstance(script, str) or len(script.strip()) < 100:
+        raise ValueError(f"{path}: missing QPrompt script")
+    lines = script.splitlines()
+    if any(len(line) > 100 for line in lines):
+        raise ValueError(f"{path}: QPrompt line exceeds 100 characters")
+    if re.search(r"eya[’']?|eee[- ]?yah", script, re.IGNORECASE):
+        raise ValueError(f"{path}: prohibited Rez Slang 10.1 expression")
+    if not any(line.startswith("LEAH: ") for line in lines) or not any(line.startswith("CHRIS: ") for line in lines):
+        raise ValueError(f"{path}: missing inline LEAH:/CHRIS: dialogue")
+    if any(re.match(r"^(?:LEAH|CHRIS)\s*[—-]", line) for line in lines):
+        raise ValueError(f"{path}: legacy speaker labels in new script")
+    cues = [i for i, line in enumerate(lines) if line.startswith("[GROK VIDEO:")]
+    if not cues or any(not re.fullmatch(r"\[GROK VIDEO: .+ — 6 SECONDS\]", lines[i]) for i in cues):
+        raise ValueError(f"{path}: missing or malformed silent Grok cues")
+    if any(i == 0 or lines[i - 1] != "" or i + 1 >= len(lines) or lines[i + 1] == "" for i in cues):
+        raise ValueError(f"{path}: Grok cues require one blank line before and dialogue after")
+
 def main():
     items=[]
+    seen_ids=set()
     for path in sorted(SOURCE.glob("*.json")):
         d=json.loads(path.read_text(encoding="utf-8"))
         required=("id","date","call_number","headline","summary","source_url","source_title","verification")
@@ -15,6 +38,10 @@ def main():
         if missing: raise ValueError(f"{path}: missing {missing}")
         if not isinstance(d["call_number"],int) or not 1<=d["call_number"]<=94: raise ValueError(f"{path}: invalid call number")
         datetime.date.fromisoformat(d["date"])
+        if d["id"] in seen_ids:
+            raise ValueError(f"{path}: duplicate news update id")
+        seen_ids.add(d["id"])
+        validate_qprompt(d, path)
         u=urllib.parse.urlparse(d["source_url"])
         if u.scheme!="https" or not u.hostname: raise ValueError(f"{path}: invalid source URL")
         v=d["verification"]
