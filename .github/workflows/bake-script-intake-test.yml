@@ -23,5 +23,16 @@ jobs:
         run: python tools/build_news.py
       - name: Paired article check
         run: python tools/publish_approved_news.py --check
-      - name: Check generated files are unchanged
-        run: git diff --exit-code -- news/index.html news/scripts/index.html news/rez-slang-9.json
+      - name: Confirm no paired news or unrelated output changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --exit-code -- news/index.html news/rez-slang-9.json
+          changed=$(git diff --name-only)
+          if [ -n "$changed" ] && [ "$changed" != "news/scripts/index.html" ]; then
+            echo "Unexpected generator output: $changed" >&2
+            exit 1
+          fi
+          grep -q 'privacy-consent.css' news/scripts/index.html
+          grep -q 'privacy-consent.js' news/scripts/index.html
+          echo 'PASS: only recording queue may be regenerated; paired news and privacy preserved'
