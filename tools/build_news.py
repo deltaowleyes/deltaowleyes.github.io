@@ -11,7 +11,7 @@ def validate_qprompt(d, path):
     legacy = {"2026-10-26-cree-nations-miyoyawin-centre.json": "08fc2f4acf545cee401d44d369a42281c4537076"}
     if d.get("qprompt_format") != "10.1" and path.name in legacy:
         raw = path.read_bytes()
-        blob = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\\0" + raw).hexdigest()
+        blob = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()
         if blob == legacy[path.name]:
             return
     if d.get("qprompt_format") != "10.1":
