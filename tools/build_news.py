@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build an editorial news index from explicitly verified update records."""
-import json, pathlib, html, datetime, urllib.parse, re
+import json, pathlib, html, datetime, urllib.parse, re, hashlib
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 SOURCE=ROOT/"news"/"updates"
 DEST=ROOT/"news"/"index.html"
@@ -8,10 +8,12 @@ QUEUE=ROOT/"news"/"scripts"/"index.html"
 def esc(x): return html.escape(str(x),quote=True)
 def validate_qprompt(d, path):
     """Validate new QPrompt 10.1 scripts, preserving pre-cutoff legacy records."""
-    date = datetime.date.fromisoformat(d["date"])
-    cutoff = datetime.date(2026, 11, 9)
-    if date < cutoff and d.get("qprompt_format") != "10.1":
-        return
+    legacy = {"2026-10-26-cree-nations-miyoyawin-centre.json": "08fc2f4acf545cee401d44d369a42281c4537076"}
+    if d.get("qprompt_format") != "10.1" and path.name in legacy:
+        raw = path.read_bytes()
+        blob = hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\\0" + raw).hexdigest()
+        if blob == legacy[path.name]:
+            return
     if d.get("qprompt_format") != "10.1":
         raise ValueError(f"{path}: new script record requires qprompt_format 10.1")
     script = d.get("script")
