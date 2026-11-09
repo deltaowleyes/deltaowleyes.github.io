@@ -1,0 +1,38 @@
+name: BAKE isolated QPrompt intake tests
+on:
+  push:
+    branches:
+      - bake/test-script-intake-20261109
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: QPrompt regression cases
+        run: python -m unittest discover -s tools -p test_qprompt_intake.py -v
+      - name: Existing paired article regression
+        run: python -m unittest discover -s tools -p test_news_language.py -v
+      - name: Real script generator
+        run: python tools/build_news.py
+      - name: Paired article check
+        run: python tools/publish_approved_news.py --check
+      - name: Confirm no paired news or unrelated output changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --exit-code -- news/index.html news/rez-slang-9.json
+          changed=$(git diff --name-only)
+          if [ -n "$changed" ] && [ "$changed" != "news/scripts/index.html" ]; then
+            echo "Unexpected generator output: $changed" >&2
+            exit 1
+          fi
+          grep -q 'privacy-consent.css' news/scripts/index.html
+          grep -q 'privacy-consent.js' news/scripts/index.html
+          echo 'PASS: only recording queue may be regenerated; paired news and privacy preserved'
