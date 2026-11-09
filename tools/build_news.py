@@ -8,6 +8,7 @@ QUEUE=ROOT/"news"/"scripts"/"index.html"
 def esc(x): return html.escape(str(x),quote=True)
 def validate_qprompt(d, path):
     """Validate new QPrompt 10.1 scripts, preserving pre-cutoff legacy records."""
+    path = pathlib.Path(path)
     legacy = {"2026-10-26-cree-nations-miyoyawin-centre.json": "08fc2f4acf545cee401d44d369a42281c4537076"}
     if d.get("qprompt_format") != "10.1" and path.name in legacy:
         raw = path.read_bytes()
