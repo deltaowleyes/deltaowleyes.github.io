@@ -63,7 +63,17 @@ class QPromptTests(unittest.TestCase):
         r=record("2026-10-26")
         del r["qprompt_format"]
         r["script"]="CHRIS — historical recording, preserved"
-        validate_qprompt(r,"fixture.json")
+        self.check_bad(r,"requires qprompt_format")
+
+    def test_real_legacy_blob_exempt(self):
+        import json
+        path = pathlib.Path(__file__).resolve().parents[1] / "news/updates/2026-10-26-cree-nations-miyoyawin-centre.json"
+        validate_qprompt(json.loads(path.read_text(encoding="utf-8")), path)
+
+    def test_backdated_new_record_not_exempt(self):
+        r=record("2026-10-26")
+        del r["qprompt_format"]
+        self.check_bad(r,"requires qprompt_format")
 
     def test_new_date_not_exempt(self):
         r=record("2026-11-10")
