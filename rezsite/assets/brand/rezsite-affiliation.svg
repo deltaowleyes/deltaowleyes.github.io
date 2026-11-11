@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="790" height="150" viewBox="0 0 790 150" role="img" aria-label="RezSite branding"><defs>
+      <linearGradient id="sun" x1="0" y1="0" x2="0.2" y2="1"><stop offset="0" stop-color="#FFD36A"/><stop offset="1" stop-color="#F4AD27"/></linearGradient>
+      <linearGradient id="water" x1="0" y1="0" x2="1" y2=".8"><stop offset="0" stop-color="#1DB6D2"/><stop offset="1" stop-color="#045D83"/></linearGradient>
+      <linearGradient id="hill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55A43C"/><stop offset="1" stop-color="#06482F"/></linearGradient>
+      <linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#043522"/><stop offset="1" stop-color="#0B5A3A"/></linearGradient>
+      <linearGradient id="brandSun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFBC2A"/><stop offset="1" stop-color="#CE7806"/></linearGradient>
+    </defs><rect x="5" y="5" width="780" height="140" rx="27" fill="#F8F2E6" stroke="#06482F" stroke-width="8"/>
+ <path d="M100 45 L75 75 L100 104 M155 45 L180 75 L155 104 M147 39 L112 113" fill="none" stroke="#D98D11" stroke-width="10" stroke-linecap="round"/>
+ <text x="230" y="92" fill="#06482F" font-family="'Lato','DejaVu Sans',sans-serif" font-size="43" font-weight="700">Affiliated with BAKEaWeb</text></svg>
