@@ -70,10 +70,12 @@
         if (data.length < 1) throw Error('Full index is empty');
         cache.businesses = {records: data, preview: false};
         fullBusinessLoaded = true;
+        el('preview-notice').hidden = true;
         if (type === 'businesses') {
           all = data; isPreview = false; rebuildFilters(true); render();
         }
       } catch (error) {
+        businessFullPromise = null; // Permit a later search/filter to retry.
         if (type === 'businesses') {
           el('preview-notice').hidden = false;
           el('preview-notice').textContent = 'The complete business index could not be loaded. Please refresh or contact RezSite; do not rely on featured listings for exhaustive search.';
@@ -260,7 +262,7 @@
   });
   document.querySelectorAll('[data-scope]').forEach(button => button.addEventListener('click', async () => { setScope(button.dataset.scope); if (type === 'businesses') await ensureFullBusinesses(); render(); }));
   el('clear-filters').addEventListener('click', () => {
-    el('directory-search').value = ''; el('province-filter').value = ''; el('category-filter').value = ''; el('include-past').checked = false; setScope('all'); rebuildFilters(true); render(); el('directory-search').focus();
+    el('directory-search').value = ''; el('include-past').checked = false; setScope('all'); rebuildFilters(); render(); el('directory-search').focus();
   });
   document.querySelector('.directory-tabs').addEventListener('keydown', event => {
     if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
