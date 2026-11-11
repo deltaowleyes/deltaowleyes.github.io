@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="405" viewBox="0 0 1480 405" role="img" aria-label="RezSite branding"><defs>
+      <linearGradient id="sun" x1="0" y1="0" x2="0.2" y2="1"><stop offset="0" stop-color="#FFD36A"/><stop offset="1" stop-color="#F4AD27"/></linearGradient>
+      <linearGradient id="water" x1="0" y1="0" x2="1" y2=".8"><stop offset="0" stop-color="#1DB6D2"/><stop offset="1" stop-color="#045D83"/></linearGradient>
+      <linearGradient id="hill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55A43C"/><stop offset="1" stop-color="#06482F"/></linearGradient>
+      <linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#043522"/><stop offset="1" stop-color="#0B5A3A"/></linearGradient>
+      <linearGradient id="brandSun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFBC2A"/><stop offset="1" stop-color="#CE7806"/></linearGradient>
+    </defs><rect width="1480" height="405" fill="#043522" rx="26"/>
+ <g transform="translate(24 31) scale(0.94)">
+      <circle cx="248" cy="127" r="100" fill="url(#sun)"/>
+      <path d="M0 243 Q80 205 143 230 L143 324 L0 324Z" fill="#F8F2E6"/>
+      <path d="M348 223 Q423 203 500 251 L500 330 L348 330Z" fill="#A2C477"/>
+      <g transform="translate(38 70) scale(1.25)" fill="#F8F2E6">
+       <path d="M0 0 L-18 35 L-9 35 L-27 64 L-13 64 L-39 95 L-10 92 L-10 113 L10 113 L10 92 L39 95 L13 64 L27 64 L9 35 L18 35 Z"/>
+       </g><g transform="translate(101 111) scale(0.92)" fill="#F8F2E6">
+       <path d="M0 0 L-18 35 L-9 35 L-27 64 L-13 64 L-39 95 L-10 92 L-10 113 L10 113 L10 92 L39 95 L13 64 L27 64 L9 35 L18 35 Z"/>
+       </g><g transform="translate(150 143) scale(0.63)" fill="#F8F2E6">
+       <path d="M0 0 L-18 35 L-9 35 L-27 64 L-13 64 L-39 95 L-10 92 L-10 113 L10 113 L10 92 L39 95 L13 64 L27 64 L9 35 L18 35 Z"/>
+       </g>
+      <g transform="translate(419 135) scale(0.79)" fill="#F8F2E6">
+       <path d="M0 0 L-18 35 L-9 35 L-27 64 L-13 64 L-39 95 L-10 92 L-10 113 L10 113 L10 92 L39 95 L13 64 L27 64 L9 35 L18 35 Z"/>
+       </g><g transform="translate(466 148) scale(0.66)" fill="#F8F2E6">
+       <path d="M0 0 L-18 35 L-9 35 L-27 64 L-13 64 L-39 95 L-10 92 L-10 113 L10 113 L10 92 L39 95 L13 64 L27 64 L9 35 L18 35 Z"/>
+       </g>
+      <path d="M71 250 Q249 95 429 250" fill="none" stroke="#F8F2E6" stroke-width="19" stroke-linecap="round"/>
+      <path d="M78 267 Q250 143 422 267" fill="none" stroke="#F8F2E6" stroke-width="12" stroke-linecap="round"/>
+      <path d="M70 248 H429" stroke="#F8F2E6" stroke-width="14" stroke-linecap="round"/>
+      <path d="M135 236 V275 M189 213 V260 M249 204 V250 M311 213 V260 M365 236 V275" stroke="#F8F2E6" stroke-width="11"/>
+      <path d="M142 238 L190 261 L250 206 L310 262 L365 239" fill="none" stroke="#F8F2E6" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M55 305 C146 256 202 298 246 296 S380 275 456 316 L456 345 L55 345Z" fill="url(#water)"/>
+      <path d="M55 325 C137 284 181 313 237 312 S362 299 452 333" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+      <path d="M116 350 C185 314 246 344 296 334 S394 321 449 345" fill="none" stroke="url(#water)" stroke-width="17" stroke-linecap="round"/>
+    </g><text x="550" y="212" fill="#FFFFFF" font-family="'Lato','DejaVu Sans',sans-serif" font-weight="900" font-size="137" letter-spacing="-4">Rez</text>
+       <text x="778.79" y="212" fill="#F4AD27" font-family="'Lato','DejaVu Sans',sans-serif" font-weight="900" font-size="137" letter-spacing="-4">Site</text>
+ <text x="552" y="267" fill="#FFFFFF" font-family="'Lato','DejaVu Sans',sans-serif" font-size="23" font-weight="700">WEB DESIGN  •  BUSINESS DIRECTORIES  •  COMMUNITY EVENTS</text>
+ <path d="M553 301 H617" stroke="#F4AD27" stroke-width="6"/>
+ <text x="632" y="308" fill="#F8F2E6" font-family="'Lato','DejaVu Sans',sans-serif" font-size="22" font-weight="400">Affiliated with BAKEaWeb</text></svg>

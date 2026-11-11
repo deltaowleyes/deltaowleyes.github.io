@@ -75,7 +75,7 @@
           all = data; isPreview = false; rebuildFilters(true); render();
         }
       } catch (error) {
-        businessFullPromise = null; // Permit a later search/filter to retry.
+        businessFullPromise = null; // Retry the index on subsequent search attempts.
         if (type === 'businesses') {
           el('preview-notice').hidden = false;
           el('preview-notice').textContent = 'The complete business index could not be loaded. Please refresh or contact RezSite; do not rely on featured listings for exhaustive search.';
@@ -214,10 +214,18 @@
     el('place-label').textContent = type === 'churches' ? 'FIRST NATION / COMMUNITY' : 'CITY / COMMUNITY';
     el('category-label').textContent = type === 'churches' ? 'DENOMINATION' : type === 'events' ? 'EVENT TYPE' : 'CATEGORY';
   }
+  function setDirectoryBrandArtwork(next) {
+    const banner = document.getElementById('directory-banner');
+    if (!banner) return;
+    const titles = {businesses:'Business',churches:'Church',events:'Community event'};
+    banner.src='assets/brand/directory-'+next+'.svg';
+    banner.alt='RezSite '+titles[next]+' directory — illustrated arched bridge, forests, blue river and sunrise';
+  }
   let sequence = 0;
   async function showType(next, preserveSearch = false) {
     const own = ++sequence;
     type = next;
+    setDirectoryBrandArtwork(next);
     tabs.forEach(tab => { tab.setAttribute('aria-selected', String(tab.dataset.type === next)); tab.tabIndex = tab.dataset.type === next ? 0 : -1; });
     document.querySelectorAll('.nav-links a[href^="directory.html?type="]').forEach(a => { a.classList.toggle('is-active', a.getAttribute('href').endsWith('type=' + next)); if(a.classList.contains('is-active')) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
     el('directory-results').setAttribute('aria-labelledby', 'tab-' + next);

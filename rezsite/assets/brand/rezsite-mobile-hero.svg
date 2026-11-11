@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-label="RezSite branding"><defs>
+      <linearGradient id="sun" x1="0" y1="0" x2="0.2" y2="1"><stop offset="0" stop-color="#FFD36A"/><stop offset="1" stop-color="#F4AD27"/></linearGradient>
+      <linearGradient id="water" x1="0" y1="0" x2="1" y2=".8"><stop offset="0" stop-color="#1DB6D2"/><stop offset="1" stop-color="#045D83"/></linearGradient>
+      <linearGradient id="hill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#55A43C"/><stop offset="1" stop-color="#06482F"/></linearGradient>
+      <linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#043522"/><stop offset="1" stop-color="#0B5A3A"/></linearGradient>
+      <linearGradient id="brandSun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFBC2A"/><stop offset="1" stop-color="#CE7806"/></linearGradient>
+    </defs><rect width="1080" height="1350" fill="#043522"/><circle cx="907" cy="513" r="337" fill="url(#sun)" opacity=".95"/><path d="M0 864 Q216 472 464 864 Q669 553 1080 837 V1350 H0Z" fill="#0B5A3A"/>
+    <path d="M0 972 Q237 675 486 1026 Q756 661 1080 985 V1350 H0Z" fill="#06482F"/>
+    <path d="M0 1147 Q259 944 442 1093 Q745 1282 1080 1066 V1350 H0Z" fill="#087EA4"/>
+    <path d="M0 1215 Q291 1053 540 1161 Q810 1323 1080 1107" fill="none" stroke="#49BDD1" stroke-width="37"/>
+ <rect x="67" y="130" width="946" height="976" rx="58" fill="#043522" opacity=".92"/>
+ <g transform="translate(267 180) scale(1.1)">
+      <circle cx="248" cy="127" r="100" fill="url(#sun)"/>
+      <path d="M0 243 Q80 205 143 230 L143 324 L0 324Z" fill="#F8F2E6"/>
+      <path d="M348 223 Q423 203 500 251 L500 330 L348 330Z" fill="#A2C477"/>
+      <g transform="translate(38 70) scale(1.25)" fill="#F8F2E6">
+       <path d="M0 0 L-18 35 L-9 35 L-27 64 L-13 64 L-39 95 L-10 92 L-10 113 L10 113 L10 92 L39 95 L13 64 L27 64 L9 35 L18 35 Z"/>
+       </g><g transform="translate(101 111) scale(0.92)" fill="#F8F2E6">
+       <path d="M0 0 L-18 35 L-9 35 L-27 64 L-13 64 L-39 95 L-10 92 L-10 113 L10 113 L10 92 L39 95 L13 64 L27 64 L9 35 L18 35 Z"/>
+       </g><g transform="translate(150 143) scale(0.63)" fill="#F8F2E6">
+       <path d="M0 0 L-18 35 L-9 35 L-27 64 L-13 64 L-39 95 L-10 92 L-10 113 L10 113 L10 92 L39 95 L13 64 L27 64 L9 35 L18 35 Z"/>
+       </g>
+      <g transform="translate(419 135) scale(0.79)" fill="#F8F2E6">
+       <path d="M0 0 L-18 35 L-9 35 L-27 64 L-13 64 L-39 95 L-10 92 L-10 113 L10 113 L10 92 L39 95 L13 64 L27 64 L9 35 L18 35 Z"/>
+       </g><g transform="translate(466 148) scale(0.66)" fill="#F8F2E6">
+       <path d="M0 0 L-18 35 L-9 35 L-27 64 L-13 64 L-39 95 L-10 92 L-10 113 L10 113 L10 92 L39 95 L13 64 L27 64 L9 35 L18 35 Z"/>
+       </g>
+      <path d="M71 250 Q249 95 429 250" fill="none" stroke="#F8F2E6" stroke-width="19" stroke-linecap="round"/>
+      <path d="M78 267 Q250 143 422 267" fill="none" stroke="#F8F2E6" stroke-width="12" stroke-linecap="round"/>
+      <path d="M70 248 H429" stroke="#F8F2E6" stroke-width="14" stroke-linecap="round"/>
+      <path d="M135 236 V275 M189 213 V260 M249 204 V250 M311 213 V260 M365 236 V275" stroke="#F8F2E6" stroke-width="11"/>
+      <path d="M142 238 L190 261 L250 206 L310 262 L365 239" fill="none" stroke="#F8F2E6" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M55 305 C146 256 202 298 246 296 S380 275 456 316 L456 345 L55 345Z" fill="url(#water)"/>
+      <path d="M55 325 C137 284 181 313 237 312 S362 299 452 333" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+      <path d="M116 350 C185 314 246 344 296 334 S394 321 449 345" fill="none" stroke="url(#water)" stroke-width="17" stroke-linecap="round"/>
+    </g>
+ <text x="340" y="815" fill="#FFFFFF" font-family="'Lato','DejaVu Sans',sans-serif" font-weight="900" font-size="123" letter-spacing="-4">Rez</text>
+       <text x="545.41" y="815" fill="#F4AD27" font-family="'Lato','DejaVu Sans',sans-serif" font-weight="900" font-size="123" letter-spacing="-4">Site</text>
+ <text x="540" y="872" fill="#FFFFFF" font-family="'Lato','DejaVu Sans',sans-serif" font-size="26" font-weight="700" text-anchor="middle">WEBSITES  •  DIRECTORIES  •  EVENTS</text>
+ <rect x="113" y="920" width="854" height="129" rx="29" fill="#F8F2E6"/>
+ <text x="540" y="968" fill="#06482F" font-family="'Lato','DejaVu Sans',sans-serif" font-size="33" font-weight="700" text-anchor="middle">FREE LIFETIME HOSTING</text>
+ <text x="540" y="1016" fill="#06482F" font-family="'Lato','DejaVu Sans',sans-serif" font-size="24" font-weight="400" text-anchor="middle">BAKEaWeb-made sites • No purchase required</text>
+ <text x="540" y="1174" fill="#FFFFFF" font-family="'Lato','DejaVu Sans',sans-serif" font-size="30" font-weight="400" text-anchor="middle">Affiliated with BAKEaWeb</text></svg>
