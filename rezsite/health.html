@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#123e40">
+<title>RezSite release check · Web design & community directories</title>
+<style>
+:root{font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:#183738;background:#f7f5ef;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}a{color:#0c5553}a:focus-visible,button:focus-visible{outline:3px solid #f09a55;outline-offset:3px}
+header{background:#103a3d;color:white;padding:19px 0}header a{color:white;text-decoration:none;font-weight:800;letter-spacing:-.6px;font-size:23px}.brand-dot{color:#f09a55}header small{font-size:11px;letter-spacing:1.5px;display:block;color:#bfdbd5}
+.wrap{width:min(100% - 36px,940px);margin:auto}main{padding:45px 0 75px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#a45c32}h1{font-size:clamp(2.2rem,5vw,3.8rem);letter-spacing:-2px;line-height:1.09;margin:12px 0 18px}h1 em{font-family:Georgia,serif;font-weight:400;color:#b8663e}p{max-width:750px;color:#55706a}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:25px 0}button,.action{border:1px solid #b5cbc1;border-radius:8px;background:white;padding:12px 17px;color:#163f40;text-decoration:none;font:700 14px system-ui;cursor:pointer}button.primary{background:#113d40;color:white;border-color:#113d40}button:disabled{opacity:.55;cursor:wait}
+.summary{background:#eaf0e9;border:1px solid #d4e0d4;padding:17px;border-radius:9px;font-weight:750;margin:16px 0}.tests{display:grid;gap:10px;padding:0;margin:0;list-style:none}.test{background:white;border:1px solid #d9e3db;border-radius:10px;padding:16px;display:grid;grid-template-columns:100px 1fr;gap:10px;align-items:start}.state{font-size:12px;font-weight:850;color:#47635d}.state.pass{color:#247057}.state.fail{color:#9a3d2e}.state.wait{color:#966a25}.test strong{display:block;font-size:16px}.test small{display:block;color:#60766f;margin-top:4px;overflow-wrap:anywhere}.note{margin-top:24px;padding:18px;border-left:3px solid #eaa05b;background:#fff7ea;font-size:14px;color:#64553e}.note strong{color:#463f35}footer{padding:28px 0;border-top:1px solid #d4ded8;color:#5c726a;font-size:13px}
+@media(max-width:490px){.test{grid-template-columns:74px 1fr;padding:14px}.actions{display:grid}.actions>*{text-align:center}main{padding-top:30px}h1{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="index.html" aria-label="RezSite home">rezsite<span class="brand-dot">.com</span><small>WEB DESIGN & COMMUNITY</small></a></div></header>
+<main class="wrap">
+<div class="eyebrow">Release diagnostic · 11 November 2026</div>
+<h1>Is RezSite <em>live?</em></h1>
+<p>This browser check requests the published RezSite pages and directory records directly from the website, bypassing normal browser caching where possible. It does not modify anything or contact a third-party service.</p>
+<div class="actions"><button type="button" class="primary" id="check-basic">Run live check</button><button type="button" id="check-full">Verify all 4,996 businesses</button><a class="action" href="index.html">Open homepage</a><a class="action" href="directory.html?type=businesses">Open directories</a></div>
+<div class="summary" id="summary" role="status" aria-live="polite">Initializing checks…</div>
+<ol class="tests" id="tests" aria-label="Live release checks"></ol>
+<div class="note"><strong>How to read this:</strong> All green means this browser can fetch the current RezSite homepage, directory, and expected data. A missing page or HTTP error indicates a publication or routing issue; an outdated title suggests stale caching. This check does not prove every external business website or phone number is current. The social-network project is intentionally on hold.</div>
+</main>
+<footer><div class="wrap">RezSite web design · Affiliated with <a href="https://bakeaweb.com/" target="_blank" rel="noopener noreferrer">BAKEaWeb</a> · <a href="https://deltaowleyes.ca/">Delta Owl Eyes</a></div></footer>
+<script>
+'use strict';
+(() => {
+  const CHECKS = [
+    {name:'Web-design homepage', path:'index.html', kind:'text', check:t=>t.includes('Web design for Indigenous businesses')&&t.includes('bakeaweb.com'), success:'Current web-design copy and BAKEaWeb affiliation confirmed'},
+    {name:'Three-directory page', path:'directory.html', kind:'text', check:t=>['data-type="businesses"','data-type="churches"','data-type="events"'].every(x=>t.includes(x)), success:'Business, church and event tabs present'},
+    {name:'RezSite stylesheet', path:'assets/site.css', kind:'text', check:t=>t.includes('--pine')&&t.includes('.directory'), success:'Design system stylesheet available'},
+    {name:'RezSite navigation', path:'assets/site.js', kind:'text', check:t=>t.includes('nav-toggle'), success:'Responsive navigation script available'},
+    {name:'Directory logic & fixes', path:'assets/directory.js', kind:'text', check:t=>t.includes('businessFullPromise = null')&&t.includes('setScope(\'all\'); rebuildFilters(); render();'), success:'Search, filter reset and index retry code available'},
+    {name:'Source manifest', path:'data/source-manifest.json', kind:'json', check:j=>j.counts&&j.counts.businesses===4996&&j.counts.churches===200&&j.counts.events===216, success:'Expected counts: 4,996 / 200 / 216'},
+    {name:'Featured businesses', path:'data/businesses-featured.json', kind:'json', check:j=>j.schema===1&&Array.isArray(j.records)&&j.records.length===48&&!j.fields.includes('address'), success:'48 featured records without street-address field'},
+    {name:'Church directory', path:'data/churches.json', kind:'json', check:j=>Array.isArray(j)&&j.length===200&&j.every(x=>!Object.hasOwn(x,'address')), success:'200 church records'},
+    {name:'Events directory', path:'data/events.json', kind:'json', check:j=>Array.isArray(j)&&j.length===216, success:'216 event records'}
+  ];
+  const FULL={name:'Full business index',path:'data/businesses-index.json',kind:'json',check:j=>j.schema===1&&j.fields.includes('name')&&!j.fields.includes('address')&&Array.isArray(j.records)&&j.records.length===4996, success:'All 4,996 business records available'};
+  const list=document.getElementById('tests'); const summary=document.getElementById('summary');
+  const buttons=[document.getElementById('check-basic'),document.getElementById('check-full')];
+  let running=false;
+  function item(row,mode,details){
+    const li=document.createElement('li');li.className='test';
+    const state=document.createElement('span');state.className='state '+mode;state.textContent=mode==='pass'?'PASS':mode==='fail'?'FAIL':'CHECK';
+    const body=document.createElement('div');const name=document.createElement('strong');name.textContent=row.name;
+    const note=document.createElement('small');note.textContent=details;body.append(name,note);li.append(state,body);list.append(li);
+  }
+  async function check(row){
+    let response;
+    try{
+      const url=new URL(row.path,document.baseURI);
+      url.searchParams.set('rezsite_audit',String(Date.now()));
+      response=await fetch(url.href,{cache:'no-store',headers:{'Cache-Control':'no-cache'}});
+      if(!response.ok)throw Error('HTTP '+response.status);
+      const content=row.kind==='json'?await response.json():await response.text();
+      if(!row.check(content))throw Error('Content differs from RezSite 1.2 release');
+      return {mode:'pass',details:row.success};
+    }catch(error){return {mode:'fail',details:row.path+' — '+String(error.message||error)};}
+  }
+  async function run(includeFull){
+    if(running)return;running=true;buttons.forEach(b=>b.disabled=true);list.replaceChildren();
+    const planned=includeFull?[...CHECKS,FULL]:CHECKS;
+    summary.textContent='Checking '+planned.length+' published paths…';
+    let passed=0;
+    for(const row of planned){item(row,'wait','Checking published file…');const result=await check(row);list.lastElementChild.remove();item(row,result.mode,result.details);if(result.mode==='pass')passed++;summary.textContent=passed+' of '+planned.length+' checks passed';}
+    summary.textContent=passed===planned.length?'All '+passed+' checks passed. RezSite pages and requested data are accessible from this browser.':passed+' of '+planned.length+' passed. A publication, caching or file-loading issue needs attention.';
+    buttons.forEach(b=>b.disabled=false);running=false;
+  }
+  buttons[0].addEventListener('click',()=>run(false));buttons[1].addEventListener('click',()=>run(true));
+  run(false);
+})();
+</script>
+</body></html>
