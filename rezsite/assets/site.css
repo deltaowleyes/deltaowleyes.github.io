@@ -20,3 +20,105 @@
 .homepage-meta{margin:0 0 28px}
 .directory-meta span:first-child strong{color:#b3653a}
 @media(max-width:700px){.directory-meta{gap:8px 16px;padding:13px 0}.directory-meta span{font-size:11px}.directory-meta strong{font-size:20px}.directory-meta small{width:100%;margin-left:0}.homepage-meta{margin-bottom:20px}}
+/* ------------------------------------------------------------
+ RezSite Shore to Shore, Final Variation #1 | approved brand kit
+ Preserve directory data contracts and old fallback presentation
+ ------------------------------------------------------------ */
+:root{--ink:#123C2D;--pine:#06482F;--pine-dark:#043522;--orange:#F4AD27;--orange-deep:#D98D11;--cream:#F8F2E6;--white:#fffdfa;--muted:#567367;--leaf:#55A43C;--river:#087EA4;--deep-blue:#045D83;--outline:#d1e2d1;background:#F8F2E6;color:#123C2D;font-family:Lato,'DejaVu Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
+body[data-brand=shore-to-shore]{background:#F8F2E6;color:#123C2D}
+body[data-brand=shore-to-shore] .site-header{background:rgba(255,253,248,.98);border-bottom:1px solid #d8e4d8;box-shadow:0 6px 22px #0435220d}
+body[data-brand=shore-to-shore] .site-header .nav-wrap{min-height:96px}
+body[data-brand=shore-to-shore] .logo{display:inline-flex;align-items:center;min-width:0;flex-shrink:0}
+.brand-logo{display:block;width:clamp(200px,20vw,290px);height:auto;aspect-ratio:1480/405;object-fit:contain}
+body[data-brand=shore-to-shore] .announcement{background:#043522;color:#f5f6e7}
+body[data-brand=shore-to-shore] .announcement a{color:#F4C65B;text-underline-offset:4px}
+body[data-brand=shore-to-shore] .announce-dot{background:#F4AD27}
+body[data-brand=shore-to-shore] .nav-links a{color:#154b36}
+body[data-brand=shore-to-shore] .nav-links a.is-active{color:#a16b04}
+body[data-brand=shore-to-shore] .nav-links .nav-contact{background:#06482F;color:#fff!important;border-radius:9px;padding:13px 17px}
+body[data-brand=shore-to-shore] a:focus-visible,body[data-brand=shore-to-shore] button:focus-visible,body[data-brand=shore-to-shore] input:focus-visible,body[data-brand=shore-to-shore] select:focus-visible{outline:3px solid #F4AD27;outline-offset:3px}
+body[data-brand=shore-to-shore] .button-orange,body[data-brand=shore-to-shore] .brand-button-gold{background:#F4AD27;color:#043522;border-color:#F4AD27;border-radius:11px;box-shadow:0 8px 25px #031e1540}
+body[data-brand=shore-to-shore] .button-orange:hover,body[data-brand=shore-to-shore] .brand-button-gold:hover{background:#ffca59}
+body[data-brand=shore-to-shore] .button-dark{background:#06482F;color:white;border-radius:9px}
+body[data-brand=shore-to-shore] .eyebrow{color:#8a600e}
+body[data-brand=shore-to-shore] .eyebrow.light{color:#e2d7b6}
+body[data-brand=shore-to-shore] .serif-italic{color:#086043}
+body[data-brand=shore-to-shore] .site-footer{background:#043522;color:#e1efe2;border-top:4px solid #087EA4}
+body[data-brand=shore-to-shore] .footer-logo .brand-logo{width:275px}
+body[data-brand=shore-to-shore] .site-footer a{color:#eaf4ea}
+body[data-brand=shore-to-shore] .site-footer a:hover{color:#F4AD27}
+body[data-brand=shore-to-shore] .footer-bottom{border-color:#2c6554}
+/* Homepage and visual system */
+.brand-hero{position:relative;background:linear-gradient(145deg,#043522 0%,#06482F 66%,#075136 100%);color:white;overflow:hidden;padding:82px 0 65px;isolation:isolate}
+.brand-hero:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 90% 8%,#55A43C44,transparent 50%),repeating-radial-gradient(circle at 3% 80%,transparent 0 45px,#59a49213 46px 47px);pointer-events:none;z-index:-1}
+.brand-hero-grid{display:grid;grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);gap:clamp(30px,4vw,70px);align-items:center}
+.brand-hero-copy{padding:14px 0}
+.brand-hero-copy h1{font-family:Lato,'DejaVu Sans',system-ui,sans-serif;font-size:clamp(42px,4.9vw,76px);font-weight:900;line-height:1.08;letter-spacing:-.055em;max-width:680px;margin:22px 0}
+.brand-hero-copy h1 em{font-family:Georgia,serif;color:#F4C45B;font-weight:400;font-style:italic;letter-spacing:-.025em}
+.brand-hero-copy .eyebrow{font-size:12px;letter-spacing:.15em;font-weight:800;display:flex;gap:12px;align-items:center}
+.accent-dot{height:13px;width:13px;border-radius:50%;background:#F4AD27;box-shadow:0 0 0 5px #F4AD2730;display:inline-block;flex:none}
+.brand-hero-lead{font-size:clamp(16px,1.4vw,19px);line-height:1.75;color:#d9eadd;max-width:550px}
+.brand-hero-actions{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin:31px 0 38px}
+.brand-button-gold{display:inline-flex;align-items:center;gap:16px;justify-content:center;text-decoration:none;font-weight:850;font-size:15px;padding:16px 24px;min-height:54px}
+.brand-text-link{color:#fff;text-decoration:none;border-bottom:1px solid #80c7d0;padding:9px 0;font-weight:700}
+.brand-text-link:hover{color:#F4C45B}
+.brand-hero-points{border-top:1px solid #8bc1a566;padding-top:21px;display:flex;gap:14px;flex-wrap:wrap;color:#dce9df;font-size:12px;line-height:1.6}
+.brand-hero-points span{display:inline-flex;gap:7px;align-items:center}
+.brand-hero-points b{color:#F4C45B;font-weight:850}
+.brand-hero-visual{position:relative;min-width:0}
+.brand-hero-visual picture{display:block;border-radius:22px;overflow:hidden;box-shadow:0 25px 80px #01191080,0 0 0 1px #b6ebc144;aspect-ratio:1920/860;background:#043522}
+.brand-hero-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.brand-art-caption{display:block;text-align:right;color:#c7dccb;font-size:10px;letter-spacing:.15em;font-weight:800;margin-top:16px}
+.brand-river-wave{position:absolute;bottom:-3px;left:0;right:0;height:8px;background:linear-gradient(90deg,#087EA4,#45bed0,#087EA4)}
+.hosting-band{background:#FFF9E9;border-bottom:1px solid #e2dac4}
+.hosting-band-inner{display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:center;padding:33px 0}
+.hosting-icon{display:grid;place-items:center;background:#F4AD27;border-radius:20px;width:64px;height:64px;color:#043522;font-size:36px}
+.hosting-copy h2{font:900 clamp(20px,2vw,28px)/1.28 Lato,'DejaVu Sans',sans-serif;color:#06482F;letter-spacing:-.02em;margin:6px 0 8px}
+.hosting-copy h2 em{font-family:Georgia,serif;font-weight:400;color:#987113}
+.hosting-copy p{max-width:850px;margin:0;color:#53665a;font-size:13px;line-height:1.6}
+.hosting-copy .eyebrow{font-size:10px;color:#a7710c;letter-spacing:.15em}
+.hosting-cta{display:inline-flex;border:1px solid #1a6b50;background:#06482F;color:#fff;text-decoration:none;padding:13px 16px;border-radius:9px;font-weight:800;font-size:13px;white-space:nowrap}
+body[data-brand=shore-to-shore] .service-intro{background:#F8F2E6}
+body[data-brand=shore-to-shore] .service-card{border-radius:16px;border:1px solid #d7e4d6;background:#fffef9;box-shadow:0 5px 25px #0435220a;transition:transform .2s ease,box-shadow .2s ease}
+body[data-brand=shore-to-shore] .service-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px #04352217}
+body[data-brand=shore-to-shore] .service-symbol{color:#087EA4}
+body[data-brand=shore-to-shore] .service-number{color:#B87F10}
+body[data-brand=shore-to-shore] .trust-strip{background:#e5edde}
+body[data-brand=shore-to-shore] .trust-number{color:#a16b04}
+body[data-brand=shore-to-shore] .partner-strip{background:#eff4e6;border-block:1px solid #d7e6d3}
+.partner-label img{display:block;width:min(100%,360px);height:auto}
+body[data-brand=shore-to-shore] .baker-ribbon{background:#6f2e83;color:#fff;padding:6px 15px;letter-spacing:.08em;transform:rotate(-2deg)}
+body[data-brand=shore-to-shore] .partner-link{color:#06482F}
+body[data-brand=shore-to-shore] .directory-section{background:#fcfaf4}
+body[data-brand=shore-to-shore] .directory-meta strong{color:#087EA4}
+body[data-brand=shore-to-shore] .directory-tile{overflow:hidden;border-radius:14px;border:1px solid #d1e4d9;box-shadow:0 9px 30px #0435220a;background:#fffefa}
+body[data-brand=shore-to-shore] .directory-tile.featured{background:#fffefa}
+.brand-directory-art{width:100%;height:auto;aspect-ratio:16/6;overflow:hidden;background:#043522;display:block}
+.brand-directory-art img{width:100%;height:100%;display:block;object-fit:cover}
+body[data-brand=shore-to-shore] .tile-art.brand-directory-art{min-height:0}
+body[data-brand=shore-to-shore] .directory-tile:hover{box-shadow:0 20px 45px #0435221b;transform:translateY(-3px)}
+body[data-brand=shore-to-shore] .process-section{background:#06482F}
+body[data-brand=shore-to-shore] .process-section h2,body[data-brand=shore-to-shore] .process-section .serif-italic{color:white}
+body[data-brand=shore-to-shore] .closing-section{background:#EAF0E5}
+/* Directory banner and filters */
+.brand-directory-hero{padding:0;background:#043522;color:white}
+.brand-directory-shell{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center;padding:40px 0}
+.brand-directory-intro h1{font:900 clamp(36px,4.3vw,64px)/1.09 Lato,'DejaVu Sans',sans-serif;letter-spacing:-.04em;margin:10px 0 16px;color:white}
+.brand-directory-intro h1 em{font:italic 400 1em Georgia,serif;color:#F4AD27;letter-spacing:-.02em}
+.brand-directory-intro p:not(.eyebrow){font-size:15px;color:#d0e6dd;line-height:1.7;max-width:490px}
+.brand-directory-billboard{position:relative;overflow:hidden;border:1px solid #a0cbbc66;border-radius:18px;box-shadow:0 15px 32px #011d1680}
+.brand-directory-billboard img{display:block;width:100%;height:auto;aspect-ratio:1600/460;object-fit:cover}
+#directory-banner-caption{position:absolute;right:13px;bottom:10px;background:#043522cc;color:#f7e7b8;font-size:9px;letter-spacing:.1em;padding:6px 9px;border-radius:5px}
+body[data-brand=shore-to-shore] .directory-tool{padding-top:38px}
+body[data-brand=shore-to-shore] .directory-tabs [aria-selected=true]{background:#e7f1df;border-bottom-color:#D98D11;color:#06482F}
+body[data-brand=shore-to-shore] .directory-shortcuts button[aria-pressed=true]{background:#06482F;color:white}
+body[data-brand=shore-to-shore] .filters-row{background:#e8efe3;border:1px solid #d5e1d1;border-radius:12px}
+body[data-brand=shore-to-shore] .result-card{background:#fffefa;border-radius:13px;border:1px solid #d4e3d5;box-shadow:0 4px 15px #0435220b}
+body[data-brand=shore-to-shore] .result-card:hover{border-color:#a1c9b1}
+body[data-brand=shore-to-shore] .result-footer a{color:#04684f}
+body[data-brand=shore-to-shore] .directory-cta{background:#06482F}
+@media(max-width:1120px){.brand-hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:25px}.brand-hero-copy h1{font-size:clamp(35px,5vw,58px)}.hosting-band-inner{grid-template-columns:56px 1fr}.hosting-cta{grid-column:2;justify-self:start}.brand-directory-shell{grid-template-columns:.85fr 1.15fr;gap:20px}}
+@media(max-width:900px){body[data-brand=shore-to-shore] .site-header .nav-wrap{min-height:78px}.brand-logo{width:235px}.brand-hero{padding:55px 0 45px}.brand-hero-grid{grid-template-columns:1fr}.brand-hero-copy h1{max-width:720px;font-size:clamp(42px,7vw,68px)}.brand-hero-visual{max-width:760px}.brand-hero-points{max-width:760px}.brand-directory-shell{grid-template-columns:1fr;gap:22px}.brand-directory-intro h1{max-width:700px}}
+@media(max-width:700px){.brand-logo{width:clamp(175px,50vw,235px)}body[data-brand=shore-to-shore] .site-header .nav-wrap{min-height:76px}.brand-hero-copy h1{font-size:clamp(39px,10vw,59px)}.brand-hero-lead{font-size:15px}.brand-hero-visual{max-width:530px}.brand-hero-visual picture{aspect-ratio:1080/1350;border-radius:15px}.brand-art-caption{text-align:left}.brand-hero-actions{gap:14px}.brand-hero-points{display:grid;gap:5px}.hosting-band-inner{grid-template-columns:44px 1fr;gap:14px;padding:25px 0}.hosting-icon{width:44px;height:44px;font-size:25px;border-radius:13px}.hosting-copy h2{font-size:19px}.hosting-cta{grid-column:1/-1;justify-self:stretch;justify-content:center}.brand-directory-shell{padding:28px 0}.brand-directory-intro h1{font-size:39px}.brand-directory-billboard img{min-height:125px}.brand-directory-art{aspect-ratio:1600/460}}
+@media(max-width:380px){.brand-hero{padding-top:36px}.brand-hero-copy h1{font-size:36px}.brand-button-gold{width:100%;font-size:14px}.brand-logo{width:185px}.brand-directory-intro h1{font-size:34px}}
+@media(prefers-reduced-motion:reduce){.service-card,.directory-tile{transition:none!important}}
