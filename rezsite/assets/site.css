@@ -142,3 +142,28 @@ body[data-brand="shore-to-shore"] .footer-logo .brand-services{color:#06482f}
 @media(max-width:1100px){body[data-brand="shore-to-shore"] .nav-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:45px;height:42px;align-items:center;border:1px solid #d8e1d5;background:#fff;border-radius:4px}body[data-brand="shore-to-shore"] .nav-toggle span{display:block;height:2px;width:21px;background:#234542}body[data-brand="shore-to-shore"] .nav-links{display:none;position:absolute;left:0;right:0;top:100%;background:#faf9f4;box-shadow:0 20px 25px #143d3620;padding:14px 24px 22px;border-bottom:1px solid #d5dcd0;flex-direction:column;align-items:stretch;gap:0;font-size:15px}body[data-brand="shore-to-shore"] .nav-links.open{display:flex}body[data-brand="shore-to-shore"] .nav-links>a{padding:13px 6px!important;border-bottom:1px solid #e7e8df}body[data-brand="shore-to-shore"] .nav-links .nav-contact{margin-top:10px;text-align:center;border:none}}
 @media(max-width:700px){body[data-brand="shore-to-shore"] .site-header .nav-wrap{min-height:108px}body[data-brand="shore-to-shore"] .rezsite-readable-logo{width:min(100%,270px);max-width:270px}.rezsite-readable-logo .brand-logo-readable{width:min(100%,254px);max-height:78px}.rezsite-readable-logo .brand-services{font-size:12px;line-height:1.32;letter-spacing:0;margin:0 0 3px 1px}body[data-brand="shore-to-shore"] .footer-logo.rezsite-readable-logo{width:min(100%,360px)}.approved-logo-feature{padding:23px 0}.approved-logo-frame .brand-feature-caption{font-size:13px;line-height:1.6}}
 @media(max-width:380px){body[data-brand="shore-to-shore"] .rezsite-readable-logo{width:245px;max-width:245px}.rezsite-readable-logo .brand-logo-readable{width:230px}.rezsite-readable-logo .brand-services{font-size:11px}}
+/* Approved variation #2 — compact, matched-height bridge/wordmark and single-line labels. */
+body[data-brand="shore-to-shore"] .site-header .nav-wrap{min-height:72px;gap:16px;padding-top:6px;padding-bottom:6px}
+body[data-brand="shore-to-shore"] .site-header .rezsite-readable-logo{width:390px;max-width:390px;flex:none;align-items:flex-start;gap:0}
+body[data-brand="shore-to-shore"] .site-header .rezsite-readable-logo .brand-logo-readable{display:block;width:276px;height:auto;max-height:none;aspect-ratio:1075/210;object-fit:contain;object-position:left center}
+body[data-brand="shore-to-shore"] .rezsite-readable-logo .brand-services{font-size:12px;line-height:1.2;letter-spacing:0;font-weight:850;white-space:nowrap;max-width:none;margin:1px 0 0 1px}
+.rezsite-readable-logo .brand-services-desktop{display:inline}
+.rezsite-readable-logo .brand-services-mobile{display:none}
+body[data-brand="shore-to-shore"] .footer-logo.rezsite-readable-logo{width:390px;max-width:100%;padding:12px 16px}
+body[data-brand="shore-to-shore"] .footer-logo .brand-logo-readable{width:276px;max-height:none}
+@media(max-width:1240px){body[data-brand="shore-to-shore"] .site-header .rezsite-readable-logo{width:365px;max-width:365px}body[data-brand="shore-to-shore"] .site-header .nav-wrap{gap:12px}}
+@media(max-width:1100px){body[data-brand="shore-to-shore"] .site-header .nav-wrap{min-height:68px}}
+@media(max-width:700px){
+ body[data-brand="shore-to-shore"] .site-header .nav-wrap{min-height:64px;padding-top:5px;padding-bottom:5px;gap:9px}
+ body[data-brand="shore-to-shore"] .site-header .rezsite-readable-logo{width:min(100%,280px);max-width:280px;min-width:0}
+ body[data-brand="shore-to-shore"] .site-header .rezsite-readable-logo .brand-logo-readable{width:245px;max-width:100%;height:auto;max-height:none}
+ .rezsite-readable-logo .brand-services{font-size:12px;line-height:1.2;white-space:nowrap;letter-spacing:0;margin:1px 0 0 0}
+ .rezsite-readable-logo .brand-services-desktop{display:none}
+ .rezsite-readable-logo .brand-services-mobile{display:inline}
+ body[data-brand="shore-to-shore"] .footer-logo.rezsite-readable-logo{width:min(100%,340px)}
+}
+@media(max-width:380px){
+ body[data-brand="shore-to-shore"] .site-header .rezsite-readable-logo{width:220px;max-width:220px}
+ body[data-brand="shore-to-shore"] .site-header .rezsite-readable-logo .brand-logo-readable{width:210px}
+ body[data-brand="shore-to-shore"] .rezsite-readable-logo .brand-services{font-size:11px}
+}
