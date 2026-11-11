@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "dataset": "RezSite local copy of Delta Owl Eyes public directories",
+  "retrieved_date": "2026-11-11",
+  "counts": {
+    "businesses": 4996,
+    "churches": 200,
+    "events": 216
+  },
+  "source_paths": {
+    "businesses": "/indigenous-businesses/optimized/search-index.json",
+    "churches": "/indigenous-churches/churches.json",
+    "events": "/data/community-events.json"
+  },
+  "privacy": "Business and church street address fields excluded",
+  "verification": "Original source verification status retained; source-linked listing is not ownership confirmation"
+}
